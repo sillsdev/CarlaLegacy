@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="PPMain" count="1/5">
+   <title>Syntagmes Adpositionnels</title>
+   <introduction>Cette section considère la structure interne des <technicalTermRef term="ttAdpositionalPhrases">syntagmes adpositionnels</technicalTermRef>, qui expriment habituellement un lieu, un accompagnement, un but, un instrument, un récepteur ou un agent dans des langues qui ne marquent pas le cas sur les substantifs ou dans les syntagmes adpositionnels. Les langues qui marquent le cas sur les noms ont toujours des syntagmes adpositionnels  de lieu et de temps. On verra des exemples sur la page suivante.<br/><br/>
+      Nous allons commencer par déterminer si votre langue a des prépositions ou des postpositions et si elles sont des mots indépendants ou des clitiques.  
+    <br/><br/>
+      Considérez les syntagmes adpositionnels de lieu dans votre langue comme dans <example>à [la maison de Guillaume]</example> et <example>sous [le sycomore géant]</example>.  Le français a des prépositions qui sont indépendantes des mots et viennent avant le complément de syntagme nominal.  Dans une langue qui a des postpositions, elles suivent le complément du syntagme nominal.</introduction>  
+   <form section="pp">
+      <prompt><br/>Entrez ici quelques exemples de syntagmes adpositionnels de lieu dans votre langue (sans crochets mais chacun sur une ligne séparée):</prompt>
+      <textBox id="PPCompsNominalExample" dataItem="ppExample"/>
+      <radioGroup>
+         <groupName dataItem="pPos" default="unknown" position="yesHead">RPPPosition</groupName>
+         <prompt>Est-ce que votre langue a des prépositions ou des postpositions?</prompt>
+         <radio id="PPPosPrep" dataValue="before">Seulement des prépositions</radio>
+         <radio id="PPPosPost" dataValue="after">Seulement des postpositions</radio>
+         <radio id="PPPosBoth" dataValue="both">Des prepositions et des postpositions</radio>
+      </radioGroup>
+      <radioGroup>
+         <groupName dataItem="pType" default="word">RPPType</groupName>
+         <prompt><br/>Est-ce que les <span id="PPPrepSpan" show="swPPPosPrep">prépositions</span><span id="PPPostSpan" show="swPPPosPost">postpositions</span><span id="PPBothSpan" show="swPPPosBoth">prépositions et postpositions</span> sont écrites comme mots indépendants?</prompt>
+         <radio id="PPTypeWord" dataValue="word">Oui, ce sont tous des mots indépendants</radio>
+         <radio id="PPTypeClitic" dataValue="clitic">Non, ce sont tous des clitiques attachés à un autre mot </radio>
+         <radio id="PPTypeBoth" dataValue="both">Certains sont écrits comme mots indépendants, mais certains sont écrits attachés à un autre mot</radio>
+         <radioGroup id="PPTypeCliticAttachesTable" show="swPPTypeCliticOrBoth">
+            <groupName dataItem="attaches" default="edge">RPPTypeCliticAttaches</groupName>
+            <prompt><br/>Où est-ce- que les clitiques sont attachés au syntagme nominal?</prompt>
+            <radio id="PPTypeCliticAttachesEdge" dataValue="edge">Au bord du syntagme</radio>
+            <radio id="PPTypeCliticAttachesHead" dataValue="head">Sur le nom principal dans le syntagme</radio>
+         </radioGroup>
+      </radioGroup>
+      <instruction id="PPPosBothBothEdgeInstruction" show="swPPPosBothBothEdge">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix</feature> and the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
+      <instruction id="PPPosBothBothHeadInstruction" show="swPPPosBothBothHead">In the lexicon, mark the prepositions which are stand alone words with the feature <feature>PP-initial</feature> and the postpositions which are stand alone words with the feature <feature>PP-final</feature>.  Mark the clitic prepositions with the feature <feature>P_prefix_N</feature> and the clitic postpositions with the feature <feature>P_suffix_N</feature>.</instruction>
+      <instruction id="PPPosBothWordInstruction" show="swPPPosBothWord">In the lexicon, mark the prepositions with the feature <feature>PP-initial</feature> and the postpositions with the feature <feature>PP-final</feature>.</instruction>
+      <instruction id="PPPosBothCliticEdgeInstruction" show="swPPPosBothCliticEdge">In the lexicon, mark the prepositions with the feature <feature>P_prefix</feature> and the postpositions with the feature <feature>P_suffix</feature>.</instruction>
+      <instruction id="PPTypeCliticPrepEdgeInstruction" show="swPPTypeCliticOrBothPrepEdge">In the lexicon, mark the clitic prepositions with the feature <feature>P_prefix</feature>.</instruction>
+      <instruction id="PPTypeCliticPostEdgeInstruction" show="swPPTypeCliticOrBothPostEdge">In the lexicon, mark the clitic postpositions with the feature <feature>P_suffix</feature>.</instruction>
+      <instruction id="PPTypeCliticHeadInstruction" show="swPPTypeCliticOrBothHead">In the lexicon, mark the clitics with the feature <feature>PP</feature>.</instruction>
+      
+      <br/><br/>
+      <introduction>Ensuite nous devons voir quels mots peuvent modifier des syntagmes adpositionnels entiers. Il y a normalement quelques mots qui peuvent modifier des syntagmes adpositionnels entiers, des mots tels que <example>juste</example> et <example>tout</example>, comme par exemple <example>juste après le coin</example> et <example>tout au bout de la rue</example>.  Certaines langues ont une série de d’adverbes de lieu signifiant « juste ici » et « juste là » qui peuvent modifier les syntagmes adpositionnels, nous allons donc aussi accepter cette option.  <br/><br/>
+         Les nombres ordinaux et les adjectifs peuvent aussi modifier les syntagmes adpositionnels, tels que <example>[le] suivant dans la queue</example> et <example>[le] premier sorti de la porte</example>. <br/><br/> 
+         En plus, certains adverbes de manière, tels que <example>presque</example>, <example>pour la plupart</example> et <example>carrément</example>, peuvent modifier les syntagmes adpositionnels, comme dans <example>presque dans le trou</example>, <example>la plupart au dans l’arbre</example>, <example>carrément sur la table</example> et <example>presque sur l’ennemi</example>.</introduction>
+        <radioGroup>
+            <groupName dataItem="modifiers" default="no">RPPModifiers</groupName>
+           <prompt><br/>Est-ce que votre langue a des modificateurs qui se trouvent soit avant soit après les syntagmes adpositionnels comme mots indépendants?</prompt>
+           <radio id="PPModifiersNo" dataValue="no">Non, ni des mots de degré ni des ordinaux ni des adverbes ne peuvent modifier les syntagmes adpositionnels comme mots indépendents</radio>
+           <radio id="PPModifiersYes" dataValue="yes">Oui, les modificateurs suivants peuvent apparaître</radio>
+           <checkboxGroup id="PPModifiersType" show="swPPModifiersYes">
+              <prompt>Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+              <checkbox id="PPModifiersDegree" dataItem="ppModifierDegree">Mots de degré</checkbox>
+              <checkbox id="PPModifiersOrdinal" dataItem="ppModifierOrdinal">Ordinaux</checkbox>
+              <checkbox id="PPModifiersManner" dataItem="ppModifierManner">Adverbes de manière</checkbox>
+              <checkbox id="PPModifiersLocative" dataItem="ppModifierLocative">Adverbes de lieu</checkbox>
+              <checkbox id="PPModifiersOther" dataItem="ppModifierOther">Dans ma langue, voici d’autres modificateurs qui peuvent être utilisés: <textBox  id="PPModifiersOtherContent" dataItem="ppModifierOther" rows="2"/></checkbox>
+           </checkboxGroup>
+           </radioGroup>
+      <prompt id="PPModifiersNoCheckPrompt" show="swPPModifiersYesandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire quels sont les modificateurs dans votre langue, ou changer la réponse en « Non ».</prompt>
+ <br/><br/>
+      <prompt id="PPModifiersDegreePrompt" show="swPPModifiersYesDegree">Entrez ici les mots de degré qui peuvent modifier un syntagme adpositionnel entier:</prompt>
+      <textBox id="PPDegreeModifiersExample" dataItem="degree" rows="3" show="swPPModifiersYesDegree"/>
+      <prompt id="PPModifiersDegreePPPrompt" show="swPPModifiersYesDegree">Maintenant entrez des exemples de syntagmes adpositionnels avec les mots de degré qui les modifient:</prompt>
+      <textBox id="PPWithDegreeModifiersExample" dataItem="degreeWithPP" rows="3" show="swPPModifiersYesDegree"/>
+
+      <checkboxGroup id="PPDegreePos" show="swPPModifiersYesDegree">
+         <prompt><br/>En regardant les données dans la case ci-dessus, où ces mots de degré se trouvent -ils eu égard au reste du syntagme adpositionnel? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+         <checkbox id="PPDegreePosBefore"  dataItem="ppDegreePosBefore">Avant</checkbox>
+         <checkbox id="PPDegreePosAfter"  dataItem="ppDegreePosAfter">Après</checkbox>
+         <checkbox id="PPDegreePosBoth"  dataItem="ppDegreePosBoth">Des deux côtés en même temps</checkbox>
+         <checkbox id="PPDegreePosOther"  dataItem="ppDegreePosOther">Dans ma langue ils se trouvent dans la position suivante: <textBox  id="PPDegreePosOtherContent" dataItem="ppDegreePosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="PPDegreeWordNoCheckPrompt" show="swPPDegreeYesandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où ces modificateurs de mots de degré se trouvent eu égard au reste du syntagme adpositionnel dans votre langue, ou changez la réponse ci-dessus pour un type différent de modificateur. Dans ce cas, vous ne devriez pas avoir d’exemples de syntagmes adpositionnels avec des modificateurs de mots de degré dans la zone de texte ci-dessus.</prompt>
+      <instruction id="PPModifiersDegreeYesInstruction" show="swPPModifiersYesDegree">In the lexicon, mark the degree words with the features <feature>makeDeg modifies_PP</feature>.    (If any of these degree words are the same as those which can modify another category, you can simply add the additional feature <feature>modifies_PP</feature> to the same lexical entry.)</instruction>
+      <instruction id="PPDegreeEitherRestrictedInstruction" show="swPPDegreeEitherorBoth">In the lexicon, mark those degree words which can only occur initially with the feature <feature>PP-initial</feature> and those which can only occur finally with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      <br/><br/>
+      <prompt id="PPModifiersOrdinalPrompt" show="swPPModifiersYesOrdinal">Entrez ici les ordinaux qui peuvent modifier un syntagme adpositionnel entier:</prompt>
+      <textBox id="PPOrdinalModifiersExample" dataItem="ordinal" rows="3" show="swPPModifiersYesOrdinal"/>
+      <prompt id="PPModifiersOrdinalPPPrompt" show="swPPModifiersYesOrdinal">Maintenant entrez ici des exemples de syntagmes adpositionnels avec des ordinaux qui les modifient:</prompt>
+      <textBox id="PPWithOrdinalModifiersExample" dataItem="ordinalWithPP" rows="3" show="swPPModifiersYesOrdinal"/>
+ 
+      <checkboxGroup id="PPOrdinalPos" show="swPPModifiersYesOrdinal">
+         <prompt><br/>En regardant les données dans la case ci-dessus, où ces ordinaux se situent-ils eu égard au reste du syntagme adpositionnel? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+         <checkbox id="PPOrdinalPosBefore"  dataItem="ppOrdinalPosBefore">Avant</checkbox>
+         <checkbox id="PPOrdinalPosAfter"  dataItem="ppOrdinalPosAfter">Après</checkbox>
+         <checkbox id="PPOrdinalPosBoth"  dataItem="ppOrdinalPosBoth">Des deux côtés en même temps</checkbox>
+         <checkbox id="PPOrdinalPosOther"  dataItem="ppOrdinalPosOther">Dans ma langue ils peuvent se trouver dans la position suivante: <textBox  id="PPOrdinalPosOtherContent" dataItem="ppOrdinalPosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="PPOrdinalNoCheckPrompt" show="swPPOrdinalYesandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où ces modificateurs d’ordinaux se trouvent eu égard au reste du syntagme adpositionnel dans votre langue, ou changez la réponse ci-dessus pour un autre type de modificateur. Dans ce cas, vous ne devriez pas avoir d’exemples de syntagmes adpositionnels avec des modificateurs d’ordinaux dans la zone de texte ci-dessus.</prompt>
+      <instruction id="PPModifiersOrdinalYesInstruction" show="swPPModifiersYesOrdinal">In the lexicon, mark the ordinals with the feature <feature>modifies_PP</feature>.</instruction>
+      <instruction id="PPOrdinalEitherRestrictedInstruction" show="swPPOrdinalEitherorBoth">In the lexicon, mark those ordinals which can only occur initially with the feature <feature>PP-initial</feature> and those which can only occur finally with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      <br/><br/>
+      <prompt id="PPModifiersMannerPrompt" show="swPPModifiersYesManner">Entrez ici les adverbes de manière qui peuvent modifier un syntagme adpositionnel entier:</prompt>
+      <textBox id="PPMannerModifiersExample" dataItem="manner" rows="3" show="swPPModifiersYesManner"/>
+      <prompt id="PPModifiersMannerPPPrompt" show="swPPModifiersYesManner">Maintenant entrez ici des exemples de syntagmes adpositionnels avec les adverbes de manière qui les modifient:</prompt>
+      <textBox id="PPWithMannerModifiersExample" dataItem="mannerWithPP" rows="3" show="swPPModifiersYesManner"/>
+
+      <checkboxGroup id="PPMannerPos" show="swPPModifiersYesManner">
+         <prompt><br/>En regardant les données dans la case ci-dessus, où les adverbes de manière se trouvent- ils eu égard au reste du syntagme adpositionnel? Coshez toutes les options qui sont correctes dans votre langue.</prompt>
+         <checkbox id="PPMannerPosBefore"  dataItem="ppMannerPosBefore">Avant</checkbox>
+         <checkbox id="PPMannerPosAfter"  dataItem="ppMannerPosAfter">Après</checkbox>
+         <checkbox id="PPMannerPosBoth"  dataItem="ppMannerPosBoth">Des deux côtés en même temps</checkbox>
+         <checkbox id="PPMannerPosOther"  dataItem="ppMannerPosOther">Dans ma langue ils se trouvent dans la position suivante: <textBox  id="PPMannerPosOtherContent" dataItem="ppMannerPosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="PPMannerNoCheckPrompt" show="swPPMannerYesandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où ces modificateurs se trouvent eu égard au reste du syntagme adpositionnel dans votre langue, ou changez la réponse ci-dessus pour un type de modificateur différent. Dans ce cas vous ne devriez pas avoir d’exemples de syntagmes adpositionnels avec modificateurs adverbiaux dans la zone de texte ci-dessus.</prompt>
+      <instruction id="PPModifiersMannerYesInstruction" show="swPPModifiersYesManner">In the lexicon, mark the manner adverbials with the feature <feature>modifies_PP</feature>.</instruction>
+      <instruction id="PPMannerEitherRestrictedInstruction" show="swPPMannerEitherorBoth">In the lexicon, mark those manner adverbials which can only occur initially with the feature <feature>PP-initial</feature> and those which can only occur finally with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      <br/><br/>
+      <prompt id="PPModifiersLocativePrompt" show="swPPModifiersYesLocative">Entrez ici les adverbes de lieu qui peuvent modifier un syntagme adpositionnel entier:</prompt>
+      <textBox id="PPLocativeModifiersExample" dataItem="locative" rows="3" show="swPPModifiersYesLocative"/>
+      <prompt id="PPModifiersLocativePPPrompt" show="swPPModifiersYesLocative">Maintenant entrez ici des exemples de syntagmes adpositionnels avec des adverbes de lieu qui les modifient:</prompt>
+      <textBox id="PPWithLocativeModifiersExample" dataItem="locativeWithPP" rows="3" show="swPPModifiersYesLocative"/>
+
+      <checkboxGroup id="PPLocativePos" show="swPPModifiersYesLocative">
+         <prompt><br/>En regardant les donées dans la case ci-dessus où ces adverbes de lieu se trouvent-ils eu égard au reste du syntagme adpositionnel? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+         <checkbox id="PPLocativePosBefore"  dataItem="ppLocativePosBefore">Avat</checkbox>
+         <checkbox id="PPLocativePosAfter"  dataItem="ppLocativePosAfter">Après</checkbox>
+         <checkbox id="PPLocativePosBoth"  dataItem="ppLocativePosBoth">Des deux côtés en même temps</checkbox>
+         <checkbox id="PPLocativePosOther"  dataItem="ppLocativePosOther">Dans ma langue ils peuvent se trouver dans la position suivante: <textBox  id="PPLocativePosOtherContent" dataItem="ppLocativePosOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="PPLocativeNoCheckPrompt" show="swPPLocativeYesandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où ces modificateurs d’adverbe de lieu se trouvent eu égard au reste du syntagme adpositionnel dans votre langue, ou changez la réponse ci-dessus pour un type différent de modificateur. Dans ce cas, vous ne devriez pas avoir d’exemples de syntagmes adpositionnels avec des modificateurs d’adverbe de lieu dans la zone de texte ci-dessus.</prompt>
+      <instruction id="PPModifiersLocativeYesInstruction" show="swPPModifiersYesLocative">In the lexicon, mark the locative adverbials with the feature <feature>modifies_PP</feature>.</instruction>
+      <instruction id="PPLocativeEitherRestrictedInstruction" show="swPPLocativeEitherorBoth">In the lexicon, mark those locative adverbials which can only occur initially with the feature <feature>PP-initial</feature> and those which can only occur finally with the feature <feature>PP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+      
+      <br/><br/>
+      <prompt id="PPModifiersOtherPrompt" show="swPPModifiersYesOther">Entrez ici les autres éléments qui peuvent modifier un syntagme adpositionnel entier dans votre langue:</prompt>
+      <textBox id="PPOtherModifiersExample" dataItem="otherMod" rows="3" show="swPPModifiersYesOther"/>
+      <prompt id="PPModifiersOtherPPPrompt" show="swPPModifiersYesOther">Maintenant entrez ici les exemples de syntagmes adpositionnels avec ces autres éléments qui les modifient:</prompt>
+      <textBox id="PPWithOtherModifiersExample" dataItem="otherModWithPP" rows="3" show="swPPModifiersYesOther"/>
+      <br/>
+      <br/>
+        <buttons>
+            <button id="PPMainBack" value="Back" goto="Contents.htm"/>
+            <button id="PPMainNext" value="Next" goto="PPComps.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swPPPosPrep">
+      <whenRadio button="PPPosPrep"/>
+   </showWhen>
+   <showWhen id="swPPPosPost">
+      <whenRadio button="PPPosPost"/>
+   </showWhen>
+   <showWhen id="swPPPosBoth">
+      <whenRadio button="PPPosBoth"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticOrBoth">
+      <whenRadio button="PPTypeClitic"/>
+      <or/>
+      <whenRadio button="PPTypeBoth"/>
+   </showWhen>
+   <showWhen id="swPPPosBothBothEdge">
+      <whenRadio button="PPPosBoth"/>
+      <and/>
+      <whenRadio button="PPTypeBoth"/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesEdge"/>
+   </showWhen>
+   <showWhen id="swPPPosBothBothHead">
+      <whenRadio button="PPPosBoth"/>
+      <and/>
+      <whenRadio button="PPTypeBoth"/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesHead"/>
+   </showWhen>
+   <showWhen id="swPPPosBothWord">
+      <whenRadio button="PPPosBoth"/>
+      <and/>
+      <whenRadio button="PPTypeWord"/>
+   </showWhen>
+   <showWhen id="swPPPosBothCliticEdge">
+      <whenRadio button="PPPosBoth"/>
+      <and/>
+      <whenRadio button="PPTypeClitic"/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesEdge"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticOrBothPrepEdge">
+      <whenRadio button="PPPosPrep"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="PPTypeClitic"/>
+      <or/>
+      <whenRadio button="PPTypeBoth"/>
+      <closeParen/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesEdge"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticOrBothPostEdge">
+      <whenRadio button="PPPosPost"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="PPTypeClitic"/>
+      <or/>
+      <whenRadio button="PPTypeBoth"/>
+      <closeParen/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesEdge"/>
+   </showWhen>
+   <showWhen id="swPPTypeCliticOrBothHead">
+      <openParen/>
+      <whenRadio button="PPTypeClitic"/>
+      <or/>
+      <whenRadio button="PPTypeBoth"/>
+      <closeParen/>
+      <and/>
+      <whenRadio button="PPTypeCliticAttachesHead"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYes">
+        <whenRadio button="PPModifiersYes"/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersDegree"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersOrdinal"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersManner"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersLocative"/>
+      <and/><not/>
+      <whenCheckbox button="PPModifiersOther"/>
+   </showWhen>
+   
+    <showWhen id="swPPModifiersYesDegree">
+        <whenRadio button="PPModifiersYes"/>
+        <and/>
+        <whenCheckbox button="PPModifiersDegree"/>
+    </showWhen> 
+   <showWhen id="swPPDegreeYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersDegree"/>
+      <and/><not/>
+      <whenCheckbox button="PPDegreePosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PPDegreePosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PPDegreePosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PPDegreePosOther"/>
+   </showWhen>
+   <showWhen id="swPPDegreeEitherorBoth">
+      <whenRadio button="PPModifiersDegree"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="PPDegreePosBefore"/>
+      <and/>
+      <whenCheckbox button="PPDegreePosAfter"/>
+      <or/>
+      <whenCheckbox button="PPDegreePosBoth"/>
+      <closeParen/>
+   </showWhen>  
+   
+    <showWhen id="swPPModifiersYesOrdinal">
+        <whenRadio button="PPModifiersYes"/>
+        <and/>
+        <whenCheckbox button="PPModifiersOrdinal"/>
+    </showWhen>
+   <showWhen id="swPPOrdinalYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersOrdinal"/>
+      <and/><not/>
+      <whenCheckbox button="PPOrdinalPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PPOrdinalPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PPOrdinalPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PPOrdinalPosOther"/>
+   </showWhen>
+   <showWhen id="swPPOrdinalEitherorBoth">
+      <whenRadio button="PPModifiersOrdinal"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="PPOrdinalPosBefore"/>
+      <and/>
+      <whenCheckbox button="PPOrdinalPosAfter"/>
+      <or/>
+      <whenCheckbox button="PPOrdinalPosBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesManner">
+        <whenRadio button="PPModifiersYes"/>
+        <and/>
+        <whenCheckbox button="PPModifiersManner"/>
+    </showWhen>
+   <showWhen id="swPPMannerYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersManner"/>
+   <and/><not/>
+      <whenCheckbox button="PPMannerPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PPMannerPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PPMannerPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PPMannerPosOther"/>
+   </showWhen>
+   <showWhen id="swPPMannerEitherorBoth">
+      <whenRadio button="PPModifiersManner"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="PPMannerPosBefore"/>
+      <and/>
+      <whenCheckbox button="PPMannerPosAfter"/>
+      <or/>
+      <whenCheckbox button="PPMannerPosBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesLocative">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersLocative"/>
+   </showWhen>
+   <showWhen id="swPPLocativeYesandNoCheck">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersLocative"/>
+      <and/><not/>
+      <whenCheckbox button="PPLocativePosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PPLocativePosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PPLocativePosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PPLocativePosOther"/>
+   </showWhen>
+   <showWhen id="swPPLocativeEitherorBoth">
+      <whenRadio button="PPModifiersLocative"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="PPLocativePosBefore"/>
+      <and/>
+      <whenCheckbox button="PPLocativePosAfter"/>
+      <or/>
+      <whenCheckbox button="PPLocativePosBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swPPModifiersYesOther">
+      <whenRadio button="PPModifiersYes"/>
+      <and/>
+      <whenCheckbox button="PPModifiersOther"/>
+   </showWhen>  
+
+&TechnicalTerms; 
+</page>

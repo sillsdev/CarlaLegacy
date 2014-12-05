@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPManner" count="3/6">
+   <title level="2">Adverbes et Syntagmes Adverbiaux – Adverbes de manière</title>
+   <introduction>Les adverbes de manière modifient le verbe directement; ils se terminent d’habitude en <example>-ment</example> en français.  Il semble qu’ils n’aient pas des équivalents des autres types de syntagmes, sauf peut-être de certains comparatifs, tels que <example>aussi vite qu’il le pouvait</example>.  (On traitera des comparatifs à la <section number="9.5">Phrases Simples – Comparatifs</section>.)  En français on peut modifier les adverbes de manière en mettant <example>très</example>
+et <example>si</example>, comme suit:
+</introduction>
+    <EnglishExample>
+       <exItem label="1.">très vite</exItem>
+       <exItem label="2.">si lentement</exItem>
+       <exItem label="3.">très bien</exItem>
+    </EnglishExample>
+    <form section="advp">
+       <prompt><br/>Certaines langues expriment la manière non pas par des mots indépendants, mais par les affixes verbaux. Entrez ici des exemples qui montrent comment votre langue exprime la manière, sans utiliser des modificateurs. Si les adverbes de manière sont des affixes, mettez un tiret pour montrer de quel côté ils s’attachent.</prompt>
+        <textBox id="AdvPMannerExample" dataItem="mannerExample" rows="5"/>
+<br/> <br/>
+<radioGroup>
+    <groupName dataItem="mannerType" default="word">RAdvPMannerType</groupName>
+   <prompt>Est-ce que votre langue possède des adverbes de manière écrits comme des mots indépendants?</prompt>
+    <radio id="AdvPMannerTypeWord" dataValue="word">Oui</radio>
+   <radio id="AdvPMannerTypeBoth" dataValue="both">Certains sont des mots indépendants, d’autres font partie du verbe</radio>
+   <radio id="AdvPMannerTypeAffix" dataValue="affix">Non, tous font partie du verbe</radio>
+</radioGroup>
+       <instruction id="AdvPMannerTypeWordInstruction" show="swAdvPMannerTypeWordOrBoth">In the lexicon, key the feature <feature>manner</feature>
+          on all adverb words that express manner.
+       </instruction>
+       <radioGroup id="AdvPMannerWordDegree" show="swAdvPMannerTypeWordOrBoth">
+        <groupName dataItem="mannerDegree" default="no">RAdvPMannerWordDegree</groupName>
+          <prompt><br/>Pour les adverbes de manière sous forme de mots indépendants, est-ce que votre langue a un moyen d’exprimer leur intensité?</prompt>
+          <radio id="AdvPMannerWordDegreeNo" dataValue="no">Non, les adverbes de manière ne sont ni modifiés ni intensifiés</radio>
+          <radio id="AdvPMannerWordDegreeYes" dataValue="yes">Oui, on peut les modifier ou les intensifier de la façon suivante:</radio>
+       <checkboxGroup id="AdvPMannerWordDegreeType" show="swAdvPMannerWordDegreeYes">
+          <prompt>Cochez toutes les options qui sont valables pour votre langue.</prompt> 
+          <checkbox id="AdvPMannerWordDegreeWord" dataItem="mannerWordDegreeWord">Les mots de degré peuvent modifier l’adverbe de manière</checkbox>
+          <checkbox id="AdvPMannerWordDegreeAttaches" dataItem="mannerWordDegreeAttaches">Il y a un affixe ou un clitique qui s’attache à l’adverbe de manière pour l’intensifier </checkbox>
+          <checkbox id="AdvPMannerWordDegreeRedup" dataItem="mannerWordDegreeRedup">On utilise le redoublement pour intensifier le sens de l’adverbe de manière</checkbox>
+          <checkbox id="AdvPMannerWordDegreeOther" dataItem="mannerWordDegreeOther">Pour intensifier le sens de l’adverbe de manière ma langue fait ainsi:<textBox  id="AdvPMannerWordDegreeOtherContent" dataItem="mannerWordDegreeOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       </radioGroup>
+       <prompt id="AdvPMannerWordDegreeNoCheckPrompt" show="swAdvPMannerTypeWordDegreeYesNoCheck">AVERTISSEMENT: Vous avez dit en-dessus que les adverbes de manière peuvent être modifiés ou intensifiés, mais vous n’avez coché aucune des options.  Cochez une option ou plusieurs, ou bien changez votre réponse ci-dessus en « Non, les adverbes de manière ne sont ni modifiés ni intensifiés ».</prompt>
+       <prompt id="AdvPMannerWordDegreePrompt" show="swAdvPMannerTypeWordAndYesDegree">Entrez ici les mots de degré qui peuvent modifier les adverbes de manière:</prompt>
+   <textBox id="AdvPMannerDegreeExample" dataItem="mannerDegreeExample" rows="3" show="swAdvPMannerTypeWordAndYesDegree"/>       
+       <prompt id="AdvPMannerWordDegreePhrasePrompt" show="swAdvPMannerTypeWordAndYesDegree">Maintenant entrez ici des exemples où les adverbes de manière sont modifiés par des mots de degré:</prompt>
+   <textBox id="AdvPMannerDegreePhraseExample" dataItem="mannerDegreePhraseExample" rows="5" show="swAdvPMannerTypeWordAndYesDegree"/> 
+       <br/><br/>
+       <checkboxGroup id="AdvPMannerlDegreeWordTable" show="swAdvPMannerTypeWordAndYesDegree">
+          <prompt>Dans les exemples que vous venez de citer où se mettent les modificateurs par rapport à l’adverbe de manière? Cochez toutes les options valables pour votre langue.</prompt>
+          <checkbox id="AdvPMannerDegreeWordBefore" checked="yes" dataItem="mannerDegreeWordBefore">Avant l’adverbe de manière</checkbox>
+          <checkbox id="AdvPMannerDegreeWordAfter" checked="yes" dataItem="mannerDegreeWordAfter">Après l’adverbe de manière</checkbox>
+          <checkbox id="AdvPMannerDegreeWordBoth" checked="yes" dataItem="mannerDegreeWordBoth">Des deux côtés en même temps</checkbox>
+          <checkbox id="AdvPMannerDegreeWordOther" checked="yes" dataItem="mannerDegreeWordOther">Dans ma langue les mots de degré peuvent se mettre comme suit: <textBox  id="AdvPMannerDegreeWordOtherContent" dataItem="mannerDegreeWordOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="AdvPMannerDegreeWordNoCheckPrompt" show="swAdvPMannerDegreeWordAndNoCheck">AVERTISSEMENT: Vous devez cocher une case pour décrire la position de ces mots dans votre langue, ou bien changez la réponse ci-dessus et mentionnez un autre type de modificateur.</prompt>
+       <instruction  id="AdvPMannerDegreeYesInstruction" show="swAdvPMannerTypeWordAndYesDegree">In the lexicon, key the features <feature>makeDeg modifies_manner</feature> on the degree words to change the category and allow it to modify manner adverbs.  Simply add the <feature>modifies_manner</feature> feature if this same degree word can modify temporal and/or locative adverbs and you already marked it with those features.</instruction>
+       <instruction id="AdvPMannerDegreeEitherRestrictedInstruction" show="swAdvPMannerDegreeEitherRestricted">In the lexicon, mark those degree words which can only occur before the adverb with the feature <feature>AdvP-initial</feature> and those which can only occur after the adverb with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>      
+       
+       <prompt id="AdvPMannerWordDegreeAttachesPrompt" show="swAdvPMannerWordDegreeAttaches">Entrez ici les affixes ou les clitiques qui peuvent modifier les adverbes de manière .Mettez un tiret ou un signe égalité pour indiquer de quel côté ils s’attachent à l’adverbe:</prompt>
+   <textBox id="AdvPMannerWordDegreeAffixExample" dataItem="mannerDegreeAffixExample" show="swAdvPMannerWordDegreeAttaches" rows="3"/>
+       <prompt id="AdvPMannerWordDegreeAffixPhrasePrompt" show="swAdvPMannerWordDegreeAttaches">Entrez ici des exemples des affixes ou des clitiques attachés aux adverbes de manière:</prompt>
+   <textBox id="AdvPMannerWordPhraseAffixExample" dataItem="mannerPhraseAffixExample" show="swAdvPMannerWordDegreeAttaches"/>
+       <prompt id="AdvPMannerWordDegreeRedupPrompt" show="swAdvPMannerTypeWordRedup">Entrez ici des exemples des adverbes de manière avec <technicalTermRef term="ttReduplication">redoublement</technicalTermRef> comme moyen d’intensification:</prompt>
+   <textBox id="AdvPMannerDegreeRedupExample" dataItem="mannerDegreeRedupExample" rows="5" show="swAdvPMannerTypeWordRedup"/> 
+       <prompt id="AdvPMannerWordDegreeOtherPrompt" show="swAdvPMannerTypeWordAndOther">Entrez ici des exemples des adverbes de manière qui montrent d’autres moyens de les intensifier:</prompt>
+       <textBox id="AdvPMannerDegreeOtherExample" dataItem="mannerDegreeOtherExample" rows="5" show="swAdvPMannerTypeWordAndOther"/> 
+
+    <radioGroup id="AdvPMannerAffixDegree" show="swAdvPMannerTypeAffix">
+        <groupName dataItem="mannerAffixDegree" default="no">RAdvPMannerAffixDegree</groupName>
+       <prompt><br/>Est-ce que votre langue a un moyen d’intensifier les adverbes de manière qui sont des affixes?</prompt>
+       <radio id="AdvPMannerAffixDegreeNo" dataValue="no">Non, les affixes d’adverbes de manière ne sont ni modifiés ni intensifiés</radio>
+       <radio id="AdvPMannerAffixDegreeYes" dataValue="yes">Oui, les affixes d’ adverbes de manière peuvent être modifiés ou intensifiés comme suit:</radio>
+       <checkboxGroup id="AdvPMannerAffixDegreeType" show="swAdvPMannerAffixDegreeYes">
+          <prompt>Cochez toutes les options valables pour votre langue.</prompt> 
+          <checkbox id="AdvPMannerAffixDegreeYesBefore" dataItem="mannerAffixDegreeYesBefore">Un affixe modificateur peut paraître avant l’adverbe de manière</checkbox>
+          <checkbox id="AdvPMannerAffixDegreeYesAfter" dataItem="mannerAffixDegreeYesAfter">Un affixe modificateur peut paraître après l’adverbe de manière</checkbox>
+          <checkbox id="AdvPMannerAffixDegreeRedup" dataItem="mannerAffixDegreeRedup">On utilise le redoublement pour intensifier le sens des affixes d’adverbes de manière</checkbox>
+          <checkbox id="AdvPMannerAffixDegreeOther" dataItem="mannerAffixDegreeOther">Dans ma langue on intensifie le sens des affixes de manière de façon suivante:<textBox  id="AdvPMannerAffixDegreeOtherContent" dataItem="mannerAffixDegreeOther" rows="2"/></checkbox>
+       </checkboxGroup>
+    </radioGroup>
+       <prompt id="AdvPMannerAffixDegreeNoCheckPrompt" show="swAdvPMannerTypeAffixDegreeYesNoCheck">AVERTISSEMENT: Vous avez dit dessus que les affixes adverbiaux de manière peuvent être modifiés ou intensifiés, mais vous n’avez coché aucune option.  Cochez une option ou plusieurs comme il convient, ou bien changez votre réponse en « Non, les affixes adverbiaux de manière ne sont ni modifiés ni intensifiés ».</prompt>
+       <prompt id="AdvPMannerAffixDegreePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Entrez ici les affixes qui peuvent modifier ou intensifier les affixes adverbiaux de manière; indiquez d’un tiret de quel côté ils s’attachent:</prompt>
+        <textBox id="AdvPMannerAffixDegreeExample" dataItem="mannerAffixDegreeExample" rows="3" show="swAdvPMannerTypeAffixAndYesDegree"/>   
+        <br/><br/>
+       <prompt id="AdvPMannerAffixDegreePhrasePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Maintenant entrez ici des exemples des affixes adverbiaux de manière qui s’attachent au verbe avec des affixes modificateurs:</prompt>
+        <textBox id="AdvPMannerAffixDegreePhraseExample" dataItem="mannerAffixDegreePhraseExample" rows="5" show="swAdvPMannerTypeAffixAndYesDegree"/>           
+       <prompt id="AdvPMannerAffixDegreeRedupPrompt" show="swAdvPMannerTypeAffixRedup">Entrez ici des exemples des affixes adverbiaux de manière qui s’attachent au verbe avec <technicalTermRef term="ttReduplication">redoblement</technicalTermRef> comme moyen d’intensification:</prompt>
+        <textBox id="AdvPMannerAffixDegreeRedupExample" dataItem="mannerAffixDegreeRedupExample" rows="5" show="swAdvPMannerTypeAffixRedup"/>
+       <prompt id="AdvPMannerAffixDegreeOtherPrompt" show="swAdvPMannerTypeAffixAndOther">Entrez ici des exemples des affixes adverbiaux de manière qui montrent les autres moyens de les intensifier:</prompt>
+       <textBox id="AdvPMannerAffixDegreeOtherExample" dataItem="mannerAffixDegreeOtherExample" rows="5" show="swAdvPMannerTypeAffixAndOther"/> 
+       <br/><br/>      
+        <buttons>
+            <button id="AdvPMannerExamplesBack" value="Back" goto="AdvPLocative.xml"/>
+            <button id="AdvPMannerExamplesNext" value="Next" goto="AdvPReason.xml"/>
+        </buttons>
+    </form>
+<showWhen id="swAdvPMannerTypeWordOrBoth">
+    <whenRadio button="AdvPMannerTypeWord"></whenRadio>
+   <or/>
+   <whenRadio button="AdvPMannerTypeBoth"/>
+</showWhen>
+    <showWhen id="swAdvPMannerTypeAffix">
+        <whenRadio button="AdvPMannerTypeAffix"/>
+       <or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+    </showWhen>
+    <showWhen id="swAdvPMannerWordDegreeAttaches">
+       <not/>
+       <whenRadio button="AdvPMannerWordDegreeNo"/>
+       <and/><openParen/>
+       <whenRadio button="AdvPMannerTypeWord"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerWordDegreeAttaches"/>
+       <or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerWordDegreeAttaches"/>
+       <closeParen/>
+    </showWhen>
+   <showWhen id="swAdvPMannerWordDegreeYes">
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+      <and/>
+<openParen/>
+      <whenRadio button="AdvPMannerTypeWord"></whenRadio>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swAdvPMannerAffixDegreeYes">
+      <whenRadio button="AdvPMannerAffixDegreeYes"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndYesDegree">
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+        <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeWord"/>
+      <and/><not/>
+      <whenRadio button="AdvPMannerTypeAffix"/>
+    </showWhen>
+    <showWhen id="swAdvPMannerTypeAffixAndYesDegree">
+       <not/>
+       <whenRadio button="AdvPMannerAffixDegreeNo"/>
+       <and/><openParen/>
+       <whenRadio button="AdvPMannerTypeAffix"/>
+        <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeYesAfter"/>     
+       <or/>
+        <whenRadio button="AdvPMannerTypeAffix"/>
+        <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeYesBefore"/>
+<or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeYesAfter"/>
+       <or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeYesBefore"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swAdvPMannerTypeWordRedup">
+       <not/>
+       <whenRadio button="AdvPMannerWordDegreeNo"/>
+       <and/><openParen/>
+       <whenRadio button="AdvPMannerTypeWord"/>
+        <and/>
+       <whenCheckbox button="AdvPMannerWordDegreeRedup"/>
+<or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerWordDegreeRedup"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swAdvPMannerTypeAffixRedup">
+       <not/>
+       <whenRadio button="AdvPMannerAffixDegreeNo"/>
+       <and/><openParen/>
+       <whenRadio button="AdvPMannerTypeAffix"/>
+        <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeRedup"/>
+<or/>
+       <whenRadio button="AdvPMannerTypeBoth"/>
+       <and/>
+       <whenCheckbox button="AdvPMannerAffixDegreeRedup"/>
+       <closeParen/>
+    </showWhen>
+   <showWhen id="swAdvPMannerTypeWordAndOther">
+      <not/>
+      <whenRadio button="AdvPMannerWordDegreeNo"/>
+      <and/><openParen/>
+      <whenRadio button="AdvPMannerTypeWord"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeOther"/>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeOther"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixAndOther">
+    <not/>
+      <whenRadio button="AdvPMannerAffixDegreeNo"/>
+      <and/><openParen/>
+      <whenRadio button="AdvPMannerTypeAffix"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerAffixDegreeOther"/>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerAffixDegreeOther"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeWordDegreeYesNoCheck">
+<openParen/>
+      <whenRadio button="AdvPMannerTypeWord"/>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+   <closeParen/>   
+   <and/>
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerWordDegreeWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerWordDegreeAttaches"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerWordDegreeRedup"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerWordDegreeOther"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerTypeAffixDegreeYesNoCheck">
+      <openParen/>
+      <whenRadio button="AdvPMannerTypeAffix"/>
+      <or/>
+      <whenRadio button="AdvPMannerTypeBoth"/>
+      <closeParen/>   
+      <and/>
+      <whenRadio button="AdvPMannerAffixDegreeYes"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerAffixDegreeYesAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerAffixDegreeYesBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerAffixDegreeRedup"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerAffixDegreeOther"/>
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeWordAndNoCheck">
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerDegreeWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerDegreeWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerDegreeWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPMannerDegreeWordOther"/>     
+   </showWhen>
+   <showWhen id="swAdvPMannerDegreeEitherRestricted">
+      <whenRadio button="AdvPMannerWordDegreeYes"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerWordDegreeWord"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="AdvPMannerDegreeWordBefore"/>
+      <and/>
+      <whenCheckbox button="AdvPMannerDegreeWordAfter"/>
+      <or/>
+      <whenCheckbox button="AdvPMannerDegreeWordBoth"/>
+      <closeParen/>
+   </showWhen>
+   
+   &TechnicalTerms; 
+   
+</page>

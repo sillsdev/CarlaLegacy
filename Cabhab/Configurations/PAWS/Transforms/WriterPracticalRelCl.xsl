@@ -614,15 +614,6 @@
 </xsl:if>
    </section1>
    
-   <section1 id="sTexts">
-      <secTitle>Texts</secTitle>
-      <p>
-<object type="tComment">Include several texts here to demonstrate how larger constructions such as paragraphs, conversations, and narrative stories are formed.  Include examples of various literary types.</object>
-</p>
-      <p>
-<object type="tComment">  A suggested format for presenting the texts is to present it in the vernacular language as a whole first, so the native speakers can appreciate it.  Then present the interlinear form, as in the examples throughout the grammar.  Finally, give a free translation as a whole, so the non-native speaker can appreciate more about the culture.</object>
-</p>
-   </section1>    
    
     
         

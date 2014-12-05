@@ -82,7 +82,7 @@
        <prompt id="PronPossAffixNoPhrasePrompt" show="swPronPossAffixNoPhrase"><br/>Key the special word that is possessed by the possessor pronouns to form a possessive phrase that acts the same as a possessive pronoun here:
        </prompt>
        <textBox id="PronPossPhraseWordExamples" dataItem="pronPossPhraseWordExample"  rows="2" show="swPronPossAffixNoPhrase"/> 
-       <instruction id="PronPossPhraseWordInstruction" show="swPronPossAffixNoPhrase">In the lexicon, add the feature <feature>possessive</feature> to this special possessive word.</instruction>
+       <instruction id="PronPossPhraseWordInstruction" show="swPronPossAffixNoPhrase">In the lexicon, add the feature <feature>possessive</feature> to this special possessive word, which also must have the category <category>N</category>.</instruction>
        <br/><br/>
         <buttons>
             <button id="PronPossBack" value="Back" goto="PronMain.xml"/>

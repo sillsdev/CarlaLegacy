@@ -6,7 +6,8 @@
 <page id="NPArtPosition" count="2/2">
     <title level="2">Nominal Phrases - Articles &amp; Demonstratives: Position and Agreement Features</title>
     <form section="np">
-        <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical"><br/>Now we are ready to build the next part of the phrase structure tree.  </span>Key examples of nominal phrases with <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">articles and demonstratives</span><span id="NPArtSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemSpan" show="swNPArtAndDemDem">demonstratives</span> here:</prompt>
+        <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical"><br/>Now we are ready to build the next part of the phrase structure tree.  
+        </span>Key examples of nominal phrases with <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">articles and demonstratives</span><span id="NPArtSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemSpan" show="swNPArtAndDemDem">demonstratives</span> here:</prompt>
         <textBox id="NPArtPosExample" show="swNPArtAndDem" dataItem="example"/>
         <prompt id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Since your language does not have articles or demonstratives expressed as independent words, we do not need to determine a syntactic position for them.</prompt>
 <instruction id="NPArtAndDemNoInstruction2" show="swNPArtAndDemNo">You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the section on possessors.</instruction>
@@ -21,9 +22,9 @@
        <prompt id="NPArtAndDemArtPosNoCheckPrompt" show="swNPArtAndDemArtAndNoCheck">WARNING: You need to check at least one box to describe where the articles occur with respect to the noun in your language, or change the answer on the previous page to one that does not include articles which are written as independent words.</prompt>
        <radioGroup id="NPArtAndDemArtRequiredTable" show="swNPArtAndDemArt">
           <groupName dataItem="artRequired" default="no">RNPArtAndDemArtRequired</groupName>
-          <prompt><br/>Is an article required to be present in every nominal phrase?</prompt>
+           <prompt><br/>Is an article required to be present in every nominal phrase (disregard possessed nouns for now)?</prompt>
           <radio id="NPArtAndDemArtRequiredNo" dataValue="no">No, an article is always optional</radio>
-          <radio id="NPArtAndDemArtRequiredMass" dataValue="mass">No, an article is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
+          <radio id="NPArtAndDemArtRequiredMass" dataValue="mass" show="swNPArtAgreementNumberYes">No, an article is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns</radio>
           <radio id="NPArtAndDemArtRequiredYes" dataValue="yes">Yes, an article is always required</radio>
      </radioGroup>          
  
@@ -37,12 +38,31 @@
        <prompt id="NPArtAndDemDemPosNoCheckPrompt" show="swNPArtAndDemDemAndNoCheck">WARNING: You need to check at least one box to describe where the demonstratives occur with respect to the noun in your language, or change the answer on the previous page to one that does not include demonstratives which are written as independent words.</prompt>
        <radioGroup id="NPArtAndDemDemRequiredTable" show="swNPArtAndDemDem">
             <groupName dataItem="demRequired" default="no">RNPArtAndDemDemRequired</groupName>
-            <prompt><br/>Is a demonstrative required to be present in every nominal phrase?</prompt>
+           <prompt><br/>Is a demonstrative required to be present in every nominal phrase (disregard possessed nouns for now)?</prompt>
             <radio id="NPArtAndDemDemRequiredNo" dataValue="no">No, a demonstrative is always optional</radio>
-            <radio id="NPArtAndDemDemRequiredMass" dataValue="mass">No, a demonstrative is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
+            <radio id="NPArtAndDemDemRequiredMass" dataValue="mass" show="swNPDemAgreementNumberYes">No, a demonstrative is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns</radio>
             <radio id="NPArtAndDemDemRequiredYes" dataValue="yes">Yes, a demonstrative is always required</radio>
+       </radioGroup>
+        
+        <radioGroup id="NPDemClassifierSpecificTable" show="swOTClassifierSpecificAndNPArtAndDemDem">
+            <groupName dataItem="classifierPresentDem" default="no">RNPDemClassifierPresent</groupName>
+            <prompt><br/>Looking at the examples, are classifiers used in these nominal phrases with a demonstrative?</prompt>
+            <radio id="NPDemClassifierPresentYes"  dataValue="yes">Yes, a classifier is required in all nominal phrases which contain a demonstrative</radio>
+            <radio id="NPDemClassifierPresentSome" dataValue="some">A classifier is present in some nominal phrases which contain a demonstrative, but is not required in all of them</radio>
+            <radio id="NPDemClassifierPresentNo" dataValue="no">No, a classifier is never used in this type of nominal phrase</radio>
         </radioGroup>
- 
+        <checkboxGroup id="NPDemClassifierSpecificPos" show="swOTClassifierSpecificAndNPArtAndDemDemAndNPDemClassifierPresentYesOrSome">
+            <prompt><br/>Looking at the examples, where do the classifiers occur with respect to the demonstrative and the noun?  Check all options that are correct for your language</prompt>
+            <checkbox id="NPDemClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificDemPosBeforeBoth">First, before both the demonstrative and the noun</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificDemPosAfterBoth">Last, after both the noun and the demonstrative</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosAfterDemBeforeN"  dataItem="classifierSpecificDemPosAfterDemBeforeN">After the demonstrative but before the noun</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosAfterNBeforeDem"  dataItem="classifierSpecificDemPosAfterNBeforeDem">After the noun but before the demonstrative</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosPrefixDem"  dataItem="classifierSpecificDemPosPrefixDem">As a prefix on the demonstrative</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosSuffixDem"  dataItem="classifierSpecificDemPosSuffixDem">As a suffix on the demonstrative</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosOther"  dataItem="classifierSpecificDemPosOther">In my language, the classifiers may occur in the following position: <textBox  id="NPClassifierSpecificDemPosOtherContent" dataItem="classifierSpecificDemPosOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="NPDemClassifierSpecificPosNoCheckPrompt" show="swNPDemClassifierPresentYesOrSomeAndNoCheck">WARNING: You need to check at least one box to describe where the classifiers occur with respect to the demonstrative and the noun in your language, or change your answer above to “No, a classifier is never used in this type of nominal phrase”.</prompt>
+        
        <radioGroup id="NPArtAndDemBothTable" show="swNPArtAndDemBoth">
             <groupName dataItem="artBothCooccur" default="different">RNPArtAndDemBoth</groupName>
             <prompt><br/>Do articles and demonstratives co-occur in the same nominal phrase?</prompt>
@@ -58,7 +78,8 @@
           <checkbox id="NPArtAndDemBothCooccurNoPosOther" dataItem="demOrArtPosOther">In my language, the demonstrative or article may occur as follows: <textBox  id="NPArtAndDemBothCooccurNoPosOtherContent" dataItem="demOrArtPosOther" rows="2"/></checkbox>
        </checkboxGroup>
        <prompt id="NPArtAndDemBothCooccurNoPosNoCheckPrompt" show="swNPArtAndDemBothCooccurNoAndNoCheck">WARNING: You need to check at least one box to describe where the articles and demonstratives occur with respect to the noun in your language.</prompt>
-       
+ 
+ 
        <checkboxGroup id="NPArtAndDemBothCooccurYesDemPosTable" show="swNPArtAndDemBothCooccurYes">
           <prompt><br/>Where does the demonstrative occur with respect to the noun? Check all options that are correct for your language</prompt>
           <checkbox id="NPArtAndDemBothCooccurYesDemPosBefore" dataItem="demAndArtDemBefore">Before it</checkbox>
@@ -81,36 +102,68 @@
        <instruction id="NPDemEitherSideRestrictedInstruction" show="swNPDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any demonstratives which can occur on either side.</instruction>
        <radioGroup id="NPArtAndDemBothCooccurNoRequiredTable" show="swNPArtAndDemBothCooccurNo">
                 <groupName dataItem="demOrArtRequired" default="no">RNPArtAndDemBothCooccurNoRequired</groupName>
-                <prompt><br/>Is a demonstrative or an article required to be present in every nominal phrase?</prompt>
+           <prompt><br/>Is a demonstrative or an article required to be present in every nominal phrase (disregard possessed nouns for now)?</prompt>
                 <radio id="NPArtAndDemBothCooccurNoRequiredNo" dataValue="no">No, the presence of a demonstrative or an article is always optional</radio>
-                <radio id="NPArtAndDemBothCooccurNoRequiredMass" dataValue="mass">No, a demonstrative or an article is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
+                <radio id="NPArtAndDemBothCooccurNoRequiredMass" dataValue="mass" show="swNPArtOrDemAgreementNumberYes">No, a demonstrative or an article is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns</radio>
                 <radio id="NPArtAndDemBothCooccurNoRequiredYes" dataValue="yes">Yes, either a demonstrative or an article is always required</radio>
             </radioGroup>
           
           <radioGroup id="NPArtAndDemBothCooccurYesDemRequiredTable" show="swNPArtAndDemBothCooccurYes">
              <groupName dataItem="demAndArtDemRequired" default="no">RNPArtAndDemBothCooccurYesDemRequired</groupName>
-             <prompt><br/>Is a demonstrative required to be present in every nominal phrase?</prompt>
+              <prompt><br/>Is a demonstrative required to be present in every nominal phrase (disregard possessed nouns for now)?</prompt>
              <radio id="NPArtAndDemBothCooccurYesDemRequiredNo" dataValue="no">No, a demonstrative is always optional</radio>
-             <radio id="NPArtAndDemBothCooccurYesDemRequiredMass" dataValue="mass">No, a demonstrative is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
+             <radio id="NPArtAndDemBothCooccurYesDemRequiredMass" dataValue="mass" show="swNPDemAgreementNumberYes">No, a demonstrative is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns</radio>
              <radio id="NPArtAndDemBothCooccurYesDemRequiredYes" dataValue="yes">Yes, a demonstrative is always required</radio>
           </radioGroup>
           <radioGroup id="NPArtAndDemBothCooccurYesArtRequiredTable" show="swNPArtAndDemBothCooccurYes">
              <groupName dataItem="demAndArtArtRequired" default="no">RNPArtAndDemBothCooccurYesArtRequired</groupName>
-             <prompt><br/>Is an article required to be present in every nominal phrase?</prompt>
+              <prompt><br/>Is an article required to be present in every nominal phrase (disregard possessed nouns for now)?</prompt>
              <radio id="NPArtAndDemBothCooccurYesArtRequiredNo" dataValue="no">No, an article is always optional</radio>
-             <radio id="NPArtAndDemBothCooccurYesArtRequiredMass" dataValue="mass">No, an article is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns (disregard possessed nouns for now)</radio>
+             <radio id="NPArtAndDemBothCooccurYesArtRequiredMass" dataValue="mass" show="swNPArtAgreementNumberYes">No, an article is optional with plural or <technicalTermRef term="ttMass"/> nouns, but is required with singular nouns</radio>
              <radio id="NPArtAndDemBothCooccurYesArtRequiredYes" dataValue="yes">Yes, an article is always required</radio>
           </radioGroup>
+        
+        <radioGroup id="NPDemBothClassifierSpecificTable" show="swOTClassifierSpecificAndNPArtAndDemBoth">
+            <groupName dataItem="classifierPresentDemBoth" default="no">RNPDemBothClassifierPresent</groupName>
+            <prompt><br/>Looking at the examples, are classifiers used in these nominal phrases with a demonstrative?</prompt>
+            <radio id="NPDemBothClassifierPresentYes"  dataValue="yes">Yes, a classifier is required in all nominal phrases which contain a demonstrative</radio>
+            <radio id="NPDemBothClassifierPresentSome" dataValue="some">A classifier is present in some nominal phrases which contain a demonstrative, but is not required in all of them</radio>
+            <radio id="NPDemBothClassifierPresentNo" dataValue="no">No, a classifier is never used in this type of nominal phrase</radio>
+        </radioGroup>
+        <checkboxGroup id="NPDemBothClassifierSpecificPos" show="swOTClassifierSpecificAndNPArtAndDemBothAndNPDemBothClassifierPresentYesOrSome">
+            <prompt><br/>Looking at the examples, where do the classifiers occur with respect to the demonstrative and the noun?  Check all options that are correct for your language</prompt>
+            <checkbox id="NPDemBothClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificDemBothPosBeforeBoth">First, before both the demonstrative and the noun</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificDemBothPosAfterBoth">Last, after both the noun and the demonstrative</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosAfterDemBeforeN"  dataItem="classifierSpecificDemBothPosAfterDemBeforeN">After the demonstrative but before the noun</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosAfterNBeforeDem"  dataItem="classifierSpecificDemBothPosAfterNBeforeDem">After the noun but before the demonstrative</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosPrefixDem"  dataItem="classifierSpecificDemBothPosPrefixDem">As a prefix on the demonstrative</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosSuffixDem"  dataItem="classifierSpecificDemBothPosSuffixDem">As a suffix on the demonstrative</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosOther"  dataItem="classifierSpecificDemBothPosOther">In my language, the classifiers may occur in the following position: <textBox  id="NPClassifierSpecificDemBothPosOtherContent" dataItem="classifierSpecificDemBothPosOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="NPDemBothClassifierSpecificPosNoCheckPrompt" show="swNPDemBothClassifierPresentYesOrSomeAndNoCheck">WARNING: You need to check at least one box to describe where the classifiers occur with respect to the demonstrative and the noun in your language, or change your answer above to “No, a classifier is never used in this type of nominal phrase”.</prompt>
+        
         <instruction id="NPArtAgreementNumberInstruction" show="swNPArtAgreementNumberYes">
 To handle the number agreement, in the lexicon:
 <ul>
-                <li>Mark the <span id="NPArtOnlySingularSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlySingularSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemSingularSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with singular nouns with the feature <feature>singular</feature>.</li>
-                <li>Mark the <span id="NPArtOnlyPluralSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyPluralSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemPluralSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with plural nouns with the feature <feature>plural</feature>.</li>
+                <li>Mark the articles that can only go with singular nouns with the feature <feature>singular</feature>.</li>
+                <li>Mark the articles that can only go with plural nouns with the feature <feature>plural</feature>.</li>
                 <li>Do not add any feature for number agreement to ones like <example>the</example> in English which can go with either singular or plural nouns.</li>
-                <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate <span id="NPArtOnlyDualSpan" show="swNPArtAndDemArt">articles.</span><span id="NPDemOnlyDualSpan" show="swNPArtAndDemDem">demonstratives.</span><span id="NPArtAndDemDualSpan" show="swNPArtAndDemBoth">articles and demonstratives.</span>
+                <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate articles.
+                </li>
+</ul>
+            </instruction>
+        <instruction id="NPDemAgreementNumberInstruction" show="swNPDemAgreementNumberYes">
+            To handle the number agreement, in the lexicon:
+            <ul>
+                <li>Mark the demonstratives that can only go with singular nouns with the feature <feature>singular</feature>.</li>
+                <li>Mark the demonstratives that can only go with plural nouns with the feature <feature>plural</feature>.</li>
+                <li>Do not add any feature for number agreement to any which can go with either singular or plural nouns.</li>
+                <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate demonstratives.
                 </li>
             </ul>
-We will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
+        </instruction>
+        <instruction id="NPAgreementNumberInstruction" show="swNPAgreementNumberYes">
+                We will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
 <ul>
                 <li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
                 <li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don’t take an affix.</li>
@@ -144,8 +197,8 @@ We will assume that all nouns are masculine by default.  Therefore, only the fem
         <instruction id="NPArtAgreementClassInstruction" show="swNPArtAgreementClassYes">
 To handle class marking and agreement:
 <ul>
-   <li>It is most likely the case that the same affixes that mark the class number or type on <span id="NPArtOnlyClass1Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClass1Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass1Span" show="swNPArtAndDemBoth">articles and demonstratives</span> (and possibly adjectives too) are also used on nouns.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology Questions - Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
-   <li>Any cases where <span id="NPArtOnlyClass2Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClass2Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass2Span" show="swNPArtAndDemBoth">articles, demonstratives</span> or nouns do not have an affix which marks the class will require marking of the class feature on the particular lexical item in the lexicon.   Mark the <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology Questions - Classifiers</section>.</li>
+   <li>It is most likely the case that the same affixes that mark the class number or type on <span id="NPArtOnlyClass1Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClass1Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass1Span" show="swNPArtAndDemBoth">articles and demonstratives</span> (and possibly adjectives too) are also used on nouns.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+   <li>Any cases where <span id="NPArtOnlyClass2Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClass2Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass2Span" show="swNPArtAndDemBoth">articles, demonstratives</span> or nouns do not have an affix which marks the class will require marking of the class feature on the particular lexical item in the lexicon.   Mark the <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section>.</li>
             </ul>
         </instruction>
         <br/>
@@ -533,11 +586,42 @@ To handle class marking and agreement:
         <openParen/>
       <whenValue element="np" attr="artAndDem" value="article"/>
       <or/>
-        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
-      <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
       <closeParen/>
+       <and/>
+       <whenValue element="np" attr="artPl" value="yes"/>
         <and/>
+        <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPDemAgreementNumberYes">
+        <openParen/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <or/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <closeParen/>
+        <and/>
+        <whenValue element="np" attr="demPl" value="yes"/>
+        <and/>
+        <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtOrDemAgreementNumberYes">
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <whenRadio button="NPArtAndDemBothCooccurNo"/>
+        <and/>
+        <whenValue element="np" attr="demPl" value="yes"/>
+        <and/>
+        <whenValue element="np" attr="agreeNumber" value="yes"/>
+<or/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <whenRadio button="NPArtAndDemBothCooccurNo"/>
+            <and/>
+            <whenValue element="np" attr="artPl" value="yes"/>
+            <and/>
+            <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPAgreementNumberYes">
         <whenValue element="np" attr="agreeNumber" value="yes"/>
     </showWhen>
     <showWhen id="swNPArtAgreementAnimacyYes">
@@ -597,5 +681,91 @@ To handle class marking and agreement:
     <showWhen id="swNotPractical">
         <whenValue  element="paws" attr="outputGrammar" value="True"/>
     </showWhen>
-   &TechnicalTerms; 
+
+
+    <showWhen id="swOTClassifierSpecificAndNPArtAndDemDem">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndNPArtAndDemDemAndNPDemClassifierPresentYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPDemClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPDemClassifierPresentSome"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPDemClassifierPresentYesOrSomeAndNoCheck">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPDemClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPDemClassifierPresentSome"/>
+        <closeParen/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosAfterBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosBeforeBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosAfterDemBeforeN"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosAfterNBeforeDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosPrefixDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosSuffixDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosOther"/>
+    </showWhen>
+    
+    <showWhen id="swOTClassifierSpecificAndNPArtAndDemBoth">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndNPArtAndDemBothAndNPDemBothClassifierPresentYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPDemBothClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPDemBothClassifierPresentSome"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPDemBothClassifierPresentYesOrSomeAndNoCheck">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPDemBothClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPDemBothClassifierPresentSome"/>
+        <closeParen/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosAfterBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosBeforeBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosAfterDemBeforeN"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosAfterNBeforeDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosPrefixDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosSuffixDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosOther"/>
+    </showWhen>
+ 
+ &TechnicalTerms; 
    </page>

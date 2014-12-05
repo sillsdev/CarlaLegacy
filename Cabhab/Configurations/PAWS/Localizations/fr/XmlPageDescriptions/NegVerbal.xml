@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="NegVerbal" count="2/4">
+   <title level="2">Constructions Négatives – Éléments adverbaux et auxiliaires</title>
+    <introduction>
+       Nous commençons cette section par l’analyse des adverbes temporels et locatifs au négatif, tels que <example>ne...jamais</example> et <example>nulle part</example>.
+    </introduction>
+   <form section="neg">
+   <checkboxGroup id="NegTemporalType">
+      <prompt>Comment est-ce que votre langue exprime le sens temporel de « ne...jamais »? Cochez toutes les options qui sont correctes en votre langue.</prompt>
+      <checkbox id="NegTemporalTypeWord" dataItem="negTemporalTypeWord">Un mot indépendent ou un syntagme, sans rapport aux formes positives, exprime ce sens négatif temporel</checkbox>
+      <checkbox id="NegTemporalTypeAdverb" dataItem="negTemporalTypeAdverb">Un affixe négatif s’attache à un adverbe positif temporel pour former l’adverbe au négatif</checkbox>
+      <checkbox id="NegTemporalTypeAdverbWord" dataItem="negTemporalTypeAdverbWord">Un mot indépendent négatif et un adverbe positif temporel forment le syntagme temporel au négatif</checkbox>
+      <checkbox id="NegTemporalTypeAffix" dataItem="negTemporalTypeAffix">Il s’agit d’un affixe verbal</checkbox>
+      <checkbox id="NegTemporalTypeVerb" dataItem="negTemporalTypeVerb">Il s’agit seulement d’un affixe verbal au négatif, cependant le sens temporel négatif peut se produire au moyen d’un verbe au négatif avec des adverbes temporels positifs</checkbox>
+      <checkbox id="NegTemporalTypeOther" dataItem="negTemporalTypeOther">Ma langue exprime le sens temporel au négatif comme suit:<textBox  id="NegTemporalTypeOtherContent" dataItem="negTemporalTypeOther" rows="2"/></checkbox>
+   </checkboxGroup>
+      <prompt id="NegTemporalTypeNoCheckPrompt" show="swNegTemporalTypeNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire comment votre langue exprime un sens temporel au négatif.</prompt>
+      <prompt id="NegTemporalExamplePrompt" show="swNegTemporalTypeWord">Entrez ici vos exemples d’adverbes temporels au négatif:</prompt>
+   <textBox id="NegTemporalExample" dataItem="negTemporalExample" show="swNegTemporalTypeWord" rows="3"/>    
+   <instruction id="NegTemporalTypeWordInstruction" show="swNegTemporalTypeWord">In the lexicon, key the features <feature>negative temporal</feature>
+      on all the negative temporal adverbs.
+   </instruction>
+      <prompt id="NegTemporalTypeAdverbPrompt" show="swNegTemporalTypeAdverb">Entrez l’affixe négatif qui s’ajoute aux adverbes temporels positifs; mettez un tiret pour indiquer où il s’attache:</prompt>
+   <textBox id="NegTemporalAdverbAffixExample" dataItem="negTemporalAdverbAffixExample" show="swNegTemporalTypeAdverb" rows="3"/>
+      <prompt id="NegTemporalTypeAdverbPrompt2" show="swNegTemporalTypeAdverb">Maintenant entrez des exemples d’adverbes temporels au négatif qui se forment en attachant aux adverbes temporels positifs un affixe négatif:</prompt>
+   <textBox id="NegTemporalAdverbExample" dataItem="negTemporalAdverbExample" show="swNegTemporalTypeAdverb" rows="5"/>
+   <instruction id="NegTemporalTypeAdverbAffixInstruction" show="swNegTemporalTypeAdverb">In the lexicon, key the feature <feature>negative</feature>
+      on the affix that attaches to the positive temporal adverbs.
+   </instruction>
+   
+      <prompt id="NegTemporalTypeAdverbWordPrompt" show="swNegTemporalTypeAdverbWord">Entrez ici le(s) mot(s) négatif(s) qui accompagne(nt) les adverbes temporels positifs:</prompt>
+   <textBox id="NegTemporalAdverbWordExample" dataItem="negTemporalAdverbWordExample" show="swNegTemporalTypeAdverbWord" rows="3"/>
+      <prompt id="NegTemporalTypeAdverbWordPrompt2" show="swNegTemporalTypeAdverbWord">Maintenant entrez ici des exemples de syntagmes adverbaux temporels qui se forment en attachant le mot négatif aux adverbes temporels positifs:</prompt>
+   <textBox id="NegTemporalAdverbWordsExample" dataItem="negTemporalAdverbWordsExample" show="swNegTemporalTypeAdverbWord" rows="5"/>
+   <br/><br/>
+   <checkboxGroup id="NegTemporalAdverbWordTable" show="swNegTemporalTypeAdverbWord">
+      <prompt>Regardez les exemples que vous venez de donner. Dans quelle position se mettent les mots négatifs par rapport à l’adverbe temporel positif?  Cochez toutes les options qui sont correctes en votre langue.</prompt>
+      <checkbox id="NegTemporalAdverbWordBefore" checked="yes" dataItem="negTemporalAdverbWordBefore">Avant l’adverbe temporel</checkbox>
+      <checkbox id="NegTemporalAdverbWordAfter" checked="yes" dataItem="negTemporalAdverbWordAfter">Après l’adverbe temporel</checkbox>
+      <checkbox id="NegTemporalAdverbWordBoth" checked="yes" dataItem="negTemporalAdverbWordBoth">Des deux côtés simultanément</checkbox>
+      <checkbox id="NegTemporalAdverbWordOther" checked="yes" dataItem="negTemporalAdverbWordOther">Dans ma langue ces mots négatifs peuvent se mettre comme suit: <textBox  id="NegTemporalAdverbWordOtherContent" dataItem="negTemporalAdverbWordOther" rows="2"/></checkbox>
+   </checkboxGroup>	
+      <prompt id="NegTemporalAdverbWordNoCheckPrompt" show="swNegTemporalAdverbWordAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire la position de ces mots négatifs dans votre langue, ou bien changez votre réponse ci-dessus pour montrer comment l’adverbe temporel négatif se rapporte à la forme positive.</prompt>
+   <instruction id="NegTemporalTypeAdverbWordInstruction" show="swNegTemporalTypeAdverbWord">In the lexicon, key the features <feature>makeNeg modifies_temporal</feature>
+      on the negative word which appears with the positive temporal adverbs.
+   </instruction>
+   <instruction id="NegTemporalAdverbWordEitherRestrictedInstruction" show="swNegTemporalTypeAdverbWordEitherRestricted">In the lexicon, mark those negative words which can only occur before the adverb with the feature <feature>AdvP-initial</feature> and those which can only occur after the adverb with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any negative words which can occur on either side.</instruction>       
+   
+      <prompt id="NegTemporalAffixExamplePrompt" show="swNegTemporalTypeAffix">Entrez ici vos exemples de chaque affixe adverbal temporel au négatif qui peut s’attacher aux verbes; mettez un tiret pour indiquer de quel côté il s’attache:</prompt>
+   <textBox id="NegTemporalAffixExample" dataItem="negTemporalAffixExample" show="swNegTemporalTypeAffix" rows="3"/>
+   <instruction id="NegTemporalTypeAffixInstruction" show="swNegTemporalTypeAffix">In the lexicon, key the feature <feature>negative temporal</feature>
+      on the affix(es) that express the meaning of  »no when’ or  »never’.
+   </instruction>
+      <prompt id="NegTemporalAffixVerbExamplePrompt" show="swNegTemporalTypeAffix">Maintenant entrez ici des exemples de chaque affixe adverbal temporel au négatif attaché au verbe:</prompt>
+   <textBox id="NegTemporalAffixVerbExample" dataItem="negTemporalAffixVerbExample" show="swNegTemporalTypeAffix" rows="5"/>
+   
+      <prompt id="NegTemporalVerbExamplePrompt" show="swNegTemporalTypeVerb">Entrez ici vos exemples où un adverbe temporel positif est utilisé avec un verbe au négatif:</prompt>
+   <textBox id="NegTemporalVerbExample" dataItem="negTemporalVerbExample" show="swNegTemporalTypeVerb" rows="3"/>
+   <instruction id="NegTemporalTypeVerbInstruction" show="swNegTemporalTypeVerb">In the lexicon, key the feature <feature>negative</feature>
+      on the affix(es) that express the negation on the verb.  Verbal negation will be discussed further below.
+   </instruction>
+   
+      <prompt id="NegTemporalOtherExamplePrompt" show="swNegTemporalTypeOther">Entrez ici des exemples pour montrer comment votre langue exprime le sens temporel au négatif:</prompt>
+   <textBox id="NegTemporalOtherExample" dataItem="negTemporalOtherExample" show="swNegTemporalTypeOther" rows="5"/>
+   <br/><br/>
+      
+      <prompt id="NegAdvTemporalPrompt" show="swNegTemporalTypeNotNoCheck">Maintenant choisissez au moins un exemple d’un syntagme temporel au négatif. Utilisez-le ici dans une phrase complète où le sujet et l’objet sont positifs, par exemple <example>Jean n’a jamais trouvé le trésor</example>.</prompt>
+      <textBox id="NegAdvPTemporalExample" dataItem="advTemporalExample" rows="4" cols="50"/>
+      <br/>
+      <br/>
+      
+   <checkboxGroup id="NegLocativeType">
+      <prompt>Comment est-ce que votre langue exprime le sens locatif au négatif de « nulle part »? Cochez toutes les options qui sont valables en votre langue.</prompt>
+      <checkbox id="NegLocativeTypeWord" dataItem="negLocativeTypeWord">Le sens locatif au négatif s’exprime par un mot indépendent ou un syntagme sans rapport aux formes positives</checkbox>
+      <checkbox id="NegLocativeTypeAdverb" dataItem="negLocativeTypeAdverb">Un affixe négatif s’ajoute à un adverbe locatif positif pour former l’adverbe négatif</checkbox>
+      <checkbox id="NegLocativeTypeAdverbWord" dataItem="negLocativeTypeAdverbWord">Un mot indépendent négatif est utililsé avec l’adverbe locatif positif pour former le syntagme adverbal locatif au négatif</checkbox>
+      <checkbox id="NegLocativeTypeAffix" dataItem="negLocativeTypeAffix">Il s’agit d’un affixe verbal</checkbox>
+      <checkbox id="NegLocativeTypeVerb" dataItem="negLocativeTypeVerb">Il s’agit d’un affixe verbal négatif; cependant un verbe au négatif peut être utilisé avec un adverbe locatif pour exprimer le sens locatif au négatif</checkbox>
+      <checkbox id="NegLocativeTypeOther" dataItem="negLocativeTypeOther">Ma langue exprime le sens locatif au négatif comme suit:<textBox  id="NegLocativeTypeOtherContent" dataItem="negLocativeTypeOther" rows="2"/></checkbox>
+   </checkboxGroup>
+      <prompt id="NegLocativeTypeNoCheckPrompt" show="swNegLocativeTypeNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire comment votre langue exprime le sens locatif au négatif.</prompt>
+   
+      <prompt id="NegLocativeExamplePrompt" show="swNegLocativeTypeWord">Entrez ici vos exemples d’adverbes locatifs au négatif:</prompt>
+   <textBox id="NegLocativeExample" dataItem="negLocativeExample" show="swNegLocativeTypeWord" rows="3"/>
+   <instruction id="NegLocativeTypeWordInstruction" show="swNegLocativeTypeWord">In the lexicon, key the features <feature>negative locative</feature>
+      on all the negative locative adverbs.
+   </instruction>
+      <prompt id="NegLocativeTypeAdverbPrompt" show="swNegLocativeTypeAdverb">Entrez ici l’affixe négatif qui s’attache à l’adverbe locatif positif; indiquez d’un tiret de quel côté il s’attache:</prompt>
+   <textBox id="NegLocativeAdverbAffixExample" dataItem="negLocativeAdverbAffixExample" show="swNegLocativeTypeAdverb" rows="3"/>
+   <instruction id="NegLocativeTypeAdverbInstruction" show="swNegLocativeTypeAdverb">In the lexicon, key the feature <feature>negative</feature>
+      on the negative affix(es) that attach to a positive locative adverb to express the meaning of « nowhere ».
+   </instruction>
+      <prompt id="NegLocativeTypeAdverbPrompt2" show="swNegLocativeTypeAdverb">Maintenant entrez ici quelques exemples d’ adverbes locatifs au négatif formés par un affixe négatif qui s’attache à l’adverbe locatif positif:</prompt>
+   <textBox id="NegLocativeAdverbExample" dataItem="negLocativeAdverbExample" show="swNegLocativeTypeAdverb" rows="5"/>
+      <prompt id="NegLocativeTypeAdverbWordPrompt" show="swNegLocativeTypeAdverbWord">Entrez ici le mot (ou mots) négatif qui accompagne l’adverbe locatif positif:</prompt>
+   <textBox id="NegLocativeAdverbWordExample" dataItem="negLocativeAdverbWordExample" show="swNegLocativeTypeAdverbWord" rows="3"/>
+      <prompt id="NegLocativeTypeAdverbWordPrompt2" show="swNegLocativeTypeAdverbWord">Maintenant entrez quelques exemples de syntagmes adverbaux locatifs au négatif formés par un mot négatif qui s’attache à l’adverbe locatif positif:</prompt>
+   <textBox id="NegLocativeAdverbWordsExample" dataItem="negLocativeAdverbWordsExample" show="swNegLocativeTypeAdverbWord" rows="5"/>
+   <br/><br/>
+   <checkboxGroup id="NegLocativeAdverbWordTable" show="swNegLocativeTypeAdverbWord">
+      <prompt>Regardez les exemples que vous venez de donner. Dans quelle position se mettent les mots négatifs par rapport à l’adverbe locatif positif? Cochez toutes les options qui sont valables en votre langue.</prompt>
+      <checkbox id="NegLocativeAdverbWordBefore" checked="yes" dataItem="negLocativeAdverbWordBefore">Avant l’adverbe locatif</checkbox>
+      <checkbox id="NegLocativeAdverbWordAfter" checked="yes" dataItem="negLocativeAdverbWordAfter">Après l’adverbe locatif</checkbox>
+      <checkbox id="NegLocativeAdverbWordBoth" checked="yes" dataItem="negLocativeAdverbWordBoth">Des deux côtés simultanément</checkbox>
+      <checkbox id="NegLocativeAdverbWordOther" checked="yes" dataItem="negLocativeAdverbWordOther">Dans ma langue ces mots négatifs peuvent apparaître comme suit: <textBox  id="NegLocativeAdverbWordOtherContent" dataItem="negLocativeAdverbWordOther" rows="2"/></checkbox>
+   </checkboxGroup>	
+      <prompt id="NegLocativeAdverbWordNoCheckPrompt" show="swNegLocativeAdverbWordAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire la position de ces mots négatifs en votre langue ou bien changez votre réponse ci-dessus pour montrer comment l’adverbe locatif négatif se rapporte à la forme positive.</prompt>
+   <instruction id="NegLocativeTypeAdverbWordInstruction" show="swNegLocativeTypeAdverbWord">In the lexicon, key the features <feature>makeNeg modifies_locative</feature>
+      on the negative word which appears with the positive locative adverbs.  You may simply add the additional feature <feature>modifies_locative</feature> if this same negative word is used for temporals above.
+   </instruction>
+   <instruction id="NegLocativeAdverbWordEitherRestrictedInstruction" show="swNegLocativeTypeAdverbWordEitherRestricted">In the lexicon, mark those negative words which can only occur before the adverb with the feature <feature>AdvP-initial</feature> and those which can only occur after the adverb with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any negative words which can occur on either side.</instruction>       
+   
+   
+   
+      <prompt id="NegLocativeAffixExamplePrompt" show="swNegLocativeTypeAffix">Entrez ici vos exemples d’affixes adverbaux locatifs au négatif qui peuvent s’attacher au verbe; indiquez d’un tiret de quel côté il s’attache:</prompt>
+   <textBox id="NegLocativeAffixExample" dataItem="negLocativeAffixExample" show="swNegLocativeTypeAffix" rows="3"/>
+   <instruction id="NegLocativeTypeAffixInstruction" show="swNegLocativeTypeAffix">In the lexicon, key the feature <feature>negative locative</feature>
+      on the affix(es) that express the meaning of  »nowhere’.
+   </instruction>      
+      <prompt id="NegLocativeAffixVerbExamplePrompt" show="swNegLocativeTypeAffix">Maintenant entrez quelques exemples des affixes adverbaux locatifs au négatif qui s’attachent au verbe:</prompt>
+   <textBox id="NegLocativeAffixVerbExample" dataItem="negLocativeAffixVerbExample" show="swNegLocativeTypeAffix" rows="5"/>
+      <prompt id="NegLocativeVerbExamplePrompt" show="swNegLocativeTypeVerb">Entrez ici vos exemples d’adverbes locatifs positifs qui accompagnent un verbe au négatif:</prompt>
+   <textBox id="NegLocativeVerbExample" dataItem="negLocativeVerbExample" show="swNegLocativeTypeVerb" rows="3"/>
+   <instruction id="NegLocativeTypeVerbInstruction" show="swNegLocativeTypeVerb">In the lexicon, key the feature <feature>negative</feature>
+      on the affix(es) that express the negation on the verb.  Verbal negation will be discussed further below.</instruction>
+      <prompt id="NegLocativeOtherExamplePrompt" show="swNegLocativeTypeOther">Entrez ici quelques exemples qui montrent comment votre langue exprime le sens locatif au négatif:</prompt>
+   <textBox id="NegLocativeOtherExample" dataItem="negLocativeOtherExample" show="swNegLocativeTypeOther" rows="3"/>
+   <br/><br/>
+   
+      <prompt id="NegAdvLocativePrompt" show="swNegLocativeTypeNotNoCheck">Maintenant choisissez dans la boîte au moins un exemple d’un syntagme locatif au négatif; utilisez-le ici dans une phrase complète où le sujet et l’objet sont positifs, par exemple <example>Il n’a trouvé la boîte nulle part</example>.</prompt> 
+      <textBox id="NegAdvPLocativeExample" dataItem="advLocativeExample" rows="4" cols="50"/>
+      <br/>
+      <br/>
+      <radioGroup id="NegAdvVerbRequiredTable" show="swNegAdvNotAttached">
+         <groupName dataItem="advVerbRequired" default="no">RAdvVerbRequired</groupName>
+         <prompt>Considérez vos phrases complètes qui présentent ou bien un adverbe temporel ou bien un adverbe locatif au négatif. Est-ce que le verbe (ou l’auxiliaire) doit être au négatif lorsqu’un adverbe négatif independent s’y trouve?</prompt>
+         <radio id="NegAdvVerbRequiredYes" dataValue="yes">Oui, un adverbe négatif n’est pas possible sans verbe (ou auxiliaire) négatif</radio>
+         <radio id="NegAdvVerbRequiredNo" dataValue="no">Non, la négation du verbe (ou de l’ auxiliaire) n’est pas nécessaire lorsqu’un adverbe négatif s’y trouve</radio>
+      </radioGroup>
+<br/><br/>      
+      <introduction>En certaines langues la négation verbale se compose d’un élément auxiliaire; en d’autres d’un simple affixe verbal. L’anglais possède l’auxiliaire négatif <example>not (ne)</example> (mot indépendent qui doit toujours suivre un autre auxiliaire) et la forme négative contractée <example>-n’t</example> (suffixé à l’auxiliaire).  
+         En français la négation verbale se produit par le moyen de l’auxiliaire <example>ne (n’)</example> qui précède le verbe accompagné d’un autre auxiliaire <example>pas</example> qui le suit. Il est possible d’omettre ou l’un ou l’autre, mais pas les deux.  Exemples sont:</introduction>
+      <EnglishExample>
+         <exItem label="1.">The boy did <u>not</u> eat the banana.  « Le garçon <u>n’</u>a <u>pas</u> mangé la banane. »</exItem>
+         <exItem label="2.">The boy did<u>n’t</u> eat the banana. « Le garçon <u>n’</u>a <u>pas</u> mangé la banane. »</exItem>
+         <exItem label="3.">The boy will <u>not</u> eat the banana. « Le garçon <u>ne</u> va <u>pas</u> manger la banane. »</exItem>
+         <exItem label="4.">The boy wo<u>n’t</u> eat the banana. « Le garçon <u>ne</u> mangera <u>pas</u> la banane. »</exItem>
+         <exItem label="5.">The boy might <u>not</u> have eaten the banana. « Le garçon <u>n’</u>a peut-être <u>pas</u> mangé la banane. »</exItem>
+      </EnglishExample>
+      <br/>
+      <br/>
+      <radioGroup>
+         <groupName dataItem="negVerbal" default="yes">RNegAux</groupName>
+         <prompt>Est-ce que votre langue a un moyen d’exprimer la négation ou sur un auxiliaire ou sur le verbe?</prompt>
+         <radio id="NegVerbalNo" dataValue="no">Non</radio>
+         <radio id="NegVerbalYes" dataValue="yes">Oui, la négation s’exprime de la façon qui suit</radio>
+      </radioGroup>
+      <checkboxGroup id="NegVerbalYesTypes" show="swNegVerbalYes">
+         <prompt>Cochez toutes les options valables dans votre langue:</prompt>
+         <checkbox id="NegAux" dataItem="negAuxWord" checked="yes">Les mots auxiliaires négatifs</checkbox>
+         <checkbox id="NegAuxAffix" dataItem="negAuxAffix" checked="yes">Les affixes négatifs qui s’attachent à un auxiliare positif</checkbox>
+         <checkbox id="NegVAffix" dataItem="negVAffix" checked="yes">Les affixes négatifs qui s’attachent à un verbe pour le mettre au négatif</checkbox>
+         <checkbox id="NegVerbalOther" dataItem="negVerbalOther" checked="yes">En ma langue on met le verbe ou l’auxiliaire au négatif comme suit: <textBox  id="NegVerbalOtherContent" dataItem="negVerbalOther" rows="2"/></checkbox>
+      </checkboxGroup>	
+      <prompt id="NegVerbalNoCheckPrompt" show="swNegVerbalAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire comment la négation du verbe ou de l’auxiliaire se fait en votre langue; sinon, votre réponse ci-dessus doit être « Non ».</prompt>
+      <radioGroup id="NegAuxRequiresAuxTable" show="swNegAuxAndVerbalYes">
+         <groupName dataItem="negAuxRequiresAux" default="no">RNegAuxRequiresAux</groupName>
+         <prompt>Doit-il y avoir un deuxième élément auxiliaire dans la phrase lorsque l’auxiliaire négatif est présent?</prompt>
+         <radio id="NegAuxRequiresAuxNo" dataValue="no">Doit-il y avoir un deuxième élément auxiliaire dans la phrase lorsque l’auxiliaire négatif est présent?</radio>
+         <radio id="NegAuxRequiresAuxYes" dataValue="yes">Oui, il faut un deuxième auxiliaire</radio>
+      </radioGroup>
+      <prompt id="NegAuxRequiresAuxButNoAuxInstruction" show="swNegAuxRequiresAuxButNoAux">AVERTISSEMENT: Les réponses que vous avez données sont incompatibles. Un mot auxiliaire négatif ne peut pas exiger la présence d’un deuxième auxiliaire si votre langue n’a pas d’auxiliaires (positifs) sous forme des mots indépendents. Veuillez changer votre réponse ici ou à la <section number="9.3">Phrases Simples – Auxiliaires</section> pour corriger ce problème avant de continuer.</prompt>
+      <prompt id="NegAuxAffixButNoAuxInstruction" show="swNegAuxAffixButNoAux">AVERTISSEMENT: Les réponses que vous avez données sont incompatibles. Un affixe auxiliaire négatif ne peut pas s’attacher à quoi que ce soit si votre langue n’a pas d’auxiliaires (positifs) sous forme des mots indépendents. Veuillez changer votre réponse ici ou à la <section number="9.3">Phrases Simples – Auxiliaires</section> pour corriger ce problème avant de continuer.</prompt>
+      <prompt id="NegAuxWordPrompt" show="swNegAuxAndVerbalYes">Entrez ici seulement les mots auxiliaires au négatif (chacun sur une ligne distincte):</prompt>
+      <textBox id="NegAuxWordExample" dataItem="negAuxExample" rows="3" show="swNegAuxAndVerbalYes"></textBox>
+      <instruction id="NegAuxYesInstruction" show="swNegAuxAndVerbalYes">Add the features <feature>negative makeAux</feature> to the negative auxiliary elements that are written as independent words.  This will mark them as negative and also assure that they have the category <category>Aux</category>.  If this same negative word can be used to modify nouns or adverbs, you will need to make two separate entries in the lexicon.</instruction>
+      <prompt id="NegAuxAffixPrompt" show="swNegAuxAffixAndVerbalYes">Entrez ici quelques exemples où l’affixe auxiliaire négatif s’attache à un auxiliaire (chacun sur une ligne distincte):</prompt>
+      <textBox id="NegAuxAffixExample" dataItem="negAuxAffixExample" rows="3" show="swNegAuxAffixAndVerbalYes"></textBox>
+      <instruction id="NegAuxAffixInstruction" show="swNegAuxAffixAndVerbalYes">Add the feature <feature>negative</feature> to the negative auxiliary affix(es).</instruction>
+      <prompt id="NegVerbPrompt" show="swNegVAffixAndVerbalYes">Entrez ici quelques exemples où l’affixe négatif s’attache à un verbe (chacun sur une ligne distincte):</prompt>
+      <textBox id="NegVerbExample" dataItem="negVerbExample" rows="3" show="swNegVAffixAndVerbalYes"></textBox>
+      <instruction id="NegVerbInstruction" show="swNegVAffixAndVerbalYes">Add the feature <feature>negative</feature> to the negative verbal affix(es).</instruction>
+      <prompt id="NegVerbalOtherExamplePrompt" show="swNegVerbalOther">Entrez ici d’autres exemples de la façon dont votre langue exprime le sens verbal négatif ou bien le sens auxiliaire:</prompt>
+      <textBox id="NegVerbalOtherExample" dataItem="negVerbalOtherExample" show="swNegVerbalOther" rows="3"/>
+      <br/>
+      <br/>
+      <prompt id="NegAuxWordSentPrompt" show="swNegAuxAndVerbalYes">Maintenant utilisez au moins un des auxiliaires négatifs dans une phrase complète où le sujet et l’objet sont positifs, par exemple <example>Jean ne pouvait pas trouver le trésor</example>. Entrez-le ici:</prompt>
+        <textBox id="NegAuxWordSentExample" dataItem="auxExample" rows="4" cols="50" show="swNegAuxAndVerbalYes"/>
+      <prompt id="NegAuxAffixSentPrompt" show="swNegAuxAffixAndVerbalYes">Maintenant utilisez au moins un des exemples ci-dessus d’un affixe auxiliaire au négatif qui s’attache à un auxiliaire dans une phrase complète où le sujet et l’objet sont positifs, par exemple <example>Joe didn’t go to school  « Jacques n’est pas allé à l’école »</example>. Entrez-le ici:</prompt>
+        <textBox id="NegAuxAffixSentExample" dataItem="auxAffixExample" rows="4" cols="50" show="swNegAuxAffixAndVerbalYes"/>
+      <prompt id="NegVerbSentPrompt" show="swNegVAffixAndVerbalYes">Maintenant choisissez plusieurs exemples des verbes négatifs ci-dessus. Utilisez chacun dans une phrase complète, sans autre élément négatif:</prompt>
+        <textBox id="NegVerbSentExample" dataItem="verbAffixExample" rows="4" cols="50" show="swNegVAffixAndVerbalYes"/>
+      <prompt id="NegVerbalOtherSentExamplePrompt" show="swNegVerbalOther">Maintenant montrez ici quelques exemples de l’autre façon dont votre langue exprime le sens verbal négatif ou bien le sens auxiliaire; entrez des phrases complètes:</prompt>
+      <textBox id="NegVerbalOtherSentExample" dataItem="negVerbalOtherSentExample" show="swNegVerbalOther" rows="3"/>
+      <br/>
+        <br/>
+        <radioGroup id="NegAuxVerbRequiredTable" show="swNegAuxOrAffixAndVAffixAndVerbalYes">
+            <groupName dataItem="auxVerbRequired" default="no">RAuxVerbRequired</groupName>
+           <prompt>Considérez les phrases complètes que vous avez données. Est-ce que le verbe doit être à la forme négative lorsqu’un élément auxiliaire négatif s’y trouve?</prompt>
+           <radio id="NegAuxVerbRequiredYes" dataValue="yes">Oui, un auxiliaire négatif n’est pas possible sans verbe négatif</radio>
+           <radio id="NegAuxVerbRequiredNo" dataValue="no">Non, il n’est pas nécessaire que le verbe soit à la forme négative lorsqu’un auxiliaire négatif s’y trouve</radio>
+        </radioGroup>
+        <br/>
+        <br/>
+        <buttons>
+            <button id="NegVerbalBack" value="Back" goto="NegMain.xml"/>
+            <button id="NegVerbalNext" value="Next" goto="NegType.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swNegTemporalTypeWord">
+      <whenCheckbox button="NegTemporalTypeWord"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeAffix">
+      <whenCheckbox button="NegTemporalTypeAffix"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeVerb">
+      <whenCheckbox button="NegTemporalTypeVerb"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeWordOrVerb">
+      <whenCheckbox button="NegTemporalTypeWord"/>
+      <or/>
+      <whenCheckbox button="NegTemporalTypeVerb"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeAdverbWord">
+      <whenCheckbox button="NegTemporalTypeAdverbWord"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeAdverb">
+      <whenCheckbox button="NegTemporalTypeAdverb"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeOther">
+      <whenCheckbox button="NegTemporalTypeOther"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeNoCheck">
+      <not/>
+      <whenCheckbox button="NegTemporalTypeWord"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalTypeAdverb"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalTypeAdverbWord"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalTypeAffix"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalTypeVerb"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalTypeOther"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeNotNoCheck">
+      <whenCheckbox button="NegTemporalTypeWord"/>
+      <or/>
+      <whenCheckbox button="NegTemporalTypeAdverb"/>
+      <or/>
+      <whenCheckbox button="NegTemporalTypeAdverbWord"/>
+      <or/>
+      <whenCheckbox button="NegTemporalTypeAffix"/>
+      <or/>
+      <whenCheckbox button="NegTemporalTypeVerb"/>
+      <or/>
+      <whenCheckbox button="NegTemporalTypeOther"/>
+   </showWhen>
+   <showWhen id="swNegTemporalAdverbWordAndNoCheck">
+      <whenCheckbox button="NegTemporalTypeAdverbWord"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalAdverbWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalAdverbWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalAdverbWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NegTemporalAdverbWordOther"/>
+   </showWhen>
+   <showWhen id="swNegTemporalTypeAdverbWordEitherRestricted">
+      <whenCheckbox button="NegTemporalTypeAdverbWord"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="NegTemporalAdverbWordBefore"/>
+      <and/>
+      <whenCheckbox button="NegTemporalAdverbWordAfter"/>
+      <or/>
+      <whenCheckbox button="NegTemporalAdverbWordBoth"/>
+      <closeParen/>
+   </showWhen>
+  
+   <showWhen id="swNegLocativeTypeWord">
+      <whenCheckbox button="NegLocativeTypeWord"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeAffix">
+      <whenCheckbox button="NegLocativeTypeAffix"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeAdverb">
+      <whenCheckbox button="NegLocativeTypeAdverb"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeVerb">
+      <whenCheckbox button="NegLocativeTypeVerb"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeAdverbWord">
+      <whenCheckbox button="NegLocativeTypeAdverbWord"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeOther">
+      <whenCheckbox button="NegLocativeTypeOther"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeNoCheck">
+      <not/>
+      <whenCheckbox button="NegLocativeTypeWord"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeTypeAdverb"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeTypeAdverbWord"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeTypeAffix"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeTypeVerb"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeTypeOther"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeNotNoCheck">
+      <whenCheckbox button="NegLocativeTypeWord"/>
+      <or/>
+      <whenCheckbox button="NegLocativeTypeAdverb"/>
+      <or/>
+      <whenCheckbox button="NegLocativeTypeAdverbWord"/>
+      <or/>
+      <whenCheckbox button="NegLocativeTypeAffix"/>
+      <or/>
+      <whenCheckbox button="NegLocativeTypeVerb"/>
+      <or/>
+      <whenCheckbox button="NegLocativeTypeOther"/>
+   </showWhen>
+   <showWhen id="swNegLocativeAdverbWordAndNoCheck">
+      <whenCheckbox button="NegLocativeTypeAdverbWord"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeAdverbWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeAdverbWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeAdverbWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NegLocativeAdverbWordOther"/>
+   </showWhen>
+   <showWhen id="swNegLocativeTypeAdverbWordEitherRestricted">
+      <whenCheckbox button="NegLocativeTypeAdverbWord"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="NegLocativeAdverbWordBefore"/>
+      <and/>
+      <whenCheckbox button="NegLocativeAdverbWordAfter"/>
+      <or/>
+      <whenCheckbox button="NegLocativeAdverbWordBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNegAdvNotAttached">
+      <openParen/>
+      <whenCheckbox button="NegTemporalTypeAdverb"/>
+      <or/>
+      <whenCheckbox button="NegTemporalTypeAdverbWord"/>
+      <or/>
+      <whenCheckbox button="NegTemporalTypeWord"/>
+      <or/>
+      <whenCheckbox button="NegLocativeTypeAdverb"/>
+      <or/>
+      <whenCheckbox button="NegLocativeTypeAdverbWord"/>
+      <or/>
+      <whenCheckbox button="NegLocativeTypeWord"/>
+      <closeParen/>
+      <and/>
+      <whenRadio button="NegVerbalYes"/>
+   </showWhen>
+   
+   <showWhen id="swNegVerbalYes">
+      <whenRadio button="NegVerbalYes"></whenRadio>
+   </showWhen>
+   <showWhen id="swNegAuxAffixAndVerbalYes">
+      <whenRadio button="NegVerbalYes"></whenRadio>
+      <and/>
+      <whenCheckbox button="NegAuxAffix"/>
+   </showWhen>
+   <showWhen id="swNegAuxAndVerbalYes">
+      <whenRadio button="NegVerbalYes"></whenRadio>
+      <and/>
+      <whenCheckbox button="NegAux"/>
+   </showWhen>
+   <showWhen id="swNegVAffixAndVerbalYes">
+      <whenRadio button="NegVerbalYes"></whenRadio>
+      <and/>
+      <whenCheckbox button="NegVAffix"/>
+   </showWhen>
+   <showWhen id="swNegVerbalOther">
+      <whenRadio button="NegVerbalYes"></whenRadio>
+      <and/>
+      <whenCheckbox button="NegVerbalOther"/>
+   </showWhen>
+   <showWhen id="swNegAuxRequiresAuxButNoAux">
+      <whenValue element="ip" attr="aux" value="no"/>
+      <and/>
+      <whenRadio button="NegAuxRequiresAuxYes"/>
+      <and/>
+      <whenCheckbox button="NegAux"/>
+      <and/>
+      <whenRadio button="NegVerbalYes"></whenRadio>
+   </showWhen>
+   <showWhen id="swNegAuxAffixButNoAux">
+      <whenValue element="ip" attr="aux" value="no"/>
+      <and/>
+      <whenCheckbox button="NegAuxAffix"/>
+      <and/>
+      <whenRadio button="NegVerbalYes"></whenRadio>
+   </showWhen>
+   <showWhen id="swNegVerbalAndNoCheck">
+      <whenRadio button="NegVerbalYes"/>
+      <and/><not/>
+      <whenCheckbox button="NegAux"/>
+      <and/><not/>
+      <whenCheckbox button="NegAuxAffix"/>
+      <and/><not/>
+      <whenCheckbox button="NegVAffix"/>
+      <and/><not/>
+      <whenCheckbox button="NegVerbalOther"/>
+   </showWhen>
+   <showWhen id="swNegAuxOrAffixAndVAffixAndVerbalYes">
+      <whenRadio button="NegVerbalYes"/>
+      <and/>
+      <whenCheckbox button="NegVAffix"/>
+      <and/>
+      <whenCheckbox button="NegAux"/>
+<or/>
+      <whenRadio button="NegVerbalYes"/>
+      <and/>
+      <whenCheckbox button="NegVAffix"/>
+      <and/>
+      <whenCheckbox button="NegAuxAffix"/>
+   </showWhen>   
+ 
+</page>

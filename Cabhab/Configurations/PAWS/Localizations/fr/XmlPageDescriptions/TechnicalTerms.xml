@@ -1,0 +1,538 @@
+<technicalTerms version="1.0">
+   <technicalTerm id="ttAbsolutive">
+      <termInLang>
+         <term>absolutif</term>
+         <termDefinition>Absolutif est le nom pour l’indicateur de cas utilisé pour les sujets de verbes intransitifs et les objets directs de verbes transitifs dans une langue qui utilise un système de cas ergatif – absolutif.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAccusative">
+      <termInLang>
+         <term>accusatif</term>
+         <termDefinition>Accusatif est le nom pour l’indicateur de cas utilisé pour les objets de verbes transitifs dans une langue qui utilise un système de cas nominatif – accusatif. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAdposition">
+      <termInLang>
+         <term>adposition</term>
+         <termDefinition>Une adposition est soit une préposition soit une postposition. Normalement elle a un syntagme nominal comme complément, et est une préposition si elle précède le syntagme nominal ou une postposition si elle le suit.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAgent">
+      <termInLang>
+         <term>agent</term>
+         <termDefinition>Le rôle sémantique de l’agent est l’argument qui fait l’action exprimée par le verbe.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAlienably">
+      <termInLang>
+         <term>alienablement</term>
+         <termDefinition>Les noms alienablement possédés sont des choses qui peuvent être possédées temporairement, tels que « mon argent ». Certaines langues ajoutent un affixe à de tels noms pour indiquer que le possesseur doit être présent.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAllomorph">
+      <termInLang>
+         <term>allomorphe</term>
+         <termDefinition>Un allomorphe est une variante de la prononciation d’un morphème.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAntipassive">
+      <termInLang>
+         <term>antipassif</term>
+         <termDefinition>Antipassif est une voix de verbe dans lequel l’objet d’un verbe transitif n’est pas exprimé.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttApplicative">
+      <termInLang>
+         <term>applicatif</term>
+         <termDefinition>Applicatif est une voix de verbe dans lequel un argument oblique du verbe est promu à l’argument de l’objet. Un affixe applicatif peut convertir un verbe intransitif en verbe transitif, ou un verbe transitif en verbe ditransitif.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttArgument">
+      <termInLang>
+         <term>argument</term>
+         <termDefinition>Un argument d’un verbe est son sujet, ou son objet direct ou indirect.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttArticles">
+      <termInLang>
+         <term>articles</term>
+         <termDefinition>Un article est un mot qui va avec un nom pour indiquer si le nom est utilisé dans un sens particulier (défini) ou générale (indéfini). </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttProDrop">
+      <termInLang>
+         <term>à sujet nul</term>
+         <termDefinition>À sujet nul (et l’anaphore zéro) est autorisée le plus souvent dans des langues qui ont des affixes pronominaux d’accord attachés au verbe pour marquer les caractéristiques du sujet et l’objet, et au nom pour marquer les caractéristiques du possesseur. Ces affixes s’accordent avec les caractéristiques des syntagmes nominaux qui remplissent ces positions, mais si le sujet, l’objet ou le possesseur est un pronom , alors un pronom indépendant apparaît uniquement lorsque un accent particulier est mis sur cet argument. Sinon, la position de l’argument est vide ou tombe.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAuxiliary">
+      <termInLang>
+         <term>auxiliare</term>
+         <termDefinition>Un verbe, comme « avoir », « pouvoir », « être » ou « vouloir » , qui accompagne le verbe principal et permet de faire des distinctions d’humeur , de voix , d’aspect et de temps.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCardinal">
+   <termInLang>
+      <term>cardinal</term>
+      <termDefinition>Un nombre cardinal indique « combien ». Les nombres cardinaux sont également connus comme "les chiffres qui comptent", parce qu’ils montrent la quantité.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttCase">
+      <termInLang>
+         <term>cas</term>
+         <termDefinition>Le cas distingue entre les pronoms et les noms qui remplissent diverses positions d’arguments dans la phrase, afin que les sujets, les objets et les possesseurs puissent être marqués différemment. Il y a plusieurs sortes de systèmes de cas qui déterminent la façon dont le marquage est divisé entre les arguments. En certaines langues le cas n’est pas marqué du tout, en d’autres l’un des principaux systèmes de cas est utilisé, et en d’autres encore une combinaison de systèmes de cas est utilisée. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCausative">
+      <termInLang>
+         <term>causal</term>
+         <termDefinition>Un affixe ou mot causal ajoute un argument supplémentaire à une phrase soit intransitive, soit transitive. Cet argument supplémentaire est l’agent s’il n’y a pas déjà un agent présent, ou il est l’élément causal de l’action.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+ <technicalTerm id="ttClassifier">
+    <termInLang>
+       <term>classificateur</term>
+       <termDefinition>Un classificateur est un affixe ou mot indépendant qui caractérise les noms en fonction de leur forme, position, couleur, animéité ou autres caractéristiques. Les classificateurs apparaissent  souvent avec des chiffres ou autres quantificateurs ou avec des démonstratifs. Généralement ils ne font pas partie du système d’accord comme le sont les marqueurs de classes nominales.</termDefinition>
+    </termInLang>
+ </technicalTerm>
+   <technicalTerm id="ttClitic">
+      <termInLang>
+         <term>clitique</term>
+         <termDefinition>Un clitique tel que défini ici est un élément syntaxique qui est phonologiquement dépendant, donc, il s’attache à un autre mot ou syntagme. Les syntagmes clitiques peuvent être des proclitiques qui s’attachent au premier mot du syntagme, ou des enclitiques qui s’attachent au mot qui le termine. Tout élément qui s’écrit comme mot indépendant dans votre orthographe ne doit pas être considéré comme clitique en PAWS.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttComplements">
+      <termInLang>
+         <term>compléments</term>
+         <termDefinition>Les compléments d’un verbe comprennent les éléments qui l’accompagnent dans le syntagme verbal : l’objet direct et indirect et un lieu pour les verbes de mouvement, ainsi que des clauses intégrées de types divers. Le sujet n’est pas un complément. Le complément pour un adverbe ou adjectif est normalement une clause intégrée.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCompletive">
+      <termInLang>
+         <term>complétif</term>
+         <termDefinition>L’aspect complétif est utilisé lorsque l’action est terminée. Elle n’est plus en cours.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttTopic">
+      <termInLang>
+         <term>constructions thèmatiques</term>
+         <termDefinition>Les constructions thèmatiques consistent en une phrase qui exprime ce dont on parle (le sujet), généralement mis à part par une virgule, suivi par une phrase complète ou une question. Certaines langues ont des affixes ou des mots qui sont également utilisés pour marquer les thèmes.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContemplative">
+      <termInLang>
+         <term>contemplatif</term>
+         <termDefinition>L’aspect contemplatif est utilisé pour des actions qui pourraient avoir lieu à l’avenir.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContinuative">
+      <termInLang>
+         <term>continuatif</term>
+         <termDefinition>L’aspect continuatif est utilisé pour des actions qui sont continues ou en cours. L’aspect continuatif est un sous-type de l’aspect imperfectif . L’aspect continuatif a des sous-types progressifs et statiques.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContrafactual">
+      <termInLang>
+         <term>contrafactuel</term>
+         <termDefinition>L’aspect contrafactuel est utilisé pour les déclarations qui expriment une idée présupposée fausse.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCopular">
+      <termInLang>
+         <term>copule</term>
+         <termDefinition>Un verbe copulatif  (un copule) est un verbe de liaison, tel que «est» . Les phrases copulatives ont un adjectif ou un syntagme nominale au lieu d’un verbe d’action comme prédicat.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDative">
+      <termInLang>
+         <term>datif</term>
+         <termDefinition>Datif est le cas normalement utilisé pour marquer l’objet indirect.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDefinite">
+      <termInLang>
+         <term>défini</term>
+         <termDefinition>L’article défini signale une personne ou une chose particulière. Par exemple , «le monsieur» signifie un individu particulier.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDemonstratives">
+      <termInLang>
+         <term>demonstratifs</term>
+         <termDefinition>Un démonstratif  montre l’élément, l’objet, la personne ou le concept qu’on traite et comprend un sentiment de distance de l’orateur. Les démonstratifs qui modifient un nom sont considérés comme un type d’adjectif, alors que les démonstratifs qui se retrouvent seuls dans un syntagme nominal sont un type de pronom.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDerivational">
+      <termInLang>
+         <term>dérivationnel</term>
+         <termDefinition>Un affixe dérivationnel change la catégorie du radical ou du mot auquel il s’attache. Par exemple, le suffixe « - iser » convertit l’adjectif «moderne» en le verbe «moderniser».</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDeterminers">
+      <termInLang>
+         <term>déterminants</term>
+         <termDefinition>Les déterminants sont des éléments qui modifient les noms, y compris les articles et les démonstratifs et parfois les articles possessifs.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttDitransitive">
+      <termInLang>
+         <term>ditransitif</term>
+         <termDefinition>Une phrase ditransitive a un sujet, un objet direct et un objet indirect.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttNegativePolarityItem">
+      <termInLang>
+         <term>élément de polarité négative</term>
+         <termDefinition>Un élément de polarité négative est un pronom indéfini, un adverbe ou un déterminant qui est utilisé à la place d’un pronom indéfini négatif ou un adverbe ou un déterminant dans certaines langues. On peut en avoir besoin quand il y a un élément négatif au début de la phrase.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttErgative">
+      <termInLang>
+         <term>ergatif</term>
+         <termDefinition>Ergatif est le nom pour l’indicateur de cas utilisé pour les sujets des verbes transitifs dans une langue qui utilise un système de cas ergatif – absolutif.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExclusive">
+      <termInLang>
+         <term>exclusif</term>
+         <termDefinition>Un pronom exclusif se réfère à l’orateur et autres personnes (si pluriel), mais exclut l’auditeur.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExistential">
+      <termInLang>
+         <term>existentiel</term>
+         <termDefinition>Les phrases existentielles montrent seulement qu’une chose existe ou n’existe pas, et comprennent d’habitude un endroit.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttExperiencer">
+      <termInLang>
+         <term>expérimentateur</term>
+         <termDefinition>Le rôle sémantique de l’expérimentateur est utilisé pour le sujet des verbes qui expriment une expérience au lieu d’une action.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttOvert">
+      <termInLang>
+         <term>explicite</term>
+         <termDefinition>Un élément est explicite quand il est exprimé par écrit ou prononcé dans le discours. Sa signification n’est pas simplement implicite. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttFinite">
+	<termInLang>
+	   <term>fini</term>
+	   <termDefinition>Un verbe ou une clause fini(e) est marqué pour temps et/ou aspect, par opposition à une forme  infinitive ou non-finie qui ne l’est pas.</termDefinition>
+	</termInLang>
+	</technicalTerm>
+   <technicalTerm id="ttInflection">
+      <termInLang>
+         <term>flexion</term>
+         <termDefinition>La flexion est exprimée par des morphèmes qui signalent les variantes grammaticales d’un mot; la flexion « -s » à la fin de « idées » indique que le nom est pluriel; la flexion « -z » à la fin de « donnez » indique que le verbe est la deuxième personne du pluriel, de sorte que nous disons « elle donne », mais « tu donnes» et « ils donnent ».</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttFocus">
+      <termInLang>
+         <term>focus</term>
+         <termDefinition>Dans une construction de mise en focus, il y a un mot ou une expression qui est souligné(e). Il peut être déplacé de sa position normale dans la phrase, en général à la position initiale ou finale. Certaines langues ont des affixes ou des mots qui marquent le focus aussi.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttGenitive">
+      <termInLang>
+         <term>génitif</term>
+         <termDefinition>Génitif est le nom pour l’indicateur de cas utilisé pour les possesseurs (avec un article possessif).</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttGerund">
+     <termInLang>
+        <term>gérondif</term>
+        <termDefinition>Un gérondif est un verbe ou syntagme verbal qui agit comme un nom ou une phrase nominale. Par exemple en anglais, « playing football » est une expression gérondif agissant en tant que sujet dans la phrase « Playing football is fun. " En français le gérondif ne s’utilise qu’avec « en » – par exemple « en rentrant j’ai croisé mon voisin » (on entering I bumped into my neighbour). Pour traduire l’exemple anglais ci-dessus le français emploie l’infinitif : « Jouer au football est très amusant ».</termDefinition>
+     </termInLang>
+  </technicalTerm>
+   <technicalTerm id="ttHabitual">
+      <termInLang>
+         <term>habituel</term>
+         <termDefinition>L’aspect habituel est utilisé pour des actions qui se répètent. Ils peuvent se produire dans le passé, dans le présent ou dans l’avenir. l’aspect habituel est un sous-type de l’imperfectif.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttImperative">
+      <termInLang>
+         <term>impératif</term>
+         <termDefinition>Les impératifs sont des commandes qui peuvent avoir des formes fortes ou plus polies.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttImperfect">
+      <termInLang>
+         <term>imparfait</term>
+         <termDefinition>L’imparfait est la forme passée de l’imperfectif.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttImperfective">
+      <termInLang>
+         <term>impérfectif</term>
+         <termDefinition>L’aspect imperfectif est utilisé pour décrire une activité qui est en cours. Il comprend les sens des deux aspects habituels et progressifs.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInalienably">
+      <termInLang>
+         <term>inaliénable</term>
+         <termDefinition>Un nom possessif inaliénable est celui qui est toujours possédé. Par exemple, « une main » implique « la main de quelqu’un», même si elle est séparée du corps . De même, «père» sous-entend «père de quelqu’un ».</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInclusive">
+      <termInLang>
+         <term>inclusif</term>
+         <termDefinition>Un pronom inclusif se réfère à l’orateur et à l’auditeur, et peut-être à d’autres personnes.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttIncompletive">
+      <termInLang>
+         <term>incomplétif</term>
+         <termDefinition>L’aspect incomplétif est utilisé pour des actions qui ne sont pas terminées. Il est à l’opposé de l’aspect complétif.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttIndefinite">
+      <termInLang>
+         <term>indéfini</term>
+         <termDefinition>Un article ou pronom indéfini ne se réfère pas à une personne ou une chose en particulier, mais indique le sens le plus large. Par exemple, « un homme » veut dire tout homme, qui que ce soit. Comme type de pronom, les indéfinis sont ceux qui ne se réfère pas à une personne ou une chose particulière. Les pronoms indéfinis positifs comprennent : «quelqu’un» , «n’importe qui» , « quel que soit » , et les formes négatives sont « personne » et « rien ».</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInfinitive">
+      <termInLang>
+         <term>infinitif</term>
+         <termDefinition>Un verbe à l’infinitif est dans sa forme de base, il n’est marqué ni pour le temps ni l’aspect.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttInterrogative">
+    <termInLang>
+       <term>interrogatif</term>
+       <termDefinition>Les interrogatives sont des questions, y compris le type normal de questions directes et indirectes qui sont des compléments d’un verbe comme «demander» .</termDefinition>
+    </termInLang>
+ </technicalTerm>
+<technicalTerm id="ttIntransitive">
+   <termInLang>
+      <term>intransitif</term>
+      <termDefinition>Une phrase intransitive ne dispose que d’un sujet, et n’a pas d’objet direct.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttUnreal">
+      <termInLang>
+         <term>irréel</term>
+         <termDefinition>L’aspect irréel est similaire à la modalité irréelle pour exprimer des situations imaginaires ou projetées, des choses qui pouvaient ou pourraient se produire.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttIrrealis">
+      <termInLang>
+         <term>irréelle</term>
+         <termDefinition>La forme irréelle est similaire à l’aspect irréel dans son expression des situations imaginaires ou projetées, des choses qui pourraient ou pourraient ne pas se produire. Le subjonctif et le conditionnel sont des sous-types de la mode irréelle.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttMass">
+      <termInLang>
+         <term>masse</term>
+         <termDefinition>Un nom de masse désigne quelque chose qui ne peut pas être comptée (par exemple , une substance ou qualité ), généralement un nom qui n’a pas de pluriel dans l’usage ordinaire.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttMorphemes">
+      <termInLang>
+         <term>morphèmes</term>
+         <termDefinition>Un morphème est la plus petite unité qui a un sens. Il peut être un affixe ou clitique ou un mot, ou même d’un ton ou un dispositif, par exemple la nasalisation.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttNegation">
+   <termInLang>
+      <term>négation</term>
+      <termDefinition>Une construction de négation contient un élément négatif soit dans le verbe, soit dans l’un des arguments ou dans un élément adverbial.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttNominative">
+    <termInLang>
+       <term>nominatif</term>
+       <termDefinition>Nominatif est le nom pour l’indicateur de cas utilisé pour tous les sujets dans une langue qui utilise un système de nominatif – accusatif.</termDefinition>
+    </termInLang>
+      </technicalTerm>
+      <technicalTerm id="ttNonfinite">
+         <termInLang>
+            <term>nonfini</term>
+            <termDefinition>Un verbe ou une clause non fini(e) est celui/celle qui n’est pas marqué(e) pour le temps ou l’aspect, par opposition à une forme finie qui est marqué pour le temps et /ou l’aspect.</termDefinition>
+         </termInLang>
+      </technicalTerm>
+   <technicalTerm id="ttOblique">
+   <termInLang>
+      <term>oblique</term>
+      <termDefinition>Un argument oblique est celui qui n’est pas l’argument principal d’un verbe, donc ce n’est ni un sujet ni un objet ni un objet indirect.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttOrdinal">
+      <termInLang>
+         <term>ordinal</term>
+         <termDefinition>Les nombres ordinaux donnent d’abord l’ordre des choses dans un ensemble – première, deuxième, troisième, etc. Les nombres ordinaux ne montrent pas la quantité. Ils ne montrent que le rang ou la position. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttParadigms">
+      <termInLang>
+         <term>paradigmes</term>
+         <termDefinition>Les paradigmes sont des tableaux montrant les différentes formes d’un verbe particulier sur la base de personne, nombre, temps ou aspect. Ils peuvent fournir au lecteur une façon de comprendre la forme à utiliser dans une phrase particulière.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttParticiple">
+      <termInLang>
+         <term>participe</term>
+         <termDefinition>Un participe est un adjectif (mot descriptif) formé à partir d’un verbe, comme « chantants » dans «ces oiseaux chantants » et « parlée » dans « la langue parlée ».</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPartitive">
+      <termInLang>
+         <term>partitif</term>
+         <termDefinition>Une phrase partitive exprime que quelque chose fait partie d’un groupe ou d’une chose entière.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPassive">
+      <termInLang>
+         <term>passif</term>
+         <termDefinition>Dans une phrase passive, le thème ou le patient remplit la position du sujet, à la place d’un agent. Dans certaines langues, l’agent peut être éventuellement exprimé comme un argument oblique.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPatient">
+   <termInLang>
+      <term>patient</term>
+      <termDefinition>Le rôle sémantique du patient est l’argument qui reçoit l’action exprimée par le verbe. Le patient n’est utilisé habituellement que pour les êtres humains ou tout au moins pour les choses animées; autrement on utilise « thème ».</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttPerception">
+      <termInLang>
+         <term>perception</term>
+         <termDefinition>Les verbes de perception expriment comment on perçoit quelque chose avec les sens.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPerfect">
+      <termInLang>
+         <term>parfait</term>
+         <termDefinition>L’aspect parfait décrit un événement passé mais qui a un rapport actuel, ou un état actuel qui est le résultat d’une situation passée.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPerfective">
+      <termInLang>
+         <term>perfectif</term>
+         <termDefinition>L’aspect perfectif décrit une action achevée. Il peut exprimer simplement un événement passé.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPolarity">
+   <termInLang>
+      <term>polarité</term>
+      <termDefinition>La polarité a une valeur positive ou négative. Elle nous informe si la phrase a un sens positif ou négatif.</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttScope">
+      <termInLang>
+         <term>portée</term>
+         <termDefinition>La portée d’un quantificateur, d’un négatif ou d’un autre modificateur est en relation avec sa zone d’influence. Les modificateurs et les quantificateurs s’étendent en fonction de la grandeur du champ d’application.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPossessives">
+      <termInLang>
+         <term>possessifs</term>
+         <termDefinition>Les pronoms possessifs expriment un rapport de propriété. Ils sont distincts des pronoms qui peuvent être utilisés pour exprimer le possesseur d’un nom dans un syntagme nominal.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPossessors">
+      <termInLang>
+         <term>possesseurs</term>
+         <termDefinition>Le possesseur est la personne, l’animal ou la chose qui possède quelque chose ou quelqu’un, ou qui appartient ou se rapporte au possesseur. Ce programme considère que le possesseur soit le syntagme nominal indépendant, pas un pronom attaché ; le pronom est considéré être d’accord avec le syntagme nominal possesseur s’il est présent, mais les langues qui ont des affixes pronominaux pour marquer le possesseur aussi permettent généralement le possesseur indépendant à ne pas être exprimé (anaphore zéro).</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPotential">
+      <termInLang>
+         <term>potentiel</term>
+         <termDefinition>L’aspect potentiel est utilisé pour des événements qui peuvent se produire dans l’avenir.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPredicates">
+      <termInLang>
+         <term>prédicats</term>
+         <termDefinition>Le prédicat comprend normalement le verbe et ses modificateurs, qui expriment l’action du sujet. Dans une phrase copulative, le prédicat peut être un adjectif ou un nom qui exprime une certaine qualité ou la position du sujet.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttProgressive">
+      <termInLang>
+         <term>progressif</term>
+         <termDefinition>L’aspect progressif est utilisé pour une action qui est en cours et évolue. Il s’agit d’un sous-type du continuatif et de l’impérfectif.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttQuantifiers">
+   <termInLang>
+      <term>quantificateurs</term>
+      <termDefinition>Les quantificateurs expriment la quantité du nom qu’ils modifient. Les quantificateurs sont des chiffres et des mots tels que «tous», «beaucoup» et «quelques».</termDefinition>
+   </termInLang>
+</technicalTerm>
+   <technicalTerm id="ttReciprocals">
+      <termInLang>
+         <term>réciproques</term>
+         <termDefinition>Les réciproques expriment une action ou un rapport mutuel. Un exemple d’un pronom réciproque est «l’un l’autre».</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttReduplication">
+      <termInLang>
+         <term>redoublement</term>
+         <termDefinition>Parfois, un morphème peut être exprimé en utilisant le redoublement, qui est la répétition d’une voyelle ou d’une partie ou la totalité de la racine ou du mot entier.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttReflexives">
+      <termInLang>
+         <term>réflexifs</term>
+         <termDefinition>Dans les phrases réflexives, le sujet d’un verbe et un objet dans la phrase se réfèrent à la même personne ou chose, servant à indiquer que l’action du verbe est redirigée vers le sujet, comme dans la phrase  "Jacques s’est blessé ".</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSemantics">
+      <termInLang>
+         <term>sémantique</term>
+         <termDefinition>La sémantique est l’étude du sens dans une langue. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttStative">
+      <termInLang>
+         <term>statif</term>
+         <termDefinition>L’aspect statif est utilisé lorsque la situation est décrite comme en cours, mais pas en évolution. L’aspect statif est un sous-type de continuatif qui est un sous-type de l’impérfectif.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSubjunctive">
+      <termInLang>
+         <term>subjonctif</term>
+         <termDefinition>Le subjonctif est un état verbal qui est utilisé pour exprimer quelque chose qui est contraire à la réalité, ou qui exprime des suppositions, des doutes, des peurs, des désirs ou des possibilités.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttAdpositionalPhrases">
+      <termInLang>
+         <term>syntagmes adpositionnels</term>
+         <termDefinition>Les syntagmes adpositionnels sont des syntagmes prépositionnels ou postpositionnels, selon ce que permet la langue.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttSyntax">
+      <termInLang>
+         <term>syntaxe</term>
+         <termDefinition>L’étude de l’agencement des mots et des syntagmes pour créer des phrases bien formées dans une langue.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPurposive">
+      <termInLang>
+         <term>téléologique</term>
+         <termDefinition>L’aspect téléologique exprime la raison ou le besoin.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttTheme">
+      <termInLang>
+         <term>thème</term>
+         <termDefinition>Le rôle sémantique du thème est l’argument qui reçoit l’action exprimée par le verbe. C’est un terme général qui peut être utilisé pour les arguments animés et inanimés, mais certains choisissent de limiter l’utilisation du terme « thème » aux arguments inanimés et d’utiliser « patient » pour les arguments animés.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttTransitive">
+      <termInLang>
+         <term>transitif</term>
+         <termDefinition>Une phrase transitive a et un sujet et un objet direct.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttVoice">
+      <termInLang>
+         <term>voix</term>
+         <termDefinition>La voix est une fonction grammaticale qui exprime quel syntagme nominal est proéminent. Dans la voix active l’agent est le sujet, tandis que dans la voix passive du patient est le sujet. D’autres types de voix comprennent  la voix causale et la voix antipassive, et certaines langues ont aussi d’autres distinctions de la voix.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   
+</technicalTerms>
+	

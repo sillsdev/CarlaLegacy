@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPProDrop" count="1/3">
+   <title level="2">Phrases Simples – Les sujets absents et Impératifs</title>
+   <introduction>Certaines langues s’appellent les langues <technicalTermRef term="ttProDrop">à sujet nul (=« pro-drop »)</technicalTermRef> , parce qu’elles permettent qu’un sujet et/ou un objet manque, ou qu’il ne soit pas exprimé dans la position syntaxique normale. Par exemple, en espagnol l’équivalent de « j’achète un livre »  est <example>Compro un libro</example> plutôt qu’avec la présence du pronom sujet: <example>Yo compro un libro</example>.  On ne fait pas cela en anglais, ni en français, sauf pour les inpéritifs. (On traitera le phénomène de l’absence du sujet des infinitifs dans les propositions subordonnées à la <section number="10">Propositions Complétives</section>.)  <br/>
+        <br/>
+      Certaines langues ne sont pas vraiment des langues « à sujet nul », mais au moins certains des pronoms sont des clitiques qui peuvent s’attacher au verbe. Quand ceci se passe, il n’y a pas de pronom ni de syntagme nominal dans la position du sujet; ainsi la phrase paraît la même que celle d’une langue authentiquement « à sujet nul ».</introduction>
+    <form section="ip">
+       <checkboxGroup>
+          <prompt>
+             <br/>Sous quelles conditions est-ce que votre langue tolère l’omission du sujet de sa position habituelle? Vérifiez toutes les options qui sont bonnes pour votre langue; notez que vous devez signaler l’omission du sujet ou la présence de clitiques pronominaux. Cochez seulement une des deux premières options. Si votre langue me permet pas ces options, laissez les cases vides – cochez le blanc ci-dessous « Aucune omission... ».</prompt>
+          <checkbox id="IPProDropYes" dataItem="proDropYes">On tolère l’omission du sujet</checkbox>
+          <checkbox id="IPProDropClitic" dataItem="proDropClitic">Grâce aux clitiques pronominaux attachés au verbe, le sujet semble être absent</checkbox>
+          <checkbox id="IPProDropImp" dataItem="proDropImp">Dans les impératifs le sujet peut être absent</checkbox>
+          <checkbox id="IPProDropOther" dataItem="proDropOther">Dans ma langue, le sujet peut être absent dans la construction qui suit:<textBox  id="IPProDropOtherContent" dataItem="proDropOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="IPProDropNoCheckPrompt" show="swIPProDropNoCheck">AVERTISSEMENT: vous n’avez coché aucune case pour décrire dans votre langue quand le sujet peut être absent de sa position habituelle. Si en réalité le sujet ne doit jamais être absent, veuillez cocher la case « Aucune omission... » dessous:</prompt>
+  <checkboxGroup id="IPProDropNoNoneTable" show="swIPProDropNoCheck">
+     <prompt>Cochez cette case seulement si votre langue ne tolère jamais l’omission du sujet.</prompt>
+     <checkbox id="IPProDropNone" dataItem="proDropNone">Aucune omission, le sujet doit toujours être visible, même dans les impératifs</checkbox>
+  </checkboxGroup>
+       
+       <prompt id="IPProDropYesPrompt" show="swIPProDropYes">Entrez ici des exemples dans votre langue de l’omission du pronom, quand il n’y a pas de pronom indépendant ni de syntagme nominal dans la position du sujet et/ou de l’objet:</prompt>
+        <textBox id="IPExamplesProDropExample" dataItem="proDropExample" cols="50" show="swIPProDropYes"/><br/>
+       <radioGroup id="IPProDropObject" show="swIPProDropYes">
+          <groupName dataItem="proDropObject" default="no">RIPProDropObject</groupName>
+          <prompt>Est-ce que votre langue tolère l’omission de l’objet de sa position habituelle?</prompt>
+          <radio id="IPProDropObjectNo" dataValue="no">Non</radio>
+          <radio id="IPProDropObjectYes" dataValue="yes">Oui, on tolère aussi l’omission du pronom objet</radio>
+       </radioGroup>
+       
+       <prompt id="IPProDropCliticPrompt" show="swIPProDropClitic">Entrez ici des exemples dans votre langue qui ressemblent au phénomène de l’omission du pronom: les clitiques pronominaux attachés au verbe, aucun pronom indépendant, ni aucun syntagme nominal à la position du sujet:</prompt>
+       <textBox id="IPExamplesCliticPnExample" dataItem="cliticPnExample" cols="50" show="swIPProDropClitic"/><br/>
+       <instruction id="IPProDropYesCliticInstruction" show="swIPProDropClitic">All of the pronouns that may attach as subject clitics need to have the appropriate agreement features added in the lexicon.  This should have been done in <section number="7.">Pronouns</section> and <section number="9.2.">Basic Sentences – Agreement Features</section>, but you may want to verify your entries now.  Note that if a particular pronoun can stand alone in subject position and also may attach to the verb, it should have both sets of features, e.g. <feature>first singular first_subject singular_subject</feature>.</instruction>
+       
+       <prompt id="IPProDropOtherPrompt" show="swIPProDropOther">Entrez ici des exemples dans votre langue de l’autre construction dans laquelle un sujet peut être absent de sa position habituelle:</prompt>
+       <textBox id="IPExamplesProDropOtherExample" dataItem="proDropOtherExample" cols="50" show="swIPProDropOther"/><br/>
+       
+       <prompt>Entrez ici des exemples dans votre langue des constructions impératives <span id="IPImperativeNoSubjSpan" show="swIPProDropImp">qui montrent que le sujet est absent</span><span id="IPImperativeWithSubjectSpan" show="swIPProDropNone">qui montrent que le sujet est requis</span>:</prompt>
+       <textBox id="IPExamplesImpExample" dataItem="impExample" cols="50"/><br/>
+       <instruction id="IPProDropImpInstruction">In the lexicon, mark any affixes that indicate imperative and any inherently imperative verbs with the feature <feature>imperative</feature>.</instruction>
+  <radioGroup>
+     <groupName dataItem="impPolite" default="no">RIPImpPolite</groupName>
+     <prompt>Existe-t-il dans votre langue une forme plus polie de l’impératif?</prompt>
+     <radio id="IPImpPoliteYes" dataValue="yes">Oui</radio>
+     <radio id="IPImpPoliteNo" dataValue="no">Non</radio>
+  </radioGroup>
+       <prompt id="IPImpPolitePrompt" show="swIPImpPoliteYes">Entrez ici des exemples de cette construction impérative polie:</prompt>
+       <textBox id="IPImpPoliteExamples" dataItem="impPoliteExample" cols="50" show="swIPImpPoliteYes"/>
+       <br/><br/>
+        <buttons>
+            <button id="IPProDropBack" value="Back" goto="IPContents.htm"/>
+            <button id="IPProDropNext" value="Next" goto="IPConditional.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swIPProDropYes">
+        <whenCheckbox button="IPProDropYes"/>
+    </showWhen>
+    <showWhen id="swIPProDropClitic">
+        <whenCheckbox button="IPProDropClitic"/>
+    </showWhen>
+   <showWhen id="swIPProDropOther">
+      <whenCheckbox button="IPProDropOther"/>
+   </showWhen>
+   <showWhen id="swIPProDropImp">
+      <whenCheckbox button="IPProDropImp"/>
+   </showWhen>
+   <showWhen id="swIPProDropNone">
+      <whenCheckbox button="IPProDropNone"/>
+      <and/> <not/>
+      <whenCheckbox button="IPProDropYes"/>
+      <and/><not/>
+      <whenCheckbox button="IPProDropClitic"/>
+      <and/><not/>
+      <whenCheckbox button="IPProDropImp"/>
+      <and/><not/>
+      <whenCheckbox button="IPProDropOther"/>
+   </showWhen>
+   <showWhen id="swIPImpPoliteYes">
+      <whenRadio button="IPImpPoliteYes"/>
+   </showWhen>
+ <showWhen id="swIPProDropNoCheck">
+    <not/>
+    <whenCheckbox button="IPProDropYes"/>
+    <and/><not/>
+    <whenCheckbox button="IPProDropClitic"/>
+    <and/><not/>
+    <whenCheckbox button="IPProDropImp"/>
+    <and/><not/>
+    <whenCheckbox button="IPProDropOther"/>
+ </showWhen>  
+   &TechnicalTerms; 
+</page>

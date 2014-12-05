@@ -11,11 +11,11 @@
     <form section="pp">
        <radioGroup id="PPClassifierAgrTable" show="swOTClassifierAgr">
           <groupName dataItem="ppClassifier" default="no">RPPClassifierAgr</groupName>
-          <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar preposiciones o posposiciones?</prompt>
-          <radio id="PPClassifierAgrPPNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-          <radio id="PPClassifierAgrPPYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte del sistema de concordancia</radio>
+          <prompt>Usted dijo que su lengua tiene indicadores de clase para la concordancia en las frases nominales. ¿Utiliza los indicadores de clase para marcar preposiciones o posposiciones?</prompt>
+          <radio id="PPClassifierAgrPPNo" dataValue="no">No, estos elementos no se marcan la clase</radio>
+          <radio id="PPClassifierAgrPPYes" dataValue="yes">Sí, estos elementos se marcan la clase como parte del sistema de concordancia</radio>
        </radioGroup>	   
-       <prompt id="PPClassifierAgrPrompt" show="swPPClassifierAgrPPYes">Puesto que ya se han detallado las formas de los clasificadores, solo tiene que escribir las raíces de cada una de las palabras en esta página, pero los ejemplos de las frases deben mostrar las formas completas con clasificadores..</prompt>   
+       <prompt id="PPClassifierAgrPrompt" show="swPPClassifierAgrPPYes">Puesto que ya se han detallado las formas de los indicadores de clase, solo tiene que escribir las raíces de cada una de las palabras en esta página, pero los ejemplos de las frases deben mostrar las formas completas con los indicadores de clase.</prompt>   
        <br/>
        <br/>
        <radioGroup>

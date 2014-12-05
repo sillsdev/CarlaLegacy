@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="PronNP" count="7/9">
+   <title level="2">Pronoms – Comme Syntagme Nominal</title>
+   <introduction>Normalement les pronoms de toutes sortes se présentent seuls remplaçant un syntagme nominal entier, mais ils peuvent aussi être modifiés par une proposition relative.  Dans certaines langues les pronoms peuvent être modifiés par un syntagme <technicalTermRef term="ttPartitive">partitif</technicalTermRef>, et d’autres langues permettent la modification de pronoms par des <technicalTermRef term="ttDeterminers">déterminants</technicalTermRef> et par des quantificateurs de portée large et par des mots de degré.  Des exemples français comprennent ceux qui suivent:</introduction>
+		<EnglishExample>
+		   <exItem label="1.">seulement nous trois</exItem>
+		   <exItem label="2.">lui seul</exItem>
+		   <exItem label="3.">seulement ceux-ci</exItem>
+		</EnglishExample>
+   <introduction>Dans une minorité de langues, les pronoms peuvent être modifiés par des adjectifs et par des possesseurs, tout comme les substantifs.</introduction>
+   <introduction id="PronNPClassifiersIntro" show="swOTClassifiersSpecific">A la fin de cette page, on vous demandera des exemples où des classificateurs fonctionnent comme le substantif d’un syntagme nominal, parce qu’un substantif n’est pas exigé.</introduction>
+   <form section="pron">
+      <radioGroup>
+         <groupName dataItem="pronMod" default="no">RPronMod</groupName>
+         <prompt><br/>Les pronoms peuvent-ils être modifiés dans votre langue?</prompt>
+         <radio id="PronModNo" dataValue="no">Non, ces éléments ne se présentent que seuls quand ils remplacent un syntagme nominal.  On ne permet même pas que les propositions relatives fonctionnent comme modificateurs </radio>
+         <radio id="PronModRel" dataValue="rel">Seules les propositions relatives sont possibles</radio>
+         <radio id="PronModPart" dataValue="part">Seuls les propositions relatives et les syntagmes partitifs sont permis</radio>
+         <radio id="PronModDet" dataValue="det">Oui, ces éléments peuvent être modifiés par des quantificateurs de portée large et par des mots de degré, <span id="PronModDetArtSpan"  show="swArt">et par des articles</span><span id="PronModDetDemSpan" show="swDem">et par des démonstratifs</span ><span id="PronModArtDemSpan" show="swArtAndDem">et par des articles et démonstratifs</span> en plus des propositions relatives et par des syntagmes partitifs</radio>
+         <radio id="PronModAll" dataValue="all">Oui, ces éléments peuvent être modifiés par tous les mêmes modificateurs qui modifient les substantifs, y compris les adjectifs et les possesseurs</radio>
+      </radioGroup>   
+      <prompt id="PronModMinimalExamplePrompt" show="swPronModDetOrAll">Entrez ici des exemples de votre langue de pronoms modifiés par quelques-uns ou par tous les éléments permis:</prompt>
+		<textBox id="PronNPStandAloneExample" dataItem="standAloneNPExample" show="swPronModDetOrAll"/>
+      <prompt id="PronModSentExamplePrompt" show="swPronModDetOrAll">Maintenant prenez plusieurs des exemples que vous avez entrés ci-dessus et employez-les ici comme le sujet ou comme l’objet d’une phrase:</prompt>
+      <textBox id="PronModSentExample" dataItem="pronSentExample" show="swPronModDetOrAll"/>
+      <br/><br/>
+      <introduction>Quelques exemples en français des pronoms modifiés par des syntagmes partitifs (ou autre syntagme prépositionnel) sont:</introduction>
+      <EnglishExample>
+         <exItem label="4.">toi là-bas</exItem>
+         <exItem label="5.">nous autres de ce département</exItem>
+         <exItem label="6.">ceux parmi vous de cette école</exItem>
+      </EnglishExample>
+      <br/>
+      <prompt id="PronNPPartitiveModNo" show="swPronModNoOrRel">Nous présumons que ceci n’est pas possible dans votre langue, basé sur votre réponse ci-dessus.  Si cela est incorrect, veuillez changez votre réponse ci-dessus.</prompt>
+      <prompt id="PronNPPartitiveMod" show="swPronModNotNoOrRel">Entrez ici vos exemples:</prompt>
+      <textBox id="PronNPPartitiveExample" dataItem="partitiveExample" show="swPronModNotNoOrRel"/>
+      <br/>
+      <radioGroup id="PronNPPartitiveTable" show="swPronModNotNoOrRel">
+         <groupName dataItem="partitivePos" default="unknown" position="yesHeadDiff">RPronNPPartitive</groupName>
+         <prompt>Où le syntagme adpositionel facultatif se présente-t-il par rapport au pronom?</prompt>
+         <radio id="PronNPPartBefore" dataValue="before">Avant</radio>
+         <radio id="PronNPPartAfter" dataValue="after">Après</radio>
+         <radio id="PronNPPartEither" dataValue="either">D’un côté ou de l’autre</radio>
+      </radioGroup>
+      <br/><br/>
+      <introduction>Quelques exemples en français avec un pronom modifiée par une proposition relative sont:</introduction>
+		<EnglishExample>
+		   <exItem label="7.">toi qui vas avec nous</exItem>
+		   <exItem label="8.">tous ceux qui veulent venir</exItem>
+		   <exItem label="9.">nous qui croyons</exItem>
+		</EnglishExample>
+		<br/>
+      <prompt id="PronNPRelModNo" show="swPronModNo">Nous présumons que cela n’est pas possible dans votre langue, basé sur votre réponse ci-dessus.  Si cela n’est pas correct, veuillez changez votre réponse ci-dessus.</prompt>
+      <prompt id="PronNPRelClMod" show="swPronModNotNo">Entrez ici vos exemples de propositions relatives, plaçant ces syntagmes nominaux comme le sujet ou l’objet d’une phrase simple:</prompt>
+		<textBox id="PronNPRelCl" dataItem="pronRelClExample" show="swPronModNotNo"/>
+		<br/>
+      <instruction id="PronDistributionNPInstruction" show="swNotPracticalAndPronModDet">In the tree structure given at the beginning of <section number="5">Nominal Phrases</section>, we will assume for your language that pronouns can fill the NP position, because they can be modified by degree words, demonstratives, articles, relative clauses and PPs, but not by possessors or adjectives.</instruction>
+      <instruction id="PronDistributionDBarPartInstruction" show="swNotPracticalAndPronModPart">In the tree structure given at the beginning of <section number="5">Nominal Phrases</section>, we will assume for your language that pronouns can fill the D’ position, because they can be modified by relative clauses and PPs.</instruction>
+      <instruction id="PronDistributionNInstruction" show="swNotPracticalAndPronModAll">In the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>, we will assume for your language that pronouns can fill the N position, because they can be modified by all the same categories as nouns can.</instruction>
+      <instruction id="PronDistributionDBarInstruction" show="swNotPracticalAndPronModRel">In the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>, we will assume for your language that pronouns can fill the D’ position, because they either stand alone in the place of a whole nominal phrase, or may possibly be modified by a relative clause.</instruction>  
+      <instruction id="PronDistributionDPInstruction" show="swNotPracticalAndPronModNo">In the tree structure given at the beginning of <section number="5">Simple and Possessed Nominal Phrases</section>, we will assume for your language that pronouns can fill the DP position, because they must stand alone in the place of a whole nominal phrase.</instruction>  
+      
+      <introduction id="PronNPClassifierIntro2" show="swOTClassifiersSpecific">Dans la plupart des langues qui se servent de classificateurs, le classificateur peut se présenter sans un substantif, pourvu que les caractéristiques du classificateur ou le contexte rendent claire la référence.</introduction>
+      <radioGroup id="PronNPClassifierNoNTable" show="swOTClassifiersSpecific">
+         <groupName dataItem="classifierNoN" default="no">RPronNPClassifierNoN</groupName>
+         <prompt><br/>Dans votre langue, les classificateurs peuvent-ils se présenter sans un substantif à modifier dans le contexte approprié?</prompt>
+         <radio id="PronClassifierNoNYes" dataValue="yes">Oui</radio>
+         <radio id="PronClassifierNoNNo" dataValue="no">Non, il faut toujours un substantif</radio>
+      </radioGroup>   
+      <prompt id="PronNPClassifierNoNExamplePrompt" show="swOTClassifiersSpecificAndClassifierNoNYes">Entrez des exemples de votre langue de classificateurs dans un syntagme nominal sans un substantif:</prompt>
+      <textBox id="PronNPClassifierNoNExample" dataItem="classifierNoNExample" show="swOTClassifiersSpecificAndClassifierNoNYes"/>
+      
+      <br/><br/>
+		<buttons>
+			<button id="PronNPBack" value="Back" goto="PronIndefinite.xml"/>
+		    <button id="PronNPNext" value="Next" goto="PronCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+   <showWhen id="swArt">
+      <whenValue element="np" attr="artAndDem" value="article"/>
+   </showWhen>
+   <showWhen id="swDem">
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+   </showWhen>
+   <showWhen id="swArtAndDem">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swPronModNotNo">
+      <not/><whenRadio button="PronModNo"/>
+   </showWhen>
+   <showWhen id="swPronModNo">
+      <whenRadio button="PronModNo"/>
+   </showWhen>
+   <showWhen id="swNotPracticalAndPronModDet">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+      <and/>
+      <whenRadio button="PronModDet"/>
+   </showWhen> 
+   <showWhen id="swNotPracticalAndPronModAll">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+      <and/>
+      <whenRadio button="PronModAll"/>
+   </showWhen> 
+   <showWhen id="swNotPracticalAndPronModNo">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+      <and/>
+      <whenRadio button="PronModNo"/>
+   </showWhen> 
+   <showWhen id="swNotPracticalAndPronModPart">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+      <and/>
+      <whenRadio button="PronModPart"/>
+   </showWhen>
+    <showWhen id="swNotPracticalAndPronModRel">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+      <and/>
+      <whenRadio button="PronModRel"/>
+   </showWhen>
+<showWhen id="swPronModNoOrRel">
+   <whenRadio button="PronModNo"/>
+   <or/>
+   <whenRadio button="PronModRel"/>
+   </showWhen>
+   <showWhen id="swPronModNotNoOrRel">
+      <not/><whenRadio button="PronModNo"/>
+      <and/><not/>
+      <whenRadio button="PronModRel"/>
+   </showWhen>
+   <showWhen id="swPronModDetOrAll">
+      <whenRadio button="PronModDet"/>
+      <or/>
+      <whenRadio button="PronModAll"/>
+   </showWhen>
+   <showWhen id="swOTClassifiersSpecific">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+   </showWhen>
+   <showWhen id="swOTClassifiersSpecificAndClassifierNoNYes">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+      <and/>
+      <whenRadio button="PronClassifierNoNYes"/>
+   </showWhen>
+   
+   &TechnicalTerms; 
+   
+</page>

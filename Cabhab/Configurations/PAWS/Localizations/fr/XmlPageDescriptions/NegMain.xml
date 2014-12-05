@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="NegMain" count="1/4">
+   <title>Constructions Négatives</title>
+   <introduction>Toutes les langues peuvent exprimer la <technicalTermRef term="ttNegation">négation</technicalTermRef>, qui s’exprime par moyen des:
+<ul>
+   <li>mots de la négation, comme <example>pas</example> ou <example>nul</example> qui nie le contenu d’un syntagme nominal;</li>
+   <li>pronoms négatifs <technicalTermRef term="ttIndefinite">indéfinis</technicalTermRef>, comme <example>personne...ne</example> ou <example>rien...ne</example>, qui expriment un argument nominal au négatif;</li>
+   <li>adverbes au négatif, comme <example>ne...jamais</example> ou bien <example>nulle parte</example>;</li>
+   <li>auxiliaires au négatif, comme <example>pas</example> on, en anglais, des contractions tells que <example>can’t  « ne peut pas »</example> au lieu de <example>cannot</example>;</li>
+   <li>affixes verbaux au négatif.</li>
+</ul>
+      On les traitera tour à tour. A la page finale on traite les limitations qui puissent se produire entre les divers éléments quand ils se trouvent ensemble dans une phrase complète qui contient un élément au négatif, étant donné le système de négation qu’utilise votre langue. </introduction>
+   
+   <introduction>   D’abord, considérons le sens négatif « pas » quand il modifie un syntagme nominal.  Remarquons que <example>pas</example> peut se mettre à gauche ou bien au lieu des autres mots de degré ou des quantificateurs de large portée, comme dans les exemples (1-4) qui suivent. <example>Pas</example> ou <example>nul</example> se mettent à la première place dans le syntagme nominal.  La négation du syntagme nominal se met à la première ou à la dernière place, ce qui lui donne la plus large <technicalTermRef term="ttScope">portée</technicalTermRef> de tous les modificateurs nominaux dans le syntagme. </introduction>
+    <EnglishExample>
+       <exItem label="1.">
+          <u>pas</u> les enfants</exItem>
+       <exItem label="2.">
+          <u>pas tous</u> les cinq enfants</exItem>
+       <exItem label="3.">
+          <u>pas seulement</u> autant d’enfants</exItem>
+       <exItem label="4.">
+          <u>pas seulement</u> les trois enfants de Suzanne</exItem>
+       <exItem label="5.">
+          <u>nuls</u> de petits enfants</exItem>
+       <exItem label="6.">
+          <u>nuls</u> grands garçons</exItem>
+    </EnglishExample>
+ 
+    <form section="neg">
+       <prompt>Entrez la façon dont votre langue exprime « pas » ou « nul » (modifiant un syntagme nominal plutôt qu’un syntagme verbal), en mettant chaque mot sur une ligne séparée. (Si « pas » ou « nul » est un affixe ou un clitique qui s’attache à un autre mot du syntagme nominal, entrez-le ici, en mettant un tiret ou un signe d’égalité pour indiquer de quel côté il s’attache.)</prompt>
+       <textBox id="NegNotExample" dataItem="not" rows="3"/>
+       <br/><br/>
+       <radioGroup>
+          <groupName dataItem="npDegreeNeg" default="yes">RNegNPDegreeNeg</groupName>
+          <prompt>Est-ce que votre langue exprime le sens négatif « pas » ou « nul » en un mot indépendent (ou bien en plusieurs mots) modifiant tout le syntagme nominal?</prompt>
+          <radio id="NegNPDegreeNegYes" dataValue="yes">Oui, ce sont tous des mots indépendents</radio>
+          <radio id="NegNPDegreeNegSome"  dataValue="some">Certains sont des mots indépendents, d’autres s’attachent à un autre mot</radio>
+          <radio id="NegNPDegreeNegNo"  dataValue="no">Non, ils s’attachent tous à un autre mot dans le syntagme nominal</radio>
+          <radio id="NegNPDegreeNegNone"  dataValue="none">Dans ma langue il ne semble pas y avoir un moyen d’exprimer « pas » ou « nul » pour nier un syntagme nominal</radio>
+       </radioGroup>
+       <checkboxGroup id="NegNPDegreeNegType" show="swNegNPDegreeNegNoOrSome">
+          <prompt>Dans le syntagme nominal, où est-ce les éléments négatifs s’attachent? Cochez tous les choix possibles pour votre langue.</prompt>
+          <checkbox id="NegNPDegreeNegProclitic" dataItem="npDegreeNegProclitic">Comme proclitique qui s’attache à la tête du mot qui commence le syntagme nominal</checkbox>
+          <checkbox id="NegNPDegreeNegEnclitic" dataItem="npDegreeNegEnclitic">Comme enclitique qui s’attache à la fin du mot qui termine le syntagme nominal</checkbox>
+          <checkbox id="NegNPDegreeNegPrefix" dataItem="npDegreeNegPrefix">Comme préfixe qui s’attache au nom principal du syntagme nominal</checkbox>
+          <checkbox id="NegNPDegreeNegSuffix" dataItem="npDegreeNegSuffix">Comme suffixe qui s’attache au nom principal du syntagme nominal</checkbox>
+          <checkbox id="NegNPDegreeNegOther" dataItem="npDegreeNegOther">Dans ma langue ces éléments peuvent s’attacher comme suit: <textBox  id="NegNPDegreeNegOtherContent" dataItem="npDegreeNegOther" rows="2"/></checkbox>
+          </checkboxGroup>	
+       <prompt id="NegNPDegreeAttachesNoCheckPrompt" show="swNegNPDegreeNoAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire comment ces éléments s’attachent dans votre langue; ou bien changez votre réponse ci-dessus comme suit: « Oui, ce sont tous des mots indépendents ».</prompt>
+       <br/>
+       <prompt id="NegDegreeNegNPCliticPrompt" show="swNegNPDegreeNegNoOrSomeClitic">Entrez ici des exemples tels que (1,5 ou 6) ci-dessus de clitiques négatifs inclus dans des syntagmes nominaux entiers (sans éléments de degré positif ni quantificateur):</prompt>
+       <textBox id="NegNPNegCliticExample" dataItem="negCliticExample" cols="50" show="swNegNPDegreeNegNoOrSomeClitic"/>
+       <instruction id="NegNPDegreeNegProcliticInstruction" show="swNegNPDegreeNegNoOrSomeProclitic">In the lexicon, mark the negative proclitic(s) with the feature <feature>negative_prefix</feature>. 
+       </instruction>
+       <instruction id="NegNPDegreeNegEncliticInstruction" show="swNegNPDegreeNegNoOrSomeEnclitic">In the lexicon, mark the negative enclitic(s) with the feature <feature>negative_suffix</feature>.
+       </instruction>
+       <prompt id="NegDegreeNegNPAffixPrompt" show="swNegNPDegreeNegNoOrSomeAffix">Entrez ici des exemples tels que (1,5 ou 6) ci-dessus d’ affixes négatifs inclus dans des syntagmes nominaux entiers (sans éléments de degré positif ni quantificateur):</prompt>
+       <textBox id="NegNPNegAffixExample" dataItem="negAffixExample" cols="50" show="swNegNPDegreeNegNoOrSomeAffix"/>
+       <instruction id="NegNPDegreeNegPrefixInstruction" show="swNegNPDegreeNegNoOrSomePrefix">In the lexicon, mark the negative prefix(es) with the feature <feature>negative</feature>. 
+       </instruction>
+       <instruction id="NegNPDegreeNegSuffixInstruction" show="swNegNPDegreeNegNoOrSomeSuffix">In the lexicon, mark the negative suffix(es) with the feature <feature>negative</feature>. 
+       </instruction>
+       <prompt id="NegDegreeNegNPOtherPrompt" show="swNegNPDegreeNegNoOrSomeOther">Entrez ici des exemples tels que (1,5 ou 6) ci-dessus des éléments négatifs attachés comme permis dans votre langue, inclus dans des syntagmes nominaux entiers (sans éléments de degré positif ni quantificateur):</prompt>
+       <textBox id="NegNPNegOtherExample" dataItem="negOtherExample" cols="50" show="swNegNPDegreeNegNoOrSomeOther"/>
+       
+       <prompt id="NegDegreeNegNPPrompt" show="swNegNPDegreeNegYesOrSome">Entez ici des exemples tels que (1,5 ou 6) ci-dessus des mots négatifs pour « pas » ou « nul », inclus dans des syntagmes nominaux entiers (sans éléments de degré positif ni quantificateur):</prompt>
+       <textBox id="NegNPNegExample" dataItem="negExample" cols="50" show="swNegNPDegreeNegYesOrSome"/>
+       <br/><br/>
+       <checkboxGroup id="NegNPDegreeNegYesTable" show="swNegNPDegreeNegYesOrSome">
+          <prompt>Considérez les données dans la boîte ci-dessus. Dans quelle position se trouvent les éléments négatifs (c’est à dire les mots indépendents) par rapport au reste du syntagme nominal? Cochez toutes les options permises pour votre langue.</prompt>
+          <checkbox id="NegNPDegreeNegWordBefore" dataItem="npDegreeNegWordBefore">Avant</checkbox>
+          <checkbox id="NegNPDegreeNegWordAfter"  dataItem="npDegreeNegWordAfter">Après</checkbox>
+          <checkbox id="NegNPDegreeNegWordBoth"  dataItem="npDegreeNegWordBoth">Des deux côtés en même temps</checkbox>
+          <checkbox id="NegNPDegreeNegWordOther" dataItem="npDegreeNegWordOther">Dans ma langue ces éléments peuvent se mettre comme suit: <textBox  id="NegNPDegreeNegWordOtherContent" dataItem="npDegreeNegWordOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="NegNPDegreeWordNoCheckPrompt" show="swNegNPDegreeYesAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire la position de ces éléments négatifs dans votre langue; ou bien changez votre réponse comme suit: « Non, ils s’attachent à un autre mot du syntagme nominal ».</prompt>
+       <instruction id="NegNPDegreeNegYesInstruction" show="swNegNPDegreeNegYesOrSome">In the lexicon, mark the words meaning   « not »  and  « no »  with the features <feature>makeNeg modifies_DP</feature>. </instruction>
+       <instruction id="NegNPDegreeNegEitherRestrictedInstruction" show="swNegNPDegreeNegEitherRestricted">In the lexicon, mark the negative words which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+       <br/>      
+       <radioGroup id="NegNPDegreeNegCooccurTable" show="swNegNPDegreeNegNotNone">
+          <groupName dataItem="npDegreeNegCooccur" default="no">RNegNPDegreeNegCooccur</groupName>
+          <prompt>Est-ce que les éléments négatifs peuvent coexister avec les éléments de degré positif ou bien avec les quantificateurs de large portée, comme dans les exemples ci-dessus (2-4)?</prompt>
+          <radio id="NegNPDegreeNegCooccurYes" dataValue="yes">Oui</radio>
+          <radio id="NegNPDegreeNegCooccurNo" dataValue="no">Non</radio>
+       </radioGroup>
+       <prompt id="NegNPDegreeNegCooccurPrompt" show="swNegNPDegreeNegNotNoneAndNegCooccurYes">Entrez ici vos exemples de ces éléments négatifs dans les syntagmes nominaux entiers qui comportent les éléments de degré positif ou les quantificateurs de large portée:</prompt>
+       <textBox id="NegNPNegCooccurExample" dataItem="negCooccurExample" cols="50" show="swNegNPDegreeNegNotNoneAndNegCooccurYes"/>
+       <br/><br/>
+       <introduction>Il faut aussi considérer ces syntagmes nominaux négatifs dans les phrases completes, en commençant par des exemples où le syntagme négatif est le sujet, comme suit:
+       </introduction>
+       <EnglishExample>
+          <exItem label="7.">Pas tous les enfants sont venus à la soirée.</exItem>
+          <exItem label="8.">Nul plus étudiant ne peut s’inscrire à la classe.</exItem>
+       </EnglishExample>
+       <br/><br/>
+       <prompt id="NegNPDegreeSentencePrompt" show="swNegNPDegreeNegNotNone">Prenez au moins un exemple des syntagmes nominaux dans la boîte ci-dessus; utilisez-le comme sujet d’une phrase complète, comme dans les exemples (7-8).</prompt>
+       <textBox id="NegNPDegreeNegSubjExample" dataItem="npDegreeSubjExample" rows="4" cols="50" show="swNegNPDegreeNegNotNone"/>
+       <br/>
+        <br/>
+       <introduction>Il existe aussi des pronoms indéfinis utilisés pour exprimer un négatif, comme <example>personne...ne</example>, <example>rien...ne</example>, <example>aucun...ne</example>.  Ces expressions comprennent un négatif et un nom générique ou un numéro. Quelquefois ces indéfinis ont deux mots.</introduction>
+       <br/>
+       <br/>
+       <radioGroup id="NegPronIndefGroup">
+          <groupName dataItem="negIndef" default="yes">RNegPronIndef</groupName>
+          <prompt>Est-ce que votre langue utilise des pronoms indéfinis négatifs qui sont des mots uniques?</prompt>
+          <radio id="NegPronIndefYes" dataValue="yes">Oui, tous sont fusionnés en des pronoms indéfinis négatifs</radio>
+          <radio id="NegPronIndefNo" dataValue="no">Non, ce sont tous des syntagmes nominaux</radio>
+          <radio id="NegPronIndefSome" dataValue="some">Certains sont fusionnés en un seul mot, d’autres sont des syntagmes nominaux</radio>
+       </radioGroup>
+       <prompt id="NegPronIndefExamples" show="swNegPronIndefYesOrSome">
+          Entrez ici les pronoms indéfinis négatifs:</prompt>
+       <textBox id="NegPronIndefExample" dataItem="negIndefExample" show="swNegPronIndefYesOrSome" rows="4"/>
+       <prompt id="NegPronIndefNPExamples" show="swNegPronIndefNoOrSome">
+          Entrez ici les syntagmes nominaux indéfinis au négatif:</prompt>
+       <textBox id="NegPronIndefNPExample" dataItem="negIndefNPExample" show="swNegPronIndefNoOrSome" rows="4"/>
+       <instruction id="NegPronIndefYesInstruction" show="swNegPronIndefYesOrSome">
+          Add the feature <feature>negative</feature> to the negative indefinite pronouns.  We will leave <feature>indefinite</feature> unspecified.</instruction>
+       <instruction id="NegPronIndefNPInstruction" show="swNegPronIndefNoOrSome">
+          Add the feature <feature>modifies_DP makeNeg</feature> to the negative elements meaning  »not’  and  »no’ that can be used in a negative indefinite noun phrase if they were not already marked above.   We will leave <feature>indefinite</feature> unspecified.</instruction>
+<br/><br/>
+       <introduction>Ces indéfinis négatifs peuvent servir de sujet de la phrase, comme suit:
+       </introduction>
+       <EnglishExample>
+          <exItem label="9.">Personne n’aime étudier la grammaire.</exItem>
+          <exItem label="10.">Personne n’a donné une carte d’anniversaire à Marie.</exItem>
+       </EnglishExample>
+  <br/><br/>     
+       <prompt id="NegPronounSentPrompt">Choisissez un exemple de <span id="NegPronounSentSpan" show="swNegPronIndefYes">pronoms indéfinis négatifs</span><span id="NegPronounSentSpan2" show="swNegPronIndefSome">pronoms ou syntagmes nominaux négatifs</span><span id="NegNPSentSpan" show="swNegPronIndefNo">syntagmes nominaux négatifs</span>; utilisez-le comme le sujet d’une phrase complète (voir exemples 9-10 ci-dessus).</prompt>
+        <textBox id="NegPronIndefSubjExample" dataItem="negIndefSubjExample" rows="4" cols="50"/>
+        <br/>
+        <br/>
+        <radioGroup id="NegSubjVerbRequiredTable" show="swNegVerbalYes">
+            <groupName dataItem="subjVerbRequired" default="no">RSubjVerbRequired</groupName>
+           <prompt>Considérez les exemples de phrases complètes que vous venez d’écrire; est-ce que le verbe ou <technicalTermRef term="ttAuxiliary">l’auxiliaire</technicalTermRef> doit être au néglatif lorsque le sujet est au négatif?</prompt>
+           <radio id="NegSubjVerbRequiredYes" dataValue="yes">Oui, un sujet négatif doit être accompagné d’un verbe ou d’un auxiliaire au négatif</radio>
+           <radio id="NegSubjVerbRequiredNo" dataValue="no">Non le verbe ou l’auxiliaire ne doit pas être au négatif quand le sujet est au négatif</radio>
+        </radioGroup>
+        <br/>
+        <br/>
+        <buttons>
+            <button id="NegMainBack" value="Back" goto="Contents.htm"/>
+            <button id="NegMainNext" value="Next" goto="NegVerbal.xml"/>
+        </buttons>
+    </form>
+   
+   <showWhen id="swNegNPDegreeNegYes">
+      <whenRadio button="NegNPDegreeNegYes"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegSome">
+      <whenRadio button="NegNPDegreeNegSome"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNo">
+      <whenRadio button="NegNPDegreeNegNo"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNone">
+      <whenRadio button="NegNPDegreeNegNone"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNotNone">
+      <not/><whenRadio button="NegNPDegreeNegNone"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNoAndNoCheck">
+      <openParen/>
+      <whenRadio button="NegNPDegreeNegNo"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegPrefix"/>
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegOther"/>          
+   </showWhen>
+   <showWhen id="swNegNPDegreeYesAndNoCheck">
+      <openParen/>
+      <whenRadio button="NegNPDegreeNegYes"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NegNPDegreeNegWordOther"/>          
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNoOrSome">
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or></or>
+      <whenRadio button="NegNPDegreeNegNo"/>		
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegYesOrSome">
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or></or>
+      <whenRadio button="NegNPDegreeNegYes"/>		
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNoOrSomeOther">
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <and/>
+      <whenCheckbox button="NegNPDegreeNegOther"/>
+      <or></or>
+      <whenRadio button="NegNPDegreeNegNo"/>		
+      <and/>
+      <whenCheckbox button="NegNPDegreeNegOther"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNoOrSomeAffix">
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="NegNPDegreeNegPrefix"/>
+       <or/>
+      <whenCheckbox button="NegNPDegreeNegSuffix"/>
+      <closeParen/>
+      <or></or>
+      <whenRadio button="NegNPDegreeNegNo"/>		
+      <and/>
+      <openParen/>
+      <whenCheckbox button="NegNPDegreeNegPrefix"/>
+      <or/>
+      <whenCheckbox button="NegNPDegreeNegSuffix"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNoOrSomeClitic">
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="NegNPDegreeNegProclitic"/>
+      <or/>
+      <whenCheckbox button="NegNPDegreeNegEnclitic"/>
+      <closeParen/>
+      <or></or>
+      <whenRadio button="NegNPDegreeNegNo"/>		
+      <and/>
+      <openParen/>
+      <whenCheckbox button="NegNPDegreeNegProclitic"/>
+      <or/>
+      <whenCheckbox button="NegNPDegreeNegEnclitic"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegYesorSome">
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegYes"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNoOrSomeProclitic">
+      <whenCheckbox button="NegNPDegreeNegProclitic"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegNo"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNoOrSomeEnclitic">
+      <whenCheckbox button="NegNPDegreeNegEnclitic"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegNo"/>
+      <closeParen/>
+   </showWhen>
+  <showWhen id="swNegNPDegreeNegNoOrSomePrefix">
+      <whenCheckbox button="NegNPDegreeNegPrefix"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegNo"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNoOrSomeSuffix">
+      <whenCheckbox button="NegNPDegreeNegSuffix"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegNo"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegEitherRestricted">
+      <openParen/>
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegYes"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="NegNPDegreeNegWordBefore"/>
+      <and/>
+      <whenCheckbox button="NegNPDegreeNegWordAfter"/>
+      <or/>
+      <whenCheckbox button="NegNPDegreeNegWordBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegNotNoneAndNegCooccurYes">
+      <not/><whenRadio button="NegNPDegreeNegNone"/>
+      <and/>
+      <whenRadio button="NegNPDegreeNegCooccurYes"/>
+   </showWhen>
+   <showWhen id="swNegNPDegreeNegCooccurYesAndYesOrSome">
+      <whenRadio button="NegNPDegreeNegCooccurYes"/>	
+      <and/>
+      <whenRadio button="NegNPDegreeNegSome"/>
+      <or/>
+      <whenRadio button="NegNPDegreeNegCooccurYes"/>	
+      <and/>
+      <whenRadio button="NegNPDegreeNegYes"/>	
+   </showWhen>
+   
+   
+   <showWhen id="swNegPronIndefYes">
+      <whenRadio button="NegPronIndefYes"/>
+   </showWhen>
+   <showWhen id="swNegPronIndefNo">
+      <whenRadio button="NegPronIndefNo"/>
+   </showWhen>
+   <showWhen id="swNegPronIndefSome">
+      <whenRadio button="NegPronIndefSome"/>
+   </showWhen>
+   <showWhen id="swNegPronIndefYesOrSome">
+      <whenRadio button="NegPronIndefYes"/>
+      <or/>
+      <whenRadio button="NegPronIndefSome"/>
+   </showWhen>
+   <showWhen id="swNegPronIndefNoOrSome">
+      <whenRadio button="NegPronIndefNo"/>
+      <or/>
+      <whenRadio button="NegPronIndefSome"/>
+   </showWhen>
+   
+   <showWhen id="swNegVerbalYes">
+      <whenValue element="neg" attr="negVerbal" value="yes"/>
+   </showWhen>
+   
+   
+   &TechnicalTerms; 
+   
+</page>
+

@@ -4,22 +4,43 @@
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPMain" count="1/1">
-    <title>Las frases nominales</title>
+    <title>Las frases nominales - Descripción en general</title>
     <introduction>
        Las frases nominales pueden ser muy complejas, así que serán divididas entre seis secciones en este programa. Esta sección se enfoca en las frases nominales con sustantivos comunes como el sustantivo principal  Se consideran la modificación producida por los artículos, los demonstrativos, los posesivos, los cuantificadores y las palabras de grado, las frases adjetivales y las frases adposicionales.    
        Las frases nominales que tienen nombres propios como núcleo se tratan en  <section number="6">Los nombre propios</section> y los que tienen pronombres, demonstrativos o cuantificadores como núcleo se analizan en <section number="7">Los pronombres - Como frases nominales</section> y <section number="2">Las frases cuantificadores - Las construcciones partitivas</section>.  La posibilidad de la modificación por <technicalTermRef term="ttAdpositionalPhrases"/> se trata en <section number="8">Las frases adposicionales</section> y la modificación por cláusulas relativas se agrega en  <section number="12">Las cláusulas relativas</section>.  Finalmente, la negación de la frase nominal completo se trata en <section number="14"> Las construcciones de negación</section>.</introduction>
     <introduction id="NPPhraseStructureIntro" show="swNotPractical">Because there are so many positions needed for distinct sets of modifiers, we will use the expanded DP (determiner phrase) structure, rather than the simpler NP phrase structure.  These more complex tree structures will be built step-by-step from your answers to the questions here. You simply need to be aware that when you look at the tree structures generated, nominal phrases will have DPs on top of the NPs.  A simple English example is given here:
 <tree img="TreeDescriptions/PawsNPTree.png"/>
 It may be difficult to understand the need for the change in English or Spanish, because articles, demonstratives and possessors are mutually exclusive, but in many languages all three can occur in a single nominal phrase.  <help href="../Help/Cbgbtext.doc#DPHypothesis">(Click here to see more on the DP hypothesis.)</help>
-        <br/>
-        <br/>
-       Se empieza con los modificadores que tienen el alcance o ámbito más amplio, y luego se avanza presentando otros elementos con ámbito más limitado y más cerca del sustantivo.
-       <br/><br/>En el nivel superior de la frase nominal (inicial o final) se presentan esos cuantificadores y palabras de grado de ámbito amplio que modifican a la frase completa, tal como <example>todos</example>, <example>casi</example>, <example>apenas</example> y <example>solamente</example>, que se analizan en la primera página de <section number="2">Las frases cuantificadoras</section>.  Nada más sea necesario con respecto a esos modificadores.</introduction>
-   
-   <introduction id="NPPracticalIntro" show="swPractical">Se empieza con los modificadores que tienen el alcance o ámbito más amplio, y luego se avanza presentando otros elementos con ámbito más limitado y más cerca del sustantivo.
-      <br/><br/>En el nivel superior de la frase nominal (inicial o final) se presentan esos cuantificadores y palabras de grado de ámbito amplio que modifican a la frase completa, tal como <example>todos</example>, <example>casi</example>, <example>apenas</example> y <example>solamente</example>, que se analizan en la primera página de <section number="2">Las frases cuantificadoras</section>.  Nada más sea necesario con respecto a esos modificadores.</introduction>
+ </introduction>  
+   <introduction>Se empieza con los modificadores que tienen el alcance o ámbito más amplio, y luego se avanza presentando otros elementos con ámbito más limitado y más cerca del sustantivo.</introduction>
+
     <form section="np" transparent="yes">
-        <br/>
+       <prompt><br/>En el nivel superior de la frase nominal (inicial o final) se presentan esos cuantificadores y palabras de grado de ámbito amplio que modifican a la frase completa, tal como <example>todos</example>, <example>casi</example>, <example>apenas</example> y <example>solamente</example>, que se analizan en la primera página de <section number="2">Las frases cuantificadoras</section>.</prompt>
+           <prompt id="NPClassifierNotSpecificPrompt" show="swOTClassifierNotSpecific"><br/> Nada más sea necesario con respecto a esos modificadores.</prompt>      
+           
+        <prompt id="NPClassifierSpecificPrompt" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome"><br/>Los ejemplos de frases nominales completas con las palabras independientes que significan ‘todos’, ‘casi’, ‘solamente’ o ‘apenas’ que usted escribió son:
+           </prompt>
+        <textBox id="QPNPExample"  section="qp" dataItem="example" cols="50" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome"/>
+<radioGroup id="NPClassifierSpecificTable" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome">
+    <groupName dataItem="classifierPresent" default="no">RNPClassifierPresent</groupName>
+    <prompt><br/>De acuerdo con los ejemplos, ¿Se presentan los clasificadores en las frases nominales completas con las palabras independientes que significan ‘todos’, ‘casi’, ‘solamente’ o ‘apenas’?</prompt>
+    <radio id="NPClassifierPresentYes"  dataValue="yes">Sí, un clasificador se requiere presentarse en todas las frases nominales de esta tipo</radio>
+    <radio id="NPClassifierPresentSome" dataValue="some">Se presenta un clasificador en algunas de esta tipo de frase nominal, pero no se requiere en todas</radio>
+    <radio id="NPClassifierPresentNo" dataValue="no">No, un clasificador nunca se presenta en esta tipo de frase nominal</radio>
+</radioGroup>
+        <checkboxGroup id="NPClassifierSpecificPos" show="swOTClassifierSpecificAndQPNPDegreeYesOrSomeAndNPClassifierPresentYesOrSome">
+            <prompt><br/>De acuerdo con los ejemplos, ¿dónde se presentan los clasificadores con respecto a estos cuantificadores o palabras de grado que se escriben como palabras independientes y al sustantivo?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+            <checkbox id="NPClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificPosBeforeBoth">Primero, antes de ambos el cuantificador o palabra de grado y el sustantivo</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificPosAfterBoth">Final, después de ambos el sustantivo y el cuantificador o palabra de grado</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterQBeforeN"  dataItem="classifierSpecificPosAfterQBeforeN">Después del cuantificador o palabra de grado pero antes del sustantivo</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterNBeforeQ"  dataItem="classifierSpecificPosAfterNBeforeQ">Después del sustantivo pero antes del cuantificador o palabra de grado</checkbox>
+            <checkbox id="NPClassifierSpecificPosPrefixQ"  dataItem="classifierSpecificPosPrefixQ">Como un prefijo en el cuantificador o palabra de grado</checkbox>
+            <checkbox id="NPClassifierSpecificPosSuffixQ"  dataItem="classifierSpecificPosSuffixQ">Como un sufijo en el cuantificador o palabra de grado</checkbox>
+            <checkbox id="NPClassifierSpecificPosOther"  dataItem="classifierSpecificPosOther">En mi lengua, los clasificadores pueden presentarse: <textBox  id="NPClassifierSpecificPosOtherContent" dataItem="classifierSpecificPosOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="NPClassifierSpecificPosNoCheckPrompt" show="swNPClassifierPresentYesOrSomeAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los clasificadores con respecto a estos cuantificadores o palabras de grado que se escriben como palabras independientes y al sustantivo en su lengua, o cambia la respuesta anterior a “No, un clasificador nunca se presenta en esta tipo de frase nominal”.</prompt>
+        
+        <br/><br/>
         <buttons>
             <button id="NPMainBack" value="Back" goto="NPContents.htm"/>
             <button id="NPMainNext" value="Next" goto="NPContents.htm"/>
@@ -31,5 +52,61 @@ It may be difficult to understand the need for the change in English or Spanish,
 <showWhen id="swPractical">
    <whenValue  element="paws" attr="outputGrammar" value="False"/>
 </showWhen>
+    <showWhen id="swOTClassifierNotSpecific">
+        <not/><whenValue element="typology" attr="classifier" value="yesSpecific"/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndQPNPDegreeYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndQPNPDegreeYesOrSomeAndNPClassifierPresentYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPClassifierPresentSome"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPClassifierPresentYesOrSomeAndNoCheck">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPClassifierPresentSome"/>
+        <closeParen/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosBeforeBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterQBeforeN"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterNBeforeQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosPrefixQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosSuffixQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosOther"/>
+    </showWhen>
 &TechnicalTerms; 
 </page>

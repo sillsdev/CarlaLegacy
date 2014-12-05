@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<commands>
+		<command id="CmdNewLanguage" label="Créer _Nouvelle Langue" shortcut="Ctrl+N" message="NewLanguage" icon="New"/>
+		<command id="CmdOpenLanguage" label="_Ouvrir Langue" message="OpenLanguage" shortcut="Ctrl+O" icon="Open"/>
+		<command id="CmdCloseLanguage" label="_Fermer Langue" message="CloseLanguage"/>
+		<command id="CmdGenerateFiles" label="_Générer Fichiers" message="GenerateFiles" shortcut="Ctrl+S" icon="Save"/>
+		<command id="CmdSaveLanguageAs" label="_Enregistrer Langue Sous" message="SaveLanguageAs"/>
+		<command id="CmdExit" label="_Quitter" message="ExitApplication"/>
+		<command id="CmdCopy" label="C_opier" message="EditCopy" icon="Copy" shortcut="Ctrl+C"/>
+		<command id="CmdCut" label="Couper" message="EditCut" icon="Cut" shortcut="Ctrl+X"/>
+		<command id="CmdPaste" label="Coller" message="EditPaste" icon="Paste" shortcut="Ctrl+V"/>
+		<command id="CmdLanguageProperties" label="_Propriétés" message="LanguageProperties"/>
+		<command id="CmdLanguageFileLocations" label="Emplacements des fichiers" message="LanguageFileLocations"/>
+		<command id="CmdBack" label="_Retour" message="BrowserBack" icon="Back" shortcut="Alt+Left"/>
+		<command id="CmdForward" label="_Suivant" message="BrowserForward" icon="Forward" shortcut="Alt+Right"/>
+		<command id="CmdRefresh" label="_Actualiser" message="BrowserRefresh" icon="Refresh" shortcut="F5"/>
+		<command id="CmdAbout" label="_À propos de PAWS" message="AboutPage"/>
+		<command id="CmdResources" label="_Ressources" message="ResourcesPage"/>
+		<command id="CmdShowToolbar" label="Show Toolbar" message="ShowToolbar"/>
+		<command id="CmdShowStatusBar" label="Afficher la barre d'état" message="ShowStatusBar"/>
+		<command id="CmdInterfaceLanguage" label="Réglez la langue d'interface" message="InterfaceLanguage"/>
+	</commands>
+	<!-- ********************************************************** -->
+	<!-- ************************ menus *********************** -->
+	<!-- ********************************************************** -->
+	<menubar>
+		<menu id="File" label="_Fichier">
+			<include path="MasterMenu.xml" query="root/menubar/menu[@id='File']/*"/>
+		</menu>
+		<menu id="Edit" label="_Modifier">
+			<include path="MasterMenu.xml" query="root/menubar/menu[@id='Edit']/*"/>
+		</menu>
+		<menu id="Language" label="_Langue">
+			<include path="MasterMenu.xml" query="root/menubar/menu[@id='Language']/*"/>
+		</menu>
+		<menu id="View" label="_Afficher">
+			<include path="MasterMenu.xml" query="root/menubar/menu[@id='View']/*"/>
+		</menu>
+		<menu id="Help" label="_Aide">
+			<include path="MasterMenu.xml" query="root/menubar/menu[@id='Help']/*"/>
+		</menu>
+	</menubar>
+</root>

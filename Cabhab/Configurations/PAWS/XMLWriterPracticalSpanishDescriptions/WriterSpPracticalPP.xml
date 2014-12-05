@@ -10,7 +10,7 @@
                 <caseText value="unknown">Las frases adposicionales</caseText>
             </case>
             </secTitle>
-       <p contentType="ctPracticalIntro" show="swNPCaseNNo"><content>Las frases adposicionales expresan generalmente lugar o tiempo, y también las relaciones gramaticales de acompañamiento, meta, instrumento, recipiente, poseedor o agente, porque, en el </content><langName/><content>, el caso no se indica en sustantivos o frases nominales.  Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después, y pueden ser palabras independientes o clíticos  </content>
+       <p contentType="ctPracticalIntro" show="swNPCaseNNo"><content>Las frases adposicionales expresan generalmente lugar o tiempo, y también las relaciones gramaticales de acompañamiento, meta, instrumento, recipiente, poseedor o agente, porque, en el </content><langName/><content>, el caso no se indica en sustantivos o frases nominales.  Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después, y pueden ser palabras independientes o clíticos. </content>
        </p>
        <p contentType="ctPracticalIntro" show="swNPCaseNYes"><content>Las frases adposicionales expresan solamente lugar o tiempo, dado que el caso se indica en sustantivos o frases nominales en el </content><langName/><content>.  Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después y pueden ser palabras independientes o clíticos  </content>
        </p>
@@ -67,8 +67,8 @@
                <caseText value="unknown">Las adposiciones</caseText></case>
                <content> se marcan con clasificadores como parte del sistema de concordancia. En los cuadros solamente se muestran las raíces, pero los ejemplos de frases muestran las formas completas con clasificadores.</content> </text>
         </p>
-       <p show="swPPPosPrep"><content>Algunos ejemplos de las preposiciones </content><text show="swPPBodypartYes"><content>regulares</content></text>
-          <content> que se usan en frases locativas son:</content></p>
+       <p show="swPPPosPrep"><content>Algunos ejemplos de las preposiciones </content><text show="swPPBodypartYes"><content>regulares </content></text>
+          <content>que se usan en frases locativas son:</content></p>
        <example show="swPPPosPrep">
           <table border="1">
              <headerRow>
@@ -81,8 +81,8 @@
              </row>
           </table>
        </example>
-       <p show="swPPPosPost"><content>Algunos ejemplos de las posposiciones </content><text show="swPPBodypartYes"><content>regulares</content></text>
-          <content> que se usan en frases locativas son:</content></p>
+       <p show="swPPPosPost"><content>Algunos ejemplos de las posposiciones </content><text show="swPPBodypartYes"><content>regulares </content></text>
+          <content>que se usan en frases locativas son:</content></p>
        <example show="swPPPosPost">
           <table border="1">
              <headerRow>
@@ -95,8 +95,8 @@
              </row>
           </table>
        </example>
-       <p show="swPPPosBothOrUnknown"><content>Algunos ejemplos de las adposiciones </content><text show="swPPBodypartYes"><content>regulares</content></text>
-          <content> que se usan en frases locativas son:</content></p>
+       <p show="swPPPosBothOrUnknown"><content>Algunos ejemplos de las adposiciones </content><text show="swPPBodypartYes"><content>regulares </content></text>
+          <content>que se usan en frases locativas son:</content></p>
        <example show="swPPPosBothOrUnknown">
           <table border="1">
              <headerRow>

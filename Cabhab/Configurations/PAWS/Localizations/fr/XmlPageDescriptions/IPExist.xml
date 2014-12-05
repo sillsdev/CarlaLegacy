@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPExist" count="3/3">
+    <title level="2">Phrases Simples – Existentielles</title>
+    <introduction>Les phrases existentielles ressemblent aux phrases copulatifs, sauf qu’elles utilisent un mot ou des mots qui signifient « il y a » ou « il existe », avec un syntagme nominal et généralement un lieu. Exemples en français:</introduction>
+        <EnglishExample>
+            <exItem label="1.">Il y a un livre sur la table.</exItem>
+            <exItem label="2.">Il y a deux hommes dehors.</exItem>
+            <exItem label="3.">Il n’y a plus de nourriture.</exItem>
+        </EnglishExample>
+    <introduction>Par contre, certaines langues ont un verbe existentiel distinct, tel que <example>hay  « il existe »</example> en espagnol. D’autres langues ont une série de verbes existentiels qui expriment la position de l’objet décrit.</introduction>
+    <form section="ip">
+        <prompt><br/>Entrez ici des exemples de phrases existentielles dans votre langue:</prompt>
+        <textBox id="IPExamplesExistExample" dataItem="existExample" cols="50"/>
+        <checkboxGroup>
+            <prompt><br/>On utilise quels éléments particuliers dans votre langue surtout chez les phrases existentielles? Cochez chaque option qui est correcte pour votre langue. S’il n’y a aucune option qui est permise dans votre langue, ne cochez que la case « Aucune » ci-dessous.</prompt>
+            <checkbox id="IPExistWord" dataItem="existWord">Un mot o des mots existentiels distinctes comme « il y a » en français</checkbox>
+            <checkbox id="IPExistVerb" dataItem="existVerb">Un verbe existentiel comme « hay » en espagnol, ou peut-être les verbes copulatifs comme en anglais</checkbox>
+            <checkbox id="IPExistPosition" dataItem="existPosition">Un groupe de verbes existentiels qui expriment la position de l’objet</checkbox>
+            <checkbox id="IPExistOther" dataItem="existOther">Dans ma langue, les phrases existentielles peuvent être indiquées comme suit: <textBox  id="IPExistOtherContent" dataItem="existOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="IPExistNoCheckPrompt" show="swIPExistNoCheck">AVERTISSEMENT: Vous n’avez coché aucune option pour décrire comment les phrases existentielles sont indiquées dans votre langue. Cochez au moins une des options ci-dessus. S’il n’y a aucune option qui convient, cochez la case « Aucune » ci-dessous.</prompt>
+       <checkboxGroup id="IPExistNoneTable" show="swIPExistNoCheck">
+           <prompt>Ne cochez cette case que si votre langue n’indique pas du tout les phrases existentielles.</prompt>
+           <checkbox id="IPExistNone" dataItem="existNone">Aucune, elles sont exactement les mêmes que les phrases copulatifs</checkbox>
+       </checkboxGroup>   
+       <br/>
+       <br/>
+        <prompt id="IPExistWordExamples" show="swIPExistWord">Entrez les mots qui signifient « il y a » et qui sont utilisés dans les phrases existentielles dans votre langue (chaque mot sur une nouvelle ligne):</prompt>
+       <textBox id="IPExamplesExistWordExample" dataItem="existWordExample" rows="3" show="swIPExistWord"/>
+       <br/>
+       <instruction id="IPExistWordPrompt" show="swIPExistWord">Add the feature <feature>exist</feature> to the existential word in the lexicon.  We assume that this word will have the category <category>Adv</category>.  If it does not, please also add the feature <feature>makeAdv</feature> to change the category for these constructions.  If the existential word is synonymous with another word or another category in your language, you will need to make two separate lexical entries.</instruction>
+        <prompt id="IPExistVerbExamples" show="swIPExistVerb"><br/>Entrez les verbes utilisés dans les phrases existentielles dans votre langue (chaque verbe sur une nouvelle ligne):</prompt>
+        <textBox id="IPExamplesExistVerbExample" dataItem="existVerbExample" rows="5" show="swIPExistVerb"/>
+        <prompt id="IPExistPositionExamples" show="swIPExistPosition"><br/>Entrez les verbes de position utilisés dans les phrases existentielles dans votre langue (chaque verbe sur une nouvelle ligne):</prompt>
+       <textBox id="IPExamplesExistPositionExample" dataItem="existPositionExample" rows="5" show="swIPExistPosition"/>
+       <br/>
+       <instruction id="IPExistVerbYesInstruction" show="swIPExistVerbOrPosition">Add the feature <feature>exist</feature> to the appropriate verbs  in the lexicon. Since the existential verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-exist</feature>.  Also add the feature <feature>exist</feature> to any copular verbs that may be used in these existential constructions.</instruction>
+        <prompt id="IPExistOtherExamples" show="swIPExistOther"><br/>Entrez des exemples d’autres marques utilisées pour des phrases existentielles dans votre langue:</prompt>
+       <textBox id="IPExamplesExistOtherExample" dataItem="existOtherExample" rows="3" show="swIPExistOther"/>
+       
+       <br/>  <br/>
+       <buttons>
+            <button id="IPExistBack" value="Back" goto="IPComparative.xml"/>
+            <button id="IPExistNext" value="Next" goto="IPContents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swHeadInitial">
+        <whenValue element="typology" attr="wordOrder" value="SVO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="VOS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+    </showWhen>
+    <showWhen id="swHeadFinal">
+        <whenValue element="typology" attr="wordOrder" value="SOV"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OVS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+    </showWhen>
+<showWhen id="swIPExistVerb">
+   <whenCheckbox button="IPExistVerb"/>
+</showWhen>
+   <showWhen id="swIPExistPosition">
+      <whenCheckbox button="IPExistPosition"/>
+   </showWhen>
+   <showWhen id="swIPExistVerbOrPosition">
+    <whenRadio button="IPExistVerb"/>
+    <or/>
+    <whenRadio button="IPExistPosition"/>
+</showWhen>
+    <showWhen id="swIPExistWord">
+        <whenRadio button="IPExistWord"/>
+    </showWhen>
+<showWhen id="swIPExistOther">
+   <whenCheckbox button="IPExistOther"/>
+</showWhen>
+   <showWhen id="swIPExistNoCheck">
+      <not/>
+      <whenCheckbox button="IPExistWord"/>
+      <and/><not/>
+      <whenCheckbox button="IPExistVerb"/>
+      <and/><not/>
+      <whenCheckbox button="IPExistPosition"/>
+      <and/><not/>
+      <whenCheckbox button="IPExistOther"/>
+   </showWhen>
+</page>

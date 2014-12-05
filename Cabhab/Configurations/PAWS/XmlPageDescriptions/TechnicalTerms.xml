@@ -14,7 +14,7 @@
    <technicalTerm id="ttAdpositionalPhrases">
    <termInLang>
       <term>adpositional phrases</term>
-      <termDefinition>Adpositional phrases are either prepositional phrases or postpositional phrases, depending on what the language allows..</termDefinition>
+      <termDefinition>Adpositional phrases are either prepositional phrases or postpositional phrases, depending on what the language allows.</termDefinition>
    </termInLang>
 </technicalTerm>
    <technicalTerm id="ttAdposition">
@@ -45,6 +45,12 @@
       <termInLang>
          <term>antipassive</term>
          <termDefinition>Antipassive is a verb voice in which the object of a transitive verb is not expressed.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttApplicative">
+      <termInLang>
+         <term>applicative</term>
+         <termDefinition>Applicative is a verb voice in which an oblique argument of the verb is promoted to the object argument.  An applicative affix may convert an intransitive verb into a transitive verb, or a trnaisitve verb into a ditransitive verb.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttArgument">
@@ -86,19 +92,43 @@
  <technicalTerm id="ttClassifier">
     <termInLang>
        <term>classifier</term>
-       <termDefinition> A classifier is an affix or independent word that marks nouns according to their shape, position, color, animacy or other characteristics.  Classifiers may be expressed by numbers or by types and may or may not be part of the agreement system.</termDefinition>
+       <termDefinition>A classifier is an affix or independent word that characterizes nouns according to their shape, position, color, animacy or other characteristics.  Classifiers often occur with numbers or other quantifiers or with demonstratives.  They are usually not part of the concord agreement system as noun class markers are.</termDefinition>
     </termInLang>
  </technicalTerm>
    <technicalTerm id="ttClitic">
       <termInLang>
          <term>clitic</term>
-         <termDefinition> A clitic as defined here is a syntactic element that is phonologically dependent, so it attaches to another word or phrase.  Phrasal clitics may be proclitics which attach to the beginning of whatever word begins the phrase, or enclitics which attach to whatever word ends the phrase.  Any elements which are written as independent words in your orthography should not be considered clitics for PAWS.</termDefinition>
+         <termDefinition>A clitic as defined here is a syntactic element that is phonologically dependent, so it attaches to another word or phrase.  Phrasal clitics may be proclitics which attach to the beginning of whatever word begins the phrase, or enclitics which attach to whatever word ends the phrase.  Any elements which are written as independent words in your orthography should not be considered clitics for PAWS.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttComplements">
       <termInLang>
          <term>complements</term>
          <termDefinition>A verb’s complements include those elements that occur with it in the verb phrase: the direct object and indirect object and a location for motion verbs, as well as embedded clauses of particular types.  The subject is not a complement.  The complement for an adverb or adjective is normally an embedded clause.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCompletive">
+      <termInLang>
+         <term>completive</term>
+         <termDefinition>Completive aspect is used when the action has terminated.  It is not still taking place.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContemplative">
+      <termInLang>
+         <term>contemplative</term>
+         <termDefinition>Contemplative aspect is used for actions that may take place in the future.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContinuative">
+      <termInLang>
+         <term>continuative</term>
+         <termDefinition>Continuative aspect is used for actions that are continuous or ongoing. Continuative aspect is a subtype of imperfective aspect.  Progressive and stative are subtypes of continuative.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContrafactual">
+      <termInLang>
+         <term>contrafactual</term>
+         <termDefinition>Contrafactual aspect is used for statements expressing an idea that is presupposed to be false.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttCopular">
@@ -191,10 +221,28 @@
         <termDefinition>A gerund is a verb or verb phrase that acts like a noun or nominal phrase.  For example, ‘playing soccer’ is a gerund phrase acting as the subject of the sentence in ‘Playing soccer is fun.’</termDefinition>
      </termInLang>
   </technicalTerm>
+   <technicalTerm id="ttHabitual">
+      <termInLang>
+         <term>habitual</term>
+         <termDefinition>Habitual aspect is used for actions that occur repeatedly.  They can occur in the past, present or future.  Habitual aspect is a subtype of imperfective.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttImperative">
       <termInLang>
          <term>imperative</term>
          <termDefinition>Imperatives are commands, which can have strong or more polite forms.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttImperfect">
+      <termInLang>
+         <term>imperfect</term>
+         <termDefinition>The imperfect is the past form of the imperfective.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttImperfective">
+      <termInLang>
+         <term>imperfective</term>
+         <termDefinition>Imperfective aspect is used to describe an activity which is ongoing.  It combines the meanings of both the habitual and progressive aspects.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttInalienably">
@@ -207,6 +255,12 @@
       <termInLang>
          <term>inclusive</term>
          <termDefinition>An inclusive pronoun refers to the speaker and the hearer, and possibly others.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttIncompletive">
+      <termInLang>
+         <term>incompletive</term>
+         <termDefinition>Incompletive aspect is used for actions which have not terminated.  It is the opposite of the completive aspect.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttIndefinite">
@@ -239,6 +293,12 @@
       <termDefinition>An intransitive sentence has only a subject, no direct object.</termDefinition>
    </termInLang>
 </technicalTerm>
+   <technicalTerm id="ttIrrealis">
+      <termInLang>
+         <term>irrealis</term>
+         <termDefinition>Irrealis mood is similar to unreal aspect in expressing imagined or projected situations, things that could or might happen.  Subjunctive and conditional moods are subtypes of irrealis mood.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttMass">
       <termInLang>
          <term>mass</term>
@@ -329,6 +389,18 @@
          <termDefinition>Verbs of perception express how we perceive something with our senses.</termDefinition>
       </termInLang>
    </technicalTerm>
+   <technicalTerm id="ttPerfect">
+      <termInLang>
+         <term>perfect</term>
+         <termDefinition>Perfect aspect describes a past event with present relevance or a present state resulting from a past situation.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPerfective">
+      <termInLang>
+         <term>perfective</term>
+         <termDefinition>Perfective aspect describes a completed action. It can express a simple past event.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttPolarity">
    <termInLang>
       <term>polarity</term>
@@ -347,6 +419,12 @@
          <termDefinition>The possessor is the person, animal or thing that owns something or someone, or it belongs or pertains to the possessor.  This program considers the possessor to be the independent nominal phrase, not an attached pronoun; the pronoun is seen to agree with the nominal phrase possessor if it is present, though languages with pronominal affixes marking the possessor usually also allow the independent possessor to be unexpressed (pro-drop).</termDefinition>
       </termInLang>
    </technicalTerm>
+   <technicalTerm id="ttPotential">
+      <termInLang>
+         <term>potential</term>
+         <termDefinition>Potential aspect is used for events that may occur in the future.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttPredicates">
       <termInLang>
          <term>predicates</term>
@@ -359,6 +437,18 @@
       <termDefinition>Pro-drop is allowed most often in languages which have pronominal agreement affixes attached to the verb to mark the features of the subject and object and on the noun to mark the features of the possessor.  These affixes agree with the features of any nominal phrases which fill those positions, but if the subject, object or possessor is a pronoun, then an independent pronoun appears only when that argument is emphasized or focused.  Otherwise, the argument position is empty or dropped.</termDefinition>
    </termInLang>
 </technicalTerm>
+   <technicalTerm id="ttProgressive">
+      <termInLang>
+         <term>progressive</term>
+         <termDefinition>Progressive aspect is used for action that is ongoing and evolving.  It is a subtype of continuative and of imperfective.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPurposive">
+      <termInLang>
+         <term>purposive</term>
+         <termDefinition>Purposive aspect expresses the reason or need.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttQuantifiers">
    <termInLang>
       <term>quantifiers</term>
@@ -395,6 +485,12 @@
          <termDefinition>Semantics is the study of meaning in language.</termDefinition>
       </termInLang>
    </technicalTerm>
+   <technicalTerm id="ttStative">
+      <termInLang>
+         <term>stative</term>
+         <termDefinition>The stative aspect is used when the situation is described as ongoing but not evolving.  Stative is a subtype of continuative which is a subtype of imperfective.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttSubjunctive">
       <termInLang>
          <term>subjunctive</term>
@@ -423,6 +519,12 @@
       <termInLang>
          <term>transitive</term>
          <termDefinition>A transitive sentence has both a subject and a direct object.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttUnreal">
+      <termInLang>
+         <term>unreal</term>
+         <termDefinition>Unreal aspect is similar to irrealis mood in expressing imagined or projected situations, things that could or might happen.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttVoice">

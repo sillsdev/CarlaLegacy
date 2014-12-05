@@ -25,11 +25,11 @@
 <introduction>Interjections typically consist of a particular word or phrase that is used alone, usually with an exclamation point following it.  Though many of the words in interjections are not used in any other situation, regular adjectives are also used in this way.  Some examples of interjections in English are:
 </introduction>
     <EnglishExample>
-        <exItem label="1.">Ouch!</exItem>
-        <exItem label="2.">Gross!</exItem>
-        <exItem label="3.">Cool!</exItem>
-        <exItem label="4.">Jumping Jehosaphat!</exItem>
-        <exItem label="5.">Jimminy Cricket!</exItem>
+        <exItem label="10.">Ouch!</exItem>
+        <exItem label="11.">Gross!</exItem>
+        <exItem label="12.">Cool!</exItem>
+        <exItem label="13.">Jumping Jehosaphat!</exItem>
+        <exItem label="14.">Jimminy Cricket!</exItem>
     </EnglishExample>
 <prompt>Key similar examples of interjections in your language here:</prompt>
         <textBox id="ExclIntj" dataItem="intjExample" rows="5"/>
@@ -45,9 +45,9 @@
 <br/>
 <introduction>Exclamations typically consist of a particular word, such as <example>how</example> in English, followed by an adjective phrase and usually punctuated with an exclamation point.  English examples include:</introduction>
     <EnglishExample>
-        <exItem label="1.">How awful for you!</exItem>
-        <exItem label="2.">How nice!</exItem>
-        <exItem label="3.">How wonderful that your family could come!</exItem>
+        <exItem label="15.">How awful for you!</exItem>
+        <exItem label="16.">How nice!</exItem>
+        <exItem label="17.">How wonderful that your family could come!</exItem>
     </EnglishExample>
 <prompt>Key similar examples of exclamations in your language here:</prompt>
         <textBox id="ExclExcl" dataItem="exclExample" rows="5"/>

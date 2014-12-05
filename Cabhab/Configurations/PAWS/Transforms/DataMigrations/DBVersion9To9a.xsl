@@ -16,7 +16,6 @@
 		<paws dbversion="9a">
 			<xsl:apply-templates select="@*[name()!='dbversion']"/>
 			<xsl:apply-templates/>
-			<final checkedOff="no"/>
 		</paws>
 	</xsl:template>
 	<!--

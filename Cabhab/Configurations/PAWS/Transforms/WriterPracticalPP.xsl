@@ -167,7 +167,7 @@
 <xsl:if test="normalize-space(//pp/@bodyPart)='yes'">
 <xsl:text>regular </xsl:text>
 </xsl:if>
-<xsl:text> prepositioins used in locative phrases are:</xsl:text>
+<xsl:text>prepositioins used in locative phrases are:</xsl:text>
 </p>
 </xsl:if>
         <xsl:if test="normalize-space(//pp/@pPos)='before'">
@@ -234,7 +234,7 @@
 <xsl:if test="normalize-space(//pp/@bodyPart)='yes'">
 <xsl:text>regular </xsl:text>
 </xsl:if>
-<xsl:text> postpositions used in locative phrases are:</xsl:text>
+<xsl:text>postpositions used in locative phrases are:</xsl:text>
 </p>
 </xsl:if>
        <xsl:if test="normalize-space(//pp/@pPos)='after'">
@@ -301,7 +301,7 @@
 <xsl:if test="normalize-space(//pp/@bodyPart)='yes'">
 <xsl:text>regular </xsl:text>
 </xsl:if>
-<xsl:text> prepositions and postpositions used in locative phrases are:</xsl:text>
+<xsl:text>prepositions and postpositions used in locative phrases are:</xsl:text>
 </p>
 </xsl:if>
        <xsl:if test="normalize-space(//pp/@pPos)='both' or normalize-space(//pp/@pPos)='unknown'">
@@ -1916,7 +1916,7 @@
 <xsl:if test="normalize-space(//pp/ppModifierDegree/@checked)='yes' or normalize-space(//pp/ppModifierOrdinal/@checked)='yes' or normalize-space(//pp/ppModifierManner/@checked)='yes'">
 <xsl:text>also </xsl:text>
 </xsl:if>
-<xsl:text>be modified by ocativeadverbs which occur </xsl:text>
+<xsl:text>be modified by locative adverbs which occur </xsl:text>
 <xsl:if test="normalize-space(//pp/ppLocativePosBefore/@checked)='yes' and normalize-space(//pp/ppLocativePosAfter/@checked)='no' and normalize-space(//pp/ppLocativePosBoth/@checked)='no'">
 <xsl:text>before</xsl:text>
 </xsl:if>

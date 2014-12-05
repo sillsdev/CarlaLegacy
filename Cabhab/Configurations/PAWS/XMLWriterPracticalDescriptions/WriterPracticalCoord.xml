@@ -18,8 +18,8 @@
         <content>Coordination of sentences, verb phrases, nominal phrases, </content><case element="pp" attr="pPos">
            <caseText value="before">prepositional</caseText>
            <caseText value="after">postpositional</caseText>
-           <caseText value="both">apositional</caseText>
-           <caseText value="unknown">apositional</caseText>
+           <caseText value="both">adpositional</caseText>
+           <caseText value="unknown">adpositional</caseText>
         </case><content> phrases and adjective phrases are exemplified. Then, lists and appositive constructions are described. </content></p>
      
      <p>
@@ -37,6 +37,12 @@
 						<col exampleLoc="coord/and"/>
 						<col>
 							<content>and</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/andThen"/>
+						<col>
+							<content>and then</content>
 						</col>
 					</row>
 					<row>
@@ -146,6 +152,11 @@
 			<example>
 				<interlinear exampleLoc="coord/sentExample"/>
 			</example>
+			<p><content>Some examples of sequential coordination between two sentences are:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/sentSeqExample"/>
+			</example>
 			<p><content>See section </content><sectionRef sec="sAdvCl"/><content> for examples of introductory words and clauses, sometimes referred to as coordination, and examples of adverbial clauses, which are subordination.</content></p>
 </section3>
 		<section3 id="sCoordVP">
@@ -171,7 +182,7 @@
 			<secTitle>Nominal Phrase Coordination</secTitle>
 			<p contentType="ctComparativeIntro">
 			   <content>Coordinate nominal phrases can normally occur as subjects, objects, indirect objects and objects of </content><case element="pp" attr="pPos">
-			      <caseText value="before">a prepositioin</caseText>
+			      <caseText value="before">a preposition</caseText>
 			      <caseText value="after">a postposition</caseText>
 			      <caseText value="both">an adposition</caseText>
 			      <caseText value="unknown">an adposition</caseText>
@@ -303,7 +314,7 @@
 	 <section2 id="sCoordAppositive">
 		<secTitle>Appositives</secTitle>
 		<p contentType="ctComparativeIntro"><content>Appositives also form a single nominal phrase.  Appositives normally consist of a name followed by a comma and then a description also followed by a comma, or the order may be reversed. Some English examples include: </content>
-		   <langData>[George Washington, the first President of the United States,]</langData><content> and </content><langData>[My brother, James,]</langData><content>.</content>
+		   <langData>[George Washington, the first President of the United States]</langData><content> and </content><langData>[My brother, James]</langData><content>.</content>
 		</p>
 	    <p contentType="ctPracticalIntro"><content>Appositives also form a single nominal phrase.  Appositives normally consist of a name followed by a comma and then a description also followed by a comma, or the order may be reversed. </content>
 	    </p>

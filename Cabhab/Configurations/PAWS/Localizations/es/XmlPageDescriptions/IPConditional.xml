@@ -197,7 +197,7 @@
       <and/><not/>
       <whenCheckbox button="IPConditionPosBoth"/>
       <and/><not/>
-      <whenCheckbox button="IPConditionOther"/>     
+      <whenCheckbox button="IPConditionPosOther"/>     
    </showWhen>
    <showWhen id="swIPConsequenceYesOrOptional">
       <whenRadio button="IPConsequenceYes"/>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="NPCompounds" count="1/1">
+	<title level="2">Syntagmes Nominaux – Composés nominaux, Compléments et Gérondifs</title>
+	<introduction>Plusieurs langues sont comme l’anglais en ce sens qu’elles ont des modificateurs de nom. Normalement, nous pensons simplement que tous les noms en anglais peuvent être utilisés comme adjectifs, mais une attention plus précise révèle que les varais adjectifs viennent avant le modificateur de nom comme dans <example>large, round [syrup bottle] (une grande bouteille à syrop ronde)</example> mais pas <example>*round, syrup large bottle (ronde, syrop grande bouteille)</example>.  C’est pourquoi nous allons traiter les modificateurs de nom comme noms composés qui sont écrits comme mots indépendants.<br/>
+		<br/>En anglais dans les exemples ci-dessus <example>bottle  « bouteille »</example> est clairement le nom principal alors que <example>syrup  « syrop »</example> restreint le type de <example>bottle</example> et non l’inverse. Dans tous les noms composés et les constructions de modificateur de nom en anglais, le principal est le nom le plus à droite dans la série.
+	<br/><br/>
+		Par contraste, en français de tels exemples sont plus rares.  <example>Kitchen table</example> peut être traduit <example>table de cuisine</example> s’il s’agit d’un type de meuble en général, ou <example>la table de la cuisine</example> si c’est une table en particulier, celle dans la cuisine. <example>Table cuisine</example> ou <example>cuisine table</example> ne seraient pas permis. Certains noms peuvent agir en adjective – par exemple, <example>panneau indicateur</example> mais <example>indicateur de vitesse</example>.  
+		<br/><br/>
+		En regardant des exemples de composés, considérez les parties du corps. tels que <example>eye lash  « cils »</example>, des liens de parenté tels que <example>great grandmother  « arrière-grand’mère »</example> et des aliments tels que <example>blackberry pie  « tarte aux mûres »</example> ainsi que le matériau dont quelque chose est fait comme <example>brick house  « une maison en brique »</example>.</introduction>
+	<form section="np">
+		<prompt><br/>Entrez  dans les cases appropriées un ou plus d’exemples avec des modificateurs de nom ou des noms composés écrits comme mots indépendants, plus certains écrits comme simple mot.
+		<br/><br/>
+			Composés des parties du corps:</prompt>
+		<textBox id="NPCompBodyPartExample" dataItem="compBodyPartExample"/>
+		<prompt><br/>Composés des liens de parenté:</prompt>
+	   <textBox id="NPCompKinshipExample" dataItem="compKinshipExample"/>
+		<prompt><br/>Composés pour les aliments:</prompt>
+	   <textBox id="NPCompFoodExample" dataItem="compFoodExample"/>
+		<prompt><br/>Composés de matériau dont quelque chose est faite:</prompt>
+	   <textBox id="NPCompMaterialExample" dataItem="compMaterialExample"/>
+		<prompt><br/>Autres noms composés:</prompt>
+	   <textBox id="NPCompExample" dataItem="compExample"/>
+	   
+		<radioGroup>
+			<groupName dataItem="comp" default="no">RNPCompounds</groupName>
+			<prompt><br/>En regardant les exemples des cases ci-dessus, votre langue a-t-elle des noms composés ou des modificateurs de noms qui sont écrits comme mots indépendants?</prompt>
+			<radio id="NPCompNo" dataValue="no">Non, ce sont tous écrits comme simple mot avec le nom principal</radio>
+			<radio id="NPCompYes" dataValue="yes">Oui, certains sont écrits comme mots indépendants</radio>
+			<radioGroup id="NPCompHeadTable" show="swNPCompYes">
+				<groupName dataItem="compHead" default="right">RNPCompHead</groupName>
+				<prompt><br/>Dans la construction d’un composé ou d’un modificateur de nom, quel nom est le principal dans votre langue?</prompt>
+				<radio id="NPCompHeadLeft" dataValue="left">Celui le plus à gauche</radio>
+				<radio id="NPCompHeadRight" dataValue="right">Celui le plus à droite</radio>
+				<radio id="NPCompHeadEither" dataValue="either">Ou l’un ou l’autre</radio>
+			</radioGroup>
+		   <radioGroup id="NPCompHeadMorphemeTable">
+		      <groupName dataItem="compHeadMorpheme" default="right">RNPCompHeadMorpheme</groupName>
+		   	<prompt><br/>Dans un nom composé qui est écrit comme mot simple, quelle racine nominale est la principale dans votre langue?</prompt>
+		   	<radio id="NPCompHeadMorphemeLeft" dataValue="left">Celle la plus à gauche</radio>
+		   	<radio id="NPCompHeadMorphemeRight" dataValue="right">Celle la plus à droite</radio>
+		   	<radio id="NPCompHeadMorphemeEither" dataValue="either">Ou l’une ou l’autre</radio>
+		   </radioGroup>
+		</radioGroup>
+	   <br/>
+		<introduction>Considérez maintenant les modificateurs de syntagme prépositionnel ou postpositionnel (ou compléments), tels que dans <example>la grande bouteille [de sirop]</example> et <example>la lettre du garçon [à cette fille]</example>.  Toutes les langues ne permettent pas ce type de modificateur de nom ou de complément, mais peuvent exprimer la même signification dans un proposition relative.
+	   </introduction>
+	   <br/>
+	   <br/>
+		<prompt>Entrez vos exemples de syntagmes prépositionnels ou postpositionnels qui modifient les noms (sans les corchets) si votre langue le permet. N’incluez pas des syntagmes possessifs puisque ceux-ci ont déjà été traités dans la <section number="5.4">Syntagmes Nominaux – Possesseurs</section>.  Si votre langue n’utilise pas de syntagmes prépositionnels ou postpositionnels pour exprimer ces sortes de modificateurs, entrez des exemples de la façon dont votre langue exprime des syntagmes nominaux pareils.</prompt>
+	   <textBox id="NPCompPPExample" dataItem="compPPExample"/>
+	   <br/>
+	   <br/>
+	   <radioGroup>
+	      <groupName dataItem="ppComp" default="no" >RNPPPComp</groupName>
+	   	<prompt>Votre langue permet-elle des modificateurs de syntagmes adpositionnels pour les noms?</prompt>
+	      <radio id="NPPPCompYes" dataValue="yes">Oui</radio>
+	   	<radio id="NPPPCompNo" dataValue="no">Non, une proposition relative est utilisée en lieu</radio>
+	   	<radio id="NPPPCompOther" dataValue="other">Non, ma langue utilise d’autres moyens qu’un modificateur de syntagmes adpositionnels ou une proposition relative pour exprimer des significations pareilles</radio>
+	   </radioGroup>
+	   <radioGroup id="NPPPCompPosTable" show="swNPPPCompYes">
+			<groupName dataItem="ppPos" default="unknown" position="yesHeadDiff">RNPPPPos</groupName>
+	   	<prompt>En regardant les exemples de la case ci-dessus, où le syntagme adpositionnel se trouve-t-il par rapport au nom principal?</prompt>
+	   	<radio id="NPPPPosBefore" dataValue="before">Avant le nom</radio>
+	   	<radio id="NPPPPosAfter" dataValue="after">Après le nom</radio>
+	   	<radio id="NPPPPosEither" dataValue="either">D’un côté ou l’autre de nom</radio>
+	   </radioGroup>
+		<prompt id="NPCompRelClPrompt" show="swNPPPCompNo">La structure et la position des propositions relatives seront traitées dans la <section number="12">Propositions Relatives</section>.</prompt>
+		<br/>
+		<br/>
+		<introduction>Un autre cas qui peut paraître comme un nom et un complément peut en fait être un <technicalTermRef term="ttGerund">gérondif</technicalTermRef> ou une syntagme au gérondif. Le syntagme entier occupe une position d’ argument normal tels que sujet, objet, objet indirect ou l’objet d’une préposition. Des exemples en anglais de syntagmes entiers avec le syntagme au gérondif entre corchets incluent::
+</introduction> 
+	<EnglishExample>
+		<exItem label="6.">[Studying grammar] is challenging.  « [Etudier la grammaire] est difficile. »</exItem>
+		<exItem label="7.">He likes [reading Latin poetry].  « Il aime [lire la poésie latine]. »</exItem>
+	</EnglishExample>
+		<introduction>Des exemples comme 6-7 en français utiliser l’infinitif au lieu d’un gérondif. Quelques exemples français de gérondifs sont:</introduction>
+		<EnglishExample>
+			<exItem label="8.">Le voleur a ouvert la porte en [cassant la serrure].</exItem>
+			<exItem label="9.">Nous avons trouvé le chien en [cherchant dans le bois].</exItem>
+		</EnglishExample>
+		<introduction>De tels syntagmes peuvent être possédés ou modifiées et quelquefois le gérondif se trouve seul à la tête d’un syntagme nominal, comme dans <example>les gravement blessés</example> et <example>les mourants</example>. 	   
+	      <br/><br/>
+			Certaines langues n’utilisent pas un gérondif pour exprimer des significations similaires mais utilisent en lieu une proposition relative.</introduction>
+	      <br/>
+		<br/>
+		<prompt>Entrez ici comment votre langue exprime des sortes pareils de syntagme nominal (comme les exemples entre parenthèses des exemples 6-9 ou ceux de la section qui suit 8-9):</prompt>
+		<textBox id="NPPartExample" dataItem="partHeadExample"/>
+		<br/>
+<br/>
+		<prompt>Mettez maintenant les syntagmes que vous avez entrés ci-dessus dans des phrases avec un verbe principal:</prompt>
+		<textBox id="NPPartSentExample" dataItem="partHeadSentExample"/>
+		<br/>
+	   <radioGroup>
+	      <groupName dataItem="partNP" default="no" >RNPPartNP</groupName>
+	   	<prompt>Votre langue permet-elle que des gérondifs ou les syntagmes avec gérondif prennent la place d’un nom ou d’un syntagme nominal?</prompt>
+	      <radio id="NPPartNPYes" dataValue="yes">Oui</radio>
+	   	<radio id="NPPartNPNo" dataValue="no">Non, une proposition relative est utilisée en lieu</radio>
+	   	<radio id="NPPartNPOther" dataValue="other">Non, ma langue utilise d’autres moyens qu’un gérondif ou une proposition relative pour exprimer des significations pareils</radio>
+	   </radioGroup>
+		<prompt id="NPPartNPRelClPrompt" show="swNPPartNPNo">La structure et la position des propositions relatives seront traitées dans la <section number="12">Propositions Relatives</section>.</prompt>
+	   
+	   <instruction id="NPCompInstruction" show="swNPPartNPYes">Note that the head of these gerund phrases is categorically a verb, so these are derived nominals.  They will remain verbs in our grammar rules, but need to be distinguished as gerunds so that only the gerund forms of verbs may be used as nouns.   The appropriate features will be added in section <section number="9.2">Basic Sentences – Inflection Features</section></instruction>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="NPCompBack" value="Back" goto="NPContents.htm"/>
+			<button id="NPCompNext" value="Next" goto="NPContents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swNPCompYes">
+		<whenRadio button="NPCompYes"/>
+	</showWhen>
+   <showWhen id="swNPPPCompYes">
+      <whenRadio button="NPPPCompYes"/>
+   </showWhen>
+   <showWhen id="swNPPPCompNo">
+      <whenRadio button="NPPPCompNo"/>
+   </showWhen>
+   <showWhen id="swNPPartNPNo">
+      <whenRadio button="NPPartNPNo"/>
+   </showWhen>
+   <showWhen id="swNPPartNPYes">
+      <whenRadio button="NPPartNPYes"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

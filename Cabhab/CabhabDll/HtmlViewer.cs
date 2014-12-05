@@ -567,7 +567,7 @@ namespace SIL.Cabhab
 			StreamReader sr = new StreamReader(m_sLanguageFilesFile);
 			string sPage = sr.ReadToEnd();
 			sPage = sPage.Replace("<link rel=\"stylesheet\" href=\"..", "<link rel=\"stylesheet\" href=\"" + m_lang.ConfigurationPath);
-			sPage = sPage.Replace("ShowBackNextButtons.style.display = \"none\";", "ShowBackNextButtons.style.display = \"temp\";");
+            sPage = sPage.Replace("ShowBackNextButtons.style.display = \"none\";", "ShowBackNextButtons.style.display = \"temp\";");
 			sPage = sPage.Replace("ShowBackNextButtons.style.display = \"\";", "ShowBackNextButtons.style.display = \"none\";");
 			sPage = sPage.Replace(".style.display = \"temp\";", ".style.display = \"\";");
 			m_htmlControl.Browser.DocumentText = sPage;

@@ -53,56 +53,6 @@
 </xsl:attribute>la Susana que conozco</langData>
 <xsl:text>.</xsl:text>
 </p>
-        <p>
-<xsl:text>Algunos ejemplos de nombres propios simples y compuestos, o los que se presentan con artículos, demostrativeo, adjetivos o posesivos en el </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> son los siguientes:</xsl:text>
-</p>
-        <example num="xProp.10">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//prop/example" />
-</xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//prop/example))" />
-<xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="//prop/example" />
-</xsl:with-param>
-<xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//prop/example))" />
-</xsl:with-param>
-<xsl:with-param name="sExNumber">xProp.10</xsl:with-param>
-<xsl:with-param name="sLetterList">
-<xsl:value-of select="$sMasterLetterList" />
-</xsl:with-param>
-</xsl:call-template>
-</xsl:when>
-<xsl:otherwise>
-<listInterlinear>
-<xsl:attribute name="letter">
-<xsl:text>xProp.10.1</xsl:text>
-</xsl:attribute>
-<lineGroup>
-<line>
-<langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
-</xsl:otherwise>
-</xsl:choose>
-</example>
        <xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//prop/@pnClassifier)='yes'">
 <p>
 <xsl:text>En el </xsl:text>
@@ -135,8 +85,9 @@
 <p>
 <xsl:text>Los nombres propios</xsl:text>
 <xsl:choose>
-          <xsl:when test="//prop/@pnDeterminer='no'"> pueden</xsl:when>
-          <xsl:when test="//prop/@pnDeterminer='yes'"> deben</xsl:when>
+          <xsl:when test="//prop/@pnDeterminer='none'"> no pueden</xsl:when>
+           <xsl:when test="//prop/@pnDeterminer='no'"> pueden</xsl:when>
+           <xsl:when test="//prop/@pnDeterminer='yes'"> deben</xsl:when>
        </xsl:choose>
 <xsl:text> contener un </xsl:text>
 <xsl:choose>
@@ -147,7 +98,57 @@
 <xsl:text> o un posesivo.</xsl:text>
 </p>
 </xsl:if>
-       <p>
+        <p>
+<xsl:text>Algunos ejemplos de nombres propios simples y compuestos en el </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son los siguientes:</xsl:text>
+</p>
+        <example num="xProp.16">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//prop/example" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//prop/example))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//prop/example" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//prop/example))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xProp.16</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xProp.16.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+        <p>
 <xsl:text>Algunos ejemplos de nombres propios con frases </xsl:text>
 <xsl:choose>
                 <xsl:when test="//pp/@pPos='before'">preposicionales</xsl:when>

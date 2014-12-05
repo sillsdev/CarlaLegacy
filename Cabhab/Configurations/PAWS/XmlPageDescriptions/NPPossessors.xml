@@ -19,14 +19,15 @@
 	   <prompt>
             Key some examples of possessed nominal phrases with simple possessors here, including both pronominal and nominal phrase possessors:</prompt>
 		<textBox id="NPPossExample" dataItem="possessorExample" cols="50"/>
-		<br/>
+	   <br/>
+	   <prompt>
+	   	Key some examples of possessed nominal prases with adpositional phrases as the possessor here, as in <example>that book of John's</example>, if allowed:</prompt>
+	   <textBox id="NPPossPPExample" dataItem="ppExample" cols="50"/>
+	   <br/>
 	   <prompt>Note also that possessors can be embedded in one another, as in <example>the boy’s sister’s dog</example>.  This is allowed in Spanish within the prepositional phrase after the noun.<br/><br/>
 	      Key some examples of possessed nominal phrases with embedded possessors here:</prompt>
 	   <textBox id="NPPossEmbeddedExample" dataItem="embeddedExample" cols="50"/>
-	   <br/>
-	   <prompt>
-            Key some examples of possessed nominal prases with adpositional phrases within the possessor here:</prompt>
-		<textBox id="NPPossPPExample" dataItem="ppExample" cols="50"/>
+
 		<br/>
 		<prompt>
             Key some examples of possessed nominal phrases with relative clauses within the possessor here, included in simple full sentences:</prompt>
@@ -132,18 +133,12 @@
 <br/>
 		<radioGroup id="NPPossCooccurTable" show="swNPArtAndOrDem">
 			<groupName dataItem="possCooccur" default="yes"/>
-			<prompt>Can <span id="NPPronPossOnlySpan" show="swNPPossNPNo">pronoun </span>possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span>
+			<prompt>Can <span id="NPPronPossSpan" show="swNPPossNPYesOrYesOnly">nominal phrase and pronoun </span><span id="NPPronPossOnlySpan" show="swNPPossNPNo">pronoun </span>possessors co-occur with <span id="NPArtOnlyCooccurSpan" show="swNPArtAndDemArt">articles</span>
 				<span id="NPDemOnlyCooccurSpan" show="swNPArtAndDemDem">demonstratives</span>
 				<span id="NPArtAndDemCooccurSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> in your language?</prompt>
-			<radio id="NPPossCooccurYes" dataValue="yes">Yes, they may co-occur</radio>
-		   <radio id="NPPossCooccurSome" dataValue="some">Some of the <span id="NPPronPossOnlySpan1" show="swNPPossNPNo">pronoun </span>possessors may co-occur with <span id="NPArtOnlyCooccurSpan1" show="swNPArtAndDemArt">articles</span>
-		      <span id="NPDemOnlyCooccurSpan1" show="swNPArtAndDemDem">demonstratives</span>
-		      <span id="NPArtAndDemCooccurSpan1" show="swNPArtAndDemBoth">articles and demonstratives</span> but some may not</radio>
+			<radio id="NPPossCooccurYes" dataValue="yes">Yes, they may co-occur in the same nominal phrase</radio>
 		   <radio id="NPPossCooccurNo" dataValue="no">No, they never co-occur in the same nominal phrase</radio>
 		</radioGroup>
-	   <instruction id="NPPossCooccurSomeInstruction" show="swNPArtAndOrDemAndNPPossCooccurSome">In the lexicon, add the feature <feature>poss_cooccur</feature> to the <span id="NPArtOnlyCooccurSpan2" show="swNPArtAndDemArt">articles</span>
-	      <span id="NPDemOnlyCooccurSpan2" show="swNPArtAndDemDem">demonstratives</span>
-	      <span id="NPArtAndDemCooccurSpan2" show="swNPArtAndDemBoth">articles and demonstratives</span> which may co-occur with possessors so that they will be restricted to the proper phrase structure rules.</instruction>
 	   <introduction id="NPPossNounCaseChangeIntroduction" show="swNPCaseYes">In some languages, in a possessed noun phrase the head noun and any modifiers matches the case of the possessor.  In other languages, the possessor is marked with its own case, say genitive, while the head noun is marked with case depending on its grammatical relation to the verb: nominative or accusative, ergative or absolutive depending on the case system. </introduction>
 	   <br/>
 	   <radioGroup id="NPPossNounCaseChange" show="swNPCaseYes">
@@ -521,14 +516,6 @@
 	   <and/><not/>
 	   <whenRadio button="NPPossNPNone"/>
 	</showWhen>
-   <showWhen id="swNPArtAndOrDemAndNPPossCooccurSome">
-      <not/>
-      <whenValue element="np" attr="artAndDem" value="no"/>
-      <and/>
-      <whenRadio button="NPPossCooccurSome"/>
-      <and/><not/>
-      <whenRadio button="NPPossNPNone"/>
-   </showWhen>
    <showWhen id="swNPCaseErg">
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>

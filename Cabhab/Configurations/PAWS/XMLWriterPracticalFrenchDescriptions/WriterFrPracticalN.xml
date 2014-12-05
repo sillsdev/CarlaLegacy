@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+	<section1 id="sN">
+		<secTitle>Noms</secTitle>
+		<p><content>Les noms sont des mots qui décrivent principalement des personnes, des animaux, des endroits ou des choses.  Ils peuvent aussi être utilisés pour exprimer des idées, des pensées ou des émotions.</content></p>
+		<p><content>Les sections suivantes traitent l’accord du nom, le cas et la possession en </content><langName/><content>.  Les types de noms composés permis en </content><langName/><content> sont donnés dans la section </content><sectionRef sec="sNPCompounds"/><content>.  Tous les éléments qui peuvent modifier des noms en syntagmes nominaux complets sont traités dans la section </content><sectionRef sec="sNP"/><content>.</content></p>
+		<section2 id="sNPAgr">
+			<secTitle>Accord</secTitle>
+		   <p contentType="ctPracticalIntro">
+		   	<content>L’accord entre au moins certains modificateurs et le mot principal peuvent être requis en le nombre, l’animéité, le genre, la classe ou autres éléments.</content>
+		   </p>
+		   <p contentType="ctComparativeIntro">
+		   	<content>Beaucoup de langues demandent un accord entre au moins certains modificateurs et le nom principal.  En plus de un accord numérique cet accord peut aussi inclure l’animéité, le genre, la classe ou autres éléments.</content>
+			</p>
+			<p>
+				<content>En </content>
+				<langName/>
+				<content></content>
+				<case element="np" attr="agreeNumber">
+					<caseText value="no"> il n’y a pas d’accord de nombre.  Au lieu de cela le marqueur du nombre vient du nombre ou du quantificateur.</caseText>
+					<caseText value="yes"> les différents modificateurs nominaux sont en accord de nombre avec le nom principal.</caseText>
+				</case>
+			</p>
+			<p show="swNPAgreeYesNumber">
+				<content>Les exemples qui montrent un accord de nombre dans des syntagmes nominaux en </content><langName/><content> comprennent:</content>	
+			</p>
+			<example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
+			<p show="swNPAgreeOtherTypeNone">
+				<content>Il n’y a pas d’accord en nombre, animéité, genre, classe ou autres éléments entre les modificateurs et le nom principal. </content>
+			</p>
+			<p show="swNPAgreeClass">
+				<content>Les modificateurs et le nom principal ont un accord de classe. Voici des exemples qui montrent l’accord de classe dans les syntagmes nominaux en </content><langName/><content>:</content>	
+			</p>
+			<example show="swNPAgreeClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
+			<p show="swNPAgreeClassifier">
+				<content>Un classificateur qui a un accord de classe ou type du nom est présent avec des noms qui sont comptés ou spécifiés mais d’autres modificateurs ne sont pas marqués pour la classe comme montrés dans les exemples qui suivent:</content>	
+			</p>
+			<example show="swNPAgreeClassifier"><interlinear exampleLoc="np/agreeClassifierExample"/></example>
+			<p show="swNPAgreeAnimacy">
+				<content>Les exemples qui montrent un accord d’animéitéentre le nom principal et ses modificateurs dans des syntagmes nominaux en </content><langName/><content> comprennent:</content>	
+			</p>
+			<example show="swNPAgreeAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
+			<p show="swNPAgreeGender">
+				<content>Les modificateurs et le nom principal ont un accord de genre en </content><langName/><content> comme montrés dans les exemples qui suivent:</content>
+			</p>
+			<example show="swNPAgreeGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
+		   <p show="swNPAgreeOther">
+		   	<content>Les syntagmes en </content><langName/><content> montrent l’accord en  ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.  Voici des exemples de ce type d’accord:</content>
+		   </p>
+		   <example show="swNPAgreeOther"><interlinear exampleLoc="np/agreeOtherExample"/></example>
+		</section2>
+	   <section2 id="sNPCase">
+	   <secTitle>Cas</secTitle>
+	      <p contentType="ctPracticalIntro">
+	      	<content>Les noms et leurs modificateurs peuvent aussi être marqués pour le cas.  Les systèmes de cas aident à distinguer le rôle d’un nom ou pronom par rapport au verbe.</content>
+	         </p>
+	      <p contentType="ctComparativeIntro">
+	      	<content>Les noms et leurs modificateurs peuvent être marqués pour le cas.  Le système de cas le plus commun est nominatif-accusatif.  Le français a ce système bien que seulement les pronoms sont marqués pour le cas en français.  Dans un système nominatif-accusatif les sujets de verbes transitifs et intransitifs sont au cas nominatif, alors que les objets directs sont à l’accusatif.  Les possesseurs sont au cas génitif.  Les pronoms nominatifs en français sont: </content>
+	      	<langData>je, tu, il, elle, nous, vous, ils, elles</langData>
+	      	<content>.  Les pronoms à l’accusatif sont: </content>
+	      	<langData>me, te, le, la, nous, vous, les</langData>
+	      	<content>.  Les pronoms au génitif incluent: </content>
+	      	<langData>mon, ma, mes, ton, ta, tes, son, sa, ses, notre, nos, votre, vos, leur, leurs</langData>
+	      	<content>.  Ainsi, nous disons </content>
+	      	<langData>Ils le chassent</langData>
+	         <content> et non </content>
+	      	<langData>Les chassent il</langData>
+	         <content>. </content>
+	      </p>
+	      <p contentType="ctComparativeIntro">
+	      	<content> Une langue possédant un système casuel de type nominatif-accusatif peut avoir un marqueur qui distingue les sujets-expérienceurs des sujets-agents.  Des verbes avec des sujets-expérienceurs sont</content><langData>apparaître, voir, craindre être trouvé, vouloir, aimer</langData><content> et </content><langData>rire</langData><content>. </content> 
+	      </p>
+	      <p contentType="ctComparativeIntro">
+	         <content>
+	         	Dans un système casuel ergatif-absolutif les sujets des verbes transitifs ont la marque de l’ergatif, tandis que les objets des verbes transitifs et les sujets des verbes intransitifs prennent la marque du cas absolutif.  Le cas des possesseurs n’est pas linguistiquement homogène.  Certaines langues qui possèdent un système casuel ergative-absolutif ont simplement de différents groupes de marqueurs d’accord verbal mais n’ont pas de marqueur pour les noms.  Ce type de marquage d’accord sera traité à la section </content>
+	         <sectionRef sec="sIPAgr"/>
+	         <content>.</content>
+	      </p>
+	      <p contentType="ctComparativeIntro">
+	         <content>
+	         	Certaines langues sont encore plus complexes en ce sens qu’elles ont normalement un système casuel nominatif-accusatif, toutefois dans quelques circonstances grammaticales, par exemple un temps ou aspect particulier ou un élément d’accord pour une personne particulière le système de cas passe à l’ergatif-absolutif. Cela s’appelle « ergativité dédoublée ».</content>
+	      </p>
+	      <p>
+	         <content>En </content>
+	         <langName/>
+	         <content/>
+	         <case element="typology" attr="case">
+	         	<caseText value="none"> il n’y a pas de système de cas.   Le même groupe exact de pronoms peut être utilisé dans n’importe quelle position dans la phrase et il n’y a pas de marquage sur les noms ou sur les modificateurs de noms basé sur leur position dans la phrase.</caseText>
+	         	<caseText value="nominative"> a un système de cas nominatif-accusatif.   Les sujets de verbes transitifs et intransitifs sont marqués de la même façon et utilisent le même groupe de pronoms, mais les objets de verbes transitifs sont marqués différemment.</caseText>
+	         	<caseText value="ergative"> a un système de cas ergative-absolutif.   Les sujets de verbes intransitifs et les onbjets de verbes transitifs sont marqués de la même façon, mais les sujets de verbes transitifs sont marqués différemment.</caseText>
+	         	<caseText value="split"> a un système de cas dédoublé.   Normalement la langue suit le système casuel nominatif-accusatif, mais le système ergatif-absolutif s’utilise sous certaines conditions grammaticales.</caseText>
+	         </case>
+	      	<text show="swNPCaseSplit"> 
+	      		<content> Les conditions où le système casuel ergative-absolutif s’utilise sont ___</content><contentCheckBoxOther contentLoc="typology/splitConditions"/>
+	      		<content>.   </content>
+	      	</text>
+	      </p>
+	      
+	   	<p><content>Cela est montré dans les exemples suivants de phrases transitives avec des sujets agent où le sujet et l’objet sont des syntagmes nominaux:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/example"/>
+	      </example>    
+	   	<p><content>Remarquez les formes des pronoms utilisés pour le sujet-agent et l’objet dans ces phrases transitives:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/pnExample"/>
+	      </example>
+	   	<p show="swNPCaseNYes"><content>Dans les exemples intransitifs aves des syntagmes nominaux comme sujet, </content>
+	         <case element="typology" attr="case">
+	         	<caseText value="nominative">le marquage du cas correspond à celui des sujets dans les phrases transitives ci-dessus.</caseText>
+	         	<caseText value="ergative">le marquage du cas correspond à celui des objets dans les phrases transitives ci-dessus.</caseText>
+	         	<caseText value="split">le marquage du cas sur la plupart des sujets correspond à celui des sujets dans les phrases transitives ci-dessus, mais dans certaines situations il correspond à celui des objets dans les phrases transitives.</caseText>
+	         </case></p>
+	      <example show="swNPCaseNYes">
+	         <interlinear exampleLoc="typology/intExample"/>
+	      </example>
+	   	<p><content>Les exemples de phrases intransitives avec des pronoms indépendants comme sujets vérifient </content>
+	         <case element="typology" attr="case">
+	         	<caseText value="none">qu’il n’y a pas de distinction puisque les mêmes pronoms peuvent apparaître comme sujets des verbes transitifs et comme objets de verbes intransitifs.</caseText>
+	         	<caseText value="nominative">que le même groupe de pronoms peut apparaître comme sujets des verbes transitifs et intransitifs, alors que des pronoms différents sont utilisés comme objets de verbes transitifs.</caseText>
+	         	<caseText value="ergative">que le même groupe de pronoms peut apparaître comme sujets des verbes intransitifs et comme objets des verbes transitifs, alors que des pronoms différents sont utilisés comme sujets de verbes transitifs.</caseText>
+	         	<caseText value="split">que le même groupe de pronoms peut normalement apparaître comme sujets des verbes transitifs et intransitifs, alors que des pronoms différents sont utilisés comme objets de verbes transitifs.  Qu’en certains cas, cependant, le même groupe de pronoms peut apparaître comme sujets des verbes intransitifs et comme objets des verbes transitifs, alors que des pronoms différents sont utilisés comme sujets de verbes transitifs.</caseText>
+	         </case></p>
+	      <example>
+	         <interlinear exampleLoc="typology/pnIntExample"/>
+	      </example>
+	      
+	      <p show="swNPCaseNomOrSplitAndCaseNYes"><content>En </content><langName/><content> </content><case element="typology" attr="caseExperiencer">
+	      	<caseText value="no">le même marquage de cas et le même groupe de pronoms est utilisé pour les sujets agents et les sujets expérienceurs.</caseText>
+	      	<caseText value="yesObj">les sujets expérienceurs utilisent le même marquage de cas et le même groupe de pronoms comme objets de verbes transitifs que le font les sujets agents.  Nous supposons que les sujets expérienceur ont le cas datif, comme objets indirects, ainsi les cas accusatif et datif sont marqués de la même façon dans cette langue.</caseText>
+	      	<caseText value="yesDat">le marquage de cas et le groupe de pronoms utilisés par les sujets expérienceurs sont différents de ceux utilisés par les sujets et objets de verbes ayant un sujet agent.  Ceci est le cas datif, utilisé aussi pour les objets indirects.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseNomOrSplitAndCaseNNo"><content>En </content><langName/><content> </content><case element="typology" attr="caseExperiencer">
+	      	<caseText value="no">le même groupe de pronoms est utilisé pour les sujets agents et les sujets expérienceurs.</caseText>
+	      	<caseText value="yesObj">les sujets expérienceurs utilisent et le même groupe de pronoms comme objets de verbes transitifs que le font les sujets agents.  Nous supposons que les sujets expérienceur ont le cas datif, comme objets indirects, ainsi les cas accusatif et datif sont marqués de la même façon dans cette langue.</caseText>
+	      	<caseText value="yesDat">le groupe de pronoms utilisé par les sujets expérienceurs est différent de celui utilisé par les sujets et objets de verbes ayant un sujet agent.  Ceci est le cas datif, utilisé aussi pour les objets indirects.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseErgAndCaseNYes"><content>En </content><langName/><content> </content><case element="typology" attr="caseExperiencer">
+	      	<caseText value="no">le même marquage de cas et le même groupe de pronoms est utilisé pour les sujets agents et les sujets expérienceurs.</caseText>
+	      	<caseText value="yesObj">les sujets expérienceurs utilisent le même marquage et le même groupe de pronoms comme objets de verbes transitifs que le font les sujets agents.  Nous supposons que les sujets expérienceur ont le cas datif, comme objets indirects, ainsi les cas absolutif et datif sont marqués de la même façon dans cette langue.</caseText>
+	      	<caseText value="yesDat">le marquage de cas et le groupe de pronoms utilisés par les sujets expérienceurs sont différents de ceux utilisés par les sujets et objets de verbes ayant un sujet agent.  Ceci est le cas datif, utilisé aussi pour les objets indirects.</caseText>
+	      </case>	
+	      </p>
+	      <p show="swNPCaseErgAndCaseNNo"><content>En </content><langName/><content> </content><case element="typology" attr="caseExperiencer">
+	      	<caseText value="no">le même groupe de pronoms est utilisé pour les sujets agents et les sujets expérienceurs.</caseText>
+	      	<caseText value="yesObj">les sujets expérienceurs utilisent le même groupe de pronoms comme objets de verbes transitifs que le font les sujets agents.  Nous supposons que les sujets expérienceur ont le cas datif, comme objets indirects, ainsi les cas absolutif et datif sont marqués de la même façon dans cette langue.</caseText>
+	      	<caseText value="yesDat">le groupe de pronoms utilisé par les sujets expérienceurs est différent de celui utilisé par les sujets et objets de verbes ayant un sujet agent.  Ceci est le cas datif, utilisé aussi pour les objets indirects.</caseText>
+	      </case>	
+	      </p>
+	      
+	   	<p show="swNPCaseNoneAndExperiencerNo"><content>En </content><langName/><content> le même groupe de pronoms est utilisé pour les sujets agents et expérienceurs.</content>  </p>
+	   	<p show="swNPCaseNoneAndExperiencerNotNo"><content>En </content><langName/><content> au moins certains des pronoms utilisés pour les expérienceurs sont différents de ceux utilisés pour les sujets agents.</content>  </p>
+	      
+	   	<p><content>Ceci se voit dans les exemples suivants de phrases transitives avec des verbes qui ont un sujet expérienceur, où le sujet et l’objet sont des syntagmes nominaux:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/experiencerExample"/>
+	      </example>    
+	   	<p><content>Remarquez les formes des pronoms utilisés pour les sujets expérienceurs et les objets dans ces phrases transitives:</content></p>
+	      <example>
+	         <interlinear exampleLoc="typology/experiencerPnExample"/>
+	      </example>
+
+	   	<p contentType="ctPracticalIntro"><content>Il y a des cas additionnels pour les relations grammaticales mineures qui peuvent être marquées sur les syntagmes nominaux dans les langues qui marquent le cas sur les noms. Les langues sans marquage de cas et celles qui montrent seulement le cas dans les pronoms expriment normalement ces relations grammaticales supplémentaires par des syntagmes adpositionnels.
+	      </content>   
+	      </p>
+	   	<p contentType="ctComparativeIntro"><content>Il y a plus de cas à considérer à part ceux du sujet et de l’objet.  Ceux-ci peuvent inclure le cas ablatif pour une source ou une origine, le cas génitif pour types ou possesseurs, le cas datif pour les objets indirects, le cas instrumental pour les moyens, le cas locatif pour les endroits, le cas vocatif pour une adresse directe, et le cas oblique est parfois utilisé pour des relations grammaticales mineures.
+	   		Ces cas supplémentaires sont en général marqués par des marqueurs de cas sur les syntagmes nominaux eux-mêmes dans les langues qui marquent normalement le cas sur les noms ou les syntagmes nominaux de même que sur les pronoms.  Pour les langues sans marquage de cas et celles qui montrent seulement le cas sur les pronoms, ces relations grammaticales supplémentaires sont normalement exprimées par des syntagmes adpositionnels.
+	      </content>   
+	      </p>
+	   	<p show="swNPCaseNone"><content>En </content><langName/><content> il n’y aucune sorte de distinctions de cas.  Les relations grammaticales mineures sont donc exprimées par des syntagmes </content><case element="pp" attr="pPos">
+	   		<caseText value="before">prépositionnels</caseText>
+	   		<caseText value="after">postpositionnels</caseText>
+	   		<caseText value="both">prépositionnels or postpositionnels</caseText>
+	   		<caseText value="unknown">adpositionnels</caseText>
+	   	</case><content> plutôt que par des syntagmes nominaux (voir la section </content><sectionRef sec="sPP"/><content>).</content>
+	      </p>
+	   	<p show="swNPCaseNotNoneAndCaseNNo"><content>En </content><langName/><content> les distinctions de cas ne sont marquées ni sur les noms ni sur les syntagmes nominaux, seul le pronom distingue le cas.  Les relations grammaticales mineures sont donc exprimées par des syntagmes </content><case element="pp" attr="pPos">
+	      	<caseText value="before">prépositionnels</caseText>
+	      	<caseText value="after">postpositionnels</caseText>
+	      	<caseText value="both">prépositionnels or postpositionnels</caseText>
+	      	<caseText value="unknown">adpositionnels</caseText>
+	   	</case><content> plutôt que par des syntagmes nominaux (voir la section </content><sectionRef sec="sPP"/><content>).  Les distinctions dans les pronoms seront décrites dans la section </content><sectionRef sec="sPronPersonal"/><content>.</content>	         
+	      </p>
+	   	<p show="swNPCaseNotNoneAndCaseNYes"><content>En </content><langName/><content> les cas est marqué et sur les pronoms et sur les noms ou syntagmes nominaux. </content>
+	         <text show="swNPCaseDefaultNom">
+	         	<content>  Le cas nominatif est le cas par défaut (non marqué). </content>
+	         </text>	        
+	      <text show="swNPCaseWordYesAndNotOther">	            
+	      	<content>Les marqueurs de cas sont écrits comme un mot indépendant et se trouvent </content>
+	      	<text show="swCaseWordBefore"><content>avant le</content></text>
+	      	<text show="swCaseWordAfter"><content>après le</content></text>
+	      	<text show="swCaseWordBoth"><content>des deux côtés du</content></text>
+	      	<text show="swCaseWordEither"><content>d’un côté ou de l’autre du</content></text>
+	      	<text show="swCaseWordBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+	      	<text show="swCaseWordAfterOrBoth"><content>après ou des deux côtés du</content></text>
+	      	<text show="swCaseWordEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+	      	<content> reste du syntagme nominal.  </content>
+	         </text>
+
+	         <text show="swNPCaseWordYesAndOtherOnly"> 
+	         	<content>Les marqueurs de cas sont écrits comme un mot indépendant et se trouvent ___</content><contentCheckBoxOther contentLoc="np/caseWordOther"/>
+	            <content>.   </content>
+	         </text>
+	         <text show="swNPCaseWordYesAndOtherAnd">
+	         	<content>Les marqueurs de cas sont écrits comme un mot indépendant et se trouvent </content>
+	         	<text show="swCaseWordBefore"><content>avant le</content></text>
+	         	<text show="swCaseWordAfter"><content>après le</content></text>
+	         	<text show="swCaseWordBoth"><content>des deux côtés du</content></text>
+	         	<text show="swCaseWordEither"><content>d’un côté ou de l’autre du</content></text>
+	         	<text show="swCaseWordBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+	         	<text show="swCaseWordAfterOrBoth"><content>après ou des deux côtés du</content></text>
+	         	<text show="swCaseWordEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+	         	<content> reste du syntagme nominal, et peuvent se trouver ___</content><contentCheckBoxOther contentLoc="np/caseWordOther"/><content>.   </content>
+	         </text>
+	         <text show="swNPCaseWordSomeAndNotOther">	            
+	         	<content>Certains des marqueurs de cas sont écrits comme un mot indépendant et se trouvent </content>
+	         	<text show="swCaseWordBefore"><content>avant le</content></text>
+	         	<text show="swCaseWordAfter"><content>après le</content></text>
+	         	<text show="swCaseWordBoth"><content>des deux côtés du</content></text>
+	         	<text show="swCaseWordEither"><content>d’un côté ou de l’autre du</content></text>
+	         	<text show="swCaseWordBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+	         	<text show="swCaseWordAfterOrBoth"><content>après ou des deux côtés du</content></text>
+	         	<text show="swCaseWordEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+	         	<content> reste du syntagme nominal.  </content>
+	         </text>
+	         
+	         <text show="swNPCaseWordSomeAndOtherOnly"> 
+	         	<content>Certains des marqueurs de cas sont écrits comme un mot indépendant et se trouvent ___</content><contentCheckBoxOther contentLoc="np/caseWordOther"/>
+	            <content>.   </content>
+	         </text>
+	         <text show="swNPCaseWordSomeAndOtherAnd">
+	         	<content>Certains des marqueurs de cas sont écrits comme un mot indépendant et se trouvent </content>
+	         	<text show="swCaseWordBefore"><content>avant le</content></text>
+	         	<text show="swCaseWordAfter"><content>après le</content></text>
+	         	<text show="swCaseWordBoth"><content>des deux côtés du</content></text>
+	         	<text show="swCaseWordEither"><content>d’un côté ou de l’autre du</content></text>
+	         	<text show="swCaseWordBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+	         	<text show="swCaseWordAfterOrBoth"><content>après ou des deux côtés du</content></text>
+	         	<text show="swCaseWordEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+	         	<content> reste du syntagme nominal, et peuvent se trouver ___</content><contentCheckBoxOther contentLoc="np/caseWordOther"/><content>.   </content>
+	         </text>
+	   		<text show="swNPCaseWordSome"><content>D’autres </content>
+	   			<text show="swNPCaseAttachesProclitic"><content>marqueurs de cas se rattachent  au début du mot initial dans le syntagme nominal.</content></text>
+	   			<text show="swNPCaseAttachesEnclitic"><content>marqueurs de cas se rattachent  à la fin du mot final dans le syntagme nominal.</content></text>
+	   			<text show="swNPCaseAttachesClitic"><content>marqueurs de cas se rattachent  au début du mot initial et d’autres se rattachent  à la fin du mot final dans le syntagme nominal.</content></text>
+	   			<text show="swNPCaseAttachesPrefix"><content>les marqueurs de cas sont des préfixes qui se rattachent au nom  principal.</content></text>
+	   			<text show="swNPCaseAttachesSuffix"><content>les marqueurs de cas sont des suffixes qui se rattachent au nom  principal.</content></text>
+	   			<text show="swNPCaseAttachesAffix"><content>les marqueurs de cas sont des préfixes et certains cont des suffixes qui se rattachent au nom  principal.</content></text>
+	   			<text show="swNPCaseAttachesBoth"><content>les marqueurs de cas sont des clitiques qui se rattachent ou au début du mot initial ou  à la fin du mot final dans le syntagme nominal et certains sont des affixes qui se rattachent au nom  principal.</content></text>
+	   			<text show="swNPCaseAttachesOther"><content>  Certains peuvent s’attacher aussi ___</content><contentCheckBoxOther contentLoc="np/caseAttachesOther"/>
+	               <content>.   </content></text>
+	         </text>	    
+	         <text show="swNPCaseWordSomeAttachesAndOtherOnly"> 
+	         	<content>Certains des marqueurs de cas de rattachent ___</content><contentCheckBoxOther contentLoc="np/caseAttachesOther"/>
+	            <content>.   </content>
+	         </text>
+	         
+	         <text show="swNPCaseWordNo">  <content></content>
+	         	<text show="swNPCaseAttachesProclitic"><content>Les marqueurs de cas se rattachent  au début du mot initial dans le syntagme nominal.</content></text>
+	         	<text show="swNPCaseAttachesEnclitic"><content>Les marqueurs de cas se rattachent  à la fin du mot final dans le syntagme nominal.</content></text>
+	         	<text show="swNPCaseAttachesClitic"><content>Certains des marqueurs de cas se rattachent  au début du mot initial et d’autres se rattachent  à la fin du mot final dans le syntagme nominal.</content></text>
+	         	<text show="swNPCaseAttachesPrefix"><content>Les marqueurs de cas sont des préfixes qui se rattachent au nom  principal.</content></text>
+	         	<text show="swNPCaseAttachesSuffix"><content>Les marqueurs de cas sont des suffixes qui se rattachent au nom  principal.</content></text>
+	         	<text show="swNPCaseAttachesAffix"><content>Certains des marqueurs de cas sont des préfixes et d’autres sont des suffixes qui se rattachent au nom  principal.</content></text>
+	         	<text show="swNPCaseAttachesBoth"><content>Certains des marqueurs de cas sont des clitiques qui se rattachent ou au début du mot initial ou à la fin du mot final dans le syntagme nominal et certains sont des affixes qui se rattachent au nom  principal.</content></text>
+	         	<text show="swNPCaseAttachesOther"><content>  Certains aussi peuvent se rattacher ___</content><contentCheckBoxOther contentLoc="np/caseAttachesOther"/>
+	               <content>.   </content></text>
+	         </text>	
+	         <text show="swNPCaseWordNoAndOtherOnly"> 
+	         	<content>Les marqueurs de cas se rattachent ___</content><contentCheckBoxOther contentLoc="np/caseAttachesOther"/>
+	            <content>.   </content>
+	         </text>
+	         
+	       </p>
+	   	<p show="swNPCaseNotNoneAndCaseNYes"><content>Les marqueurs de cas utilisés sur des noms ou le syntagmes nominaux en </content>
+	      <langName/>
+	   		<content> sont montrés dans le tableau ci-dessous.</content>
+	      </p>
+	      <example num="xCase" show="swNPCaseNotNoneAndCaseNYes">
+	         <table border="1">
+	            <caption>
+	            	<content>Marqueurs de cas</content>
+	            </caption>
+	            <headerRow>
+	            	<headerCol>Morphèmes</headerCol>
+	               <headerCol>Cas</headerCol>
+	            	<headerCol>Utilisation</headerCol>
+	            </headerRow>
+	            <row show="swNPCaseNomOrSplit">
+	               <col exampleLoc="np/nominative"/>
+	               <col>
+	               	<content>nominatif</content>
+	               </col>
+	               <col>
+	                  <content>sujets</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseNomOrSplit">
+	               <col exampleLoc="np/accusative"/>
+	               <col>
+	               	<content>accusatif</content>
+	               </col>
+	               <col>
+	               	<content>objets directs et autre usages</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitNotPossErg">
+	               <col exampleLoc="np/ergative"/>
+	               <col>
+	               	<content>ergatif</content>
+	               </col>
+	               <col>
+	               	<content>sujets de verbes transitifs</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitPossErg">
+	               <col exampleLoc="np/ergative"/>
+	               <col>
+	               	<content>ergatif</content>
+	               </col>
+	               <col>
+	               	<content>sujets de verbes transitifs et possesseurs</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitNotPossAbs">
+	               <col exampleLoc="np/absolutive"/>
+	               <col>
+	               	<content>absolutif</content>
+	               </col>
+	               <col>
+	               	<content>sujets de verbes intransitifs et objets de verbes transitifs</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseErgOrSplitPossAbs">
+	               <col exampleLoc="np/absolutive"/>
+	               <col>
+	               	<content>absolutif</content>
+	               </col>
+	               <col>
+	               	<content>sujets de verbes intransitifs et objets de verbes transitifs et possesseurs</content>
+	               </col>
+	            </row>
+	            <row show="swNPCaseNomOrSplitOrErgPossGen">
+	               <col exampleLoc="np/genitive"/>
+	               <col>
+	               	<content>genitif</content>
+	               </col>
+	               <col>
+	               	<content>possesseurs</content>
+	               </col>
+	            </row>
+	            <row show="swExperiencerNo">
+	               <col exampleLoc="np/dative"/>
+	               <col>
+	               	<content>datif</content>
+	               </col>
+	               <col>
+	               	<content>objets indirects</content>
+	               </col>
+	            </row>
+	            <row show="swExperiencerNotNo">
+	               <col exampleLoc="np/dative"/>
+	               <col>
+	               	<content>datif</content>
+	               </col>
+	               <col>
+	               	<content>objets indirects et sujets expérienceurs</content>
+	               </col>
+	            </row>
+	            <row>
+	               <col exampleLoc="np/ablative"/>
+	               <col>
+	                  <content>ablatif</content>
+	               </col>
+	               <col>
+	               	<content>source ou origine</content>
+	               </col>
+	            </row>
+	               <row>
+	                  <col exampleLoc="np/instrumental"/>
+	                  <col>
+	                     <content>instrumental</content>
+	                  </col>
+	                  <col>
+	                  	<content>instrument, moyen ou agence</content>
+	                  </col>
+	                  </row>
+	                  <row>
+	                     <col exampleLoc="np/locative"/>
+	                     <col>
+	                        <content>locatif</content>
+	                     </col>
+	                     <col>
+	                        <content>lieu</content>
+	                     </col>
+	                     </row>
+	                     <row>
+	                        <col exampleLoc="np/vocative"/>
+	                        <col>
+	                           <content>vocatif</content>
+	                        </col>
+	                        <col>
+	                        	<content>adresse directe</content>
+	                        </col>
+	                        </row>
+	                        <row>
+	                           <col exampleLoc="np/oblique"/>
+	                           <col>
+	                              <content>oblique</content>
+	                           </col>
+	                           <col>
+	                           	<content>relation grammaticale mineure générale</content>
+	                           </col>
+	                           </row>
+	                           <row>
+	                              <col exampleLoc="np/other"/>
+	                              <col>
+	                                 <content>autre</content>
+	                              </col>
+	                              <col>
+	                              	<content>autres marqueurs spécifiques</content>
+	                              </col>
+	                              </row>
+	         </table>
+	      </example>	      
+	   </section2>
+	   
+		<section2 id="sNPoss">
+			<secTitle>Possesseurs</secTitle>
+			<p>
+				<content>La possession peut s’exprimer par un pronom, par un simple nom ou par un syntagme nominal complet (voir la section </content><sectionRef sec="sNPPoss"/><content>).  Le cas et les caractéristiques d’accord sur des noms possessés ou sur des noms agissant comme possesseurs sont traités ici.</content><text show="swNPAbsolutiveYes"><content>  The special affix that occurs on nouns when they are not possessed or pluralized is also discussed.</content></text>
+			</p>
+			<section3 id="sNPPossCase">
+				<secTitle>Cas du possesseur</secTitle>
+				<p show="swNPCaseNo"><content>En </content><langName/><content>, comme discuté dans la section </content><sectionRef sec="sNPCase"/><content>,  il n’ya pas de système casuel. Il n’y a donc pas de marquage sur les noms, ni groupe distinct de pronoms utilisés pour les possesseurs.</content></p>
+				<p show="swNPCaseNom">
+					<content>En </content>
+					<langName/>
+					<content> on utilise le système casuel nominatif-accusatif normal, et les possesseurs sont marqués par le cas génitif.</content>
+				</p>
+				<p show="swNPCaseSplit">
+					<content>En </content>
+					<langName/>
+					<content> les possesseurs sont marqués par le cas génitif, suivant la partie normale nominatif-accusatif du système de cas dédoublé.  Dans les parties qui montrent une ergativité dédoublée,  les possesseurs sont marqués avec </content>
+					<case element="np" attr="possCaseErg">
+						<caseText value="ergative">le cas ergative, le même marquage que les sujets de verbes transitifs.</caseText>
+						<caseText value="absolutive">le cas absolutif, le même marquage que les sujets de verbes intransitifs et le même marquage que les objets de verbes transitifs.</caseText>
+						<caseText value="genitive">le cas génitif aussi.</caseText>
+					</case>
+					<content/>
+				</p>
+				<p show="swNPCaseErg">
+					<content>En </content>
+					<langName/>
+					<content> on utilise le système casuel ergatif-absolutif, et les possesseurs sont marqués par </content>
+					<case element="np" attr="possCaseErg">
+						<caseText value="ergative">le cas ergatif, le même marquage que les sujets de verbes transitifs.</caseText>
+						<caseText value="absolutive">le cas absolutif, le même marquage que les sujets de verbes intransitifs et les objets de verbes transitifs.</caseText>
+						<caseText value="genitive">le cas génitif, un parquage distinct pour les possesseurs.</caseText>
+					</case>
+					<content/>
+				</p>
+			   <p show="swNPCaseYes" contentType="ctPracticalIntro">
+			      <content>En </content>
+			      <langName/>
+			      <content>, </content>
+			      <case element="np" attr="possNounCaseChange">
+			      	<caseText value="no">la fonction grammaticale du nom principal relatif au verbe détermine son cas, non la présence d’un possesseur.</caseText>
+			      	<caseText value="yes">le cas du nom principal s’accorde avec le cas du possesseur lorsqu’un possesseur est présent.</caseText>
+			      </case>
+			   	<text show="swNPPossNounCaseChangeYes"><content> S’il y a un modificateur adjectival dans le syntagme nominal, le cas du nom principal change </content>
+			      <case element="np" attr="adjpCaseChange">
+			      	<caseText value="no">seulement quand un  possesseur est present; cependant, l’adjectif peut/doit aussi porter ce cas.</caseText>
+			      	<caseText value="yes">pour s’accorder avec le cas normal d’un possesseur même si seulement un modificateur adjectival est présent.</caseText>
+			      </case>
+			      </text>
+			      <text show="swNPAdjPCaseAffixNotNo">
+			      	<content> Lorsqu’un </content>
+			      	<case element="np" attr="adjpCaseAffix">
+			      		<caseText value="yesSuffix">suffixe</caseText>
+			      		<caseText value="yesPrefix">préfixe</caseText>
+			      	</case>
+			      	<content> explicite </content>
+			      	<text show="swNPPossCaseGen">
+			      		<content>génitif </content>
+			            </text>
+			            <text show="swNPCaseSplitNotGen">
+			               <content>ou </content>
+			            </text>
+			            <content/>
+			            <text show="swNPPossCaseErg">
+			               <content>ergatif </content>
+			            </text>
+			            <content/>
+			            <text show="swNPPossCaseAbs">
+			               <content>absolutif </content>
+			            </text>
+			      	<content> est présent sur le nom principal, cela indique qu’un modificateur adjectival ou/et un possesseur doit être présent dans le syntagme.  Si l’adjectif set marqué avec ce </content>
+			      	<case element="np" attr="adjpCaseAffix">
+			      		<caseText value="yesSuffix">suffixe</caseText>
+			      		<caseText value="yesPrefix">préfixe</caseText>
+			      	</case>
+			      	<text show="swNPPossCaseGen">
+			      		<content> génitif </content>
+			            </text>
+			            <text show="swNPCaseSplitNotGen">
+			               <content>ou</content>
+			            </text>
+			            <content/>
+			            <text show="swNPPossCaseErg">
+			               <content> ergatif </content>
+			            </text>
+			            <content/>
+			            <text show="swNPPossCaseAbs">
+			               <content> absolutif </content>
+			            </text>
+			            <content/>
+			      	<content> un autre adjectif et/ou un possesseur doit aussi être présent.</content>
+			         </text>
+			         <content/>
+			   </p>
+				<p show="swNPCaseYes" contentType="ctComparativeIntro">
+					<content>En certaines langues, dans un syntagme nominal possessé le nom principal et ses modificateurs s’accordent avec le cas du possesseur.  En d’autres langues, le possesseur est marqué avec son propre cas, par exemple le génitif, tandis que le nom principal est marqué d’un cas selon sa position relatif au verbe, nominatif ou accusative, ergative ou absolutif, selon le système casuel.</content>
+				</p>
+			   <p show="swNPCaseYes" contentType="ctComparativeIntro">
+					<content>En </content>
+					<langName/>
+					<content> </content>
+					<case element="np" attr="possNounCaseChange">
+						<caseText value="no">la function grammaticale du nom principal relatif au verbe determine son cas, non la presence d’un possesseur.</caseText>
+						<caseText value="yes">le cas du nom principal s’accorde avec le cas du possesseur lorsqu’un possesseur est présent.</caseText>
+					</case>
+					<content/>
+				</p>
+				<p show="swNPPossNounCaseChangeYes" contentType="ctComparativeIntro">
+					<content>Des langues comme </content>
+					<langName/>
+					<content> qui changent le cas du nom principal quand un posssesseur est présent changent aussi normalement le cas des adjectifs pour s’y accorder. Certaines langues de ce type changent le cas du nom principal quand un modificateur adjectival seulement est present, même s’il n’y a pas de possesseur.</content>
+				</p>
+			   <p  show="swNPPossNounCaseChangeYes" contentType="ctComparativeIntro">
+					<content>En </content>
+					<langName/>
+			   	<content> e cas du nom principal </content>
+					<case element="np" attr="adjpCaseChange">
+						<caseText value="no">ne change que quand un possesseur est present, bien que dans cette situation un adjectif intervenant peut/doit aussi porter ce cas.</caseText>
+						<caseText value="yes">change pour s’accorder avec le cas normal d’un possesseur même si un modificateur adjectival seulement est present.</caseText>
+					</case>
+					<content/>
+				</p>
+			   <p show="swNPAdjPCaseChangeYes" contentType="ctComparativeIntro">
+			   	<content>De plus, certaines langues de ce dernier type ont un affixe explicite qui marque le génitif (ou le cas normal des possesseurs) sur le nom principal pour indiquer qu’il doit y avoir soit un adjectif ou un possesseur dans ce syntagme nominal. Dans cette situation, l’adjectif et/ou le possesseur sera aussi au génitif (ou au cas normal des possesseurs); cependant, le marquage de cas ne sera pas explicite sur le modificateur le plus haut dans le syntagme nominal.</content>
+				</p>
+			   <p show="swNPAdjPCaseChangeYes" contentType="ctComparativeIntro">
+					<content>En </content>
+					<langName/>
+			   	<content> le marquage de cas </content>
+					<case element="np" attr="adjpCaseAffix">
+						<caseText value="no">n’est pas traité avec un affixe.</caseText>
+						<caseText value="yesPrefix">est  traité de cette façon distinctive.  </caseText>
+						<caseText value="yesSuffix">est  traité de cette façon distinctive.  </caseText>
+					</case>
+					<text show="swNPAdjPCaseAffixNotNo">
+						<content>Lorsque le  </content>
+						<case element="np" attr="adjpCaseAffix">
+							<caseText value="yesSuffix">suffixe</caseText>
+							<caseText value="yesPrefix">préfixe</caseText>
+						</case>
+						<content> explicite </content>
+						<text show="swNPPossCaseGen">
+							<content>génitif </content>
+						</text>
+						<text show="swNPCaseSplitNotGen">
+							<content>ou </content>
+						</text>
+						<content/>
+						<text show="swNPPossCaseErg">
+							<content>ergatif </content>
+						</text>
+						<content/>
+						<text show="swNPPossCaseAbs">
+							<content>absolutif </content>
+						</text>
+						<content/>
+						<content> est présent sur le nom principal cela indique qu’un modificateur adjectival ou/et un possesseur doit être présent dans le syntagme.  Si l’adjectif set marqué avec ce </content>
+						<case element="np" attr="adjpCaseAffix">
+							<caseText value="yesSuffix">suffixe </caseText>
+							<caseText value="yesPrefix">préfixe </caseText>
+						</case>
+						<text show="swNPPossCaseGen">
+							<content>génitif</content>
+						</text>
+						<text show="swNPCaseSplitNotGen">
+							<content> ou </content>
+						</text>
+						<content/>
+						<text show="swNPPossCaseErg">
+							<content>ergatif</content>
+						</text>
+						<content/>
+						<text show="swNPPossCaseAbs">
+							<content>absolutif</content>
+						</text>
+						<content/>
+						<content>, un autre adjectif et/ou un possesseur doit aussi être présent.</content>
+					</text>
+					<content/>
+				</p>
+			</section3>
+			
+			<section3 id="sNPPossAgreement">
+				<secTitle>Accord du possesseur</secTitle>
+				<p>
+					<content>L’accord du possesseur vient normalement sous deux formes de base:</content>
+				</p>
+				<ul>
+					<li>
+						<content>Un affixe qui se trouve sur des noms alienablement possédés pour indiquer qu’ils sont possessés et par conséquent qu’ils doivent avoir un possesseur dans le syntagme nominal.  Les noms inalienablement possédés ne demandent pas de marquage, mais doivent toujours avoir un possesseur.  Ceux-ci incluent, mais ne sont pas limités à, des termes de parenté ou des parties du corps.</content>
+					</li>
+					<li>
+						<content>Un affixe qui s’accorde avec le possesseur (ou éventuellement exprime le possesseur par lui-même). </content>
+					</li>
+				</ul>
+				<p>
+					<content>En </content>
+					<langName/>
+					<content/>
+					<case element="np" attr="possAlienable">
+						<caseText value="no"> il n’y a pas de distinction</caseText>
+						<caseText value="yes"> il y a une distinction</caseText>
+					</case>
+					<content> entre les noms possessés alienables et inalienables.  </content>
+					<text show="swNPPossAlienableYes">
+						<content>L’affixe qui marque les noms possessés alienables quand ils ont un possesseur est:</content>
+					</text>
+					<content/>
+				</p>
+				<example show="swNPPossAlienableYes">
+					<table border="1">
+					<headerRow>
+						<headerCol>Affixe possessif</headerCol>
+						<headerCol>Glose</headerCol>
+					</headerRow>
+						<row>
+							<col exampleLoc="np/possAlienableAffixExample"/>
+							<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+						</row>
+					</table>
+				</example>
+				<p>
+					<content>En </content>
+					<langName/>
+					<content> les noms </content>
+					<case element="np" attr="possAgr">
+						<caseText value="no">ne sont pas</caseText>
+						<caseText value="yes">sont</caseText>
+					</case>
+					<content> marqués avec un affixe pronominal ou clitique qui s’accorde avec le possesseur ou exprime le possesseur par lui-même.  </content>
+					<text show="swNPPossAgrYes">
+						<content>Voir les pronoms personnels dépendants utilisés pour des possesseurs donnés dans la section </content><sectionRef sec="sPronPersonal"/><content>. </content>
+					</text>
+					<content/>
+				</p>
+				<p><content>Voir la section </content><sectionRef sec="sNPPoss"/><content> pour obtenir des exemples de noms possédés.</content></p>
+			</section3>
+		   <section3 id="sNPossAbsolutive" show="swNPAbsolutiveYes">
+		   	<secTitle>Marquage absolutif</secTitle>
+		   	<p><content>En </content><langName/><content> ont un affixe qui se trouve sur les noms quand ils ne sont pas possédés ou pluralisés ou éventuellement quand il n’y a pas de modificateur.  Cet affixe est connu comme marqueur absolutif, mais le nom est en rapport avec le marqueur du cas absolutif utilisé dans des langues avec un système de cas ergatif-absolutif. 
+		   	</content></p>
+		   	<p><content>Les formes de l’affixe utilisé en </content><langName/><content> sont:</content></p>
+		      <example show="swNPAbsolutiveYes">
+		         <table border="1">
+		            <headerRow>
+		               <headerCol>Affixes absolutifs</headerCol>
+		               <headerCol>Glose</headerCol>
+		            </headerRow>
+		            <row>
+		               <col exampleLoc="np/possAbsolutiveAffixExample"/>
+		               <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		            </row>
+		         </table>
+		      </example>
+		      
+		   </section3>
+		   
+		</section2>
+		<section2 id="sNPCompounds">
+			<secTitle>Composés nominaux</secTitle>
+			<p contentType="ctComparativeIntro">
+				<content>Beaucoup de langues sont comme l’anglais dans le fait qu’elles ont des modificateurs nominaux.  Il peut sembler que tous les noms peuvent être utilisés comme adjectifs, mais en y regardant de plus près il se révèle que les varais adjectifs viennent avant le modificateur nominal comme </content>
+				<langData>large, round [syrup bottle]</langData><gloss><content> (une grande bouteille à syrop ronde)</content></gloss>
+				<content> mais non pas  </content>
+				<langData>*round, syrup large bottle</langData><gloss><content> (ronde, syrop grande bouteille)</content></gloss>
+				<content>.  Les modificateurs nominaux seront donc traités de noms composés qui s’écrivent comme mots indépendents.</content>
+			</p>
+			<p contentType="ctComparativeIntro">
+				<content>Dans les exemples en anglais ci-dessus, </content>
+				<langData>bottle</langData>
+				<content> est clairement le nom principal plutôt que </content>
+				<langData>syrup</langData>
+				<content>, parce que </content>
+				<langData>syrup</langData><gloss><content> « syrop »</content></gloss>
+				<content> restreint le type de </content>
+				<langData>bottle</langData><gloss><content> « bouteille »</content></gloss>
+				<content> et non vice versa.  Dans tous les noms composés et les constructions modificateur nominal en anglais, le principal est le nom le plus à droite dans la série.</content>
+			</p>
+			<p contentType="ctComparativeIntro">
+			<content>Par contraste, en français de tels exemples sont plus rares.  </content><langData>Kitchen table</langData><content> peut être traduit </content><langData>table de cuisine</langData><content> s’il s’agit d’un type de meuble en général, ou </content><langData>la table de la cuisine</langData><content> si c’est une table en particulier, celle dans la cuisine. </content><langData>Table cuisine</langData><content> ou </content><langData>cuisine table</langData><content> ne seraient pas permis. Certains noms peuvent agir en adjective - par exemple, </content><langData>panneau indicateur</langData><content> mais </content><langData>indicateur de vitesse</langData><content>.</content>  
+			</p>
+			<p><content>Les noms composés incluent ceux qui sont combinés dans un seul mot de même que ceux qui sont écrits comme deux mots indépendants ou plus.  Voici des exemples de quelques catégories typiques de noms composés.</content></p>
+		   <example>
+		      <table border="1">
+		      	<caption><content>Noms composés pour les parties du corps </content></caption>
+		         <headerRow>
+		         	<headerCol>Nom composé</headerCol>
+		         	<headerCol>Glose pour chaque nom</headerCol>
+		         	<headerCol>Glose pour chaque nom composé</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compBodyPartExample"/>
+		            <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		            <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   <example>
+		      <table border="1">
+		      	<caption><content>Noms composés pour les termes de parenté</content></caption>
+		         <headerRow>
+		         	<headerCol>Nom composé</headerCol>
+		         	<headerCol>Glose pour chaque nom</headerCol>
+		         	<headerCol>Glose pour chaque nom composé</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compKinshipExample"/>
+		         	<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         	<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   <example>
+		      <table border="1">
+		      	<caption><content>Noms composés pour la nourriture</content></caption>
+		         <headerRow>
+		         	<headerCol>Nom composé</headerCol>
+		         	<headerCol>Glose pour chaque nom</headerCol>
+		         	<headerCol>Glose pour chaque nom composé</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compFoodExample"/>
+		         	<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         	<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   <example>
+		      <table border="1">
+		      	<caption><content>Noms composés qui décrivent le matériel dont le nom est construit</content></caption>
+		         <headerRow>
+		         	<headerCol>Nom composé</headerCol>
+		         	<headerCol>Glose pour chaque nom</headerCol>
+		         	<headerCol>Glose pour chaque nom composé</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compMaterialExample"/>
+		         	<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         	<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   <example>
+		      <table border="1">
+		      	<caption><content>Autres noms composés</content></caption>
+		         <headerRow>
+		         	<headerCol>Nom composé</headerCol>
+		         	<headerCol>Glose pour chaque nom</headerCol>
+		         	<headerCol>Glose pour chaque nom composé</headerCol>
+		         </headerRow>
+		         <row>
+		            <col exampleLoc="np/compExample"/>
+		         	<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         	<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+		         </row>
+		      </table>
+		   </example>
+		   
+		   
+			<p show="swNPCompNo">
+				<content>Comme le montrent ces exemples, en </content>
+				<langName/>
+				<content> il n’y a pas de noms composés ou de modificateurs de nom qui sont écrits comme mots indépendants.  Ils sont tous écrits comme un mot simple avec le nom principal.  </content>
+			   <case element="np" attr="compHeadMorpheme">
+			   	<caseText value="left">La racine du nom à gauche est </caseText>
+			   	<caseText value="right">La racine du nom à droite est </caseText>
+			   	<caseText value="either">La racine du nom à gauche ou celle à droite peut être </caseText>
+			   </case>
+				<content>le nom principal dans ces composés à mot unique.</content>
+			</p>
+			<p show="swNPCompYes">
+				<content>Comme le montrent ces exemples, en </content>
+			   <langName/>
+				<content> il y a des noms composés ou de modificateurs de nom qui sont écrits comme mots indépendants.  </content>
+				<case element="np" attr="compHead">
+					<caseText value="left">Le nom à gauche est </caseText>
+					<caseText value="right">Le nom à droite est </caseText>
+					<caseText value="either">Le nom à gauche ou celui à droite peut être </caseText>
+				</case>
+				<content>le nom principal dans ces composés à mots multiples.  Dans les noms composés qui sont écrits comme mot unique avec le nom principal,  </content>
+			   <case element="np" attr="compHeadMorpheme">
+			   	<caseText value="left">la racine du nom à gauche est </caseText>
+			   	<caseText value="right">la racine du nom à droite est </caseText>
+			   	<caseText value="either">la racine du nom à gauche ou celle à droite peut être </caseText>
+			   </case>
+				<content>le nom principal.</content>
+			   
+			</p>
+		</section2>
+
+	</section1>
+<showWhen id="swNPAgreeYesNumber">
+	<whenValue element="np"  attr="agreeNumber" value="yes"/>
+</showWhen>
+	<showWhen id="swNPAgreeOtherTypeNone">
+		<whenValue element="np/agreeClass" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeClassifier" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeGender" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeOtherNone" attr="checked" value="yes"/>
+		
+	</showWhen>
+   <showWhen id="swNPAgreeClass">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+   	<and/>
+   	<whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+	<showWhen id="swNPAgreeClassifier">
+		<whenValue element="np/agreeClassifier" attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swNPAgreeGender">
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgreeAnimacy">
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOther">
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+ 
+	<showWhen id="swNPCaseNoneAndExperiencerNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNoneAndExperiencerNotNo">
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNYes">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNYes">
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNone">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseDefaultNom">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseDefault" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseDefault" value="nominative"/>
+   </showWhen>
+   
+   <showWhen id="swNPCaseNomOrSplitAndCaseNYes">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplitAndCaseNNo">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndCaseNYes">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndCaseNNo">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNNo">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordYes">
+      <whenValue element="np" attr="caseWord" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordNo">
+      <whenValue element="np" attr="caseWord" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplit">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplit">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordYesAndNotOther">
+      <whenValue element="np" attr="caseWord" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="no"/>
+   </showWhen>   
+   <showWhen id="swNPCaseWordSomeAndNotOther">
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="no"/>
+   </showWhen>   
+   <showWhen id="swCaseWordBefore">
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseWordAfter">
+      <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseWordBoth">
+      <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseWordBeforeOrBoth">
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseWordAfterOrBoth">
+      <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCaseWordEither">
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseWordEitherOrBoth">
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+      <showWhen id="swNPCaseWordYesAndOtherOnly">
+         <whenValue element="np" attr="caseWord" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+      </showWhen>
+      <showWhen id="swNPCaseWordYesAndOtherAnd">
+         <whenValue element="np" attr="caseWord" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+         <or/>
+         <whenValue element="np" attr="caseWord" value="no" negateValue="yes"/>
+         <and/>
+         <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+       <or/>
+         <whenValue element="np" attr="caseWord" value="no" negateValue="yes"/>
+         <and/>
+         <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+      </showWhen>
+   <showWhen id="swNPCaseWordSomeAndOtherOnly">
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordSomeAndOtherAnd">
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBefore" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordAfter" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseWordBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordSome">
+      <whenValue element="np" attr="caseWord" value="some"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordSomeAttachesAndOtherOnly">
+      <whenValue element="np" attr="caseWord" value="some"/>
+      <and/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordNoAndOtherOnly">
+      <whenValue element="np" attr="caseWord" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesOther">
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesProclitic">
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesEnclitic">
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesClitic">
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesPrefix">
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesSuffix">
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesAffix">
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesBoth">
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+   <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+   <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="np/caseAttachesPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="np/caseAttachesEnclitic" attr="checked" value="yes"/>
+   </showWhen>   
+  
+      <showWhen id="swNPPossessorBefore">
+		<whenValue element="np" attr="possNounPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="unknown" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossessorAfter">
+		<whenValue element="np" attr="possNounPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="possNounPos" value="unknown" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPPPBefore">
+		<whenValue element="np" attr="ppPos" value="after" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="ppPos" value="unknown" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPPPAfter">
+		<whenValue element="np" attr="ppPos" value="before" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="ppPos" value="unknown" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPCompoundYesRightHead">
+		<whenValue element="np" attr="compHead" value="right"/>
+		<and/>
+		<whenValue element="np" attr="comp" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPCompoundYesLeftHead">
+		<whenValue element="np" attr="compHead" value="left"/>
+		<and/>
+		<whenValue element="np" attr="comp" value="yes"/>
+	</showWhen>
+
+	<showWhen id="swNPPossMarkedYesCliticWordYes">
+		<whenValue element="np" attr="possCliticWord" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="possMarked" value="yesClitic"/>
+	</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticWordNoSuffix">
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possMarked" value="yesClitic"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="suffix"/>
+	</showWhen>
+	<showWhen id="swNPPossMarkedYesCliticWordNoPrefix">
+		<whenValue element="np" attr="possCliticWord" value="no"/>
+		<and/>
+		<whenValue element="np" attr="possMarked" value="yesClitic"/>
+		<and/>
+		<whenValue element="np" attr="possCliticAffix" value="prefix"/>
+	</showWhen>
+	<showWhen id="swNPCaseErg">
+		<whenValue element="typology" attr="case" value="ergative"/>
+	</showWhen>
+	<showWhen id="swNPCaseYes">
+		<whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPCaseNo">
+		<whenValue element="typology" attr="case" value="none"/>
+	</showWhen>
+	<showWhen id="swNPCaseNom">
+		<whenValue element="typology" attr="case" value="nominative"/>
+	</showWhen>
+	<showWhen id="swNPCaseSplit">
+		<whenValue element="typology" attr="case" value="split"/>
+	</showWhen>
+	<showWhen id="swNPCaseSplitNotGen">
+		<whenValue element="typology" attr="case" value="split"/>
+		<and/> 
+		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="yes"/>
+	</showWhen>
+	<showWhen id="swNPAdjPCaseChangeYes">
+		<whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseChange" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAlienableYes">
+		<whenValue element="np" attr="possAlienable" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrYes">
+		<whenValue element="np" attr="possAgr" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossFirst">
+		<whenValue element="np/npPossAgrPossFirst" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossExclusive">
+		<whenValue element="np/npPossAgrPossExclusive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossInclusive">
+		<whenValue element="np/npPossAgrPossInclusive" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossSecond">
+		<whenValue element="np/npPossAgrPossSecond" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossThird">
+		<whenValue element="np/npPossAgrPossThird" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossSingular">
+		<whenValue element="np/npPossAgrPossSingular" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossDual">
+		<whenValue element="np/npPossAgrPossDual" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossPlural">
+		<whenValue element="np/npPossAgrPossPlural" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossMasculine">
+		<whenValue element="np/npPossAgrPossMasculine" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossFeminine">
+		<whenValue element="np/npPossAgrPossFeminine" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossNeuter">
+		<whenValue element="np/npPossAgrPossNeuter" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossAnimate">
+		<whenValue element="np/npPossAgrPossAnimate" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossInanimate">
+		<whenValue element="np/npPossAgrPossInanimate" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossHuman">
+		<whenValue element="np/npPossAgrPossHuman" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossNonHuman">
+		<whenValue element="np/npPossAgrPossNonHuman" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossAgrPossClassClassNumber">
+		<whenValue element="np/npPossAgrPossClassClassNumber" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossNounCaseChangeYes">
+	<whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+	<and/>
+		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossCaseGen">
+	<whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+	<and/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<or/>
+		<whenValue element="typology" attr="case" value="nominative"/>
+	</showWhen>
+	<showWhen id="swNPPossCaseErg">
+	<whenValue element="np" attr="possCaseErg" value="ergative"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative"/>
+		<or/>
+	<whenValue element="np" attr="possCaseErg" value="ergative"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="split"/>
+	</showWhen>
+	<showWhen id="swNPPossCaseAbs">
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative"/>
+<or/>
+		<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="split"/>
+	</showWhen>
+	<showWhen id="swNPAdjPCaseAffixNotNo">
+		<whenValue element="np" attr="adjpCaseAffix" value="no" negateValue="yes"/>
+		<and/>
+		<whenValue element="np" attr="adjpCaseChange" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPCompNo">
+		<whenValue element="np" attr="comp" value="no"/>
+	</showWhen>
+	<showWhen id="swNPCompYes">
+		<whenValue element="np" attr="comp" value="yes"/>
+	</showWhen>
+   <showWhen id="swExperiencerNotNo">
+      <whenValue element="typology" attr="caseExperiencer" value="no" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swExperiencerNo">
+      <whenValue element="typology" attr="caseExperiencer" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitPossAbs">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitNotPossAbs">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="absolutive" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitPossErg">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitNotPossErg">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="ergative" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplitOrErgPossGen">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenValue element="np" attr="possCaseErg" value="genitive"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNYesAndCaseWordYes">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseWord" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndCaseNYesAndCaseWordNo">
+      <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/>
+      <whenValue element="np" attr="caseWord" value="no"/>
+   </showWhen>
+   <showWhen id="swNPCaseNone" >
+      <whenValue element="typology" attr="case" value="none"/>
+   </showWhen>
+   <showWhen id="swNPAgreeYesClassAndClassifiersNo">
+      <whenValue element="np" attr="agreeOther" value="yesClass"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAbsolutiveYes">
+      <whenValue element="np" attr="possAbsolutive" value="yes"/>
+   </showWhen>
+</portion>

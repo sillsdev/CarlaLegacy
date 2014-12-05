@@ -2,12 +2,12 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="CompPosition" count="3/4">
-    <title level="2">Las cláusulas de complemento - La posición de complementizador</title>
+    <title level="2">Las cláusulas de complemento - La posición de complementador</title>
     <form section="comp">
        <radioGroup>
           <groupName dataItem="comp" default="no">RComp</groupName>
-          <prompt><br/>De acuerdo con los ejemplos usted dio de cláusulas de complemento, ¿Hay uno o más complementizadores que indican cláusulas subordinadas en su lengua (incluye los clíticos en su respuesta)?   (Las preguntas y las cláusulas relativas serán consideradas en las secciones siguientes, así que no contestan para esto aquí.)</prompt>
-          <radio id="CompNo" dataValue="no">No, no hay ninguna palabra del complementizador ni un clítico para las cláusulas subordinadas declarativas, entonces todas las cláusulas subordinadas son oraciones<span id="CompNoSpanNotPractical" show="swNotPractical"> (IPs)</span> en esta lengua</radio>
+          <prompt><br/>De acuerdo con los ejemplos usted dio de cláusulas de complemento, ¿Hay uno o más complementadores que indican cláusulas subordinadas en su lengua (incluye los clíticos en su respuesta)?   (Las preguntas y las cláusulas relativas serán consideradas en las secciones siguientes, así que no contestan para esto aquí.)</prompt>
+          <radio id="CompNo" dataValue="no">No, no hay ninguna palabra del complementador ni un clítico para las cláusulas subordinadas declarativas, entonces todas las cláusulas subordinadas son oraciones<span id="CompNoSpanNotPractical" show="swNotPractical"> (IPs)</span> en esta lengua</radio>
           <radio id="CompYes" dataValue="yes">Sí, como <example>that ‘que'</example> y <example>for ‘para'</example> en inglés</radio>
        </radioGroup>
        <prompt id="NonfIniteNoPrompt" show="swIPAuxNonfiniteNone">Puesto que usted dijo en <section number="9.3">Las oraciones - Los auxiliares</section> que no hay formas no finitas, se asume que no hay esta distincción en las cláusulas subordinadas tampoco.</prompt>
@@ -15,50 +15,50 @@
        <prompt id="CompNoFIniteYesAuxPrompt" show="swCompNoAndIPAuxNonfiniteYes">Puesto que usted dijo en <section number="9.3">Las oraciones - Los auxiliares</section> que hay un auxiliar no finito, se asume que todavía hay una distincción entre las cláusulas subordinadas finitas y no finitas.</prompt>
        <radioGroup id="CompNonfiniteTable" show="swCompYesAndIPAuxNonfiniteNotNone">
           <groupName dataItem="compNonfinite" default="no">RCompNonfinite</groupName>
-          <prompt><br/>¿Hay un sistema distinto de complementizadores para las cláusulas subordinadas no finitas?</prompt>
+          <prompt><br/>¿Hay un sistema distinto de complementadores para las cláusulas subordinadas no finitas?</prompt>
           <radio id="CompNonfiniteYes"  dataValue="yes">Sí</radio>
-          <radio id="CompNonfiniteNo" dataValue="no">No, todas las cláusulas de complemento utilizan el mismo complementizador</radio>
+          <radio id="CompNonfiniteNo" dataValue="no">No, todas las cláusulas de complemento utilizan el mismo complementador</radio>
        </radioGroup>
        <radioGroup id="CompWordTable" show="swCompYes">
           <groupName dataItem="compWord" default="yes">RCompWord</groupName>
-          <prompt><br/>¿Se escriben los complementizadores como palabras independientes?</prompt>
+          <prompt><br/>¿Se escriben los complementadores como palabras independientes?</prompt>
           <radio id="CompWordYes"  dataValue="yes">Sí, todos son palabras independientes</radio>
           <radio id="CompWordSome" dataValue="some">Algunos son palabras independientes, pero otros se unen a otro palabra </radio>
           <radio id="CompWordNo" dataValue="no">No, todos se unen a otra palabra</radio>
        </radioGroup>
        <checkboxGroup id="CompAttachesType" show="swCompWordNoOrSome">
-          <prompt><br/>¿Dónde se unen los complementizadores que no son palabras independientes?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+          <prompt><br/>¿Dónde se unen los complementadores que no son palabras independientes?  Seleccione todas las opciones que son correctas en su lengua</prompt>
           <checkbox id="CompAttachesProclitic" dataItem="compProclitic">Como un proclítico que se une al inicio de culaquiera palabra que empieza la cláusula subordinada</checkbox>
           <checkbox id="CompAttachesEnclitic" dataItem="compEnclitic">Como un enclítico que se une al final de culaquiera palabra que termina la cláusula subordinada</checkbox>
           <checkbox id="CompAttachesPrefix" dataItem="compPrefix">Como un prefijo que se une al verbo en la cláusula subordinada</checkbox>
-          <checkbox id="CompAttachesSuffix" dataItem="compSuffix">Como un prefijo que se une al verbo en la cláusula subordinada</checkbox>
+          <checkbox id="CompAttachesSuffix" dataItem="compSuffix">Como un sufijo que se une al verbo en la cláusula subordinada</checkbox>
           <checkbox id="CompAttachesOther" dataItem="compAttachesOther">En mi lengua, estos elementos se unen: <textBox  id="CompAttachesOtherContent" dataItem="compAttachesOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="CompAttachesNoCheckPrompt" show="swCompWordNoOrSomeandNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos complementizadores se unen en su lengua, o cambia su respuesta arriba a ‘Sí, todos son palabras independientes’.</prompt>
+       <prompt id="CompAttachesNoCheckPrompt" show="swCompWordNoOrSomeandNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos complementadores se unen en su lengua, o cambia su respuesta arriba a ‘Sí, todos son palabras independientes’.</prompt>
        
-       <prompt id="CompCliticPrompt" show="swCompWordNoOrSomeAndClitic">Escriba los complementizadores que son clíticos con un signo igual para indicar en qué lado se unen aquí:</prompt>  
+       <prompt id="CompCliticPrompt" show="swCompWordNoOrSomeAndClitic">Escriba los complementadores que son clíticos con un signo igual para indicar en qué lado se unen aquí:</prompt>  
        <textBox id="CompCliticExample" dataItem="compCliticExample" cols="50" show="swCompWordNoOrSomeAndClitic"/>
        <instruction id="CompProcliticInstruction" show="swCompWordNoOrSomeAndProclitic">In the lexicon, add the feature <feature>comp_prefix</feature> to the proclitics.</instruction>
        <instruction id="CompEncliticInstruction" show="swCompWordNoOrSomeAndEnclitic">In the lexicon, add the feature <feature>comp_suffix</feature> to the enclitics.</instruction>
        
-       <prompt id="CompAffixPrompt" show="swCompWordNoOrSomeAndAffix">Escriba los complementizadores que son afijos en el verbo con un guión para indicar en qué lado se unen aquí:</prompt>  
+       <prompt id="CompAffixPrompt" show="swCompWordNoOrSomeAndAffix">Escriba los complementadores que son afijos en el verbo con un guión para indicar en qué lado se unen aquí:</prompt>  
        <textBox id="CompAffixExample" dataItem="compAffixExample" cols="50" show="swCompWordNoOrSomeAndAffix"/>
        <instruction id="CompAffixInstruction" show="swCompWordNoOrSomeAndAffix">In the lexicon, add the feature <feature>comp</feature> to these verbal affixes.</instruction>
        
-       <prompt id="CompAtachesOtherPrompt" show="swCompWordNoOrSomeAndOther">Escriba los complementizadores que se unen como se permiten en su lengua aquí, con un signo igual o un guión para indicar en qué lado se unen:</prompt>  
+       <prompt id="CompAtachesOtherPrompt" show="swCompWordNoOrSomeAndOther">Escriba los complementadores que se unen como se permiten en su lengua aquí, con un signo igual o un guión para indicar en qué lado se unen:</prompt>  
        <textBox id="CompAttachesOtherExample" dataItem="compAttachesOtherExample" cols="50" show="swCompWordNoOrSomeAndOther"/>   
  
-       <prompt id="CompWordYesPrompt" show="swCompWordYesOrSome">Escriba los complementizadores que se escriben como palabras independientes aquí:</prompt>
+       <prompt id="CompWordYesPrompt" show="swCompWordYesOrSome">Escriba los complementadores que se escriben como palabras independientes aquí:</prompt>
        <textBox id="CompWordYesExample" dataItem="compExample" cols="50" show="swCompWordYesOrSome"/>
        <br/><br/>		
        <checkboxGroup id="CompWordPos" show="swCompWordYesOrSome">
-          <prompt>De acuerdo con los ejemplos, ¿Dónde se presenta el complementizador con respecto al resto de la cláusula subordinada? Seleccione todas las opciones que son correctas en su lengua</prompt>
+          <prompt>De acuerdo con los ejemplos, ¿Dónde se presenta el complementador con respecto al resto de la cláusula subordinada? Seleccione todas las opciones que son correctas en su lengua</prompt>
           <checkbox id="CompWordPosBefore"  dataItem="compBefore">Antes de la cláusula</checkbox>
           <checkbox id="CompWordPosAfter"  dataItem="compAfter">Después de la cláusula</checkbox>
           <checkbox id="CompWordPosBoth"  dataItem="compBoth">En ambos lados en la misma oración</checkbox>
-          <checkbox id="CompWordPosOther"  dataItem="compOther">En mi lengua, el complementizador puede presentarse: <textBox  id="CompWordPosOtherContent" dataItem="compOther" rows="2"/></checkbox>
+          <checkbox id="CompWordPosOther"  dataItem="compOther">En mi lengua, el complementador puede presentarse: <textBox  id="CompWordPosOtherContent" dataItem="compOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="CompWordNoCheckPrompt" show="swCompWordYesOrSomeAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos complementizadores que se escriben como palabras independientes en su lengua, o cambia su respuesta arriba a ‘No, todos se unen a otra palabra’.</prompt>
+       <prompt id="CompWordNoCheckPrompt" show="swCompWordYesOrSomeAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan estos complementadores que se escriben como palabras independientes en su lengua, o cambia su respuesta arriba a ‘No, todos se unen a otra palabra’.</prompt>
        
        <instruction id="CompMakeCInstruction" show="swCompWordYesOrSome">In the lexicon, add the feature <feature>makeC</feature> to the complementizers so it will show up in the correct position in the tree structure.  (For a word like English <example>that</example>, which can be both a complementizer <category>C</category> and a demonstrative <category>Dem</category>, you will need to have two separate lexical entries.)  
           <br/><br/><span id="CompNonfiniteSpan" show="swCompNonfniteYes">If the complementizer is like English <example>for</example>, add the additonal feature <feature>-finite</feature> so it will be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.</span>  Also, remember that if the word is like English <example>for</example>, which can be used both as a complementizer <category>C</category> and as a preposition <category>P</category>, you will need to make two separate lexical entries.)
@@ -162,7 +162,7 @@
       <whenCheckbox button="CompAttachesOther"/>
    </showWhen>
    <showWhen id="swCompWordYesOrSomeAndNoCheck">
-      <not/><whenRadio button="CompWordYes"/>
+      <not/><whenRadio button="CompWordNo"/>
       <and/>
       <whenRadio button="CompYes"/>
       <and/><not/>

@@ -29,7 +29,26 @@
           <radio id="NPQPPosEitherRestrictedNumAfter" dataValue="after">Sí, todos los números se presentan después del sustantivo</radio>
           <radio id="NPQPPosEitherRestrictedNumNo" dataValue="no">No, algunos pueden presentarse en cada lado</radio>
        </radioGroup>
-        <br/>
+       <radioGroup id="NPQClassifierSpecificTable" show="swOTClassifierSpecific">
+          <groupName dataItem="classifierPresentQ" default="no">RNPQClassifierPresent</groupName>
+          <prompt><br/>De acuerdo con los ejemplos, ¿Se presentan los clasificadores en las frases nominales completas con los cuantificadores o los números?</prompt>
+          <radio id="NPQClassifierPresentYes"  dataValue="yes">Sí, un clasificador se requiere presentarse en todas las frases nominales de esta tipo</radio>
+          <radio id="NPQClassifierPresentSome" dataValue="some">Se presenta un clasificador en algunas de esta tipo de frase nominal, pero no se requiere en todas</radio>
+          <radio id="NPQClassifierPresentNo" dataValue="no">No, un clasificador nunca se presenta en esta tipo de frase nominal</radio>
+       </radioGroup>
+       <checkboxGroup id="NPQClassifierSpecificPos" show="swOTClassifierSpecificAndNPQClassifierPresentYesOrSome">
+          <prompt><br/>De acuerdo con los ejemplos, ¿dónde se presentan los clasificadores con respecto a los cuantificadores y al sustantivo?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+          <checkbox id="NPQClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificQPosBeforeBoth">Primero, antes de ambos el cuantificador y el sustantivo</checkbox>
+          <checkbox id="NPQClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificQPosAfterBoth">Final, después de ambos el sustantivo y el cuantificador</checkbox>
+          <checkbox id="NPQClassifierSpecificPosAfterQBeforeN"  dataItem="classifierSpecificQPosAfterQBeforeN">Después del cuantificador pero antes del sustantivo</checkbox>
+          <checkbox id="NPQClassifierSpecificPosAfterNBeforeQ"  dataItem="classifierSpecificQPosAfterNBeforeQ">Después del sustantivo pero antes del cuantificador</checkbox>
+          <checkbox id="NPQClassifierSpecificPosPrefixQ"  dataItem="classifierSpecificQPosPrefixQ">Como un prefijo en el cuantificador</checkbox>
+          <checkbox id="NPQClassifierSpecificPosSuffixQ"  dataItem="classifierSpecificQPosSuffixQ">Como un sufijo en el cuantificador</checkbox>
+          <checkbox id="NPQClassifierSpecificPosOther"  dataItem="classifierSpecificQPosOther">En mi lengua, los clasificadores pueden presentarse: <textBox  id="NPQClassifierSpecificPosOtherContent" dataItem="classifierSpecificQPosOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="NPQClassifierSpecificPosNoCheckPrompt" show="swNPQClassifierPresentYesOrSomeAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los clasificadores con respecto a estos cuantificadores y al sustantivo en su lengua, o cambia la respuesta anterior a “No, un clasificador nunca se presenta en esta tipo de frase nominal”.</prompt>
+       
+       <br/>
         <instruction id="NPQPPosEitherRestrictedNumBeforeInstruction" show="swNPQPPosEitherRestrictedNumBefore">The program will mark numbers with the default feature <feature>DP-initial</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
         <instruction id="NPQPPosEitherRestrictedNumAfterInstruction" show="swNPQPPosEitherRestrictedNumAfter">The program will mark numbers with the default feature <feature>DP-final</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
         <instruction id="NPQPPosEitherRestrictedNumNoInstruction" show="swNPQPPosEitherRestrictedNumNo">In the lexicon, mark those quantifiers or numbers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier or number which can occur on either side.</instruction>
@@ -157,4 +176,41 @@ To handle class marking and agreement, in the lexicon:
    <showWhen id="swPractical">
       <whenValue  element="paws" attr="outputGrammar" value="False"/>
    </showWhen>
+
+   <showWhen id="swOTClassifierSpecific">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+   </showWhen>
+   <showWhen id="swOTClassifierSpecificAndNPQClassifierPresentYesOrSome">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPQClassifierPresentYes"/>
+      <or/>
+      <whenRadio button="NPQClassifierPresentSome"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNPQClassifierPresentYesOrSomeAndNoCheck">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPQClassifierPresentYes"/>
+      <or/>
+      <whenRadio button="NPQClassifierPresentSome"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="NPQClassifierSpecificPosAfterBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPQClassifierSpecificPosBeforeBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPQClassifierSpecificPosAfterQBeforeN"/>
+      <and/><not/>
+      <whenCheckbox button="NPQClassifierSpecificPosAfterNBeforeQ"/>
+      <and/><not/>
+      <whenCheckbox button="NPQClassifierSpecificPosPrefixQ"/>
+      <and/><not/>
+      <whenCheckbox button="NPQClassifierSpecificPosSuffixQ"/>
+      <and/><not/>
+      <whenCheckbox button="NPQClassifierSpecificPosOther"/>
+   </showWhen>
+   
 </page>

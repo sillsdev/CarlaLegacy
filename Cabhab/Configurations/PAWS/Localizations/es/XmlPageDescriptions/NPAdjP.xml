@@ -27,7 +27,26 @@
 	   </checkboxGroup>
 	   <prompt id="NPAdjPPosNoCheckPrompt" show="swNPAdjPPosNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan las frases adjetivales con respecto al sustantivo que las modifican.</prompt>
 	   <instruction id="NPAdjPPosEitherSideRestrictedInstruction" show="swNPAdjPPosEitherSideRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
-	   <br/>
+		<radioGroup id="NPAdjClassifierSpecificTable" show="swOTClassifierSpecific">
+			<groupName dataItem="classifierPresentAdj" default="no">RNPAdjClassifierPresent</groupName>
+			<prompt><br/>De acuerdo con los ejemplos, ¿Se presentan los clasificadores en las frases nominales completas con los adjetivos?</prompt>
+			<radio id="NPAdjClassifierPresentYes"  dataValue="yes">Sí, un clasificador se requiere presentarse en todas las frases nominales de esta tipo</radio>
+			<radio id="NPAdjClassifierPresentSome" dataValue="some">Se presenta un clasificador en algunas de esta tipo de frase nominal, pero no se requiere en todas</radio>
+			<radio id="NPAdjClassifierPresentNo" dataValue="no">No, un clasificador nunca se presenta en esta tipo de frase nominal</radio>
+		</radioGroup>
+		<checkboxGroup id="NPAdjClassifierSpecificPos" show="swOTClassifierSpecificAndNPAdjClassifierPresentYesOrSome">
+			<prompt><br/>De acuerdo con los ejemplos, ¿dónde se presentan los clasificadores con respecto a los adjetivos y al sustantivo?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+			<checkbox id="NPAdjClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificAdjPosBeforeBoth">Primero, antes de ambos el adjetivo y el sustantivo</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificAdjPosAfterBoth">Final, después de ambos el sustantivo y el adjetivo</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterAdjBeforeN"  dataItem="classifierSpecificAdjPosAfterAdjBeforeN">Después del adjetivo pero antes del sustantivo</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterNBeforeAdj"  dataItem="classifierSpecificAdjPosAfterNBeforeAdj">Después del sustantivo pero antes del adjetivo</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosPrefixAdj"  dataItem="classifierSpecificAdjPosPrefixAdj">Como un prefijo en el adjetivo</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosSuffixAdj"  dataItem="classifierSpecificAdjPosSuffixAdj">Como un sufijo en el adjetivo</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosOther"  dataItem="classifierSpecificAdjPosOther">En mi lengua, los clasificadores pueden presentarse: <textBox  id="NPAdjClassifierSpecificPosOtherContent" dataItem="classifierSpecificAdjPosOther" rows="2"/></checkbox>
+		</checkboxGroup>
+		<prompt id="NPAdjClassifierSpecificPosNoCheckPrompt" show="swNPAdjClassifierPresentYesOrSomeAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los clasificadores con respecto a los adjetivos y al sustantivo en su lengua, o cambia la respuesta anterior a “No, un clasificador nunca se presenta en esta tipo de frase nominal”.</prompt>
+		
+		<br/>
 	   <instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
 	      To handle the number agreement, in the lexicon:
 	      <ul>
@@ -50,8 +69,8 @@
 	   <instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
 	      To handle class marking and agreement:
 	      <ul>
-	         <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on adjectives.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">La tipología - Los clasificadores</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
-	         <li>Any adjectives which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">La tipología - Los clasificadores</section>.</li>
+	         <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on adjectives.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">La tipología - Clases de sustantivo y clasificadores</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+	         <li>Any adjectives which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">La tipología - Clases de sustantivo y clasificadores</section>.</li>
 	      </ul>
 	   </instruction>
 	   <br/>
@@ -75,7 +94,7 @@
 	   </radioGroup>
 	   <prompt id="NPAdjPPartRelClPrompt" show="swNPAdjPPartNo">La estructura y posición de las cláusulas relativas se cubren en <section number="12">Las cláusulas relativas</section>.</prompt>
 	   
-	   <instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Las oraciones básicas - La flexión verbal</section>
+	   <instruction id="NPAdjPInstruction">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in <section number="9.2">Las oraciones básicas - La flexión verbal</section>
 		</instruction>
 		<br/><br/>
 	   <introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Las lenguas que cambian el caso del sustantivo principal cuando un posesivo está presente normalmente también cambian los casos de los adjetivos correspondientes para concordar. Algunas lenguas de este tipo también cambian el caso del sustantivo principal cuando solamente un modificar adjetival está presente, incluso cuando no hay posesivo.  
@@ -248,5 +267,41 @@
    <showWhen id="swNPAdjPPartYes">
       <whenRadio button="NPAdjPPartYes"/>
    </showWhen>
-   &TechnicalTerms; 
+
+	<showWhen id="swOTClassifierSpecific">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swOTClassifierSpecificAndNPAdjClassifierPresentYesOrSome">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPAdjClassifierPresentYes"/>
+		<or/>
+		<whenRadio button="NPAdjClassifierPresentSome"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPAdjClassifierPresentYesOrSomeAndNoCheck">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPAdjClassifierPresentYes"/>
+		<or/>
+		<whenRadio button="NPAdjClassifierPresentSome"/>
+		<closeParen/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterBoth"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosBeforeBoth"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterAdjBeforeN"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterNBeforeAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosPrefixAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosSuffixAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosOther"/>
+	</showWhen>
+&TechnicalTerms; 
 </page>

@@ -4,11 +4,13 @@
 <section1 id="sPron">
 <secTitle>Los pronombres</secTitle>
 <p>
-<xsl:text>Hay pronombres de varios tipos: personales, posesivos, reflexivos, recíprocos, demostrativos e indefinidos.  (Los ponombres interrogativos se presentan en </xsl:text>
+<xsl:text>Hay pronombres de varios tipos: personales, posesivos, reflexivos, recíprocos, demostrativos e indefinidos.  (Los pronombres interrogativos se presentan en </xsl:text>
 <sectionRef sec="sQuesContent" />
+<xsl:text> y los pronombres enfáticos se presentan en </xsl:text>
+<sectionRef sec="sFocusFocus" />
 <xsl:text>.)</xsl:text>
-</p>
-<xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//pron/@pronounClassifier)='no'">
+</p>		
+   <xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//pron/@pronounClassifier)='no'">
 <p>
 <xsl:text>Aunque hay un sistema de concordancia con clasificadores en el </xsl:text>
 <xsl:choose>
@@ -41,7 +43,7 @@
 <xsl:text> </xsl:text>
 <xsl:choose>
 <xsl:when test="//pron/@dependentPron='no'">no hay un sistema particular para pronombres personales dependientes.</xsl:when>
-<xsl:when test="//pron/@dependentPron='yes'">hay pronombres personales dependientes así como los independientes. A a continuación se presentan ambos sistemas de pronombres personales, con las formas independientes primero.</xsl:when>
+<xsl:when test="//pron/@dependentPron='yes'">hay pronombres personales dependientes así como los independientes. A continuación se presentan ambos sistemas de pronombres personales, con las formas independientes primero.</xsl:when>
 </xsl:choose>
 <xsl:text></xsl:text>
 </p>
@@ -26322,7 +26324,7 @@
 <section2 id="sPronPoss">
 <secTitle>Pronombres posesivos</secTitle>
    <p contentType="ctPracticalIntro">
-<xsl:text>Muchas lenguas también tienen pronombres posesivos que se pueden usar solos. Estos son distintos de los que pueden presentarse en la posición del poseedor de un siustantivo, que fueron ejemplificados en los pronombres personales antes mencionados.</xsl:text>
+<xsl:text>Muchas lenguas también tienen pronombres posesivos que se pueden usar solos. Estos son distintos de los que pueden presentarse en la posición del poseedor de un sustantivo, que fueron ejemplificados en los pronombres personales antes mencionados.</xsl:text>
 </p>
    <p contentType="ctComparativeIntro">
 <xsl:text>Muchas lenguas también tienen pronombres posesivos que se pueden usar solos, por ejemplo</xsl:text>
@@ -28501,10 +28503,10 @@
    <xsl:if test="normalize-space(//pron/@refl)='yes' and normalize-space(//pron/reflNounPoss/@checked)='yes'">
 <p>
 <xsl:if test="normalize-space(//pron/reflDistinct/@checked)='no' and normalize-space(//pron/reflAffix/@checked)='no' and normalize-space(//pron/reflNounPoss/@checked)='yes' and normalize-space(//pron/reflQP/@checked)='no' and normalize-space(//pron/reflOther/@checked)='no'">
-<xsl:text>Estos reflexivos se expresan por un cierto sustantivo con un pronombre posesivo para formar una frase reflexiva.</xsl:text>
+<xsl:text>Estos reflexivos se expresan por un cierto sustantivo con un pronombre posesivo para formar un reflexivo.</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//pron/reflnounPoss/@checked)='yes' and normalize-space(//pron/reflOther/@checked)='yes' or normalize-space(//pron/reflAffix/@checked)='yes' and normalize-space(//pron/reflNounPoss/@checked)='yes' or normalize-space(//pron/reflNounPoss/@checked)='yes' and normalize-space(//pron/reflDistinct/@checked)='yes' or normalize-space(//pron/reflQP/@checked)='yes' and normalize-space(//pron/reflNounPoss/@checked)='yes'">
-<xsl:text>Algunos de los reflexivos se expresan por un cierto sustantivo con un pronombre posesivo para formar una frase reflexiva.</xsl:text>
+<xsl:text>Algunos de los reflexivos se expresan por un cierto sustantivo con un pronombre posesivo para formar un reflexivo.</xsl:text>
 </xsl:if>
 <xsl:text>  El sustantivo especial es:</xsl:text>
 </p>
@@ -28951,7 +28953,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//pron/recipFirsExclExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/recipFirstExclExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -29259,10 +29261,10 @@
    <xsl:if test="normalize-space(//pron/@recip)='yes' and normalize-space(//pron/recipNounPoss/@checked)='yes'">
 <p>
 <xsl:if test="normalize-space(//pron/recipDistinct/@checked)='no' and normalize-space(//pron/recipAffix/@checked)='no' and normalize-space(//pron/recipNounPoss/@checked)='yes' and normalize-space(//pron/recipQP/@checked)='no' and normalize-space(//pron/recipOther/@checked)='no'">
-<xsl:text>Estos rrecíprocos se expresan por un cierto sustantivo con un pronombre posesivo para formar una frase recíproca.</xsl:text>
+<xsl:text>Estos rrecíprocos se expresan por un cierto sustantivo con un pronombre posesivo para formar un recíproco.</xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//pron/recipnounPoss/@checked)='yes' and normalize-space(//pron/recipOther/@checked)='yes' or normalize-space(//pron/recipAffix/@checked)='yes' and normalize-space(//pron/recipNounPoss/@checked)='yes' or normalize-space(//pron/recipNounPoss/@checked)='yes' and normalize-space(//pron/recipDistinct/@checked)='yes' or normalize-space(//pron/recipQP/@checked)='yes' and normalize-space(//pron/recipNounPoss/@checked)='yes'">
-<xsl:text>Algunos de los recíprocos se expresan por un cierto sustantivo con un pronombre posesivo para formar una frase recíproca.</xsl:text>
+<xsl:text>Algunos de los recíprocos se expresan por un cierto sustantivo con un pronombre posesivo para formar un recíproco.</xsl:text>
 </xsl:if>
 <xsl:text>  El sustantivo especial es:</xsl:text>
 </p>
@@ -29548,7 +29550,7 @@
          </xsl:choose>
          <xsl:text> Véase la sección </xsl:text>
 <sectionRef sec="sAdjArtDem" />
-<xsl:text>para los detalles acerca de lo demostrativos que modifican a un sustantivo</xsl:text>
+<xsl:text> para los detalles acerca de lo demostrativos que modifican a un sustantivo</xsl:text>
 </xsl:if>
 <xsl:text>.</xsl:text>
 </p>
@@ -36420,7 +36422,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//pron/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalErgGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -36477,7 +36479,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgProximalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -36534,7 +36536,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//pron/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialErgGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -36591,7 +36593,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.1">
-<xsl:value-of select="translate(string(//np/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgMedialGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
 <xsl:choose>
@@ -36648,7 +36650,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.1">
-<xsl:value-of select="translate(string(//pron/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalErgGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
 <xsl:choose>
@@ -36705,7 +36707,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.1">
-<xsl:value-of select="translate(string(//np/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgDistalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.1" select="string-length(normalize-space($sExampleValue5.1))" />
 <xsl:choose>
@@ -36777,7 +36779,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//pron/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalErgGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -36840,7 +36842,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgProximalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -36903,7 +36905,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//pron/demProximalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalErgPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -36966,7 +36968,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demProximalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgProximalPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -37029,7 +37031,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//pron/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialErgGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -37092,7 +37094,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgMedialGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -37155,7 +37157,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue6.2">
-<xsl:value-of select="translate(string(//pron/demMedialPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialErgPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
 <xsl:choose>
@@ -37218,7 +37220,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue7.2">
-<xsl:value-of select="translate(string(//np/demMedialPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgMedialPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
 <xsl:choose>
@@ -37281,7 +37283,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue8.2">
-<xsl:value-of select="translate(string(//pron/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalErgGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength8.2" select="string-length(normalize-space($sExampleValue8.2))" />
 <xsl:choose>
@@ -37344,7 +37346,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue9.2">
-<xsl:value-of select="translate(string(//np/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgDistalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength9.2" select="string-length(normalize-space($sExampleValue9.2))" />
 <xsl:choose>
@@ -37407,7 +37409,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue10.2">
-<xsl:value-of select="translate(string(//pron/demDistalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalErgPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength10.2" select="string-length(normalize-space($sExampleValue10.2))" />
 <xsl:choose>
@@ -37470,7 +37472,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue11.2">
-<xsl:value-of select="translate(string(//np/demDistalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgDistalPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength11.2" select="string-length(normalize-space($sExampleValue11.2))" />
 <xsl:choose>
@@ -37567,7 +37569,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//pron/demProximalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -37624,7 +37626,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demProximalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -37681,7 +37683,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//pron/demMedialNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -37738,7 +37740,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.1">
-<xsl:value-of select="translate(string(//np/demMedialNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
 <xsl:choose>
@@ -37795,7 +37797,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.1">
-<xsl:value-of select="translate(string(//pron/demDistalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
 <xsl:choose>
@@ -37852,7 +37854,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.1">
-<xsl:value-of select="translate(string(//np/demDistalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.1" select="string-length(normalize-space($sExampleValue5.1))" />
 <xsl:choose>
@@ -37924,7 +37926,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//pron/demProximalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -37987,7 +37989,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -38050,7 +38052,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//pron/demProximalPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -38113,7 +38115,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demProximalPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -38176,7 +38178,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//pron/demMedialNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -38239,7 +38241,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demMedialNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -38302,7 +38304,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue6.2">
-<xsl:value-of select="translate(string(//pron/demMedialPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
 <xsl:choose>
@@ -38365,7 +38367,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue7.2">
-<xsl:value-of select="translate(string(//np/demMedialPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
 <xsl:choose>
@@ -38428,7 +38430,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue8.2">
-<xsl:value-of select="translate(string(//pron/demDistalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength8.2" select="string-length(normalize-space($sExampleValue8.2))" />
 <xsl:choose>
@@ -38491,7 +38493,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue9.2">
-<xsl:value-of select="translate(string(//np/demDistalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength9.2" select="string-length(normalize-space($sExampleValue9.2))" />
 <xsl:choose>
@@ -38554,7 +38556,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue10.2">
-<xsl:value-of select="translate(string(//pron/demDistalPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength10.2" select="string-length(normalize-space($sExampleValue10.2))" />
 <xsl:choose>
@@ -38617,7 +38619,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue11.2">
-<xsl:value-of select="translate(string(//np/demDistalPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength11.2" select="string-length(normalize-space($sExampleValue11.2))" />
 <xsl:choose>
@@ -38700,7 +38702,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//pron/demProximalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -38757,7 +38759,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demProximalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -38814,7 +38816,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//pron/demMedialAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -38871,7 +38873,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.1">
-<xsl:value-of select="translate(string(//np/demMedialAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
 <xsl:choose>
@@ -38928,7 +38930,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.1">
-<xsl:value-of select="translate(string(//pron/demDistalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
 <xsl:choose>
@@ -38985,7 +38987,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.1">
-<xsl:value-of select="translate(string(//np/demDistalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.1" select="string-length(normalize-space($sExampleValue5.1))" />
 <xsl:choose>
@@ -39057,7 +39059,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//pron/demProximalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -39120,7 +39122,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -39183,7 +39185,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//pron/demProximalPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -39246,7 +39248,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demProximalPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -39309,7 +39311,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//pron/demMedialAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -39372,7 +39374,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demMedialAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -39435,7 +39437,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue6.2">
-<xsl:value-of select="translate(string(//pron/demMedialPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
 <xsl:choose>
@@ -39498,7 +39500,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue7.2">
-<xsl:value-of select="translate(string(//np/demMedialPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
 <xsl:choose>
@@ -39561,7 +39563,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue8.2">
-<xsl:value-of select="translate(string(//pron/demDistalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength8.2" select="string-length(normalize-space($sExampleValue8.2))" />
 <xsl:choose>
@@ -39624,7 +39626,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue9.2">
-<xsl:value-of select="translate(string(//np/demDistalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength9.2" select="string-length(normalize-space($sExampleValue9.2))" />
 <xsl:choose>
@@ -39687,7 +39689,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue10.2">
-<xsl:value-of select="translate(string(//pron/demDistalPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength10.2" select="string-length(normalize-space($sExampleValue10.2))" />
 <xsl:choose>
@@ -39750,7 +39752,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue11.2">
-<xsl:value-of select="translate(string(//np/demDistalPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength11.2" select="string-length(normalize-space($sExampleValue11.2))" />
 <xsl:choose>
@@ -39832,7 +39834,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//pron/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -39889,7 +39891,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -39946,7 +39948,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//pron/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -40003,7 +40005,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.1">
-<xsl:value-of select="translate(string(//np/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
 <xsl:choose>
@@ -40060,7 +40062,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.1">
-<xsl:value-of select="translate(string(//pron/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
 <xsl:choose>
@@ -40117,7 +40119,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.1">
-<xsl:value-of select="translate(string(//np/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.1" select="string-length(normalize-space($sExampleValue5.1))" />
 <xsl:choose>
@@ -40189,7 +40191,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//pron/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -40252,7 +40254,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -40315,7 +40317,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//pron/demProximalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -40378,7 +40380,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demProximalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -40441,7 +40443,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//pron/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -40504,7 +40506,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -40567,7 +40569,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue6.2">
-<xsl:value-of select="translate(string(//pron/demMedialPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
 <xsl:choose>
@@ -40630,7 +40632,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue7.2">
-<xsl:value-of select="translate(string(//np/demMedialPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
 <xsl:choose>
@@ -40693,7 +40695,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue8.2">
-<xsl:value-of select="translate(string(//pron/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength8.2" select="string-length(normalize-space($sExampleValue8.2))" />
 <xsl:choose>
@@ -40756,7 +40758,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue9.2">
-<xsl:value-of select="translate(string(//np/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength9.2" select="string-length(normalize-space($sExampleValue9.2))" />
 <xsl:choose>
@@ -40819,7 +40821,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue10.2">
-<xsl:value-of select="translate(string(//pron/demDistalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength10.2" select="string-length(normalize-space($sExampleValue10.2))" />
 <xsl:choose>
@@ -40882,7 +40884,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue11.2">
-<xsl:value-of select="translate(string(//np/demDistalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength11.2" select="string-length(normalize-space($sExampleValue11.2))" />
 <xsl:choose>
@@ -40964,7 +40966,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//pron/demProximalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -41021,7 +41023,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demProximalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -41078,7 +41080,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//pron/demMedialErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -41135,7 +41137,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.1">
-<xsl:value-of select="translate(string(//np/demMedialErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
 <xsl:choose>
@@ -41192,7 +41194,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.1">
-<xsl:value-of select="translate(string(//pron/demDistalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
 <xsl:choose>
@@ -41249,7 +41251,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.1">
-<xsl:value-of select="translate(string(//np/demDistalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.1" select="string-length(normalize-space($sExampleValue5.1))" />
 <xsl:choose>
@@ -41320,7 +41322,7 @@
          </tr>			
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//pron/demProximalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -41383,7 +41385,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -41446,7 +41448,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//pron/demProximalPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -41509,7 +41511,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demProximalPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -41572,7 +41574,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//pron/demMedialErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -41635,7 +41637,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demMedialErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -41698,7 +41700,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue6.2">
-<xsl:value-of select="translate(string(//pron/demMedialPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
 <xsl:choose>
@@ -41761,7 +41763,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue7.2">
-<xsl:value-of select="translate(string(//np/demMedialPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
 <xsl:choose>
@@ -41824,7 +41826,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue8.2">
-<xsl:value-of select="translate(string(//pron/demDistalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength8.2" select="string-length(normalize-space($sExampleValue8.2))" />
 <xsl:choose>
@@ -41887,7 +41889,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue9.2">
-<xsl:value-of select="translate(string(//np/demDistalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength9.2" select="string-length(normalize-space($sExampleValue9.2))" />
 <xsl:choose>
@@ -41950,7 +41952,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue10.2">
-<xsl:value-of select="translate(string(//pron/demDistalPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength10.2" select="string-length(normalize-space($sExampleValue10.2))" />
 <xsl:choose>
@@ -42013,7 +42015,7 @@
 </xsl:if>
          <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue11.2">
-<xsl:value-of select="translate(string(//np/demDistalPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength11.2" select="string-length(normalize-space($sExampleValue11.2))" />
 <xsl:choose>
@@ -42097,7 +42099,7 @@
 	            </tr>			
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//pron/demProximalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -42154,7 +42156,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demProximalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -42211,7 +42213,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//pron/demMedialAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -42268,7 +42270,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.1">
-<xsl:value-of select="translate(string(//np/demMedialAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
 <xsl:choose>
@@ -42325,7 +42327,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.1">
-<xsl:value-of select="translate(string(//pron/demDistalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
 <xsl:choose>
@@ -42382,7 +42384,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.1">
-<xsl:value-of select="translate(string(//np/demDistalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.1" select="string-length(normalize-space($sExampleValue5.1))" />
 <xsl:choose>
@@ -42455,7 +42457,7 @@
 	            </tr>			
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//pron/demProximalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -42518,7 +42520,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -42581,7 +42583,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//pron/demProximalPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demProximalSplitPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -42644,7 +42646,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demProximalPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -42707,7 +42709,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//pron/demMedialAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -42770,7 +42772,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demMedialAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -42833,7 +42835,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue6.2">
-<xsl:value-of select="translate(string(//pron/demMedialPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demMedialSplitPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
 <xsl:choose>
@@ -42896,7 +42898,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue7.2">
-<xsl:value-of select="translate(string(//np/demMedialPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
 <xsl:choose>
@@ -42959,7 +42961,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue8.2">
-<xsl:value-of select="translate(string(//pron/demDistalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength8.2" select="string-length(normalize-space($sExampleValue8.2))" />
 <xsl:choose>
@@ -43022,7 +43024,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue9.2">
-<xsl:value-of select="translate(string(//np/demDistalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength9.2" select="string-length(normalize-space($sExampleValue9.2))" />
 <xsl:choose>
@@ -43085,7 +43087,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)!='yes'">
 <xsl:variable name="sExampleValue10.2">
-<xsl:value-of select="translate(string(//pron/demDistalPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//pron/demDistalSplitPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength10.2" select="string-length(normalize-space($sExampleValue10.2))" />
 <xsl:choose>
@@ -43148,7 +43150,7 @@
 </xsl:if>
 	            <xsl:if test="normalize-space(//pron/@demAdjSame)='yes'">
 <xsl:variable name="sExampleValue11.2">
-<xsl:value-of select="translate(string(//np/demDistalPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength11.2" select="string-length(normalize-space($sExampleValue11.2))" />
 <xsl:choose>
@@ -44378,25 +44380,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44407,25 +44409,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44436,25 +44438,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44491,25 +44493,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44520,25 +44522,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44552,25 +44554,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44581,25 +44583,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44613,25 +44615,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44642,25 +44644,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44697,27 +44699,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44728,27 +44730,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44759,27 +44761,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -44818,27 +44820,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               </tr>
@@ -44849,27 +44851,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               </tr>
@@ -44883,27 +44885,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               </tr>
@@ -44914,27 +44916,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               </tr>
@@ -44948,27 +44950,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               </tr>
@@ -44979,27 +44981,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               </tr>
@@ -45035,37 +45037,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45076,37 +45078,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45117,37 +45119,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45186,37 +45188,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45227,37 +45229,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45271,37 +45273,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45312,37 +45314,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45356,37 +45358,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45397,37 +45399,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORMA</langData>
 </td>
 	            </tr>
@@ -45471,7 +45473,7 @@
 </p>
 
    <p>
-<xsl:text>Empezando con el tipo que se componen de un cuantificador y un sustantivo genérico, en el </xsl:text>
+<xsl:text>Empezando con el tipo que se componen de un cuantificador y un sustantivo genérico (o el uso impersonal para el número ‘uno’), en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -45481,6 +45483,14 @@
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//pron/pronIndefTypeQNone/@checked)='yes'">
+<xsl:text>los indefinidos no se expresan con un cuantificador.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//pron/indefQPhrase/@checked)='no' and normalize-space(//pron/indefQWord/@checked)='no' and normalize-space(//pron/indefQOther/@checked)='yes'">
+<xsl:text>estos se expresan con ___</xsl:text>
+<xsl:value-of select="//pron/indefQOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//pron/indefQPhrase/@checked)='no' and normalize-space(//pron/indefQWord/@checked)='yes' and normalize-space(//pron/indefQOther/@checked)='no'">
 <xsl:text>estos indefinidos se fusionan en una sola palabra.  Ejemplos de estos pronombres son: </xsl:text>
 </xsl:if>
@@ -45760,6 +45770,14 @@
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text> </xsl:text>
+<xsl:if test="normalize-space(//pron/pronIndefTypeIntNone/@checked)='yes'">
+<xsl:text>los indefinidos no se expresan con una palabra interrgativa.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//pron/indefIntPhrase/@checked)='no' and normalize-space(//pron/indefIntWord/@checked)='no' and normalize-space(//pron/indefIntOther/@checked)='yes'">
+<xsl:text>estos se expresan con ___</xsl:text>
+<xsl:value-of select="//pron/indefIntOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//pron/indefIntPhrase/@checked)='no' and normalize-space(//pron/indefIntWord/@checked)='yes' and normalize-space(//pron/indefIntOther/@checked)='no'">
 <xsl:text>estos elementos se fusionan en una sola palabra.  Ejemplos de estos pronombres son: </xsl:text>
 </xsl:if>
@@ -45871,7 +45889,7 @@
 </xsl:if>
          <xsl:text> del indefinido.</xsl:text>
 </xsl:if>
-<xsl:if test="normalize-space(//pron/indefTypeIntOther/@checked)='yes' and normalize-space(//pron/indefTypeIntBefore/@checked)='no' and normalize-space(//pron/indefTypeIntAfter/@checked)='no' and normalize-space(//pron/indefTypeIntBoth/@checked)='no'"> 
+<xsl:if test="normalize-space(//pron/indefIntPhrase/@checked)='no' and normalize-space(//pron/indefIntWord/@checked)='no' and normalize-space(//pron/indefIntOther/@checked)='yes'"> 
          <xsl:text>En las frases nominales indefinidas, la palabra interrogativa se presenta ___</xsl:text>
 <xsl:value-of select="//pron/indefTypeIntOther" />
          <xsl:text>.</xsl:text>
@@ -46120,17 +46138,17 @@
    <xsl:if test="normalize-space(//pron/@pronMod)='det' or normalize-space(//pron/@pronMod)='all'">
 <example num="xPron.PronNP.13">
 <xsl:variable name="sExampleValue">
-<xsl:value-of select="//pron/sentExample" />
+<xsl:value-of select="//pron/pronSentExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/sentExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/pronSentExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//pron/sentExample" />
+<xsl:value-of select="//pron/pronSentExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//pron/sentExample))" />
+<xsl:value-of select="string-length(normalize-space(//pron/pronSentExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xPron.PronNP.13</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -46311,9 +46329,69 @@
 </xsl:choose>
 </example>
 </xsl:if>
+   <xsl:if test="normalize-space(//typology/@classifier)='yesSpecific'">
+<p>
+<xsl:text>En la mayoría de las lenguas que se utilizan clasificadores, el clasificador puede presentarse sin un sustantivo, mientras que la referencia está claro de las características del clasificador o el contexto.
+      En el </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, </xsl:text>
+<xsl:choose>
+         <xsl:when test="//pron/@classifierNoN='yes'">los clasificadores pueden presentarse sin un sustantivo en estas situaciones. Algunos ejemplos de frases nominales donde un clasificador sirve sin un sustantivo son: </xsl:when>
+         <xsl:when test="//pron/@classifierNoN='no'">siempre se require un sustantivo.</xsl:when>
+      </xsl:choose>
+</p>
+</xsl:if>
+   <xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//pron/@classifierNoN)='yes'">
+<example num="xPron.PronNP.31">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//pron/classifierNoNExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/classifierNoNExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//pron/classifierNoNExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//pron/classifierNoNExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xPron.PronNP.31</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xPron.PronNP.31.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
    
 </section2>
-</section1>	
+</section1>
+	
 		
 	
    
@@ -47688,7 +47766,17 @@
       
       
    
-   
+	
+		
+		
+		
+		
+		
+	
+	
+		
+	
+	
       
       
       
@@ -47826,7 +47914,14 @@
       
       
    
-   
+	
+		
+		
+		
+		
+		
+	
+	
       
       
       
@@ -47875,7 +47970,9 @@
    
       
    
-   
+	
+		
+	
     
       
       
@@ -47907,6 +48004,14 @@
    
       
    
+   
+   
+      
+      
+      
+   
+   
+      
    
 </xsl:template>
 </xsl:stylesheet>

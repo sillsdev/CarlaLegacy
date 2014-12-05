@@ -9,8 +9,8 @@ var xpath;
 function Initialize() {
 	displayStatus(IPContentsOverviewStatus, "ipContents1");
 	displayStatus(IPContentsFeaturesStatus, "ipContents2");
-	displayStatus(IPContentsProDropStatus, "ipContents3");
-	displayStatus(IPContentsAuxStatus, "ipContents4");
+	displayStatus(IPContentsProDropStatus, "ipContents4");
+	displayStatus(IPContentsAuxStatus, "ipContents3");
 	displayStatus(IPContentsCopStatus, "ipContents5");
 	displayStatus(IPContentsIntransStatus, "ipContents6");
 	displayStatus(IPContentsTransStatus, "ipContents7");

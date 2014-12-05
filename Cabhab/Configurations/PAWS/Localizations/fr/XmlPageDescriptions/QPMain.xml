@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPMain" count="1/7">
+	<title>Quantificateurs et Syntagmes de Quantité</title>
+	<introduction>Les <technicalTermRef term="ttQuantifiers">quantificateurs</technicalTermRef> peuvent se présenter à plusieurs endroits dans le syntagme nominal, selon leur <technicalTermRef term="ttScope">portée</technicalTermRef>. La plupart des langues ont quatre séries de quantificateurs:
+<ul>
+	<li>quantificateurs de portée large avec le sens de <example>tout</example>, qui modifient le syntagme nominal entier,</li>
+	<li><technicalTermRef term="ttDeterminers">déterminants</technicalTermRef> de quantité tels que <example>quelque</example>, <example>certains</example> ou <example>chaque</example>, qui ne se présentent pas avec d’autres modificateurs à part les adjectifs,</li>
+	<li>quantificateurs de portée plus restreinte tels que <example>beaucoup</example>, <example>plusiers</example>, <example>nombreaux</example> ou <example>peu de</example>, et</li>
+			<li>nombres.</li>
+		</ul>
+		On traitera chacun tour à tour et puis on traitera les constructions <technicalTermRef term="ttPartitive">partitives</technicalTermRef>.
+</introduction>
+	<introduction>Les quantificateurs avec le sens de <example>tout</example> semblent former une catégorie distincte.  Ils se présentent normalement au début (ou à la fin), dans une position distincte des autres quantificateurs, mais dans la même position que les mots de degré comme 
+		<example>seulement</example> ou <example>seuls</example> et <example>juste</example> (qui peuvent fonctionner comme des marqueurs de <technicalTermRef term="ttFocus">focus</technicalTermRef> qu’on traitera dans <section number="16">Constructions de Focus et de Thème</section>) et les mots de degré comme <example>presque</example> (qui peut se présenter avec <example>tout</example> comme dans (4) ci-dessous).  Nous traiterons <example>tout</example> comme un quantificateur de portée étendue.
+<br/><br/>
+		Cherchez des exemples tels que ceux qui suivent dans votre langue:
+	</introduction>
+	<EnglishExample>
+		<exItem label="1.">
+			<u>tous</u> les enfants</exItem>
+		<exItem label="2.">
+			<u>tous</u> les cinq enfants</exItem>
+		<exItem label="3.">
+			<u>tous</u> les petits enfants de Jean</exItem>
+		<exItem label="4.">
+			<u>presque tous</u> les petits enfants de Jean</exItem>
+		<exItem label="5.">
+			<u>seulement</u> quelques enfants tristes</exItem>
+		<exItem label="6.">
+			<u>presqu’</u>autant d’enfants</exItem>
+		<exItem label="7.">
+			<u>seulement</u> ces deux enfants intelligents</exItem>
+		<exItem label="8.">
+			<u>seulement</u> les trois enfants de Suzanne</exItem>
+	</EnglishExample>
+
+	<form section="qp">
+	   <radioGroup id="QPClassifierAgrTable" show="swOTClassifierAgr">
+	      <groupName dataItem="npDegreeClassifier" default="no">RQPClassifierAgr</groupName>
+	   	<prompt><br/>Vous avez dit que votre langue a des marqueurs de classe substantive avec accord partout dans le syntagme nominal.  Sont-ils des mots de degré ou des quantificateurs qui modifient le syntagme nominal entier marqué pour la classe ?</prompt>
+	   	<radio id="QPClassifierAgrNPDegreeNo" dataValue="no">Non, ces éléments ne sont pas marqués pour la classe</radio>
+	   	<radio id="QPClassifierAgrNPDegreeYes" dataValue="yes">Oui, ces éléments sont marqués pour la classe comme une partie de l’accord partout dans le syntagme nominal</radio>
+	   </radioGroup>
+		<prompt id="QPClassifierAgrPrompt" show="swOTClassifierAgrNPDegreeYes">Puisque vous avez déjà indiqué les formes des marqueurs de classe substantive, vous n’avez qu’à entrer les racines pour chacun des mots demandés sur cette page.  Les exemples de syntagmes nominaux complets et les exemples de phrases demandés partout dans PAWS doivent comprendre, bien entendu, les marqueurs de classe substantive.</prompt>	   
+	   <br/>
+		<prompt>Entrez la manière dont votre langue exprime « tout » avec chaque mot sur une ligne distincte.  (Si « tout » est un affixe ou un <technicalTermRef term="ttClitic">clitique</technicalTermRef> qui s’attache à un autre mot dans le syntagme nominal, entrez-le ici avec un trait d’union ou un signe d’égalité indiquant le côté où il s’attache.)</prompt>
+		<textBox id="QPAllExample" dataItem="all" rows="3"/>
+		<br/>
+		<br/>
+		<prompt>Entrez la manière dont votre langue exprime « presque » avec chaque mot sur une ligne distincte.  (Si « presque » est un affixe ou un clitique qui s’attache à un autre mot dans le syntagme nominal, entrez-le ici avec un trait d’union ou un signe d’égalité indiquant le côté où il s’attache.)</prompt>
+		<textBox id="QPAlmostExample" dataItem="almost" rows="3"/>
+		<br/>
+		<br/>
+		<prompt>Entrez la manière dont votre langue exprime « seulement » ou « seuls » ou « juste ».  (Si un est un affixe ou un clitique qui s’attache à un autre mot dans le syntagme nominal, entrez-le ici avec un trait d’union ou un signe d’égalité indiquant le côté où il s’attache.)</prompt>
+		<textBox id="QPOnlyExample" dataItem="only" rows="3"/>
+		<br/>
+		<br/>
+		<radioGroup>
+			<groupName dataItem="npDegree" default="yes">RNPDegree</groupName>
+			<prompt>Votre langue exprime-t-elle ces concepts avec des mots indépendants qui modifient le syntagme nominal entier?</prompt>
+			<radio id="QPNPDegreeYes"  dataValue="yes">Oui, ils sont tous des mots indépendants</radio>
+			<radio id="QPNPDegreeSome" dataValue="some">Quelques-uns sont des mots indépendants, mais d’autres s’attachent à un autre mot</radio>
+			<radio id="QPNPDegreeNo" dataValue="no">Non, ils s’attachent tous à un autre mot dans le syntagme nominal</radio>
+		</radioGroup>
+<br/><br/>	
+		<prompt id="QPNPDegreePromptYes" show="swQPNPDegreeYesOrSome">Entrez ici des exemples de mots indépendants avec le sens de « tout » ou « seulement » ou « seuls » ou « juste » ou « presque » compris dans le syntagme nominal entier.    
+			<span id="ClassifiersSpecificSpan" show="swOTClassifierSpecific">(Entrez tous les classificateurs où ils se présentent dans les exemples de syntagmes nominaux demandés partout dans PAWS.  Les restrictions sur la position ou l’ordre et l’accord des classificateurs dans les syntagmes nominaux seront traitées dans <section number="5.">Syntagmes Nominaux</section>.  Présumez que les classificateurs forment une partie du « reste du syntagme nominal » dans toutes les questions qui ne traitent pas directement des classificateurs.)</span></prompt>
+		
+	   <textBox id="QPNPExample" dataItem="example" cols="50" show="swQPNPDegreeYesOrSome"/>
+	   <br/><br/>
+	   <checkboxGroup id="QPNPDegreePos" show="swQPNPDegreeYesOrSome">
+	   	<prompt>En examinant les données dans la boîte ci-dessus, où ces éléments de degré ou ces quantificateurs qui sont écrits comme des mots indépendants se présentent-ils dans le syntagme nominal?  Marquez toutes les options qui sont correctes pour votre langue.</prompt>
+   <checkbox id="QPNPDegreePosBefore"  dataItem="npDegreePosBefore">Avant le</checkbox>
+	   	<checkbox id="QPNPDegreePosAfter"  dataItem="npDegreePosAfter">Après le</checkbox>
+	   	<checkbox id="QPNPDegreePosBoth"  dataItem="npDegreePosBoth">Des deux côtés à la fois</checkbox>
+	   	<checkbox id="QPNPDegreePosOther"  dataItem="npDegreePosOther">Dans ma langue, ils peuvent se présenter dans la position suivante: <textBox  id="QPNPDegreePosOtherContent" dataItem="npDegreePosOther" rows="2"/></checkbox>
+   </checkboxGroup>
+		<prompt id="QPNPDegreeWordNoCheckPrompt" show="swQPNPDegreeYesandNoCheck">AVERTISSEMENT: Il faut marquer au moins une boîte pour décrire où se présentent ces mots de degré ou ces quantificateurs par rapport au reste du syntagme nominal dans votre langue, ou changez la réponse ci-dessus à « Non, ils s’attachent tous à un autre mot dans le syntagme nominal ».</prompt>
+	   
+		<instruction id="QPNPDegreeYesInstruction" show="swQPNPDegreeYesOrSome">In the lexicon, mark the words meaning <example>almost</example>, <example>nearly</example>, <example>only</example>, and <example>just</example> with the features <feature>makeDeg modifies_NP</feature>.  Note that this is two separate features with a space between them.  The first will change their syntactic category to <category>Deg</category>
+			and the second adds the feature to distinguish them as the type that modifies NPs.  For the wrods meaning <example>almost</example> and <example>nearly</example> that can modify the quantifier meaning <example>all</example>, 
+			also add the feature <feature>modifies_Q</feature>. If your language has a phrase meaning <example>almost</example>, such as <example>not quite</example> or <example>just about</example>, you need to make a single entry for these phrases with an underscore (_) between them and run the Join Compound program before AMPLE.  These entries need the same features as a single word entry with a similar meaning would have.<br/>
+			<br/>
+			Also, mark the word or words meaning <example>all</example> with the features
+			<feature>plural modifies_NP</feature>.  Add the feature <feature>makeQ</feature> as well if they do not already have the category <category>Q</category>.</instruction>
+		<instruction id="QPNPDegreeEitherRestrictedInstruction" show="swQPNPDegreeEitherorBoth">In the lexicon, mark those degree words or quantifiers which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+	   
+	   <checkboxGroup id="NPDegreeType" show="swQPNPDegreeNoOrSome">
+	   	<prompt><br/>Où ces éléments de degré ou ces quantificateurs de portée large qui ne sont pas des mots indépendants s’attachent-ils dans le syntagme nominal?  Marquez toutes les options qui sont correctes pour votre langue.</prompt>
+	   	<checkbox id="QPNPDegreeProclitic" dataItem="npDegreeTypeProclitic">Comme un proclitique syntagmatique qui s’attache au début du mot qui commence le syntagme nominal</checkbox>
+	   	<checkbox id="QPNPDegreeEnclitic" dataItem="npDegreeTypeEnclitic">Comme un enclitque syntagmatique qui s’attache à la fin du mot qui termine le syntagme nominal</checkbox>
+	   	<checkbox id="QPNPDegreePrefix" dataItem="npDegreeTypePrefix">Comme un préfixe qui s’attache au nom principal du syntagme nominal</checkbox>
+	   	<checkbox id="QPNPDegreeSuffix" dataItem="npDegreeTypeSuffix">Comme un suffixe qui s’attache au nom principal du syntagme nominal</checkbox>
+	   	<checkbox id="QPNPDegreeOther" dataItem="npDegreeTypeOther">Dans ma langue, ces éléments peuvent s’attacher comme suit: <textBox  id="QPNPDegreeTypeOtherContent" dataItem="npDegreeTypeOther" rows="2"/></checkbox>
+	   </checkboxGroup>
+		<prompt id="QPNPDegreeAttachesNoCheckPrompt" show="swQPNPDegreeNoandNoCheck">AVERTISSEMENT: Il faut marquer au moins une boîte pour décrire comment ces éléments de degré ou ces quantificateurs s’attachent dans votre langue, ou changez la réponse ci-dessus à « Oui, ils sont tous des mots indépendants ».</prompt>
+	   
+		<prompt id="QPNPDegreeCliticPrompt" show="swQPNPDegreeNoOrSomeAndClitic">Maintenant entrez ici des exemples de clitiques avec le sens de « tout » ou « seulement » ou « seuls » ou « juste » ou « presque » compris dans les syntagmes nominaux entiers:  
+			<span id="ClassifiersSpecificSpan1" show="swOTClassifierSpecific">(Entrez les classificateurs où ils se présentent dans les exemples de syntagmes nominaux et les phrases demandés dans PAWS.  On traitera les restrictions sur la position ou l’ordre et l’accord de classificateurs dans le syntagme nominal dans <section number="5.">Syntagmes Nominaux</section>.  Présumez que les classificateurs forment une partie du « reste du syntagme nominal » dans toutes les questions qui ne traitent pas directement des classificateurs.)</span></prompt>  
+	   <textBox id="QPNPDegreeCliticExample" dataItem="npDegreeCliticExample" cols="50" show="swQPNPDegreeNoOrSomeAndClitic"/>
+	   <instruction id="QPNPDegreeProcliticInstruction" show="swQPNPDegreeNoOrSomeAndProclitic">In the lexicon, mark the proclitics meaning <example>all</example> with the features <feature>plural quantifier_prefix</feature>.
+	   </instruction>
+	   <instruction id="QPNPDegreeEncliticInstruction" show="swQPNPDegreeNoOrSomeAndEnclitic">In the lexicon, mark the enclitics meaning <example>all</example> with the features <feature>plural quantifier_suffix</feature>.</instruction>
+		<prompt id="QPNPDegreeAffixPrompt" show="swQPNPDegreeNoOrSomeAndAffix">Maintenant, entrez ici des exemples d’affixes avec le sens de « tout » ou « seulement » ou « seuls » ou « juste » ou « presque » dans les syntagmes nominaux entiers:</prompt>  
+	   <textBox id="QPNPDegreeAffixExample" dataItem="npDegreeAffixExample" cols="50" show="swQPNPDegreeNoOrSomeAndAffix"/>
+	   <instruction id="QPNPDegreeAffixInstruction" show="swQPNPDegreeNoOrSomeAndAffix">In the lexicon, mark the affixes meaning <example>all</example> with the feature <feature>plural</feature>.</instruction>
+		<prompt id="QPNPDegreeOtherPrompt" show="swQPNPDegreeNoOrSomeAndOther">Maintenant entrez ici des exemples de <technicalTermRef term="ttMorphemes">morphèmes</technicalTermRef> avec le sens de « tout » ou « seulement » ou « seuls » ou « juste » ou « presque » dans les syntagmes nominaux entiers permis par votre langue:</prompt>  
+	   <textBox id="QPNPDegreeOtherExample" dataItem="npDegreeOtherExample" cols="50" show="swQPNPDegreeNoOrSomeAndOther"/>   
+		<br/>
+		<br/>
+		<buttons>
+			<button id="QPMainBack" value="Back" goto="Contents.htm"/>
+			<button id="QPMainNext" value="Next" goto="QPDeterminers.xml"/>
+		</buttons>
+	</form>
+   <showWhen id="swOTClassifierAgr">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrNPDegreeYes">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPClassifierAgrNPDegreeYes"/>
+   </showWhen>
+	<showWhen id="swOTClassifierSpecific">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeNoOrSome">
+		<whenRadio button="QPNPDegreeSome"/>
+		<or></or>
+		<whenRadio button="QPNPDegreeNo"/>		
+	</showWhen>
+	<showWhen id="swQPNPDegreeYesOrSome">
+		<whenRadio button="QPNPDegreeSome"/>
+		<or></or>
+		<whenRadio button="QPNPDegreeYes"/>		
+	</showWhen>
+	<showWhen id="swQPNPDegreeNoOrSomeAndAffix">
+		<whenRadio button="QPNPDegreeSome"/>
+		<and/>
+		<openParen/>
+		<whenCheckbox button="QPNPDegreePrefix"/>
+		<or/>
+		<whenCheckbox button="QPNPDegreeSuffix"/>
+		<closeParen/>
+		<or></or>
+		<whenRadio button="QPNPDegreeNo"/>		
+		<and/>
+		<openParen/>
+		<whenCheckbox button="QPNPDegreePrefix"/>
+		<or/>
+		<whenCheckbox button="QPNPDegreeSuffix"/>
+		<closeParen/>
+	</showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndClitic">
+		<whenRadio button="QPNPDegreeSome"/>
+		<and/>
+		<openParen/>
+		<whenCheckbox button="QPNPDegreeProclitic"/>
+		<or/>
+		<whenCheckbox button="QPNPDegreeEnclitic"/>
+		<closeParen/>
+		<or></or>
+		<whenRadio button="QPNPDegreeNo"/>		
+		<and/>
+		<openParen/>
+		<whenCheckbox button="QPNPDegreeProclitic"/>
+		<or/>
+		<whenCheckbox button="QPNPDegreeEnclitic"/>
+		<closeParen/>
+	</showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndProclitic">
+      <whenRadio button="QPNPDegreeSome"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <or></or>
+      <whenRadio button="QPNPDegreeNo"/>		
+      <and/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndEnclitic">
+      <whenRadio button="QPNPDegreeSome"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+      <or></or>
+      <whenRadio button="QPNPDegreeNo"/>		
+      <and/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoOrSomeAndOther">
+      <whenRadio button="QPNPDegreeSome"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreeOther"/>
+      <or/>
+      <whenRadio button="QPNPDegreeNo"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreeOther"/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeYesorSome">
+		<whenRadio button="QPNPDegreeSome"/>
+		<or/>
+		<whenRadio button="QPNPDegreeYes"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeClitic">
+		<whenCheckbox button="QPNPDegreeProclitic"/>
+	   <or/>
+	   <whenCheckbox button="QPNPDegreeEnclitic"/>
+	</showWhen>
+	<showWhen id="swQPNPDegreeAffix">
+		<whenCheckbox button="QPNPDegreePrefix"/>
+	   <or/>
+	   <whenCheckbox button="QPNPDegreeSuffix"/>
+	</showWhen>
+   <showWhen id="swQPNPDegreeEitherorBoth">
+  <openParen/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <or/>
+      <whenRadio button="QPNPDegreeYes"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPNPDegreePosBefore"/>
+      <and/>
+      <whenCheckbox button="QPNPDegreePosAfter"/>
+      <or/>
+      <whenCheckbox button="QPNPDegreePosBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQPNPDegreeNoandNoCheck">
+<openParen/>
+      <whenRadio button="QPNPDegreeNo"/>
+      <or/>
+      <whenRadio button="QPNPDegreeSome"/>
+ <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePrefix"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeOther"/>          
+   </showWhen>
+   <showWhen id="swQPNPDegreeYesandNoCheck">
+      <openParen/>
+      <whenRadio button="QPNPDegreeYes"/>
+      <or/>
+      <whenRadio button="QPNPDegreeSome"/>
+      <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePosOther"/>          
+   </showWhen>
+   <showWhen id="swQPNPDegreeTypeNoCheck">
+      <not/>
+      <whenCheckbox button="QPNPDegreeProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreePrefix"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="QPNPDegreeOther"/>          
+   </showWhen> 
+   &TechnicalTerms; 
+   
+</page>

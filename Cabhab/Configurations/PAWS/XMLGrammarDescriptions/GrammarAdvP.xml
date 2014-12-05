@@ -1,13 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
-	<rule>
+    <rule show="AdvPoptionNegI">
+rule {AdvP option NegI}
+AdvP = Neg AdvP_1
+            &lt;AdvP head&gt; = &lt;AdvP_1 head&gt;
+            &lt;AdvP head modifier&gt; = &lt;Neg&gt;
+            &lt;Neg head type AdvP-initial&gt; = +
+            &lt;Neg head type comma&gt; = -
+            &lt;AdvP head infl polarity&gt; &lt;= negative
+            &lt;AdvP head type prefix&gt; &lt;= &lt;Neg head type prefix&gt;
+            &lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[manner:+]]]]]
+            &lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[temporal:+]]]]]
+            &lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[locative:+]]]]]
+            &lt;AdvP option&gt; = NegI
+    </rule>
+    <showWhen id="AdvPoptionNegI">
+        <whenValue element="neg/negTemporalTypeAdverbWord" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="neg/negTemporalAdverbWordBefore" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="neg/negLocativeTypeAdverbWord" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="neg/negLocativeAdverbWordBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoptionNegF">
+        rule {AdvP option NegF}
+        AdvP =  AdvP_1 Neg
+        &lt;AdvP head&gt; = &lt;AdvP_1 head&gt;
+        &lt;AdvP head modifier&gt; = &lt;Neg&gt;
+        &lt;Neg head type AdvP-final&gt; = +
+        &lt;AdvP_1 head type comma&gt; = -
+        &lt;AdvP head infl polarity&gt; &lt;= negative
+        &lt;AdvP head type suffix&gt; &lt;= &lt;Neg head type suffix&gt;
+        &lt;AdvP head type comma&gt; &lt;= &lt;Neg head type comma&gt;
+        &lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[manner:+]]]]]
+        &lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[temporal:+]]]]]
+        &lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[locative:+]]]]]
+        &lt;AdvP option&gt; = NegF
+    </rule>
+    <showWhen id="AdvPoptionNegF">
+        <whenValue element="neg/negTemporalTypeAdverbWord" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="neg/negTemporalAdverbWordAfter" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="neg/negLocativeTypeAdverbWord" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="neg/negLocativeAdverbWordAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoptionNegBoth">
+        rule {AdvP option NegBoth}
+        AdvP = Neg_1 AdvP_1 Neg_2
+        &lt;AdvP head&gt; = &lt;AdvP_1 head&gt;
+        &lt;AdvP head modifier&gt; = &lt;Neg_1&gt;
+        &lt;Neg_1 head type AdvP-initial&gt; = +
+        &lt;Neg_2 head type AdvP-final&gt; = +
+        &lt;Neg_1 head type comma&gt; = -
+        &lt;AdvP_1 head type comma&gt; = -
+        &lt;AdvP head infl polarity&gt; &lt;= negative
+        &lt;AdvP head type prefix&gt; &lt;= &lt;Neg_1 head type prefix&gt;
+        &lt;AdvP head type suffix&gt; &lt;= &lt;Neg_2 head type suffix&gt;
+        &lt;AdvP head type comma&gt; &lt;= &lt;Neg_2 head type comma&gt;
+        &lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[manner:+]]]]]
+        &lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[temporal:+]]]]]
+        &lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[locative:+]]]]]
+        &lt;AdvP option&gt; = NegBoth
+    </rule>
+    <showWhen id="AdvPoptionNegBoth">
+        <whenValue element="neg/negTemporalTypeAdverbWord" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="neg/negTemporalAdverbWordBoth" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="neg/negLocativeTypeAdverbWord" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="neg/negLocativeAdverbWordBoth" attr="checked" value="yes"/>
+    </showWhen>
+    
+    <rule show="AdvPoptionIndefI">
+        rule {AdvP option IndefI - interrogative indef phrase, initial}
+        AdvP = Adv Indef
+        &lt;AdvP head&gt; = &lt;Indef head&gt;
+         &lt;Adv head type wh&gt; = +
+        &lt;Adv head type AdvP-initial&gt; = +
+        &lt;AdvP head type prefix&gt; &lt;= &lt;Adv head type prefix&gt; 
+        &lt;AdvP head type suffix&gt; &lt;= &lt;Indef head type suffix&gt; 
+        &lt;AdvP option&gt; = IndefI
+    </rule>
+    <showWhen id="AdvPoptionIndefI">
+        <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="yes"/>
+ <or/>
+        <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeIndefTypeIntBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoptionIndefF">
+        rule {AdvP option IndefF - interrogative indef phrase, final}
+        AdvP = Indef Adv
+        &lt;AdvP head&gt; = &lt;Indef head&gt;
+        &lt;Adv head type wh&gt; = +
+        &lt;Adv head type AdvP-final&gt; = +
+        &lt;AdvP head type prefix&gt; &lt;= &lt;Indef head type prefix&gt; 
+        &lt;AdvP head type suffix&gt; &lt;= &lt;Adv head type suffix&gt; 
+        &lt;AdvP option&gt; = IndefF
+    </rule>
+    <showWhen id="AdvPoptionIndefF">
+        <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeIndefTypeIntAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoptionIndefBoth">
+        rule {AdvP option IndefBoth - interrogative indef phrase, both sides}
+        AdvP = Adv_1 Indef Adv_2
+        &lt;AdvP head&gt; = &lt;Indef head&gt;
+        &lt;Adv_1 head type wh&gt; = +
+        &lt;Adv_2 head type wh&gt; = +
+        &lt;Adv_1 head type AdvP-initial&gt; = +
+        &lt;Adv_2 head type AdvP-final&gt; = +
+        &lt;AdvP head type prefix&gt; &lt;= &lt;Adv_1 head type prefix&gt; 
+        &lt;AdvP head type suffix&gt; &lt;= &lt;Adv_2 head type suffix&gt; 
+        &lt;AdvP option&gt; = IndefBoth
+    </rule>
+    <showWhen id="AdvPoptionIndefBoth">
+        <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeIndefTypeIntBoth" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoptionQI">
+        rule {AdvP option QI - quantifier indef phrase, initial}
+        AdvP = Q N
+        &lt;AdvP head&gt; = &lt;N head&gt;
+        &lt;N head type generic&gt; = +
+        &lt;Q head type AdvP-initial&gt; = +
+        &lt;AdvP head type prefix&gt; &lt;= &lt;Q head type prefix&gt; 
+        &lt;AdvP head type suffix&gt; &lt;= &lt;N head type suffix&gt; 
+        &lt;AdvP option&gt; = QI
+    </rule>
+    <showWhen id="AdvPoptionQI">
+        <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalIndefTypeQPQBefore" attr="checked" value="yes"/>
+ <or/>
+        <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeIndefTypeQPQBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoptionQF">
+        rule {AdvP option QF - quantifier indef phrase, final}
+        AdvP = N Q
+        &lt;AdvP head&gt; = &lt;N head&gt;
+        &lt;N head type generic&gt; = +
+        &lt;Q head type AdvP-final&gt; = +
+        &lt;AdvP head type prefix&gt; &lt;= &lt;N head type prefix&gt; 
+        &lt;AdvP head type suffix&gt; &lt;= &lt;Q head type suffix&gt; 
+        &lt;AdvP option&gt; = QF
+    </rule>
+    <showWhen id="AdvPoptionQF">
+        <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalIndefTypeQPQAfter" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeIndefTypeQPQAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoptionQBoth">
+        rule {AdvP option QBoth - quantifier indef phrase, both sides}
+        AdvP = Q_1 N Q_2
+        &lt;AdvP head&gt; = &lt;N head&gt;
+        &lt;N head type generic&gt; = +
+        &lt;Q_1 head type AdvP-initial&gt; = +
+        &lt;Q_1 head type AdvP-final&gt; = +
+        &lt;AdvP head type prefix&gt; &lt;= &lt;Q_1 head type prefix&gt; 
+        &lt;AdvP head type suffix&gt; &lt;= &lt;Q_2 head type suffix&gt; 
+        &lt;AdvP option&gt; = QBoth
+    </rule>
+    <showWhen id="AdvPoptionQBoth">
+        <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalIndefTypeQPQBoth" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeIndefTypeQPQBoth" attr="checked" value="yes"/>
+    </showWhen>
+        
+    <rule>
 rule {AdvP option 0 - no modifiers}
 AdvP = Adv'
 	&lt;AdvP head&gt; = &lt;Adv' head&gt;
 	&lt;AdvP option&gt; = 0
 </rule>
-	<rule show="AdvPoption1">
+    <rule show="AdvPoption1">
 rule {AdvP option 1 - modifiers initial}
 AdvP = Deg Adv'
 	&lt;AdvP head&gt; = &lt;Adv' head&gt;
@@ -20,14 +213,26 @@ AdvP = Deg Adv'
 	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[locative:+]]]]]
 	&lt;AdvP option&gt; = 1
 </rule>
-	<showWhen id="AdvPoption1">
-		<whenValue element="advp" attr="temporalDegree" value="yesBefore"/>
-		<or/>
-		<whenValue element="advp" attr="locativeDegree" value="yesBefore"/>
-	  <or/>
-		<whenValue element="advp" attr="mannerDegree" value="yesBefore"/>
-   </showWhen>
-	<rule show="AdvPoption2">
+    <showWhen id="AdvPoption1">
+        <whenValue element="advp" attr="temporalDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalDegreeWordBefore"  attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp" attr="locativeDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeDegreeWordBefore"  attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp" attr="mannerDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/mannerDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/mannerDegreeWordBefore"  attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoption2">
 rule {AdvP option 2 - modifiers final}
 AdvP = Adv' Deg
 	&lt;AdvP head&gt; = &lt;Adv' head&gt;
@@ -41,21 +246,69 @@ AdvP = Adv' Deg
 	&lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[locative:+]]]]]
 	&lt;AdvP option&gt; = 2
 </rule>
-	<showWhen id="AdvPoption2">
-	   <whenValue element="advp" attr="temporalDegree" value="yesAfter"/>
-	   <or/>
-	   <whenValue element="advp" attr="locativeDegree" value="yesAfter"/>
-	   <or/>
-	   <whenValue element="advp" attr="mannerDegree" value="yesAfter"/>
-	</showWhen>
-
-	<rule>
+    <showWhen id="AdvPoption2">
+        <whenValue element="advp" attr="temporalDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalDegreeWordAfter"  attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp" attr="locativeDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeDegreeWordAfter"  attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp" attr="mannerDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/mannerDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/mannerDegreeWordAfter"  attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="AdvPoption3">
+        rule {AdvP option 3 - modifiers both sides}
+        AdvP = Deg_1 Adv' Deg_2
+        &lt;AdvP head&gt; = &lt;Adv' head&gt;
+        &lt;AdvP head modifier&gt; = &lt;Deg_1 head&gt;
+        &lt;Deg_1 head type AdvP-initial&gt; = +
+        &lt;Deg_2 head type AdvP-final&gt; = +
+        &lt;Deg_1 head type comma&gt; = -
+        &lt;Adv' head type comma&gt; = -
+        &lt;AdvP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
+        &lt;AdvP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
+        &lt;AdvP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
+        &lt;AdvP head&gt; == [type:[manner:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[manner:+]]]]]
+        &lt;AdvP head&gt; == [type:[temporal:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[temporal:+]]]]]
+        &lt;AdvP head&gt; == [type:[locative:+]] -&gt; [modifier:[head:[type:[modifies_Adv:[locative:+]]]]]
+        &lt;AdvP option&gt; = 3
+    </rule>
+    <showWhen id="AdvPoption3">
+        <whenValue element="advp" attr="temporalDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/temporalDegreeWordAfter"  attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp" attr="locativeDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/locativeDegreeWordAfter"  attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="advp" attr="mannerDegree" value="yes"/>
+        <and/>
+        <whenValue element="advp/mannerDegreeWord"  attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="advp/mannerDegreeWordAfter"  attr="checked" value="yes"/>
+    </showWhen>
+    
+    <rule>
 rule {AdvBar option 0 - no complements}
 Adv' = Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
 	&lt;Adv' option&gt; = 0
 </rule>
-	<rule show="AdvBaroption1f">
+    <rule show="AdvBaroption1f">
 rule {AdvBar option 1f - Adv complements final}
 Adv' = Adv Adv_1
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
@@ -67,12 +320,12 @@ Adv' = Adv Adv_1
 	&lt;Adv' head type suffix&gt; &lt;= &lt;Adv_1 head type suffix&gt;
 	&lt;Adv' option&gt; = 1f
 </rule>
-	<showWhen id="AdvBaroption1f">
-		<whenValue element="advcl" attr="advOrNPPos" value="after"/>
+    <showWhen id="AdvBaroption1f">
+        <whenValue element="advcl" attr="advOrNPPos" value="after"/>
 <or/>
-		<whenValue element="advcl" attr="advOrNPPos" value="either"/>
-	</showWhen>
-	<rule show="AdvBaroption1i">
+        <whenValue element="advcl" attr="advOrNPPos" value="either"/>
+    </showWhen>
+    <rule show="AdvBaroption1i">
 rule {AdvBar option 1i - Adv complements initial}
 Adv' = Adv_1 Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
@@ -84,11 +337,11 @@ Adv' = Adv_1 Adv
 	&lt;Adv' option&gt; = 1i
 </rule>
    <showWhen id="AdvBaroption1i">
-		<whenValue element="advcl" attr="advOrNPPos" value="before"/>
-	  <or/>
-	  <whenValue element="advcl" attr="advOrNPPos" value="either"/>
+        <whenValue element="advcl" attr="advOrNPPos" value="before"/>
+      <or/>
+      <whenValue element="advcl" attr="advOrNPPos" value="either"/>
    </showWhen>
-	<rule show="AdvBaroption2f">
+    <rule show="AdvBaroption2f">
 rule {AdvBar option 2f - DP complements final}
 Adv' = Adv DP
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
@@ -98,12 +351,12 @@ Adv' = Adv DP
 	&lt;Adv' head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
 	&lt;Adv' option&gt; = 2f
 </rule>
-	<showWhen id="AdvBaroption2f">
-		<whenValue element="advcl" attr="advOrNPPos" value="after"/>
+    <showWhen id="AdvBaroption2f">
+        <whenValue element="advcl" attr="advOrNPPos" value="after"/>
 <or/>
-		<whenValue element="advcl" attr="advOrNPPos" value="either"/>
-	</showWhen>
-	<rule show="AdvBaroption2i">
+        <whenValue element="advcl" attr="advOrNPPos" value="either"/>
+    </showWhen>
+    <rule show="AdvBaroption2i">
 rule {AdvBar option 2i - DP complements initial}
 Adv' = DP Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
@@ -112,12 +365,12 @@ Adv' = DP Adv
 	&lt;Adv' head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
 	&lt;Adv' option&gt; = 2i
 </rule>
-	<showWhen id="AdvBaroption2i">
-		<whenValue element="advcl" attr="advOrNPPos" value="before"/>
+    <showWhen id="AdvBaroption2i">
+        <whenValue element="advcl" attr="advOrNPPos" value="before"/>
 <or/>
-		<whenValue element="advcl" attr="advOrNPPos" value="either"/>
-	</showWhen>
-	<rule>
+        <whenValue element="advcl" attr="advOrNPPos" value="either"/>
+    </showWhen>
+    <rule>
 rule {AdvBar option 3f - IP complements final}
 Adv' = Adv IP
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
@@ -133,7 +386,7 @@ Adv' = Adv IP
 	&lt;Adv' head type motion&gt; &lt;= &lt;IP head type motion&gt;  |keep locative with motion V
 	&lt;Adv' option&gt; = 3f
 </rule>
-	<rule show="AdvBaroption3i">
+    <rule show="AdvBaroption3i">
 rule {AdvBar option 3i - IP complements initial}
 Adv' = IP Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
@@ -148,14 +401,14 @@ Adv' = IP Adv
 	&lt;Adv' head type motion&gt; &lt;= &lt;IP head type motion&gt;  |keep locative with motion V
 	&lt;Adv' option&gt; = 3i
 </rule>
-	<showWhen id="AdvBaroption3i">
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
-	</showWhen>
-	<rule>
+    <showWhen id="AdvBaroption3i">
+        <whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+    </showWhen>
+    <rule>
 rule {AdvBar option 4f - CP complements final}
 Adv' = Adv CP
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
@@ -169,7 +422,7 @@ Adv' = Adv CP
 	&lt;Adv' head type suffix&gt; &lt;= &lt;CP head type suffix&gt;
 	&lt;Adv' option&gt; = 4f
 </rule>
-	<rule show="AdvBaroption4i">
+    <rule show="AdvBaroption4i">
 rule {AdvBar option 4i - CP complements initial}
 Adv' = CP Adv
 	&lt;Adv' head&gt; = &lt;Adv head&gt;
@@ -182,11 +435,11 @@ Adv' = CP Adv
 	&lt;Adv' head type prefix&gt; &lt;= &lt;CP head type prefix&gt;
 	&lt;Adv' option&gt; = 4i
 </rule>
-	<showWhen id="AdvBaroption4i">
-		<whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
-		<or/>
-		<whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
-	</showWhen>
+    <showWhen id="AdvBaroption4i">
+        <whenValue element="typology" attr="wordOrder" value="SOV" negateValue="no"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OVS" negateValue="no"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV" negateValue="no"/>
+    </showWhen>
 </masterGrammar>

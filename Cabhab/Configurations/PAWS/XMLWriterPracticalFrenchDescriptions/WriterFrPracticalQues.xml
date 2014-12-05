@@ -1,0 +1,2864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+   <section1 id="sQues">
+        <secTitle>Questions</secTitle>
+        <p>
+           <content>Il y a deux types de questions: celles qui invitent une réponse </content><langData>Oui</langData><content> ou </content><langData>Non</langData><content>, et celles qui cherchent un renseignement. Cette section considère la proposition principale et les variétés de propositions subordonnées pour chaque type.</content>
+        </p>
+        <section2 id="sQuesYN">
+           <secTitle>Les questions oui/non</secTitle>
+            <p contentType="ctComparativeIntro">
+               <content> En anglais les propositions principales interrogatives de type oui/non se forment en mettant un verbe auxiliaire avant le sujet.  En français les questions oui/non se forment ou par l’inversion du verbe et du sujet ou par l’addition de </content><langData>est-ce que/qu’</langData><content> au début de la phrase.  D’autres langues utilisent soit un marqueur pour les interrogatifs de type oui/non, soit un complétiseur spécial au lieu d’un auxiliaire en position initiale. C’est ainsi pour les questions subordonnées de type oui/non en anglais et en français; on ne tolère pas d’auxiliaire en position initiale mais </content>
+                <langData>si</langData>
+               <content> prend la position du complétiseur. Puisque les langues se comportent quelquefois de manière différente dans les interrogatifs de type oui/non dans la proposition principale et la proposition subordonnée, chaque structure sera traitée séparément.</content>
+            </p>
+           <p contentType="ctPracticalIntro">
+              <content> Les propositions principales interrogatives et les questions subordonnées de type oui/non se forment quelquefois de façon différents selon le mouvement de l’auxiliaire, et les marqueurs de questions ou les complétiseurs.</content>
+           </p>
+           <section3 id="sQuesYNMain">
+              <secTitle>Les propositions principales interrogatives de type oui/non</secTitle>
+                <p contentType="ctComparativeIntro">
+                   <content>Voici des exemples en anglais de propositions principales interrogatives de type oui/non; ils montrent la position initiale obligatoire d’un auxiliaire: </content>
+                   <langData>Are you going to the store?</langData><gloss><content>  « Allez-vous au magasin? / Est-ce que vous allez au magasin? »</content></gloss>
+                    <content>, </content>
+                   <langData>Will Sue buy the present for her mother?</langData><gloss><content>  « Est-ce que Sue achètera le cadeau pour sa mère? »</content></gloss>
+                    <content> et </content>
+                   <langData>Could the boy have hit the ball?</langData><gloss><content>  « Est-ce que le garçon aurait pu toucher la balle? »</content></gloss>
+                   <content>  La construction « est-ce que » est plus courant en français; seul le premier exemple ci-dessus serait possible avec un verbe initial suivi du sujet, mais quand même la construction « est-ce-que » serait plus naturelle. En français on peut aussi indiquer la présence d’une question par le moyen de l’intonation: </content>
+                   <langData>Vous allez aux magasins?</langData><content/>
+                </p>
+              <p>
+                 <content>Voici des exemples de propositions principales interrogatives de type oui/non en </content><langName/>
+                 <content>:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="q/example"/>
+              </example>
+              
+                <p>
+                   <content>Comme le montrent ces exemples, </content>
+                    <case element="q" attr="mainYN">
+                       <caseText value="no">il n’y a ni marqueur ni changement d’ordre, seulement une différence d’intonation ou de ton ou d’autre marqueur non-syntaxique.</caseText>
+                       <caseText value="noAux">le mouvement d’un auxiliaire</caseText>
+                       <caseText value="yes">il y a un ou plusieurs marqueurs interrogatifs ou complétiseurs</caseText>
+                    </case>
+              
+                    <text show="swQMainYNNoAux">
+                        <content> en </content>
+                        <case element="q" attr="mainYNAuxPos">
+                           <caseText value="before">position initiale</caseText>
+                           <caseText value="after">position finale</caseText>
+                            <caseText value="unknown">_______</caseText>
+                        </case>
+                       <content> de la question est obligatoire.</content>
+                    </text>
+              
+                    <text show="swQMainYNYes">
+                        <content> qui </content>
+                        <case element="q" attr="mainYNWord">
+                           <caseText value="yes">écrits comme des mots indépendants.</caseText>
+                           <caseText value="some">ou bien écrits comme des mots indépendants ou bien attachés </caseText>
+                           <caseText value="no">attachés </caseText>
+                        </case>
+                        <text show="swQMainYNWordNoOrSome">
+                           <text show="swQMainYNProclitic"><content>au début du premier mot de la question oui/non comme proclitiques.  </content></text>
+                           <text show="swQMainYNEnclitic"><content>à la fin du dernier mot de la question oui/non comme enclitiques.   </content></text>
+                           <text show="swQMainYNClitic"><content>ou bien au début du premier mot ou à la fin du dernier mot de la question oui/non comme clitiques.   </content></text>
+                           <text show="swQMainYNPrefix"><content>au verbe dans la question oui/non comme préfixes.  </content></text>
+                           <text show="swQMainYNSuffix"><content>au verbe dans la question oui/non comme suffixes.   </content></text>
+                           <text show="swQMainYNAffix"><content>au verbe dans la question oui/non, quelques-uns comme préfixes d’autres comme suffixes.   </content></text>
+                           <text show="swQMainYNCliticAffix"><content>ou bien au début ou à la fin de la question oui/non comme clitiques, ou au verbe dans la question oui/non comme affixes.  </content></text>
+                           <text show="swQMainYNOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/mainYNCliticOther"/><content>.  </content></text>
+                           <text show="swQMainYNOtherAnd"><content>  D’autres s’attachent aussi ___</content><contentCheckBoxOther contentLoc="q/mainYNCliticOther"/>  <content>.</content></text>              
+                         </text>  <content></content>
+                    </text>
+                </p>   
+              <p show="swQMainYNWordNoOrSomeAndClitic"><content>Les clitiques qui marquent les propositions principales interrogatives de type oui/non sont:</content></p>      
+              <example show="swQMainYNWordNoOrSomeAndClitic">
+                 <table border="1">
+                    <headerRow>
+                       <headerCol>Clitiques oui/non</headerCol>
+                       <headerCol>Glose</headerCol>
+                    </headerRow>
+                    <row>
+                       <col exampleLoc="q/mainYNCliticExample"/>
+                       <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                    </row>
+                 </table>
+              </example>     
+              <p show="swQMainYNWordNoOrSomeAndAffix"><content>Les affixes qui marquent les propositions principales interrogatives de type oui/non sont:</content></p>      
+              <example show="swQMainYNWordNoOrSomeAndAffix">
+                 <table border="1">
+                    <headerRow>
+                       <headerCol>Affixes oui/non</headerCol>
+                       <headerCol>Glose</headerCol>
+                    </headerRow>
+                    <row>
+                       <col exampleLoc="q/mainYNAffixExample"/>
+                       <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                    </row>
+                 </table>
+              </example>     
+                    <p show="swQMainYNWordYesOrSome">
+                       <content> Le marqueur interrogatif ou les mots complétiseurs se mettent </content>
+                       <text show="swQMainYNWordBefore"><content>avant</content></text>
+                       <text show="swQMainYNWordAfter"><content>après</content></text>
+                       <text show="swQMainYNWordBoth"><content>des deux côtés du</content></text>
+                       <text show="swQMainYNWordEither"><content>d’un côté ou de l’autre du</content></text>
+                       <text show="swQMainYNWordBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+                       <text show="swQMainYNWordAfterOrBoth"><content>après ou des deux côtés du</content></text>
+                       <text show="swQMainYNWordEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+                       <text show="swQMainYNWordNotOther"><content> le reste de la question oui/non.  </content></text>
+                       <text show="swQMainYNWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/mainYNWordOther"/><content>.  </content></text>
+                       <text show="swQMainYNWordPosAndOther"><content> le reste de la question oui/non et peuvent aussi se mettre ___</content> <contentCheckBoxOther contentLoc="q/mainYNWordOther"/> <content>. </content></text><content> Les marqueurs interrogatifs oui/non sont:</content>
+                </p>
+              <example show="swQMainYNWordYesOrSome">
+                 <table border="1">
+                    <headerRow>
+                       <headerCol>Les marqueurs de questions oui/non</headerCol>
+                       <headerCol>Glose</headerCol>
+                    </headerRow>
+                    <row>
+                       <col exampleLoc="q/mainYNWordExample"/>
+                       <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                    </row>
+                 </table>
+              </example>     
+            </section3>
+            <section3 id="sQuesYNEmb">
+               <secTitle>Les questions oui/non comme proposition subordonnée</secTitle>
+                <p contentType="ctComparativeIntro">
+                   <content>Voici des exemples en français de questions oui/non dans des propositions subordonnées qui montrent la présence des marqueurs interrogatifs ou des complétiseurs: </content>
+                   <langData>Je me demande si elle viendra</langData>
+                    <content>, </content>
+                   <langData>Je saurai si elle part</langData>
+                    <content> et </content>
+                   <langData>Suzannee se demande si le garçon aurait pu toucher la balle</langData>
+                    <content>.</content>
+                </p>
+               <p>
+                  <content>Voici des exemples de questions oui/non dans des propositions subordonnées en </content><langName/>
+                  <content>:</content>
+               </p>
+               <example>
+                  <interlinear exampleLoc="q/embYNExample"/>
+               </example>
+               <p>
+                  <content>Comme le montrent les exemples, </content>
+                  <case element="q" attr="embYN">
+                     <caseText value="no"> il n’y a ni marqueur ni changement de l’ordre des mots, seulement une différence de l’intonation ou de ton ou d’autre marqueur non-syntaxique. </caseText>
+                     <caseText value="noAux">mouvement d’un auxiliaire</caseText>
+                     <caseText value="yes">il y a un ou plusieurs marqueurs interrogatifs ou complétiseurs</caseText>
+                  </case>
+                  
+                  <text show="swQEmbYNNoAux">
+                     <content> obligatoirement </content>
+                     <case element="q" attr="embYNAuxPos">
+                        <caseText value="before">au début</caseText>
+                        <caseText value="after">à la fin</caseText>
+                        <caseText value="unknown">_______</caseText>
+                     </case>
+                     <content> de la question.</content>
+                  </text>
+                  
+                  <text show="swQEmbYNYes">
+                     <content> qui </content>
+                     <case element="q" attr="embYNWord">
+                        <caseText value="yes">sont écrits comme mots indépendants.</caseText>
+                        <caseText value="some">ou bien écrits comme mots indépendants ou s’attachent </caseText>
+                        <caseText value="no">s’attachent </caseText>
+                     </case>
+                 
+                  <text show="swQEmbYNWordNoOrSome">
+                     <text show="swQEmbYNProclitic"><content>au début du mot en tête de la question oui/non comme proclitiques.  </content></text>
+                     <text show="swQEmbYNEnclitic"><content>à la fin du mot qui termine la question oui/non comme enclitiques.    </content></text>
+                     <text show="swQEmbYNClitic"><content>ou bien au début du mot qui commence la question oui/non ou à la fin du mot qui termine la question oui/non comme clitiques.   </content></text>
+                     <text show="swQEmbYNPrefix"><content>au verbe dans la question oui/non comme préfixes.  </content></text>
+                     <text show="swQEmbYNSuffix"><content>au verbe dans la question oui/non comme suffixes.   </content></text>
+                     <text show="swQEmbYNAffix"><content>au verbe dans la question oui/non quelques-unes comme préfixes et d’autres comme suffixes.   </content></text>
+                     <text show="swQEmbYNCliticAffix"><content>ou bien au début ou bien à la fin de la question oui/non comme clitiques, ou bien au verbe dans la question oui/non comme affixes.  </content></text>
+                     <text show="swQEmbYNOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/embYNCliticOther"/><content>.  </content></text>
+                     <text show="swQEmbYNOtherAnd"><content>  Quelques-uns s’attachent aussi ___</content><contentCheckBoxOther contentLoc="q/embYNCliticOther"/>  <content>.</content></text>              
+                  </text>  <content></content>
+                  </text></p>   
+               <p show="swQEmbYNWordNoOrSomeAndClitic"><content>Voici les clitiques qui marquent les questions oui/non dans des propositions subordonnées:</content></p>      
+               <example show="swQEmbYNWordNoOrSomeAndClitic">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Clitiques oui/non</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/embYNCliticExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+               <p show="swQEmbYNWordNoOrSomeAndAffix"><content>Voici les affixes qui marquent les questions oui/non dans des propositions subordonnées:</content></p>      
+               <example show="swQEmbYNWordNoOrSomeAndAffix">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Affixes oui/non</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/embYNAffixExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+               <p show="swQEmbYNWordYesOrSome">
+                  <content> Le marqueur interrogatif ou les mots complétiseurs se mettent </content>
+                  <text show="swQEmbYNWordBefore"><content>avant le</content></text>
+                  <text show="swQEmbYNWordAfter"><content>après le</content></text>
+                  <text show="swQEmbYNWordBoth"><content>des deux côtés du</content></text>
+                  <text show="swQEmbYNWordEither"><content>d’un côté ou de l’autre du</content></text>
+                  <text show="swQEmbYNWordBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+                  <text show="swQEmbYNWordAfterOrBoth"><content>après ou des deux côtés du</content></text>
+                  <text show="swQEmbYNWordEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+                  <text show="swQEmbYNWordNotOther"><content> reste de la question oui/non.  </content></text>
+                  <text show="swQEmbYNWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/embYNWordOther"/><content>.  </content></text>
+                  <text show="swQEmbYNWordPosAndOther"><content> reste de la question oui/non et peuvent aussi se mettre ___</content> <contentCheckBoxOther contentLoc="q/embYNWordOther"/> <content>. </content></text><content> Voici ces marqueurs:</content>
+               </p>
+               <example show="swQEmbYNWordYesOrSome">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Les marqueurs interrogatifs oui/non</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/embYNWordExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+               
+            </section3>
+        </section2>
+        <section2 id="sQuesContent">
+           <secTitle>Les questions de contenu</secTitle>
+            <p contentType="ctComparativeIntro">
+               <content>Les questions de contenu diffèrent de questions oui/non, en ce qu’elles contiennent un mot ou syntagme interrogatif.  Dans certaines langues tous ces interrogatifs, ou quelques-uns, s’expriment comme des affixes.  Les mots interrogatifs  ou bien des syntagmes ou affixes équivalents en </content>
+                <langName/>
+               <content> se montrent dans le tableau </content><exampleRef num="xWh"/><content>.</content>
+            </p>
+           <p contentType="ctPracticalIntro">
+              <content>Les questions de contenu diffèrent des questions oui/non, en ce qu’elles contiennent un mot ou syntagme interrogatif. Les mots ou les syntagmes ou les affixes interrogatifs en </content>
+              <langName/>
+              <content> se montrent dans le tableau </content><exampleRef num="xWh"/><content>.</content>
+           </p>
+           <example num="xWh">
+                <table border="1">
+                    <caption>
+                       <content>Interrogatifs utilisés dans les questions de contenu</content>
+                    </caption>
+                    <headerRow>
+                       <headerCol>Morphèmes</headerCol>
+                        <headerCol>Glose</headerCol>
+                    </headerRow>
+                    <row>
+                        <col exampleLoc="q/who"/>
+                        <col>
+                            <content>qui</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="q/what"/>
+                        <col>
+                           <content>que (qu’)</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="q/why"/>
+                        <col>
+                            <content>pourquoi</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="q/where"/>
+                        <col>
+                           <content>où</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="q/when"/>
+                        <col>
+                            <content>quand</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="q/how"/>
+                        <col>
+                            <content>comment</content>
+                        </col>
+                    </row>
+                   <row>
+                      <col exampleLoc="q/howMany"/>
+                      <col>
+                         <content>combien</content>
+                      </col>
+                   </row>
+                   <row>
+                        <col exampleLoc="q/which"/>
+                        <col>
+                            <content>quel</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="q/whose"/>
+                        <col>
+                           <content>de qui / à qui</content>
+                        </col>
+                    </row>
+                    <row>
+                        <col exampleLoc="q/other"/>
+                        <col>
+                            <content>autres interrogatifs</content>
+                        </col>
+                    </row>
+                </table>
+            </example>
+            <p contentType="ctComparativeIntro">
+               <content>Selon l’ordre fondamental des mots de la langue, on peut former les questions de contenu avec - ou sans – un syntagme interrogatif en tête. Les langues à tête finale  (SOV, OVS, et OSV) évitent d’habitude le déplacement du syntagme interrogatif dans les questions de contenu, tandis que pour les langues à tête initiale (SVO, VOS, et VSO) le syntagme interrogatif est habituellement en position initiale.</content></p>
+           <p contentType="ctComparativeIntro"><content>Pour les langues où les interrogatifs ne prennent pas la position initiale, la structure du syntagme est la même que pour une question oui/non: le marqueur ou l’auxiliaire interrogatif se met en position du complétiseur; ou bien elle ressemble à celle d’une phrase normale. Dans les deux cas, le syntagme interrogatif se met dans sa position habituelle de l’argument. Beaucoup de langues SOV permettent que le syntagme interrogatif se place directement avant le verbe. 
+</content>
+            </p>
+            <p>
+               <content>Et dans les propositions principales interrogatives et dans les questions de contenu subordonnées en </content>
+                <langName/>
+               <content>, le syntagme interrogatif </content>
+                <case element="q" attr="contFront">
+                   <caseText value="no">ne se déplace pas ; il reste en tête; il maintient sa place habituelle.</caseText>
+                   <caseText value="after">peut maintenir sa place ou se déplacer jusque devant le verbe.</caseText>
+                   <caseText value="before">se déplace à la position initiale de la proposition.</caseText>
+                    <caseText value="unknown">_______.</caseText>
+                </case>
+         </p>
+            <section3 id="sQuesContentMain">
+                <secTitle>Les questions de contenu comme la proposition principale</secTitle>
+                <p contentType="ctComparativeIntro">
+                   <content>En français et en anglais, pour les propositions principales interrogatives de contenu il faut un syntagme interrogatif initial, suivi directement d’un auxiliaire -  quand la question s’agit d’autre chose que le sujet. Voici quelques exemples en français de ces propositions principales interrogatives de contenu: </content>
+                   <langData>Quel garçon a mangé la banane?</langData>
+                    <content>, </content>
+                   <langData>Qui a pu manger la banane?</langData>
+                    <content>, </content>
+                   <langData>Qu’est-ce que le garçon a mangé?</langData>
+                    <content>, </content>
+                   <langData>Quand est-ce qu’elle viendra?</langData>
+                    <content> et </content>
+                   <langData>Où est le chef?</langData>
+                    <content>&#x20;</content>
+                </p>
+               <p>
+                  <content>Voici des exemples de  propositions principales interrogatives de contenu en </content><langName/>
+                  <content>:</content>
+               </p>
+               <example>
+                  <interlinear exampleLoc="q/contentExample"/>
+               </example>
+               <p>
+                  <content>Comme le montrent les exemples, </content>
+                    <case element="q" attr="mainCont">
+                       <caseText value="no">il n’y a ni  marqueur ni déplacement en tête de l’auxiliaire,</caseText>
+                       <caseText value="noAux">un déplacement de l’auxiliaire</caseText>
+                       <caseText value="yes">il y a au moins un marqueur interrogatif ou complétiseur dans les propositions principales interrogatives de contenu. </caseText>
+                    </case>
+                    <content>&#x20;</content>
+                    <text show="swQMainContNo">
+                        <content> simplement </content>
+                        <case element="q" attr="contFront">
+                           <caseText value="no">une différence de</caseText>
+                           <caseText value="after">de déplacement facultatif d’un syntagme interrogatif et peut-être une différence de</caseText>
+                           <caseText value="before">de la mise en tête d’un syntagme interrogatif et peut-être une différence de</caseText>
+                           <caseText value="unknown">_______ d’un syntagme interrogatif et peut-être une différence de</caseText>
+                        </case>
+                       <content> intonation ou de marqueur non-syntaxique.</content>
+                    </text>
+                  <text show="swQMainContNoAux">
+                        <content/>
+                        <case element="q" attr="mainContAuxPos">
+                           <caseText value="before">au début</caseText>
+                           <caseText value="after">à la fin</caseText>
+                            <caseText value="unknown">_______</caseText>
+                        </case>
+                        <content> de la question est </content>
+                        <case element="q" attr="mainContAuxRequired">
+                           <caseText value="no">permis mais pas obligatoire</caseText>
+                            <caseText value="yes">obligatoire</caseText>
+                           <caseText value="object">obligatoirement en position initiale, sauf quand le sujet est questionné</caseText>
+                        </case>
+                        <case element="q" attr="contFront">
+                            <caseText value="no">.</caseText>
+                            <caseText value="after">.</caseText>
+                           <caseText value="before"> en plus du déplacement en position initiale d’un syntagme interrogatif.</caseText>
+                           <caseText value="unknown">.</caseText>
+                        </case>
+                  </text>
+                 <text show="swQMainContYes">
+                    <text show="swQMainContWordSome"><content> Quelques-uns des marqueurs interrogatifs ou des complémentiseurs sont écrits comme des mots indépendants mais d’autres s’attachent </content></text>
+                    <text show="swQMainContWordYes"><content> Les marqueurs interrogatifs ou des complétiseurs sont écrits comme des mots indépendants. </content></text>
+                    <text show="swQMainContWordNo"><content> Les marqueurs interrogatifs ou des complétiseurs s’attachent </content></text>
+                      <text show="swQMainContWordNoOrSome">
+                         <text show="swQMainContProclitic"><content>au début du mot qui commence la question comme proclitiques.</content></text>
+                         <text show="swQMainContProcliticAndBetweenProclitic"><content>au début du mot qui commence la question ou après le syntagme interrogatif initial au début du mot qui commence le reste de la question comme proclitiques.</content></text>
+                         <text show="swQMainContProcliticAndBetweenEnclitic"><content>au début du mot qui commence la question comme proclitiques ou à la fin du dernier mot du syntagme interrogatif initial comme enclitiques, avant le reste de la question.</content></text>
+                         <text show="swQMainContProcliticAndBetweenBoth"><content>au début du mot qui commence la question ou après le syntagme interrogatif initial au début du mot qui commence le reste de la question comme proclitiques ou à la fin du dernier mot du syntagme interrogatif comme enclitiques, avant le reste de la question.</content></text>
+                         <text show="swQMainContBetweenProclitic"><content>après le syntagme interrogatif  initial au début du mot qui commence le reste de la question comme proclitiques.</content></text>
+                         <text show="swQMainContEnclitic"><content>à la fin du mot qui termine la question comme enclitiques.</content></text>
+                         <text show="swQMainContEncliticAndBetweenProclitic"><content>à la fin du mot qui termine la question comme enclitiques ou après le syntagme interrogatif initial au début du mot qui commence la question comme proclitiques.</content></text>
+                         <text show="swQMainContEncliticAndBetweenEnclitic"><content>à la fin du mot qui termine la question ou à la fin du dernier mot du syntagme interrogatif initial, avant le reste de la question, comme enclitiques.</content></text>
+                         <text show="swQMainContEncliticAndBetweenBoth"><content>à la fin du mot qui termine la question ou à la fin du dernier mot du syntagme interrogatif initial, avant le reste de la question, comme enclitiques ou après le syntagme interrogatif initial au début du mot qui commence le reste de la question comme proclitiques.</content></text>
+                         <text show="swQMainContBetweenEnclitic"><content>à la fin du dernier mot du syntagme interrogatif initial comme enclitiques, avant le reste de la question.</content></text>
+                         <text show="swQMainContBetweenClitic"><content>après le syntagme interrogatif initial au début du mot qui commence le reste de la question comme proclitiques ou à la fin du dernier mot du syntagme interrogatif initial comme enclitiques, avant le reste de la question.</content></text>
+                         <text show="swQMainContClitic"><content>ou bien au début du mot qui commence la question, ou bien à la fin du mot qui termine la question comme clitiques.</content></text>
+                         <text show="swQMainContCliticAndBetweenProclitic"><content>ou bien au début du mot qui commence la question ou bien à la fin du mot qui termine la question ou bien après le syntagme interrogatif initial au début du mot qui commence le reste de la question comme clitiques.</content></text>
+                         <text show="swQMainContCliticAndBetweenEnclitic"><content>ou bien au début du mot qui commence la question ou bien à la fin du mot qui termine la question ou bien à la fin du dernier mot du syntagme interrogatif initial, avant le reste de la question, comme clitiques.</content></text>
+                         <text show="swQMainContCliticAll"><content>ou bien au début du mot qui commence la question, ou bien à la fin du mot qui termine la question ou bien après le syntagme interrogatif initial au début du mot qui commence le reste de la question ou bien à la fin du dernier mot du syntagme interrogatif initial, avant le reste de la question, comme clitiques.</content></text>
+                         <text show="swQMainContPrefix"><content>au verbe dans la question comme préfixes.</content></text>
+                         <text show="swQMainContSuffix"><content>au verbe dans la question comme suffixes.</content></text>
+                         <text show="swQMainContAffix"><content>au verbe de la question, quelques-uns comme préfixes, d’autres comme suffixes.</content></text>
+                         <text show="swQMainContCliticAffix"><content>ou bien au début ou à la fin de la question comme clitiques, ou bien au verbe de la question comme affixes.</content></text>
+                         <text show="swQMainContOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/mainYNCliticOther"/><content>.  </content></text>
+                         <text show="swQMainContOtherAnd"><content>  Quelques-uns aussi s’attachent ___</content><contentCheckBoxOther contentLoc="q/mainYNCliticOther"/>  <content>.</content></text>              
+                      </text>
+                 </text>
+               </p>
+               <p show="swQMainContWordNoOrSomeAndClitic"><content>Voici les clitiques qui marquent les propositions principales interrogatives:</content></p>      
+               <example show="swQMainContWordNoOrSomeAndClitic">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Clitiques qui marquent les interrogatifs</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/mainContCliticExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+               <p show="swQMainContWordNoOrSomeAndAffix"><content>Voici les affixes qui marquent les propositions principales interrogatives:</content></p>      
+               <example show="swQMainContWordNoOrSomeAndAffix">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Affixes qui marquent les interrogatifs</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/mainContAffixExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+               
+                <p show="swQMainContWordYesOrSome">
+                   <text show="swNotVSO">
+                      <content>  Les marqueurs interrogatifs ou les complétiseurs </content><text show="swQMainContWordSome"><content>qui sont des mots indépendants </content></text>
+                      <content>se mettent </content>
+                   <text show="swQMainContWordBefore"><content>avant le</content></text>
+                      <text show="swQMainContWordAfter"><content>après le</content></text>
+                      <text show="swQMainContWordBoth"><content>des deux côtés du </content></text>
+                      <text show="swQMainContWordEither"><content>d’un côté ou de l’autre du</content></text>
+                      <text show="swQMainContWordBeforeOrBoth"><content>avant ou des deux côtés du </content></text>
+                      <text show="swQMainContWordAfterOrBoth"><content>après ou des deux côtés du </content></text>
+                      <text show="swQMainContWordEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du </content></text>
+                   <text show="swQMainContWordNotOther"><content> reste de le question.  </content></text>
+                   <text show="swQMainContWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/mainContWordOther"/><content>.  </content></text>
+                      <text show="swQMainContWordPosAndOther"><content> reste de la question et peut aussi se trouver ___</content> <contentCheckBoxOther contentLoc="q/mainContWordOther"/> <content>. </content></text>
+                  </text>
+                  <text show="swVSO">
+                     <content> Les marqueurs interrogatifs ou complétiseurs </content><text show="swQMainContWordSome"><content>qui sont des mots indépendants </content></text>
+                     <content>se mettent </content>
+                     <text show="swQMainContVSOBeforeWh"><content>avant un syntagme interrogatif initial.</content></text>
+                     <text show="swQMainContVSOAfterWh"><content>directement après un syntagme interrogatif initial.</content></text>
+                     <text show="swQMainContVSOEnd"><content>à la fin de la question.</content></text>
+                     <text show="swQMainContVSOBeforeWhOrAfter"><content>ou bien avant un syntagme interrogatif initial ou bien directement après.</content></text>
+                     <text show="swQMainContVSOBeforeWhOrEnd"><content>ou bien avant un syntagme interrogatif initial ou à la fin de la question.</content></text>
+                     <text show="swQMainContVSOAfterWhOrEnd"><content>ou bien directement après un syntagme interrogatif initial ou à la fin de la question.</content></text>
+                     <text show="swQMainContVSOBeforeWhOrAfterOrEnd"><content>ou bien avant un syntagme interrogatif initial ou directement après, ou bien à la fin de la question.</content></text>
+                     <text show="swQMainContVSOOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/mainContVSOOther"/><content>.</content></text>
+                     <text show="swQMainContVSOPosAndOther"><content>  Quelques-uns peuvent aussi se mettre ___</content><contentCheckBoxOther contentLoc="q/mainContVSOOther"/><content>.</content></text>
+                  </text>
+                   <content> Un marqueur interrogatif ou un complétiseur est </content>
+                        <case element="q" attr="mainContRequired">
+                           <caseText value="yes">obligatoire dans toute question de contenu.</caseText>
+                           <caseText value="no">facultatif dans les questions de contenu.</caseText>
+                        </case>
+                        <content></content>
+                   <text show="swQMainContRequiredSpecial"><content>absent quand ___</content><contentCheckBoxOther contentLoc="q/mainContSpecialConditions"/><content>.</content></text><content> Les marqueurs interrogatifs sont:</content>
+               </p>
+            
+               <example show="swQMainContWordYesOrSome">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Les marqueurs interrogatifs</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/mainContWordExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+               
+               
+            </section3>
+            <section3 id="sQuesContentEmb">
+               <secTitle>Les questions de contenu comme proposition subordonnée</secTitle>
+                <p contentType="ctComparativeIntro">
+                   <content>En français et en anglais, dans les propositions interrogatives subordonnées, un syntagme interrogatif doit se mettre au début de la proposition subordonnée. Cependant, contrairement aux propositions principales interrogatives de contenu, il n’y a pas d’auxiliaire initial. Voici des exemples en français de questions subordonnées de contenu: </content>
+                   <langData>Je sais qui a mangé la banane</langData>
+                    <content>, </content>
+                   <langData>Je me demande quand elle viendra</langData>
+                    <content> et </content>
+                   <langData>Je demanderai de quoi le garçon aura besoin pour l’école</langData>
+                    <content>.</content>
+                </p>
+               <p>
+                  <content>Voici des exemples de propositions interrogatives subordonnées de contenu en </content><langName/>
+                  <content>:</content>
+               </p>
+               <example>
+                  <interlinear exampleLoc="q/embContentExample"/>
+               </example>
+               <p>
+                  <content>Comme le montrent ces exemples, </content>
+                  <case element="q" attr="embCont">
+                     <caseText value="no">il n’y a ni marqueur ni auxiliaire initial, </caseText>
+                     <caseText value="noAux">un déplacement de l’auxiliaire</caseText>
+                     <caseText value="yes">il y a au moins un marqueur interrogatif ou complétiseur dans les propositions interrogatives subordonnées de contenu.  </caseText>
+                  </case>
+                  <content>&#x20;</content>
+                  <text show="swQEmbContNo">
+                     <content> seulement </content>
+                     <case element="q" attr="contFront">
+                        <caseText value="no">une différence de</caseText>
+                        <caseText value="after">un déplacement facultatif d’un syntagme interrogatif et peut-être une différence de</caseText>
+                        <caseText value="before">un syntagme interrogatif initial et peut-être une différence de</caseText>
+                        <caseText value="unknown">_______ d’un syntagme interrogatif et peut-être une différence de</caseText>
+                     </case>
+                     <content> l’intonation ou le ton ou un autre marqueur non-syntaxique.</content>
+                  </text>
+                  <text show="swQEmbContNoAux">
+                     <content/>
+                     <case element="q" attr="embContAuxPos">
+                        <caseText value="before">au début</caseText>
+                        <caseText value="after">à la fin</caseText>
+                        <caseText value="unknown">_______</caseText>
+                     </case>
+                     <content> de la question subordonnée est </content>
+                     <case element="q" attr="embContAuxRequired">
+                        <caseText value="no">permis mais pas obligatoire</caseText>
+                        <caseText value="yes">obligatoire</caseText>
+                        <caseText value="object">obligatoirement en tête, sauf quand le sujet est interrogé</caseText>
+                     </case>
+                     <case element="q" attr="contFront">
+                        <caseText value="no">.</caseText>
+                        <caseText value="after">.</caseText>
+                        <caseText value="before"> outre la mise en tête d’un syntagme interrogatif.</caseText>
+                        <caseText value="unknown">.</caseText>
+                     </case>
+                  </text>
+                  <text show="swQEmbContYes">
+                     <text show="swQEmbContWordSome"><content> Quelques-uns des marqueurs interrogatifs ou complétiseurs sont des mots indépendants mais d’autres s’attachent </content></text>
+                     <text show="swQEmbContWordYes"><content> Les marqueurs interrogatifs ou complétiseurs sont écrits comme des mots indépendants. </content></text>
+                     <text show="swQEmbContWordNo"><content> Les marqueurs interrogatifs ou complétiseurs s’attachent </content></text>
+                     <text show="swQEmbContWordNoOrSome">
+                        <text show="swQEmbContProclitic"><content>au début du mot qui commence la question subordonnée comme proclitiques.  </content></text>
+                        <text show="swQEmbContProcliticAndBetweenProclitic"><content>au début du mot qui commence la question subordonnée ou après le syntagme interrogatif initial au début du mot qui commence le reste de la question subordonnée comme proclitiques.  </content></text>
+                        <text show="swQEmbContProcliticAndBetweenEnclitic"><content>au début du mot qui commence la question subordonnée comme proclitiques ou à la fin du dernier mot du syntagme interrogatif initial comme enclitiques, avant le reste de la question subordonnée.    </content></text>
+                        <text show="swQEmbContProcliticAndBetweenBoth"><content>au début du mot qui commence la question subordonnée comme proclitiques ou à la fin du dernier mot du syntagme interrogatif initial comme proclitiques ou à la fin du dernier mot du syntagme interrogatif initial comme enclitiques, avant le reste de la question subordonnée.    </content></text>
+                        <text show="swQEmbContBetweenProclitic"><content>après le syntagme interrogatif initial au début du mot qui commence le reste de la question subordonnée comme proclitiques.  </content></text>
+                        <text show="swQEmbContEnclitic"><content>à la fin du mot qui termine la question subordonnée comme enclitiques.    </content></text>
+                        <text show="swQEmbContEncliticAndBetweenProclitic"><content>à la fin du mot qui termine la question subordonnée ou après le syntagme interrogatif initial au début du mot qui commence le reste de la question subordonnée comme proclitiques.  </content></text>
+                        <text show="swQEmbContEncliticAndBetweenEnclitic"><content>a la fin du mot qui termine la question subordonnée ou à la fin du dernier mot du syntagme interrogatif initial. avant le reste de la question subordonnée, comme enclitiques.    </content></text>
+                        <text show="swQEmbContEncliticAndBetweenBoth"><content>à la fin du mot qui termine la question subordonnée ou à la fin du dernier mot du syntagme interrogatif initial, avant le reste de la question subordonnée comme enclitiques ou après le syntagme interrogatif initial au début du mot qui commence le reste de la question subordonnée comme proclitiques. </content></text>
+                        <text show="swQEmbContBetweenEnclitic"><content>à la fin du dernier mot du syntagme interrogatif initial comme enclitiques, avant le reste de la question subordonnée.    </content></text>
+                        <text show="swQEmbContBetweenClitic"><content>après le syntagme interrogatif initial au début du mot qui commence le reste de la question subordonnée comme proclitiques, ou à la fin du dernier mot du syntagme interrogatif initial comme enclitiques, avant le reste de la question subordonnée.    </content></text>
+                        <text show="swQEmbContClitic"><content>. ou bien au début du mot qui commence la question subordonnée ou à la fin du mot qui termine la question subordonnée comme clitiques.   </content></text>
+                        <text show="swQEmbContCliticAndBetweenProclitic"><content>ou bien au début du mot qui commence la question subordonnée ou à la fin du mot qui termine la question subordonnée comme clitiques ou après le syntagme interrogatif initial au début du mot qui commence le reste de la question subordonnée comme proclitiques.  </content></text>
+                        <text show="swQEmbContCliticAndBetweenEnclitic"><content>ou bien au début du mot qui commence la question subordonnée ou à la fin du mot qui termine la question subordonnée comme clitiques ou bien à la fin du mot qui termine la question subordonnée à la fin du dernier mot du syntagme interrogatif initial, avant le reste de la question subordonnée comme enclitiques.    </content></text>
+                        <text show="swQEmbContCliticAll"><content>ou bien au début du mot qui commence la question subordonnée ou à la fin du mot qui termine la question subordonnée comme clitiques ou après le syntagme interrogatif initial au début du mot qui commence le reste de la question subordonnée comme proclitiques. ou à la fin du mot qui termine la question subordonnée à la fin du dernier mot du syntagme interrogatif initial, avant le reste de la question subordonnée, comme enclitiques.   </content></text>
+                        <text show="swQEmbContPrefix"><content>au verbe de la question subordonnée comme préfixe. </content></text>
+                        <text show="swQEmbContSuffix"><content>au verbe dans la question subordonnée comme suffixe.   </content></text>
+                        <text show="swQEmbContAffix"><content>au verbe de la question subordonnée, quelques-uns comme préfixes, d’autres comme suffixes.   </content></text>
+                        <text show="swQEmbContCliticAffix"><content>ou bien au début ou à la fin de la question subordonnée comme clitique, ou au verbe de la question subordonnée comme affixe.  </content></text>
+                        <text show="swQEmbContOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/embYNCliticOther"/><content>.  </content></text>
+                        <text show="swQEmbContOtherAnd"><content>  Quelques-uns s’attachent aussi ___</content><contentCheckBoxOther contentLoc="q/embYNCliticOther"/>  <content>.</content></text>              
+                     </text>
+                  </text>
+               </p>
+               <p show="swQEmbContWordNoOrSomeAndClitic"><content>Voici les clitiques qui marquent les propositions interrogatives subordonnées:</content></p>      
+               <example show="swQEmbContWordNoOrSomeAndClitic">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Clitiques de marqueur interrogatif</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/embContCliticExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+               <p show="swQEmbContWordNoOrSomeAndAffix"><content>Les affixes qui marquent les propositions interrogatives subordonnées sont:</content></p>      
+               <example show="swQEmbContWordNoOrSomeAndAffix">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Affixes de marqueur interrogatif</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/embContAffixExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+               
+               <p show="swQEmbContWordYesOrSome">
+                  <text show="swNotVSO">
+                     <content>  Les marqueurs interrogatifs ou complétiseurs </content><text show="swQEmbContWordSome"><content>qui sont des mots indépendants </content></text>
+                     <content>se mettent </content>
+                     <text show="swQEmbContWordBefore"><content>avant le</content></text>
+                     <text show="swQEmbContWordAfter"><content>après le</content></text>
+                     <text show="swQEmbContWordBoth"><content>des deux côtés du</content></text>
+                     <text show="swQEmbContWordEither"><content>d’un côté ou de l’autre du</content></text>
+                     <text show="swQEmbContWordBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+                     <text show="swQEmbContWordAfterOrBoth"><content>après ou des deux côtés du</content></text>
+                     <text show="swQEmbContWordEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+                     <text show="swQEmbContWordNotOther"><content> reste de la question subordonnée.  </content></text>
+                     <text show="swQEmbContWordOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/embContWordOther"/><content>.  </content></text>
+                     <text show="swQEmbContWordPosAndOther"><content> reste de la question subordonnée et peut aussi se mettre ___</content> <contentCheckBoxOther contentLoc="q/embContWordOther"/> <content>. </content></text>
+                  </text>
+                  <text show="swVSO">
+                     <content>  Les marqueurs interrogatifs ou complétiseurs </content><text show="swQEmbContWordSome"><content>qui sont des mots indépendants </content></text>
+                     <content>se mettent </content>
+                     <text show="swQEmbContVSOBeforeWh"><content>avant un syntagme interrogatif initial.</content></text>
+                     <text show="swQEmbContVSOAfterWh"><content>directement après un syntagme interrogatif initial.</content></text>
+                     <text show="swQEmbContVSOEnd"><content>à la fin de la question subordonnée.</content></text>
+                     <text show="swQEmbContVSOBeforeWhOrAfter"><content>ou bien avant un syntagme interrogatif initial ou directement après.</content></text>
+                     <text show="swQEmbContVSOBeforeWhOrEnd"><content>ou bien avant un syntagme interrogatif initial ou à la fin de la question subordonnée.</content></text>
+                     <text show="swQEmbContVSOAfterWhOrEnd"><content>ou bien directement après un syntagme interrogatif initial ou à la fin de la question subordonnée.</content></text>
+                     <text show="swQEmbContVSOBeforeWhOrAfterOrEnd"><content>ou bien avant un syntagme interrogatif initial ou directement après, ou à la fin de la question subordonnée.</content></text>
+                     <text show="swQEmbContVSOOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="q/embContVSOOther"/><content>.</content></text>
+                     <text show="swQEmbContVSOPosAndOther"><content>  Quelques-uns peuvent aussi se mettre ___</content><contentCheckBoxOther contentLoc="q/embContVSOOther"/><content>.</content></text>
+                  </text>
+                  <content>  Un marqueur interrogatif ou complémentiseur est </content>
+                  <case element="q" attr="embContRequired">
+                     <caseText value="yes">obligatoire dans toute question de contenu subordonnée.</caseText>
+                     <caseText value="no">facultative dans les questions subordonnées de contenu.</caseText>
+                  </case>
+                  <content></content>
+                  <text show="swQEmbContRequiredSpecial"><content>ne s’emploie pas quand ___</content><contentCheckBoxOther contentLoc="q/embContSpecialConditions"/><content>.</content></text><content> Les marqueurs interrogatifs sont:</content>
+               </p>
+               
+               <example show="swQMainContWordYesOrSome">
+                  <table border="1">
+                     <headerRow>
+                        <headerCol>Les marqueurs interrogatifs</headerCol>
+                        <headerCol>Glose</headerCol>
+                     </headerRow>
+                     <row>
+                        <col exampleLoc="q/embContWordExample"/>
+                        <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                     </row>
+                  </table>
+               </example>     
+            </section3>
+        </section2>
+    </section1>
+   <showWhen id="swQMainYNYes">
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNo">
+      <whenValue element="q" attr="mainYNWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordYes">
+      <whenValue element="q" attr="mainYNWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNoOrSome">
+      <whenValue element="q" attr="mainYNWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainYNWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>   
+   <showWhen id="swQMainYNWordYesOrSome">
+      <whenValue element="q" attr="mainYNWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainYNWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>   
+   <showWhen id="swQMainYNProclitic">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNEnclitic">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNClitic">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNPrefix">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNSuffix">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNAffix">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticAffix">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNOtherOnly">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNOtherAnd">
+      <whenValue element="q/mainYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNoOrSomeAndClitic">
+      <whenValue element="q" attr="mainYNWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainYNWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainYNWord" value="some"/>
+      <and/>
+      <whenValue element="q/mainYNProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainYNWord" value="some"/>
+      <and/>
+      <whenValue element="q/mainYNEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNoOrSomeAndAffix">
+      <whenValue element="q" attr="mainYNWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainYNWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainYNWord" value="some"/>
+      <and/>
+      <whenValue element="q/mainYNPrefix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainYNWord" value="some"/>
+      <and/>
+      <whenValue element="q/mainYNSuffix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordBefore">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordAfter">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordBoth">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordEither">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordBeforeOrBoth">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordAfterOrBoth">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordEitherOrBoth">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNotOther">
+      <whenValue element="q/mainYNWordOther" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordOtherOnly">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainYNWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordPosAndOther">
+      <whenValue element="q/mainYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+      <or/>
+      <whenValue element="q/mainYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainYNWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainYN" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swQMainYNNoAux">
+      <whenValue element="q" attr="mainYN" value="noAux"/>
+   </showWhen>
+   
+   <showWhen id="swQEmbYNYes">
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordNo">
+      <whenValue element="q" attr="embYNWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordYes">
+      <whenValue element="q" attr="embYNWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordNoOrSome">
+      <whenValue element="q" attr="embYNWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embYNWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>   
+   <showWhen id="swQEmbYNWordYesOrSome">
+      <whenValue element="q" attr="embYNWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embYNWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>   
+   <showWhen id="swQEmbYNProclitic">
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNEnclitic">
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNClitic">
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNPrefix">
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNSuffix">
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNAffix">
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNCliticAffix">
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNOtherOnly">
+      <whenValue element="q/embYNProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNOtherAnd">
+      <whenValue element="q/embYNProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordNoOrSomeAndClitic">
+      <whenValue element="q" attr="embYNWord" value="no"/>
+      <and/>
+      <whenValue element="q/embYNProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embYNWord" value="no"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embYNWord" value="some"/>
+      <and/>
+      <whenValue element="q/embYNProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embYNWord" value="some"/>
+      <and/>
+      <whenValue element="q/embYNEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordNoOrSomeAndAffix">
+      <whenValue element="q" attr="embYNWord" value="no"/>
+      <and/>
+      <whenValue element="q/embYNPrefix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embYNWord" value="no"/>
+      <and/>
+      <whenValue element="q/embYNSuffix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embYNWord" value="some"/>
+      <and/>
+      <whenValue element="q/embYNPrefix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embYNWord" value="some"/>
+      <and/>
+      <whenValue element="q/embYNSuffix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordBefore">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordAfter">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordBoth">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordEither">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordBeforeOrBoth">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordAfterOrBoth">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordEitherOrBoth">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordNotOther">
+      <whenValue element="q/embYNWordOther" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordOtherOnly">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embYNWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbYNWordPosAndOther">
+      <whenValue element="q/embYNWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+      <or/>
+      <whenValue element="q/embYNWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embYNWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embYN" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swQEmbYNNoAux">
+      <whenValue element="q" attr="embYN" value="noAux"/>
+   </showWhen>
+   
+   <showWhen id="swQMainContProclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContProcliticAndBetweenProclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContProcliticAndBetweenEnclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContProcliticAndBetweenBoth">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContEnclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContEncliticAndBetweenProclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContEncliticAndBetweenEnclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContEncliticAndBetweenBoth">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContBetweenProclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContBetweenEnclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swQMainContClitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContBetweenClitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContCliticAndBetweenProclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContCliticAndBetweenEnclitic">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContCliticAll">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContPrefix">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContSuffix">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContAffix">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContCliticAffix">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContOtherOnly">
+      <whenValue element="q/mainContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContOtherAnd">
+      <whenValue element="q/mainContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordNoOrSomeAndClitic">
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainContProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainContBetweenEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="some"/>
+      <and/>
+      <whenValue element="q/mainContProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="some"/>
+      <and/>
+      <whenValue element="q/mainContEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordNoOrSomeAndAffix">
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainContPrefix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q/mainContSuffix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="some"/>
+      <and/>
+      <whenValue element="q/mainContPrefix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="some"/>
+      <and/>
+      <whenValue element="q/mainContSuffix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swQMainContWordBefore">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordAfter">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordBoth">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordEither">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordBeforeOrBoth">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordAfterOrBoth">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordEitherOrBoth">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordNotOther">
+      <whenValue element="q/mainContWordOther" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordOtherOnly">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordPosAndOther">
+      <whenValue element="q/mainContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+  
+   <showWhen id="swQMainContVSOBeforeWh">
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="no"/>
+   </showWhen>
+      <showWhen id="swQMainContVSOAfterWh">
+         <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="q/mainContVSOAfterWh" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="q/mainContVSOEnd" attr="checked" value="no"/>
+      </showWhen>
+   <showWhen id="swQMainContVSOEnd">
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContVSOBeforeWhOrAfter">
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainContVSOBeforeWhOrEnd">
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContVSOAfterWhOrEnd">
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContVSOBeforeWhOrAfterOrEnd">
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContVSOOtherOnly">
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/mainContVSOOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContVSOPosAndOther">
+      <whenValue element="q/mainContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContVSOAfterWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="q/mainContVSOEnd" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/mainContVSOOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContRequiredSpecial">
+      <whenValue element="q" attr="mainContRequired" value="special"/>
+   </showWhen>
+   <showWhen id="swQMainContYes">
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContNo">
+      <whenValue element="q" attr="mainCont" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainContWordNo">
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordNoOrSome">
+      <whenValue element="q" attr="mainContWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordSome">
+      <whenValue element="q" attr="mainContWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordYes">
+      <whenValue element="q" attr="mainContWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQMainContWordYesOrSome">
+      <whenValue element="q" attr="mainContWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="mainContWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="mainCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swNotVSO">
+      <whenValue element="typology" attr="wordOrder" value="VSO" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swVSO">
+      <whenValue element="typology" attr="wordOrder" value="VSO"/>
+   </showWhen>
+   <showWhen id="swQMainContNoAux">
+      <whenValue element="q" attr="mainCont" value="noAux"/>
+   </showWhen>
+
+   <showWhen id="swQEmbContProclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContProcliticAndBetweenProclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContProcliticAndBetweenEnclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContProcliticAndBetweenBoth">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContEnclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContEncliticAndBetweenProclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContEncliticAndBetweenEnclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContEncliticAndBetweenBoth">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContBetweenProclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContBetweenEnclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swQEmbContClitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContBetweenClitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContCliticAndBetweenProclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContCliticAndBetweenEnclitic">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContCliticAll">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContPrefix">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContSuffix">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContAffix">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContCliticAffix">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContOtherOnly">
+      <whenValue element="q/embContProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContOtherAnd">
+      <whenValue element="q/embContProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContBetweenProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContBetweenEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContCliticOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordNoOrSomeAndClitic">
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q/embContProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q/embContBetweenEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q/embContEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="some"/>
+      <and/>
+      <whenValue element="q/embContProclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="some"/>
+      <and/>
+      <whenValue element="q/embContEnclitic"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordNoOrSomeAndAffix">
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q/embContPrefix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q/embContSuffix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="some"/>
+      <and/>
+      <whenValue element="q/embContPrefix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="some"/>
+      <and/>
+      <whenValue element="q/embContSuffix"  attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swQEmbContWordBefore">
+      <whenValue element="q/embContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordAfter">
+      <whenValue element="q/embContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordBoth">
+      <whenValue element="q/embContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordEither">
+      <whenValue element="q/embContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordBeforeOrBoth">
+      <whenValue element="q/embContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordAfterOrBoth">
+      <whenValue element="q/embContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordEitherOrBoth">
+      <whenValue element="q/embContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordNotOther">
+      <whenValue element="q/embContWordOther" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordOtherOnly">
+      <whenValue element="q/embContWordBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordPosAndOther">
+      <whenValue element="q/embContWordBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContWordAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q/embContWordBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContWordOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+  
+   <showWhen id="swQEmbContVSOBeforeWh">
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="no"/>
+   </showWhen>
+      <showWhen id="swQEmbContVSOAfterWh">
+         <whenValue element="q/embContVSOBeforeWh" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="q/embContVSOAfterWh" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="q/embContVSOEnd" attr="checked" value="no"/>
+      </showWhen>
+   <showWhen id="swQEmbContVSOEnd">
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContVSOBeforeWhOrAfter">
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbContVSOBeforeWhOrEnd">
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContVSOAfterWhOrEnd">
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContVSOBeforeWhOrAfterOrEnd">
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContVSOOtherOnly">
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="q/embContVSOOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContVSOPosAndOther">
+      <whenValue element="q/embContVSOBeforeWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="q/embContVSOAfterWh" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="q/embContVSOEnd" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="q/embContVSOOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContRequiredSpecial">
+      <whenValue element="q" attr="embContRequired" value="special"/>
+   </showWhen>
+   <showWhen id="swQEmbContYes">
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContNo">
+      <whenValue element="q" attr="embCont" value="no"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordNo">
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordNoOrSome">
+      <whenValue element="q" attr="embContWord" value="no"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordSome">
+      <whenValue element="q" attr="embContWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordYes">
+      <whenValue element="q" attr="embContWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContWordYesOrSome">
+      <whenValue element="q" attr="embContWord" value="yes"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+      <or/>
+      <whenValue element="q" attr="embContWord" value="some"/>
+      <and/>
+      <whenValue element="q" attr="embCont" value="yes"/>
+   </showWhen>
+   <showWhen id="swQEmbContNoAux">
+      <whenValue element="q" attr="embCont" value="noAux"/>
+   </showWhen>
+
+</portion>

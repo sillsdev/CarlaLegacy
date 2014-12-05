@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="OverallTypology" count="1/3">
+    <title>Questions Générales de Typologie</title>
+    <introduction>Les réponses à ces questions seront utilisées pour définir les valeurs par défaut des autres questions sur la structure du syntagme. Si à n’importe quel moment dans PAWS vous ne savez pas la réponse à une question particulière, vous pouvez accepter la valeur par défaut prévu pour l’ordre des mots dans votre langue. Ensuite<span id="TypologyNotPractical" show="swNotPractical">, testez les structures du syntagme avec vos données et retournez pour</span> modifier vos réponses au besoin.<br/><br/>
+        Notez que la critique grammaticale comportera aussi certains énoncés fondés sur les réponses par défaut jusqu’à ce que vous les modifiez, mais les énoncés qui traitent la position des éléments spécifiques dans la structure du syntagme auront un _____ pour indiquer que l’information n’est pas encore saisie. Par conséquent, il se peut que les observations préliminaires de la critique ne seront pas totalement exactes ni complètes pour votre langue avant que les sections suivantes ne soient remplies.
+</introduction>
+    <instruction>Pensez à une ou plusieurs phrases <technicalTermRef term="ttTransitive">transitives</technicalTermRef> simples dans votre langue.
+        Celles-ci devraient être dans l’ordre normal des mots sans caractéristiques particulières, telles que <technicalTermRef term="ttFocus">focus</technicalTermRef>, 
+        <technicalTermRef term="ttTopic">thème</technicalTermRef>, <technicalTermRef term="ttPassive">passive</technicalTermRef> ou autre changements de <technicalTermRef term="ttVoice">voix</technicalTermRef>, <technicalTermRef term="ttImperative">impératifs</technicalTermRef>, <technicalTermRef term="ttInterrogative">interrogatifs</technicalTermRef>, ou <technicalTermRef term="ttNegation">négatifs</technicalTermRef>.  
+        En outre, choisissez des phrases avec des noms propres ou des syntagmes nominales simples dans les positions de sujet ou objet direct, plutôt que des pronoms. Finalement, choisissez des phrases qui ont un <technicalTermRef term="ttAgent">agent</technicalTermRef>, plutôt qu’un <technicalTermRef term="ttExperiencer">expérienceur</technicalTermRef>, comme sujet, comme dans les exemples donnés ici en français. </instruction>
+    <EnglishExample>
+        <exItem label="1.">[Jean]<sub>S</sub> [mange]<sub>V</sub> [une banana]<sub>O</sub>.</exItem>
+        <exItem label="2.">[Le chien]<sub>S</sub> [chasse]<sub>V</sub> [la balle]<sub>O</sub>.</exItem>
+    </EnglishExample>
+    <form section="typology">
+        <prompt>Entrez vos exemples ici:  (Ne saisissez pas les crochets ni les indices comme dans l’exemple – ce sont simplement pour votre information.)</prompt>
+        <textBox id="OTExample" dataItem="example" cols="50"/>
+        <radioGroup>
+            <groupName dataItem="wordOrder" default="SVO">RTypology</groupName>
+            <prompt>Sur la base de ces phrases, quel est l’ordre normal des mots de votre langue? </prompt>
+            <radio id="OTSVO" dataValue="SVO">Sujet-Verbe-Objet</radio>
+            <radio id="OTSOV" dataValue="SOV">Sujet-Objet-Verbe</radio>
+            <radio id="OTVSO" dataValue="VSO">Verbe-Sujet-Objet</radio>
+            <radio id="OTVOS" dataValue="VOS">Verbe-Objet-Sujet</radio>
+            <radio id="OTOVS" dataValue="OVS">Objet-Verbe-Sujet</radio>
+            <radio id="OTOSV" dataValue="OSV">Objet-Sujet-Verbe</radio>
+        </radioGroup>
+        <br/>
+        <buttons>
+            <button id="OverallTypologyBack" value="Back" goto="Contents.htm"/>
+            <button id="OverallTypologyNext" value="Next" goto="Case.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+   &TechnicalTerms; 
+   
+</page>

@@ -1,0 +1,112 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css"> 
+    <title>Propriétés de langue</title>
+    <!-- we keep the script file here so we can make changes between
+        processing a new language and editing an existing one -->
+    <script language="jscript" id="clientEventHandlersJS">
+        // LanguageProperties.js
+        
+        // variables used throughout functions below
+        var attr;
+        
+        function Initialize() {
+        window.external.GetAnswerValue("//language/langNames/langName[@lang='en']");
+        LangPropLangNameEn.value = window.external.OutValue;
+        window.external.GetAnswerValue("//language/langNames/langName[@lang='es']");
+        LangPropLangNameEs.value = window.external.OutValue;
+        window.external.GetAnswerValue("//language/langNames/langName[@lang='fr']");
+        LangPropLangNameFr.value = window.external.OutValue;
+        window.external.GetAnswerValue("//language/langAbbr");
+        LangPropLangAbbr.value = window.external.OutValue;
+        
+        window.external.GetAnswerValue("//language/font/fontName");
+        LangPropFont.value = window.external.OutValue;
+        window.external.GetAnswerValue("//language/font/@rtl");
+        attr = window.external.OutValue;
+        if (attr == "False")
+        LangPropRTLLTR.checked = true; else
+        LangPropRTLRTL.checked = true;
+        
+        ShowBackNextButtons.style.display = "none";
+        Return.style.display = "";
+        
+        Refresh()
+        }
+        function RLangPropRTL(radio) {
+        radio.checked = true;
+        saveData();
+        Refresh();
+        }
+        
+        function saveData() {
+        var sTemp;
+        window.external.SetAnswerValue("//language/langNames/langName[@lang='en']", LangPropLangNameEn.value);
+        window.external.SetAnswerValue("//language/langNames/langName[@lang='es']", LangPropLangNameEs.value);
+        window.external.SetAnswerValue("//language/langNames/langName[@lang='fr']", LangPropLangNameFr.value);
+        window.external.SetAnswerValue("//language/langAbbr", LangPropLangAbbr.value);
+        
+        //TODO: figure what to do if any of these are missing!
+        sTemp = "False" // use default if all else fails...
+        if (LangPropRTLLTR.checked)
+        sTemp = "False";
+        if (LangPropRTLRTL.checked)
+        sTemp = "True";
+        
+        window.external.SetAnswerValue("//language/font/@rtl", sTemp);
+        
+        window.external.LanguageNameChanged();
+        window.external.SaveData();
+        }
+        function ButtonLangPropFont() {
+        saveData();
+        window.external.ChangeFontInfo();
+        Initialize();
+        }
+        function ButtonNext() {
+        saveData();
+        window.navigate("LanguageFilesNewMode");
+        }
+        function Refresh() {
+        var valArray = new Array();
+        }
+    </script></head>
+<body onload="Initialize()">
+    <h2>Propriétés de langue</h2>
+<div class="introduction">
+    <p>Le programme de PAWS est pour une langue spécifique. Certains renseignements sont nécessaires. Entrez ci-dessous les renseignements exigés.</p>
+</div><br><div class="form">
+    <p style="margin-left: 0.125in">Entrez le nom de votre langue en anglais:<br></p>
+<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameEn" name="LangPropLangNameEn" contenteditable="inherit"></textarea>
+    <p style="margin-left: 0.125in">Entrez le nom de votre langue en espagnol:<br></p>
+    <textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameEs" name="LangPropLangNameEs" contenteditable="inherit"></textarea>
+    <p style="margin-left: 0.125in">Entrez le nom de votre langue en français:<br></p>
+    <textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameFr" name="LangPropLangNameFr" contenteditable="inherit"></textarea>
+    <br><br><p style="margin-left: 0.125in">Entrez une abréviation pour votre langue (on vous conseille d’utiliser l’Ethnologue ou le code ISO639-3):<br></p>
+<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="4" id="LangPropLangAbbr" name="LangPropLangAbbr" contenteditable="inherit"></textarea>
+        <p style="margin-left: 0.125in">Vous voyez ci-dessous le nom de la police qui sera utilisée pour afficher vos données de langue. Cliquez sur le bouton ‘Changez la police’ pour la changer ou pour changer les propriétés de la police.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="40" id="LangPropFont" name="LangPropFont" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+        <input type="button" value=" Changez la police " name="BLangPropFont" id="BLangPropFont" onclick="ButtonLangPropFont()" style="width: 125px; height: 24px"><table border="0" style="margin-left: 0.5in">
+<tr>
+    <td colspan="2"><span class="radioPrompt">On écrit dans quel sens dans votre langue?</span></td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RLangPropRTL" id="LangPropRTLLTR" onclick="RLangPropRTL(LangPropRTLLTR)" value="False"></td>
+    <td width="99%" id="LangPropRTLLTRRPrompt" onclick="RLangPropRTL(LangPropRTLLTR)" value="False" onmouseover="this.style.cursor='default'">De gauche à droite</td>
+</tr>
+<tr>
+<td valign="top"><input type="radio" name="RLangPropRTL" id="LangPropRTLRTL" onclick="RLangPropRTL(LangPropRTLRTL)" value="True"></td>
+    <td width="99%" id="LangPropRTLRTLRPrompt" onclick="RLangPropRTL(LangPropRTLRTL)" value="True" onmouseover="this.style.cursor='default'">De droite à gauche</td>
+</tr>
+</table>
+<div id="ShowBackNextButtons">
+<br/><input type="button" value="Précédent >" name="BNext" id="LangPropNext" onclick="ButtonNext()" style="width: 78px; height: 24px">
+</div>
+</div>
+<div align="center" id="Return"  class="return" >
+<a href="LeftOffAt" onclick="saveData()">Retour</a><br/>
+</div>
+</body>
+</html>

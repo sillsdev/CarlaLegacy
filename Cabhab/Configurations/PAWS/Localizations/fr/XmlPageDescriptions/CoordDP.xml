@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="CoordDP" count="2/4">
+   <title level="2">Constructions Coordonnées – Listes et Appositifs</title>
+   <introduction>En plus des constructions coordonnées simples où il y a une conjonction évidente, les syntagmes nominaux surtout peuvent avoir d’autres formes de constructions coordonnées. Nous traiterons les listes et les appositifs ici.
+	<br/><br/>
+      Les listes sont formées de trois substantifs ou plusieurs qui sont conjoints pour former un seul syntagme nominal.  Les substantifs initiaux sont séparés normalement par des virgules et il y a une conjonction évidente devant le substantif final de la liste, mais il y a d’autres possibilités, telles que 3-4.  Certains exemples français de syntagmes nominaux en forme de liste sont:
+	</introduction>
+   <EnglishExample>
+      <exItem label="1.">Jean, Guillaume, Susanne et Marie</exItem>
+      <exItem label="2.">Jean, Guillaume, Susanne et/ou Marie</exItem>
+      <exItem label="3.">Jean et Guillaume ou Susanne et Marie</exItem>
+      <exItem label="4.">un chat, deux chiens et un poulet, mais pas un singe</exItem>
+   </EnglishExample>   
+   <form section="coord" transparent="no">
+      <prompt>Entrez ici la manière dont votre langue exprime les listes dans un syntagme nominal:</prompt>
+      <textBox id="CoordListExample" dataItem="listExample"/>
+<br/><br/>
+      <introduction>Les appositifs se forment normalement d’un nom suivi d’une virgule et puis une description suivie aussi d’une virgule, ou l’ordre peut être inverti.  Des exemples en français sont:
+      </introduction>
+	<EnglishExample>
+	   <exItem label="5.">George Washington, le premier président des Etats Unis</exItem>
+	   <exItem label="6.">mon frère, Jacques</exItem>
+	</EnglishExample>
+  <br/>
+      <prompt>Entrez ici des syntagmes nominaux qui contiennent des appositifs de votre langue:</prompt>
+      <textBox id="CoordAppositiveExample" dataItem="appositiveExample"/>
+      <br/>
+      <br/>
+      <instruction id="CoordListCommaInstruction">Note that the comma is important in both of these constructions and may be useful in disambiguating list or appositive constructions from other types.  You can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the DP rule <ruleInfo>option conjListAppos</ruleInfo>.  See a similar instruction for topics.</instruction><br/>
+		<br/>
+		<buttons>
+			<button id="CoordDPBack" value="Back" goto="CoordMain.xml"/>
+		   <button id="CoordDPNext" value="Next" goto="CoordCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+   <showWhen id="swPPPosPrep">
+      <whenValue element="pp" attr="pPos" value="before"/>
+   </showWhen>
+   <showWhen id="swPPPosPost">
+      <whenValue element="pp" attr="pPos" value="after"/>
+   </showWhen>
+   <showWhen id="swPPPosBoth">
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
+   </showWhen>
+</page>

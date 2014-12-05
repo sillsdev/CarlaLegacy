@@ -43,7 +43,7 @@
       <br/>
       <br/>
       <prompt id="IPVerbIdiomExamplesPrompt">Ahora se consideren expresiones idiomáticas que consisten en un verbo y otra palabra que juntos, como una unidad, expresan una idea que no es la misma que el significado cuando se combinan los de las dos palabras independientes. Se llaman modismos.  Escriba algunos ejemplos de modismos en su lengua aquí:</prompt>
-      <textBox id="IPVerbIdiomExample" dataItem="verbIdiomExample" cols="50"/>
+      <textBox id="IPVerbIdiomExample" dataItem="idiomExample" cols="50"/>
       <instruction id="IPVerbIdiomInstruction">These multi-word idioms are best handled as a single verb entry in the lexicon using <tool>Join Compound</tool>.</instruction>
        <br/><br/>
         <buttons>

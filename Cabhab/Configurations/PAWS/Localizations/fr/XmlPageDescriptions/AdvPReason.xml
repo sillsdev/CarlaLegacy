@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPReason" count="4/6">
+    <title level="2">Adverbes et Syntagmes Adverbiaux – Adverbes de raison ou de but</title>
+    <introduction>Les adverbes de raison ou de but sont les mots comme <example>donc</example> et
+        <example>puis</example>.  Les modificateurs ne sont pas souvent utilisés avec les adverbes de raison ou de but. <br/><br/>
+        La raison ou le but peut aussi être exprimé par un syntagme prépositionnel, comme <example>pour cette raison</example>, et
+        par une proposition adverbiale qui commence avec <example>parce que</example> ou <example>puisque</example> ou <example>pour (que)</example>.  On s’occupera de <span id="AdvPReasonNorPracticalSpan" show="swNotPractical">la structure de </span>ces propositions adverbiales lors de la partie <section number="13">Propositions Adverbiales</section>.
+</introduction>
+    <form section="advp">
+        <prompt>Entrez ici vos exemples des adverbes de raison ou de but, y compris ceux qui peuvent être suivis d’une proposition:</prompt>
+        <textBox id="AdvPReasonExample" dataItem="reasonExample" rows="3"/>
+        <prompt>Entrez ici vos exemples de syntagmes prépositionnels ou postpositionnels qui expriment une raison ou un but:</prompt>
+        <textBox id="AdvPReasonPPExample" dataItem="reasonPPExample" rows="3"/>
+        <prompt>Entrez quelques exemples de chacun des boîtes ci-dessus, mais en utilisant des phrases complètes (suivi d’une nouvelle ligne après chaque exemple):</prompt>
+        <textBox id="AdvPReasonSentExample" dataItem="reasonSentExample" rows="5" cols="50"/> 
+        <br/>
+        <instruction id="AdvPReasonInstruction">In the lexicon, key the feature <feature>reason</feature> on
+all adverbs that express reason or purpose, and also on the nouns like <example>reason</example> and <example>purpose</example>.  Any multi-word forms, like <example>in order</example> are best handled as a single entry using <tool>Join Compound</tool>.
+        </instruction>
+        <br/><br/>
+        <buttons>
+            <button id="AdvPReasonBack" value="Back" goto="AdvPManner.xml"/>
+            <button id="AdvPReasonNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+</page>

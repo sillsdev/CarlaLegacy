@@ -4,7 +4,7 @@
 	<section1 id="sIP">
 		<secTitle>Basic Sentences</secTitle>
 		<p>
-			<content>This section covers copular, intransitive, transitive, ditransitive, imperative, passive and causative sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  As noted in section </content>
+			<content>This section covers copular, intransitive, transitive, ditransitive, imperative, subjunctive, conditional, passive and causative sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  As noted in section </content>
 			<sectionRef sec="sIntro"/>
 			<content>,  the typology of </content>
 			<langName/>
@@ -157,7 +157,7 @@
 	         </table>
 	      </example>
 	      
-		  <p contentType="ctComparativeIntro"><content>In contrast to copular verbs, perception verbs usually only allow an adjective phrase following them, except in superlative constructions where a nominal phrase follows a perception verb, as shown in the next section.  Some English examples with perception verbs include:</content>
+		  <p contentType="ctComparativeIntro"><content>In contrast to copular verbs, perception verbs usually only allow an adjective phrase following them, except in superlative constructions where a nominal phrase follows a perception verb, as shown in the next section.  Some English examples with perception verbs include: </content>
 			 <langData>The girl looks pretty</langData><content>, </content><langData>She seems nice</langData><content> and </content><langData>The water appears murky</langData><content>.</content></p>
 		  <p>
 			 <content>Examples of sentences with perception verbs in </content>
@@ -288,7 +288,7 @@
 
 		     <p contentType="ctComparativeIntro"><content>Comparatives where one part is better than the other compare two nominal phrases using a comparative word meaning </content><langData>than</langData><content> and include a copular or perception verb.  Degree marking occurs with the predicate adjective or nominal phrase.  In some languages, this degree marking may either be an independent degree word or an affix on the predicate adjective, as shown in the English examples: </content>
 				<langData>John is more handsome than Bill</langData><content>, </content><langData>Sue is a poorer runner than Mary</langData><content>, </content>
-		        <langData>David appears taller than Michael</langData><content> and </content><langData>Mary looks prettier than Julie</langData><content> and </content><langData>John seems less certain of his answers than Sue</langData><content>.</content><content>.</content></p>
+		        <langData>David appears taller than Michael</langData><content>, </content><langData>Mary looks prettier than Julie</langData><content> and </content><langData>John seems less certain of his answers than Sue</langData><content>.</content></p>
 			 <p contentType="ctComparativeIntro"><content>Note that there is an implied copula following the final nominal phrase in the English examples. A more complex type of comparative has an overt sentence in the place of the second noun phrase. These will be covered below.</content></p>
 		     <p contentType="ctPracticalIntro"><content >Comparatives where one part is better than the other compare two nominal phrases using a comparative word meaning </content><langData>than</langData><content> and include a copular or perception verb.  Degree marking occurs with the predicate adjective or nominal phrase. </content></p>
 		     <p><langName/><case element="ip" attr="comparative">
@@ -633,7 +633,7 @@
 				<content>.</content>
 			</p>
 	      <p>
-				<content>In ditransitive sentences </content>
+				<content>In ditransitive sentences in </content>
 				<langName/>
 				<content>, the second object </content>
 				<case element="ip" attr="diCat">
@@ -727,10 +727,10 @@
 	         <text show="swIPConditionProclitic"><content>phrasal proclitics which attach to the front of whatever word begins the conditional phrase.  </content></text>
 	         <text show="swIPConditionEnclitic"><content>phrasal enclitics which attach to the end of whatever word ends the conditional phrase.    </content></text>
 	         <text show="swIPConditionClitic"><content>phrasal clitics which attach either to the front of whatever word begins the conditional phrase or to the end of whatever word ends the conditional phrase.   </content></text>
-	         <text show="swIPConditionPrefix"><content>prefixes which attach to the head noun in the conditional phrase.  </content></text>
-	         <text show="swIPConditionSuffix"><content>suffixes which attach to the head noun in the conditional phrase.   </content></text>
-	         <text show="swIPConditionAffix"><content>affixes which attach to the head noun in the conditional phrase.   </content></text>
-	         <text show="swIPConditionCliticAffix"><content>either clitics which attach to the beginning or end of the conditional phrase, or by affixes which attach to the head noun in the conditional phrase.  </content></text>
+	         <text show="swIPConditionPrefix"><content>prefixes which attach to the main verb in the conditional phrase.  </content></text>
+	         <text show="swIPConditionSuffix"><content>suffixes which attach to the main verb in the conditional phrase.   </content></text>
+	         <text show="swIPConditionAffix"><content>affixes which attach to the main verb in the conditional phrase.   </content></text>
+	         <text show="swIPConditionCliticAffix"><content>either clitics which attach to the beginning or end of the conditional phrase, or by affixes which attach to the main verb in the conditional phrase.  </content></text>
 	         <text show="swIPConditionOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="ip/conditionOther"/><content>.  </content></text>
 	         <text show="swIPConditionOtherAnd"><content>  Some also attach ___</content><contentCheckBoxOther contentLoc="ip/conditionOther"/>  <content>.</content></text>              
 	         <content></content>
@@ -837,10 +837,10 @@
 	         <text show="swIPSubjunctiveCondProclitic"><content>phrasal proclitics which attach to the front of whatever word begins the subjunctive conditional phrase.  </content></text>
 	         <text show="swIPSubjunctiveCondEnclitic"><content>phrasal enclitics which attach to the end of whatever word ends the subjunctive conditional phrase.    </content></text>
 	         <text show="swIPSubjunctiveCondClitic"><content>phrasal clitics which attach either to the front of whatever word begins the subjunctive conditional phrase or to the end of whatever word ends the subjunctive conditional phrase.   </content></text>
-	         <text show="swIPSubjunctiveCondPrefix"><content>prefixes which attach to the head noun in the subjunctive conditional phrase.  </content></text>
-	         <text show="swIPSubjunctiveCondSuffix"><content>suffixes which attach to the head noun in the subjunctive conditional phrase.   </content></text>
-	         <text show="swIPSubjunctiveCondAffix"><content>affixes which attach to the head noun in the subjunctive conditional phrase.   </content></text>
-	         <text show="swIPSubjunctiveCondCliticAffix"><content>either clitics which attach to the beginning or end of the subjunctive conditional phrase, or by affixes which attach to the head noun in the subjunctive conditional phrase.  </content></text>
+	         <text show="swIPSubjunctiveCondPrefix"><content>prefixes which attach to the main verb in the subjunctive conditional phrase.  </content></text>
+	         <text show="swIPSubjunctiveCondSuffix"><content>suffixes which attach to the main verb in the subjunctive conditional phrase.   </content></text>
+	         <text show="swIPSubjunctiveCondAffix"><content>affixes which attach to the main verb in the subjunctive conditional phrase.   </content></text>
+	         <text show="swIPSubjunctiveCondCliticAffix"><content>either clitics which attach to the beginning or end of the subjunctive conditional phrase, or by affixes which attach to the main verb in the subjunctive conditional phrase.  </content></text>
 	         <text show="swIPSubjunctiveCondOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="ip/subjunctiveCondOther"/><content>.  </content></text>
 	         <text show="swIPSubjunctiveCondOtherAnd"><content>  Some also attach ___</content><contentCheckBoxOther contentLoc="ip/subjunctiveCondOther"/>  <content>.</content></text>              
 	         <content></content>
@@ -1125,9 +1125,32 @@
 	         <interlinear exampleLoc="ip/causativeOtherExample"/>
 	      </example>
 	      
-
 	   </section2>
-
+		<section2 id="sIPApplicatives" show="swIPApplicativeYes">
+			<secTitle>Applicatives</secTitle>
+			<p contentType="ctComparativeIntro"><content>Some languages have an additional applicative construction.  Applicative is a verb voice that promotes an oblique argument of the verb to the object argument, and indicates the oblique role within the meaning of the verb.  An intransitive verb becomes transitive and a transitive verb becomes ditransitive when the applicative affix is added.  This is in contrast to expressing these arguments with adpositions.</content></p>
+			<p contentType="ctComparativeIntro"><content>Applicatives may be used for comitative, locative, instrumental and benefactive roles.  Some languages allow more than one applicative in a single verb.</content></p>
+			<p contentType="ctPracticalIntro"><content>Applicative is a verb voice that promotes an oblique argument of the verb to the object argument, and indicates the oblique role within the meaning of the verb.  An intransitive verb becomes transitive and a transitive verb becomes ditransitive when the applicative affix is added.</content></p>
+			<p><content>In </content><langName/><content>, the affixes used to mark applicatives are:</content></p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>Applicative Affix</headerCol>
+						<headerCol>Gloss</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/applicativeVoice"/>
+						<col ><gloss><content>ENTER GLOSS</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p><content>Examples of applicatives in </content><langName/><content> are:</content></p>
+			<example>
+				<interlinear exampleLoc="ip/applicativeExample"/>
+			</example>
+		</section2>
+		
+		
 	</section1>
 	<showWhen id="swVSOorOSV">
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
@@ -1915,7 +1938,10 @@
             <and/>
             <whenValue element="ip/subjunctiveCondWordOther" attr="checked" value="yes"/>
          </showWhen>
-   
+	<showWhen id="swIPApplicativeYes">
+		<whenValue element="ip" attr="applicative" value="yes"/>
+	</showWhen>
+	
    <showWhen id="swIPAntipassiveYes">
       <whenValue element="ip" attr="antipassive" value="yes"/>
    </showWhen>

@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="NPArtPosition" count="2/2">
+    <title level="2">Syntagmes Nominaux – Articles et Démonstratifs: Signes de position et d’accord</title>
+    <form section="np">
+        <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical"><br/>Nous sommes maintenant prêts à construire la prochaine partie de l’arbre de structure du syntagme.  
+        </span>Entrez ici des exemples de syntagmes nominaux avec <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">articles et démonstratifs</span><span id="NPArtSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemSpan" show="swNPArtAndDemDem">démonstratifs</span>:</prompt>
+        <textBox id="NPArtPosExample" show="swNPArtAndDem" dataItem="example"/>
+        <prompt id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Puisque votre langue n’a pas d’articles ou de démonstratifs exprimés comme mots indépendants, nous n’avons pas besoin de déterminer pour eux une position syntactique.</prompt>
+<instruction id="NPArtAndDemNoInstruction2" show="swNPArtAndDemNo">You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the section on possessors.</instruction>
+      
+       <checkboxGroup id="NPArtAndDemArtPosTable" show="swNPArtAndDemArt">
+           <prompt><br/>Où est-ce que l’article se trouve par rapport au nom? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+           <checkbox id="NPArtAndDemArtPosBefore" dataItem="artOnlyBefore">Avant</checkbox>
+           <checkbox id="NPArtAndDemArtPosAfter" dataItem="artOnlyAfter">Après</checkbox>
+           <checkbox id="NPArtAndDemArtPosBoth" dataItem="artOnlyBoth">Des deux côtés dans le même syntagme nominal</checkbox>
+           <checkbox id="NPArtAndDemArtPosOther" dataItem="artOnlyOther">Dans ma langue, les articles peuvent se trouver comme suit: <textBox  id="NPArtAndDemArtPosOtherContent" dataItem="artOnlyOther" rows="2"/></checkbox>
+       </checkboxGroup>
+        <prompt id="NPArtAndDemArtPosNoCheckPrompt" show="swNPArtAndDemArtAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les articles par rapport au nom dans votre langue ou changez la réponse sur la page précédente sur une qui n’inclut pas des articles qui sont écrits comme mots indépendants.</prompt>
+       <radioGroup id="NPArtAndDemArtRequiredTable" show="swNPArtAndDemArt">
+          <groupName dataItem="artRequired" default="no">RNPArtAndDemArtRequired</groupName>
+           <prompt><br/>Est-ce qu’un article doit être présent dans chaque syntagme nominal (ne pas tenir compte maintenant des noms possessifs)?</prompt>
+           <radio id="NPArtAndDemArtRequiredNo" dataValue="no">Non, un article est toujours facultatif</radio>
+           <radio id="NPArtAndDemArtRequiredMass" dataValue="mass" show="swNPArtAgreementNumberYes">Non, un article est factultatif avec des noms au pluriel ou des noms de <technicalTermRef term="ttMass">masse</technicalTermRef> mais il est exigé avec des noms au singulier</radio>
+           <radio id="NPArtAndDemArtRequiredYes" dataValue="yes">Oui, un article est toujours exigé</radio>
+     </radioGroup>          
+ 
+       <checkboxGroup id="NPArtAndDemDemPosTable" show="swNPArtAndDemDem">
+           <prompt><br/>Où le démonstratif se trouve-t-il par rapport au nom? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+           <checkbox id="NPArtAndDemDemPosBefore" dataItem="demOnlyBefore">Avant</checkbox>
+           <checkbox id="NPArtAndDemDemPosAfter" dataItem="demOnlyAfter">Après</checkbox>
+           <checkbox id="NPArtAndDemDemPosBoth" dataItem="demOnlyBoth">Des deux côtés dans le même syntagme nominal</checkbox>
+           <checkbox id="NPArtAndDemDemPosOther" dataItem="demOnlyOther">Dans ma langue, les démonstratifs peuvent se trouver comme suit: <textBox  id="NPArtAndDemDemPosOtherContent" dataItem="demOnlyOther" rows="2"/></checkbox>
+       </checkboxGroup>
+        <prompt id="NPArtAndDemDemPosNoCheckPrompt" show="swNPArtAndDemDemAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les démonstratifs par rapport au nom dans votre langue, ou changez la réponse sur la page précédente  sur une qui n’inclut pas des démonstratifs qui sont écrits comme des mots indépendants.</prompt>
+       <radioGroup id="NPArtAndDemDemRequiredTable" show="swNPArtAndDemDem">
+            <groupName dataItem="demRequired" default="no">RNPArtAndDemDemRequired</groupName>
+           <prompt><br/>Un démonstratif est-il exigé dans tous les syntagmes nominaux (ne pas tenir compte maintenant des noms possessifs)?</prompt>
+           <radio id="NPArtAndDemDemRequiredNo" dataValue="no">Non, un démonstratif est toujours facultatif</radio>
+           <radio id="NPArtAndDemDemRequiredMass" dataValue="mass" show="swNPDemAgreementNumberYes">Non, un démonstratif est facultatif avec des noms au pluriel ou des noms de <technicalTermRef term="ttMass">masse</technicalTermRef> mais est exigé avec des noms au singulier</radio>
+           <radio id="NPArtAndDemDemRequiredYes" dataValue="yes">Oui, un démonstratif est toujours exigé</radio>
+       </radioGroup>
+        
+        <radioGroup id="NPDemClassifierSpecificTable" show="swOTClassifierSpecificAndNPArtAndDemDem">
+            <groupName dataItem="classifierPresentDem" default="no">RNPDemClassifierPresent</groupName>
+            <prompt><br/>En regardant les exemples, est-ce-que les classificateurs sont utilisés avec un démonstratif dans ces syntagmes nominaux?</prompt>
+            <radio id="NPDemClassifierPresentYes"  dataValue="yes">Oui, un classificateur est exigé dans toutes les syntagmes nominaux qui contiennent un démonstratif</radio>
+            <radio id="NPDemClassifierPresentSome" dataValue="some">Un classificateur est présent dans certains syntagmes nominaux qui contiennent un démonstratif, mais n’est pas exigé dans tous</radio>
+            <radio id="NPDemClassifierPresentNo" dataValue="no">Non, un classificateur n’est jamais utilisé dans ce type de syntagme nominal</radio>
+        </radioGroup>
+        <checkboxGroup id="NPDemClassifierSpecificPos" show="swOTClassifierSpecificAndNPArtAndDemDemAndNPDemClassifierPresentYesOrSome">
+            <prompt><br/>En regardant les exemples, où les classificateurs se trouvent-ils par rapport au démonstratif et au nom? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+            <checkbox id="NPDemClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificDemPosBeforeBoth">Premièrement, avant le démonstratif et le nom</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificDemPosAfterBoth">Finalement, après le nom et le démonstratif</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosAfterDemBeforeN"  dataItem="classifierSpecificDemPosAfterDemBeforeN">Après le démonstratif mais avant le nom</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosAfterNBeforeDem"  dataItem="classifierSpecificDemPosAfterNBeforeDem">Après le nom mais avant le démonstratif</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosPrefixDem"  dataItem="classifierSpecificDemPosPrefixDem">Comme préfixe sur le démonstratif</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosSuffixDem"  dataItem="classifierSpecificDemPosSuffixDem">Comme suffixe sur le démonstratif</checkbox>
+            <checkbox id="NPDemClassifierSpecificPosOther"  dataItem="classifierSpecificDemPosOther">Dans ma langue, les classificateurs peuvent se trouver comme suit: <textBox  id="NPClassifierSpecificDemPosOtherContent" dataItem="classifierSpecificDemPosOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="NPDemClassifierSpecificPosNoCheckPrompt" show="swNPDemClassifierPresentYesOrSomeAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les classificateurs par rapport au démonstratif et au nom dans votre langue, ou changez votre réponse ci-dessus en « Non, un classificateur n’est jamais utilisé dans ce type de syntagme nominal ».</prompt>
+        
+       <radioGroup id="NPArtAndDemBothTable" show="swNPArtAndDemBoth">
+            <groupName dataItem="artBothCooccur" default="different">RNPArtAndDemBoth</groupName>
+           <prompt><br/>Est-ce que les articles et les démonstratifs se trouvent ensemble dans le même syntagme nominal?</prompt>
+           <radio id="NPArtAndDemBothCooccurNo" dataValue="no">Non, ils se trouvent dans la même position comme en français</radio>
+           <radio id="NPArtAndDemBothCooccurDiff" dataValue="different">Non, mais ils se trouvent dans de différentes positions par rapport au nom</radio>
+           <radio id="NPArtAndDemBothCooccurYes" dataValue="yes">Oui, les deux peuvent être présents dans un simple syntagme nominal</radio>
+       </radioGroup>
+       <checkboxGroup id="NPArtAndDemBothCooccurNoPosTable" show="swNPArtAndDemBothCooccurNo">
+           <prompt><br/>Où se trouve le démonstratif ou l’article par rapport au nom?</prompt>
+           <checkbox id="NPArtAndDemBothCooccurNoPosBefore" dataItem="demOrArtPosBefore">Avant</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurNoPosAfter" dataItem="demOrArtPosAfter">Après</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurNoPosBoth" dataItem="demOrArtPosBoth">Sur les deux côtés dans le même syntagme nominal</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurNoPosOther" dataItem="demOrArtPosOther">Dans ma langue, le démonstratif ou l’article peut se trouver comme suit: <textBox  id="NPArtAndDemBothCooccurNoPosOtherContent" dataItem="demOrArtPosOther" rows="2"/></checkbox>
+       </checkboxGroup>
+        <prompt id="NPArtAndDemBothCooccurNoPosNoCheckPrompt" show="swNPArtAndDemBothCooccurNoAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les articles et démonstratifs par rapport au nom dans votre langue.</prompt>
+ 
+ 
+       <checkboxGroup id="NPArtAndDemBothCooccurYesDemPosTable" show="swNPArtAndDemBothCooccurYes">
+           <prompt><br/>Où le démonstratif se trouve-t-il par rapport au nom? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+           <checkbox id="NPArtAndDemBothCooccurYesDemPosBefore" dataItem="demAndArtDemBefore">Avant</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurYesDemPosAfter" dataItem="demAndArtDemAfter">Après</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurYesDemPosBoth" dataItem="demAndArtDemBoth">Sur les deux côtés dans le même syntagme nominal</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurYesDemPosOther" dataItem="demAndArtDemOther">Dans ma langue, les démonstratifs peuvent se trouver comme suit: <textBox  id="NPArtAndDemBothCooccurYesDemPosOtherContent" dataItem="demAndArtDemOther" rows="2"/></checkbox>
+       </checkboxGroup>
+        <prompt id="NPArtAndDemBothCooccurYesDemPosNoCheckPrompt" show="swNPArtAndDemBothCooccurYesAndDemPosNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les démonstratifs par rapport au nom dans votre langue.</prompt>
+       
+       <checkboxGroup id="NPArtAndDemBothCooccurYesArtPosTable" show="swNPArtAndDemBothCooccurYes">
+           <prompt><br/>Où l’article se trouve-t-il par rapport au nom? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+           <checkbox id="NPArtAndDemBothCooccurYesArtPosBefore" dataItem="demAndArtArtBefore">Avant</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurYesArtPosAfter" dataItem="demAndArtArtAfter">Après</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurYesArtPosBoth" dataItem="demAndArtArtBoth">Sur les deux côtés dans le même syntagme nominal</checkbox>
+           <checkbox id="NPArtAndDemBothCooccurYesArtPosOther" dataItem="demAndArtArtOther">Dans ma langue, les articles peuvent se trouver comme suit: <textBox  id="NPArtAndDemBothCooccurYesArtPosOtherContent" dataItem="demAndArtArtOther" rows="2"/></checkbox>
+       </checkboxGroup>
+        <prompt id="NPArtAndDemBothCooccurYesArtPosNoCheckPrompt" show="swNPArtAndDemBothCooccurYesAndArtPosNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les articles par rapport au nom dans votre langue.</prompt>
+       <instruction id="NPArtDemEitherSideRestrictedInstruction" show="swNPArtDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any articles or demonstratives which can occur on either side.</instruction>
+       <instruction id="NPArtEitherSideRestrictedInstruction" show="swNPArtEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any articles which can occur on either side.</instruction>
+       <instruction id="NPDemEitherSideRestrictedInstruction" show="swNPDemEitherSideRestricted">In the lexicon, mark those which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any demonstratives which can occur on either side.</instruction>
+       <radioGroup id="NPArtAndDemBothCooccurNoRequiredTable" show="swNPArtAndDemBothCooccurNo">
+                <groupName dataItem="demOrArtRequired" default="no">RNPArtAndDemBothCooccurNoRequired</groupName>
+           <prompt><br/>Est-ce qu’un démonstratif ou un article doit être présent dans tous les syntagmes nominaux (ne pas tenir compte des noms possessifs maintenant)?</prompt>
+           <radio id="NPArtAndDemBothCooccurNoRequiredNo" dataValue="no">Non, la présence d’un démonstratif ou d’un article est toujours facultatif</radio>
+           <radio id="NPArtAndDemBothCooccurNoRequiredMass" dataValue="mass" show="swNPArtOrDemAgreementNumberYes">Non, un démonstratif ou un article est facultatif avec des noms au pluriel ou des noms de <technicalTermRef term="ttMass">masse</technicalTermRef> mais est exigé avec des noms au singulier</radio>
+           <radio id="NPArtAndDemBothCooccurNoRequiredYes" dataValue="yes">Oui, ou un démonstratif ou un article est toujours exigé</radio>
+            </radioGroup>
+          
+          <radioGroup id="NPArtAndDemBothCooccurYesDemRequiredTable" show="swNPArtAndDemBothCooccurYes">
+             <groupName dataItem="demAndArtDemRequired" default="no">RNPArtAndDemBothCooccurYesDemRequired</groupName>
+              <prompt><br/>Est-ce qu’un démonstratif doit être présent dans tous les syntagmes nominaux (ne pas tenir compte des noms possessifs maintenant)?</prompt>
+              <radio id="NPArtAndDemBothCooccurYesDemRequiredNo" dataValue="no">Non, un démonstratif est toujours facultatif</radio>
+              <radio id="NPArtAndDemBothCooccurYesDemRequiredMass" dataValue="mass" show="swNPDemAgreementNumberYes">Non, un démonstratif est facultatif avec des noms au pluriel ou des noms de <technicalTermRef term="ttMass">masse</technicalTermRef> mais est exigé avec des noms au singulier</radio>
+              <radio id="NPArtAndDemBothCooccurYesDemRequiredYes" dataValue="yes">Oui, un démonstratif est toujours exigé</radio>
+          </radioGroup>
+          <radioGroup id="NPArtAndDemBothCooccurYesArtRequiredTable" show="swNPArtAndDemBothCooccurYes">
+             <groupName dataItem="demAndArtArtRequired" default="no">RNPArtAndDemBothCooccurYesArtRequired</groupName>
+              <prompt><br/>Est-ce qu’un article doit être présent dans tous les syntagmes nominaux (ne pas tenir compte des noms possessifs maintenant)?</prompt>
+              <radio id="NPArtAndDemBothCooccurYesArtRequiredNo" dataValue="no">Non, un article est toujours facultatif</radio>
+              <radio id="NPArtAndDemBothCooccurYesArtRequiredMass" dataValue="mass" show="swNPArtAgreementNumberYes">Non, un article est facultatif avec des noms au pluriel ou des noms de <technicalTermRef term="ttMass">masse</technicalTermRef> mais est exigé avec des noms au singulier</radio>
+              <radio id="NPArtAndDemBothCooccurYesArtRequiredYes" dataValue="yes">Oui, un article est toujours exigé</radio>
+          </radioGroup>
+        
+        <radioGroup id="NPDemBothClassifierSpecificTable" show="swOTClassifierSpecificAndNPArtAndDemBoth">
+            <groupName dataItem="classifierPresentDemBoth" default="no">RNPDemBothClassifierPresent</groupName>
+            <prompt><br/>En regardant les exemples, les classificateurs sont-ils utilisés dans ces syntagmes nominaux avec un démonstratif?</prompt>
+            <radio id="NPDemBothClassifierPresentYes"  dataValue="yes">Oui, un classificateur est exigé dans tous les syntagmes qui contiennent un démonstratif</radio>
+            <radio id="NPDemBothClassifierPresentSome" dataValue="some">Un classificateur est présent dans certains syntagmes nominaux qui contiennent un démonstratif mais n’est pas exigé dans tous</radio>
+            <radio id="NPDemBothClassifierPresentNo" dataValue="no">Non, un classificateur n’est jamais utilisé dans ce type de syntagme nominal</radio>
+        </radioGroup>
+        <checkboxGroup id="NPDemBothClassifierSpecificPos" show="swOTClassifierSpecificAndNPArtAndDemBothAndNPDemBothClassifierPresentYesOrSome">
+            <prompt><br/>En regardant les exemples, où les classificateurs se trouvent-ils par rapport au démonstratif et au nom? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+            <checkbox id="NPDemBothClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificDemBothPosBeforeBoth">Premièrement avant le démonstratif et le nom</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificDemBothPosAfterBoth">Finalement, après le nom et le démonstratif</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosAfterDemBeforeN"  dataItem="classifierSpecificDemBothPosAfterDemBeforeN">Après le démonstratif mais avant le nom</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosAfterNBeforeDem"  dataItem="classifierSpecificDemBothPosAfterNBeforeDem">Après le nom mais avant le démonstratif</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosPrefixDem"  dataItem="classifierSpecificDemBothPosPrefixDem">Comme préfixe sur le démonstratif</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosSuffixDem"  dataItem="classifierSpecificDemBothPosSuffixDem">Comme suffixe sur le démonstratif</checkbox>
+            <checkbox id="NPDemBothClassifierSpecificPosOther"  dataItem="classifierSpecificDemBothPosOther">Dans ma langue, les classificateurs peuvent se trouver dans la position suivante: <textBox  id="NPClassifierSpecificDemBothPosOtherContent" dataItem="classifierSpecificDemBothPosOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="NPDemBothClassifierSpecificPosNoCheckPrompt" show="swNPDemBothClassifierPresentYesOrSomeAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les classificateurs par rapport au démonstratif et au nom dans votre langue, ou changez votre réponse ci-dessus en « Non, un classificateur n’est jamais utilisé dans ce type de syntagme nominal. ».</prompt>
+        
+        <instruction id="NPArtAgreementNumberInstruction" show="swNPArtAgreementNumberYes">
+To handle the number agreement, in the lexicon:
+<ul>
+                <li>Mark the articles that can only go with singular nouns with the feature <feature>singular</feature>.</li>
+                <li>Mark the articles that can only go with plural nouns with the feature <feature>plural</feature>.</li>
+                <li>Do not add any feature for number agreement to ones like <example>the</example> in English which can go with either singular or plural nouns.</li>
+                <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate articles.
+                </li>
+</ul>
+            </instruction>
+        <instruction id="NPDemAgreementNumberInstruction" show="swNPDemAgreementNumberYes">
+            To handle the number agreement, in the lexicon:
+            <ul>
+                <li>Mark the demonstratives that can only go with singular nouns with the feature <feature>singular</feature>.</li>
+                <li>Mark the demonstratives that can only go with plural nouns with the feature <feature>plural</feature>.</li>
+                <li>Do not add any feature for number agreement to any which can go with either singular or plural nouns.</li>
+                <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate demonstratives.
+                </li>
+            </ul>
+        </instruction>
+        <instruction id="NPAgreementNumberInstruction" show="swNPAgreementNumberYes">
+                We will assume that all nouns are singular by default.  Therefore, only the plural nouns need to be marked.  In the lexicon:
+<ul>
+                <li>Add the feature <feature>plural</feature> to any affixes which can be added to a noun to make it plural.</li>
+                <li>Also, add the feature <feature>plural</feature> to any nouns which are inherently plural (such as <example>scissors</example> or <example>pants</example> in English), or exceptionally don’t take an affix.</li>
+                <li>Any nouns which do not make a distinction between singular and plural forms, such as <example>deer</example> in English, need to have two entries in the lexicon, one marked with the feature <feature>plural</feature> and the other for singular (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+                <li id="NPArtDemMassSpan" show="swNPArtDemMassYes">All mass nouns need to have the feature <feature>mass</feature> so that <span id="NPArtOnlyMassSpan" show="swNPArtAndDemArt">an article</span><span id="NPDemOnlyMassSpan" show="swNPArtAndDemDem">a demonstrative</span><span id="NPArtAndDemMassSpan" show="swNPArtAndDemBoth">an article or demonstrative</span> will not be required.</li>
+            </ul>
+        </instruction>
+        <instruction id="NPArtAgreementAnimacyInstruction" show="swNPArtAgreementAnimacyYes">
+To handle animacy agreement:
+<ul>
+                <li>Mark the <span id="NPArtOnlyAnimateSpan" show="swNPArtAndDemArt">articles</span>
+<span id="NPDemOnlyAnimateSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemAnimateSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+                <li>Mark the <span id="NPArtOnlyInanimateSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyInanimateSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemInanimateSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+                <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
+                <li>If your language makes the further distinction between human and nonhuman, add the feature <feature>human</feature> to the <span id="NPArtOnlyHumanSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyHumanSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemHumanSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with human nouns and add the feature <feature>-human</feature> to the <span id="NPArtOnlyNonHumanSpan" show="swNPArtAndDemArt">articles</span>
+<span id="NPDemOnlyNonHumanSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemNonHumanSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with nonhuman nouns.</li>
+            </ul>
+We will assume that all (common) nouns are inanimate and nonhuman by default. Therefore, only the animate nouns need to be marked.  In the lexicon, add the feature <feature>animate</feature> to any animate nouns, such as <example>person</example>, <example>people</example>, <example>crowd</example>, <example>animal</example>, and names of types of animals which are not proper names.  Also add the feature <feature>human</feature> as appropriate if your language makes the further distinction between human and nonhuman nouns.  (Proper names will be dealt with in <section number="6">Proper Names</section>.)
+</instruction>
+        <instruction id="NPArtAgreementGenderInstruction" show="swNPArtAgreementGenderYes">
+Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any <span id="NPArtOnlyGenderSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyGenderSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemGenderSpan" show="swNPArtAndDemBoth">articles or demonstratives</span> that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.<br/>
+            <br/>
+We will assume that all nouns are masculine by default.  Therefore, only the feminine and neuter nouns need to be marked.  In the lexicon:
+<ul>
+                <li>Add the feature <feature>feminine</feature> to any affixes which can be added to a noun to make it feminine.  Add the feature <feature>neuter</feature> to any affixes which can be added to a noun to make it neuter.</li>
+                <li>Also, add the feature <feature>feminine</feature> to any nouns which are inherently feminine, or exceptionally don’t take an affix.  Similarly, add the feature <feature>neuter</feature> to any nouns which are inherently neuter, or exceptionally don’t take an affix.</li>
+                <li>Any nouns which do have the same form for both masculine and feminine, but which can take different forms of the <span id="NPArtOnlyGender2Span" show="swNPArtAndDemArt">articles</span>
+<span id="NPDemOnlyGender2Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemGender2Span" show="swNPArtAndDemBoth">articles and demonstratives</span> based on gender need to have two entries in the lexicon, one marked with the feature <feature>feminine</feature> and the other for masculine (which can be explicitly marked or allowed to use the default).  The parser will choose the correct form based on the context.</li>
+            </ul>
+        </instruction>
+        <instruction id="NPArtAgreementClassInstruction" show="swNPArtAgreementClassYes">
+To handle class marking and agreement:
+<ul>
+   <li>It is most likely the case that the same affixes that mark the class number or type on <span id="NPArtOnlyClass1Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClass1Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass1Span" show="swNPArtAndDemBoth">articles and demonstratives</span> (and possibly adjectives too) are also used on nouns.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology Questions – Noun Classes and Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+   <li>Any cases where <span id="NPArtOnlyClass2Span" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClass2Span" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClass2Span" show="swNPArtAndDemBoth">articles, demonstratives</span> or nouns do not have an affix which marks the class will require marking of the class feature on the particular lexical item in the lexicon.   Mark the <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with a particular class with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology Questions – Noun Classes and Classifiers</section>.</li>
+            </ul>
+        </instruction>
+        <br/>
+        <buttons>
+            <button id="NPArtPosBack" value="Back" goto="NPArtDem.xml"/>
+            <button id="NPArtPosNext" value="Next" goto="NPContents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swNPArtAndDem">
+        <not/>
+        <whenValue element="np" attr="artAndDem" value="no"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemNo">
+        <whenValue element="np" attr="artAndDem" value="no"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemArt">
+        <whenValue element="np" attr="artAndDem" value="article"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemArtPosEither">
+        <whenValue element="np" attr="artAndDem" value="article"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemArtPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemArtPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemArtPosAfter"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemArtPosBothSidesRequiredMassorYes">
+        <whenValue element="np" attr="artAndDem" value="article"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemArtPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemArtPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemArtPosAfter"/>
+       <closeParen/>
+       <and/>
+        <openParen/>
+        <whenRadio button="NPArtAndDemArtRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemArtRequiredYes"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemArtPosBothRequiredMass">
+        <whenValue element="np" attr="artAndDem" value="article"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemArtPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemArtPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemArtPosAfter"/>
+       <closeParen/>
+       <and/>
+        <whenRadio button="NPArtAndDemArtRequiredMass"/>
+    </showWhen>
+   <showWhen id="swNPArtAndDemArtAndNoCheck">
+      <whenValue element="np" attr="artAndDem" value="article"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemArtPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemArtPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemArtPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemArtPosOther"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemAndNoCheck">
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemDemPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemDemPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemDemPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemDemPosOther"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDem">
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemDemPosBothSidesRequiredMassorYes">
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <and/>
+       <openParen/>
+        <whenCheckbox button="NPArtAndDemDemPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemDemPosBefore"/>
+        <and/>
+       <whenCheckbox button="NPArtAndDemDemPosAfter"/>
+       <closeParen/>
+       <and/>
+       <openParen/>
+        <whenRadio button="NPArtAndDemDemRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemDemRequiredYes"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemDemPosBothRequiredMass">
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemDemPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemDemPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemDemPosAfter"/>
+       <closeParen/>
+       <and/>
+        <whenRadio button="NPArtAndDemDemRequiredMass"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBoth">
+        <whenValue element="np" attr="artAndDem" value="both"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurNo">
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <whenRadio button="NPArtAndDemBothCooccurNo"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurNoPosEither">
+        <whenRadio button="NPArtAndDemBothCooccurNo"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosAfter"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurNoPosBothSidesRequiredMassorYes">
+        <whenRadio button="NPArtAndDemBothCooccurNo"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosAfter"/>
+       <closeParen/>
+       <and/>
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurNoRequiredYes"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurNoPosBothRequiredMass">
+        <whenRadio button="NPArtAndDemBothCooccurNo"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurNoPosAfter"/>
+       <closeParen/>
+       <and/>
+        <whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurYes">
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurYes"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurDiff"/>
+        <closeParen/>
+    </showWhen>
+   <showWhen id="swNPArtAndDemBothCooccurYesAndDemPosNoCheck">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPArtAndDemBothCooccurYes"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBothCooccurDiff"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosOther"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothCooccurYesAndArtPosNoCheck">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPArtAndDemBothCooccurYes"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBothCooccurDiff"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosOther"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBothCooccurNoAndNoCheck">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/>
+      <whenRadio button="NPArtAndDemBothCooccurNo"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurNoPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurNoPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurNoPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPArtAndDemBothCooccurNoPosOther"/>
+   </showWhen>
+   
+    <showWhen id="swNPArtAndDemBothCooccurYesDemPosEither">
+        <whenRadio button="NPArtAndDemBothCooccurYes"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosAfter"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurYesDemPosBothSidesRequiredMassorYes">
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurYes"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurDiff"/>
+        <closeParen/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosAfter"/>
+       <closeParen/>
+       <and/>
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurYesDemRequiredYes"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurYesDemPosBothRequiredMass">
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurYes"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurDiff"/>
+        <closeParen/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosAfter"/>
+       <closeParen/>
+       <and/>
+        <whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurYesArtPosEither">
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurYes"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurDiff"/>
+        <closeParen/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosAfter"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurYesArtPosBothSidesRequiredMassorYes">
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurYes"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurDiff"/>
+        <closeParen/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosAfter"/>
+       <closeParen/>
+       <and/>
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurYesArtRequiredYes"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBothCooccurYesArtPosBothRequiredMass">
+        <openParen/>
+        <whenRadio button="NPArtAndDemBothCooccurYes"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurDiff"/>
+        <closeParen/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosAfter"/>
+       <closeParen/>
+       <and/>
+        <whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
+    </showWhen>
+    <showWhen id="swNPArtEitherSideRestricted">
+        <whenValue element="np" attr="artAndDem" value="article"/>
+        <and/>
+       <openParen/>
+        <whenCheckbox button="NPArtAndDemArtPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemArtPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemArtPosAfter"/>
+      <closeParen/>
+    </showWhen>
+    <showWhen id="swNPDemEitherSideRestricted">
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <and/>
+       <openParen/>
+       <whenCheckbox button="NPArtAndDemDemPosBoth"/>
+       <or/>
+       <whenCheckbox button="NPArtAndDemDemPosBefore"/>
+       <and/>
+       <whenCheckbox button="NPArtAndDemDemPosAfter"/>
+       <closeParen/>
+    </showWhen>
+   <showWhen id="swNPArtDemEitherSideRestricted">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <and/>
+    <openParen/>  <openParen/>
+      <whenRadio button="NPArtAndDemBothCooccurNo"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurNoPosBoth"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBothCooccurNo"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurNoPosBefore"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurNoPosAfter"/>
+      <closeParen/>
+<or/>
+      <openParen/>
+      <not/>     <whenRadio button="NPArtAndDemBothCooccurNo"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBoth"/>
+      <or/>
+      <not/>     <whenRadio button="NPArtAndDemBothCooccurNo"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosBefore"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesArtPosAfter"/>
+      <closeParen/>
+      <or/>
+      <openParen/>
+      <not/>     <whenRadio button="NPArtAndDemBothCooccurNo"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBoth"/>
+      <or/>
+      <not/>     <whenRadio button="NPArtAndDemBothCooccurNo"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosBefore"/>
+      <and/>
+      <whenCheckbox button="NPArtAndDemBothCooccurYesDemPosAfter"/>
+      <closeParen/> <closeParen/>
+   </showWhen>
+   <showWhen id="swNPArtAgreementNumberYes">
+        <openParen/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="both"/>
+      <closeParen/>
+       <and/>
+       <whenValue element="np" attr="artPl" value="yes"/>
+        <and/>
+        <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPDemAgreementNumberYes">
+        <openParen/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <or/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <closeParen/>
+        <and/>
+        <whenValue element="np" attr="demPl" value="yes"/>
+        <and/>
+        <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtOrDemAgreementNumberYes">
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <whenRadio button="NPArtAndDemBothCooccurNo"/>
+        <and/>
+        <whenValue element="np" attr="demPl" value="yes"/>
+        <and/>
+        <whenValue element="np" attr="agreeNumber" value="yes"/>
+<or/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <whenRadio button="NPArtAndDemBothCooccurNo"/>
+            <and/>
+            <whenValue element="np" attr="artPl" value="yes"/>
+            <and/>
+            <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPAgreementNumberYes">
+        <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtAgreementAnimacyYes">
+       <openParen/>
+       <whenValue element="np" attr="artAndDem" value="article"/>
+       <or/>
+       <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+       <or/>
+       <whenValue element="np" attr="artAndDem" value="both"/>
+       <closeParen/>
+       <and/>
+       <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtAgreementGenderYes">
+       <openParen/>
+       <whenValue element="np" attr="artAndDem" value="article"/>
+       <or/>
+       <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+       <or/>
+       <whenValue element="np" attr="artAndDem" value="both"/>
+       <closeParen/>
+       <and/>
+        <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtAgreementClassYes">
+       <openParen/>
+       <whenValue element="np" attr="artAndDem" value="article"/>
+       <or/>
+       <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+       <or/>
+       <whenValue element="np" attr="artAndDem" value="both"/>
+       <closeParen/>
+       <and/>
+        <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtDemMassYes">
+       <openParen/>
+       <whenValue element="np" attr="artAndDem" value="article"/>
+       <or/>
+       <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+       <or/>
+       <whenValue element="np" attr="artAndDem" value="both"/>
+       <closeParen/>
+       <and/>
+        <openParen/>
+        <whenRadio button="NPArtAndDemArtRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemDemRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurNoRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurYesDemRequiredMass"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBothCooccurYesArtRequiredMass"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+
+
+    <showWhen id="swOTClassifierSpecificAndNPArtAndDemDem">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndNPArtAndDemDemAndNPDemClassifierPresentYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPDemClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPDemClassifierPresentSome"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPDemClassifierPresentYesOrSomeAndNoCheck">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPDemClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPDemClassifierPresentSome"/>
+        <closeParen/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosAfterBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosBeforeBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosAfterDemBeforeN"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosAfterNBeforeDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosPrefixDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosSuffixDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemClassifierSpecificPosOther"/>
+    </showWhen>
+    
+    <showWhen id="swOTClassifierSpecificAndNPArtAndDemBoth">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndNPArtAndDemBothAndNPDemBothClassifierPresentYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPDemBothClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPDemBothClassifierPresentSome"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPDemBothClassifierPresentYesOrSomeAndNoCheck">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPDemBothClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPDemBothClassifierPresentSome"/>
+        <closeParen/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosAfterBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosBeforeBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosAfterDemBeforeN"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosAfterNBeforeDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosPrefixDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosSuffixDem"/>
+        <and/><not/>
+        <whenCheckbox button="NPDemBothClassifierSpecificPosOther"/>
+    </showWhen>
+ 
+ &TechnicalTerms; 
+   </page>

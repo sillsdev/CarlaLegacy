@@ -30,6 +30,7 @@ function Initialize() {
 	/* displayCheckBoxValue(OutputWriter, "/paws/@outputWriter"); */
 	displayCheckBoxValue(OutputWriterPractical, "/paws/@outputWriterPractical");
 	displayCheckBoxValue(OutputWriterPracticalSpanish, "/paws/@outputWriterPracticalSpanish");
+	displayCheckBoxValue(OutputWriterPracticalFrench, "/paws/@outputWriterPracticalFrench");
 
 	window.external.SetLeftOffAt("Contents.htm");
 	Refresh();
@@ -61,6 +62,8 @@ function saveData() {
 
 	window.external.SetAnswerValue("/paws/@outputWriterPracticalSpanish", OutputWriterPracticalSpanish.value);
 
+	window.external.SetAnswerValue("/paws/@outputWriterPracticalFrench", OutputWriterPracticalFrench.value);
+
 	window.external.SaveData();
 }
 function SetOutputViaDescription(item) {
@@ -91,6 +94,13 @@ function SetOutputViaDescription(item) {
 			OutputWriterPracticalSpanish.checked = false;
 		} else {
 			OutputWriterPracticalSpanish.checked = true;
+		}
+		break;
+		case "writerPracticalFrench":
+		if (OutputWriterPracticalFrench.checked) {
+			OutputWriterPracticalFrench.checked = false;
+		} else {
+			OutputWriterPracticalFrench.checked = true;
 		}
 		break;
 	}
@@ -126,6 +136,13 @@ function SetOutput(item) {
 			OutputWriterPracticalSpanish.value = "False";
 		}
 		break;
+		case "writerPracticalFrench":
+		if (OutputWriterPracticalFrench.checked) {
+			OutputWriterPracticalFrench.value = "True";
+		} else {
+			OutputWriterPracticalFrench.value = "False";
+		}
+		break;
 	}
 	saveData();
 	Refresh();
@@ -151,7 +168,7 @@ function Refresh() {
 		OutputWriter.checked = true;
 	}*/
 
-	if (! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
+	if (! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked && ! OutputWriterPracticalFrench.checked) {
 		OutputWriterPractical.checked = true;
 	}
 	if (OutputGrammar.checked) {

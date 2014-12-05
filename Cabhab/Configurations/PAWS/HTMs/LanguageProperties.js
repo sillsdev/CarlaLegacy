@@ -4,8 +4,12 @@
 var attr;
 
 function Initialize() {
-	window.external.GetAnswerValue("//language/langName");
-	LangPropLangName.value = window.external.OutValue;
+	window.external.GetAnswerValue("//language/langNames/langName[@lang='en']");
+	LangPropLangNameEn.value = window.external.OutValue;
+	window.external.GetAnswerValue("//language/langNames/langName[@lang='es']");
+	LangPropLangNameEs.value = window.external.OutValue;
+	window.external.GetAnswerValue("//language/langNames/langName[@lang='fr']");
+	LangPropLangNameFr.value = window.external.OutValue;
 	window.external.GetAnswerValue("//language/langAbbr");
 	LangPropLangAbbr.value = window.external.OutValue;
 
@@ -30,7 +34,9 @@ function RLangPropRTL(radio) {
 
 function saveData() {
 	var sTemp;
-	window.external.SetAnswerValue("//language/langName", LangPropLangName.value);
+	window.external.SetAnswerValue("//language/langNames/langName[@lang='en']", LangPropLangNameEn.value);
+	window.external.SetAnswerValue("//language/langNames/langName[@lang='es']", LangPropLangNameEs.value);
+	window.external.SetAnswerValue("//language/langNames/langName[@lang='fr']", LangPropLangNameFr.value);
 	window.external.SetAnswerValue("//language/langAbbr", LangPropLangAbbr.value);
 
 	//TODO: figure what to do if any of these are missing!

@@ -40,11 +40,11 @@
 		</radioGroup>     
 	   <radioGroup id="QPDeterminerClassifierAgrTable" show="swOTClassifierAgrAndYesOrSome">
 	      <groupName dataItem="determinerClassifier" default="no">RQPDeterminerClassifierAgr</groupName>
-	      <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar este tipo de cuantificadores que funcionan como el único determinante en la frase nominal?</prompt>
-	      <radio id="QPDeterminerClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-	      <radio id="QPDeterminerClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	      <prompt>Usted dijo que su lengua tiene indicadores de clase para la concordancia en las frases nominales. ¿Utiliza los indicadores de clase para marcar este tipo de cuantificadores que funcionan como el único determinante en la frase nominal?</prompt>
+	      <radio id="QPDeterminerClassifierAgrNo" dataValue="no">No, estos elementos no se marcan la clase</radio>
+	      <radio id="QPDeterminerClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan la clase como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
-	   <prompt id="QPDeterminerClassifierAgrPrompt" show="swOTClassifierAgrAndYesOrSomeAndDeterminerClassifierYes">Puesto que usted ha detallado ya las formas de los clasificadores, necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>	   
+	   <prompt id="QPDeterminerClassifierAgrPrompt" show="swOTClassifierAgrAndYesOrSomeAndDeterminerClassifierYes">Puesto que usted ha detallado ya las formas de los indicadores de clase, necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>	   
 	   <br/>
 	   <br/>
 	   <prompt id="QPDeterminerTypeWordPrompt" show="swQPDeterminerTypeYesOrSome"><br/>Escriba ejemplos de frases nominales con las palabras independientes que significan ‘alguno’, ‘cualquier’ o 'cada'  aquí, con cada uno en una línea separada:</prompt>
@@ -148,6 +148,12 @@
       <or/>
       <whenRadio button="QPDeterminerTypeSome"/>
       <closeParen/>     
+      <and/>
+      <openParen/>
+      <whenRadio button="QPDeterminerYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerSome"/>
+      <closeParen/>
       <and/><not/>
       <whenCheckbox button="QPDeterminerPosBefore"/>
       <and/><not/>

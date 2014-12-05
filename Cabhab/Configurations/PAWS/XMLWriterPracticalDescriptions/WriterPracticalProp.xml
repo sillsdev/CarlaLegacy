@@ -33,31 +33,22 @@
        <p show="swClassifiersYesPropYes"><content>In </content><langName/><content>, proper names carry classifiers just like nouns as part of the concord agreement system.</content></p>
        <p show="swClassifiersYesPropNo"><content>In </content><langName/><content>, proper names do not carry classifiers as nouns do as part of the concord agreement system.</content></p>
        <p show="swNPArtAndDemNotNo"><content>Proper names in </content><langName/><case element="prop" attr="pnDeterminer">
-          <caseText value="no"> may but are not required to</caseText>
-          <caseText value="yes"> must</caseText>
+          <caseText value="none"> may not</caseText>
+           <caseText value="no"> may but are not required to</caseText>
+           <caseText value="yes"> must</caseText>
        </case><content> contain </content><case element="np" attr="artAndDem">
           <caseText value="article">an article</caseText>
           <caseText value="demonstrative">a demonstrative</caseText>
           <caseText value="both">an article and/or demonstrative</caseText></case><content> or a possessor.</content></p>
        <p>
-            <content>Examples with simple and compound proper names, or those including articles, demonstratives, adjectives, and/or possessors in </content>
+            <content>Examples with simple and compound proper names in </content>
             <langName/>
             <content> include:</content>
         </p>
         <example>
             <interlinear exampleLoc="prop/example"/>
         </example>
-	   <p show="swClassifiersYesPropYes"><content>In </content><langName/><content>, proper names carry classifiers just like nouns as part of the concord agreement system.</content></p>
-	   <p show="swClassifiersYesPropNo"><content>In </content><langName/><content>, proper names do not carry classifiers as nouns do as part of the concord agreement system.</content></p>
-	   <p show="swNPArtAndDemNotNo"><content>Proper names in </content><langName/><case element="prop" attr="pnDeterminer">
-		  <caseText value="no"> may but are not required to</caseText>
-		  <caseText value="yes"> must</caseText>
-	   </case><content> contain an </content><case element="np" attr="artAndDem">
-		  <caseText value="article">article</caseText>
-		  <caseText value="demonstrative">demonstrative</caseText>
-		  <caseText value="both">article and/or demonstrative</caseText></case><content> or a possessor.</content></p>
-	   <p>
-            <content>Examples of proper names with </content>
+            <p><content>Examples of proper names with </content>
             <case element="pp" attr="pPos">
                 <caseText value="before">prepositional</caseText>
                 <caseText value="after">postpositional</caseText>

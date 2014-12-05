@@ -52,7 +52,7 @@
          <checkbox id="QMainContCliticSuffix" dataItem="mainContSuffix">As a suffix which attaches to the verb</checkbox>
          <checkbox id="QMainContCliticOther" dataItem="mainContCliticOther">In my language, these elements may attach as follows: <textBox  id="QMainContCliticOtherContent" dataItem="mainContCliticOther" rows="2"/></checkbox>
       </checkboxGroup>
-      <prompt id="QMainContCliticPosNoCheckPrompt" show="swQMainContWordNoOrSomeandNoCheck">WARNING: You need to check at least one box to describe how these question markers attach in your language, or change the answer above to ‘Yes, they are all independent words’.</prompt>
+      <prompt id="QMainContCliticPosNoCheckPrompt" show="swQMainContWordNoOrSomeandNoCheck">WARNING: You need to check at least one box to describe how these question markers attach in your language, or change the answer above to ‘Yes’.</prompt>
       
       <prompt id="QMainContCliticsExamplesPrompt" show="swQMainContCliticProcliticOrEnclitic"><br/>Key the clitics which are used to mark questions here, with an equal sign to indicate which side it attaches to the question on:</prompt>    
       <textBox id="QMainContCliticExamples" dataItem="mainContCliticExample" show="swQMainContCliticProcliticOrEnclitic" rows="3"/>    

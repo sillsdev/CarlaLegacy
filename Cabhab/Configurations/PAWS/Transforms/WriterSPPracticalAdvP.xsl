@@ -264,7 +264,7 @@
 </xsl:if>     
            <xsl:if test="normalize-space(//advp/@temporalDegree)='yes' and normalize-space(//advp/temporalDegreeWord/@checked)='yes'">
 <p>
-<xsl:text>Algunos ejemplos de los adverbios de tiempo con una palabra de grado que los modifica son::</xsl:text>
+<xsl:text>Algunos ejemplos de los adverbios de tiempo con una palabra de grado que los modifica son:</xsl:text>
 </p>
 </xsl:if>          
            <xsl:if test="normalize-space(//advp/@temporalDegree)='yes' and normalize-space(//advp/temporalDegreeWord/@checked)='yes'">
@@ -2845,7 +2845,7 @@
 <xsl:text>Los adverbios indefinidos se utilizan para referirse a un tiempo o un lugar no especificado. Normalmente constan de un cuantificador y un sustantivo genérico o una palabra interrogativa y una palabra indefinida, y no se pueden fusionar en una sola palabra.</xsl:text>
 </p>
           <p>
-<xsl:text>El primer tipo, los adverbios indefinidos de tiempo que incluyen un cuantificador y un sustantivo genérico, en el </xsl:text>
+<xsl:text>Para el primer tipo de adverbios indefinidos de tiempo que incluyen un cuantificador y un sustantivo genérico, en el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -2854,7 +2854,15 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text></xsl:text>
+<xsl:text> los adverbios indefinidos de tiempo </xsl:text>
+<xsl:if test="normalize-space(//advp/temporalIndefTypeQNone/@checked)='yes'">
+<xsl:text>no se expresan con un cuantificador.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//advp/temporalIndefQOther/@checked)='yes' and normalize-space(//advp/temporalIndefQPhrase/@checked)='no' and normalize-space(//advp/temporalIndefQWord/@checked)='no'">
+<xsl:text>se expresan con ___</xsl:text>
+<xsl:value-of select="//advp/temporalIndefQOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//advp/temporalIndefQPhrase/@checked)='no' and normalize-space(//advp/temporalIndefQWord/@checked)='yes' and normalize-space(//advp/temporalIndefQOther/@checked)='no'">
 <xsl:text> se expresan con un cuantificador y un sustantivo genérico de tiempo que se fusionan en una sola palabra. </xsl:text>
 </xsl:if>
@@ -2879,7 +2887,15 @@
 <xsl:value-of select="//advp/temporalIndefQOther" />
 <xsl:text>. </xsl:text>
 </xsl:if>
-<xsl:text> Los adverbio indefinidos de lugar </xsl:text>
+<xsl:text> Los adverbios indefinidos de lugar </xsl:text>
+<xsl:if test="normalize-space(//advp/locativeIndefTypeQNone/@checked)='yes'">
+<xsl:text>no se expresan con un cuantificador.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//advp/locativeIndefQOther/@checked)='yes' and normalize-space(//advp/locativeIndefQPhrase/@checked)='no' and normalize-space(//advp/locativeIndefQWord/@checked)='no'">
+<xsl:text>se expresan con ___</xsl:text>
+<xsl:value-of select="//advp/locativeIndefQOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//advp/locativeIndefQPhrase/@checked)='no' and normalize-space(//advp/locativeIndefQWord/@checked)='yes' and normalize-space(//advp/locativeIndefQOther/@checked)='no'">
 <xsl:text>se expresan con un cuantificador y un sustantivo genérico de lugar que se fusionan en una sola palabra. </xsl:text>
 </xsl:if>
@@ -3438,6 +3454,14 @@
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text> los adverbios indefinidos de tiempo </xsl:text>
+<xsl:if test="normalize-space(//advp/temporalIndefTypeIntNone/@checked)='yes'">
+<xsl:text>no se expresan con una palabra interrogativa.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//advp/temporalIndefIntOther/@checked)='yes' and normalize-space(//advp/temporalIndefIntPhrase/@checked)='no' and normalize-space(//advp/temporalIndefIntWord/@checked)='no'">
+<xsl:text>se expresan con ___</xsl:text>
+<xsl:value-of select="//advp/temporalIndefIntOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//advp/temporalIndefIntPhrase/@checked)='no' and normalize-space(//advp/temporalIndefIntWord/@checked)='yes' and normalize-space(//advp/temporalIndefIntOther/@checked)='no'">
 <xsl:text>se expresan con una palabra interrogativa de tiempo y un indefinido unidos en una sola palabra. </xsl:text>
 </xsl:if>
@@ -3463,6 +3487,14 @@
 <xsl:text>. </xsl:text>
 </xsl:if>
 <xsl:text> Los adverbios indefinidos de lugar </xsl:text>
+<xsl:if test="normalize-space(//advp/locativeIndefTypeIntNone/@checked)='yes'">
+<xsl:text>no se expresan con una palabra interrogativa.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//advp/locativeIndefIntOther/@checked)='yes' and normalize-space(//advp/locativeIndefIntPhrase/@checked)='no' and normalize-space(//advp/locativeIndefIntWord/@checked)='no'">
+<xsl:text>se expresan con ___</xsl:text>
+<xsl:value-of select="//advp/locativeIndefIntOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//advp/locativeIndefIntPhrase/@checked)='no' and normalize-space(//advp/locativeIndefIntWord/@checked)='yes' and normalize-space(//advp/locativeIndefIntOther/@checked)='no'">
 <xsl:text>se expresan con una palabra interrogativa de lugar y un indefinido unidos en una sola palabra. </xsl:text>
 </xsl:if>
@@ -4644,73 +4676,7 @@
       
       
    
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-   
-      
-      
-      
-      
-      
-   
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-   
-   
-    
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-   
-   
+ 
    
       
       
@@ -4730,49 +4696,6 @@
       
       
       
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-   
-   
       
    
    
@@ -4853,6 +4776,157 @@
       
       
       
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+   
+   
+      
+      
+      
+      
+      
+   
+ 
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+   
+   
+    
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+   
+   
+   
+      
+      
+      
    
    
       
@@ -4985,15 +5059,6 @@
    
       
    
-   
-   
-      
-      
-      
-      
-      
-      
-      
    
     
       

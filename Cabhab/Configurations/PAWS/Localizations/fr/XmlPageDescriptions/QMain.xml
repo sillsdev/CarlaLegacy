@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QMain" count="1/9">
+    <title>Questions</title>
+    <introduction id="QMainIntroNotPractical" show="swNotPractical">This section considers the main clause and embedded clause varieties of Yes/No questions and content questions.  We will begin with Yes/No questions.
+<br/>
+        <br/>
+ In English, main clause Yes/No questions are formed by moving an auxiliary verb in front of the subject.  Other languages use a Yes/No question marker or special complementizer instead of the fronted auxiliary.  This is the case in embedded Yes/No questions in English: no auxiliary fronting is allowed but <example>whether</example> or <example>if</example> fills the complementizer position.<br/>
+        <br/>
+As discussed in <section number="10">Complement Clauses</section>, X-bar theory takes the complementizer to be the head of the phrase, so a CP sits on top of the IP for questions even in main clauses.  Sample trees for main clause and embedded Yes/No questions in English are shown here:
+<tree img="TreeDescriptions/PawsMainYNQues.png"/>
+        <br/>
+        <tree img="TreeDescriptions/PawsEmbYNQues.png"/>
+        <br/>
+        <help href="Help/Cbgbtext.doc#CPYesNoQuestions">Click here for more information about the CP phrase structure of Yes/No questions.</help>
+       <br/><br/>Since a language may act differently  in Yes/No questions in the main clause versus subordinate clauses, each type will be discussed in turn.
+    </introduction>
+    <introduction id="QMainIntroPractical" show="swPractical">Cette section traite les variétés les plus importants de proposition principale et de proposition subordonnée des questions oui/non et des questions de contenu  Nous allons commencer avec les questions oui/non.
+        <br/>
+        <br/>
+        En anglais, la proposition principale des questions oui/non est formée en plaçant un verbe auxiliaire devant le sujet.  En français les questions oui/non se forment ou par l’inversion du verbe et du sujet ou par l’addition de <example>est-ce que/qu’</example> au début de la phrase. D’autres langues utilisent un marqueur de question oui/non ou un complétiviseur spécial au lieu de l’auxiliaire au début de la phrase.  C’est le cas des questions subordonnées oui/non en anglais et en français: aucun auxiliaire o verbe précédent n’est autorisé mais <example>si</example> remplit la position complétiviseur.<br/>
+        <br/><br/>Comme une langue peut agir différemment dans les questions oui/non dans la proposition principale par rapport aux propositions subordonnées, chaque type sera discuté à son tour.
+    </introduction>
+    <form section="q" transparent="yes">
+        <br/>
+        <buttons>
+            <button id="QMainBack" value="Back" goto="Contents.htm"/>
+            <button id="QMainNext" value="Next" goto="QMainYN.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
+</page>

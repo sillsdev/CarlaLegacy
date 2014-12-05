@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE masterGrammar SYSTEM "..\Data\MasterGrammar.dtd">
 <masterGrammar>
-	<rule>
+    <rule>
 rule {QP option 0 - no modifiers}
 QP = Q
 	&lt;QP head&gt; = &lt;Q head&gt;
 	&lt;QP option&gt; = 0
 </rule>
-	<rule show="QPoption1">
+    <rule show="QPoption1">
 rule {QP option 1 - modifiers initial}
 QP = Deg Q
 	&lt;QP head&gt; = &lt;Q head&gt;
@@ -17,24 +17,16 @@ QP = Deg Q
 	&lt;QP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
 	&lt;QP option&gt; = 1
 </rule>
-	<showWhen id="QPoption1">
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="before"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="either"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="eitherOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="beforeOrBoth"/>
-	</showWhen>
-	<rule show="QPoption2">
+    <showWhen id="QPoption1">
+        <whenValue element="qp" attr="degree" value="yes"/>
+        <and/>
+        <whenValue element="qp/degreeBefore" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="degree" value="some"/>
+        <and/>
+        <whenValue element="qp/degreeBefore" attr="checked" value="yes"/>
+        </showWhen>
+    <rule show="QPoption2">
 rule {QP option 2 - modifiers final}
 QP = Q Deg
 	&lt;QP head&gt; = &lt;Q head&gt;
@@ -45,24 +37,16 @@ QP = Q Deg
 	&lt;QP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
 	&lt;QP option&gt; = 2
 </rule>
-	<showWhen id="QPoption2">
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="after"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="either"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="eitherOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="afterOrBoth"/>
-	</showWhen>
-	<rule show="QPoption3">
+    <showWhen id="QPoption2">
+        <whenValue element="qp" attr="degree" value="yes"/>
+        <and/>
+        <whenValue element="qp/degreeAfter" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="degree" value="some"/>
+        <and/>
+        <whenValue element="qp/degreeAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="QPoption3">
 rule {QP option 3 - modifiers both sides}
 QP = Deg_1 Q Deg_2
 	&lt;QP head&gt; = &lt;Q head&gt;
@@ -76,24 +60,16 @@ QP = Deg_1 Q Deg_2
 	&lt;QP head type prefix&gt; &lt;= &lt;Deg_1 head type prefix&gt;
 	&lt;QP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 </rule>
-	<showWhen id="QPoption3">
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="both"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="beforeOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="eitherOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="degree" value="yes"/>
-		<and/>
-		<whenValue element="qp" attr="degreePos" value="afterOrBoth"/>
-	</showWhen>
-	<rule show="QPoptionNum0i">
+    <showWhen id="QPoption3">
+        <whenValue element="qp" attr="degree" value="yes"/>
+        <and/>
+        <whenValue element="qp/degreeBoth" attr="checked" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="degree" value="some"/>
+        <and/>
+        <whenValue element="qp/degreeBoth" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="QPoptionNum0i">
 rule {QP option Num0i - no modifiers, head initial}
 QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5)))))
 	&lt;QP head&gt; = &lt;Num head&gt;
@@ -105,10 +81,10 @@ QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) 
 	&lt;Conj_4 head type conjoins_DP&gt; = +
 	&lt;QP option&gt; = Num0i
 </rule>
-	<showWhen id="QPoptionNum0i">
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-	</showWhen>
-	<rule show="QPoptionNum0f">
+    <showWhen id="QPoptionNum0i">
+        <whenValue element="qp" attr="cardinalHead" value="initial"/>
+    </showWhen>
+    <rule show="QPoptionNum0f">
 rule {QP option Num0f - no modifiers, head final}
 QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num
 	&lt;QP head&gt; = &lt;Num head&gt;
@@ -120,10 +96,10 @@ QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1)
 	&lt;Conj_4 head type conjoins_DP&gt; = +
 	&lt;QP option&gt; = Num0f
 </rule>
-	<showWhen id="QPoptionNum0f">
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-	</showWhen>
-	<rule show="QPoptionNum1i">
+    <showWhen id="QPoptionNum0f">
+        <whenValue element="qp" attr="cardinalHead" value="final"/>
+    </showWhen>
+    <rule show="QPoptionNum1i">
 rule {QP option Num1i - modifiers initial, head initial}
 QP = Num_6 Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5)))))
 	&lt;QP head&gt; = &lt;Num head&gt;
@@ -138,24 +114,12 @@ QP = Num_6 Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Co
 	&lt;Conj_4 head type conjoins_DP&gt; = +
 	&lt;QP option&gt; = Num1i
 </rule>
-	<showWhen id="QPoptionNum1i">
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="before"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="either"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"/>
-	</showWhen>
-	<rule show="QPoptionNum1f">
+    <showWhen id="QPoptionNum1i">
+        <whenValue element="qp" attr="cardinalHead" value="initial"/>
+        <and/>
+        <whenValue element="qp/ordinalBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="QPoptionNum1f">
 rule {QP option Num1f - modifiers initial, head final}
 QP = Num_6 (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num
 	&lt;QP head&gt; = &lt;Num head&gt;
@@ -170,24 +134,12 @@ QP = Num_6 (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) 
 	&lt;Conj_4 head type conjoins_DP&gt; = +
 	&lt;QP option&gt; = Num1f
 </rule>
-	<showWhen id="QPoptionNum1f">
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="before"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="either"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"/>
-	</showWhen>
-	<rule show="QPoptionNum2i">
+    <showWhen id="QPoptionNum1f">
+        <whenValue element="qp" attr="cardinalHead" value="final"/>
+        <and/>
+        <whenValue element="qp/ordinalBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="QPoptionNum2i">
 rule {QP option Num2i - modifiers final, head initial}
 QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5))))) Num_6
 	&lt;QP head&gt; = &lt;Num head&gt;
@@ -203,24 +155,12 @@ QP = Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) 
 	&lt;QP head type comma&gt; &lt;= &lt;Num_6 head type comma&gt;
 	&lt;QP option&gt; = Num2i
 </rule>
-	<showWhen id="QPoptionNum2i">
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="after"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="afterOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="either"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"/>
-	</showWhen>
-	<rule show="QPoptionNum2f">
+    <showWhen id="QPoptionNum2i">
+        <whenValue element="qp" attr="cardinalHead" value="initial"/>
+        <and/>
+        <whenValue element="qp/ordinalAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="QPoptionNum2f">
 rule {QP option Num2f - modifiers final, head final}
 QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num Num_6
 	&lt;QP head&gt; = &lt;Num head&gt;
@@ -228,7 +168,7 @@ QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1)
 	&lt;Num_6 head type ordinal&gt; = +
 	&lt;Num_6 head type QP-final&gt; = +
 	&lt;Num head type comma&gt; = -
-				&lt;Conj head type conjoins_DP&gt; = +
+                &lt;Conj head type conjoins_DP&gt; = +
 	&lt;Conj_1 head type conjoins_DP&gt; = +
 	&lt;Conj_2 head type conjoins_DP&gt; = +
 	&lt;Conj_3 head type conjoins_DP&gt; = +
@@ -236,24 +176,12 @@ QP = (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1)
 	&lt;QP head type comma&gt; &lt;= &lt;Num_6 head type comma&gt;
 	&lt;QP option&gt; = Num2f
 </rule>
-	<showWhen id="QPoptionNum2f">
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="after"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="afterOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="either"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"/>
-	</showWhen>
-	<rule show="QPoptionNum3i">
+    <showWhen id="QPoptionNum2f">
+        <whenValue element="qp" attr="cardinalHead" value="final"/>
+        <and/>
+        <whenValue element="qp/ordinalAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="QPoptionNum3i">
 rule {QP option Num3i - modifiers both sides, head initial}
 QP = Num_6 Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Conj_4) (Num_5))))) Num_7
 	&lt;QP head&gt; = &lt;Num head&gt;
@@ -272,24 +200,12 @@ QP = Num_6 Num (Conj) (Num_1 (Conj_1) (Num_2 (Conj_2) (Num_3 (Conj_3) (Num_4 (Co
 	&lt;QP head type comma&gt; &lt;= &lt;Num_7 head type comma&gt;
 	&lt;QP option&gt; = Num3i
 </rule>
-	<showWhen id="QPoptionNum3i">
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="both"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="afterOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="before"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"/>
-	</showWhen>
-	<rule show="QPoptionNum3f">
+    <showWhen id="QPoptionNum3i">
+        <whenValue element="qp" attr="cardinalHead" value="initial"/>
+        <and/>
+        <whenValue element="qp/ordinalBoth" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="QPoptionNum3f">
 rule {QP option Num3f - modifiers both sides, head final}
 QP = Num_6 (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) Num_1) (Conj) Num Num_7
 	&lt;QP head&gt; = &lt;Num head&gt;
@@ -308,21 +224,9 @@ QP = Num_6 (((((Num_5) (Conj_4) Num_4) (Conj_3) Num_3) (Conj_2) Num_2) (Conj_1) 
 	&lt;QP head type comma&gt; &lt;= &lt;Num_7 head type comma&gt;
 	&lt;QP option&gt; = Num3f
 </rule>
-	<showWhen id="QPoptionNum3f">
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="both"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="afterOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="beforeOrBoth"/>
-		<or/>
-		<whenValue element="qp" attr="cardinalHead" value="after"/>
-		<and/>
-		<whenValue element="qp" attr="ordinalPos" value="eitherOrBoth"/>
-	</showWhen>
+    <showWhen id="QPoptionNum3f">
+        <whenValue element="qp" attr="cardinalHead" value="final"/>
+        <and/>
+        <whenValue element="qp/ordinalBoth" attr="checked" value="yes"/>
+    </showWhen>
 </masterGrammar>

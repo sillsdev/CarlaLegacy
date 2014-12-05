@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <abbreviations
 font-family="Charis SIL CompactSmallCaps"
 label="Abreviaturas"
@@ -50,36 +50,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="v1PLOBJ"
-><abbrInLang
-lang="es"
-><abbrTerm
->1plobj</abbrTerm
-><abbrDefinition
->primera persona plural objeto</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="v1PLPOS"
-><abbrInLang
-lang="es"
-><abbrTerm
->1plpos</abbrTerm
-><abbrDefinition
->primera persona plural poseedor</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="v1PLSBJ"
-><abbrInLang
-lang="es"
-><abbrTerm
->1plsuj</abbrTerm
-><abbrDefinition
->primera persona plural sujeto</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="v1PLEX"
 ><abbrInLang
 lang="es"
@@ -94,7 +64,7 @@ id="v1PEXABS"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->1plexabs</abbrTerm
+>1plexabssuj</abbrTerm
 ><abbrDefinition
 >primera persona plural exclusivo absolutivo</abbrDefinition
 ></abbrInLang
@@ -126,7 +96,7 @@ lang="es"
 ><abbrTerm
 >1plexpos</abbrTerm
 ><abbrDefinition
->primera persona plural exclusivo poseedor</abbrDefinition
+>primera persona plural exclusivo posesivo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -186,7 +156,7 @@ lang="es"
 ><abbrTerm
 >1plinpos</abbrTerm
 ><abbrDefinition
->primera persona plural inclusivo poseedor</abbrDefinition
+>primera persona plural inclusivo posesivo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -197,6 +167,36 @@ lang="es"
 >1plinsuj</abbrTerm
 ><abbrDefinition
 >primera persona plural inclusivo sujeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plobj</abbrTerm
+><abbrDefinition
+>primera persona plural objeto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLPOS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plpos</abbrTerm
+><abbrDefinition
+>primera persona plural posesivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="v1PLSBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>1plsuj</abbrTerm
+><abbrDefinition
+>primera persona plural sujeto</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -256,7 +256,7 @@ lang="es"
 ><abbrTerm
 >1sgpos</abbrTerm
 ><abbrDefinition
->primera persona singular poseedor</abbrDefinition
+>primera persona singular posesivo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -326,7 +326,7 @@ lang="es"
 ><abbrTerm
 >2plpos</abbrTerm
 ><abbrDefinition
->segunda persona plural poseedor</abbrDefinition
+>segunda persona plural posesivo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -396,7 +396,7 @@ lang="es"
 ><abbrTerm
 >2sgpos</abbrTerm
 ><abbrDefinition
->segunda persona singular poseedor</abbrDefinition
+>segunda persona singular posesivo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -444,19 +444,9 @@ id="v3BA"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->3ba</abbrTerm
+>3be</abbrTerm
 ><abbrDefinition
 >tercera persona bebé</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="v3CH"
-><abbrInLang
-lang="es"
-><abbrTerm
->3ni</abbrTerm
-><abbrDefinition
->tercera persona niño</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -550,6 +540,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="v3CH"
+><abbrInLang
+lang="es"
+><abbrTerm
+>3ni</abbrTerm
+><abbrDefinition
+>tercera persona niño</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="v3PL"
 ><abbrInLang
 lang="es"
@@ -596,7 +596,7 @@ lang="es"
 ><abbrTerm
 >3plpos</abbrTerm
 ><abbrDefinition
->tercera persona plural poseedor</abbrDefinition
+>tercera persona plural posesivo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -666,7 +666,7 @@ lang="es"
 ><abbrTerm
 >3sgpos</abbrTerm
 ><abbrDefinition
->tercera persona singular poseedor</abbrDefinition
+>tercera persona singular posesivo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -750,26 +750,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vAFM"
-><abbrInLang
-lang="es"
-><abbrTerm
->anm</abbrTerm
-><abbrDefinition
->antes mencionado</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vAGR"
-><abbrInLang
-lang="es"
-><abbrTerm
->acd</abbrTerm
-><abbrDefinition
->acuerdo</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="vALL"
 ><abbrInLang
 lang="es"
@@ -787,6 +767,16 @@ lang="es"
 >anim</abbrTerm
 ><abbrDefinition
 >animado</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAFM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>anm</abbrTerm
+><abbrDefinition
+>antes mencionado</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -887,16 +877,6 @@ lang="es"
 >caus</abbrTerm
 ><abbrDefinition
 >causativo</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vCF"
-><abbrInLang
-lang="es"
-><abbrTerm
->coh</abbrTerm
-><abbrDefinition
->contrario a los hechos</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1180,6 +1160,76 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vCLFTR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfarb</abbrTerm
+><abbrDefinition
+>clasificador para árboles</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFBIRD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfave</abbrTerm
+><abbrDefinition
+>clasificador para aves</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFBOAT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfbarc</abbrTerm
+><abbrDefinition
+>clasificador para barcos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFCLD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfcld</abbrTerm
+><abbrDefinition
+>clasificador para objetos cilíndricos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFTHIN"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfdelg</abbrTerm
+><abbrDefinition
+>clasificador para objetos delgados y largos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFSPH"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfesf</abbrTerm
+><abbrDefinition
+>clasificador para objetos esféricos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFHUM"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfhum</abbrTerm
+><abbrDefinition
+>clasificador para humanos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vCLFINS"
 ><abbrInLang
 lang="es"
@@ -1200,46 +1250,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vCLFRND"
-><abbrInLang
-lang="es"
-><abbrTerm
->clfrnd</abbrTerm
-><abbrDefinition
->clasificador para objetos redondos</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vCLFCLD"
-><abbrInLang
-lang="es"
-><abbrTerm
->clfcld</abbrTerm
-><abbrDefinition
->clasificador para objetos cilíndricos</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vCLFSPH"
-><abbrInLang
-lang="es"
-><abbrTerm
->clfesf</abbrTerm
-><abbrDefinition
->clasificador para objetos esféricos</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vCLFTR"
-><abbrInLang
-lang="es"
-><abbrTerm
->clfarb</abbrTerm
-><abbrDefinition
->clasificador para árboles</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="vCLFWD"
 ><abbrInLang
 lang="es"
@@ -1250,13 +1260,83 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vCLMEC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfmec</abbrTerm
+><abbrDefinition
+>clasificador para objetos mecánicos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFWAVY"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfond</abbrTerm
+><abbrDefinition
+>clasificador para objetos ondulados y largos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vCLFOT"
 ><abbrInLang
 lang="es"
 ><abbrTerm
 >clfot</abbrTerm
 ><abbrDefinition
->clasificador para otros objetos inanimados</abbrDefinition
+>clasificador para otros tipos de objetos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFFLT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfpln</abbrTerm
+><abbrDefinition
+>clasificador para objetos planos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFRND"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfrnd</abbrTerm
+><abbrDefinition
+>clasificador para objetos redondos</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCLFCLO"
+><abbrInLang
+lang="es"
+><abbrTerm
+>clfropa</abbrTerm
+><abbrDefinition
+>clasificador para ropa</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVCNTP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cntp</abbrTerm
+><abbrDefinition
+>contemplativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vCF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>coh</abbrTerm
+><abbrDefinition
+>contrario a los hechos</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1276,7 +1356,17 @@ lang="es"
 ><abbrTerm
 >comp</abbrTerm
 ><abbrDefinition
->complementizador</abbrDefinition
+>complementador</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vAGR"
+><abbrInLang
+lang="es"
+><abbrTerm
+>concd</abbrTerm
+><abbrDefinition
+>concordancia</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1290,16 +1380,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vVCNTP"
-><abbrInLang
-lang="es"
-><abbrTerm
->cntp</abbrTerm
-><abbrDefinition
->contemplativo</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="vCOP"
 ><abbrInLang
 lang="es"
@@ -1307,6 +1387,16 @@ lang="es"
 >cop</abbrTerm
 ><abbrDefinition
 >cópula</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vQUOT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>cuot</abbrTerm
+><abbrDefinition
+>cuotativo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1430,6 +1520,26 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vFE"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ef</abbrTerm
+><abbrDefinition
+>ego femenino (en lo que concierne término del parentesco)</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vME"
+><abbrInLang
+lang="es"
+><abbrTerm
+>em</abbrTerm
+><abbrDefinition
+>ego masculino (en lo que concierne término del parentesco)</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vEMPH"
 ><abbrInLang
 lang="es"
@@ -1460,6 +1570,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vST"
+><abbrInLang
+lang="es"
+><abbrTerm
+>est</abbrTerm
+><abbrDefinition
+>estativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vEXCL"
 ><abbrInLang
 lang="es"
@@ -1480,13 +1600,13 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vFE"
+id="vIF"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->ef</abbrTerm
+>fi</abbrTerm
 ><abbrDefinition
->ego femenino (en lo que concierne término del parentesco)</abbrDefinition
+>futuro indefinido</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1517,16 +1637,6 @@ lang="es"
 >fut</abbrTerm
 ><abbrDefinition
 >futuro</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vIF"
-><abbrInLang
-lang="es"
-><abbrTerm
->fi</abbrTerm
-><abbrDefinition
->futuro indefinido</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1587,16 +1697,6 @@ lang="es"
 >impf</abbrTerm
 ><abbrDefinition
 >imperfecto</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vIPFV"
-><abbrInLang
-lang="es"
-><abbrTerm
->ipfv</abbrTerm
-><abbrDefinition
->imperfectivo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1700,6 +1800,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vIPFV"
+><abbrInLang
+lang="es"
+><abbrTerm
+>ipfv</abbrTerm
+><abbrDefinition
+>imperfectivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vIRR"
 ><abbrInLang
 lang="es"
@@ -1727,16 +1837,6 @@ lang="es"
 >m</abbrTerm
 ><abbrDefinition
 >masculino</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vME"
-><abbrInLang
-lang="es"
-><abbrTerm
->em</abbrTerm
-><abbrDefinition
->ego masculino (en lo que concierne término del parentesco)</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1770,6 +1870,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vNFUT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>nfut</abbrTerm
+><abbrDefinition
+>no futuro</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vNMLZ"
 ><abbrInLang
 lang="es"
@@ -1787,16 +1897,6 @@ lang="es"
 >nom</abbrTerm
 ><abbrDefinition
 >nominativo</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vNFUT"
-><abbrInLang
-lang="es"
-><abbrTerm
->nfut</abbrTerm
-><abbrDefinition
->no futuro</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1910,26 +2010,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vPRC"
-><abbrInLang
-lang="es"
-><abbrTerm
->prc</abbrTerm
-><abbrDefinition
->percepción</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vPRF"
-><abbrInLang
-lang="es"
-><abbrTerm
->prf</abbrTerm
-><abbrDefinition
->perfecto</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="vPFV"
 ><abbrInLang
 lang="es"
@@ -1950,16 +2030,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vPOSD"
-><abbrInLang
-lang="es"
-><abbrTerm
->posd</abbrTerm
-><abbrDefinition
->poseído</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="vPOSS"
 ><abbrInLang
 lang="es"
@@ -1967,6 +2037,16 @@ lang="es"
 >pos</abbrTerm
 ><abbrDefinition
 >posesivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPOSD"
+><abbrInLang
+lang="es"
+><abbrTerm
+>posd</abbrTerm
+><abbrDefinition
+>poseído</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -1980,6 +2060,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vPRC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>prc</abbrTerm
+><abbrDefinition
+>percepción</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vPRED"
 ><abbrInLang
 lang="es"
@@ -1990,6 +2080,26 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vQ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>preg</abbrTerm
+><abbrDefinition
+>indicador de la pregunta</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPRF"
+><abbrInLang
+lang="es"
+><abbrTerm
+>prf</abbrTerm
+><abbrDefinition
+>perfecto</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vPRO"
 ><abbrInLang
 lang="es"
@@ -1997,16 +2107,6 @@ lang="es"
 >pro</abbrTerm
 ><abbrDefinition
 >pro (no audible)</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vPRS"
-><abbrInLang
-lang="es"
-><abbrTerm
->prs</abbrTerm
-><abbrDefinition
->presente</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -2040,26 +2140,6 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vPROX"
-><abbrInLang
-lang="es"
-><abbrTerm
->prox</abbrTerm
-><abbrDefinition
->próximo</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vPST"
-><abbrInLang
-lang="es"
-><abbrTerm
->psd</abbrTerm
-><abbrDefinition
->pasado</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
 id="vPURP"
 ><abbrInLang
 lang="es"
@@ -2070,23 +2150,33 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vQ"
+id="vPROX"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->preg</abbrTerm
+>prox</abbrTerm
 ><abbrDefinition
->indicador de la pregunta</abbrDefinition
+>próximo</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vQUOT"
+id="vPRS"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->cuot</abbrTerm
+>prs</abbrTerm
 ><abbrDefinition
->cuotativo</abbrDefinition
+>presente</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vPST"
+><abbrInLang
+lang="es"
+><abbrTerm
+>psd</abbrTerm
+><abbrDefinition
+>pasado</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -2160,13 +2250,13 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vSBJ"
+id="vSG"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->suj</abbrTerm
+>sg</abbrTerm
 ><abbrDefinition
->sujeto</abbrDefinition
+>singular</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -2180,23 +2270,13 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
-id="vSG"
+id="vSBJ"
 ><abbrInLang
 lang="es"
 ><abbrTerm
->sg</abbrTerm
+>suj</abbrTerm
 ><abbrDefinition
->singular</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vST"
-><abbrInLang
-lang="es"
-><abbrTerm
->est</abbrTerm
-><abbrDefinition
->estativo</abbrDefinition
+>sujeto</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -2217,16 +2297,6 @@ lang="es"
 >tr</abbrTerm
 ><abbrDefinition
 >transitivo</abbrDefinition
-></abbrInLang
-></abbreviation
-><abbreviation
-id="vVRB"
-><abbrInLang
-lang="es"
-><abbrTerm
->vrb</abbrTerm
-><abbrDefinition
->verbalizador</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation
@@ -2297,6 +2367,16 @@ lang="es"
 >voc</abbrTerm
 ><abbrDefinition
 >vocativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVRB"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vrb</abbrTerm
+><abbrDefinition
+>verbalizador</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation

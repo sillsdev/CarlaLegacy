@@ -169,6 +169,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TermDefinitionDialog.resx">
       <DependentUpon>TermDefinitionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

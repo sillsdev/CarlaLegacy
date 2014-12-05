@@ -28,7 +28,26 @@
 		</checkboxGroup>
 	   <prompt id="NPAdjPPosNoCheckPrompt" show="swNPAdjPPosNoCheck">WARNING: You need to check at least one box to describe where the adjective phrases occur with respect the noun in your language.</prompt>
 	   <instruction id="NPAdjPPosEitherSideRestrictedInstruction" show="swNPAdjPPosEitherSideRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
-	   <br/>
+		<radioGroup id="NPAdjClassifierSpecificTable" show="swOTClassifierSpecific">
+			<groupName dataItem="classifierPresentAdj" default="no">RNPAdjClassifierPresent</groupName>
+			<prompt><br/>Looking at the examples, are classifiers used in these nominal phrases with adjective phrases?</prompt>
+			<radio id="NPAdjClassifierPresentYes"  dataValue="yes">Yes, a classifier is required in all nominal phrases of this type</radio>
+			<radio id="NPAdjClassifierPresentSome" dataValue="some">A classifier is present in some nominal phrases of this type, but is not required in all of them</radio>
+			<radio id="NPAdjClassifierPresentNo" dataValue="no">No, a classifier is never used in this type of nominal phrase</radio>
+		</radioGroup>
+		<checkboxGroup id="NPAdjClassifierSpecificPos" show="swOTClassifierSpecificAndNPAdjClassifierPresentYesOrSome">
+			<prompt><br/>Looking at the examples, where do the classifiers occur with respect to the adjectives and the noun?  Check all options that are correct for your language</prompt>
+			<checkbox id="NPAdjClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificAdjPosBeforeBoth">First, before both the adjective and the noun</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificAdjPosAfterBoth">Last, after both the noun and the adjective</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterAdjBeforeN"  dataItem="classifierSpecificAdjPosAfterAdjBeforeN">After the adjective but before the noun</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterNBeforeAdj"  dataItem="classifierSpecificAdjPosAfterNBeforeAdj">After the noun but before the adjective</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosPrefixAdj"  dataItem="classifierSpecificAdjPosPrefixAdj">As a prefix on the adjective</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosSuffixAdj"  dataItem="classifierSpecificAdjPosSuffixAdj">As a suffix on the adjective</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosOther"  dataItem="classifierSpecificAdjPosOther">In my language, the classifiers may occur in the following position: <textBox  id="NPAdjClassifierSpecificPosOtherContent" dataItem="classifierSpecificAdjPosOther" rows="2"/></checkbox>
+		</checkboxGroup>
+		<prompt id="NPAdjClassifierSpecificPosNoCheckPrompt" show="swNPAdjClassifierPresentYesOrSomeAndNoCheck">WARNING: You need to check at least one box to describe where the classifiers occur with respect to the adjectives and the noun in your language, or change your answer above to “No, a classifier is never used in this type of nominal phrase”.</prompt>
+		
+		<br/>
 	   <instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
 	      To handle the number agreement, in the lexicon:
 	      <ul>
@@ -75,7 +94,7 @@
 	   </radioGroup>
 	   <prompt id="NPAdjPPartRelClPrompt" show="swNPAdjPPartNo">The structure and position of relative clauses will be covered in <section number="12">Relative Clauses</section>.</prompt>
 	   
-	   <instruction id="NPAdjPInstruction" show="swNPAdjPPartYes">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in section <section number="9.2">Basic Sentences - Inflection Features</section>
+	   <instruction id="NPAdjPInstruction" show="swNPAdjPPartYes">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in <section number="9.2">Basic Sentences - Inflection Features</section>
 		</instruction>
 		<br/><br/>
 		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Languages which change the case of the head noun when a possessor is present normally also change the case of intervening adjectives to match.  Some languages of this type also change the case of the head noun when only an adjectival modifier is present, even when there is no possessor.  
@@ -248,5 +267,41 @@ Is there an overt case affix that marks the <span id="NPAdjPCaseAffixGenPrompt" 
    <showWhen id="swNPAdjPPartYes">
       <whenRadio button="NPAdjPPartYes"/>
    </showWhen>
-   &TechnicalTerms; 
+
+	<showWhen id="swOTClassifierSpecific">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swOTClassifierSpecificAndNPAdjClassifierPresentYesOrSome">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPAdjClassifierPresentYes"/>
+		<or/>
+		<whenRadio button="NPAdjClassifierPresentSome"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPAdjClassifierPresentYesOrSomeAndNoCheck">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPAdjClassifierPresentYes"/>
+		<or/>
+		<whenRadio button="NPAdjClassifierPresentSome"/>
+		<closeParen/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterBoth"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosBeforeBoth"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterAdjBeforeN"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterNBeforeAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosPrefixAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosSuffixAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosOther"/>
+	</showWhen>
+	&TechnicalTerms; 
 </page>

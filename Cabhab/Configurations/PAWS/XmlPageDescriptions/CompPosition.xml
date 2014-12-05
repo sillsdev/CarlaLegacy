@@ -46,7 +46,7 @@
        <textBox id="CompAffixExample" dataItem="compAffixExample" cols="50" show="swCompWordNoOrSomeAndAffix"/>
        <instruction id="CompAffixInstruction" show="swCompWordNoOrSomeAndAffix">In the lexicon, add the feature <feature>comp</feature> to these verbal affixes.</instruction>
        
-       <prompt id="CompAtachesOtherPrompt" show="swCompWordNoOrSomeAndOther">Key the complementizers which attach in the other way your language allows here, with a equal sign or hyphen to idicate which side they attach on:</prompt>  
+       <prompt id="CompAtachesOtherPrompt" show="swCompWordNoOrSomeAndOther">Key the complementizers which attach in the other way your language allows here, with a equal sign or hyphen to indicate which side they attach on:</prompt>  
        <textBox id="CompAttachesOtherExample" dataItem="compAttachesOtherExample" cols="50" show="swCompWordNoOrSomeAndOther"/>   
        
        <prompt id="CompWordYesPrompt" show="swCompWordYesOrSome">Key the complementizers which are written as independent words here:</prompt>
@@ -59,7 +59,7 @@
           <checkbox id="CompWordPosBoth"  dataItem="compBoth">On both sides in the same clause</checkbox>
           <checkbox id="CompWordPosOther"  dataItem="compOther">In my language, they may occur in the following position: <textBox  id="CompWordPosOtherContent" dataItem="compOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="CompWordNoCheckPrompt" show="swCompWordYesOrSomeAndNoCheck">WARNING: You need to check at least one box to describe where these complemntizers occur with respect to the rest of the embedded clause in your language, or change the answer above to ‘No, they all attach to another word’.</prompt>
+       <prompt id="CompWordNoCheckPrompt" show="swCompWordYesOrSomeAndNoCheck">WARNING: You need to check at least one box to describe where these complementizers occur with respect to the rest of the embedded clause in your language, or change the answer above to ‘No, they all attach to another word’.</prompt>
        
        <instruction id="CompMakeCInstruction" show="swCompWordYesOrSome">In the lexicon, add the feature <feature>makeC</feature> to the complementizers so it will show up in the correct position in the tree structure.  (For a word like English <example>that</example>, which can be both a complementizer <category>C</category> and a demonstrative <category>Dem</category>, you will need to have two separate lexical entries.)  
           <br/><br/><span id="CompNonfiniteSpan" show="swCompNonfniteYes">If the complementizer is like English <example>for</example>, add the additonal feature <feature>-finite</feature> so it will be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.</span>  Also, remember that if the word is like English <example>for</example>, which can be used both as a complementizer <category>C</category> and as a preposition <category>P</category>, you will need to make two separate lexical entries.)
@@ -162,7 +162,7 @@
       <whenCheckbox button="CompAttachesOther"/>
    </showWhen>
    <showWhen id="swCompWordYesOrSomeAndNoCheck">
-      <not/><whenRadio button="CompWordYes"/>
+      <not/><whenRadio button="CompWordNo"/>
       <and/>
       <whenRadio button="CompYes"/>
       <and/><not/>

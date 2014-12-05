@@ -26,8 +26,10 @@
 	      <prompt>De acuerdo con los ejemplos, ¿utiliza su lengua frases adposicionales en las construcciones partitivas?</prompt>
 	      <radio id="QPPartitiveYes" dataValue="yes">Sí</radio>
 	      <radio id="QPPartitiveNo" dataValue="no">No, utiliza una cláusula relativa en su lugar</radio>
-	      <radio id="QPPartitiveOther" dataValue="other">No, mi lengua utiliza otra manera que una frase adposicional o una cláusula relativa se utiliza para expresar significados similares</radio>
+	      <radio id="QPPartitiveOther" dataValue="other">No, mi lengua utiliza otra manera que una frase adposicional o una cláusula relativa para expresar significados similares</radio>
 	   </radioGroup>
+	   <prompt id="QPPartitiveOtherPrompt" show="swQPPartitiveOther">La construcción que mi lengua se usa para expresar el grupo o la cosa en total de la que se habla en este tipo de construcción partitiva es:</prompt>
+	   <textBox id="QPPartitiveOtherConstruction" dataItem="partitiveConstruction" cols="50" rows="2" show="swQPPartitiveOther"/>
 	   
 	   <radioGroup id="QPPartitivePPPosTable" show="swQPPartitiveYes">
 	      <groupName dataItem="partitivePPPos" default="unknown" position="yesHeadDiff">RQPPartitivePPPos</groupName>
@@ -53,6 +55,9 @@
    </showWhen> 
    <showWhen id="swQPPartitiveYes">
       <whenRadio button="QPPartitiveYes"/>  
+   </showWhen> 
+   <showWhen id="swQPPartitiveOther">
+      <whenRadio button="QPPartitiveOther"/>  
    </showWhen> 
    &TechnicalTerms; 
    

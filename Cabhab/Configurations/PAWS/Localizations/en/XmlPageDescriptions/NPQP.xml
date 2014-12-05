@@ -29,7 +29,28 @@
                     <radio id="NPQPPosEitherRestrictedNumBefore" dataValue="before">Yes, all the numbers occur before the noun</radio>
                     <radio id="NPQPPosEitherRestrictedNumAfter" dataValue="after">Yes, all the numbers occur after the noun</radio>
                     <radio id="NPQPPosEitherRestrictedNumNo" dataValue="no">No, some may occur on each side</radio>
-                </radioGroup>
+           </radioGroup>
+        
+        <radioGroup id="NPQClassifierSpecificTable" show="swOTClassifierSpecific">
+            <groupName dataItem="classifierPresentQ" default="no">RNPQClassifierPresent</groupName>
+            <prompt><br/>Looking at the examples, are classifiers used in these nominal phrases with quantifiers or numbers?</prompt>
+            <radio id="NPQClassifierPresentYes"  dataValue="yes">Yes, a classifier is required in all nominal phrases of this type</radio>
+            <radio id="NPQClassifierPresentSome" dataValue="some">A classifier is present in some nominal phrases of this type, but is not required in all of them</radio>
+            <radio id="NPQClassifierPresentNo" dataValue="no">No, a classifier is never used in this type of nominal phrase</radio>
+        </radioGroup>
+        <checkboxGroup id="NPQClassifierSpecificPos" show="swOTClassifierSpecificAndNPQClassifierPresentYesOrSome">
+            <prompt><br/>Looking at the examples, where do the classifiers occur with respect to the quantifier or number and the noun?  Check all options that are correct for your language</prompt>
+            <checkbox id="NPQClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificQPosBeforeBoth">First, before both the quantifier and the noun</checkbox>
+            <checkbox id="NPQClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificQPosAfterBoth">Last, after both the noun and the quantifier</checkbox>
+            <checkbox id="NPQClassifierSpecificPosAfterQBeforeN"  dataItem="classifierSpecificQPosAfterQBeforeN">After the quantifier but before the noun</checkbox>
+            <checkbox id="NPQClassifierSpecificPosAfterNBeforeQ"  dataItem="classifierSpecificQPosAfterNBeforeQ">After the noun but before the quantifier</checkbox>
+            <checkbox id="NPQClassifierSpecificPosPrefixQ"  dataItem="classifierSpecificQPosPrefixQ">As a prefix on the quantifier</checkbox>
+            <checkbox id="NPQClassifierSpecificPosSuffixQ"  dataItem="classifierSpecificQPosSuffixQ">As a suffix on the quantifier</checkbox>
+            <checkbox id="NPQClassifierSpecificPosOther"  dataItem="classifierSpecificQPosOther">In my language, the classifiers may occur in the following position: <textBox  id="NPQClassifierSpecificPosOtherContent" dataItem="classifierSpecificQPosOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="NPQClassifierSpecificPosNoCheckPrompt" show="swNPQClassifierPresentYesOrSomeAndNoCheck">WARNING: You need to check at least one box to describe where the classifiers occur with respect to the quantifiers and the noun in your language, or change your answer above to “No, a classifier is never used in this type of nominal phrase”.</prompt>
+        
+        
         <br/>
         <instruction id="NPQPPosEitherRestrictedNumBeforeInstruction" show="swNPQPPosEitherRestrictedNumBefore">The program will mark numbers with the default feature <feature>DP-initial</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
         <instruction id="NPQPPosEitherRestrictedNumAfterInstruction" show="swNPQPPosEitherRestrictedNumAfter">The program will mark numbers with the default feature <feature>DP-final</feature>, so you only need to mark other quantifiers.  In the lexicon, mark those quantifiers which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier which can occur on either side.</instruction>
@@ -70,8 +91,8 @@ Add the gender features <feature>masculine</feature>, <feature>feminine</feature
         <instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
            To handle class marking and agreement:
            <ul>
-              <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on numbers and/or quantifiers.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology Questions - Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
-              <li>Any quantifiers or numbers which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology Questions - Classifiers</section>.</li>
+              <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on numbers and/or quantifiers.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+              <li>Any quantifiers or numbers which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section>.</li>
            </ul>
         </instruction>
         <br/>
@@ -158,4 +179,41 @@ Add the gender features <feature>masculine</feature>, <feature>feminine</feature
     <showWhen id="swPractical">
         <whenValue  element="paws" attr="outputGrammar" value="False"/>
     </showWhen>
+    
+    <showWhen id="swOTClassifierSpecific">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndNPQClassifierPresentYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPQClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPQClassifierPresentSome"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPQClassifierPresentYesOrSomeAndNoCheck">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPQClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPQClassifierPresentSome"/>
+        <closeParen/>
+        <and/><not/>
+        <whenCheckbox button="NPQClassifierSpecificPosAfterBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPQClassifierSpecificPosBeforeBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPQClassifierSpecificPosAfterQBeforeN"/>
+        <and/><not/>
+        <whenCheckbox button="NPQClassifierSpecificPosAfterNBeforeQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPQClassifierSpecificPosPrefixQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPQClassifierSpecificPosSuffixQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPQClassifierSpecificPosOther"/>
+    </showWhen>
+    
 </page>

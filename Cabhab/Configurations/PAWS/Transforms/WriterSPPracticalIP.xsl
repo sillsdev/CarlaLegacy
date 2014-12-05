@@ -4,7 +4,7 @@
 	<section1 id="sIP">
 		<secTitle>Las oraciones básicas</secTitle>
 		<p>
-<xsl:text>E esta sección se consideran las oraciones copulativas, las intransitivas, las transitivas, las ditransitivas, las imperativas, las pasivas y las causativas en su orden de palabras básico (es decir sin cambio del foco, tópico, por interrogación o en construcciones de negación).  
+<xsl:text>En esta sección se consideran las oraciones copulativas, las intransitivas, las transitivas, las ditransitivas, las imperativas, las condicionales, las subjuntivas, las pasivas y las causativas en su orden de palabras básico (es decir sin cambio del foco, tópico, por interrogación o en construcciones de negación).  
 				De acuerdo con lo observado en la sección </xsl:text>
 <sectionRef sec="sIntro" />
 <xsl:text>,  la tipología del </xsl:text>
@@ -555,10 +555,10 @@
 		   <section3 id="sIPComparatives">
 		      <secTitle>Comparativas y Superlativas</secTitle>
 		      <p>
-<xsl:text>Las oraciones comparativas son un subclase de oraciones copulativas. Consideraremos dos tipos que clasifican dos entidades (objetos o personas) como iguales, después las comparativas en que una entidad (objeto o persona) se considera mejor que la otra, y entonces las superlativas. Todos estos tipos normalmente pueden utilizar un verbo copulativo o un verbo de percepción. </xsl:text>
+<xsl:text>Las oraciones comparativas son una subclase de oraciones copulativas. Consideraremos dos tipos que clasifican dos entidades (objetos o personas) como iguales, después las comparativas en que una entidad (objeto o persona) se considera mejor que la otra, y entonces las superlativas. Todos estos tipos normalmente pueden utilizar un verbo copulativo o un verbo de percepción. </xsl:text>
 </p>
 		      <p contentType="ctPracticalIntro">
-<xsl:text>La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción nominal de igualidad utiliza una fórmula que significa </xsl:text>
+<xsl:text>La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción nominal de igualdad utiliza una fórmula que significa </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -566,7 +566,7 @@
 <xsl:text> entre dos frases nominales.</xsl:text>
 </p>
 		      <p contentType="ctComparativeIntro">
-<xsl:text>La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción nominal de igualidad utiliza una fórmula que significa </xsl:text>
+<xsl:text>La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción nominal de igualdad utiliza una fórmula que significa </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -727,8 +727,8 @@
 		      <p>
 <xsl:text></xsl:text>
 <xsl:choose>
-		         <xsl:when test="//ip/@compareN='yes'">Se usa la suguiente conjunción comparativa que significa ‘que’ antes de la segunda frase nominal:</xsl:when>
-		         <xsl:when test="//ip/@compareN='no'">No hay una conjunción comparativa  que significa ‘que’ antes de la segunda frase nominal en la construcción nominal de igualidad.</xsl:when>
+		         <xsl:when test="//ip/@compareN='yes'">Se usa la siguiente conjunción comparativa que significa ‘que’ antes de la segunda frase nominal:</xsl:when>
+		         <xsl:when test="//ip/@compareN='no'">No hay una conjunción comparativa  que significa ‘que’ antes de la segunda frase nominal en la construcción nominal de igualdad.</xsl:when>
 		      </xsl:choose>
 </p>
 		      
@@ -1433,7 +1433,7 @@
 		      </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-		            <xsl:when test="//ip/@comparative='yes'">Hay una conjunción comparativa que significa ‘que’ que utiliza en ambos las comparativas cortas y más completas, como muestra en el cuadro de arriba.</xsl:when>
+		            <xsl:when test="//ip/@comparative='yes'">Hay una conjunción comparativa que significa ‘que’ que utiliza en ambos las comparativas cortas y más completas, como se muestra en el cuadro de arriba.</xsl:when>
 		            <xsl:when test="//ip/@comparative='no'">No hay una conjunción comparativa que significa ‘que’, entonces este tipo de comparativa simplemente tendrá las dos partes de la oración seguida una de la otra.</xsl:when>
 		         </xsl:choose>
 </p>
@@ -1480,7 +1480,7 @@
 </example>
 		      
 		      <p contentType="ctComparativeIntro">
-<xsl:text>Las oraciones superlativas son otro subclase de oraciones copulativas, directamente relacionadas con las comparativas. Comparan una frase nominal con algo plural que puede expresarse como frase </xsl:text>
+<xsl:text>Las oraciones superlativas son otra subclase de oraciones copulativas, directamente relacionadas con las comparativas. Comparan una frase nominal con algo plural que puede expresarse como frase </xsl:text>
 <xsl:choose>
 		            <xsl:when test="//pp/@pPos='before'">preposicional</xsl:when>
 		            <xsl:when test="//pp/@pPos='after'">posposicional</xsl:when>
@@ -1786,7 +1786,7 @@
 <xsl:text> en español.  Otras lenguas tienen un sistema entero de los verbos existenciales que expresan la posición del objeto que se describe.</xsl:text>
 </p> 
 		      <p contentType="ctPracticalIntro">
-<xsl:text>Las oraciones existenciales se distinguen de las oracionea copiulativas por tienen verbos existenciales y/o palabras existenciales junto con una frase nominal y generalmente un lugar..</xsl:text>
+<xsl:text>Las oraciones existenciales se distinguen de las oracionea copulativas en que tienen verbos existenciales y/o palabras existenciales junto con una frase nominal y generalmente un lugar.</xsl:text>
 </p>
 		      
 		      <p>
@@ -2272,7 +2272,7 @@
 <exampleRef num="xIntranExperiencerPron" equal="no" letterOnly="no" />
 <xsl:text>.  En </xsl:text>
 <exampleRef num="xIntranExperiencerNP" equal="no" letterOnly="no" />
-<xsl:text> una frase nominal o un nombre en la posición del sujeto, mientras que en </xsl:text>
+<xsl:text> hay una frase nominal o un nombre en la posición del sujeto, mientras que en </xsl:text>
 <exampleRef num="xIntranExperiencerPron" equal="no" letterOnly="no" />
 <xsl:text> el sujeto es un pronombre.</xsl:text>
 </p>
@@ -3340,7 +3340,7 @@
 	            <xsl:when test="//ip/@consequence='optional'">se puede indicar con una palabra independiente, pero es opcional en todas las oraciones condicionales.  </xsl:when>
 	            <xsl:when test="//ip/@consequence='no'">nunca se indica con una palabra independiente.</xsl:when>
 </xsl:choose>
-<xsl:text>Esta palabra se presenta </xsl:text>
+<xsl:text> Esta palabra se presenta </xsl:text>
 <xsl:choose>
 	            <xsl:when test="//ip/@consequencePos='before'">antes</xsl:when>
 	            <xsl:when test="//ip/@consequencePos='after'">después</xsl:when>
@@ -3949,8 +3949,8 @@
 					</xsl:if>
 <xsl:text>  En las oraciones pasivas </xsl:text>
 <xsl:choose>
-						<xsl:when test="//ip/@passiveAux='no'">no se</xsl:when>
-						<xsl:when test="//ip/@passiveAux='yes'">se</xsl:when>
+						<xsl:when test="//ip/@passiveAux='no'">no se requiere</xsl:when>
+						<xsl:when test="//ip/@passiveAux='yes'">se requiere</xsl:when>
 					</xsl:choose>
 <xsl:text> un auxiliar específico.</xsl:text>
 <xsl:text></xsl:text>
@@ -4881,7 +4881,141 @@
 </example>
 </xsl:if>
 	   </section2>
-	   
+		<xsl:if test="normalize-space(//ip/@applicative)='yes'">
+<section2 id="sIPApplcatives">
+			<secTitle>Aplicativas</secTitle>
+			<p contentType="ctComparativeIntro">
+<xsl:text>Algunas lenguas tienen una construcción adicional aplicativa.  La aplicativa es una voz del verbo que promueve un argumento oblicua del verbo al argumento de objeto e indica la relación gramatical del oblicuo en el significado del verbo. Se convierte un verbo intransitivo a un transitivo y un verbo transitivo se convierte en ditransitivo cuando se añade el afijo aplicativo. Esto está en contraste con expresar estos argumentos con adposiciones.</xsl:text>
+</p>
+			<p contentType="ctComparativeIntro">
+<xsl:text> La voz aplicativa puede utilizarse para las relaciones gramaticales de comitativo, locativo, instrumento y benefactivo. Algunas lenguas permiten más de uno afijo aplicativo en un verbo.</xsl:text>
+</p>
+			<p contentType="ctPracticalIntro">
+<xsl:text>La aplicativa es una voz del verbo que promueve un argumento oblicua del verbo al argumento de objeto e indica la relación gramatical del oblicuo en el significado del verbo. Se convierte un verbo intransitivo a un transitivo y un verbo transitivo se convierte en ditransitivo cuando se añade el afijo aplicativo. 
+				</xsl:text>
+</p>
+			<p>
+<xsl:text>En el </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, el afijo aplicativo es:</xsl:text>
+</p>
+			<example num="xIP.IPApplcatives.12">
+<table border="1">
+					<tr>
+						<th>Afijo de voz aplicativa</th>
+						<th>Glosa</th>
+					</tr>
+					<xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//ip/applicativeVoice),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+				</table>
+</example>
+			<p>
+<xsl:text>Algunos ejemplos de oraciones aplicativas en el </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+			<example num="xIP.IPApplcatives.16">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//ip/applicativeExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/applicativeExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//ip/applicativeExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//ip/applicativeExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xIP.IPApplcatives.16</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xIP.IPApplcatives.16.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+		</section2>
+</xsl:if>
+		
+		
 	</section1>
 	
 		
@@ -5669,7 +5803,10 @@
             
             
          
-   
+	
+		
+	
+	
    
       
    

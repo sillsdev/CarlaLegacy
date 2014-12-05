@@ -26,11 +26,11 @@
 	<form section="adjp">
 	   <radioGroup id="AdjPClassifierAgrTable" show="swOTClassifierAgr">
 	      <groupName dataItem="adjectiveClassifier" default="no">RAdjPClassifierAgr</groupName>
-	      <prompt>You said that your language has classifiers which mark concord agreement throughout the nominal phrases.  Do the qualitative adjectives have classifiers attached to them?</prompt>
-	      <radio id="AdjPClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
-	      <radio id="AdjPClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement system</radio>
+	      <prompt>You said that your language has noun class markers with concord agreement throughout the nominal phrases.  Are the qualitative adjectives marked for class?</prompt>
+	      <radio id="AdjPClassifierAgrNo" dataValue="no">No, these elements are not marked for class</radio>
+	      <radio id="AdjPClassifierAgrYes" dataValue="yes">Yes, these elements are marked for class as part of the concord agreement system</radio>
 	   </radioGroup>
-	   <prompt id="AdjPClassifierAgrPrompt" show="swOTClassifierAgrAdjPYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the adjectives here.</prompt>
+	   <prompt id="AdjPClassifierAgrPrompt" show="swOTClassifierAgrAdjPYes">Since you have already detailed the forms of the noun class markers, you only need to enter the roots for each of the adjectives here.</prompt>
 <br/>
 	   <prompt>Key examples of adjectives in your language (without any modifiers) here.  Include examples of qualitative adjectives that express size, color, age, texture, form, or quality.</prompt>
 		<textBox id="AdjPExamples" dataItem="example" rows="8"/>
@@ -53,11 +53,11 @@
 	   <br/>
 	   <radioGroup id="AdjPDegreeClassifierAgrTable" show="swOTClassifierAgrAdjPModifiersYesOrYesManner">
 	      <groupName dataItem="adjectiveDegreeClassifier" default="no">RAdjPDegreeClassifierAgr</groupName>
-	      <prompt>Do the modifiers of the qualitative adjectives, such as degree words, have classifiers attached to them?</prompt>
-	      <radio id="AdjPDegreeClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
-	      <radio id="AdjPDegreeClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement system</radio>
+	      <prompt>Are the modifiers of the qualitative adjectives, such as degree words, marked for class?</prompt>
+	      <radio id="AdjPDegreeClassifierAgrNo" dataValue="no">No, these elements are not marked for class</radio>
+	      <radio id="AdjPDegreeClassifierAgrYes" dataValue="yes">Yes, these elements are marked for class as part of the concord agreement system</radio>
 	   </radioGroup>
-	   <prompt id="AdjPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAdjPDegreeYesOrYesManner">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the modifiers here</prompt>
+	   <prompt id="AdjPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAdjPDegreeYesOrYesManner">Since you have already detailed the forms of the noun class markers, you only need to enter the roots for each of the modifiers here</prompt>
 	   <br/>
 	   <prompt id="AdjPModifiersYesPrompt" show="swAdjPModifiersYesDegree">Key any degree words which can modify adjectives here:</prompt>
 	   <textBox id="AdjPModifiersDegreeExample" dataItem="adjectiveDegreeExample" show="swAdjPModifiersYesDegree"/>

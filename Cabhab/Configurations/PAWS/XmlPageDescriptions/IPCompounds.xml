@@ -43,7 +43,7 @@
       <br/>
       <br/>
       <prompt id="IPVerbIdiomExamplesPrompt">Next we want to consider the cases of a verb and another word or words that go together as a unit to express a notion that is not just the same as the combined meaning of the two independent words.  These are commonly called idioms.  Key examples of two or more word idioms from your language here:</prompt>
-      <textBox id="IPVerbIdiomExample" dataItem="verbIdiomExample" cols="50"/>
+      <textBox id="IPVerbIdiomExample" dataItem="idiomExample" cols="50"/>
       <instruction id="IPVerbIdiomInstruction">These multi-word idioms are best handled as a single verb entry in the lexicon using <tool>Join Compound</tool>.</instruction>
        <br/><br/>
         <buttons>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="Case" count="2/3">
+   <title level="2">Questions Générales de Typologie – Système de Cas</title>
+   <introduction>Nous devons maintenant déterminer pour votre langue le système de <technicalTermRef term="ttCase">cas</technicalTermRef> qu’elle emploie, si elle en emploie un. Pour commencer nous allons examiner des exemples où les noms et les pronoms figurent dans les positions de sujet et d’objet (nous traiterons les <technicalTermRef term="ttPossessors">possesseurs</technicalTermRef> plus tard).</introduction>
+    <form section="typology">   
+       <prompt>A la page précédente vous avez saisi les exemples suivants de phrases <technicalTermRef term="ttTransitive">transitifs</technicalTermRef> simples dans votre langue. Si vous  n’avez utilisé que des noms propres dans les positions de sujet et d’objet veuillez saisir des exemples supplémentaires utilisant des syntagmes nominaux simples. Veuillez n’entrez que des phrases qui ont un <technicalTermRef term="ttAgent">agent</technicalTermRef> comme sujet et qui ne montrent pas de changement de <technicalTermRef term="ttVoice">voix</technicalTermRef>.</prompt>
+        <textBox id="OTExample" dataItem="example" cols="50"/>
+       <prompt>Regardez les exemples dans la boîte ci-dessus. Notez s’il existe des marqueurs avec les noms qui pourraient indiquer s’il s’agit d’un sujet ou d’un objet. (Les notes que vous faites en examinant les différents types d’exemples requis vous aideront à répondre aux questions qui suivent.<br/><br/>
+          Maintenant entrez de pareils exemples de phrases transitives simples qui ont un sujet-agent; cette fois utilisez des pronoms dans les positions de sujet et d’objet. Essayez d’inclure des exemples avec les pronoms qui correspondent à « je, nous, vous, il, ils » dans la position du sujet, et les pronoms qui correspondent à « me, nous, vous, le, les » dans la position de l’objet.</prompt>
+        <textBox id="OTPnExample" dataItem="pnExample" cols="50"/>       
+       <prompt>Regardez les exemples dans la boîte ci-dessus. Notez s’il y a une différence entre les pronoms sujets et les pronoms objets.
+            </prompt>
+       <br/>
+       <introduction>Certaines langues (à part l’anglais) ont un marqueur casuel différent et une série de pronoms différente pour les sujets-<technicalTermRef term="ttExperiencer">expérienceurs</technicalTermRef> ou les sujets-agents.  
+          Dans quelques langues la distinction se fait voir seulement à la première personne du singulier (je). Exemples de ce genre de verbe transitif à sujet-expérienceur sont: paraître, voir, avoir peur, se trouver, vouloir et aimer.</introduction>     
+       <br/><br/>  
+       <prompt>Entrez ici des exemples de phrases à verbe transitif ayant un sujet-expérienceur, avec un syntagme nominal dans les positions du sujet et de l’objet:</prompt>
+       <textBox id="OTExperiencerExample" dataItem="experiencerExample" cols="50"/>
+       <prompt>Regardez les exemples dans la boîte ci-dessus. Notez si les noms portent un marqueur qui indique s’il s’agit du sujet ou de l’objet. Si oui, est-ce que le marqueur est le même pour les sujets-expérienceurs que pour les sujets-agents? Par contre il se peut que le marqueur est le même pour les objets dans les exemples avec les sujets-agents ci-dessus; ou bien le marqueur pourrait être distinct.  <br/><br/>
+          Maintenant entrez de pareils exemples de phrases transitives simples à sujet-expérienceur; cette fois utilisez des pronoms dans les positions de sujet et d’objet. Là encore, essayez d’inclure des exemples où les pronoms qui correspondent à « je, nous, vous, il, ils » se trouvent à la position du sujet, et les pronoms correspondants à « me, nous, vous, le, les » à la position de l’objet.</prompt>
+       <textBox id="OTExperiencerPnExample" dataItem="experiencerPnExample" cols="50"/>       
+       <prompt>Regardez les exemples dans la boîte ci-dessus. Encore une fois, notez si la série de pronoms sujets est différente de la série de pronoms objets. Ensuite, comparez les pronoms utilisés pour les sujets-expérienceurs avec les pronoms utilisés pour les sujets-agents ci-dessus; sont-ils différents? Si oui, est-ce que les pronoms utilisés pour les sujets-expérienceurs sont les même que les pronoms objets dans les exemples de sujet-agent  ci-dessus? Ou bien, s’agit-il d’une série distincte?</prompt>
+           <br/>
+       <prompt>Ensuite, nous allons examiner des données pareilles liées aux intransitifs. Entrez quelques exemples de phrases simples <technicalTermRef term="ttIntransitive">intransitifs</technicalTermRef>, où le syntagme nominal agent simple prend la position du sujet:</prompt>
+        <textBox id="OTIntExample" dataItem="intExample" cols="50"/>
+       <prompt>Regardez les exemples dans la boîte ci-dessus. Notez si le nom porte un marqueur qui indique son rôle de sujet. Si oui – dans les exemples ci-dessus avec un sujet-agent –  est-ce que le marqueur est le même que celui du sujet ou de l’objet?<br/><br/>
+          Maintenant entrez de pareils exemples de phrases intransitives simples à sujet-agent; cette fois, utilisez des pronoms dans la position du sujet. Essayez d’inclure des exemples avec les pronoms qui correspondent à « je, nous, vous, il, ils » à la position du sujet.</prompt>
+        <textBox id="OTIntPnExample" dataItem="pnIntExample" cols="50"/>
+       <prompt>Regardez les exemples dans la boîte ci-dessus. Vérifiez si le pronom est le même que celui de la série utilisé pour le sujet ou l’objet (ou les deux) dans les exemples transitifs avec des pronoms et un sujet-agent ci-dessus.</prompt>
+       <br/>
+       <prompt>Maintenant il faut identifier des différences avec les sujets-expérienceurs. Parmi les verbes intransitifs à sujet-expérienceur on compte: « rire », « pleurer » « être triste », « avoir peur » et « être fâché ». (les trois derniers sont des constructions copulatives munies d’un prédicat adjectival; dans certaines langues il s’agit plutôt de verbes). Entrez ici quelques exemples de phrases avec des verbes intransitifs qui ont un sujet-expérienceur, avec un syntagme nominal simple dans la position du sujet:</prompt>
+       <textBox id="OTExperiencerIntExample" dataItem="experiencerIntExample" cols="50"/>
+       <prompt>Regardez les exemples dans la boîte ci-dessus. Notez si les noms portent un marqueur qui indique leur identité de sujet. Si oui, est-ce que le marqueur est le même pour les sujets-expérienceurs que pour les sujets-agents? Il se peut au contraire que le marqueur est le même que celui des objets dans les exemples transitifs avec sujets-agents ci-dessus, ou bien un marqueur distinct. <br/><br/>
+          Maintenant, entrez quelques exemples pareils de phrases simples intransitives qui ont un sujet-expérienceur; cette fois utilisez des pronoms à la position du sujet. Essayez d’inclure des exemples qui ont les pronoms correspondants à « je, nous, vous, il, ils » dans la position sujet.</prompt>
+       <textBox id="OTExperiencerPnIntExample" dataItem="experiencerPnIntExample" cols="50"/>       
+       <prompt>Regardez les exemples dans la boîte ci-dessus. Comparez les pronoms qui correspondent au sujet-expérienceur avec ceux qu’on a utilisés en-dessus pour le sujet-agent. Sont-ils les mêmes  ou différents?  S’ils sont différents,  est-ce que les pronoms pour les sujets-expérienceurs correspondent aux pronoms objets dans les exemples transitifs au sujet-agent, ou s’agit-il d’une série distincte?</prompt>
+ <br/>
+       <introduction>Retenez ce que vous avez appris de ces exemples; veuillez lire les renseignements suivants sur les systèmes casuels – cela vous aidera à répondre aux questions sur le système casuel dans votre langue. </introduction>       
+       <instruction id="CaseNullAdapting">You may have the situation (as is true for two of the projects this starter kit was initially tested on) where the source language you wish to adapt from is unmarked or less marked for case than the target language(s) you wish to adapt into.  If so, you will need to add null allomorphs for the case markers in the source language to match the case markers in the target language(s) and allow the syntactic parser to disambiguate between these as much as possible.  If you have this situation, read the following information and answer the question(s) below based on the case system of the target language(s).<br/>   
+        </instruction>
+        <introduction id="NPCaseIntro">
+           Le système casuel le plus commun est nominatif-accusatif. C’est le système du français, quoiqu’en français seuls les pronoms portent un marqueur casuel. Dans un système nominatif-accusatif, les sujets de verbes transitifs et intransitifs sont <technicalTermRef term="ttNominative">au nominatif</technicalTermRef>, tandis que les objets directs sont <technicalTermRef term="ttAccusative">à l’accusatif</technicalTermRef>. Les possesseurs sont <technicalTermRef term="ttGenitive">au génitif</technicalTermRef>. Les pronoms au nominatif en français sont: <example>je, tu, il, elle, nous, vous, ils, elles</example>.  Les pronoms à l’accusatif sont: <example>me, te, le, la, nous, vous, les</example>.  
+           Les pronoms au génitif incluent: <example>mon, ma, mes, ton, ta, tes, son, sa, ses, notre, nos, votre, vos, leur, leurs</example>.  Ainsi, nous disons <example>Ils le chassent</example> et non <example>Les chassent il</example>. <br/>
+            <br/>
+           Une langue possédant un système casuel de type nominatif-accusatif peut avoir un marqueur qui distingue les sujets-expérienceurs des sujets-agents.<br/>
+           <br/>
+           Dans un système casuel ergatif-absolutif les sujets des verbes transitifs ont la marque de <technicalTermRef term="ttErgative">l’ergatif</technicalTermRef>, tandis que les objets des verbes transitifs et les sujets des verbes intransitifs prennent la marque du cas <technicalTermRef term="ttAbsolutive">absolutif</technicalTermRef>.  Cette distinction peut aussi être influencée selon que le sujet est agent ou expérienceur. Le cas des possesseurs n’est pas linguistiquement homogène; ainsi, si votre langue possède un système ergatif-absolutif on vous posera des questions sur le cas des possesseurs à la <section number="5.4">Syntagmes Nominaux – Possesseurs</section>.  
+           <br/><br/>Certaines langues à système casuel ergatif-absolutif possèdent des séries distinctes de marqueurs verbaux, sans marquer les noms. Si votre langue en possède, et qu’il y a une seule série de pronoms, répondez « aucun » ci-dessous. Cependant, si votre langue possède deux séries de pronoms, ainsi que des séries différentes de marqueurs d’accord, répondez « ergatif-absolutif » ci-dessous. Le marquage d’accord sera traité à part, à la <section number="9.2">Phrases Simples – Caractéristiques d’accord</section>.<br/>
+            <br/>
+           Certaines langues sont encore plus complexes: d’habitude ils ont un système casuel nominatif-accusatif, toutefois dans quelques circonstances grammaticales leur système casuel est celui de l’ergatif-absolutif. Pour n’en citer qu’un exemple: en urdu et en hindi c’est l’agent qui porte le marqueur de cas ergatif au prétérit et au parfait des verbes transitifs et ditransitifs, tandis que pour tous les autres temps et aspects, l’Agent est au nominatif. En Dyirbal les pronoms suivent un schéma nominatif-absolutif lorsque l’Agent est à la première ou à la deuxième personne; par contre, ils suivent un schéma ergatif-absolutif lorsqu’il s’agit d’un Agent à la troisième personne. Ce procédé s’appelle « ergativité scindée ». 
+           <span id="OTCaseSplitNotPracticalSpan" show="swNotPractical"> Dans notre analyse préliminaire de ces langues le mieux qu’on peut faire c’est d’ajouter toutes les règles qui permettent les deux systèmes casuels. Après, les particularités valables pour votre langue peuvent être ajoutées aux règles. 
+              (In this starter kit, the best we can do for these languages is to add all the rules allowing both case systems.  Afterward, the specific constraints needed for your language can be added to the rules.)</span> 
+        </introduction>
+       <br/>
+        <radioGroup>
+        <groupName dataItem="case" default="nominative">RCase</groupName>
+           <prompt>Selon la description des systèmes casuels et les exemples pris dans votre langue où figurant les sujets-agents ci-dessus, lequel est correct pour votre langue?</prompt>
+           <radio id="NPCaseNone" checked="yes" dataValue="none">Aucun: la même série de pronoms peut être utilisée n’importe où dans la phrase; un nom ou un modificateur d’un nom ne prend pas de marque en fonction de sa position</radio>
+           <radio id="NPCaseNom" checked="yes" dataValue="nominative">Nominatif-accusatif: les sujets-agents des verbes transitifs et intransitifs sont identiques, mais les objets des verbes transitifs sont différents</radio>
+           <radio id="NPCaseErg" checked="yes" dataValue="ergative">Ergatif-absolutif; les sujets-agents des verbes intransitifs et les objets des verbes transitifs sont identiques, mais les sujets-agents des verbes transitifs sont différents</radio>
+           <radio id="NPCaseSplit" checked="yes" dataValue="split">Ergativité dédoublée: d’habitude la langue utilise un système nominatif-accusatif, mais sous certaines conditions grammaticales la langue utilise le système ergatif-absolutif</radio>
+        </radioGroup>
+       <prompt id="NPCaseSplitPrompt" show="swNPCaseSplit">Le système casuel ergatif-absolutif s’emploie quand:</prompt>
+       <textBox id="NPCaseSplitConditions" dataItem="splitConditions" cols="50" rows="2" show="swNPCaseSplit"/>
+ <br/><br/>
+       <radioGroup id="NPCaseExperiencerTable" show="swNPCaseNotNone">
+          <groupName dataItem="caseExperiencer" default="no">RNPCaseExperiencer</groupName>
+          <prompt>Est-ce que votre langue emploie un marquage casuel différent pour les noms, et/ou bien des séries de pronoms différentes pour les sujets-expérienceurs quant aux sujets-agents?</prompt>
+          <radio id="NPCaseExperiencerNo" dataValue="no">Non, on emploie le même marquage de cas et/ou la même série pronominale pour les agents que pour les sujets-expérienceurs</radio>
+          <radio id="NPCaseExperiencerYesObj" dataValue="yesObj">Oui, les sujets-expérienceurs utilisent le même marquage de cas et/ou la même série que pour les objets des verbes transitifs à sujet-agent</radio>
+          <radio id="NPCaseExperiencerYesDat" dataValue="yesDat">Oui, les sujets-expérienceurs utilisent un marquage casuel et/ou une série pronominale qui est différent pour les sujets et les objets de verbes à sujet-agent , mais qui peuvent s’employer pour les objet indirects</radio>
+       </radioGroup>
+       
+       <radioGroup id="NPNoCaseExperiencerTable" show="swNPCaseNone">
+          <groupName dataItem="noCaseExperiencer" default="no">RNPNoCaseExperiencer</groupName>
+          <prompt>Est-ce que votre langue possède des pronoms particuliers pour les sujets-expérienceurs différents des sujets-agents?</prompt>
+          <radio id="NPNoCaseExperiencerNo" dataValue="no">Non, on utilise les mêmes pronoms pour désigner les sujets-agents et les sujets-expérimentateurs</radio>
+          <radio id="NPNoCaseExperiencerYes" dataValue="yes">Oui, les sujets-expérimentateurs utilisent des formes pour certains ou tous pronoms différentes des sujets-agents</radio>
+       </radioGroup>
+       <br/>
+         <br/>
+        <buttons>
+            <button id="CaseBack" value="Back" goto="OverallTypology.xml"/>
+            <button id="CaseNext" value="Next" goto="Classifiers.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
+    <showWhen id="swNPCaseNotNone">
+        <not/><whenRadio button="NPCaseNone"/>
+    </showWhen>
+   <showWhen id="swNPCaseNone">
+      <whenRadio button="NPCaseNone"/>
+   </showWhen>
+    <showWhen id="swNPCaseNomOrSplit">
+        <whenRadio button="NPCaseNom"/>
+        <or/>
+        <whenRadio button="NPCaseSplit"/>
+    </showWhen>
+   <showWhen id="swNPCaseSplit">
+      <whenRadio button="NPCaseSplit"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

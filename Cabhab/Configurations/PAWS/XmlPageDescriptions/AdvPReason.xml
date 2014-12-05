@@ -2,31 +2,31 @@
 <!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
 <?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
 <page id="AdvPReason" count="4/6">
-	<title level="2">Adverbs and AdvP - Reason or Purpose Adverbs</title>
-	<introduction>Reason or purpose adverbs include <example>therefore</example> and
-	   <example>so</example>.  Reason or purpose adverbs do not normally allow modifiers. <br/><br/>
-	   Reason or purpose can also be expressed by a
+    <title level="2">Adverbs and AdvP - Reason or Purpose Adverbs</title>
+    <introduction>Reason or purpose adverbs include <example>therefore</example> and
+       <example>so</example>.  Reason or purpose adverbs do not normally allow modifiers. <br/><br/>
+       Reason or purpose can also be expressed by a
 prepositional phrase, such as <example>for this reason</example> or <example>on purpose</example>, and
-		by an adverbial clause beginning with <example>because</example> or <example>since</example> or <example>in order</example>.  The <span id="AdvPReasonNorPracticalSpan" show="swNotPractical">structure of these </span>adverbial clauses will be addressed in <section number="13">Adverbial Clauses</section>.
+        by an adverbial clause beginning with <example>because</example> or <example>since</example> or <example>in order</example>.  The <span id="AdvPReasonNorPracticalSpan" show="swNotPractical">structure of these </span>adverbial clauses will be addressed in <section number="13">Adverbial Clauses</section>.
 </introduction>
-	<form section="advp">
-		<prompt>Key your examples of reason or purpose adverbs here, including those which can have a clause following them:</prompt>
-		<textBox id="AdvPReasonExample" dataItem="reasonExample" rows="3"/>
-		<prompt>Key your examples of prepositional or postpositional phrases which express reason or purpose here:</prompt>
-		<textBox id="AdvPReasonPPExample" dataItem="reasonPPExample" rows="3"/>
-		<prompt>Now key some examples from each of the boxes above included in full sentences (followed by a period) here:</prompt>
-		<textBox id="AdvPReasonSentExample" dataItem="reasonSentExample" rows="5" cols="50"/>
-		<br/>
-		<instruction id="AdvPReasonInstruction">In the lexicon, key the feature <feature>reason</feature> on
+    <form section="advp">
+        <prompt>Key your examples of reason or purpose adverbs here, including those which can have a clause following them:</prompt>
+        <textBox id="AdvPReasonExample" dataItem="reasonExample" rows="3"/>
+        <prompt>Key your examples of prepositional or postpositional phrases which express reason or purpose here:</prompt>
+        <textBox id="AdvPReasonPPExample" dataItem="reasonPPExample" rows="3"/>
+        <prompt>Now key some examples from each of the boxes above included in full sentences here:</prompt>
+        <textBox id="AdvPReasonSentExample" dataItem="reasonSentExample" rows="5" cols="50"/> 
+        <br/>
+        <instruction id="AdvPReasonInstruction">In the lexicon, key the feature <feature>reason</feature> on
 all adverbs that express reason or purpose, and also on the nouns like <example>reason</example> and <example>purpose</example>.  Any multi-word forms, like <example>in order</example> are best handled as a single entry using <tool>Join Compound</tool>.
-		</instruction>
-		<br/><br/>
-		<buttons>
-			<button id="AdvPReasonBack" value="Back" goto="AdvPManner.xml"/>
-			<button id="AdvPReasonNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
-		</buttons>
-	</form>
-	<showWhen id="swNotPractical">
-		<whenValue  element="paws" attr="outputGrammar" value="True"/>
-	</showWhen>
+        </instruction>
+        <br/><br/>
+        <buttons>
+            <button id="AdvPReasonBack" value="Back" goto="AdvPManner.xml"/>
+            <button id="AdvPReasonNext" value="Next" goto="AdvPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
 </page>

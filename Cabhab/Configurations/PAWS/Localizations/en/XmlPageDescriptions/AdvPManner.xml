@@ -76,14 +76,14 @@ and <example>so</example>, as in:
        <radio id="AdvPMannerAffixDegreeYes" dataValue="yes">Yes, manner adverb affixes may be modified or intensified in the following ways:</radio>
        <checkboxGroup id="AdvPMannerAffixDegreeType" show="swAdvPMannerAffixDegreeYes">
           <prompt>Check all options that are correct for your language</prompt> 
-          <checkbox id="AdvPMannerAffixDegreeYesBefore" dataItem="mannerAffixDegreeYesBefore">Yes, a degree affix many appear before the manner adverb affixes</checkbox>
-          <checkbox id="AdvPMannerAffixDegreeYesAfter" dataItem="mannerAffixDegreeYesAfter">Yes, a degree affix many appear after the manner adverb affixes</checkbox>
+          <checkbox id="AdvPMannerAffixDegreeYesBefore" dataItem="mannerAffixDegreeYesBefore">A degree affix many appear before the manner adverb affixes</checkbox>
+          <checkbox id="AdvPMannerAffixDegreeYesAfter" dataItem="mannerAffixDegreeYesAfter">A degree affix many appear after the manner adverb affixes</checkbox>
           <checkbox id="AdvPMannerAffixDegreeRedup" dataItem="mannerAffixDegreeRedup">Reduplication is used to intensify the meaning of the manner adverb affixes</checkbox>
           <checkbox id="AdvPMannerAffixDegreeOther" dataItem="mannerAffixDegreeOther">My language does the following to intensify the meaning of the manner adverb affixes:<textBox  id="AdvPMannerAffixDegreeOtherContent" dataItem="mannerAffixDegreeOther" rows="2"/></checkbox>
        </checkboxGroup>
     </radioGroup>
        <prompt id="AdvPMannerAffixDegreeNoCheckPrompt" show="swAdvPMannerTypeAffixDegreeYesNoCheck">WARNING: You said above that manner adverb affixes may be modified or intensified, but you did not check any of the options.  Please either check one or more options as appropriate, or change the answer above to "No, manner adverb affixes are not modified or intensified".</prompt>
-       <prompt id="AdvPMannerAffixDegreePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Key the degree affixes which can modify or intensify the manner adverb affixes here, with a hyphen indicating which side it ataches on:</prompt>
+       <prompt id="AdvPMannerAffixDegreePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Key the degree affixes which can modify or intensify the manner adverb affixes here, with a hyphen indicating which side it attaches on:</prompt>
         <textBox id="AdvPMannerAffixDegreeExample" dataItem="mannerAffixDegreeExample" rows="3" show="swAdvPMannerTypeAffixAndYesDegree"/>   
         <br/><br/>
         <prompt id="AdvPMannerAffixDegreePhrasePrompt" show="swAdvPMannerTypeAffixAndYesDegree">Now key examples of the manner adverb affixes attached to a verb with degree affixes also modifying them here:</prompt>

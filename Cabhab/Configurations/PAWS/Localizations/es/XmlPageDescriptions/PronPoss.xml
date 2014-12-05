@@ -5,7 +5,7 @@
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="PronPoss" count="2/9">
     <title level="2">Los pronombres - Los posesivos</title>
-   <introduction>Muchas lenguas también tienen los pronombres <technicalTermRef term="ttPossessives">posesivos</technicalTermRef> que pueden usar solos, por ejemplo <example>suyo</example>, <example>mío</example>, <example>suyos</example> o <example>tuyo</example>  en español. 
+   <introduction>Muchas lenguas también tienen los pronombres <technicalTermRef term="ttPossessors">posesivos</technicalTermRef> que pueden usar solos, por ejemplo <example>suyo</example>, <example>mío</example>, <example>suyos</example> o <example>tuyo</example>  en español. 
       Estos son distintos de los que puedan presentarse en la posición del posesivo de un sustantivo, como <example>su</example>, <example>mi</example>, <example>sus</example> o <example>tu</example>, que fueron ejemplificados con los pronombres personales en la página anterior.<br/><br/>
    En algunas lenguas, los pronombres posesivos se escriben como frases en vez de una sola palabra.</introduction>
     <form section="pron">
@@ -82,8 +82,8 @@
        <prompt id="PronPossAffixNoPhrasePrompt" show="swPronPossAffixNoPhrase"><br/>Escriba la palabra especial que está poseída por los pronombres para poseedores para formar una frase posesiva que actúa igual que un pronombre posesivo aquí:
        </prompt>
        <textBox id="PronPossPhraseWordExamples" dataItem="pronPossPhraseWordExample"  rows="2" show="swPronPossAffixNoPhrase"/> 
-       <instruction id="PronPossPhraseWordInstruction" show="swPronPossAffixNoPhrase">In the lexicon, add the feature <feature>possessive</feature> to this special possessive word.</instruction>
- <br/>       <br/>
+       <instruction id="PronPossPhraseWordInstruction" show="swPronPossAffixNoPhrase">In the lexicon, add the feature <feature>possessive</feature> to this special possessive word, which also must have the category <category>N</category>.</instruction>
+       <br/>       <br/>
         <buttons>
             <button id="PronPossBack" value="Back" goto="PronMain.xml"/>
             <button id="PronPossNext" value="Next" goto="PronRefl.xml"/>

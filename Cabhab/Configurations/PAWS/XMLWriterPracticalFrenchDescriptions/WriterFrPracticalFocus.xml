@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+   <section1 id="sFocus">
+      <secTitle>Constructions de focus et de thème</secTitle>
+	  <p contentType="ctPracticalIntro"><content>
+	     Cette section traite deux sortes de constructions qui attirent l’attention à un élément particulier.  Puisque les thèmes se trouvent en dehors des constructions de focus et ont une portée plus étendue, nous les considérerons en priorité. Il est possible qu’une seule phrase ait à la fois un syntagme de thème et un syntagme de focus.</content></p>
+      <p contentType="ctComparativeIntro"><content>
+         Cette section traite deux sortes de constructions qui attirent l’attention à un élément particulier.  Puisque les thèmes se trouvent en dehors des constructions de focus et ont une portée plus étendue, nous les considérerons en priorité.  L’exemple </content><langData>Quant à Guillaume, le football il joue ___ le mieux</langData><content> montre qu’une seule phrase peut avoir un syntagme de thème et de focus à la fois.  Dans ce cas le thème </content><langData>Guillaume</langData><content> est introduit par le marqueur de thème </content><langData>quant à</langData><content>, puis la phrase de focus </content><langData>football</langData><content> qui a été déplacé de sa place normale dans la phrase.</content></p>
+   <section2 id="sFocusTopics">
+      <secTitle>Thèmes et marqueurs de thème</secTitle>
+		 <p contentType="ctPracticalIntro"><content>
+		    Selon la définition ici, les constructions de thème se composent d’un syntagme de thème suivi d’une phrase complète ou d’une question et séparée d’habitude par la ponctuation.  Certain marqueurs peuvent aussi être utilisés pour signaler les thèmes. </content>
+ </p>
+      <p contentType="ctComparativeIntro"><content>
+         Selon la définition ici, les constructions de thème se composent d’un syntagme de thème suivi d’une phrase complète ou d’une question et séparée d’habitude par la ponctuation.  Certain marqueurs peuvent aussi être utilisés pour signaler les thèmes, comme montré dans les exemples suivants en français: </content>
+         <langData>Quant à Jean, je pense qu’il fera un bon médecin</langData><content> et </content><langData>Parlant de Jeanne, où est-elle?</langData>    </p>
+      
+      <p show="swTopicNo"><content>En </content><langName/><content> les syntagmes de thème ne sont pas permis. </content></p>
+      <p show="swTopicYes"><content>En </content><langName/><content> il y a des syntagmes de thème qui se trouvent </content>
+            <case element="focus" attr="topicPos">
+			   <caseText value="before">avant</caseText>
+               <caseText value="after">après</caseText>
+			   <caseText value="unknown">_______</caseText>
+            </case>
+         <content> la phrase principale ou question.   Certains exemples comprennent:</content>
+		 </p>
+		 <example show="swTopicYes">
+			<interlinear exampleLoc="focus/topicExample"/>
+		 </example>
+      <p show="swTopicYes"><content>Comme les exemples le montrent le syntagme de thème </content>
+			<case element="focus" attr="topicMarker">
+			   <caseText value="no">n’est pas marqué par un marqueur de thème. Seulement la position dans la phrase et peut-être la ponctuation distinguent le syntagme de thème.</caseText>
+			   <caseText value="yesWord">est marqué par certains mots ou certaines phrases.</caseText>
+			   <caseText value="yesClitic">est marqué par un  clitique ou plusieurs qui s’attache(nt) au syntagme de thème.  Ces clitiques sont: </caseText>
+			   <caseText value="yesAffix">marqués par un affixe ou plusieurs qui s’attache(nt) au nom principal dans le syntagme de thème. Ces affixes sont: </caseText>
+			</case>
+         <text show="swTopicMarkerYesWord"><content>Les marqueurs de thème se trouvent </content>
+			   <text show="swTopicMarkerBefore"><content>avant le</content></text>
+            <text show="swTopicMarkerAfter"><content>après le</content></text>
+            <text show="swTopicMarkerBoth"><content>des deux côtés du</content></text>
+            <text show="swTopicMarkerEither"><content>d’un côté ou de l’autre du</content></text>
+            <text show="swTopicMarkerBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+            <text show="swTopicMarkerAfterOrBoth"><content>après ou des deux côtés du</content></text>
+            <text show="swTopicMarkerEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+            <text show="swTopicMarkerNotOther"><content> syntagme de thème.  </content>
+			   </text>
+			   <text show="swTopicMarkerOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="focus/topicMarkerOther"/><content>.  </content>
+			   </text>
+            <text show="swTopicMarkerAndOther"><content> syntagme de thème et peut aussi se trouver ___</content><contentCheckBoxOther contentLoc="focus/topicMarkerOther"/><content>.  </content></text>
+            <content> Un marqueur de thème est </content><case element="focus" attr="topicMarkerRequired">
+               <caseText value="no">facultatif</caseText>
+               <caseText value="yes">exigé</caseText></case>
+            <content> chaque fois qu’il y a un syntagme de thème.  Les marqueurs de thèmes sont:</content>
+			</text>
+		 </p>
+		 <example show="swTopicMarkerYesWord">
+			<table border="1">
+			   <headerRow>
+			      <headerCol>Marqueurs de thème</headerCol>
+				  <headerCol>Glose</headerCol>
+			   </headerRow>
+			   <row>
+				  <col exampleLoc="focus/topicMarkerExample"></col>
+				  <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+			   </row>
+			</table>
+		 </example>
+      <example show="swTopicMarkerYesClitic">
+         <table border="1">
+            <headerRow>
+               <headerCol>Clitiques de marqueurs de thème</headerCol>
+               <headerCol>Glose</headerCol>
+            </headerRow>
+            <row>
+               <col exampleLoc="focus/topicMarkerCliticExample"></col>
+               <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+            </row>
+         </table>
+      </example>
+      <example show="swTopicMarkerYesAffix">
+         <table border="1">
+            <headerRow>
+               <headerCol>Affixes de marqueurs de thème</headerCol>
+               <headerCol>Glose</headerCol>
+            </headerRow>
+            <row>
+               <col exampleLoc="focus/topicMarkerAffixExample"></col>
+               <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+            </row>
+         </table>
+      </example>
+   </section2>
+
+	  <section2 id="sFocusFocus">
+	     <secTitle>Syntagmes de focus et marqueurs de focus</secTitle>
+	     <p contentType="ctPracticalIntro"><content>Les constructions de thème ont aussi un syntagme nominal qui se trouve soit en premier soit en dernier et peut être séparé par la ponctuation.  Cependant, par contraste avec les thèmes, le syntagme de focus est déplacé de sa position normale dans la phrase, laissant un vide.  Certains marqueurs peuvent être utilisés pour marquer le syntagme de focus.</content></p>
+	     <p contentType="ctComparativeIntro"><content>Les constructions de focus ont aussi un syntagme nominal qui se trouve soit en premier soit en dernier et peut être séparé par la ponctuation.  Cependant, par contraste avec les thèmes, le syntagme de focus est déplacé de sa position normale dans la phrase, laissant un vide.  Certains marqueurs tels que </content><langData>seulement</langData>  <content> en français, peuvent être utilisés pour marquer le syntagme de focus. Les constructions de focus ne sont pas utilisées fréquemment dans les langues SVO, puisque le sujet est habituellement en focus et est déjà en premier  dans l’ordre normal. Les langues avec d’autres ordres de mots telles que les langues VSO peuvent faire un usage extensif de constructions de focus. Des exemples en français de constructions de thème comprennent: </content>
+	        <langData>Les filles, j’aime __</langData><content>, </content><langData>Le football, Guillaume le joue __ le mieux</langData><content> et </content><langData>Seulement ce garçon-là, Gérald l’a frappé __ </langData><content>.</content></p>
+	     
+	     <p show="swFocusNo"><content>En </content><langName/><content> un syntagme de focus ne doit pas être déplacé avant ou après le reste de la phrase au lieu de sa position normale. </content></p>
+	     <p show="swFocusYes"><content>En </content><langName/><content> il y a des syntagmes de focus qui se trouvent </content>
+            <case element="focus" attr="focusPos">
+			   <caseText value="before">avant</caseText>
+               <caseText value="after">après</caseText>
+			   <caseText value="unknown">_______</caseText>
+            </case>
+	        <content> le reste de la phrase.   En voici quelques exemples:</content>
+		 </p>
+		 <example show="swFocusYes">
+			<interlinear exampleLoc="focus/focusExample"/>
+		 </example>
+	     <p show="swFocusYes"><content>Comme les exemples le montrent, le syntagme de focus </content>
+			<case element="focus" attr="focusMarker">
+			   <caseText value="no">n’est pas marqué par un marqueur de focus. Seule la position dans la phrase et peut-être la ponctuation distinguent le syntagme de focus.</caseText>
+			   <caseText value="yesWord">est marqué par certains mots ou syntagmes. </caseText>
+			   <caseText value="yesClitic">est marqué par un clitique ou plusieurs qui s’attache(nt) au syntagme de focus. Ces clitiques sont:</caseText>
+			   <caseText value="yesAffix">est marqué par un affixe ou plusieurs qui s’attache(nt) au nom principal dans le syntagme de focus.  Ces affixes sont:</caseText>
+			</case>
+	        <text show="swFocusMarkerYesWord"><content>Les marqueurs de focus se trouvent </content>
+	            <text show="swFocusMarkerBefore"><content>avant le</content></text>
+	           <text show="swFocusMarkerAfter"><content>après le</content></text>
+	           <text show="swFocusMarkerBoth"><content>des deux côtés du</content></text>
+	           <text show="swFocusMarkerEither"><content>d’un côté ou de l’autre du</content></text>
+	           <text show="swFocusMarkerBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+	           <text show="swFocusMarkerAfterOrBoth"><content>après ou des deux côtés du</content></text>
+	           <text show="swFocusMarkerEitherOrBoth"><content>d’un côté ou de l’autre ou des deux côtés du</content></text>
+	           <text show="swFocusMarkerNotOther"><content> syntagme de focus.  </content>
+			   </text>
+			   <text show="swFocusMarkerOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="focus/focusMarkerOther"/><content>.  </content>
+			   </text>
+	           <text show="swFocusMarkerAndOther"><content> syntagme de focus et peut aussi se trouver ___</content><contentCheckBoxOther contentLoc="focus/focusMarkerOther"/><content>.  </content></text>
+	           <content> Un marqueur de focus est </content><case element="focus" attr="focusMarkerRequired">
+	              <caseText value="no">facultatif</caseText>
+	              <caseText value="yes">exigé</caseText></case>
+	           <content> chaque fois qu’il y a un syntagme de focus. Les marqueurs de focus sont:</content>
+			</text>
+		 </p>
+		 <example show="swFocusMarkerYesWord">
+			<table border="1">
+			   <headerRow>
+			      <headerCol>Marqueurs de focus</headerCol>
+				  <headerCol>Glose</headerCol>
+			   </headerRow>
+			   <row>
+				  <col exampleLoc="focus/focusMarkerExample"/>
+				  <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+			   </row>
+			</table>
+		 </example>
+	     <example show="swFocusMarkerYesClitic">
+	        <table border="1">
+	           <headerRow>
+	              <headerCol>Clitiques de marqueurs de focus</headerCol>
+	              <headerCol>Glose</headerCol>
+	           </headerRow>
+	           <row>
+	              <col exampleLoc="focus/focusMarkerCliticExample"></col>
+	              <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+	           </row>
+	        </table>
+	     </example>
+	     <example show="swFocusMarkerYesAffix">
+	        <table border="1">
+	           <headerRow>
+	              <headerCol>Affixes de marqueurs de focus</headerCol>
+	              <headerCol>Glose</headerCol>
+	           </headerRow>
+	           <row>
+	              <col exampleLoc="focus/focusMarkerAffixExample"></col>
+	              <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+	           </row>
+	        </table>
+	     </example>
+	     
+
+	  </section2>
+
+   </section1>
+   <showWhen id="swTopicYes">
+	  <whenValue element="focus" attr="topic" value="yes"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicNo">
+	  <whenValue element="focus" attr="topic" value="no"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicMarkerYesWord">
+	  <whenValue element="focus" attr="topic" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="topicMarker" value="yesWord"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicMarkerYesClitic">
+      <whenValue element="focus" attr="topic" value="yes"></whenValue>
+      <and/>
+      <whenValue element="focus" attr="topicMarker" value="yesClitic"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicMarkerYesAffix">
+      <whenValue element="focus" attr="topic" value="yes"></whenValue>
+      <and/>
+      <whenValue element="focus" attr="topicMarker" value="yesAffix"></whenValue>
+   </showWhen>
+   <showWhen id="swTopicMarkerYes">
+	  <whenValue element="focus" attr="topicMarker" value="no" negateValue="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus"  attr="topic" value="yes" />
+   </showWhen>
+
+   <showWhen id="swTopicMarkerBefore">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerAfter">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerBoth">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerEither">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerBeforeOrBoth">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerAfterOrBoth">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerEitherOrBoth">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swTopicMarkerNotOther">
+      <whenValue element="focus/topicMarkerOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerOtherOnly">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTopicMarkerAndOther">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swFocusYes">
+	  <whenValue element="focus" attr="focus" value="yes"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusNo">
+	  <whenValue element="focus" attr="focus" value="no"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusMarkerYesWord">
+	  <whenValue element="focus" attr="focus" value="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focusMarker" value="yesWord"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusMarkerYesClitic">
+      <whenValue element="focus" attr="focus" value="yes"></whenValue>
+      <and/>
+      <whenValue element="focus" attr="focusMarker" value="yesClitic"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusMarkerYesAffix">
+      <whenValue element="focus" attr="focus" value="yes"></whenValue>
+      <and/>
+      <whenValue element="focus" attr="focusMarker" value="yesAffix"></whenValue>
+   </showWhen>
+   <showWhen id="swFocusMarkerYes">
+	  <whenValue element="focus" attr="focusMarker" value="no" negateValue="yes"></whenValue>
+	  <and/>
+	  <whenValue element="focus" attr="focus" value="yes"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerBefore">
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/topicMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/topicMarkerBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerAfter">
+      <whenValue element="focus/topicMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerBoth">
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerEither">
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerBeforeOrBoth">
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerAfterOrBoth">
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerEitherOrBoth">
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swFocusMarkerNotOther">
+      <whenValue element="focus/focusMarkerOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerOtherOnly">
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="focus/focusMarkerOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerAndOther">
+      <whenValue element="focus/focusMarkerBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="focus/focusMarkerAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="focus/focusMarkerBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="focus/focusMarkerOther" attr="checked" value="yes"/>
+   </showWhen>
+   
+
+</portion>

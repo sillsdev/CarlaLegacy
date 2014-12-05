@@ -6,7 +6,7 @@
        <p contentType="ctPracticalIntro">
           <content>Esta gramática</content><endnote id="nPAWS">
              <p>
-                <content>La primera versión de esta gramática fue producida por el programa de PATAS </content>
+                <content>La primera versión de esta gramática fue producida por el programa de PAWS </content>
                 <citation paren="initial" ref="rPAWS"/>
                 <content>, </content>
                 <citation author="no" paren="final" ref="rGrammaticography"/>
@@ -19,7 +19,7 @@
        <p contentType="ctComparativeIntro">
           <content>Esta gramática</content><endnote id="nPAWSci">
              <p>
-                <content>La primera versión de esta gramática fue producida por el programa de PATAS </content>
+                <content>La primera versión de esta gramática fue producida por el programa de PAWS </content>
                 <citation paren="initial" ref="rPAWS"/>
                 <content>, </content>
                 <citation author="no" paren="final" ref="rGrammaticography"/>
@@ -31,17 +31,17 @@
           
        </p>
        <p contentType="ctPracticalIntro">
-          <comment> Una vez termine de ingresar los datos necesarios en el programa de PATAS, este archivo puede servir como borrador para preparar una gramática más completa. Esta una versión de ‘Gramática práctica’ que solamente tiene  una introducción básica en cada sección y luego información sobre su lengua.  Le sugerimos que utilice esta versión para agregar glosas en las tablas, completar los ejemplos interlineales y revisar la información sobre su lengua.  Preste especial atención a las líneas que tienen ___ 	, ya que son las partes en que dijo que su lengua hace algo diferente a una de las opciones sugeridas en PATAS, y la prosa puede necesitar revisión. </comment>
+          <comment> Una vez termine de ingresar los datos necesarios en el programa de PAWS, este archivo puede servir como borrador para preparar una gramática más completa. Esta una versión de ‘Gramática práctica’ que solamente tiene  una introducción básica en cada sección y luego información sobre su lengua.  Le sugerimos que utilice esta versión para agregar glosas en las tablas, completar los ejemplos interlineales y revisar la información sobre su lengua.  Preste especial atención a las líneas que tienen ___ 	, ya que son las partes en que dijo que su lengua hace algo diferente a una de las opciones sugeridas en PAWS, y la prosa puede necesitar revisión. </comment>
           <comment>Usted puede también ver o imprimir una versión comparativa de la gramática guardando otra copia del archivo con otro nombre y luego cambiar el campo “contentControlChoice” al final del archivo.</comment>
        </p>
        <p contentType="ctComparativeIntro">
-          <comment> Una vez que se termina de ingresar los datos al programa de PATAS, este archivo puede servir como borrador para preparar una gramática más completa.  Puesto que está leyendo esta versión, debe haber ya cambiado el contentControlChoice de la gramática comparativa. Para su versión final, puede cambiar la información en español e inglés en cada sección para relacionar a la lengua nacional en su área, si usted quiere.</comment>
+          <comment> Una vez que se termina de ingresar los datos al programa de PAWS, este archivo puede servir como borrador para preparar una gramática más completa.  Puesto que está leyendo esta versión, debe haber ya cambiado el contentControlChoice de la gramática comparativa. Para su versión final, puede cambiar la información en español e inglés en cada sección para relacionar a la lengua nacional en su área, si usted quiere.</comment>
        </p>
        <p>
-          <comment>Si usted exporta lo que ha hecho en PATAS sin terminar de ingresar los datos en todas las páginas, parte de la información provista puede ser inexacta porque se basa solamente en respuestas predeterminadas. Las respuestas predeterminadas que se refieren a la posición de elementos en la lengua mostrarán un espacio en blanco:   ___	hasta que usted haya terminado de ingresar los datos en la página correspondiente en el programa de PATAS. Además, faltará más información ya que aún no ha elegido las respuestas apropiadas a las preguntas en PATAS.</comment>
+          <comment>Si usted exporta lo que ha hecho en PAWS sin terminar de ingresar los datos en todas las páginas, parte de la información provista puede ser inexacta porque se basa solamente en respuestas predeterminadas. Las respuestas predeterminadas que se refieren a la posición de elementos en la lengua mostrarán un espacio en blanco:   ___	hasta que usted haya terminado de ingresar los datos en la página correspondiente en el programa de PAWS. Además, faltará más información ya que aún no ha elegido las respuestas apropiadas a las preguntas en PAWS.</comment>
        </p>
        <p>
-          <comment> NO HAGA CAMBIOS EN ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS DATOS DEL IDIOMA EN EL PROGRAMA DE PATAS, porque el programa eliminará esos cambios.  Se pueden ingresar los datos en PATAS por partes, pero este documento exportado solo se debe revisar y editar una vez se haya terminado de usar PATAS. Después de terminar de contestar todas las preguntas en PATAS, y haya exportado los datos, le sugerimos que guarde este archivo con otro nombre antes de corregirlo.</comment>
+          <comment> NO HAGA CAMBIOS EN ESTE ARCHIVO HASTA HABER TERMINADO DE INGRESAR TODOS LOS DATOS DE SU LENGUA EN EL PROGRAMA DE PAWS, porque el programa eliminará esos cambios.  Se pueden ingresar los datos en PAWS por partes, pero este documento exportado solo se debe revisar y editar una vez se haya terminado de usar PAWS. Después de terminar de contestar todas las preguntas en PAWS, y haya exportado los datos, le sugerimos que guarde este archivo con otro nombre antes de corregirlo.</comment>
           
           <comment>También recomendamos el programa XMLMind MXL Editor que  hace la revisión y la impresión de una versión en PDF mucho más fácil; ya que ofrece aplicaciones complementarias que ayudan a manejar las funciones adicionales del programa XLingPaper usadas para elaborar esta gramática. Puede encontrar más información en http://www.xlingpaper.org/.</comment>
        </p>
@@ -481,7 +481,7 @@
         <example>
             <interlinear exampleLoc="typology/example"/>
         </example>
-        <p show="swHeadInitialAndPrep">
+       <p show="swHeadInitialAndPrep">
             <content>De acuerdo con la tipología núcleo inicial, el </content>
             <langName/>
             <content> tiene preposiciones (véase la sección </content>
@@ -637,8 +637,8 @@
           <text show="swProDropYes">
              <content></content>
              <case attr="proDropObject" element="ip">
-                <caseText value="no">No</caseText>
-                <caseText value="yes">También</caseText>
+                <caseText value="no"> No</caseText>
+                <caseText value="yes"> También</caseText>
              </case>
              <content> se permite un objeto tácito.</content>
           </text>
@@ -718,49 +718,52 @@
              <langName/>
              <content/>
              <case element="typology" attr="case">
-                <caseText value="none"> no tiene ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración.</caseText>
-                <caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente.</caseText>
-                <caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</caseText>
-                <caseText value="split"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</caseText>
+                <caseText value="none"> no tiene ningún sistema de caso. El mismo sistema de pronombres se puede utilizar en cualquier posición de la oración y no hay un indicador en los sustantivos o en ningún modificador del sustantivo basado en su posición de la oración</caseText>
+                <caseText value="nominative"> tiene un sistema de caso del nominativo-acusativo. Los sujetos de los verbos intransitivos y transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los objetos de los verbos transitivos se indican de una manera diferente</caseText>
+                <caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente</caseText>
+                <caseText value="split"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales</caseText>
              </case>
+             <content> (véase la sección </content><sectionRef sec="sNPCase"/><content>).</content>
              <text show="swNPCaseNotNone"><content/><case element="np" attr="caseN">
                 <caseText value="yes"> En los sustantivos y posiblemente sus modificadores se indica el caso así como los pronombres</caseText>
                 <caseText value="no"> En los sustantivos no se indica el caso.  Solamente los pronombres lo hacen</caseText>
              </case></text>
-             <content> (véase la sección </content><sectionRef sec="sNPCase"/><content>.)</content>
              <text show="swNPCaseDefaultNom">
                 <content>  El caso nominativo es un caso predeterminado (no indicado).</content>
              </text>
           </p>
        <p><content>En el </content><langName/><content></content><case element="typology" attr="classifier">
-          <caseText value="no"> no hay ningún sistema de clasificadores para sustantivos.</caseText>
-          <caseText value="yesAgr"> hay un sistema de clasificadores para sustantivos, como se explica en detalle en la siguiente sección.</caseText>
+          <caseText value="no"> no hay ningún sistema de clases de sustantivos ni clasificadores.</caseText>
+          <caseText value="yesAgr"> hay un sistema de clases de sustantivos, como se explica en detalle en la siguiente sección.</caseText>
+          <caseText value="yesSpecific"> hay un sistema de clasificadores para sustantivos, como se exlica en detalle en la  siguiente sección.</caseText>
           <caseText value="yesType"> hay un sistema de clasificadores para sustantivos, como se exlica en detalle en la  siguiente sección.</caseText>
        </case></p>
     </section1>
    <section1 id="sClassifiers" show="swClassifiersNotNo">
-      <secTitle>Clasificadores</secTitle>
+      <secTitle>Clases de sustantivo y clasificadores</secTitle>
       <p contentType="ctPracticalIntro">
-         <content>Los sistemas de clasificadores marcan los sustantivos por su forma, posición u otras características. Los clasificadores pueden convertirse en un sistema de acuerdo que requiere concordancia en la frase nominal e incluso con el verbo. En un tipo simple de sistema clasificadores, se presentan afijos clasificadores en sustantivos de ciertas características particulares que pueden agruparlos en clases, por ejemplo, como animales, insectos o líquidos. En este sistema más sencillo, los clasificadores no concuerdan en la frase nominal, solamente acompañan a los sustantivos; los pronombres de tercera persona para estas clases de sustantivos pueden presentar distinciones similares a las de los clasificadores.
+         <content>Las clases de sustantivo y clasificadores marcan los sustantivos por su forma, posición u otras características. En un sistema de clases de sustantivo, los indicadores de clase pueden convertirse en un sistema de acuerdo que requiere concordancia en la frase nominal e incluso con el verbo. En cambio, unas lenguas pueden tener un sistema de clasificadores, a veces llamado palabras de contador o palabras de medida.  Estos clasificadores son palabras o morfemas que acompañan a los sustantivos cuando el sustantivo es contado o especificado y sirven para clasificar el sustantivo dependiendo del tipo de su referente. El clasificador se relaciona con el sustantivo contado o especificado, pero no hay otra concordancia dentro de la frase nominal u oración. En un sistema simple de clasificadores, se presentan afijos clasificadores en sustantivos de ciertas características particulares que pueden agruparlos en clases, por ejemplo, como animales, insectos o líquidos. En este sistema más sencillo, los clasificadores no concuerdan en la frase nominal, solamente acompañan a los sustantivos; los pronombres de tercera persona para estas clases de sustantivos pueden presentar distinciones similares a las de los clasificadores.
 </content>
       </p>
       <p contentType="ctComparativeIntro">
-         <content>Algunas lenguas tiene un sistema de clasificadores para sustantivos que indican su forma, posición u otras características.  En muchos de estas lenguas, el clasificador es un tipo de concordancia que es requerido entre todos los modificadores en la frase nominal y también con el verbo.  Por eso, los quantificadores, artículos, demostrativs, adjetivos y verbos posiblemente necesitan ser marcado con un clasificador appropriado.</content></p> 
-      <p contentType="ctComparativeIntro"><content>Las lenguas Bantu que se habla en Africa tienen el sistema de clasificadores para sustantivos más conocido en el mundo.  Estas lenguas tienen hasta 22 clases distintas, que son representadas por números.  Aproximadamente la mitad está para los sustantivos singulares solamente y un número igual para los nombres en plural solamente. Otros están para los sustantivos  totales o abstractos o para los lugares.</content></p>     
-      <p contentType="ctComparativeIntro"><content>Hay también un sistema de clasificadores más simple en que hay clasificador afijos que son derivados de un sustantivo genérico o de un pronombre y estos debe aparecer con muchos de los sustantivos que refiere a animales, insectos, líquidos, árboles, objetos de madera o objetos que están básicamente redondos. En este sistema más sencillo, los clasificadores no concuerdan en la frase nominal, solamente acompañan a los sustantivos.  Este tipo de sistema típicamente utiliza tipos en vez de números para identificar los clasificadores.</content></p>     
-
+         <content>Algunas lenguas tiene un sistema de clases de sustantivo que indican su forma, posición u otras características.  En muchos de estas lenguas, el indicador de clase es un tipo de concordancia que es requerido entre todos los modificadores en la frase nominal y también con el verbo.  Por eso, los quantificadores, artículos, demostrativs, adjetivos y verbos posiblemente necesitan ser marcado con un indicador de clase appropriado.</content></p> 
+      <p contentType="ctComparativeIntro"><content>Las lenguas Bantu que se habla en Africa tienen el sistema de clases de sustantivo más conocido en el mundo.  Estas lenguas tienen hasta 22 clases distintas, que son representadas por números.  Aproximadamente la mitad está para los sustantivos singulares solamente y un número igual para los nombres en plural solamente. Otros están para los sustantivos totales o abstractos o para los lugares.</content></p>     
+      <p contentType="ctComparativeIntro"><content>En cambio, unas lenguas pueden tener un sistema de clasificadores, a veces llamado palabras de contador o palabras de medida.  Estos clasificadores son palabras o morfemas que acompañan a los sustantivos cuando el sustantivo es contado o especificado y sirven para clasificar el sustantivo dependiendo del tipo de su referente. Algunas lenguas tienen varios cientos clasificadores. El clasificador se relaciona con el sustantivo contado o especificado, pero no hay otra concordancia dentro de la frase nominal u oración.  Los clasificadores son una característica importante de muchas lenguas del este asiático.</content></p>
+      <p contentType="ctComparativeIntro"><content>Hay también un sistema de clasificadores más simple en que hay clasificador afijos que son derivados de un sustantivo genérico o de un pronombre y estos deben aparecer con muchos de los sustantivos que refiere a animales, insectos, líquidos, árboles, objetos de madera o objetos que están básicamente redondos. En este sistema más sencillo, los clasificadores no concuerdan en la frase nominal, solamente acompañan a los sustantivos.  Este tipo de sistema típicamente utiliza nombres en vez de números para identificar los clasificadores.</content></p>     
+ 
+      <p show="swClassifiersYesSpecific"><content>El </content><langName/><content> tiene un sistema de clasificadores en que las clases de sustantivos son distinguidas.  Estos clasificadores se presentan con los sustantivos cuando el sustantivo es contado o especificado, pero no hay más concordancia en la frase nominal o la oración.</content></p>
       <p show="swClassifiersYesType"><content>El </content><langName/><content> tiene un sistema de clasificadores simple en que las clases de sustantivos son distinguidas, pero no hay concordancia en la frase nominal o la oración.</content></p> 
       <p show="swClassifiersYesAgr"><content>El </content><langName/><content> tiene un sistema de clasificadores que refleja concordancia entre todas las partes en la frase nominal y también entre la frase nominal sujeto u objeto y el verbo .  Los clasificadores se identifican por </content>
       <case element="typology" attr="classifierNum">
          <caseText value="number">números de clase. </caseText>
          <caseText value="type">nombres de clases.  <case element="typology" attr="classifierTypeNumAgr">
-            <caseText value="no">Los clasificadores no se distinguen entre singular y plural por lo que hay solamente un clasificador para cada tipo de sustantivo.</caseText>
-            <caseText value="yes">Los clasificadores se distinguen entre singular y plural para cada tipo de sustantivo.</caseText>
+            <caseText value="no">Las clases no se distinguen entre singular y plural por lo que hay solamente una clase para cada tipo de sustantivo.</caseText>
+            <caseText value="yes">Las clases se distinguen entre singular y plural para cada tipo de sustantivo.</caseText>
          </case></caseText>
       </case>
       </p>
-      <p><content>Los clasificadores en el </content><langName/><content> se muestran en el siguiente cuadro:</content></p>
-      <example show="swClassifiersYesTypeOrYesAgrTypeAndNoNumAgr">
+      <p show="swClassifiersYesTypeOrYesSpecific"><content>Los clasificadores en el </content><langName/><content> se muestran en el siguiente cuadro:</content></p>
+      <example show="swClassifiersYesSpecific">
          <table border="1" >
             <caption>
                <content>Clasificadores para sustantivos por clase</content>
@@ -770,6 +773,168 @@
                   Clase
                </headerCol>
                <headerCol>Clasificador</headerCol>
+            </headerRow>
+            <row>
+               <col>
+                  <content>humanos</content>
+               </col>
+               <col exampleLoc="typology/classifierHumanExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>animales</content>
+               </col>
+               <col exampleLoc="typology/classifierAnimalExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>aves</content>
+               </col>
+               <col exampleLoc="typology/classifierBirdExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>barcos</content>
+               </col>
+               <col exampleLoc="typology/classifierBoatExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>ropa</content>
+               </col>
+               <col exampleLoc="typology/classifierClothingExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>árboles</content>
+               </col>
+               <col exampleLoc="typology/classifierTreeExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>artículos largos y delgados</content>
+               </col>
+               <col exampleLoc="typology/classifierLongThinExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>artículos largos y ondulados</content>
+               </col>
+               <col exampleLoc="typology/classifierLongWavyExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>artículos planos</content>
+               </col>
+               <col exampleLoc="typology/classifierFlatExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>artículos cilíndricos</content>
+               </col>
+               <col exampleLoc="typology/classifierCylindricalExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>artículos mecánicos</content>
+               </col>
+               <col exampleLoc="typology/classifierMechanicalExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>genérico</content>
+               </col>
+               <col exampleLoc="typology/classifierGenericExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>ESCRIBA LA GLOSA</content>
+               </col>
+               <col exampleLoc="typology/classifierOtherExample"/>
+            </row>
+         </table>
+      </example>
+      
+      <example show="swClassifiersYesType">
+         <table border="1" >
+            <caption>
+               <content>Clasificadores para sustantivos por clase</content>
+            </caption>
+            <headerRow>
+               <headerCol>
+                  Clase
+               </headerCol>
+               <headerCol>Clasificador</headerCol>
+            </headerRow>
+            <row>
+               <col>
+                  <content>animal</content>
+               </col>
+               <col exampleLoc="typology/classAnimalExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>insecto</content>
+               </col>
+               <col exampleLoc="typology/classInsectExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>líquido</content>
+               </col>
+               <col exampleLoc="typology/classLiquidExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>redondo</content>
+               </col>
+               <col exampleLoc="typology/classRoundExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>cilíndrico</content>
+               </col>
+               <col exampleLoc="typology/classCylinderExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>esférico</content>
+               </col>
+               <col exampleLoc="typology/classSphereExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>árbol</content>
+               </col>
+               <col exampleLoc="typology/classTreeExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>madera</content>
+               </col>
+               <col exampleLoc="typology/classWoodExample"/>
+            </row>
+            <row>
+               <col>
+                  <content>ESCRIBA LA GLOSA</content>
+               </col>
+               <col exampleLoc="typology/classOtherExample"/>
+            </row>
+         </table>
+      </example>
+      
+      
+      <p show="swClassifiersYesAgr"><content>Los indicadores de clase de sustantivo en el </content><langName/><content> se muestran en el siguiente cuadro:</content></p>
+      <example show="swClassifiersYesAgrTypeAndNoNumAgr">
+         <table border="1" >
+            <caption>
+               <content>Inidcadores de clase de sustantivos por nombre de clase</content>
+            </caption>
+            <headerRow>
+               <headerCol>
+                  Nombre
+               </headerCol>
+               <headerCol>Indicador de clase</headerCol>
             </headerRow>
             <row>
                <col>
@@ -830,12 +995,12 @@
       <example show="swClassifiersYesAgrTypeAndYesNumAgr">
          <table border="1" >
             <caption>
-               <content>Clasificadores para sustantivos por clase</content>
+               <content>Indicadores de clase de sustantivo por nombre de clase</content>
             </caption>
             <headerRow>
-               <headerCol>Clase</headerCol>
-<headerCol>Singular</headerCol>
-               <headerCol>Plural</headerCol>
+               <headerCol>Nombre</headerCol>
+               <headerCol>Concordancia de número</headerCol>
+               <headerCol>Indicador</headerCol>
             </headerRow>
             <row>
                <col>
@@ -951,14 +1116,14 @@
             </row>
             <row>
                <col>
-                  <content>otro / general</content>
+                  <content>ESCRIBA LA GLOSA</content>
                </col>
                <col><content>singular</content></col>
                <col exampleLoc="typology/classOtherSgExample"/>
             </row>
             <row>
                <col>
-                  <content>otro / general</content>
+                  <content>ESCRIBA LA GLOSA</content>
                </col>
                <col><content>plural</content></col>
                <col exampleLoc="typology/classOtherPlExample"/>
@@ -968,13 +1133,13 @@
       <example show="swClassifiersYesAgrNum">
          <table border="1" >
             <caption>
-               <content>Clasificadores para sustantivos por número</content>
+               <content>Indicadores de clase de sustantivo por número</content>
             </caption>
             <headerRow>
                <headerCol>
                   Número de clase
                </headerCol>
-               <headerCol>Clasificador</headerCol>
+               <headerCol>Indiicador</headerCol>
                <headerCol>Concordancia de número</headerCol>
             </headerRow>
             <row>
@@ -1322,8 +1487,11 @@
       <example show="swClassifiersYesAgr">
          <interlinear exampleLoc="typology/classifierAgrExample"/>
       </example>
+      <p show="swClassifiersYesSpecific"><content>Algunos ejemplos de frases nominales que muestran los clasificadores diversos que se presentan con números o demostrativos y sustantivos son:</content></p>
+   	<example show="swClassifiersYesSpecific">
+   		<interlinear exampleLoc="typology/classifierSpecificExample"/>
+   	</example>
    </section1>
- 
 <showWhen id="swNPPossNPYes">
    <whenValue element="np" attr="possNP" value="yes"/>
    <or/>
@@ -1685,10 +1853,18 @@
    <showWhen id="swClassifiersYesType">
 	  <whenValue element="typology" attr="classifier" value="yesType"/>
    </showWhen>
-   <showWhen id="swClassifiersYesAgr">
+	<showWhen id="swClassifiersYesSpecific">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swClassifiersYesAgr">
 	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
-   <showWhen id="swClassifiersYesAgrNum">
+	<showWhen id="swClassifiersYesTypeOrYesSpecific">
+		<whenValue element="typology" attr="classifier" value="yesType"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swClassifiersYesAgrNum">
 	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
 	  <and/>
 	  <whenValue element="typology" attr="classifierNum" value="number"/>
@@ -1709,6 +1885,13 @@
 	  <and/>
 	  <whenValue element="typology" attr="classifierTypeNumAgr" value="yes"/>
    </showWhen>
+	<showWhen id="swClassifiersYesAgrTypeAndNoNumAgr">
+		<whenValue element="typology" attr="classifier" value="yesAgr"/>
+		<and/>
+		<whenValue element="typology" attr="classifierNum" value="type"/>
+		<and/>
+		<whenValue element="typology" attr="classifierTypeNumAgr" value="no"/>
+	</showWhen>
    <showWhen id="swClass1AgrSg">
 	  <whenValue element="typology" attr="class1Agr" value="sg"/>
    </showWhen>

@@ -7,8 +7,9 @@ id="sPron"
 >Los pronombres</secTitle
 ><p
 ><content
-   >Hay pronombres de varios tipos: personales, posesivos, reflexivos, recíprocos, demostrativos e indefinidos.  (Los ponombres interrogativos se presentan en </content><sectionRef sec="sQuesContent"/><content>.)</content></p
-><p
+   >Hay pronombres de varios tipos: personales, posesivos, reflexivos, recíprocos, demostrativos e indefinidos.  (Los pronombres interrogativos se presentan en </content><sectionRef sec="sQuesContent"/><content> y los pronombres enfáticos se presentan en </content><sectionRef sec="sFocusFocus"/><content>.)</content>
+</p>		
+   <p
 show="swClassifierYesPronNo"
 ><content
 >Aunque hay un sistema de concordancia con clasificadores en el </content
@@ -37,7 +38,7 @@ value="no"
 >no hay un sistema particular para pronombres personales dependientes.</caseText
 ><caseText
 value="yes"
-   >hay pronombres personales dependientes así como los independientes. A a continuación se presentan ambos sistemas de pronombres personales, con las formas independientes primero.</caseText
+   >hay pronombres personales dependientes así como los independientes. A continuación se presentan ambos sistemas de pronombres personales, con las formas independientes primero.</caseText
 ></case
 ><content
 ></content
@@ -3805,7 +3806,7 @@ id="sPronPoss"
 >Pronombres posesivos</secTitle
 >
    <p contentType="ctPracticalIntro">
-      <content>Muchas lenguas también tienen pronombres posesivos que se pueden usar solos. Estos son distintos de los que pueden presentarse en la posición del poseedor de un siustantivo, que fueron ejemplificados en los pronombres personales antes mencionados.</content>
+      <content>Muchas lenguas también tienen pronombres posesivos que se pueden usar solos. Estos son distintos de los que pueden presentarse en la posición del poseedor de un sustantivo, que fueron ejemplificados en los pronombres personales antes mencionados.</content>
    </p>
    <p contentType="ctComparativeIntro"
 ><content
@@ -4234,8 +4235,8 @@ id="sPronRefl"
       </table>	         
    </example>
    <p show="swPronReflYesAndNounPoss">
-      <text show="swPronReflNounPossOnly"><content>Estos reflexivos se expresan por un cierto sustantivo con un pronombre posesivo para formar una frase reflexiva.</content></text>
-      <text show="swPronReflNounPossAnd"><content>Algunos de los reflexivos se expresan por un cierto sustantivo con un pronombre posesivo para formar una frase reflexiva.</content></text>
+      <text show="swPronReflNounPossOnly"><content>Estos reflexivos se expresan por un cierto sustantivo con un pronombre posesivo para formar un reflexivo.</content></text>
+      <text show="swPronReflNounPossAnd"><content>Algunos de los reflexivos se expresan por un cierto sustantivo con un pronombre posesivo para formar un reflexivo.</content></text>
       <content>  El sustantivo especial es:</content>
    </p>
    <example show="swPronReflYesAndNounPoss">
@@ -4362,7 +4363,7 @@ value="yes"
          </row>
          <row show="swPronExclYes">
             <col rowspan="1"><content>Primera exclusiva</content></col>
-            <col exampleLoc="pron/recipFirsExclExample"/>
+            <col exampleLoc="pron/recipFirstExclExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronExclYes">
@@ -4405,8 +4406,8 @@ value="yes"
       </table>	         
    </example>
    <p show="swPronRecipYesAndNounPoss">
-      <text show="swPronRecipNounPossOnly"><content>Estos rrecíprocos se expresan por un cierto sustantivo con un pronombre posesivo para formar una frase recíproca.</content></text>
-      <text show="swPronRecipNounPossAnd"><content>Algunos de los recíprocos se expresan por un cierto sustantivo con un pronombre posesivo para formar una frase recíproca.</content></text>
+      <text show="swPronRecipNounPossOnly"><content>Estos rrecíprocos se expresan por un cierto sustantivo con un pronombre posesivo para formar un recíproco.</content></text>
+      <text show="swPronRecipNounPossAnd"><content>Algunos de los recíprocos se expresan por un cierto sustantivo con un pronombre posesivo para formar un recíproco.</content></text>
       <content>  El sustantivo especial es:</content>
    </p>
    <example show="swPronRecipYesAndNounPoss">
@@ -4516,7 +4517,7 @@ id="sPronDem"
             <caseText value="some">a veces idénticas y a veces distintas a los demostrativos que modifican a un sustantivo.</caseText>
             <caseText value="no">distintas a los demostrativos que modifican a un sustantivo.</caseText>
          </case>
-         <content> Véase la sección </content><sectionRef sec="sAdjArtDem"/><content>para los detalles acerca de lo demostrativos que modifican a un sustantivo</content></text>
+         <content> Véase la sección </content><sectionRef sec="sAdjArtDem"/><content> para los detalles acerca de lo demostrativos que modifican a un sustantivo</content></text>
       <content>.</content></p>
    
    
@@ -5328,32 +5329,32 @@ show="swCaseErgAndDemCaseYes"
          </headerRow>			
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="pron/demProximalGenExample"/>
+            <col exampleLoc="pron/demProximalErgGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="np/demProximalGenExample"/>
+            <col exampleLoc="np/demErgProximalGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="pron/demMedialGenExample"/>
+            <col exampleLoc="pron/demMedialErgGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="np/demMedialGenExample"/>
+            <col exampleLoc="np/demErgMedialGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="pron/demDistalGenExample"/>
+            <col exampleLoc="pron/demDistalErgGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="np/demDistalGenExample"/>
+            <col exampleLoc="np/demErgDistalGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5370,73 +5371,73 @@ show="swCaseErgAndDemCaseYes"
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demProximalGenExample"/>
+            <col exampleLoc="pron/demProximalErgGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demProximalGenExample"/>
+            <col exampleLoc="np/demErgProximalGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demProximalPlGenExample"/>
+            <col exampleLoc="pron/demProximalErgPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demProximalPlGenExample"/>
+            <col exampleLoc="np/demErgProximalPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demMedialGenExample"/>
+            <col exampleLoc="pron/demMedialErgGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demMedialGenExample"/>
+            <col exampleLoc="np/demErgMedialGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demMedialPlGenExample"/>
+            <col exampleLoc="pron/demMedialErgPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demMedialPlGenExample"/>
+            <col exampleLoc="np/demErgMedialPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demDistalGenExample"/>
+            <col exampleLoc="pron/demDistalErgGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demDistalGenExample"/>
+            <col exampleLoc="np/demErgDistalGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demDistalPlGenExample"/>
+            <col exampleLoc="pron/demDistalErgPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demDistalPlGenExample"/>
+            <col exampleLoc="np/demErgDistalPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5467,32 +5468,32 @@ show="swCaseSplitAndDemCaseYes"
          </headerRow>			
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="pron/demProximalNomExample"/>
+            <col exampleLoc="pron/demProximalSplitNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="np/demProximalNomExample"/>
+            <col exampleLoc="np/demSplitProximalNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="pron/demMedialNomExample"/>
+            <col exampleLoc="pron/demMedialSplitNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="np/demMedialNomExample"/>
+            <col exampleLoc="np/demSplitMedialNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="pron/demDistalNomExample"/>
+            <col exampleLoc="pron/demDistalSplitNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="np/demDistalNomExample"/>
+            <col exampleLoc="np/demSplitDistalNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5509,73 +5510,73 @@ show="swCaseSplitAndDemCaseYes"
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demProximalNomExample"/>
+            <col exampleLoc="pron/demProximalSplitNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demProximalNomExample"/>
+            <col exampleLoc="np/demSplitProximalNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demProximalPlNomExample"/>
+            <col exampleLoc="pron/demProximalSplitPlNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demProximalPlNomExample"/>
+            <col exampleLoc="np/demSplitProximalPlNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demMedialNomExample"/>
+            <col exampleLoc="pron/demMedialSplitNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demMedialNomExample"/>
+            <col exampleLoc="np/demSplitMedialNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demMedialPlNomExample"/>
+            <col exampleLoc="pron/demMedialSplitPlNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demMedialPlNomExample"/>
+            <col exampleLoc="np/demSplitMedialPlNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demDistalNomExample"/>
+            <col exampleLoc="pron/demDistalSplitNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demDistalNomExample"/>
+            <col exampleLoc="np/demSplitDistalNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demDistalPlNomExample"/>
+            <col exampleLoc="pron/demDistalSplitPlNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demDistalPlNomExample"/>
+            <col exampleLoc="np/demSplitDistalPlNomExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5597,32 +5598,32 @@ show="swCaseSplitAndDemCaseYes"
          </headerRow>			
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="pron/demProximalAccExample"/>
+            <col exampleLoc="pron/demProximalSplitAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="np/demProximalAccExample"/>
+            <col exampleLoc="np/demSplitProximalAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="pron/demMedialAccExample"/>
+            <col exampleLoc="pron/demMedialSplitAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="np/demMedialAccExample"/>
+            <col exampleLoc="np/demSplitMedialAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="pron/demDistalAccExample"/>
+            <col exampleLoc="pron/demDistalSplitAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="np/demDistalAccExample"/>
+            <col exampleLoc="np/demSplitDistalAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5639,73 +5640,73 @@ show="swCaseSplitAndDemCaseYes"
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demProximalAccExample"/>
+            <col exampleLoc="pron/demProximalSplitAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demProximalAccExample"/>
+            <col exampleLoc="np/demSplitProximalAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demProximalPlAccExample"/>
+            <col exampleLoc="pron/demProximalSplitPlAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demProximalPlAccExample"/>
+            <col exampleLoc="np/demSplitProximalPlAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demMedialAccExample"/>
+            <col exampleLoc="pron/demMedialSplitAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demMedialAccExample"/>
+            <col exampleLoc="np/demSplitMedialAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demMedialPlAccExample"/>
+            <col exampleLoc="pron/demMedialSplitPlAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demMedialPlAccExample"/>
+            <col exampleLoc="np/demSplitMedialPlAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demDistalAccExample"/>
+            <col exampleLoc="pron/demDistalSplitAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demDistalAccExample"/>
+            <col exampleLoc="np/demSplitDistalAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demDistalPlAccExample"/>
+            <col exampleLoc="pron/demDistalSplitPlAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demDistalPlAccExample"/>
+            <col exampleLoc="np/demSplitDistalPlAccExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5721,32 +5722,32 @@ show="swCaseSplitAndDemCaseYes"
          </headerRow>			
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="pron/demProximalGenExample"/>
+            <col exampleLoc="pron/demProximalSplitGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="np/demProximalGenExample"/>
+            <col exampleLoc="np/demSplitProximalGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="pron/demMedialGenExample"/>
+            <col exampleLoc="pron/demMedialSplitGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="np/demMedialGenExample"/>
+            <col exampleLoc="np/demSplitMedialGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="pron/demDistalGenExample"/>
+            <col exampleLoc="pron/demDistalSplitGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="np/demDistalGenExample"/>
+            <col exampleLoc="np/demSplitDistalGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5763,73 +5764,73 @@ show="swCaseSplitAndDemCaseYes"
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demProximalGenExample"/>
+            <col exampleLoc="pron/demProximalSplitGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demProximalGenExample"/>
+            <col exampleLoc="np/demSplitProximalGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demProximalPlGenExample"/>
+            <col exampleLoc="pron/demProximalSplitPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demProximalPlGenExample"/>
+            <col exampleLoc="np/demSplitProximalPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demMedialGenExample"/>
+            <col exampleLoc="pron/demMedialSplitGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demMedialGenExample"/>
+            <col exampleLoc="np/demSplitMedialGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demMedialPlGenExample"/>
+            <col exampleLoc="pron/demMedialSplitPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demMedialPlGenExample"/>
+            <col exampleLoc="np/demSplitMedialPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demDistalGenExample"/>
+            <col exampleLoc="pron/demDistalSplitGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demDistalGenExample"/>
+            <col exampleLoc="np/demSplitDistalGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demDistalPlGenExample"/>
+            <col exampleLoc="pron/demDistalSplitPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demDistalPlGenExample"/>
+            <col exampleLoc="np/demSplitDistalPlGenExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5850,32 +5851,32 @@ show="swCaseSplitAndDemCaseYes"
          </headerRow>			
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="pron/demProximalErgExample"/>
+            <col exampleLoc="pron/demProximalSplitErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
-            <col exampleLoc="np/demProximalErgExample"/>
+            <col exampleLoc="np/demSplitProximalErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="pron/demMedialErgExample"/>
+            <col exampleLoc="pron/demMedialSplitErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
-            <col exampleLoc="np/demMedialErgExample"/>
+            <col exampleLoc="np/demSplitMedialErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="pron/demDistalErgExample"/>
+            <col exampleLoc="pron/demDistalSplitErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
-            <col exampleLoc="np/demDistalErgExample"/>
+            <col exampleLoc="np/demSplitDistalErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5891,73 +5892,73 @@ show="swCaseSplitAndDemCaseYes"
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demProximalErgExample"/>
+            <col exampleLoc="pron/demProximalSplitErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demProximalErgExample"/>
+            <col exampleLoc="np/demSplitProximalErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demProximalPlErgExample"/>
+            <col exampleLoc="pron/demProximalSplitPlErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Próxima</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demProximalPlErgExample"/>
+            <col exampleLoc="np/demSplitProximalPlErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demMedialErgExample"/>
+            <col exampleLoc="pron/demMedialSplitErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demMedialErgExample"/>
+            <col exampleLoc="np/demSplitMedialErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demMedialPlErgExample"/>
+            <col exampleLoc="pron/demMedialSplitPlErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Intermedia</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demMedialPlErgExample"/>
+            <col exampleLoc="np/demSplitMedialPlErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="pron/demDistalErgExample"/>
+            <col exampleLoc="pron/demDistalSplitErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Singular</content></col>
-            <col exampleLoc="np/demDistalErgExample"/>
+            <col exampleLoc="np/demSplitDistalErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameNotYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="pron/demDistalPlErgExample"/>
+            <col exampleLoc="pron/demDistalSplitPlErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
          <row show="swPronDemAdjSameYes">
             <col><content>Distante</content></col>
             <col><content>Plural</content></col>
-            <col exampleLoc="np/demDistalPlErgExample"/>
+            <col exampleLoc="np/demSplitDistalPlErgExample"/>
             <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
          </row>
       </table>
@@ -5980,32 +5981,32 @@ show="swCaseSplitAndDemCaseYes"
 	            </headerRow>			
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Próxima</content></col>
-	               <col exampleLoc="pron/demProximalAbsExample"/>
+	               <col exampleLoc="pron/demProximalSplitAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Próxima</content></col>
-	               <col exampleLoc="np/demProximalAbsExample"/>
+	               <col exampleLoc="np/demSplitProximalAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Intermedia</content></col>
-	               <col exampleLoc="pron/demMedialAbsExample"/>
+	               <col exampleLoc="pron/demMedialSplitAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Intermedia</content></col>
-	               <col exampleLoc="np/demMedialAbsExample"/>
+	               <col exampleLoc="np/demSplitMedialAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Distante</content></col>
-	               <col exampleLoc="pron/demDistalAbsExample"/>
+	               <col exampleLoc="pron/demDistalSplitAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Distante</content></col>
-	               <col exampleLoc="np/demDistalAbsExample"/>
+	               <col exampleLoc="np/demSplitDistalAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -6023,73 +6024,73 @@ show="swCaseSplitAndDemCaseYes"
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="pron/demProximalAbsExample"/>
+	               <col exampleLoc="pron/demProximalSplitAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demProximalAbsExample"/>
+	               <col exampleLoc="np/demSplitProximalAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Próxima</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="pron/demProximalPlAbsExample"/>
+	               <col exampleLoc="pron/demProximalSplitPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Próxima</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demProximalPlAbsExample"/>
+	               <col exampleLoc="np/demSplitProximalPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="pron/demMedialAbsExample"/>
+	               <col exampleLoc="pron/demMedialSplitAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demMedialAbsExample"/>
+	               <col exampleLoc="np/demSplitMedialAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Intermedia</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="pron/demMedialPlAbsExample"/>
+	               <col exampleLoc="pron/demMedialSplitPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Intermedia</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demMedialPlAbsExample"/>
+	               <col exampleLoc="np/demSplitMedialPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="pron/demDistalAbsExample"/>
+	               <col exampleLoc="pron/demDistalSplitAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demDistalAbsExample"/>
+	               <col exampleLoc="np/demSplitDistalAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameNotYes">
 	               <col><content>Distante</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="pron/demDistalPlAbsExample"/>
+	               <col exampleLoc="pron/demDistalSplitPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row show="swPronDemAdjSameYes">
 	               <col><content>Distante</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demDistalPlAbsExample"/>
+	               <col exampleLoc="np/demSplitDistalPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -6235,24 +6236,24 @@ show="swCaseSplitAndDemCaseYes"
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6271,47 +6272,47 @@ show="swCaseSplitAndDemCaseYes"
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6330,24 +6331,24 @@ show="swCaseSplitAndDemCaseYes"
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6366,47 +6367,47 @@ show="swCaseSplitAndDemCaseYes"
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	         </table>
 	      </example>	     
@@ -6426,30 +6427,30 @@ show="swCaseSplitAndDemCaseYes"
 	               </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6470,59 +6471,59 @@ show="swCaseSplitAndDemCaseYes"
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -6537,9 +6538,11 @@ id="sPronIndef"
    <p contentType="ctPracticalIntro"><content>Se usan los indefinidos para referirse a una persona, lugar o cosa no especificada.  Normalmente se componen de ya sea un cuantificador y un sustantivo o de una palabra interrogativa y una palabra indefinida.  Se pueden escribir como una sola palabra o una frase.</content></p>
 
    <p>
-      <content>Empezando con el tipo que se componen de un cuantificador y un sustantivo genérico, en el </content>
+      <content>Empezando con el tipo que se componen de un cuantificador y un sustantivo genérico (o el uso impersonal para el número ‘uno’), en el </content>
       <langName/>
       <content> </content>
+      <text show="swPronIndefTypeQNone"><content>los indefinidos no se expresan con un cuantificador.</content></text>
+      <text show="swPronIndefQOtherOnly"><content>estos se expresan con ___</content><contentCheckBoxOther contentLoc="pron/indefQOther"/><content>. </content></text>
       <text show="swPronIndefQWordOnly"><content>estos indefinidos se fusionan en una sola palabra.  Ejemplos de estos pronombres son: </content></text>
       <text show="swPronIndefQWordAndQPhrase"><content>algunos de estos indefinidos se fusionan en una sola palabra, pero otros se escriben como frases nominales.  Ejemplos de estos pronombres son: </content></text>
       <text show="swPronIndefQWordAndOther"><content>algunos de estos indefinidos se fusionan en una sola palabra, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="pron/indefQOther"/><content>.  Ejemplos de estos pronombres son: </content></text>
@@ -6621,6 +6624,8 @@ id="sPronIndef"
       <content>Para el segundo tipo de indefinidos que se componen de una palabra interrogativa y un indefinido, en el </content>
       <langName/>
       <content> </content>
+      <text show="swPronIndefTypeIntNone"><content>los indefinidos no se expresan con una palabra interrgativa.</content></text>
+      <text show="swPronIndefIntOtherOnly"><content>estos se expresan con ___</content><contentCheckBoxOther contentLoc="pron/indefIntOther"/><content>. </content></text>
       <text show="swPronIndefIntWordOnly"><content>estos elementos se fusionan en una sola palabra.  Ejemplos de estos pronombres son: </content></text>
       <text show="swPronIndefIntWordAndIntPhrase"><content>algunos de estos indefinidos se fusionan en una sola palabra, pero otros se escriben como frases nominales.  Ejemplos de estos pronombres son: </content></text>
       <text show="swPronIndefIntWordAndOther"><content>algunos de estos indefinidos se fusionan en una sola palabra, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="pron/indefIntOther"/><content>  Ejemplos de estos pronombres son: </content></text>
@@ -6730,7 +6735,7 @@ id="sPronNP"
       <content>Algunos ejemplos en oraciones son:</content>
    </p>		
    <example show="swPronModDetOrAll">
-      <interlinear exampleLoc="pron/sentExample"/>
+      <interlinear exampleLoc="pron/pronSentExample"/>
    </example>
 
    <p contentType="ctComparativeIntro" show="swPronModNotNoOrRel">
@@ -6772,10 +6777,20 @@ id="sPronNP"
    <example show="swPronModNotNo">
       <interlinear exampleLoc="pron/pronRelClExample"/>
    </example>
+   <p show="swOTClassifiersSpecific"><content>En la mayoría de las lenguas que se utilizan clasificadores, el clasificador puede presentarse sin un sustantivo, mientras que la referencia está claro de las características del clasificador o el contexto.
+      En el </content><langName/><content>, </content><case element="pron" attr="classifierNoN">
+         <caseText value="yes">los clasificadores pueden presentarse sin un sustantivo en estas situaciones. Algunos ejemplos de frases nominales donde un clasificador sirve sin un sustantivo son: </caseText>
+         <caseText value="no">siempre se require un sustantivo.</caseText>
+      </case>
+   </p>
+   <example show="swOTClassifiersSpecificAndClassifierNoNYes">
+      <interlinear exampleLoc="pron/classifierNoNExample"/>
+   </example>
    
 </section2
 ></section1
->	<showWhen id="swPronPronounCatNP">
+>
+	<showWhen id="swPronPronounCatNP">
 		<whenValue element="pron" attr="pronounCat" value="NP"/>
 	</showWhen>
    <showWhen id="swNPCaseNoneAndExperiencerNo">
@@ -8150,7 +8165,17 @@ id="sPronNP"
       <and/>
       <whenValue element="pron/indefQOther" attr="checked" value="no"/>
    </showWhen>
-   <showWhen id="swPronIndefQPhraseAndNotOther">
+	<showWhen id="swPronIndefQOtherOnly">
+		<whenValue element="pron/indefQPhrase" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="pron/indefQWord" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="pron/indefQOther" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronIndefTypeQNone">
+		<whenValue element="pron/pronIndefTypeQNone" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronIndefQPhraseAndNotOther">
       <whenValue element="pron/indefQPhrase" attr="checked" value="yes"/>
       <and/>
       <whenValue element="pron/indefTypeQPQOther" attr="checked" value="no"/>
@@ -8288,7 +8313,14 @@ id="sPronNP"
       <and/>
       <whenValue element="pron/indefIntOther" attr="checked" value="no"/>
    </showWhen>
-   <showWhen id="swPronIndefIntPhraseAndNotOther">
+	<showWhen id="swPronIndefIntOtherOnly">
+		<whenValue element="pron/indefIntPhrase" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="pron/indefIntWord" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="pron/indefIntOther" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swPronIndefIntPhraseAndNotOther">
       <whenValue element="pron/indefIntPhrase" attr="checked" value="yes"/>
       <and/>
       <whenValue element="pron/indefTypeIntOther" attr="checked" value="no"/>
@@ -8337,8 +8369,10 @@ id="sPronNP"
    <showWhen id="swPronIndefIntWord">
       <whenValue element="pron/indefIntWord" attr="checked" value="yes"/>
    </showWhen>
-   
-   <showWhen id="swPronIndefIntOtherOnly"> 
+	<showWhen id="swPronIndefTypeIntNone">
+		<whenValue element="pron/pronIndefTypeIntNone" attr="checked" value="yes"/>
+	</showWhen>
+   <showWhen id="swPronIndefTypeIntOtherOnly"> 
       <whenValue element="pron/indefTypeIntOther" attr="checked" value="yes"/>
       <and/>
       <whenValue element="pron/indefTypeIntBefore" attr="checked" value="no"/>
@@ -8370,4 +8404,12 @@ id="sPronNP"
       <whenValue element="pron/indefIntPhrase" attr="checked" value="yes"/>
    </showWhen>
    
+   <showWhen id="swOTClassifiersSpecificAndClassifierNoNYes">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+      <and/>
+      <whenValue element="pron" attr="classifierNoN" value="yes"/>
+   </showWhen>
+   <showWhen id="swOTClassifiersSpecific">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+   </showWhen>
 </portion>

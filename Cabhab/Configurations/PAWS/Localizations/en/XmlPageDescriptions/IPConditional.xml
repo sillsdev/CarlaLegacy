@@ -57,7 +57,7 @@
          <checkbox id="IPConditionPosBoth"  dataItem="conditionWordBoth">On both sides in the same phrase</checkbox>
          <checkbox id="IPConditionPosOther"  dataItem="conditionWordOther">In my language, they may occur in the following position: <textBox  id="IPConditionPosOtherContent" dataItem="conditionWordOther" rows="2"/></checkbox>
       </checkboxGroup>
-      <prompt id="IPConditionPosNoCheckPrompt" show="swIPConditionYesandNoCheck">WARNING: You need to check at least one box to describe where these condition markers occur with respect to the rest of the conditional phrase in your language, or change the answer above to ‘No, they all attach to another word in the conditional phrase’.</prompt>
+      <prompt id="IPConditionPosNoCheckPrompt" show="swIPConditionYesandNoCheck">WARNING: You need to check at least one box to describe where these condition markers occur with respect to the rest of the conditional phrase in your language, or change the answer above to ‘No, they all attach to another word in the conditional phrase’ or ‘No, the only marker for conditionals in my language is the conditional mood itself marked on the verb’.</prompt>
       <instruction id="IPConditionYesInstruction" show="swIPConditionWordYesOrSome">In the lexicon, you will likely need to add a separate entry for each of these words, if they can also be used as adverbs and/or complementizers in embedded questions.  Give this entry the category <category>Cond</category> and the feature <feature>conditional</feature>.</instruction>
       <instruction id="IPConditionEitherRestrictedInstruction" show="swIPConditionEitherRestricted">In the lexicon, mark those condition markers which can only occur before the condition phrase with the feature <feature>IP-initial</feature> and those which can only occur after it with the feature <feature>IP-final</feature>.  Do not enter either feature on any words which can occur on either side.</instruction>
      
@@ -197,7 +197,7 @@
       <and/><not/>
       <whenCheckbox button="IPConditionPosBoth"/>
       <and/><not/>
-      <whenCheckbox button="IPConditionOther"/>     
+      <whenCheckbox button="IPConditionPosOther"/>     
    </showWhen>
    <showWhen id="swIPConsequenceYesOrOptional">
       <whenRadio button="IPConsequenceYes"/>

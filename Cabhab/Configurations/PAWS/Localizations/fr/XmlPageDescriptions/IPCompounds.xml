@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPAux" count="2/2">
+   <title level="2">Phrases Simples – Composés verbaux</title>
+   <introduction>Les verbes peuvent se fusioner avec d’autres verbes, ou bien avec des noms ou d’autres catégories de mots pour former des composés verbaux. Ces composés fonctionnent toujours comme des verbes, bien qu’ils changent quelquefois de catégorie, de verbe transitif en verbe intransitif. <br/><br/>
+      À part les composés écrits comme mot simple, il y a aussi des expressions idiomatiques qui comprennent un verbe avec un autre mot. Des exemples des types les plus communs seront assemblés ici, commençant avec les composés verbaux véritables.</introduction>
+   <form section="ip">
+<radioGroup>
+   <groupName dataItem="heartCompound" default="no">RIPHeartCompound</groupName>
+   <prompt><br/>Certaines langues ont une série de composés verbaux qui contiennent le nom qui décrit le centre des émotions, comme le coeur. Est-ce que votre langue possède ce type de composé verbal?</prompt>
+   <radio id="IPHeartCompoundYes" dataValue="yes">Oui</radio>
+   <radio id="IPHeartCompoundNo" dataValue="no">Non</radio>
+</radioGroup>     
+      <prompt id="IPHeartCompoundExamplesPrompt" show="swIPHeartCompoundYes">Entrez ici des exemples dans votre langue de ce type spécial de composé:</prompt>
+      <textBox id="IPHeartCompoundExample" dataItem="heartCompoundExample" cols="50" show="swIPHeartCompoundYes"/>
+        <br/>
+        <br/>
+      <radioGroup>
+         <groupName dataItem="bodypartCompound" default="no">RIPBodypartCompound</groupName>
+         <prompt><br/>Certaines langues ont une série de composés qui consiste d’un verbe et d’une partie du corps<span id="IPHeartCompoundYesSpan" show="swIPHeartCompoundYes"> (un nom outre celui qui décrit le centre des émotions, voir ci-dessus)</span>.  Est-ce que votre langue possède ce type de composé verbal?</prompt>
+         <radio id="IPBodypartCompoundYes" dataValue="yes">Oui</radio>
+         <radio id="IPBodypartCompoundNo" dataValue="no">Non</radio>
+      </radioGroup>     
+      <prompt id="IPBodypartCompoundExamplesPrompt" show="swIPBodypartCompoundYes">Entrez ici des exemples dans votre langue de ce type spécial de composé verbal:</prompt>
+      <textBox id="IPBodypartCompoundExample" dataItem="bodypartCompoundExample" cols="50" show="swIPBodypartCompoundYes"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbNCompoundExamplesPrompt">Entrez ici des exemples dans votre langue <span id="IPHeartAndBodypartCompoundNoSpan1" show="swIPHeartAndBodypartCompoundNo">de </span><span id="IPHeartOrBodypartCompoundYesSpan" show="swIPHeartOrBodypartCompoundYes">d’autres </span>composés qui consistent d’un verbe et d’un nom:</prompt>
+      <textBox id="IPVerbNCompoundExample" dataItem="verbNCompoundExample" cols="50"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbNCompoundSentExamplesPrompt">Maintenant prenez des exemples dans <span id="IPHeartAndBodypartCompoundNoSpan" show="swIPHeartAndBodypartCompoundNo">la</span><span id="IPHeartOrBodypartCompoundYesSpan2" show="swIPHeartOrBodypartCompoundYes">chaque</span> boîte ci-dessus; utilisez les exemples dans des phrases complètes.</prompt>
+      <textBox id="IPVerbNCompoundSentExample" dataItem="verbNCompoundSentExample" cols="50"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbOtherCompoundExamplesPrompt">Entrez ici des exemples dans votre langue de composés qui consistent d’un verbe et d’une autre catégorie de mots (à part les noms):</prompt>
+      <textBox id="IPVerbOtherCompoundExample" dataItem="verbOtherCompoundExample" cols="50"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbOtherCompoundSentExamplesPrompt"> Maintenant prenez des exemples dans la boîte ci-dessus; utilisez-les dans des phrases complètes:</prompt>
+      <textBox id="IPVerbOtherCompoundSentExample" dataItem="verbOtherCompoundSentExample" cols="50"/>
+      <br/>
+      <br/>
+      <prompt id="IPVerbIdiomExamplesPrompt">Maintenant nous considérons les phénomènes d’un verbe et d’un ou plusieurs autres mots qui vont ensemble et qui expriment une notion qui n’est pas la même que le sens individuel des mots. Souvent on appelle ces ensembles des idiomes. Entrez ici des exemples dans votre langue de deux idiomes ou même plus:</prompt>
+      <textBox id="IPVerbIdiomExample" dataItem="idiomExample" cols="50"/>
+      <instruction id="IPVerbIdiomInstruction">These multi-word idioms are best handled as a single verb entry in the lexicon using <tool>Join Compound</tool>.</instruction>
+       <br/><br/>
+        <buttons>
+            <button id="IPCompoundsBack" value="Back" goto="IPAux.xml"/>
+            <button id="IPCompoundsNext" value="Next" goto="IPContents.htm"/>
+        </buttons>
+   </form>
+   <showWhen id="swIPHeartCompoundYes">
+      <whenRadio button="IPHeartCompoundYes"/>
+   </showWhen>
+   <showWhen id="swIPBodypartCompoundYes">
+      <whenRadio button="IPBodypartCompoundYes"/>
+   </showWhen>
+   <showWhen id="swIPHeartOrBodypartCompoundYes">
+      <whenRadio button="IPHeartCompoundYes"/>
+      <or/>
+      <whenRadio button="IPBodypartCompoundYes"/>
+   </showWhen>
+   <showWhen id="swIPHeartAndBodypartCompoundNo">
+      <whenRadio button="IPHeartCompoundNo"/>
+      <and/>
+      <whenRadio button="IPBodypartCompoundNo"/>
+   </showWhen>
+</page>

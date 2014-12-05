@@ -10,11 +10,11 @@
 	<form section="qp">
 	   <radioGroup id="QPQuantifierClassifierAgrTable" show="swOTClassifierAgr">
 	      <groupName dataItem="quantifierClassifier" default="no">RQPQuantifierClassifierAgr</groupName>
-	      <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar este tipo de cuantificadores?</prompt>
-	      <radio id="QPQuantifierClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-	      <radio id="QPQuantifierClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	      <prompt>Usted dijo que su lengua tiene indicadores de clase para la concordancia en las frases nominales. ¿Utiliza los indicadores de clase para marcar este tipo de cuantificadores?</prompt>
+	      <radio id="QPQuantifierClassifierAgrNo" dataValue="no">No, estos elementos no se marcan la clase</radio>
+	      <radio id="QPQuantifierClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan la clase como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
-	   <prompt id="QPQuantifierClassifierAgrPrompt" show="swOTClassifierAgrAndQuantifierYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada uno de los cuantificadores.</prompt>	   
+	   <prompt id="QPQuantifierClassifierAgrPrompt" show="swOTClassifierAgrAndQuantifierYes">Puesto que usted ha detallado ya las formas de los indicadores de clase, usted necesita solamente escribir las raíces para cada uno de los cuantificadores.</prompt>	   
 	   <br/>
 	   <prompt>Escriba cómo se expresa “muchos” (que modifica a sustantivos que se pueden contar), con cada palabra en una línea separada. </prompt>
 	   <textBox id="QPManyExample" dataItem="many" rows="3"/>
@@ -45,11 +45,11 @@
 	   </radioGroup>
 	   <radioGroup id="QPDegreeClassifierAgrTable" show="swOTClassifierAgrAndDegreeYesOrSome">
 	      <groupName dataItem="degreeClassifier" default="no">RQPDegreeClassifierAgr</groupName>
-	      <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar este tipo de palabras de grado?</prompt>
-	         <radio id="QPDegreeClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-	         <radio id="QPDegreeClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	      <prompt>Usted dijo que su lengua tiene indicadores de clase para la concordancia en las frases nominales. ¿Utiliza los indicadores de clase para marcar este tipo de palabras de grado?</prompt>
+	         <radio id="QPDegreeClassifierAgrNo" dataValue="no">No, estos elementos no se marcan la clase</radio>
+	         <radio id="QPDegreeClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan la clase como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
-	   <prompt id="QPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAndDegreeYesOrSomeAndClassifierYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras de grado.</prompt>	   
+	   <prompt id="QPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAndDegreeYesOrSomeAndClassifierYes">Puesto que usted ha detallado ya las formas de los indicadores de clase, usted necesita solamente escribir las raíces para cada una de las palabras de grado.</prompt>	   
 
 	   <prompt id="QPDegreeWordYesExamples" show="swQPDegreeYesOrSome">Escriba ejemplos de las palabras de grado, con cada uno en una línea separada. Tenga en cuenta que estas palabras de grado probablementa no son iguales a los que se pueden modificar a una frase nominal completa que se tratan en la primera sección de arriba.</prompt>
 	   <textBox id="QPDegreeWordExample" dataItem="degreeWordExample" show="swQPDegreeYesOrSome"/>

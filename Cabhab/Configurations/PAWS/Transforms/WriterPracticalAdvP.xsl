@@ -4,7 +4,7 @@
     <section1 id="sAdvP">
         <secTitle>Adverbs</secTitle>
         <p>
-<xsl:text>Adverbs express four basic types of information: time, location, manner, and reason or purpose. Adverbial indefinites are also discussed.  Interrogative adverbs are covered in </xsl:text>
+<xsl:text>Adverbs express four basic types of information: time, location, manner, and reason or purpose. Adverbial indefinites are also discussed.  Interrogative adverbs are covered in section </xsl:text>
 <sectionRef sec="sQuesContent" />
 <xsl:text>.</xsl:text>
 </p>
@@ -116,7 +116,7 @@
 </example>
            
            <p contentType="ctComparativeIntro">
-<xsl:text>Many languages allow degree words to modify adverbs.  Example English positive temporal adverbial phrases including degree word modifiers are: </xsl:text>
+<xsl:text>Many languages allow degree words to modify adverbs.  Example English temporal adverbial phrases including degree word modifiers are: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -557,7 +557,7 @@
 <example num="xAdvP.AdvPTemporal.36">
 <table border="1">
                  <tr>
-                    <th>Modified or intensified Temporal Adverbs</th>
+                    <th>Modified or Intensified Temporal Adverbs</th>
                     <th>Gloss</th>
                  </tr>
                  <xsl:variable name="sExampleValue0.0">
@@ -746,7 +746,7 @@ phrases and adverbial clauses.  These phrases occur in the same positions as the
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>while you are working</langData>
-<xsl:text>, </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -768,16 +768,11 @@ phrases and adverbial clauses.  These phrases occur in the same positions as the
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>here</langData>
-<xsl:text>, </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>there</langData>
-<xsl:text>, </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>everywhere</langData>
 <xsl:text>. </xsl:text>
 </p>
           
@@ -929,7 +924,7 @@ phrases and adverbial clauses.  These phrases occur in the same positions as the
          
           <xsl:if test="normalize-space(//advp/@locativeDegree)='no'">
 <p>
-<xsl:text>Locative adverbs are not modified or intensified in.</xsl:text>
+<xsl:text>Locative adverbs are not modified or intensified in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -1424,7 +1419,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>at San Jose</langData>
-<xsl:text>, </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1701,7 +1696,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
           
           <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='no'">
 <p>
-<xsl:text>Manner adverbs are not modified or intensified in.</xsl:text>
+<xsl:text>Manner adverbs are not modified or intensified in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -1715,7 +1710,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 </xsl:if>
           <xsl:if test="normalize-space(//advp/@mannerType)='both' and normalize-space(//advp/@mannerDegree)='no'">
 <p>
-<xsl:text>Manner adverbs which are written as independent words are not modified or intensified in.</xsl:text>
+<xsl:text>Manner adverbs which are written as independent words are not modified or intensified in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -2198,7 +2193,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
           
           <xsl:if test="normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='no'">
 <p>
-<xsl:text>The manner adverb affixes are not modified or intensified in.</xsl:text>
+<xsl:text>The manner adverb affixes are not modified or intensified in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -2212,7 +2207,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 </xsl:if>
           <xsl:if test="normalize-space(//advp/@mannerType)='both' and normalize-space(//advp/@mannerAffixDegree)='no'">
 <p>
-<xsl:text>The manner adverb affxes are not modified or intensified in.</xsl:text>
+<xsl:text>The manner adverb affxes are not modified or intensified in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -2865,6 +2860,14 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text> the temporal indefinites </xsl:text>
+<xsl:if test="normalize-space(//advp/temporalIndefTypeQNone/@checked)='yes'">
+<xsl:text>are not expressed using a quantifier.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//advp/temporalIndefQOther/@checked)='yes' and normalize-space(//advp/temporalIndefQPhrase/@checked)='no' and normalize-space(//advp/temporalIndefQWord/@checked)='no'">
+<xsl:text>are expressed by ___</xsl:text>
+<xsl:value-of select="//advp/temporalIndefQOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//advp/temporalIndefQPhrase/@checked)='no' and normalize-space(//advp/temporalIndefQWord/@checked)='yes' and normalize-space(//advp/temporalIndefQOther/@checked)='no'">
 <xsl:text>are expressed by a quantifier and a generic noun merged into a single word. </xsl:text>
 </xsl:if>
@@ -2881,7 +2884,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 </xsl:if>
 <xsl:if test="normalize-space(//advp/temporalIndefQPhrase/@checked)='yes' and normalize-space(//advp/temporalIndefQWord/@checked)='no' and normalize-space(//advp/temporalIndefQOther/@checked)='yes'">
 <xsl:text>are sometimes expressed by a quantifier and a generic noun which do not merge into a single word, but remain as a phrase, and some are expressed by ___</xsl:text>
-<xsl:value-of select="//advp/temporralIndefQOther" />
+<xsl:value-of select="//advp/temporalIndefQOther" />
 <xsl:text>. </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//advp/temporalIndefQPhrase/@checked)='yes' and normalize-space(//advp/temporalIndefQWord/@checked)='yes' and normalize-space(//advp/temporalIndefQOther/@checked)='yes'">
@@ -2890,6 +2893,14 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 <xsl:text>. </xsl:text>
 </xsl:if>
 <xsl:text> The locative indefinites </xsl:text>
+<xsl:if test="normalize-space(//advp/locativeIndefTypeQNone/@checked)='yes'">
+<xsl:text>are not expressed using a quantifier.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//advp/locativeIndefQOther/@checked)='yes' and normalize-space(//advp/locativeIndefQPhrase/@checked)='no' and normalize-space(//advp/locativeIndefQWord/@checked)='no'">
+<xsl:text>are expressed by ___</xsl:text>
+<xsl:value-of select="//advp/locativeIndefQOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//advp/locativeIndefQPhrase/@checked)='no' and normalize-space(//advp/locativeIndefQWord/@checked)='yes' and normalize-space(//advp/locativeIndefQOther/@checked)='no'">
 <xsl:text>are expressed by a quantifier and a generic noun merged into a single word. </xsl:text>
 </xsl:if>
@@ -3161,7 +3172,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 <xsl:text>on either side or on  both sides of</xsl:text>
 </xsl:if>
                 <xsl:text> the generic locative noun, and they may also occur ___</xsl:text>
-<xsl:value-of select="//advp/temporalIndefTypeQPQOther" />
+<xsl:value-of select="//advp/locativeIndefTypeQPQOther" />
 <xsl:text>. </xsl:text>
              </xsl:if>
 <xsl:text>  Examples of the indefinite phrases are:</xsl:text>
@@ -3439,6 +3450,14 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text> the temporal indefinites </xsl:text>
+<xsl:if test="normalize-space(//advp/temporalIndefTypeIntNone/@checked)='yes'">
+<xsl:text>are not expressed using an interrogative.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//advp/temporalIndefIntOther/@checked)='yes' and normalize-space(//advp/temporalIndefIntPhrase/@checked)='no' and normalize-space(//advp/temporalIndefIntWord/@checked)='no'">
+<xsl:text>are expressed by ___</xsl:text>
+<xsl:value-of select="//advp/temporalIndefIntOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//advp/temporalIndefIntPhrase/@checked)='no' and normalize-space(//advp/temporalIndefIntWord/@checked)='yes' and normalize-space(//advp/temporalIndefIntOther/@checked)='no'">
 <xsl:text>are expressed by a temporal interrogative word and an indefinite merged into a single word. </xsl:text>
 </xsl:if>
@@ -3455,7 +3474,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 </xsl:if>
 <xsl:if test="normalize-space(//advp/temporalIndefIntPhrase/@checked)='yes' and normalize-space(//advp/temporalIndefIntWord/@checked)='no' and normalize-space(//advp/temporalIndefIntOther/@checked)='yes'">
 <xsl:text>are sometimes expressed by a temporal interrogative word and an indefinite which do not merge into a single word, but remain as a phrase, and some are expressed by ___</xsl:text>
-<xsl:value-of select="//advp/temporralIndefIntOther" />
+<xsl:value-of select="//advp/temporalIndefIntOther" />
 <xsl:text>. </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//advp/temporalIndefIntPhrase/@checked)='yes' and normalize-space(//advp/temporalIndefIntWord/@checked)='yes' and normalize-space(//advp/temporalIndefIntOther/@checked)='yes'">
@@ -3464,6 +3483,14 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 <xsl:text>. </xsl:text>
 </xsl:if>
 <xsl:text> The locative indefinites </xsl:text>
+<xsl:if test="normalize-space(//advp/locativeIndefTypeIntNone/@checked)='yes'">
+<xsl:text>are not expressed using an interrogative.</xsl:text>
+</xsl:if>
+<xsl:if test="normalize-space(//advp/locativeIndefIntOther/@checked)='yes' and normalize-space(//advp/locativeIndefIntPhrase/@checked)='no' and normalize-space(//advp/locativeIndefIntWord/@checked)='no'">
+<xsl:text>are expressed by ___</xsl:text>
+<xsl:value-of select="//advp/locativeIndefIntOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
 <xsl:if test="normalize-space(//advp/locativeIndefIntPhrase/@checked)='no' and normalize-space(//advp/locativeIndefIntWord/@checked)='yes' and normalize-space(//advp/locativeIndefIntOther/@checked)='no'">
 <xsl:text>are expressed by a locative interrogative word and an indefinite merged into a single word. </xsl:text>
 </xsl:if>
@@ -3735,7 +3762,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
 <xsl:text>on either side or on  both sides of</xsl:text>
 </xsl:if>
                 <xsl:text> the indefinite, and they may also occur ___</xsl:text>
-<xsl:value-of select="//advp/temporalIndefTypeIntOther" />
+<xsl:value-of select="//advp/locativeIndefTypeIntOther" />
 <xsl:text>. </xsl:text>
              </xsl:if>
 <xsl:text>  Examples of the indefinite phrases are:</xsl:text>
@@ -4636,73 +4663,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
       
       
    
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-   
-      
-      
-      
-      
-      
-   
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-   
-   
-    
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-   
-   
+ 
    
       
       
@@ -4722,49 +4683,6 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
       
       
       
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-   
-   
       
    
    
@@ -4845,6 +4763,157 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
       
       
       
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+   
+   
+      
+   
+   
+      
+      
+      
+      
+      
+   
+ 
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+   
+   
+   
+      
+      
+      
+      
+      
+   
+   
+      
+   
+   
+    
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
+      
+   
+   
+   
+      
+      
+      
    
    
       
@@ -4977,15 +5046,6 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
    
       
    
-   
-   
-      
-      
-      
-      
-      
-      
-      
    
     
       

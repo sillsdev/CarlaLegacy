@@ -4,21 +4,40 @@
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPMain" count="1/1">
-    <title>Nominal Phrases</title>
+    <title>Nominal Phrases - Overview</title>
     <introduction>Nominal phrases can be very complex, so they will be divided between six sections in this program.  This section concentrates on nominal phrases with common nouns as the lexical head.  We will consider modification by articles, demonstratives, quantifiers and degree words, adjective phrases, and possessors.   Nominal phrases headed by proper names are handled in <section number="6">Proper Names</section> and those headed by pronouns, demonstratives, and quantifiers are handled in <section number="7">Pronouns</section>.  The possibility of modification by <technicalTermRef term="ttAdpositionalPhrases"/> is added in <section number="8">Adpositional Phrases</section> and modification by relative clauses is added in <section number="12">Relative Clauses</section>.  Finally, negation of the whole nominal phrase is treated in <section number="14">Negative Constructions</section>.</introduction>
     <introduction id="NPPhraseStructureIntro" show="swNotPractical">Because there are so many positions needed for distinct sets of modifiers, we will use the expanded DP (determiner phrase) structure, rather than the simpler NP phrase structure.  These more complex tree structures will be built step-by-step from your answers to the questions here. You simply need to be aware that when you look at the tree structures generated, nominal phrases will have DPs on top of the NPs.  A simple English example is given here:
 <tree img="TreeDescriptions/PawsNPTree.png"/>
 It may be difficult to understand the need for the change in English, because articles, demonstratives and possessors are mutually exclusive, but in many languages all three can occur in a single nominal phrase.  <help href="../Help/Cbgbtext.doc#DPHypothesis">(Click here to see more on the DP hypothesis.)</help>
-        <br/>
-        <br/>
-       We begin with the modifiers which have the greatest scope and then present the modifiers with more limited scope, moving inward closer to the noun.
-       <br/><br/>The top level of the nominal phrase is occupied by those wide scope quantifiers and degree words that modify the whole DP, such as <example>all</example>, <example>almost</example>, <example>just</example>, and <example>only</example>, that were discussed and marked on the first page of <section number="2">Quantifiers and QP</section>.  Nothing more needs to be done with those modifiers.
-    </introduction>
-   <introduction id="NPPracticalIntro" show="swPractical">We begin with the modifiers which have the greatest scope and then present the modifiers with more limited scope, moving inward closer to the noun.
-      <br/><br/>The top level of the nominal phrase is occupied by those wide scope quantifiers and degree words that modify the whole DP, such as <example>all</example>, <example>almost</example>, <example>just</example>, and <example>only</example>, that were discussed and marked on the first page of <section number="2">Quantifiers and QP</section>.  Nothing more needs to be done with those modifiers.
-   </introduction>
+    </introduction>  
+    <introduction>We begin with the modifiers which have the greatest scope and then present the modifiers with more limited scope, moving inward closer to the noun.</introduction>
+    
     <form section="np" transparent="yes">
-        <br/>
+        <prompt><br/>The top level of the nominal phrase (initial or final) is occupied by those wide scope quantifiers and degree words that modify the whole nominal phrase, such as <example>all</example>, <example>almost</example>, <example>just</example>, and <example>only</example>, that were discussed and marked on the first page of <section number="2">Quantifiers and QP</section>.</prompt>
+        <prompt id="NPClassifierNotSpecificPrompt" show="swOTClassifierNotSpecific"><br/> Nothing more needs to be done with those modifiers.</prompt>
+        <prompt id="NPClassifierSpecificPrompt" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome"><br/>The examples of full nominal phrases including the independent words meaning ‘all’, ‘almost’, ‘only’ or ‘just’ that you entered are:
+        </prompt>
+        <textBox id="QPNPExample"  section="qp" dataItem="example" cols="50" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome"/>
+        <radioGroup id="NPClassifierSpecificTable" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome">
+            <groupName dataItem="classifierPresent" default="no">RNPClassifierPresent</groupName>
+            <prompt><br/>Looking at the examples, are classifiers used in these nominal phrases with the words meaning ‘all’, ‘almost’, ‘only’ or ‘just’?</prompt>
+            <radio id="NPClassifierPresentYes"  dataValue="yes">Yes, a classifier is required in all nominal phrases of this type</radio>
+            <radio id="NPClassifierPresentSome" dataValue="some">A classifier is present in some nominal phrases of this type, but is not required in all of them</radio>
+            <radio id="NPClassifierPresentNo" dataValue="no">No, a classifier is never used in this type of nominal phrase</radio>
+        </radioGroup>
+        <checkboxGroup id="NPClassifierSpecificPos" show="swOTClassifierSpecificAndQPNPDegreeYesOrSomeAndNPClassifierPresentYesOrSome">
+            <prompt><br/>Looking at the examples, where do the classifiers occur with respect to these wide-scope quantifiers or degree words and the noun?  Check all options that are correct for your language</prompt>
+            <checkbox id="NPClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificPosBeforeBoth">First, before both the wide-scope quantifier or degree word and the noun</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificPosAfterBoth">Last, after both the noun and the wide-scope quantifier or degree word</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterQBeforeN"  dataItem="classifierSpecificPosAfterQBeforeN">After the wide-scope quantifier or degree word but before the noun</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterNBeforeQ"  dataItem="classifierSpecificPosAfterNBeforeQ">After the noun but before the wide-scope quantifier or degree word</checkbox>
+            <checkbox id="NPClassifierSpecificPosPrefixQ"  dataItem="classifierSpecificPosPrefixQ">As a prefix on the wide-scope quantifier or degree word</checkbox>
+            <checkbox id="NPClassifierSpecificPosSuffixQ"  dataItem="classifierSpecificPosSuffixQ">As a suffix on the wide-scope quantifier or degree word</checkbox>
+            <checkbox id="NPClassifierSpecificPosOther"  dataItem="classifierSpecificPosOther">In my language, the classifiers may occur in the following position: <textBox  id="NPClassifierSpecificPosOtherContent" dataItem="classifierSpecificPosOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="NPClassifierSpecificPosNoCheckPrompt" show="swNPClassifierPresentYesOrSomeAndNoCheck">WARNING: You need to check at least one box to describe where the classifiers occur with respect to these wide-scope quantifiers or degree words and the noun in your language, or change your answer above to “No, a classifier is never used in this type of nominal phrase”.</prompt>
+        
+        <br/><br/>
         <buttons>
             <button id="NPMainBack" value="Back" goto="NPContents.htm"/>
             <button id="NPMainNext" value="Next" goto="NPContents.htm"/>
@@ -30,5 +49,61 @@ It may be difficult to understand the need for the change in English, because ar
     <showWhen id="swPractical">
         <whenValue  element="paws" attr="outputGrammar" value="False"/>
     </showWhen>
-   &TechnicalTerms; 
+    <showWhen id="swOTClassifierNotSpecific">
+        <not/><whenValue element="typology" attr="classifier" value="yesSpecific"/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndQPNPDegreeYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndQPNPDegreeYesOrSomeAndNPClassifierPresentYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPClassifierPresentSome"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPClassifierPresentYesOrSomeAndNoCheck">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPClassifierPresentSome"/>
+        <closeParen/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosBeforeBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterQBeforeN"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterNBeforeQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosPrefixQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosSuffixQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosOther"/>
+    </showWhen>
+    &TechnicalTerms; 
 </page>

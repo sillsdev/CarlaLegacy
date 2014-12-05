@@ -13,8 +13,8 @@
    <p contentType="ctComparativeIntro"><content>Los saludos consisten típicamente en una palabra o una frase específica, que puede estar seguida de un nombre o una frase nominal que describe a la persona o el animal que se saluda.  
     Algunos son las oraciones completas o las preguntas completas, por ejemplo, </content> <langData>¿Cómo está usted? </langData> <content> y </content><langData>¡Tenga un buen día!</langData> 
         <content> Las cuáles no necesitan ser tratadas por separado. </content></p>
-   <p contentType="ctComparativeIntro"><content>Algunos ejemplos de saludos en español son:  </content><langData>¡Hola!</langData><content>&#x20;</content><langData>¡Adiós!</langData><content>&#x20;</content><langData>Hasta luego</langData>
-      <content>, </content><langData>Buen día, señor</langData>
+   <p contentType="ctComparativeIntro"><content>Algunos ejemplos de saludos en español son:  </content><langData>¡Hola!</langData><content> y </content><langData>¡Adiós!</langData><content> y </content><langData>Hasta luego</langData>
+      <content> y </content><langData>Buen día, señor</langData>
       <content> y  </content><langData>Buenas noches, ducle bebé</langData><content>.</content></p>
    
     <p><content>Algunos ejemplos de saludos en el </content><langName/> <content> son:</content></p>
@@ -26,7 +26,7 @@
     <secTitle>Interjecciones</secTitle>
    <p contentType="ctPracticalIntro"><content>Las interjecciones consisten típicamente en una palabra o una frase específica que se utilizan sola para expresar emociones, generalmente con signos de exclamación. Muchas de las palabras en interjecciones no se utilizan en ningún otro contexto. Sin embargo, los adjetivos regulares también se utilizan de esta manera.</content></p>
    <p contentType="ctComparativeIntro"><content>Las interjecciones consisten típicamente en una palabra o una frase específica que se utilizan sola para expresar emociones, generalmente con signos de exclamación. Muchas de las palabras en interjecciones no se utilizan en ningún otro contexto. Sin embargo, los adjetivos regulares también se utilizan de esta manera.  Algunos ejemplos de interjecciones en español son: </content>
-       <langData>¡Ay!</langData><content>&#x20;</content><langData>¡Caramba!</langData><content>&#x20;</content><langData>¡Cuidado!</langData><content> y </content><langData>¡Jesús, María y José!</langData></p>
+       <langData>¡Ay!</langData><content> y </content><langData>¡Caramba!</langData><content> y </content><langData>¡Cuidado!</langData><content> y </content><langData>¡Jesús, María y José!</langData></p>
        
     <p><content>Algunos ejemplos de interjecciones en el </content><langName/> <content> son:</content></p>
             <example>
@@ -61,7 +61,7 @@
     <secTitle>Exclamaciones</secTitle>
    <p contentType="ctPracticalIntro"><content>Las exclamaciones consisten típicamente en una palabra específica, seguida de una frase adjetival y puntuada generalmente con signos de exclamación.</content></p>
    <p contentType="ctComparativeIntro"><content>Las exclamaciones consisten típicamente en una palabra específica, como </content><langData>qué</langData><content> o </content><langData>cómo</langData><content> en español, seguida de una frase adjetival y puntuada generalmente con signos de exclamación. Algunos ejemplos en español son:  </content>
-      <langData>¡Qué tremendo para usted!</langData><content>&#x20;</content><langData>¡Qué agradable!</langData><content> y </content><langData>¡Cómo es maravilloso que su familia podría venir!</langData></p>
+      <langData>¡Qué tremendo para usted!</langData><content> y </content><langData>¡Qué agradable!</langData><content> y </content><langData>¡Cómo es maravilloso que su familia podría venir!</langData></p>
    
     <p show="swExclMNo">
         <content>En el </content>

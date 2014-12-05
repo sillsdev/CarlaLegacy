@@ -3,14 +3,14 @@
 <!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
-<page id="IPSubjunctive" count="2/3">
+<page id="IPSubjunctive" count="3/3">
     <title level="2">Basic Sentences - Subjunctives</title>
    <introduction>The <technicalTermRef term="ttSubjunctive"/> mood is used to express notions that are supposed, doubted, feared or desired.  They are not currently reality.  Subjunctives are not used very much in English and the examples look something like conditionals but in first person, such as:</introduction>
    <EnglishExample>
       <exItem label="1.">If I were in charge, I would fix the problem.</exItem>
       <exItem label="2.">If I were a man, I would be a soccer player.</exItem>
    </EnglishExample>
-<introduction>In the examples above, the subjuctive verb is <example>were</example> and it follows the conditional word <example>if</example>.  The consequence is normally in the future form.  The consequence can also be presented before the subjunctive condition, as shown in:</introduction>   
+<introduction>In the examples above, the subjunctive verb is <example>were</example> and it follows the conditional word <example>if</example>.  The consequence is normally in the future form.  The consequence can also be presented before the subjunctive condition, as shown in:</introduction>   
    <EnglishExample>
       <exItem label="3.">I would fix the problem if I were in charge.</exItem>
       <exItem label="4.">I would like to be a soccer player if I were a man.</exItem>
@@ -64,7 +64,7 @@
          <checkbox id="IPSubjunctiveCondPosOther"  dataItem="subjunctiveCondWordOther">In my language, they may occur in the following position: <textBox  id="IPSubjunctiveCondPosOtherContent" dataItem="subjunctiveCondWordOther" rows="2"/></checkbox>
       </checkboxGroup>
       <prompt id="IPSubjunctiveCondPosNoCheckPrompt" show="swIPSubjunctiveCondYesandNoCheck">WARNING: You need to check at least one box to describe where these subjunctive condition markers occur with respect to the rest of the subjunctive conditional phrase in your language, or change the answer to one of the ‘No’ answers above.</prompt>
-      <instruction id="IPSubjunctiveCondYesInstruction" show="swIPSubjunctiveCondWordYesOrSome">In the lexicon, if this word is the same as the conditional word for conditionals discussed on the last page, simply add the feature <feature>subjunctive_conditional</feature> to the same entry you added on the last page with the category <category>Cond</category>.  If it is distinct from that entry, you will likely need to add a separate entry for this words, if itcan also be used as a complementizers in embedded questions.  Give this entry the category <category>Cond</category> and the feature <feature>subjunctive_conditional</feature>. </instruction>
+      <instruction id="IPSubjunctiveCondYesInstruction" show="swIPSubjunctiveCondWordYesOrSome">In the lexicon, if this word is the same as the conditional word for conditionals discussed on the last page, simply add the feature <feature>subjunctive_conditional</feature> to the same entry you added on the last page with the category <category>Cond</category>.  If it is distinct from that entry, give this entry the category <category>Cond</category> and the feature <feature>subjunctive_conditional</feature>.  If this word can also be used as a complementizers in embedded questions, you will need to add a separate entry for it.   </instruction>
       <instruction id="IPSubjunctiveCondEitherRestrictedInstruction" show="swIPSubjunctiveCondEitherRestricted">In the lexicon, mark those subjunctive condition markers which can only occur before the condition phrase with the feature <feature>IP-initial</feature> and those which can only occur after it with the feature <feature>IP-final</feature>.  Do not enter either feature on any words which can occur on either side.</instruction>
       <br/>
         <br/>

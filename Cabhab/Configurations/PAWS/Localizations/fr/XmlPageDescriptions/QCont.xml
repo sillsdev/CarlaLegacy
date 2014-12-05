@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QCont" count="5/9">
+    <title level="2">Questions – La structure du syntagme dans les questions de contenu</title>
+    <introduction id="QContIntroNotPractical" show="swNotPractical">Depending on the basic word order of your language, content questions may be formed with or without fronting an interrogative phrase.  Head-final languages (SOV, OVS, and OSV) usually do not have movement of an interrogative phrase in content questions, while head-initial languages (SVO, VOS, and VSO) usually require fronting of an interrogative phrase.<br/>
+        <br/>In languages like English, the interrogative word or phrase must be fronted.  In the trees, this fronting will be to the specifier of CP.  Sample trees for main clause and embedded content questions in English are shown here:
+<tree img="TreeDescriptions/PawsMainContentQues.png"/>
+        <br/>
+        <tree img="TreeDescriptions/PawsEmbContentQues.png"/>
+        <br/>
+        <help href="Help/Cbgbtext.doc#ContentQuestions">Click here for more information about the CP phrase structure of content questions.</help>
+        <br/>
+        <br/>
+In languages without fronting for interrogatives, the phrase structure of a content question will either be the same as a Yes/No question with a question marker or auxiliary in the head of CP position or just the same as a normal sentence (IP).  In either case, the interrogative phrase appears in its normal argument positon.  
+<br/>
+<br/>
+Many SOV languages optionally allow movement of an interrogative phrase to the position immediately before the verb, which will be within the VP in the tree structures used here.
+        </introduction>
+    <introduction id="QContIntroPractical" show="swPractical">Selon l’ordre syntaxique fondamental des phrases, les questions de contenu peuvent se former avec ou sans syntagme interrogatif en tête. Les langues à tête finale (SOV, OVS, et OSV) n’ont pas de mouvement du syntagme interrogatif dans les questions de contenu; dans les langues à tête initiale (SVO, VOS, et VSO) le syntagme interrogatif est habituellement en position initiale. <br/>
+        <br/>Pour les langues comme le français et l’anglais le syntagme interrogatif vient en tête.
+        <br/>
+        <br/>
+        Pour les langues où l’interrogatif ne figure pas en tête, la structure syntaxique d’une question de contenu sera identique à la structure d’une question oui/non; le marqueur interrogatif ou l’auxiliaire interrogatif se place ou bien dans la position de complément, ou tout comme dans une phrase normale.  Dans les deux cas le syntagme interrogatif prend sa place d’argument habituelle  
+        <br/>
+        <br/>
+        Beaucoup de langues SOV permettent le déplacement du syntagme interrogatif directement avant le verbe.
+    </introduction>
+    <form section="q" transparent="yes">
+        <br/>
+        <buttons>
+            <button id="QContBack" value="Back" goto="QWh.xml"/>
+            <button id="QContNext" value="Next" goto="QMainCont.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
+</page>

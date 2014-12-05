@@ -26,13 +26,13 @@
       <radioGroup id="QMainYNWordTable" show="swQMainYNYes">
          <groupName dataItem="mainYNWord" default="yes">RQMainYNWord</groupName>
          <prompt><br/>Are all the Yes/No question markers written as independent words?</prompt>
-         <radio id="QMainYNWordYes" dataValue="yes">Yes</radio>
+         <radio id="QMainYNWordYes" dataValue="yes">Yes, they are all independent words</radio>
          <radio id="QMainYNWordSome" dataValue="some">Some are independent words but some attach to another word</radio>
          <radio id="QMainYNWordNo" dataValue="no">No, they all attach to another word</radio>
       </radioGroup>
   
       <checkboxGroup  id="QMainYNCliticPosTable" show="swQMainYNWordNoOrSome">
-         <prompt><br/>Where do the yes/no markers <span id="QMainYNCliticSomeSpan" show="swQMainYNWordSome">which are not independent words </span>attach within the Yes/No question?  Check all options that are correct for your language</prompt>
+         <prompt><br/>Where do the Yes/No markers <span id="QMainYNCliticSomeSpan" show="swQMainYNWordSome">which are not independent words </span>attach within the Yes/No question?  Check all options that are correct for your language</prompt>
      <checkbox id="QMainYNCliticProclitic" dataItem="mainYNProclitic">As a proclitic which attaches to the beginning of the first word in the Yes/No question</checkbox>
          <checkbox id="QMainYNCliticEnclitic" dataItem="mainYNEnclitic">As an enclitic which attaches to the end of the last word in the Yes/No question</checkbox>
          <checkbox id="QMainYNCliticPrefix" dataItem="mainYNPrefix">As a prefix which attaches to the verb</checkbox>

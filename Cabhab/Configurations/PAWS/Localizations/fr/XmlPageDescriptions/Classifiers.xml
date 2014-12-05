@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="Classifiers" count="3/3">
+   <title level="2">Questions Générales de Typologie – Classes Nominales et Classificateurs</title>
+   <introduction>Certaines langues utilisent un système de classification nominale qui marque les noms selon leur forme, leur position ou selon d’autres caractéristiques. Pour beaucoup de ces langues la marque de classe devient un système d’accord qui rend l’accord nécessaire dans le syntagme nominal et au verbe. Ainsi, <technicalTermRef term="ttQuantifiers">les quantificateurs</technicalTermRef>, <technicalTermRef term="ttArticles">les articles</technicalTermRef>, <technicalTermRef term="ttDemonstratives">les démonstratifs</technicalTermRef>, les adjectifs et les verbes doivent souvent porter le marqueur de la classe nominale.
+       <br/><br/>
+      Les langues bantu qu’on parle en Afrique présentent peut-être le système de classe nominale le mieux connu. Ces langues ont jusqu’à 22 classes distinctes, qui sont représentées par des numéros. Vers la moitié sont réservés pour les noms au singulier, et une quantité pareille pour les noms au pluriel. D’autres sont pour les noms de poids, ou pour les abstractions ou pour les endroits. Ici nous citons des exemples en sesotho, une langue bantu parlée surtout en Afrique du Sud où (1) montre l’accord de classe nominale dans les syntagmes nominaux du sujet et de l’objet et (2) montre l’utilisation du marqueur de classe nominale sur le verbe pour le sujet et l’objet quand les syntagmes nominaux sont pronominalisés. (Données tirées de: Demuth, K. 2000. Bantu noun class systems: Loan word and acquistion evidence of semantic productivity. In G. Senft (ed.), Classification Systems. Cambridge University Press:270-292.) 
+    </introduction>
+   <table class="EnglishExample">
+      <tr>
+         <td>1.</td>	<td>Ba-shányana</td><td>bá-ne</td><td>bá-fúmáné</td><td>di-perekisi</td><td>tsé-moná</td>
+      </tr>
+      <tr>
+         <td></td><td>2-garçons</td><td>2-DEM</td><td>2SBJ-trouvé</td><td>10-pêche</td><td>10-bon</td>
+      </tr>
+      <tr>
+         <td></td><td colspan="5">« Ces garçons ont trouvé des pêches savoureuses. »</td>
+      </tr>
+      <tr>
+         <td>2.</td><td>Bá-di-fúmáné</td>
+      </tr>
+      <tr>
+         <td></td><td>2SBJ-10OBJ-trouvé</td>
+      </tr>
+      <tr>
+         <td></td><td>« Ils les ont trouvées. »</td>
+      </tr>
+   </table>
+   <introduction>Certaines langues utilisent un système de <technicalTermRef term="ttClassifier">classificateurs</technicalTermRef>, qu’on appelle quelquefois des mots de mesure ou de désignation. Ces classificateurs sont des mots ou des morphèmes qui accompagnent le nom quand il est compté ou spécifié; ils servent à classer le nom selon le type de son référant. Certaines langues possèdent des centaines de classificateurs. Le classificateur renvoie au nom qu’on spécifie, mais il n’y a pas d’autre accord ni dans le syntagme nominal ni dans la phrase.
+   <br/><br/>
+      Les classificateurs sont un aspect important de plusieurs langues asiatiques. Quelques exemples en chinois mandarin (la forme dite pinyin) montrent l’usage des classificateurs avec un numéro (3-6) et un démonstrative (7).  (Les  exemples sont de Wikipédia.)</introduction>
+   <table class="EnglishExample">
+      <tr>
+         <td>3.</td><td>sān</td><td>gè</td><td>xuéshēng</td>
+      </tr>
+      <tr>
+         <td></td><td>trois</td><td>humain.classificateur</td><td>étudiant</td>
+      </tr>
+      <tr>
+         <td></td><td>« trois étudiants »</td>
+      </tr>
+      <tr>
+         <td>4.</td><td>sān</td><td>kē</td><td>shù</td>
+      </tr>
+      <tr>
+         <td></td><td>trois</td><td>abre.classificateur</td><td>abre</td>
+      </tr>
+      <tr>
+         <td></td><td>« trois abres »</td>
+      </tr>
+      <tr>
+         <td>5.</td><td>sān</td><td>zhī</td><td>niǎo</td>
+      </tr>
+      <tr>
+         <td></td><td>trois</td><td>oiseau.classificateur</td><td>oiseau</td>
+      </tr>
+      <tr>
+         <td></td><td>« trois oiseaux »</td>
+      </tr>
+      <tr>
+         <td>6.</td><td>sān</td><td>tiáo</td><td>hé</td>
+      </tr>
+      <tr>
+         <td></td><td>trois</td><td>long.nodule.classificateur</td><td>fleuve</td>
+      </tr>
+      <tr>
+         <td></td><td>« trois fleuves »</td>
+      </tr>
+      <tr>
+         <td>7.</td><td>zhè</td><td>gè</td><td>rén</td>
+      </tr>
+      <tr>
+         <td></td><td>ce</td><td>humain.classificateur</td><td>personne</td>
+      </tr>
+      <tr>
+         <td></td><td>« cette personne »</td>
+      </tr>
+   </table>
+   
+   <introduction>Un système plus simple de classification est évident dans les exemples (8-10) d’ayutla Mixtec, qu’on parle au mexique du sud. Dans cette langue les préfixes-classificateurs sont dérivés d’un nom ou d’un pronom à valeur générique qui font partie de la plupart des noms qui font référence aux animaux ou aux insectes, ou bien aux liquides, aux arbres ou aux objets faits de bois, ou aux objets ronds. En mixtec il n’y a pas d’accord classificateur ni dans le syntagme nominal ni dans la phrase; ces préfixes sont visibles seulement aux noms – on pourrait les considérer plutôt comme des préfixes <technicalTermRef term="ttDerivational">dérivationnels</technicalTermRef>.  Cependant, de pareilles distinctions existent aux pronoms de la troisième personne qui se réfèrent aux noms. Le mixtec utilise des types plutôt que des numéros pour identifier les classificateurs. Certaines racines nominales sont identifiables comme d’autres mots; d’autres racines existent comme des éléments indéterminés. (les données sont tirées de Hills, Robert. 1990. A Syntactic Sketch of Ayutla Mixtec. Dans Bradley, C. Henry et Barbara E. Hollenbach, (ed.) Studies in the Syntax of Mixtecan Languages. Vol.2. The Summer Institute of Linguistics and The University of Texas at Arlington:Dallas. 200-201.)</introduction>
+   <table class="EnglishExample">
+      <tr>
+         <td>8.</td>	<td>si-ndīkih</td>
+      </tr>
+      <tr>
+         <td></td><td>ANIMAL-corne</td>
+      </tr>
+      <tr>
+         <td></td><td>« vache, bétail »</td>
+      </tr>
+      <tr>
+         <td>9.</td><td>tē-hnīh</td>
+      </tr>
+      <tr>
+         <td></td><td>LIQUIDE-chaud</td>
+      </tr>
+      <tr>
+         <td></td><td>« liqueur »</td>
+      </tr>
+      <tr>
+         <td>10.</td><td>tun-tāhnūh</td>
+      </tr>
+      <tr>
+         <td></td><td>BOIS-est.vole</td>
+      </tr>
+      <tr>
+         <td></td><td>« avion »</td>
+      </tr>
+   </table>
+    <form section="typology">
+        <radioGroup>
+            <groupName dataItem="classifier" default="no">RTypologyClassifier</groupName>
+           <prompt>Est-ce que votre langue possède un type quelconque de classe nominale ou un système classificateur pareil à celui ci-dessus?</prompt>
+            <radio id="OTClassifierNo" dataValue="no">Non</radio>
+           <radio id="OTClassifierAgr" dataValue="yesAgr">Oui, avec l’accord global selon la classe nominale, comme pour le système du bantu ci-dessus</radio>
+           <radio id="OTClassifierSpecific" dataValue="yesSpecific">Oui, les classificateurs s’emploient avec les noms lorsque ceux-ci sont comptés ou spécifiés, cependant l’accord selon la classe nominale n’existe pas</radio>
+           <radio id="OTClassifierType" dataValue="yesType">Oui, les types nominaux sont marqués comme dans le système mixtec ci-dessus, mais il n’y a pas d’accord</radio>
+           <radioGroup id="OTClassifierAgrTable" show="swOTClassifierAgr">
+   <groupName dataItem="classifierNum" default="number">RTypologyClassifierNumber</groupName>
+              <prompt>Est-ce que les classes nominales se distinguent par des numéros ou par des étiquettes de type?</prompt>
+              <radio id="OTClassifierAgrNum" dataValue="number">Par des numéros de classe</radio>
+              <radio id="OTClassifierAgrType" dataValue="type">Par des types</radio>
+</radioGroup>        
+        </radioGroup>
+<br/>
+       <introduction id="OTClassifierChartsIntroduction" show="swOTClassifierNotNo">Maintenant on vous demande des renseignements sur chaque <span id="OTClassifierAgrSpan1" show="swOTClassifierAgr">marqueur de classe nominale</span><span id="OTClassifierNotAgrSpan" show="swOTClassifierTypeOrSpecific">classificateur</span>, pour qu’on dresse un schéma grammatical de production. Veuillez remplir toutes les boîtes de textes<span id="OTClassifierYesAgrSpan" show="swOTClassifierAgrNum"> et cochez le numéro qui correspond au numéro de l’accord pour chaque classe</span>.   Si l’on utilise plus qu’un morphème pour un certain <span id="OTClassifierAgrSpan2" show="swOTClassifierAgr">marqueur de classe nominale</span><span id="OTClassifierNotAgrSpan2" show="swOTClassifierTypeOrSpecific">classificateur</span>, veuillez mettre chacun sur une ligne individuelle.   Veuillez ajouter un tiret à toute forme d’affixe pour indiquer s’il s’agit d’un préfixe ou d’un suffixe. <span id="OTClassifierAgrNumSpan" show="swOTClassifierAgrNum" >Aussi, veuillez ajouter un tiret à chaque forme qui est un affixe pour indiquer s’il s’agit d’un préfixe ou un suffixe. On présume que vous utilisez les numéros à partir d’ « un » . Sinon, il vous faudra les changer quand vous modifiez la sortie grammaticale. Si vous avez moins de classes, laissez les zones de texte vides, tout simplement. Si vous n’avez pas certains classificateurs énumérés ici, laissez ces zones de texte vides. Ajoutez les classificateurs supplémentaires dans la zone de texte « autres » pour qu’ils soient commentés dans la sortie grammaticale.</span> </introduction>
+<br/>
+       <prompt id="OTClassifierAgrNumPrompt1" show="swOTClassifierAgrNum">Entrez ici les formes pour la 1ère classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample1" dataItem="class1Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum1" show="swOTClassifierAgrNum">
+          <groupName dataItem="class1agr" default="irrelevant">ROTClassifierAgrNum1</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 1ere classe est:</prompt>
+          <radio id="OTClassifierAgrNum1Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum1Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum1Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt2" show="swOTClassifierAgrNum">Entrez ici les formes de la 2ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample2" dataItem="class2Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum2" show="swOTClassifierAgrNum">
+          <groupName dataItem="class2agr" default="irrelevant">ROTClassifierAgrNum2</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 2ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum2Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum2Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum2Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt3" show="swOTClassifierAgrNum">Entrez ici les formes de la 3ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample3" dataItem="class3Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum3" show="swOTClassifierAgrNum">
+          <groupName dataItem="class3agr" default="irrelevant">ROTClassifierAgrNum3</groupName>
+          <prompt> L’élément pour l’accord de numéro de la 3ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum3Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum3Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum3Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt4" show="swOTClassifierAgrNum">Entrez ici les formes de la 4ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample4" dataItem="class4Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum4" show="swOTClassifierAgrNum">
+          <groupName dataItem="class4agr" default="irrelevant">ROTClassifierAgrNum4</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 4ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum4Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum4Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum4Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt5" show="swOTClassifierAgrNum">Entrez ici les formes de la 5ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample5" dataItem="class5Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum5" show="swOTClassifierAgrNum">
+          <groupName dataItem="class5agr" default="irrelevant">ROTClassifierAgrNum5</groupName>
+          <prompt> L’élément pour l’accord de numéro de la 5ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum5Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum5Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum5Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt6" show="swOTClassifierAgrNum">Entrez ici les formes de la 6ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample6" dataItem="class6Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum6" show="swOTClassifierAgrNum">
+          <groupName dataItem="class6agr" default="irrelevant">ROTClassifierAgrNum6</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 6ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum6Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum6Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum6Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt7" show="swOTClassifierAgrNum">Entrez ici les formes de la 7ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample7" dataItem="class7Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum7" show="swOTClassifierAgrNum">
+          <groupName dataItem="class7agr" default="irrelevant">ROTClassifierAgrNum7</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 7ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum7Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum7Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum7Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt8" show="swOTClassifierAgrNum">Entrez ici les formes de la 8ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample8" dataItem="class8Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum8" show="swOTClassifierAgrNum">
+          <groupName dataItem="class8agr" default="irrelevant">ROTClassifierAgrNum8</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 8ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum8Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum8Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum8Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt9" show="swOTClassifierAgrNum">Entrez ici les formes de la 9ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample9" dataItem="class9Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum9" show="swOTClassifierAgrNum">
+          <groupName dataItem="class9agr" default="irrelevant">ROTClassifierAgrNum9</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 9ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum9Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum9Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum9Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt10" show="swOTClassifierAgrNum">Entrez ici les formes de la 10ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample10" dataItem="class10Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum10" show="swOTClassifierAgrNum">
+          <groupName dataItem="class10agr" default="irrelevant">ROTClassifierAgrNum10</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 10ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum10Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum10Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum10Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt11" show="swOTClassifierAgrNum">Entrez ici les formes de la 11ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample11" dataItem="class11Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum11" show="swOTClassifierAgrNum">
+          <groupName dataItem="class11agr" default="irrelevant">ROTClassifierAgrNum11</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 11ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum11Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum11Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum11Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt12" show="swOTClassifierAgrNum">Entrez ici les formes de la 12ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample12" dataItem="class12Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum12" show="swOTClassifierAgrNum">
+          <groupName dataItem="class12agr" default="irrelevant">ROTClassifierAgrNum12</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 12ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum12Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum12Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum12Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt13" show="swOTClassifierAgrNum">Entrez ici les formes de la 13ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample13" dataItem="class13Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum13" show="swOTClassifierAgrNum">
+          <groupName dataItem="class13agr" default="irrelevant">ROTClassifierAgrNum13</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 13ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum13Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum13Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum13Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt14" show="swOTClassifierAgrNum">Entrez ici les formes de la 14ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample14" dataItem="class14Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum14" show="swOTClassifierAgrNum">
+          <groupName dataItem="class14agr" default="irrelevant">ROTClassifierAgrNum14</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 14ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum14Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum14Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum14Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt15" show="swOTClassifierAgrNum">Entrez ici les formes de la 15ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample15" dataItem="class15Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum15" show="swOTClassifierAgrNum">
+          <groupName dataItem="class15agr" default="irrelevant">ROTClassifierAgrNum15</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 15ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum15Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum15Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum15Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt16" show="swOTClassifierAgrNum">Entrez ici les formes de la 16ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample16" dataItem="class16Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum16" show="swOTClassifierAgrNum">
+          <groupName dataItem="class16agr" default="irrelevant">ROTClassifierAgrNum16</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 16ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum16Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum16Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum16Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt17" show="swOTClassifierAgrNum">Entrez ici les formes de la 17ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample17" dataItem="class17Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum17" show="swOTClassifierAgrNum">
+          <groupName dataItem="class17agr" default="irrelevant">ROTClassifierAgrNum17</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 17ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum17Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum17Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum17Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt18" show="swOTClassifierAgrNum">Entrez ici les formes de la 18ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample18" dataItem="class18Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum18" show="swOTClassifierAgrNum">
+          <groupName dataItem="class18agr" default="irrelevant">ROTClassifierAgrNum18</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 18ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum18Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum18Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum18Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt19" show="swOTClassifierAgrNum">Entrez ici les formes de la 19ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample19" dataItem="class19Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum19" show="swOTClassifierAgrNum">
+          <groupName dataItem="class19agr" default="irrelevant">ROTClassifierAgrNum19</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 19ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum19Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum19Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum19Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt20" show="swOTClassifierAgrNum">Entrez ici les formes de la 20ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample20" dataItem="class20Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum20" show="swOTClassifierAgrNum">
+          <groupName dataItem="class20agr" default="irrelevant">ROTClassifierAgrNum20</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 20ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum20Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum20Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum20Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt21" show="swOTClassifierAgrNum">Entrez ici les formes de la 21ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample21" dataItem="class21Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum21" show="swOTClassifierAgrNum">
+          <groupName dataItem="class21agr" default="irrelevant">ROTClassifierAgrNum21</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 21ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum21Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum21Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum21Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt122" show="swOTClassifierAgrNum">Entrez ici les formes de la 22ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample22" dataItem="class22Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum22" show="swOTClassifierAgrNum">
+          <groupName dataItem="class22agr" default="irrelevant">ROTClassifierAgrNum22</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 22ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum22Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum22Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum22Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt23" show="swOTClassifierAgrNum">Entrez ici les formes de la 23ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample23" dataItem="class23Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum23" show="swOTClassifierAgrNum">
+          <groupName dataItem="class23agr" default="irrelevant">ROTClassifierAgrNum23</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 23ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum23Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum23Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum23Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt24" show="swOTClassifierAgrNum">Entrez ici les formes de la 24ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample24" dataItem="class24Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum24" show="swOTClassifierAgrNum">
+          <groupName dataItem="class24agr" default="irrelevant">ROTClassifierAgrNum24</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 24ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum24Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum24Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum24Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <prompt id="OTClassifierAgrNumPrompt25" show="swOTClassifierAgrNum">Entrez ici les formes de la 25ème classe:</prompt>
+       <textBox id="OTClassifierAgrNumExample25" dataItem="class25Example" show="swOTClassifierAgrNum" rows="2"/>
+       <radioGroup id="OTClassifierAgrNum25" show="swOTClassifierAgrNum">
+          <groupName dataItem="class25agr" default="irrelevant">ROTClassifierAgrNum25</groupName>
+          <prompt>L’élément pour l’accord de numéro de la 25ème classe est:</prompt>
+          <radio id="OTClassifierAgrNum25Sg" dataValue="sg">Singulier</radio>
+          <radio id="OTClassifierAgrNum25Pl" dataValue="pl">Pluriel</radio>
+          <radio id="OTClassifierAgrNum25Irr" dataValue="irrelevant">Ne s’applique pas</radio>
+       </radioGroup>
+       <radioGroup id="OTClassifierAgrTypeTable" show="swOTClassifierAgrType">
+          <groupName dataItem="classifierTypeNumAgr" default="unknown">RTypologyClassifierAgrTypeNumAgr</groupName>
+          <prompt>Est-ce que votre langue utilise des marqueurs de classe distincts pour chaque type selon l’accord du numéro?</prompt>
+          <radio id="OTClassifierAgrTypeNumAgrNo" dataValue="no">Non. Il existe seulement un marqueur de classe pour chaque type de nom</radio>
+          <radio id="OTClassifierAgrTypeNumAgrYes" dataValue="yes">Oui. Il existe des marqueurs différents – au singulier et au pluriel  – pour chaque type de nom</radio>
+       </radioGroup>
+<br/>     
+       <prompt id="OTClassifierAgrTypeAnimalSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type d’animal au singulier:</prompt>
+       <textBox id="OTClassifierAgrTypeAnimalSgExample" dataItem="classAnimalSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeAnimalPlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type d’animal au pluriel:</prompt>
+       <textBox id="OTClassifierAgrTypeAnimalPlExample" dataItem="classAnimalPlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeInsectSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type d’insecte au singulier:</prompt>
+       <textBox id="OTClassifierAgrTypeInsectSgExample" dataItem="classInsectSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeInsectPlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type d’insecte au pluriel:</prompt>
+       <textBox id="OTClassifierAgrTypeInsectPlExample" dataItem="classInsectPlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeLiquidSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de liquide au singulier:</prompt>
+       <textBox id="OTClassifierAgrTypeLiquidSgExample" dataItem="classLiquidSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeLiquidPlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de liquide au pluriel:</prompt>
+       <textBox id="OTClassifierAgrTypeLiquidPlExample" dataItem="classLiquidPlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeRoundSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de rond au singulier:</prompt>
+       <textBox id="OTClassifierAgrTypeRoundSgExample" dataItem="classRoundSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeRoundPlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de rond au pluriel:</prompt>
+       <textBox id="OTClassifierAgrTypeRoundPlExample" dataItem="classRoundPlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeCylinderSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de cylindre au singulier:</prompt>
+       <textBox id="OTClassifierAgrTypeCylinderSgExample" dataItem="classCylinderSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeCylinderPlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de cylindre au pluriel:</prompt>
+       <textBox id="OTClassifierAgrTypeCylinderPlExample" dataItem="classCylinderPlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeSphereSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de sphère au singulier:</prompt>
+       <textBox id="OTClassifierAgrTypeSphereSgExample" dataItem="classSphereSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeSpherePlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de sphère au pluriel:</prompt>
+       <textBox id="OTClassifierAgrTypeSpherePlExample" dataItem="classSpherePlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeTreeSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type d’arbre au singulier:</prompt>
+       <textBox id="OTClassifierAgrTypeTreeSgExample" dataItem="classTreeSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeTreePlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type d’arbre au pluriel:</prompt>
+       <textBox id="OTClassifierAgrTypeTreePlExample" dataItem="classTreePlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeWoodSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de bois au singulier:</prompt>
+       <textBox id="OTClassifierAgrTypeWoodSgExample" dataItem="classWoodSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeWoodPlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type de bois au pluriel:</prompt>
+       <textBox id="OTClassifierAgrTypeWoodPlExample" dataItem="classWoodPlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeOtherSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type d’ inanimé général au singulier, ou tout autre type:</prompt>
+       <textBox id="OTClassifierAgrTypeOtherSgExample" dataItem="classOtherSgExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+       <prompt id="OTClassifierAgrTypeOtherPlPrompt" show="swOTClassifierAgrTypeNumAgrYes">Entrez ici les formes pour le type d’ inanimé général au pluriel, ou tout autre type:</prompt>
+       <textBox id="OTClassifierAgrTypeOtherPlExample" dataItem="classOtherPlExample" show="swOTClassifierAgrTypeNumAgrYes" rows="2"/>
+  
+       <prompt id="OTClassifierAgrTypeAnimalPrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type d’animal:</prompt>
+       <textBox id="OTClassifierAgrTypeAnimalExample" dataItem="classAnimalExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       <prompt id="OTClassifierAgrTypeInsectPrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type d’insecte:</prompt>
+       <textBox id="OTClassifierAgrTypeInsectExample" dataItem="classInsectExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       <prompt id="OTClassifierAgrTypeLiquidPrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type de liquide:</prompt>
+       <textBox id="OTClassifierAgrTypeLiquidExample" dataItem="classLiquidExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       <prompt id="OTClassifierAgrTypeRoundPrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type de rond:</prompt>
+       <textBox id="OTClassifierAgrTypeRoundExample" dataItem="classRoundExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       <prompt id="OTClassifierAgrTypeCylinderPrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type de cylindre:</prompt>
+       <textBox id="OTClassifierAgrTypeCylinderExample" dataItem="classCylinderExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       <prompt id="OTClassifierAgrTypeSpherePrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type de sphère:</prompt>
+       <textBox id="OTClassifierAgrTypeSphereExample" dataItem="classSphereExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       <prompt id="OTClassifierAgrTypeTreePrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type d’arbre:</prompt>
+       <textBox id="OTClassifierAgrTypeTreeExample" dataItem="classTreeExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       <prompt id="OTClassifierAgrTypeWoodPrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type de bois:</prompt>
+       <textBox id="OTClassifierAgrTypeWoodExample" dataItem="classWoodExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       <prompt id="OTClassifierAgrTypeOtherPrompt" show="swOTClassifierTypeOrNumAgrNo">Entrez ici les formes pour le type d’ inanimé général, ou autre type:</prompt>
+       <textBox id="OTClassifierAgrTypeOtherExample" dataItem="classOtherExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
+       
+       <prompt id="OTClassifierSpecificHumanPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour humains:</prompt>
+       <textBox id="OTClassifierSpecificHumanExample" dataItem="classifierHumanExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificAnimalPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour animaux:</prompt>
+       <textBox id="OTClassifierSpecificAnimalExample" dataItem="classifierAnimalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificBirdPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour oiseaux:</prompt>
+       <textBox id="OTClassifierSpecificBirdExample" dataItem="classifierBirdExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificBoatPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour bateaux:</prompt>
+       <textBox id="OTClassifierSpecificBoatExample" dataItem="classifierBoatExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificClothingPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour vêtements:</prompt>
+       <textBox id="OTClassifierSpecificClothingExample" dataItem="classifierClothingExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificTreePrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour arbres:</prompt>
+       <textBox id="OTClassifierSpecificTreeExample" dataItem="classifierTreeExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificLongThinPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour choses longues et minces:</prompt>
+       <textBox id="OTClassifierSpecificLongThinExample" dataItem="classifierLongThinExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificLongWavyPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour choses longues et ondulées:</prompt>
+       <textBox id="OTClassifierSpecificLongWavyExample" dataItem="classifierLongWavyExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificFlatPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour choses plates:</prompt>
+       <textBox id="OTClassifierSpecificFlatExample" dataItem="classifierFlatExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificCylindricalPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pour choses cylindriques:</prompt>
+       <textBox id="OTClassifierSpecificCylindricalExample" dataItem="classifierCylindricalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificMechanicalPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur pou choses mécaniques:</prompt>
+       <textBox id="OTClassifierSpecificMechanicalExample" dataItem="classifierMechanicalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificGenericPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour le classificateur générique:</prompt>
+       <textBox id="OTClassifierSpecificGenericExample" dataItem="classifierGenericExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificOtherPrompt" show="swOTClassifierSpecific">Entrez ici les formes pour tout autre classificateur:</prompt>
+       <textBox id="OTClassifierSpecificOtherExample" dataItem="classifierOtherExample" show="swOTClassifierSpecific" rows="2"/>
+       <br/><br/>
+       <prompt id="OTClassifierAgrPrompt" show="swOTClassifierAgr">Maintenant entrez ici quelques phrases d’exemple qui montrent l’accord dans les syntagmes nominaux et au verbe:</prompt>
+       <textBox id="OTClassifierAgrExample" dataItem="classifierAgrExample" cols="50" show="swOTClassifierAgr"/>
+       <prompt id="OTClassifierSpecificPrompt" show="swOTClassifierSpecific">Maintenant entrez quelques syntagmes nominaux d’exemple qui illustrent quelques-uns des classificateurs différents qu’on utilise avec les numéros, ou bien avec des démonstratifs et des noms:</prompt>
+       <textBox id="OTClassifierSpecificExample" dataItem="classifierSpecificExample" rows="5" show="swOTClassifierSpecific"/>      
+       <prompt id="OTClassifierTypePrompt" show="swOTClassifierType">Maintenant entrez quelques noms d’exemple qui illustrent les différents types de marqueurs:</prompt>
+       <textBox id="OTClassifierTypeExample" dataItem="classifierTypeExample" rows="5" show="swOTClassifierType"/>      
+       <br/>
+       <instruction id="OTClassifierAgrNumInstruction" show="swOTClassifierAgrNum">In the lexicon, enter the feature <feature>singular</feature> on all the singular classifiers and the feature <feature>plural</feature> on all the plural classifiers.  Do not enter a number feature on any classifiers which can go with either singular or plural or mass nouns.  Also enter a feature of the form <feature>class_##</feature>,  replacing the ## with a number between 1 and 25, on each classifier as appropriate.</instruction>
+       <instruction id="OTClassifierAgrTypeNumAgrYesInstruction" show="swOTClassifierAgrTypeNumAgrYes">In the lexicon, enter the feature <feature>singular</feature> on all the singular classifiers and the feature <feature>plural</feature> on all the plural classifiers.  Also enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>     
+       <instruction id="OTClassifierTypeNumAgrNoInstruction" show="swOTClassifierTypeOrNumAgrNo">In the lexicon, enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>
+       <instruction id="OTClassifierSpecificInstruction" show="swOTClassifierSpecific">In the lexicon, enter one of the features <feature>class_human</feature>, <feature>class_animal</feature>, <feature>class_bird</feature>, <feature>class_boat</feature>, <feature>class_clothing</feature>, <feature>class_tree</feature>, <feature>class_thin</feature>, <feature>class_wavy</feature>, <feature>class_flat</feature>, <feature>class_cylindrical</feature>, <feature>class_mechanical</feature>, <feature>class_generic</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>
+       <br/>
+        <buttons>
+            <button id="ClassifiersBack" value="Back" goto="Case.xml"/>
+            <button id="ClassifiersNext" value="Next" goto="Contents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+   <showWhen id="swOTClassifierNotNo">
+      <not/><whenRadio button="OTClassifierNo"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgr">
+      <whenRadio button="OTClassifierAgr"/>
+   </showWhen>
+   <showWhen id="swOTClassifierType">
+      <whenRadio button="OTClassifierType"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrNum">
+      <whenRadio button="OTClassifierAgr"/>
+      <and/>
+      <whenRadio button="OTClassifierAgrNum"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrType">
+      <whenRadio button="OTClassifierAgr"/>
+     <and/>
+      <whenRadio button="OTClassifierAgrType"/>
+   </showWhen>
+   <showWhen id="swOTClassifierTypeOrSpecific">
+      <whenRadio button="OTClassifierType"/>
+      <or/>
+      <whenRadio button="OTClassifierSpecific"/>
+   </showWhen>
+   <showWhen id="swOTClassifierSpecific">
+      <whenRadio button="OTClassifierSpecific"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrTypeNumAgrYes">
+      <whenRadio button="OTClassifierAgrTypeNumAgrYes"/>
+      <and/>
+      <whenRadio button="OTClassifierAgrType"/>
+      <and/>
+      <whenRadio button="OTClassifierAgr"/>
+   </showWhen>
+   <showWhen id="swOTClassifierTypeOrNumAgrNo">
+      <whenRadio button="OTClassifierType"/>
+      <or/>
+      <whenRadio button="OTClassifierAgr"/>
+      <and/>
+      <whenRadio button="OTClassifierAgrType"/>
+      <and/>
+      <whenRadio button="OTClassifierAgrTypeNumAgrNo"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

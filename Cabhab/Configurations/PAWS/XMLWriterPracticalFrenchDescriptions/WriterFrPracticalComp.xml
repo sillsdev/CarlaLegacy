@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+    <section1 id="sComp">
+       <secTitle>Propositions complétives</secTitle>
+        <p>
+           <content>Les différents types de propositions subordonnées qui sont les compléments des verbes principaux ou des adjectifs qui fonctionnent comme les prédicats dans les phrases seront présentés, après avoir traité les complétiviseurs et leur position dans les propositions déclaratives subordonnées.</content></p>
+       
+          <p contentType="ctComparativeIntro">
+             <content>L’anglais a deux complétiviseurs qui marquent les propositions déclaratives subordonnées: </content>
+             <langData>that</langData><gloss><content>  « que »</content></gloss>
+             <content> pour les propositions finies et </content>
+             <langData>for</langData><gloss><content>  « pour »</content></gloss>
+             <content> pour les propositions non finies. Dans d’autres langues les complétiviseurs pour les propositions déclaratives subordonnées peuvent être manifestes et dans certaines langues ce sont des clitiques qui sont écrits, attachés à un autre mot.</content>
+          </p>
+       <p>
+             <content>En </content>
+             <langName/>
+             <content> il </content>
+             <case element="comp" attr="comp">
+                <caseText value="no">n’y a pas de complétiviseur ni de clitique ni d’affixe pour des propositions déclaratives dépentantes. Toutes les propositions subordonnées ont donc la même structure que des phrases normales.  <case element="ip" attr="auxNonfinite">
+                   <caseText value="yes">Il y a toujours une distinction entre les propositions subordonnées finies et non-finies puisqu’il y a un auxilliaire non-fini. </caseText>
+                   <caseText value="no">Il y a toujours une distinction entre des propositions subordonnées finies et non-finies puisqu’il y a un marqueur non-fini sur le verbe. </caseText>
+                   <caseText value="none">Il n’y a pas non plus de distinction entre des propositions finies et non finies subordonnées puisqu’il n’y a pas de forme non finie dans la langue. </caseText>
+                </case></caseText>
+                <caseText value="yes">au moins un complétiviseur pour les propositions déclaratives subordonnées.  </caseText>
+             </case>
+          <text show="swCompYes"><content>Il </content>
+             <case element="comp" attr="compNonfinite">
+                <caseText value="yes">y a un complétiviseur distinct pour les propositions non-finies. </caseText>   
+                <caseText value="no">n’y a pas de complétiviseur distinct pour les propositions non-finies.  <case element="ip" attr="auxNonfinite">
+                   <caseText value="yes">Il y a toujours une distinction entre des propositions subordonnées finies et non-finies puisqu’il y a un auxilliaire non-fini. </caseText>
+                   <caseText value="no">Il y a toujours une distinction entre les propositions subordonnées finies et non-finies puisqu’il y a un marqueur non-fini sur le verbe. </caseText>
+                   <caseText value="none">Il n’y a pas non plus de distinction entre des propositions finies et non finies subordonnées puisqu’il n’y a pas de forme non finie dans la langue. </caseText>
+                </case></caseText>
+          </case>
+             <text show="swCompWordSome"><content> Certains</content></text><text show="swCompWordNotSome"><content> Les</content></text><content> complétiviseurs </content>
+                <case element="comp" attr="compWord">
+                   <caseText value="yes">sont écrits comme mot indépendant. </caseText>
+                   <caseText value="some">sont écrits comme mot indépendant, mais quelques-uns s’attachent </caseText>
+                   <caseText value="no">s’attachent </caseText>
+                </case>
+                <content/>
+                <text show="swCompWordNoOrSome">
+                   <text show="swCompProclitic"><content>au début du mots qui commence la proposition complétive comme proclitique.  </content></text>
+                   <text show="swCompEnclitic"><content>à la fin d’un mot qui termine la proposition complétive comme enclitique.    </content></text>
+                   <text show="swCompClitic"><content>ou au début du mots qui commence la proposition complétive ou à la fin d’un mot qui termine la proposition complétive comme clitique.   </content></text>
+                   <text show="swCompPrefix"><content> au verbe dans la proposition complétive comme un préfixe.  </content></text>
+                   <text show="swCompSuffix"><content> au verbe dans la proposition complétive comme un suffixe.   </content></text>
+                   <text show="swCompAffix"><content>au verbe dans la proposition complétive,  certains comme préfixe et d’autres comme suffixe.   </content></text>
+                   <text show="swCompCliticAffix"><content>ou  au début ou à la fin de la proposition complétive comme clitique, ou au verbe dans la proposition complétive comme affixe.  </content></text>
+                   <text show="swCompAttachesOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="comp/attachesOther"/><content>.  </content></text>
+                   <text show="swCompAttachesOtherAnd"><content>  Certains aussi s’attachent ___</content><contentCheckBoxOther contentLoc="comp/attachesOther"/>  <content>.</content></text>              
+                </text>  </text>
+       </p>   
+       
+       <p show="swCompWordNoOrSomeAndClitic"><content>Ces clitiques de complétiviseur sont:</content></p>   
+       <example show="swCompWordNoOrSomeAndClitic">
+          <table border="1">
+             <headerRow>
+                <headerCol>Clitiqies de complétiviseur</headerCol>
+                <headerCol>Glose</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/cliticExample"/>
+                <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       <p show="swCompWordNoOrSomeAndAffix"><content>Ces affixes de complétiviseur sont:</content></p>   
+       <example show="swCompWordNoOrSomeAndAffix">
+          <table border="1">
+             <headerRow>
+                <headerCol>Affixes de complétiviseur</headerCol>
+                <headerCol>Glose</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/affixExample"/>
+                <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       <p show="swCompWordNoOrSomeAndOther"><content>Les autres complétiviseurs qui s’attachent comme permis en </content><langName/><content> sont:</content></p>   
+       <example show="swCompWordNoOrSomeAndOther">
+          <table border="1">
+             <headerRow>
+                <headerCol>Autres complétiviseurs qui s’attachent</headerCol>
+                <headerCol>Glose</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/attachesOtherExample"/>
+                <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       
+       <p show="swCompWordYesOrSome">
+          <content> Les complétiviseurs qui sont des mots indépendants se trouvent </content>
+          <text show="swCompCompBefore"><content>avant le</content></text>
+          <text show="swCompCompAfter"><content>après le</content></text>
+          <text show="swCompCompBoth"><content>des deux côtés du</content></text>
+          <text show="swCompCompEither"><content>de chaque côté du</content></text>
+          <text show="swCompCompBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+          <text show="swCompCompAfterOrBoth"><content>après ou des deux côtés du</content></text>
+          <text show="swCompCompEitherOrBoth"><content>de chaque côté ou des deux côtés du</content></text>
+          <text show="swCompCompNotOther"><content> reste de la proposition complétive. </content></text>
+          <text show="swCompCompOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="comp/compOther"/><content>.  </content></text>
+          <text show="swCompCompPosAndOther"><content> reste de la proposition complétive et peuvent aussi se trouver ___</content> <contentCheckBoxOther contentLoc="comp/compOther"/> <content>. </content></text>
+          <content> Ces complétiviseurs sont:</content>
+       </p>          
+       <example show="swCompWordYesOrSome">
+          <table border="1">
+             <headerRow>
+                <headerCol>Complétiviseurs</headerCol>
+                <headerCol>Glose</headerCol>
+             </headerRow>
+             <row>
+                <col exampleLoc="comp/compExample"/>
+                <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+             </row>
+          </table>
+       </example>     
+       
+       
+       <p><content>Voir la section </content>
+            <sectionRef sec="sQues"/>
+          <content> pour un discussion similaire sur les complétiviseurs pour des questions et la section </content>
+            <sectionRef sec="sRelCl"/>
+          <content> pour des propositions relatives.</content>
+        </p>
+       <p>
+          <content>Chacune des sous-sections suivantes typifie un type particulier de complément pour un verbe ou autre prédicat. Voir la section </content>
+          <sectionRef sec="sAdvCl"/>
+          <content> pour des exemples de propositions adverbiales. Certains adverbes peuvent aussi prendre des compléments prépositionnels semblables à ceux-ci, mais les propositions adverbiales ne sont pas des compléments du verbe principal.  </content><comment>Vous devrez peut-être enlever certaines parties du texte et combiner des exemples si votre langue ne fait pas les mêmes distinctions.</comment>
+       </p>
+       <section2 id="sCompTypeFiniteAndNonfiniteCP" show="swCompYesAndNonfiniteYes">
+          <secTitle>Propositions complétives finis et non-finis</secTitle>
+                <p contentType="ctComparativeIntro">
+                   <content>Verbes qui prennent seulement une proposition complétive finie, avec ou sans complétiviseur, comprennent les exemples suivants en anglais et en français: </content>
+                   <langData>I believe (that) Jill is my friend</langData><gloss><content>  « Je crois que Jeanne est mon amie »</content></gloss>
+                    <content>, </content>
+                   <langData>Jill insists (that) she is my friend</langData><gloss><content>  « Jeanne insiste qu’elle est mon amie »</content></gloss>
+                    <content> et </content>
+                   <langData>I know (that) he likes me</langData><gloss><content>  « Je sais qu’il m’aime »</content></gloss>
+                   <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+                </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes ont seulement une proposition complétive finie avec ou sans complétiviseur. Des exemples de ce type en </content>
+             <langName/>
+             <content> comprennent:</content>
+          </p>
+                <example>
+                    <interlinear exampleLoc="comp/finiteExample"/>
+                </example>
+                <p contentType="ctComparativeIntro">
+                   <content>Des verbes qui prennent ou un complément fini, avec ou sans un  complétiviseur, ou un complément non-fini sans un  complétiviseur comprennent les exemples suivants: </content>
+                   <langData>I expect that Joe will come to the party</langData><gloss><content>  « Je m’attends que Jacques va venir à la soirée »</content></gloss>
+                    <content> et </content>
+                   <langData>I expect Joe to come to the party</langData><gloss><content>  « Je m’attends à Jacques à venir à la soirée »</content></gloss>
+                   <content>.  Des exemples de ce type en </content>
+                    <langName/>
+                   <content> comprennent:</content>
+                </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes peuvent avoir ou un complément fini, avec ou sans un complétiviseur ou un complément non-fini sans complétiseur. Des exemples de ce type en </content>
+             <langName/>
+             <content> comprennent:</content>
+          </p>
+          <example>
+                    <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+                </example>
+                <p contentType="ctComparativeIntro">
+                   <content>Certains verbes qui ne prennent qu’un  complément non-fini sans un complétiviseur et permettent soit un sujet différent que la proposition principale ou un sujet nul lorsque cela se réfère au sujet de la proposition principale. Voici des exemples: </content>
+                   <langData>I want to come to the party</langData><gloss><content>  « Je veux venir à la soirée »</content></gloss>
+                    <content> et </content>
+                   <langData>I want Joe to come to the party</langData><gloss><content>  « Je veux que Jacques vienne à la soirée »</content></gloss>
+                   <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+                </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes ont seulement un complément non-fini sans un complétiviseur et permettent soit un différent sujet que la proposition principale soit un sujet nul lorsque cela se réfère au sujet de la proposition principale. Des exemples de ce type en </content>
+             <langName/>
+             <content> comprennent:</content>
+          </p>
+          <example>
+                    <interlinear exampleLoc="comp/nonfiniteExample"/>
+                </example>
+                <p contentType="ctComparativeIntro">
+                   <content>Des verbes qui prennent seulement un  complément non-fini sans un complétiviseur, mais exigent que le sujet se réfère au sujet de la proposition principale comprennent les exemples suivants: </content>
+                   <langData>Joe tried to come to the party</langData><gloss><content>  « Jacques a essayé de venir à la soirée »</content></gloss>
+                    <content> et </content>
+                   <langData>I tried to think of more examples</langData><gloss><content>  « J’ai essayé de penser à d’autres exemples »</content></gloss>
+                   <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+                </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes ont seulement un complément non-fini sans un complétiviseur mais exigent que le sujet se réfère au sujet de la proposition principale et nul.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>     
+                <example>
+                    <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+                </example>
+                <p contentType="ctComparativeIntro">
+                   <content>Des verbes qui prennent seulement un complément non-fini, mais le complétiviseur en anglais </content><langData>for</langData><gloss><content>  « pour »</content></gloss><content> est présent quand le sujet dépendant ne se réfère pas au sujet de la proposition principale comprennent les exemples suivants: </content>
+                   <langData>Joe would hate for Sue to be at the party</langData><gloss><content>  « Jacques n’aimerait pas que Suzanne soit à la soirée »</content></gloss>
+                    <content>, </content>
+                   <langData>Joe hates to dance</langData><gloss><content>  « Jacques déteste danser »</content></gloss>
+                    <content> et </content>
+                   <langData>I would like to be appreciated</langData><gloss><content>  « Je voudrais être apprécié »</content></gloss>
+                   <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+                </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes ont seulement un complément non-fini, mais le complétiviseur est présent lorsque le sujet dépendant ne se réfère pas au sujet de la proposition principale.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+                    <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+                </example>
+                <p contentType="ctComparativeIntro">
+                   <content>Des verbes qui prennent un object direct de même qu’ou bien une proposition complétive finie ou non-finie comprennent les exemples suivants: </content>
+                   <langData>I will persuade Joe that he should come to the party</langData><gloss><content>  « Je vais persuader Jacques qu’il devrait venir à la soirée »</content></gloss>
+                    <content> et </content>
+                   <langData>I will persuade Joe to come to the party</langData><gloss><content>  « Je vais persuader Jacques de venir à la soirée »</content></gloss>
+                   <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+                </p>
+          <p contentType="ctPracticalIntro">
+             <content>D’autres verbes ont un objet direct de même qu’une proposition complétive finie et non-finie.   Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+                    <interlinear exampleLoc="comp/DPCPExample"/>
+                </example>
+            </section2>
+           
+       <section2 id="sCompTypeFiniteCP" show="swCompYesAndNonfiniteNo">
+          <secTitle>Propositions comme compléments</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Les verbes qui prennent une proposition complétive, avec ou sans complétiviseur incluent les exemples suivants en anglais et français: </content>
+             <langData>I believe (that) Jill is my friend</langData><gloss><content>  « Je crois que Jeanne est mon amie »</content></gloss>
+             <content>, </content>
+             <langData>Jill insists (that) she is my friend</langData><gloss><content>  « Jeanne insiste qu’elle est mon amie »</content></gloss>
+             <content>, </content>           
+             <langData>I know (that) he likes me</langData><gloss><content>  « Je sais qu’il m’aime »</content></gloss>
+             <content>, </content>           
+             <langData>I expect that Joe will come to the party</langData><gloss><content>  « Je m’attends que Jacques va venir à la soirée »</content></gloss>
+             <content>, </content>           
+             <langData>I expect Joe to come to the party</langData><gloss><content>  « Je m’attends à Jacques à venir à la soirée »</content></gloss>
+             <content>, </content>           
+             <langData>I want to come to the party</langData><gloss><content>  « Je veux aller à la soirée »</content></gloss>
+             <content>, </content>           
+             <langData>I want Joe to come to the party</langData><gloss><content>  « Je veux que Jacques vienne à la soirée »</content></gloss>
+             <content>, </content>           
+             <langData>Joe tried to come to the party</langData><gloss><content>  « Jacques a essayé de venir à la soirée »</content></gloss>
+             <content>, </content>
+             <langData>Joe would hate for Sue to be at the party</langData><gloss><content>  « Jacques n’aimerait pas que Suzanne soit à la soirée »</content></gloss>
+             <content>, </content>
+             <langData>Joe hates to dance</langData><gloss><content>  « Jacques déteste danser »</content></gloss>
+             <content> et </content>
+             <langData>I would like to be appreciated</langData><gloss><content>  « J’aimerais être apprécié »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes ont seulement une proposition complétive avec ou sans complétiviseur Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Des verbes qui prennent un objet direct aussi bien qu’une proposition complétive incluent les exemples suivants: </content>
+             <langData>I will persuade Joe that he should come to the party</langData><gloss><content>  « Je vais persuader Jacques qu’il devrait venir à la soirée »</content></gloss>
+             <content> et </content>
+             <langData>I will persuade Joe to come to the party</langData><gloss><content>  « Je vais persuader Jacques de venir à la soirée »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>D’autres verbes ont un objet direct de même qu’une proposition complétive finie ou non-finie.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
+       
+       <section2 id="sCompTypeFiniteAndNonfiniteIP" show="swCompNoAndNonfiniteYes">
+          <secTitle>Compléments phrastiques finis et non-finis</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Des verbes qui prennent seulement un complément phrastique fini incluent les exemples suivants: </content>
+             <langData>I believe Jill is my friend</langData><gloss><content>  « Je crois que Jeanne est mon amie »</content></gloss>
+             <content>, </content>
+             <langData>Jill insists she is my friend</langData><gloss><content>  « Jeanne insiste qu’elle est mon amie »</content></gloss>
+             <content> et </content>
+             <langData>I know he likes me</langData><gloss><content>  « Je sais qu’il m’aime »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes ont seulement un complément phrastique fini. Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Des verbes qui prennent soit un complément phrastique fini ou non-fini incluent les exemples suivants: </content>
+             <langData>I expect Joe will come to the party</langData><gloss><content>  « Je m’attends que Jacques va venir à la soirée »</content></gloss>
+             <content> et </content>
+             <langData>I expect Joe to come to the party</langData><gloss><content>  « Je m’attends à Jacques à venir à la soirée »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes peuvent avoir un complément phrastique fini ou non-fini.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Certains verbes qui prennent seulement un complément phrastique non-fini permettent soit un sujet différent que la proposition principale soit un sujet nul lorsqu’il se réfère au sujet de la proposition principale. Des exemples comprennent: </content>
+             <langData>I want to come to the party</langData><gloss><content>  « Je veux aller à la soirée »</content></gloss>
+             <content> et </content>
+             <langData>I want Joe to come to the party</langData><gloss><content>  « Je veux que Jacques vienne à la soirée »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes ont seulement un complément phrastique non-fini et permettent soit un sujet différent que la proposition principale soit un sujet nul lorsqu’il se réfère au sujet de la proposition principale.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Des verbes qui prennent seulement un complément phrastique non-fini mais exigent que le sujet se réfère au sujet de la proposition principale et nul comprennent les exemples suivants : </content>
+             <langData>Joe tried to come to the party</langData><gloss><content>  « Jacques a essayé de venir à la soirée »</content></gloss>
+             <content>, </content>
+             <langData>Joe hates to dance</langData><gloss><content>  « Jacques déteste danser »</content></gloss>
+             <content> et </content>
+             <langData>I would like to be appreciated</langData><gloss><content>  « J’aimerais être apprécié »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>D’autres verbes ont seulement un complément phrastique non-fini  mais exigent que le sujet se réfère au sujet de la proposition principale et nul.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>     
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Des verbes qui prennent un objet direct aussi bien qu’un complément phrastique fini ou non-fini incluent les exemples  suivants: </content>
+             <langData>I will persuade Joe he should come to the party</langData><gloss><content>  « Je vais persuader Jacques qu’il devrait venir à la soirée »</content></gloss>
+             <content> et </content>
+             <langData>I will persuade Joe to come to the party</langData><gloss><content>  « Je vais persuader Jacques de venir à la soirée »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>D’autres verbes ont un objet direct de même qu’un complément phrastique fini ou non-fini.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
+       
+       <section2 id="sCompTypeFiniteIP" show="swCompNoAndNonfiniteNo">
+          <secTitle>Compléments phrastiques</secTitle>
+          <p contentType="ctComparativeIntro">
+             <content>Certains verbes qui prennent un complément phrastique incluent les exemples suivants en anglais et français: </content>
+             <langData>I believe Jill is my friend</langData><gloss><content>  « Je crois que Jeanne est mon amie »</content></gloss>
+             <content>, </content>
+             <langData>Jill insists she is my friend</langData><gloss><content>  « Jeanne insiste qu’elle est mon amie »</content></gloss>
+             <content>, </content>           
+             <langData>I know he likes me</langData><gloss><content>  « Je sais qu’il m’aime »</content></gloss>
+             <content>, </content>           
+             <langData>I expect Joe will come to the party</langData><gloss><content>  « Je m’attends que Jacques va venir à la soirée »</content></gloss>
+             <content>, </content>           
+             <langData>I expect Joe to come to the party</langData><gloss><content>  « Je m’attends à Jacques à venir à la soirée »</content></gloss>
+             <content>, </content>           
+             <langData>I want to come to the party</langData><gloss><content>  « Je veux aller à la soirée »</content></gloss>
+             <content>, </content>           
+             <langData>I want Joe to come to the party</langData><gloss><content>  « Je veux que Jacques vienne à la soirée »</content></gloss>
+             <content>, </content>           
+             <langData>Joe tried to come to the party</langData><gloss><content>  « Jacques a essayé de venir à la soirée »</content></gloss>
+             <content>, </content>
+             <langData>Joe hates to dance</langData><gloss><content>  « Jacques déteste danser »</content></gloss>
+             <content> et </content>
+             <langData>I would like to be appreciated</langData><gloss><content>  « J’aimerais être apprécié »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>Certains verbes ont seulement un complément phrastique. Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/finiteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/finiteOrNonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteProDropExample"/>
+          </example>
+          <example>
+             <interlinear exampleLoc="comp/nonfiniteCPOrProDropExample"/>
+          </example>
+          <p contentType="ctComparativeIntro">
+             <content>Des verbes qui prennent un objet direct de même qu’un complément phrastique incluent les exemples suivants: </content>
+             <langData>I will persuade Joe he should come to the party</langData><gloss><content>  « Je vais persuader Jacques qu’il devrait venir à la soirée »</content></gloss>
+             <content> et </content>
+             <langData>I will persuade Joe to come to the party</langData><gloss><content>  « Je vais persuader Jacques de venir à la soirée »</content></gloss>
+             <content>.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <p contentType="ctPracticalIntro">
+             <content>D’autres verbes ont un objet direct de même qu’une complément phrastique.  Des exemples de ce type en </content>
+                   <langName/>
+                   <content> comprennent:</content>
+          </p>
+          <example>
+             <interlinear exampleLoc="comp/DPCPExample"/>
+          </example>
+       </section2>
+       
+       <section2 id="sCompRaising">
+          <secTitle>Constructions « de montée »</secTitle>
+          <p contentType="ctComparativeIntro"><content>Les verbes « de montée » semblent inclure tous les verbes de perception et verbes copulatifs. Ces verbes ont soit un complément non-fini ou un complément adjectival qui lui-même a soit un complément fini avec un complétiviseur ou un complément non-fini. Le verbe principal n’a pas son propre sujet, alors la position du sujet est remplie par le sujet du complément non-fini comme dans: </content>
+                 <langData>John seemed to like the tortillas</langData><gloss><content>  « Jean semblait aimer les tortillas »</content></gloss><content>, </content>
+             <langData>Joe is likely to come to the party</langData><gloss><content>  « Jacques est probable de venir à la soirée »</content></gloss><content> et </content>
+             <langData>The weather is certain to change soon</langData><gloss><content>  « Le temps est certain à changer bientôt »</content></gloss>
+             <content>.  Lorsque la proposition complétive est finie, le sujet ne peut pas être « monté », ainsi un pronom sans caractéristique </content><langData>it</langData><gloss><content>  « il »</content></gloss><content> remplit la position du sujet de la proposition principale en anglais et français comme dans: </content>
+                 <langData>It seems likely that Joe will come</langData><gloss><content>  « Il semble probable que Jacques viendra »</content></gloss><content> et </content>
+             <langData>It is certain that the weather will change soon</langData><gloss><content>  « Il est certain que le temps va changer bientôt »</content></gloss><content>.  Certaines langues ont simplement le verbe sans un sujet, suivi d’une proposition complétive, alors aucune « montée » ne se passe: les deux propositions partagent simplement le même sujet. </content>
+              </p>
+          <p contentType="ctPracticalIntro"><content>Les verbes « de montée » semblent inclure tous les verbes de perception et verbes copulatifs. Le verbe principal n’a pas son propre sujet, ainsi la position du sujet est remplie par le sujet du complément non-fini ou par un pronom sans caractéristique.   Certaines langues ont simplement le verbe sans un sujet, suivi d’une proposition complétive, alors aucune « montée » ne se passe: les deux propositions partagent simplement le même sujet. </content>
+              </p>
+              <p>
+                 <content>Des exemples de ce type en </content>
+                 <langName/>
+                 <content> comprennent:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/raisingExample"/>
+              </example>              
+           </section2>
+           
+           <section2 id="sCompCausative">
+              <secTitle>Compléments causatifs</secTitle>
+              <p contentType="ctComparativeIntro"><content>Les causatif syntactiques  sont faits de deux propositions et ont un objet qui agit comme le sujet de la proposition complétive. Cette proposition complétive est toujours non-finie mais n’a pas besoin du marqueur non-fini avec certains verbes en anglais et français comme dans: </content>
+                 <langData>My mother made me clean my room</langData><gloss><content>  « Ma mère m’a fait nettoyer ma chambre »</content></gloss><content>, alors que cela est demandé dans d’autres comme dans: </content>
+                 <langData>The other girl forced us to leave the group</langData><gloss><content>  « L’autre fille nous a forcé de quitter le groupe »</content></gloss><content>.</content></p>
+              
+              <p contentType="ctPracticalIntro"><content>Les causatifs syntactiques  sont faits de deux propositions et ont un objet qui agit comme le sujet de la proposition complétive. </content></p>
+              <p show="swIPCausativeMakeNo"><content>En </content><langName/><content> il n’y a pas de causatifs syntactiques.</content></p>
+                 <p show="swIPCausativeMakeYes">
+                    <content>Des exemples de ce type en </content>
+                 <langName/>
+                 <content> comprennent:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/causeExample"/>
+              </example>     
+              <p show="swIPCausativeAffixYes"><content>Voir section </content><sectionRef sec="sIPCausatives"/><content> pour des exemples de casuatifs dans des propositions uniques, dans laquelle le verbe est marqué avec un affixe qui introduit un argument supplémentaire.</content>
+              </p>
+           </section2>
+      
+           <section2 id="sCompSpeech">
+              <secTitle>Citations direct et indirect comme compléments</secTitle>
+              
+              <p contentType="ctComparativeIntro"><content>Les verbes de parole peuvent avoir des compléments de citations direct ou indirect. Les citations directes peuvent être juste une phrase ou une interjection ou une salutation comme:  </content>
+                 <langData>Sue said, “I will come to your house tomorrow”</langData><gloss><content>  « Suzannee a dit: « Je viendrai demain chez toi » »</content></gloss><content> ou </content>
+                 <langData>Joe said, “Bye!”</langData><gloss><content>  « Jacques a dit: « Au revoir! » »</content></gloss>
+              </p>
+              <p contentType="ctComparativeIntro"><content>Les citations indirectes comme compléments sont plus limitées. En anglais certains verbes d’expression prennent un complément de phrase finie avec ou sans complétiviseur, et une phrase prépositionnelle facultative pour exprimer celui qui écoute comme dans:  </content>
+                 <langData>Sue said (to me) that she would come here tomorrow</langData><gloss><content>  « Suzanne (m’)a dit qu’elle viendrait ici demain »</content></gloss><content>.  Others require the hearer to be expressed as an object plus either a finite sentential complement, as in: </content>
+                 <langData>Sue told me that she would come here tomorrow</langData><gloss><content>  « Suzanne m’a dit qu’elle viendrait ici demain »</content></gloss><content>, or a nonfinite sentential complement in which the subject must be coreferent with the main clause subject and dropped, as in: </content>
+                 <langData>Sue told me to come here tomorrow</langData><gloss><content>  « Suzanne m’a dit de venir ici demain »</content></gloss><content>.</content>
+              </p>
+              <p contentType="ctPracticalIntro"><content>Les verbes de parole peuvent avoir des compléments de citations direct ou indirect. Les citations directes peuvent être seulement une phrase ou une interjection ou une salutation, mais les citations indirectes sont plus limitées et dépendent du verbe principal.</content>
+              </p>
+              <p>
+                 <content>Des exemples de compléments de verbes de parole en </content>
+                 <langName/>
+                 <content> comprennent:</content>
+              </p>
+              <example>
+                 <interlinear exampleLoc="comp/quotationExample"/>
+              </example>     
+           </section2>
+           
+            <section2 id="sCompTypeOther" show="swCompTypeOtherYes">
+               <secTitle>Autres limitations sur des propositions complétives</secTitle>
+                <p contentType="ctComparativeIntro">
+                   <content>Certaines langues ont aussi des verbes qui ont d’autres limitations sur les propositions subordonnées comme quand le verbe dépendant doit être au subjonctif ou à l’aspect perfectif. </content></p>
+   
+                <p>   <content>En </content><langName/>
+                   <content>  il y a aussi la limitation avec certains verbes que __</content><contentCheckBoxOther contentLoc="comp/otherRestrictions"/><content>.  Des exemples sont montrés ici:</content>
+                </p>
+                <example>
+                    <interlinear exampleLoc="comp/otherExample"/>
+                </example>
+        
+        </section2>
+
+    </section1>
+   <showWhen id="swCompYesAndNonfiniteYes">
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swCompYesAndNonfiniteNo">
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="compNonfinite" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none"/>
+   </showWhen>
+   <showWhen id="swCompNoAndNonfiniteYes">
+      <whenValue element="comp" attr="comp" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swCompNoAndNonfiniteNo">
+      <whenValue element="comp" attr="comp" value="no"/>
+      <and/>
+      <whenValue element="ip"  attr="auxNonfinite" value="none"/>
+   </showWhen>
+   <showWhen id="swCompYes">
+        <whenValue element="comp" attr="comp" value="yes"/>
+    </showWhen>
+    <showWhen id="swCompWordYes">
+        <whenValue element="comp" attr="compWord" value="yes"/>
+        <and/>
+        <whenValue element="comp" attr="comp" value="yes"/>
+    </showWhen>
+    <showWhen id="swCompWordNo">
+        <whenValue element="comp" attr="compWord" value="no"/>
+        <and/>
+        <whenValue element="comp" attr="comp" value="yes"/>
+    </showWhen>
+   <showWhen id="swCompWordSome">
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNotSome">
+      <whenValue element="comp" attr="compWord" value="some" negateValue="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSome">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordYesOrSome">
+      <whenValue element="comp" attr="compWord" value="yes"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompProclitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompEnclitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompClitic">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompPrefix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompSuffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCliticAffix">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAttachesOtherOnly">
+      <whenValue element="comp/compProclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompAttachesOtherAnd">
+      <whenValue element="comp/compProclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compEnclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compPrefix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compSuffix" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndClitic">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compEnclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compProclitic"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compEnclitic"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndAffix">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compSuffix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compPrefix"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compSuffix"  attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndOther">
+      <whenValue element="comp" attr="compWord" value="no"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther"  attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp" attr="compWord" value="some"/>
+      <and/>
+      <whenValue element="comp/compAttachesOther"  attr="checked" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swCompCompBefore">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompAfter">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompEither">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompBeforeOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompAfterOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompEitherOrBoth">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompNotOther">
+      <whenValue element="comp/compOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCompCompOtherOnly">
+      <whenValue element="comp/compBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompCompPosAndOther">
+      <whenValue element="comp/compBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="comp/compBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="comp/compOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompTypeOtherYes">
+      <whenValue element="comp" attr="compTypeOther" value="yes"/>
+   </showWhen>
+      <showWhen id="swIPCausativeMakeYes">
+      <whenValue element="ip/causativeMake" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPCausativeMakeNo">
+      <whenValue element="ip/causativeMake" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swIPCausativeAffixYes">
+      <whenValue element="ip/causativeAffix" attr="checked" value="yes"/>
+   </showWhen>
+</portion>

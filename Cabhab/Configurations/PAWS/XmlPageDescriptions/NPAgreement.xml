@@ -26,27 +26,31 @@
        <br/>
        <introduction>In addition to the number feature, nouns may be marked with other features, such as class number or type, gender, or animacy, which some or all noun modifiers need to agree with. 
           <br/><br/>An example of Bantu class number agreement is <example>Ba-shányana bá-ne ‘2-boys 2-DEM’ ‘those boys’</example>. <br/><br/>Examples of gender agreement in Spanish are: <example>el hombre viejo ‘the old man’</example> and <example>la mujer vieja ‘the old woman’</example>.  <br/><br/>Chinantec has animacy agreement, as in <example>e	ta'ˊe néeˉ ‘the.INAN honey.INAN REL.INAN yellow.INAN’ ‘the yellow honey’</example> and <example>i ̱ta'ˊ i ̱ neáangˉ ‘he.AN bee.AN REL.AN yellow.AN’ ‘the yellow bee’</example>.</introduction>
-       <radioGroup>
-            <groupName dataItem="agreeOther" default="no">RAgreementOther</groupName>
-            <prompt><br/>Does your language have any additional features on nouns which may or must be marked on modifiers so that they agree with the head noun?</prompt>
-            <radio id="NPAgreeOtherNo" checked="yes" dataValue="no">No</radio>
-          <radio id="NPAgreeOtherYes" checked="yes" dataValue="yes">Yes, nouns and their modifiers may/must agree in the following ways:</radio>
-          <checkboxGroup id="NPAgreeOtherType" show="swNPAgreeOtherYes">
-             <prompt>Check all options that are correct for your language</prompt> 
+          <checkboxGroup id="NPAgreeOtherType">
+             <prompt><br/>Which additional features on nouns may or must be marked on modifiers so that they agree with the head noun? Check all options that are correct for your language, unless there is no type of agreement, in which case you should leave these options unchecked and check ‘None’ below.</prompt> 
              <checkbox id="NPAgreeYesClass" dataItem="agreeClass">They agree in class number or type</checkbox>
+             <checkbox id="NPAgreeClassifier" dataItem="agreeClassifier" show="swOTClassifiersYesSpecific">A classifier which agrees with the class or type of the noun is present with nouns that are counted or specified, but other modifiers are not marked for class</checkbox>
              <checkbox id="NPAgreeYesGender" dataItem="agreeGender">They agree in gender</checkbox>
              <checkbox id="NPAgreeYesAnimacy" dataItem="agreeAnimacy">They agree in animacy</checkbox>
              <checkbox id="NPAgreeYesOtherFeat" dataItem="agreeOtherFeat">They agree in this other feature in my language:<textBox  id="NPAgreeYesOtherFeatContent" dataItem="agreeOtherFeat" rows="2"/></checkbox>
           </checkboxGroup>
-        </radioGroup>
-       <prompt id="NPAgreeOtherTypeNoCheckPrompt" show="swNPAgreeOtherYesNoCheck">WARNING: You said above that nouns and their modifiers may/must agree in other features besides number, but you did not check any of the options.  Please either check one or more options as appropriate, or change the answer above to ‘No’.</prompt>
-       <prompt id="NPAgreeOtherTypeClassNoCheckButClassifiersYesPrompt" show="swNPAgreeOtherTypeClassNoCheckAndClassifiersYes">WARNING: You said in <section number="1.">Overall Typology Questions - Classifiers</section> your language has a classifier system with concord agreement, so you should check that they agree in class number or type here.</prompt>
-       <prompt id="NPAgreeOtherNoButClassifiersYesPrompt" show="swNPAgreeOtherNoAndClassifiersYes">WARNING: You said in <section number="1.">Overall Typology Questions - Classifiers</section> your language has a classifier system with concord agreement, so you should change your answer here to "Yes" and then check that they agree in class number or type.</prompt>
-       <prompt id="NPAgreeOtherTypeClassYesButClassifiersNoPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersNo">WARNING: You said in <section number="1.">Overall Typology Questions - Classifiers</section> that your language does not have a classifier system, so you should not check that they agree in class number or type here.  If your language does have a classifier agreement system, please return to <section number="1.">Overall Typology Questions - Classifiers</section> and change your answer there before continuing here. </prompt>
-       <prompt id="NPAgreeOtherTypeClassYesButClassifiersNotAgrPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersYesNotAgr">WARNING: You said in <section number="1.">Overall Typology Questions - Classifiers</section> your language has a simpler type of classifier system that does not include concord agreement within the nominal phrase, so you should not check that they agree in class number or type here.  If your language does have a classifier agreement system and agreement is required, please return to <section number="1.">Overall Typology Questions - Classifiers</section> and change your answer there before continuing here. </prompt>
+       <prompt id="NPAgreeOtherTypeNoCheckPrompt" show="swNPAgreeOtherTypeNoCheck">WARNING: You need to check options for how nouns and their modifiers may/must agree in other features besides number, unless there is no type of agreement.  In that case, select  ‘None’ below.</prompt>  
+       <checkboxGroup id="NPAgreeOtherNoneTable" show="swNPAgreeOtherTypeNoCheck">
+          <prompt>Check this box only if your language does not have any type of agreement (other than possibly number agreement dealt with above).</prompt>
+          <checkbox id="NPAgreeOtherNone" dataItem="agreeOtherNone">None</checkbox>
+       </checkboxGroup>
+       <prompt id="NPAgreeOtherNoneButClassifiersYesPrompt" show="swNPAgreeOtherNoneAndClassifiersYes">WARNING: You said in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> your language has noun class markers with concord agreement, so you should check that they agree in class number or type here and uncheck the box above for ‘None’.</prompt>
+       <prompt id="NPAgreeOtherNoneButClassifiersSpecificPrompt" show="swNPAgreeOtherNoneAndClassifiersSpecific">WARNING: You said in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> your language has a classifier which agrees with the class or type of the noun when nouns are counted or specified, so you should check that box here and uncheck the box above for ‘None’.</prompt>
+       <prompt id="NPAgreeOtherTypeClassNoCheckButClassifiersYesPrompt" show="swNPAgreeOtherTypeClassNoCheckAndClassifiersYes">WARNING: You said in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> your language has noun class markers with concord agreement, so you should check that they agree in class number or type here.</prompt>
+       <prompt id="NPAgreeOtherTypeClassYesButClassifiersNoPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersNo">WARNING: You said in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> that your language does not have a noun class or classifier system, so you should not check that they agree in class number or type here.  If your language does have a noun class or classifier agreement system, please return to <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> and change your answer there before continuing here. </prompt>
+       <prompt id="NPAgreeOtherTypeClassYesButClassifiersNotAgrPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersYesNotAgr">WARNING: You said in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> your language has a simpler type of classifier system that does not include concord agreement within the nominal phrase, so you should not check that they agree in class number or type here.  If your language does have a noun class or classifier system where concord agreement is required, please return to <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> and change your answer there before continuing here. </prompt>
+       <prompt id="NPAgreeOtherTypeClassYesButClassifiersSpecificPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersYesSpecific">WARNING: You said in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> your language has a classifier system that does not include concord agreement within the nominal phrase, so you should not check that they agree in class number or type here, but instead check the next box: ‘A classifier which agrees with the class or type of the noun is present with nouns that are counted or specified....’  If your language does have a noun class or classifier system where concord agreement is required, please return to <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> and change your answer there before continuing here. </prompt>
+       <prompt id="NPAgreeOtherTypeClassifierNoButClassifiersSpecificPrompt" show="swNPAgreeOtherTypeClassifierNoAndClassifiersYesSpecific">WARNING: You said in <section number="1.">Overall Typology Questions - Noun Classes and Classifiers</section> your language has a classifier system that does not include concord agreement within the nominal phrase, so you should check the box: ‘A classifier which agrees with the class or type of the noun is present with nouns that are counted or specified....’ here. </prompt>
        <prompt id="NPAgreeClassPrompt" show="swNPAgreeYesClass">Key examples of nominal phrases showing class agreement here:</prompt>
         <textBox id="NPAgreeClassExample" dataItem="agreeClassExample" cols="50" show="swNPAgreeYesClass"/>
-        <prompt id="NPAgreeGenderPrompt" show="swNPAgreeYesGender">Key examples of nominal phrases showing gender agreement here:</prompt>
+       <prompt id="NPAgreeClassifierPrompt" show="swNPAgreeYesClassifier">Key examples of nominal phrases showing classifiers with nouns and numerals or specifiers here:</prompt>
+       <textBox id="NPAgreeClassifierExample" dataItem="agreeClassifierExample" cols="50" show="swNPAgreeYesClassifier"/>
+       <prompt id="NPAgreeGenderPrompt" show="swNPAgreeYesGender">Key examples of nominal phrases showing gender agreement here:</prompt>
         <textBox id="NPAgreeGenderExample" dataItem="agreeGenderExample" cols="50" show="swNPAgreeYesGender"/>
        <prompt id="NPAgreeAnimacyPrompt" show="swNPAgreeYesAnimacy">Key examples of nominal phrases showing animacy agreement here:</prompt>
        <textBox id="NPAgreeAnimacyExample" dataItem="agreeAnimacyExample" cols="50" show="swNPAgreeYesAnimacy"/>
@@ -59,35 +63,26 @@
             <button id="NPAgreementNext" value="Next" goto="NPCase.xml"/>
         </buttons>
     </form>
-   <showWhen id="swNPAgreeOtherYes">
-      <whenRadio button="NPAgreeOtherYes"/>
-   </showWhen>
    <showWhen id="swNPAgreeYesNumber">
         <whenRadio button="NPAgreeYesNumber"/>
     </showWhen>
     <showWhen id="swNPAgreeYesAnimacy">
         <whenCheckbox button="NPAgreeYesAnimacy"/>
-       <and/>
-       <whenRadio button="NPAgreeOtherYes"/>
     </showWhen>
     <showWhen id="swNPAgreeYesClass">
         <whenCheckbox button="NPAgreeYesClass"/>
-       <and/>
-       <whenRadio button="NPAgreeOtherYes"/>
     </showWhen>
     <showWhen id="swNPAgreeYesGender">
         <whenCheckbox button="NPAgreeYesGender"/>
-       <and/>
-       <whenRadio button="NPAgreeOtherYes"/>
     </showWhen>
    <showWhen id="swNPAgreeYesOther">
       <whenCheckbox button="NPAgreeYesOtherFeat"/>
-      <and/>
-      <whenRadio button="NPAgreeOtherYes"/>
    </showWhen>
-   <showWhen id="swNPAgreeOtherYesNoCheck">
-      <whenRadio button="NPAgreeOtherYes"/>
-      <and/><not/>
+   <showWhen id="swNPAgreeYesClassifier">
+      <whenCheckbox button="NPAgreeClassifier"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeNoCheck">
+   <not/>
       <whenCheckbox button="NPAgreeYesClass"/>
       <and/><not/>
       <whenCheckbox button="NPAgreeYesGender"/>
@@ -95,32 +90,52 @@
       <whenCheckbox button="NPAgreeYesAnimacy"/>
       <and/><not/>
       <whenCheckbox button="NPAgreeYesOtherFeat"/>
+<and/>
+      <openParen/>
+      <not/>
+      <whenCheckbox button="NPAgreeClassifier"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>   
+      <or/>
+      <not/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherNoneAndClassifiersYes">
+      <whenCheckbox button="NPAgreeOtherNone"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherNoneAndClassifiersSpecific">
+      <whenCheckbox button="NPAgreeOtherNone"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
    </showWhen>
    <showWhen id="swNPAgreeOtherTypeClassNoCheckAndClassifiersYes">
-      <whenRadio button="NPAgreeOtherYes"/>
-      <and/><not/>
+ <not/>
       <whenCheckbox button="NPAgreeYesClass"/>     
       <and/>
       <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
-   <showWhen id="swNPAgreeOtherNoAndClassifiersYes">
-      <whenRadio button="NPAgreeOtherNo"/>
-      <and/>
-      <whenValue element="typology" attr="classifier" value="yesAgr"/>
-   </showWhen>
    <showWhen id="swNPAgreeOtherTypeClassYesAndClassifiersYesNotAgr">
-      <whenRadio button="NPAgreeOtherYes"/>
-      <and/>
       <whenCheckbox button="NPAgreeYesClass"/>     
       <and/>
       <whenValue element="typology" attr="classifier" value="yesType"/>
    </showWhen>
    <showWhen id="swNPAgreeOtherTypeClassYesAndClassifiersNo">
-      <whenRadio button="NPAgreeOtherYes"/>
-      <and/>
       <whenCheckbox button="NPAgreeYesClass"/>     
       <and/>
       <whenValue element="typology" attr="classifier" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeClassYesAndClassifiersYesSpecific">
+      <whenCheckbox button="NPAgreeYesClass"/>     
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeClassifierNoAndClassifiersYesSpecific">
+      <not/><whenCheckbox button="NPAgreeClassifier"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
    </showWhen>
    <showWhen id="swNotPractical">
         <whenValue  element="paws" attr="outputGrammar" value="True"/>
@@ -128,4 +143,7 @@
     <showWhen id="swPractical">
         <whenValue  element="paws" attr="outputGrammar" value="False"/>
     </showWhen>
+   <showWhen id="swOTClassifiersYesSpecific">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+   </showWhen>
 </page>

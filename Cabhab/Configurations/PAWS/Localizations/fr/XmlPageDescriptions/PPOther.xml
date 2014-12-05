@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="PPOther" count="3/5">
+	<title level="2">Syntagmes Adpositionnels – Autres compléments</title>
+	<introduction> En plus, certaines prépositions ou postpositions peuvent être seules sans un complément dû à un mouvement de particule comme dans les phrases en anglais <example>Come [right in]  « Entrez, entrez! (littéralement, entrez [droit dans]) »</example> et 
+		<example>John turned the light [on/off] « Jean a allumé/éteint la lumière" (littéralement, Jean a tourné la lumière [sur / de]) »</example>.  Certaines langues permettent aussi que les prépositions ou les postpositions soient laissées seules lorsque son complément est en relation avec des questions comme par exemple en anglais 
+		<example>Who(m) did you give the book [to _ ]? « A qui as-tu donné le livre? (littéralement, Qui as-tu donné le livre [à]?) »</example>  Aucun de ces exemples n’est correct en français.
+	</introduction>
+	<form section="pp">
+		<radioGroup>
+			<groupName dataItem="alone" default="no">RPPAlone</groupName>
+			<prompt><br/>Est-ce que votre langue permet à des <span id="PPPrepSpanO2" show="swPPPosPrep">prépositions</span>
+				<span id="PPPostSpanO2" show="swPPPosPost">postpositions</span>
+				<span id="PPBothSpanO2" show="swPPPosBoth">prépositions et postpositions</span> d’être seules dû à un mouvement ou mises de côté comme dans les exemples anglais ci-dessus?</prompt>
+			<radio id="PPAloneNo" dataValue="no">Non</radio>
+			<radio id="PPAloneYes" dataValue="yes">Oui</radio>
+		</radioGroup>
+		<prompt id="PPAloneYesPrompt" show="swPPAloneYes">Entrez ici quelques exemples dans votre langue pour de tels cas de <span id="PPPrepSpanO1" show="swPPPosPrep">prépositions</span>
+			<span id="PPPostSpanO1" show="swPPPosPost">postpositions</span>
+			<span id="PPBothSpanO1" show="swPPPosBoth">prépositions et postpositions</span> sans un complément immédiat, inclus dans des phrases simples et entières:</prompt>
+		<textBox id="PPCompAloneExample" dataItem="aloneExample" show="swPPAloneYes"/>
+		<br/>
+		<br/>
+		<prompt id="PPCliticOnlyAloneInstruction" show="swPPTypeCliticAloneYes">AVERTISSEMENT: Si votre langue a seulement des <span id="PPPrepSpanO3" show="swPPPosPrep">prépositions,</span>
+			<span id="PPPostSpanO3" show="swPPPosPost">postpositions,</span>
+			<span id="PPBothSpanO3" show="swPPPosBoth">prépositions et postpositions,</span> clitiques il ne sera pas possible qu’elles restent seules. Si vous avez des formes qui peuvent rester seules, retournez à la première page de cette section et changez la réponse en « Certaines sont écrites comme mots indépendants, mais d’autres sont des clitiques attachées à un autre mot ».</prompt>
+<br/>
+		<introduction>La plupart des langues permettront des adverbes de lieu comme compléments de prépositions ou de postpositions comme en anglais <example>over there  « là-bas »</example> et <example>in here  « ci-dedans »</example>.</introduction>
+		<radioGroup>
+			<groupName dataItem="locative" default="no">RPPLocative</groupName>
+			<prompt><br/>Est-ce que votre langue permet des adverbes de lieu comme compléments de <span id="PPPrepSpanO5" show="swPPPosPrep">prépositions?</span>
+				<span id="PPPostSpanO5" show="swPPPosPost">postpositions?</span>
+				<span id="PPBothSpanO5" show="swPPPosBoth">prépositions et postpositions?</span>
+			</prompt>
+			<radio id="PPLocativeNo" dataValue="no">Non</radio>
+			<radio id="PPLocativeYes" dataValue="yes">Oui</radio>
+		</radioGroup>
+		<prompt id="PPLocativeYesPrompt" show="swPPLocativeYes">Entrez ici des exemples avec des adverbes de lieu comme compléments:</prompt>
+		<textBox id="PPCompLocExample" dataItem="locExample" show="swPPLocativeYes"/>
+		<br/>
+		<br/>
+		<instruction id="PPCliticOnlyLocativeInstruction" show="swPPTypeCliticLocativeYes">Since your language has only clitic <span id="PPPrepSpanO6" show="swPPPosPrep">prépositions,</span>
+			<span id="PPPostSpanO6" show="swPPPosPost">postpositions,</span>
+			<span id="PPBothSpanO6" show="swPPPosBoth">prépositions and postpositions,</span> we will assume that they can attach to adverbs, but the phrasal category in this situation wll remain AdvP, not change to PP.</instruction>
+		<introduction>Les prépositions et les postpositions de lieu sont un groupe spécial en ce sens qu’elles prennent un autre syntagme adpositionnel de lieu comme complément. Des exemples de ce type en anglais incluent: <example>up [to the top]  (en haut [jusqu’au sommet])</example>, <example>around [behind the shed]  (autour [derrière la cabane])</example> et <example>over [by the table]  (là-bas [près de la table])</example>.  Ceci n’est pas permis en français.</introduction>
+		<radioGroup>
+			<groupName dataItem="ppComp" default="no">RPPCompPP</groupName>
+			<prompt><br/>Est-ce que votre langue a des <span id="PPPrepSpanO9" show="swPPPosPrep">prépositions</span>
+				<span id="PPPostSpanO9" show="swPPPosPost">postpositions</span>
+				<span id="PPBothSpanO9" show="swPPPosBoth">prépositions et postpositions</span> qui prennent un complément de syntagme adpositionnel de lieu?</prompt>
+			<radio id="PPCompPPNo" dataValue="no">Non</radio>
+			<radio id="PPCompPPYes" dataValue="yes">Oui</radio>
+		</radioGroup>
+		<prompt id="PPCompPPYesPrompt" show="swPPCompPPYes">Entrez ici des exemples de compléments de syntagme adpositionnel de lieu de <span id="PPPrepSpanO8" show="swPPPosPrep">prépositions</span>
+			<span id="PPPostSpanO8" show="swPPPosPost">postpositions</span>
+			<span id="PPBothSpanO8" show="swPPPosBoth">prépositions et postpositions</span> de lieu:</prompt>
+		<textBox id="PPCompPPExample" dataItem="compPPExample" show="swPPCompPPYes"/>
+		<br/>
+		<br/>
+		<instruction id="PPCompPPYesInstruction" show="swPPCompPPYesExceptClitic">The rule allowing the PP complements is restricted to only locative prepositions or postpositions.  Therefore, in the lexicon, you need to add the feature <feature>locative</feature> to all the <span id="PPPrepSpanO12" show="swPPPosPrep">prépositions</span>
+			<span id="PPPostSpanO12" show="swPPPosPost">postpositions</span>
+			<span id="PPBothSpanO12" show="swPPPosBoth">prépositions and postpositions</span> which can take a locative PP complement.</instruction>
+		<instruction id="PPCliticOnlyCompPPInstruction" show="swPPTypeCliticCompPPYes">Since your language has only clitic <span id="PPPrepSpanO10" show="swPPPosPrep">prépositions,</span>
+			<span id="PPPostSpanO10" show="swPPPosPost">postpositions,</span>
+			<span id="PPBothSpanO10" show="swPPPosBoth">prépositions and postpositions,</span> if two locative <span id="PPPrepSpanO11" show="swPPPosPrep">prépositions</span>
+			<span id="PPPostSpanO11" show="swPPPosPost">postpositions</span>
+			<span id="PPBothSpanO11" show="swPPPosBoth">prépositions or postpositions</span> attach, it will still come out as a single locative PP (or locative AdvP if the head is an adverb).</instruction>
+	<br/>
+		<introduction>Des termes temporels tels que <example>avant</example> et <example>après</example> sont des prépositions ou postpositions quand ils prennent un complément de syntagme nominale comme <example>avant vous</example> ou <example>après cela</example>.  Ils peuvent avoir aussi un complément gérondif comme en anglais <example>before [signing the contract]  « avant de [signer le contrat] »</example> et <example>after [buying our new house]  « après [avoir acheté notre nouvelle maison] »</example> puisque les gérondifs sont un type spécial de syntagme nominal.  En français il faudrait un infinitif au lieu d’un gérondif dans  le syntagme équivalent.
+			<br/><br/>Ces mêmes mots peuvent aussi avoir des syntagmes entiers comme leurs compléments comme dans en anglais <example>before [the rain stops]  « avant que [la pluie s’arrête] »</example> et <example>after [John returned]  « après que [Jean soit rentré] »</example>.  (En français l’adverbe est suivi du complémentiseur « que » et une proposition au subjonctif.)  Dans cet usage, ce sont des adverbes temporels au lieu de prépositions ou postpositions et le syntagme entier est une proposition adverbiale qui modifie normalement la phrase principale. De tels exemples seront traités dans la <section number="13.">Propositions Adverbiales</section>.</introduction>
+		<radioGroup>
+			<groupName dataItem="tempComp" default="no">RPPTempComp</groupName>
+			<prompt><br/>Est-ce que votre langue a des <span id="PPPrepSpanO13" show="swPPPosPrep">prépositions</span>
+				<span id="PPPostSpanO13" show="swPPPosPost">postpositions</span>
+				<span id="PPBothSpanO13" show="swPPPosBoth">prépositions ou postpositions</span> temporelles qui prennent un syntagme nominal ou un complément gérondif?</prompt>
+			<radio id="PPTempCompNo" dataValue="no">Non</radio>
+			<radio id="PPTempCompYes" dataValue="yes">Oui</radio>
+		</radioGroup>
+		<prompt id="PPTempCompYesPrompt" show="swPPTempCompYes">Entrez ici quelques exemples de syntagmes adpositionnels temporels, inclues dans des simples phrases complètes:</prompt>
+		<textBox id="PPTempCompExample" dataItem="tempExample" show="swPPTempCompYes"/>
+		<br/>
+		<br/>
+
+		<instruction id="PPTempCompYesInstruction" show="swPPTempCompYes">In the lexicon, mark the temporal <span id="PPPrepSpanO15" show="swPPPosPrep">prépositions </span>
+			<span id="PPPostSpanO15" show="swPPPosPost">postpositions </span>
+		   <span id="PPBothSpanO15" show="swPPPosBoth">prépositions and postpositions </span>with the feature <feature>temporal</feature>.  If  these same words can also take a sentential complement, you will need two separate entries so one can have the category <category>P</category> and the other the category <category>Adv</category>.  The adverb entry will also need the features <feature>temporal sentential</feature> as will be discussed further in <section number="13.">Adverbial Clauses</section>.</instruction>
+		<br/>
+		<buttons>
+			<button id="PPOtherBack" value="Back" goto="PPComps.xml"/>
+		    <button id="PPOtherNext" value="Next" goto="PPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swPPCompPPYesExceptClitic">
+		<whenRadio button="PPCompPPYes"/>
+		<and/>
+		<not/>
+		<whenValue element="pp" attr="pType" value="clitic"/>
+	</showWhen>
+
+	<showWhen id="swPPCompPPYes">
+		<whenRadio button="PPCompPPYes"/>
+	</showWhen>
+	<showWhen id="swPPPosPrep">
+		<whenValue element="pp" attr="pPos" value="before"/>
+	</showWhen>
+	<showWhen id="swPPPosPost">
+		<whenValue element="pp" attr="pPos" value="after"/>
+	</showWhen>
+   <showWhen id="swPPPosBoth">
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
+   </showWhen>
+   <showWhen id="swPPAloneYes">
+		<whenRadio button="PPAloneYes"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticAloneYes">
+		<whenValue element="pp" attr="pType" value="clitic"/>
+		<and/>
+		<whenRadio button="PPAloneYes"/>
+	</showWhen>
+	<showWhen id="swPPLocativeYes">
+		<whenRadio button="PPLocativeYes"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticLocativeYes">
+		<whenValue element="pp" attr="pType" value="clitic"/>
+		<and/>
+		<whenRadio button="PPLocativeYes"/>
+	</showWhen>
+	<showWhen id="swPPTypeCliticCompPPYes">
+		<whenValue element="pp" attr="pType" value="clitic"/>
+		<and/>
+		<whenRadio button="PPCompPPYes"/>
+	</showWhen>
+   <showWhen id="swPPTempCompYes">
+      <whenRadio button="PPTempCompYes"/>
+   </showWhen>
+</page>

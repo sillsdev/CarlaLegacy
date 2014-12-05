@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPAux" count="1/2">
+    <title level="2">Phrases Simples – Auxiliaires</title>
+    <introduction>Certaines langues ont des éléments auxiliaires qui sont des mots indépendants; d’autres peuvent prendre plus d’un seul élément auxiliaire avant le verbe principal. On donne des exemples en français pour les phrases transitives à un seul syntagme.</introduction>
+    <EnglishExample>
+        <exItem label="1.">Le garçon a mangé la banane.</exItem>
+        <exItem label="2.">Le garçon va manger la banane.</exItem>
+        <exItem label="3.">Le garçon a pu manger la banane.</exItem>
+        <exItem label="4.">Le garçon pouvait avoir mangé la banane.</exItem>
+    </EnglishExample>
+    <form section="ip">
+        <prompt>Pensez à d’autres exemples pareils de votre langue, et entrez-les ici:</prompt>
+        <textBox id="IPAuxExample" dataItem="auxExample" cols="50"/>
+        <br/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="aux" default="no">RIPAux</groupName>
+            <prompt>Regardez les exemples d’éléments auxiliaires ci-dessus. Est-ce que votre langue en possède qui sont des mots indépendants?</prompt>
+            <radio id="IPAuxNo" dataValue="no">Non, ces mêmes messages sont tous exprimés comme parties du verbe</radio>
+            <radio id="IPAuxYes" dataValue="yes">Oui</radio>
+            <radioGroup id="IPAuxRequiredTable" show="swAuxYes">
+                <groupName dataItem="auxRequired" default="no">RIPAuxRequired</groupName>
+                <prompt>Est-ce qu’il faut un élément auxiliaire dans chaque phrase?</prompt>
+                <radio id="IPAuxRequiredNo" dataValue="no">Non, l’élément est facultatif</radio>
+                <radio id="IPAuxRequiredYes" dataValue="yes">Oui, au moins un élément est toujours nécessaire</radio>
+            </radioGroup>
+            <radioGroup id="IPAuxManyTable" show="swAuxYes">
+                <groupName dataItem="auxMany" default="no">RIPAuxMany</groupName>
+                <prompt>Est-ce qu’une seule phrase peut  contenir plus d’un seul auxiliaire?</prompt>
+                <radio id="IPAuxManyNo" dataValue="no">Non, un seul auxiliaire est possible</radio>
+                <radio id="IPAuxManyYes" dataValue="yes">Oui, il peut y avoir plus d’un auxiliaire</radio>
+            </radioGroup>
+            <radioGroup id="IPAuxOrderTable" show="swIPAuxOrderVSOorOSV">
+                <groupName dataItem="auxOrder" default="no">RIPAuxOrder</groupName>
+                <prompt>
+                    <span id="IPAuxOrderPromptVSO" show="swIPAuxOrderVSO">Suivant un auxiliaire, est-ce que l’ordre habituel des mots VSO est maintenu?</span>
+                    <span id="IPAuxOrderPromptOSV" show="swIPAuxOrderOSV">Avant un auxiliaire, est-ce que l’ordre habituel des mots OSV est maintenu?</span>
+                </prompt>
+                <radio id="IPAuxOrderYes" dataValue="yes">Oui, l’ordre est toujours <span id="IPAuxOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S puis les autres éléments</span>
+                    <span id="IPAuxOrderYesOSVPrompt" show="swIPAuxOrderOSV">les autres éléments puis S V Aux</span>
+                </radio>
+                <radio id="IPAuxOrderNo" dataValue="no">Non, le sujet peut venir immédiatement après <span id="IPAuxOrderNoVSOPrompt" show="swIPAuxOrderVSO">l’Aux et avant le verbe </span>
+                    <span id="IPAuxOrderNoOSVPrompt" show="swIPAuxOrderOSV">le verbe et avant l’Aux</span>
+                </radio>
+            </radioGroup>
+        </radioGroup>
+        <br/><br/>
+        <prompt id="IPAuxiliaryExamplePrompt" show="swAuxYes">Entrez ici les mot auxiliaires utilisés dans votre langue:</prompt>
+        <textBox id="IPAuxiliaryExample" dataItem="auxiliaryExample" rows="5" show="swAuxYes"/>       
+        <br/><br/>
+        <introduction>Le mot non-fini <example>to</example> utilisé en anglais dans les propositions subordonnées fonctionne comme un auxiliaire, puisqu’il prend la même position et qu’il peut se mettre avant d’autres auxiliaires. Par exemple:</introduction>
+        <EnglishExample>
+            <exItem label="1.">The boy would like to have eaten the banana. (Le garçon aurait aimé avoir mangé la banane)</exItem>
+            </EnglishExample>
+        <prompt>Pensez à des phrases en votre langue qui ont des verbes non-finis ou bien dans le proposition principal ou bien dans le proposition subordonnée; entrez-les ici:</prompt>
+        <textBox id="IPAuxNonfiniteExample" dataItem="auxNonfiniteExample" cols="50"/>
+        <br/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="auxNonfinite" default="no">RIPAuxNonfinite</groupName>
+            <prompt>Vu les exemples non-finis que vous avez cités en-dessus, est-ce que votre langue possède au moins un mot indépendant de type auxiliaire qui donne à un verbe ou à un syntagme le marqueur non-fini?</prompt>
+           <radio id="IPAuxNonfiniteYes" dataValue="yes">Oui</radio>
+            <radio id="IPAuxNonfiniteNo" dataValue="no">Non, le caractéristique non-fini ou infinitif fait partie de la forme verbale</radio>
+            <radio id="IPAuxNonfiniteNone" dataValue="none">Non, la langue n’a pas de forme infinitive ou non-finie</radio>
+        </radioGroup>
+        <prompt id="IPNonfiniteNonePrompt" show="swIPNonfiniteNoneAndFeaturesYes">AVERTISSEMENT: A la <section number="9.2">Phrases Simples – La Flexion</section> vous avez coché le caractéristique <feature>-fini</feature>  dans votre langue. Ce n’est pas conforme avec votre réponse ici. Veuillez changer votre réponse ici pour indiquer que votre langue a des infinitifs ou des formes non-finies, ou bien revenez à la <section number="9.2">Phrases Simples – La Flexion</section> et décochez le caractéristique <feature>-fini</feature>.</prompt>
+        <prompt id="IPNonfiniteNotNonePrompt" show="swIPNonfiniteNotNoneAndFeaturesNo">AVERTISSEMENT: A la <section number="9.2">Phrases Simples – La Flexion</section> vous n’avez pas coché le caractéristique <feature>-fini</feature> dans votre langue. Ce n’est pas conforme avec votre réponse ici. Si votre langue a des formes infinitives ou non-finies, revenez à la <section number="9.2">Phrases Simples – La Flexion</section>  et cochez le caractéristique <feature>-fini</feature>.</prompt>
+       
+       <radioGroup id="IPAuxNonfiniteRequiredTable" show="swAuxNonfiniteYes">
+                <groupName dataItem="auxNonfiniteRequired" default="no">RIPAuxNonfiniteRequired</groupName>
+           <prompt>Est-ce qu’un élément de type auxiliaire est nécessaire pour chaque proposition subordonnée non-fini?</prompt>
+           <radio id="IPAuxNonfiniteRequiredNo" dataValue="no">Non, il est facultatif</radio>
+           <radio id="IPAuxNonfiniteRequiredYes" dataValue="yes">Oui, il en faut un toujours</radio>
+            </radioGroup>
+            <radioGroup id="IPAuxNonfiniteOrderTable" show="swIPAuxOrderVSOorOSVandAuxNonfiniteYes">
+                <groupName dataItem="auxNonfiniteOrder" default="no">RIPAuxNonfiniteOrder</groupName>
+                <prompt>
+                    <span id="IPAuxNonfiniteOrderPromptVSO" show="swIPAuxOrderVSO">Après un auxiliaire, est-ce qu’on maintient l’ordre normal VSO? </span>
+                    <span id="IPAuxNonfiniteOrderPromptOSV" show="swIPAuxOrderOSV">Avant un auxiliaire, est-ce qu’on maintient l’ordre normal OSV?</span>
+                </prompt>
+                <radio id="IPAuxNonfiniteOrderYes" dataValue="yes">Oui, l’ordre est toujours <span id="IPAuxNonfiniteOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S, puis les autres éléments</span>
+                    <span id="IPAuxNonfiniteOrderYesOSVPrompt" show="swIPAuxOrderOSV">les autres éléments puis S V Aux</span>
+                </radio>
+                <radio id="IPAuxNonfiniteOrderNo" dataValue="no">Non, le sujet peut venir directement après <span id="IPAuxNonfiniteOrderNoVSOPrompt" show="swIPAuxOrderVSO">l’Aux et avant le verbe </span>
+                    <span id="IPAuxNonfiniteOrderNoOSVPrompt" show="swIPAuxOrderOSV">le verbe et avant l’Aux</span>
+                </radio>
+            </radioGroup>       
+        <br/><br/>
+        <prompt id="IPAuxiliaryNonfiniteExamplePrompt" show="swAuxNonfiniteYes">Entrez ici les mots de type auxiliaire dans votre langue qui marquent les syntagmes non-finis:</prompt>
+        <textBox id="IPAuxiliaryNonfiniteExample" dataItem="auxiliaryNonfiniteExample" rows="3" show="swAuxNonfiniteYes"/>   
+       <instruction id="IPAuxNonfiniteInstruction" show="swAuxNonfiniteYes">Add the feature <feature>-finite</feature> to the entry for the nonfinite marker that is written as an independent word like <example>to</example> in English and make sure that it is included in the category mapping to <category>Aux</category> in the <section number="9.9">Basic Sentences – Category Mapper</section>.  Alternatively, you can add the feature <feature>makeAux</feature> now to be sure.  However, remember that if the word can also be used as another syntactic category (like English <example>to</example> can be both a nonfinite <category>Aux</category> and a preposition <category>P</category>), you need to make a separate lexical entry for each use.</instruction>
+       
+       <br/><br/>
+        <introduction>Certaines langues ont d’autres mots qui fonctionnent comme des auxiliaires, tels que les auxiliaires de mouvement ou marqueurs d’emprunts, qu’on écrit <span id="ipAuxVInitialSpan" show="swVInitial">avant</span>
+            <span id="ipAuxVFinalSpan" show="swVFinal">après</span> les verbes et qui partagent le même sujet et les mêmes compléments.</introduction>
+       <br/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="auxOther" default="no">RIPAuxOther</groupName>
+            <prompt>Est-ce que votre langue possède quelques-uns des autres types d’éléments auxiliaires, tels que les auxiliaires de mouvement ou les marqueurs d’emprunts, qui sont des mots indépendants?</prompt>
+            <radio id="IPAuxOtherNo" dataValue="no">Non</radio>
+            <radio id="IPAuxOtherYes" dataValue="yes">Oui</radio>
+        </radioGroup>
+        <prompt id="IPAuxOtherPrompt" show="swAuxOtherYes">Entrez ici des exemples de phrases qui comprennent ces autres types d’auxiliaires dans votre langue:</prompt>
+           <textBox id="IPAuxOtherExample" dataItem="auxOtherExample" cols="50" show="swAuxOtherYes"/>
+           
+           <radioGroup id="IPAuxOtherOrderTable" show="swIPAuxOrderVSOorOSVandAuxOtherYes">
+                <groupName dataItem="auxOtherOrder" default="no">RIPAuxOtherOrder</groupName>
+                <prompt>
+                    <span id="IPAuxOtherOrderPromptVSO" show="swIPAuxOrderVSO">Après un auxiliaire est-ce qu’on maintient l’ordre habituel des mots VSO?</span>
+                    <span id="IPAuxOtherOrderPromptOSV" show="swIPAuxOrderOSV">Avant un auxiliaire, est-ce qu’on maintient l’ordre habituel des mots OSV?</span>
+                </prompt>
+               <radio id="IPAuxOtherOrderYes" dataValue="yes">Oui., l’ordre est toujours <span id="IPAuxOtherOrderYesVSOPrompt" show="swIPAuxOrderVSO">Aux V S, puis les autres éléments</span>
+                   <span id="IPAuxOtherOrderYesOSVPrompt" show="swIPAuxOrderOSV">les autres éléments puis S V Aux</span>
+                </radio>
+               <radio id="IPAuxOtherOrderNo" dataValue="no">Non, le sujet peut venir directement après <span id="IPAuxOtherOrderNoVSOPrompt" show="swIPAuxOrderVSO">l’Aux et avant le verbe</span>
+                   <span id="IPAuxOtherOrderNoOSVPrompt" show="swIPAuxOrderOSV">le verbe et avant l’Aux</span>
+                </radio>
+            </radioGroup>
+ 
+        <br/><br/>
+        <prompt id="IPAuxiliaryOtherExamplePrompt" show="swAuxOtherYes">Entrez ici les autres types de mots auxiliaires dans votre langue, tels que les auxiliaires de mouvement ou les marqueurs d’emprunt:</prompt>
+        <textBox id="IPAuxiliaryOtherExample" dataItem="auxiliaryOtherExample" rows="3" show="swAuxOtherYes"/>   
+       <instruction id="IPAuxOtherInstruction" show="swAuxOtherYes">Make sure that these words are included in the category mapping to <category>Aux</category> in the <section number="9.9">Basic Sentences – Category Mapper</section>.  Alternatively, you can add the feature <feature>makeAux</feature> now to be sure.  However, remember that if the word can also be used as another syntactic category (like <example>go</example> could be both a motion <category>Aux</category> and a main verb <category>V</category>), you need to make a separate lexical entry for each use.  Also, add the feature <feature>motion</feature> to the motion auxiliaries.</instruction>
+       <br/><br/>
+        <buttons>
+            <button id="IPAuxBack" value="Back" goto="IPContents.htm"/>
+            <button id="IPAuxNext" value="Next" goto="IPCompounds.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swAuxYes">
+      <whenRadio button="IPAuxYes"/>
+   </showWhen>
+   <showWhen id="swAuxNonfiniteYes">
+        <whenRadio button="IPAuxNonfiniteYes"/>
+    </showWhen>
+    <showWhen id="swAuxOtherYes">
+        <whenRadio button="IPAuxOtherYes"/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderVSO">
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderOSV">
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderVSOorOSV">
+        <whenRadio button="IPAuxYes"/>
+        <and/>
+        <openParen/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderVSOorOSVandAuxNonfiniteYes">
+        <whenRadio button="IPAuxNonfiniteYes"/>
+        <and/>
+        <openParen/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swIPAuxOrderVSOorOSVandAuxOtherYes">
+        <whenRadio button="IPAuxOtherYes"/>
+        <and/>
+        <openParen/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swVInitial">
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="VOS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="SVO"/>
+    </showWhen>
+    <showWhen id="swVFinal">
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OVS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="SOV"/>
+    </showWhen>
+   <showWhen id="swIPNonfiniteNoneAndFeaturesYes">
+      <whenRadio button="IPAuxNonfiniteNone"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPNonfiniteNotNoneAndFeaturesNo">
+      <whenRadio button="IPAuxNonfiniteNo"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="no"/>
+      <or/>
+      <whenRadio button="IPAuxNonfiniteYes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatMinusFinite" attr="checked" value="no"/>
+   </showWhen>
+   
+</page>

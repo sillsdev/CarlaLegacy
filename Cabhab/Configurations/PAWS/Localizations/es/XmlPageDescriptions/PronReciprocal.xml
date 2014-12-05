@@ -48,10 +48,10 @@
        
        <checkboxGroup id="PronRecipYesTable" show="swPronRecipYes">
           <prompt>
-             <br/>>¿Cómo son construidos los recíprocos que se presentan en la posición del objeto en su lengua?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+             <br/>¿Cómo son construidos los recíprocos que se presentan en la posición del objeto en su lengua?  Seleccione todas las opciones que son correctas en su lengua</prompt>
           <checkbox id="PronRecipAffixNoWord" dataItem="recipDistinct">Son un distinto sistema de los pronombres personales</checkbox>
           <checkbox id="PronRecipAffixYes" dataItem="recipAffix">Uno o más afijos se unen para hacer otro pronombre en un recíproco</checkbox>
-             <checkbox id="PronRecipAffixNoNoun" dataItem="reciplNounPoss">Se utiliza una frase que consiste en cierto sustantivo especial con un pronombre como el posesivo</checkbox>
+             <checkbox id="PronRecipAffixNoNoun" dataItem="recipNounPoss">Se utiliza un cierto sustantivo especial con un pronombre como el posesivo</checkbox>
              <checkbox id="PronRecipAffixNoQP" dataItem="recipQP">Se utiliza unas frases nominales cuantificadas especiales</checkbox>
              <checkbox id="PronRecipAffixOther" dataItem="recipOther">En mi lengua, los recíprocos son construidos con:<textBox  id="PronRecipAffixOtherContent" dataItem="recipOther" rows="2"/></checkbox>
        </checkboxGroup>
@@ -71,7 +71,7 @@
  
        <textBox id="PronReflAffixExamples" dataItem="pronRecipAffixExample"  rows="2" show="swPronRecipAffixYes"/> 
        <instruction id="PronRecipAffixYesInstruction" show="swPronRecipAffixYes">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant affix(es).</instruction>
-       <prompt id="PronRecipAffixNoNounPrompt" show="swPronRecipAffixNoNoun"><br/>Escriba la palabra especial que está poseída por los pronombres posesivos para formar una frase recíproca que actúa igual que un pronombre recíproco aquí:
+       <prompt id="PronRecipAffixNoNounPrompt" show="swPronRecipAffixNoNoun"><br/>Escriba la palabra especial que está poseída por los pronombres posesivos para formar una frase recíproca o un pronombre recíproco aquí:
        </prompt>
        <textBox id="PronRecipNounPossExamples" dataItem="pronRecipNounPossExample"  rows="2" show="swPronRecipAffixNoNoun"/> 
        <instruction id="PronRecipAffixNoNounInstruction" show="swPronRecipAffixNoNoun">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant noun.</instruction>

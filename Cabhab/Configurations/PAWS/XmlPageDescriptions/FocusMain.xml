@@ -20,7 +20,7 @@
     <form section="focus" transparent="no">
 <radioGroup id="TopicTable">
     <groupName dataItem="topic" default="no">RTopic</groupName>
-    <prompt><br/>Does your language allow a topic phrase before or after a full sentence or question, as in examples above 1-2 and 6?</prompt>
+    <prompt><br/>Does your language allow a topic phrase before or after a full sentence or question, as in the examples above?</prompt>
     <radio id="TopicNo" dataValue="no">No</radio>
     <radio id="TopicYes" dataValue="yes">Yes</radio>
 </radioGroup>
@@ -106,7 +106,7 @@
 <prompt id="FocusMarkerYesWordInstruction" show="swFocusMarkerYesWord"><br/>Key the focus markers your language uses in the following box.  If  the marker is a phrase, key it together on the same line.</prompt>
        <textBox id="FocusMarker" show="swFocusMarkerYesWord" dataItem="focusMarkerExample" rows="4"/>
        <checkboxGroup id="FocusMarkerPosTable" show="swFocusMarkerYesWord">
-          <prompt><br/>Where does the focus marker occur with respect to the topic itself? Check all options that are allowed</prompt>
+          <prompt><br/>Where does the focus marker occur with respect to the focused phrase itself? Check all options that are allowed</prompt>
           <checkbox id="FocusMarkerPosBefore" dataItem="focusMarkerBefore">Before it</checkbox>
           <checkbox id="FocusMarkerPosAfter" dataItem="focusMarkerAfter">After it</checkbox>
           <checkbox id="FocusMarkerPosBoth" dataItem="focusMarkerBoth">On both sides of the same focus phrase</checkbox>

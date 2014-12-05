@@ -335,8 +335,8 @@
              <interlinear exampleLoc="comp/finiteExample"/>
           </example>
           <p contentType="ctComparativeIntro">
-             <content>Algunos ejemplos de los verbos que pueden tener un complemento finito, con o sin un complementador, o un complemento no finito sin un complementador en inglés son: </content>
-             <langData>I expect that Joe will come to the party</langData><gloss><content> ‘Cuento con que José venga a la fiesta’</content></gloss>
+             <content>Algunos ejemplos de los verbos que pueden tener un complemento finito o no finito en inglés son: </content>
+             <langData>I expect Joe will come to the party</langData><gloss><content> ‘Cuento con que José venga a la fiesta’</content></gloss>
              <content> y </content>
              <langData>I expect Joe to come to the party</langData><gloss><content> ‘Espero que José venga a la fiesta’</content></gloss>
              <content>.  Algunos ejemplos de este tipo de complemento en el </content>
@@ -519,7 +519,7 @@
            </section2>
            
            <section2 id="sCompSpeech">
-              <secTitle>Discurso  directo e indirecto como complementos</secTitle>
+              <secTitle>Discurso directo e indirecto como complementos</secTitle>
               <p contentType="ctComparativeIntro"><content>Los verbos de habla pueden tener complementos directos o indirectos. Las citas directas pueden consistir en cualquier oración, interjección o saludo, por ejemplo: </content>
                  <langData>Sue said, “I will come to your house tomorrow”</langData><gloss><content> ‘Susana dijo, “Vendré a su casa mañana”’</content></gloss>
                  <content> o </content><langData>Joe said, “Bye!”</langData><gloss><content> ‘José dijo, “¡Adiós!”’</content></gloss>

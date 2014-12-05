@@ -4,7 +4,7 @@
 	<section1 id="sIP">
 		<secTitle>Basic Sentences</secTitle>
 		<p>
-<xsl:text>This section covers copular, intransitive, transitive, ditransitive, imperative, passive and causative sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  As noted in section </xsl:text>
+<xsl:text>This section covers copular, intransitive, transitive, ditransitive, imperative, subjunctive, conditional, passive and causative sentences in their basic word order (i.e. not changed by focus, topic, interrogative, or negation constructions).  As noted in section </xsl:text>
 <sectionRef sec="sIntro" />
 <xsl:text>,  the typology of </xsl:text>
 <xsl:choose>
@@ -491,7 +491,7 @@
 </xsl:if>
 	      
 		  <p contentType="ctComparativeIntro">
-<xsl:text>In contrast to copular verbs, perception verbs usually only allow an adjective phrase following them, except in superlative constructions where a nominal phrase follows a perception verb, as shown in the next section.  Some English examples with perception verbs include:</xsl:text>
+<xsl:text>In contrast to copular verbs, perception verbs usually only allow an adjective phrase following them, except in superlative constructions where a nominal phrase follows a perception verb, as shown in the next section.  Some English examples with perception verbs include: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1106,7 +1106,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>David appears taller than Michael</langData>
-<xsl:text> and </xsl:text>
+<xsl:text>, </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1116,7 +1116,6 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>John seems less certain of his answers than Sue</langData>
-<xsl:text>.</xsl:text>
 <xsl:text>.</xsl:text>
 </p>
 			 <p contentType="ctComparativeIntro">
@@ -2752,7 +2751,7 @@
 <xsl:text>.</xsl:text>
 </p>
 	      <p>
-<xsl:text>In ditransitive sentences </xsl:text>
+<xsl:text>In ditransitive sentences in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -3189,16 +3188,16 @@
 <xsl:text>phrasal clitics which attach either to the front of whatever word begins the conditional phrase or to the end of whatever word ends the conditional phrase.   </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/conditionProclitic/@checked)='no' and normalize-space(//ip/conditionEnclitic/@checked)='no' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='no'">
-<xsl:text>prefixes which attach to the head noun in the conditional phrase.  </xsl:text>
+<xsl:text>prefixes which attach to the main verb in the conditional phrase.  </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/conditionProclitic/@checked)='no' and normalize-space(//ip/conditionEnclitic/@checked)='no' and normalize-space(//ip/conditionPrefix/@checked)='no' and normalize-space(//ip/conditionSuffix/@checked)='yes'">
-<xsl:text>suffixes which attach to the head noun in the conditional phrase.   </xsl:text>
+<xsl:text>suffixes which attach to the main verb in the conditional phrase.   </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/conditionProclitic/@checked)='no' and normalize-space(//ip/conditionEnclitic/@checked)='no' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='yes'">
-<xsl:text>affixes which attach to the head noun in the conditional phrase.   </xsl:text>
+<xsl:text>affixes which attach to the main verb in the conditional phrase.   </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/conditionProclitic/@checked)='yes' and normalize-space(//ip/conditionEnclitic/@checked)='no' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='no' or normalize-space(//ip/conditionProclitic/@checked)='yes' and normalize-space(//ip/conditionEnclitic/@checked)='no' and normalize-space(//ip/conditionPrefix/@checked)='no' and normalize-space(//ip/conditionSuffix/@checked)='yes' or normalize-space(//ip/conditionProclitic/@checked)='yes' and normalize-space(//ip/conditionEnclitic/@checked)='no' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='yes' or normalize-space(//ip/conditionProclitic/@checked)='no' and normalize-space(//ip/conditionEnclitic/@checked)='yes' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='no' or normalize-space(//ip/conditionProclitic/@checked)='no' and normalize-space(//ip/conditionEnclitic/@checked)='yes' and normalize-space(//ip/conditionPrefix/@checked)='no' and normalize-space(//ip/conditionSuffix/@checked)='yes' or normalize-space(//ip/conditionProclitic/@checked)='no' and normalize-space(//ip/conditionEnclitic/@checked)='yes' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='yes' or normalize-space(//ip/conditionProclitic/@checked)='yes' and normalize-space(//ip/conditionEnclitic/@checked)='no' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='yes' or normalize-space(//ip/conditionProclitic/@checked)='yes' and normalize-space(//ip/conditionEnclitic/@checked)='yes' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='no' or normalize-space(//ip/conditionProclitic/@checked)='yes' and normalize-space(//ip/conditionEnclitic/@checked)='yes' and normalize-space(//ip/conditionPrefix/@checked)='no' and normalize-space(//ip/conditionSuffix/@checked)='yes' or normalize-space(//ip/conditionProclitic/@checked)='yes' and normalize-space(//ip/conditionEnclitic/@checked)='yes' and normalize-space(//ip/conditionPrefix/@checked)='yes' and normalize-space(//ip/conditionSuffix/@checked)='yes'">
-<xsl:text>either clitics which attach to the beginning or end of the conditional phrase, or by affixes which attach to the head noun in the conditional phrase.  </xsl:text>
+<xsl:text>either clitics which attach to the beginning or end of the conditional phrase, or by affixes which attach to the main verb in the conditional phrase.  </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/conditionProclitic/@checked)='no' and normalize-space(//ip/conditionEnclitic/@checked)='no' and normalize-space(//ip/conditionPrefix/@checked)='no' and normalize-space(//ip/conditionSuffix/@checked)='no' and normalize-space(//ip/conditionOther/@checked)='yes'">
 <xsl:text>___</xsl:text>
@@ -3691,16 +3690,16 @@
 <xsl:text>phrasal clitics which attach either to the front of whatever word begins the subjunctive conditional phrase or to the end of whatever word ends the subjunctive conditional phrase.   </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/subjunctiveCondProclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='no'">
-<xsl:text>prefixes which attach to the head noun in the subjunctive conditional phrase.  </xsl:text>
+<xsl:text>prefixes which attach to the main verb in the subjunctive conditional phrase.  </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/subjunctiveCondProclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='no' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes'">
-<xsl:text>suffixes which attach to the head noun in the subjunctive conditional phrase.   </xsl:text>
+<xsl:text>suffixes which attach to the main verb in the subjunctive conditional phrase.   </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/subjunctiveCondProclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes'">
-<xsl:text>affixes which attach to the head noun in the subjunctive conditional phrase.   </xsl:text>
+<xsl:text>affixes which attach to the main verb in the subjunctive conditional phrase.   </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/subjunctiveCondProclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='no' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='no' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='no' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='no' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='no' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='no' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes' or normalize-space(//ip/subjunctiveCondProclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='yes' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='yes' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='yes'">
-<xsl:text>either clitics which attach to the beginning or end of the subjunctive conditional phrase, or by affixes which attach to the head noun in the subjunctive conditional phrase.  </xsl:text>
+<xsl:text>either clitics which attach to the beginning or end of the subjunctive conditional phrase, or by affixes which attach to the main verb in the subjunctive conditional phrase.  </xsl:text>
 </xsl:if>
 <xsl:if test="normalize-space(//ip/subjunctiveCondProclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondEnclitic/@checked)='no' and normalize-space(//ip/subjunctiveCondPrefix/@checked)='no' and normalize-space(//ip/subjunctiveCondSuffix/@checked)='no' and normalize-space(//ip/subjunctiveCondOther/@checked)='yes'">
 <xsl:text>___</xsl:text>
@@ -4987,9 +4986,141 @@
 </example>
 </xsl:if>
 	      
-
 	   </section2>
-
+		<xsl:if test="normalize-space(//ip/@applicative)='yes'">
+<section2 id="sIPApplicatives">
+			<secTitle>Applicatives</secTitle>
+			<p contentType="ctComparativeIntro">
+<xsl:text>Some languages have an additional applicative construction.  Applicative is a verb voice that promotes an oblique argument of the verb to the object argument, and indicates the oblique role within the meaning of the verb.  An intransitive verb becomes transitive and a transitive verb becomes ditransitive when the applicative affix is added.  This is in contrast to expressing these arguments with adpositions.</xsl:text>
+</p>
+			<p contentType="ctComparativeIntro">
+<xsl:text>Applicatives may be used for comitative, locative, instrumental and benefactive roles.  Some languages allow more than one applicative in a single verb.</xsl:text>
+</p>
+			<p contentType="ctPracticalIntro">
+<xsl:text>Applicative is a verb voice that promotes an oblique argument of the verb to the object argument, and indicates the oblique role within the meaning of the verb.  An intransitive verb becomes transitive and a transitive verb becomes ditransitive when the applicative affix is added.</xsl:text>
+</p>
+			<p>
+<xsl:text>In </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, the affixes used to mark applicatives are:</xsl:text>
+</p>
+			<example num="xIP.IPApplicatives.12">
+<table border="1">
+					<tr>
+						<th>Applicative Affix</th>
+						<th>Gloss</th>
+					</tr>
+					<xsl:variable name="sExampleValue0.0">
+<xsl:value-of select="translate(string(//ip/applicativeVoice),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.0 != 0 and $sExampleValue0.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ENTER GLOSS</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+				</table>
+</example>
+			<p>
+<xsl:text>Examples of applicatives in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> are:</xsl:text>
+</p>
+			<example num="xIP.IPApplicatives.16">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//ip/applicativeExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//ip/applicativeExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//ip/applicativeExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//ip/applicativeExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xIP.IPApplicatives.16</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xIP.IPApplicatives.16.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+		</section2>
+</xsl:if>
+		
+		
 	</section1>
 	
 		
@@ -5777,7 +5908,10 @@
             
             
          
-   
+	
+		
+	
+	
    
       
    

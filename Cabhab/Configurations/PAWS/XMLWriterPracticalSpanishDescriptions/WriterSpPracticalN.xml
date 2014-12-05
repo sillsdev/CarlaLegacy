@@ -21,47 +21,35 @@
 	            <caseText value="no"> no hay concordancia de número. En lugar del indicador del número aparece el número o el cuantificador.</caseText>
 	            <caseText value="yes">los diversos modificadores nominales concuerdan en número con el sustantivo principal.</caseText>
 	         </case>
-	         <content>  Además, </content>
-	         <case element="np" attr="agreeOther">
-	            <caseText value="no">no hay concordancia en animacidad, clase, ni género entre los modificadores y el sustantivo principal.</caseText>
-	            <caseText value="yes">los modificadores y el sustantivo principal concuerdan en </caseText>
-	         </case>
-	         <text show="swNPAgrClass"><content>clase.</content></text>
-	         <text show="swNPAgrGender"><content>género.</content></text>
-	         <text show="swNPAgrAnimacy"><content>animacidad.</content></text>
-	         <text show="swNPAgrOther"><content>___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-	         <text show="swNPAgrClassGender"><content>género y clase.</content></text>
-	         <text show="swNPAgrClassAnimacy"><content>animacidad y clase.</content></text>
-	         <text show="swNPAgrClassOther"><content>clase y ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-	         <text show="swNPAgrClassAnimacyGender"><content>género, animacidad y clase.</content></text>
-	         <text show="swNPAgrClassAnimacyOther"><content>animacidad, clase y ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-	         <text show="swNPAgrClassGenderOther"><content>género, clase y ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-	         <text show="swNPAgrClassAnimacyGenderOther"><content>género, animacidad, clase y  ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-	         <text show="swNPAgrGenderAnimacy"><content>género y animacidad.</content></text>
-	         <text show="swNPAgrGenderOther"><content>género y ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-	         <text show="swNPAgrGenderAnimacyOther"><content>género, animacidad y ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-	         <text show="swNPAgrAnimacyOther"><content>animacidad y ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-	      </p>
-	      <p show="swNPAgreeYesNumber">
-	         <content>Algunos ejemplos que muestran la concordancia de número en las frases nominales son:</content>	
-	      </p>
-	      <example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
-	      <p show="swNPAgreeYesAnimacy">
-	         <content>Algunos ejemplos que muestran la concordancia de animacidad en las frases nominales son:</content>	
-	      </p>
-	      <example show="swNPAgreeYesAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
-	      <p show="swNPAgreeYesClass">
-	         <content>Algunos ejemplos que muestran la concordancia de clase en las frases nominales son:</content>	
-	      </p>
-	      <example show="swNPAgreeYesClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
-	      <p show="swNPAgreeYesGender">
-	         <content>Algunos ejemplos que muestran la concordancia de género en las frases nominales son:</content>	
-	      </p>
-	      <example show="swNPAgreeYesGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
-	      <p show="swNPAgreeYesOther">
-	         <content>Algunos ejemplos que muestran la concordancia de  ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content> en las frases nominales son:</content>	
-	      </p>
-	      <example show="swNPAgreeYesOther"><interlinear exampleLoc="np/agreeOtherExample"/></example>
+	      	</p>
+	   	<p show="swNPAgreeYesNumber">
+	   		<content>Algunos ejemplos que muestran la concordancia de número en las frases nominales son:</content>	
+	   	</p>
+	   	<example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
+	   	
+	   	<p show="swNPAgreeOtherTypeNone">
+	   		<content>No hay concordancia en animacidad, clase, ni género entre los modificadores y el sustantivo principal. </content>
+	   	</p>
+	   	<p show="swNPAgreeClass">
+	   		<content>Los modificadores y el sustantivo principal concuerdan en clase.  Algunos ejemplos que muestran la concordancia de clase en las frases nominales son:</content>	
+	   	</p>
+	   	<example show="swNPAgreeClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
+	   	<p show="swNPAgreeClassifier">
+	   		<content>Un clasificador que concuerda con la clase o tipo del sustantivo está presente con los sustantivos que son contados o especificados, pero otros modificadores no se marcan para clase, como se muestran en estos ejemplos:</content>	
+	   	</p>
+	   	<example show="swNPAgreeClassifier"><interlinear exampleLoc="np/agreeClassifierExample"/></example>
+	   	<p show="swNPAgreeAnimacy">
+	   		<content>Algunos ejemplos que muestran la concordancia de animacidad en las frases nominales son:</content>	
+	   	</p>
+	   	<example show="swNPAgreeAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
+	   	<p show="swNPAgreeGender">
+	   		<content>Algunos ejemplos que muestran la concordancia de género en las frases nominales son:</content>
+	   	</p>
+	   	<example show="swNPAgreeGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
+	   	<p show="swNPAgreeOther">
+	   		<content>Las frases nominales en el </content><langName/><content> muestran la concordancia de  ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.  Algunos ejemplos de este tipo de concordancia son:</content>
+	   	</p>
+	   	<example show="swNPAgreeOther"><interlinear exampleLoc="np/agreeOtherExample"/></example>
 	   </section2>
 	   
 	   <section2 id="sNPCase">
@@ -111,7 +99,10 @@
 	            <caseText value="ergative"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</caseText>
 	            <caseText value="split"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</caseText>
 	         </case>
-	         <content/>
+	      	<text show="swNPCaseSplit"> 
+	      		<content> Las condiciones gramaticales en que el sistema ergativo-absolutivo se utiliza son ___</content><contentCheckBoxOther contentLoc="typology/splitConditions"/>
+	      		<content>.   </content>
+	      	</text>
 	      </p>
 	      
 	      <p><content>Esto se muestra en los siguientes ejemplos de oraciones transitivas con frases nominales como sujetos y objetos:</content></p>
@@ -508,15 +499,15 @@
 			            <content> genitivo </content>
 			         </text>
 			         <text show="swNPCaseSplitNotGen">
-			            <content>o </content>
+			            <content>o</content>
 			         </text>
 			         <content/>
 			         <text show="swNPPossCaseErg">
-			            <content>ergativo </content>
+			            <content> ergativo </content>
 			         </text>
 			         <content/>
 			         <text show="swNPPossCaseAbs">
-			            <content>absolutivo </content>
+			            <content> absolutivo </content>
 			         </text>
 			         <content> se presenta en el sustantivo principal, indica que un modificador adjetival y/o un posesivo deben estar presentes en la frase. Si el adjetivo está marcado con este </content>
 			         <content/>
@@ -528,15 +519,15 @@
 			            <content> genitivo </content>
 			         </text>
 			         <text show="swNPCaseSplitNotGen">
-			            <content>o </content>
+			            <content>o</content>
 			         </text>
 			         <content/>
 			         <text show="swNPPossCaseErg">
-			            <content>ergativo </content>
+			            <content> ergativo </content>
 			         </text>
 			         <content/>
 			         <text show="swNPPossCaseAbs">
-			            <content>absolutivo </content>
+			            <content> absolutivo </content>
 			         </text>
 			         <content> entonces otro adjetivo y/o un posesivo también deben estar presentes.</content>
 			      </text>
@@ -590,38 +581,38 @@
 					      <caseText value="yesPrefix">prefijo</caseText>
 					   </case>
 					   <text show="swNPPossCaseGen">
-							<content>genitivo </content>
+							<content> genitivo </content>
 						</text>
 						<text show="swNPCaseSplitNotGen">
-							<content>o el </content>
+							<content>o</content>
 						</text>
 						<content/>
 						<text show="swNPPossCaseErg">
-							<content>ergativo </content>
+							<content> ergativo </content>
 						</text>
 						<content/>
 						<text show="swNPPossCaseAbs">
-							<content>absolutivo </content>
+							<content> absolutivo </content>
 						</text>
 						<content> se presenta en el sustantivo principal, indica que un modificador adjetival y/o un posesivo debe presentarse en la frase. Si el adjetivo está marcado con este </content>
 					   <content/>
 					   <case element="np" attr="adjpCaseAffix">
-					      <caseText value="yesSuffix">sufijo,</caseText>
-					      <caseText value="yesPrefix">prefijo,</caseText>
+					      <caseText value="yesSuffix">sufijo</caseText>
+					      <caseText value="yesPrefix">prefijo</caseText>
 					   </case>
 					   <text show="swNPPossCaseGen">
-							<content>genitivo </content>
+							<content> genitivo </content>
 						</text>
 						<text show="swNPCaseSplitNotGen">
-							<content>o </content>
+							<content>o</content>
 						</text>
 						<content/>
 						<text show="swNPPossCaseErg">
-							<content>ergativo </content>
+							<content> ergativo </content>
 						</text>
 						<content/>
 						<text show="swNPPossCaseAbs">
-							<content>absolutivo </content>
+							<content> absolutivo </content>
 						</text>
 						<content> entonces otro adjetivo y/o un posesivo también debe presentarse.</content>
 					</text>
@@ -682,10 +673,11 @@
 					</text>
 					<content/>
 				</p>
+			   <p><content>Véase la sección </content><sectionRef sec="sNPPoss"/><content> para ejemplos de sustantivos poseídos.</content></p>
 			</section3>
 		   <section3 id="sNPossAbsolutive" show="swNPAbsolutiveYes">
 		      <secTitle>Indicador absolutivo</secTitle>
-		      <p><content>El </content><langName/><content> tiene un afijo que se presenta en sustantivos cuando no están poseídos o pluralizados. Este afijo es conocido como el indicador absolutivo, pero el nombre no está relacionado con el indicador de caso absolutivo usado en lenguas con un sistema de caso ergativo-absolutivo.</content></p>
+		   	<p><content>El </content><langName/><content> tiene un afijo que se presenta en sustantivos cuando no están poseídos o pluralizados, o tal vez cuando no tiene ningún modificador. Este afijo es conocido como el indicador absolutivo, pero el nombre no está relacionado con el indicador de caso absolutivo usado en lenguas con un sistema de caso ergativo-absolutivo.</content></p>
 		      <p><content>Las formas de esta afijo que se utilizan en el </content><langName/><content> son:</content></p>
 		      <example show="swNPAbsolutiveYes">
 		         <table border="1">
@@ -829,166 +821,44 @@
 			</section2>
 
 	</section1>
-<showWhen id="swNPAgreeYesNumber">
-	<whenValue element="np"  attr="agreeNumber" value="yes"/>
-</showWhen>
-   <showWhen id="swNPAgrClass">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrGender">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrAnimacy">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrOther">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassGender">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassAnimacy">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassOther">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassAnimacyGender">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassAnimacyOther">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassGenderOther">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassAnimacyGenderOther">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrGenderAnimacy">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrGenderOther">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrGenderAnimacyOther">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrAnimacyOther">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   
-	<showWhen id="swNPAgreeYesAnimacy">
-		<whenValue element="np"  attr="agreeOther" value="yes"/>
-	   <and/>
-	   <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+	<showWhen id="swNPAgreeYesNumber">
+		<whenValue element="np"  attr="agreeNumber" value="yes"/>
 	</showWhen>
-	<showWhen id="swNPAgreeYesClass">
-		<whenValue element="np"  attr="agreeOther" value="yes"/>
-	   <and/>
-	   <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+	<showWhen id="swNPAgreeOtherTypeNone">
+		<whenValue element="np/agreeClass" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeClassifier" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeGender" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeOtherNone" attr="checked" value="yes"/>
 	</showWhen>
-	<showWhen id="swNPAgreeYesGender">
-		<whenValue element="np"  attr="agreeOther" value="yes"/>
-	   <and/>
-	   <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-	</showWhen>
-      <showWhen id="swNPAgreeYesOther">
-         <whenValue element="np"  attr="agreeOther" value="yes"/>
-         <and/>
-         <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-      </showWhen>
-   <showWhen id="swNPCaseNoneAndExperiencerNo">
+	
+		<showWhen id="swNPAgreeClass">
+			<whenValue element="np/agreeClass" attr="checked" value="yes"/>
+			<and/>
+			<whenValue element="typology" attr="classifier" value="yesAgr"/>
+		</showWhen>
+		<showWhen id="swNPAgreeClassifier">
+			<whenValue element="np/agreeClassifier" attr="checked" value="yes"/>
+			<and/>
+			<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		</showWhen>
+		<showWhen id="swNPAgreeGender">
+			<whenValue element="np/agreeGender" attr="checked" value="yes"/>
+		</showWhen>
+		<showWhen id="swNPAgreeAnimacy">
+			<whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+		</showWhen>
+		<showWhen id="swNPAgreeOther">
+			<whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+		</showWhen>
+		
+	<showWhen id="swNPCaseNoneAndExperiencerNo">
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
       <whenValue element="typology" attr="caseExperiencer" value="no"/>

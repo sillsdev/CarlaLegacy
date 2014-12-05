@@ -32,17 +32,17 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>¡Hola!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>¡Adiós!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Hasta luego</langData>
-<xsl:text>, </xsl:text>
+<xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -117,12 +117,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>¡Ay!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>¡Caramba!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -357,7 +357,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>¡Qué tremendo para usted!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> y </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

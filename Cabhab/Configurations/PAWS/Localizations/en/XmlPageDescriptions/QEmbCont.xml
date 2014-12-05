@@ -44,7 +44,7 @@
          <checkbox id="QEmbContCliticSuffix" dataItem="embContSuffix">As a suffix which attaches to the embedded clause verb</checkbox>
          <checkbox id="QEmbContCliticOther" dataItem="embContCliticOther">In my language, these elements may attach as follows: <textBox  id="QEmbContCliticOtherContent" dataItem="embContCliticOther" rows="2"/></checkbox>
       </checkboxGroup>
-      <prompt id="QEmbContCliticPosNoCheckPrompt" show="swQEmbContWordNoOrSomeandNoCheck">WARNING: You need to check at least one box to describe how these embedded clause question markers attach in your language, or change the answer above to ‘Yes, they are all independent words’.</prompt>
+      <prompt id="QEmbContCliticPosNoCheckPrompt" show="swQEmbContWordNoOrSomeandNoCheck">WARNING: You need to check at least one box to describe how these embedded clause question markers attach in your language, or change the answer above to ‘Yes’.</prompt>
       
       <prompt id="QEmbContCliticsExamplesPrompt" show="swQEmbContCliticProcliticOrEnclitic"><br/>Key the clitics which are used to mark embedded clause questions here, with an equal sign to indicate which side it attaches to the embedded question on:</prompt>    
       <textBox id="QEmbContCliticExamples" dataItem="embContCliticExample" show="swQEmbContCliticProcliticOrEnclitic" rows="3"/>    

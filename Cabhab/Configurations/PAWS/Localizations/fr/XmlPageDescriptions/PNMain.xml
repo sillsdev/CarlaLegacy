@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="PNMain" count="1/3">
+	<title>Noms Propres</title>
+	<introduction>Les noms propres constituent une classe spéciale de substantifs ou de syntagmes nominaux.  En français, certains nom propres peuvent se présenter seuls, comme <example>Susanne</example> ou <example>Russie</example>.  D’autres sont comme les substantifs composés, tels que <example>George Washington</example>.  Les noms propres peuvent aussi contenir des articles et/ou des <technicalTermRef term="ttAdpositionalPhrases">syntagmes adpositionnels</technicalTermRef> comme <example>les Etats-Unis d’Amérique</example>.  Bien des langues exigent un article devant un nom.  Les appositifs se présentent, parfois avec un possesseur, comme <example>mon fils, David</example> mais on les traitera plus tard dans la <section number="15.">Constructions Coordonées</section>. En plus, les noms propres peuvent être modifiés par des adjectifs et des propositions relatives, comme dans <example>la belle France</example> ou <example>la Susanne Leblanc que je connais</example>.</introduction>
+	<form section="prop">
+		<prompt>Entrez ici vos exemples de noms propres, simples ou composés, ou ceux qui comprennent des articles, des démonstratifs, des adjectifs, et/ou des possesseurs (si cela est permis):</prompt>
+		<textBox id="PNExample" dataItem="example"/>
+<br/><br/>
+	   <radioGroup id="PNClassifiersTable" show="swOTClassifierAgr">
+	      <groupName dataItem="pnClassifier" default="no">RPNClassifiers</groupName>
+	   	<prompt>Les noms propres de votre langue, ont-ils des marqueurs qui font partie du système de concorde?</prompt>
+	   	<radio id="PNClassifiersNo" dataValue="no">Non, les noms propres ne sont pas marqués pour indiquer leur classe</radio>
+	   	<radio id="PNClassifiersYes" dataValue="yes">Oui, les noms propres sont marqués pour indiquer la classe tout comme les 
+	   		substantifs
+	   	</radio>
+	   </radioGroup>
+	   <radioGroup id="PNDeterminersTable" show="swNPArtAndDemNotNo">
+	   <groupName dataItem="pnDeterminer" default="no">RPNDeterminer</groupName>
+	   	<prompt>Les noms propres de votre langue doivent-ils contenir <span id="PNArtOnlySpan" show="swNPArtAndDemArt">un article</span>
+	   		<span id="PNDemOnlySpan" show="swNPArtAndDemDem">un démonstratif</span><span id="PNArtAndDemSpan" show="swNPArtAndDemBoth">un article ou un démonstratif</span> ou un possesseur?</prompt>
+	   	<radio id="PNDeterminerNone" dataValue="none">Non, ces modificateurs ne sont pas permis pour les noms propres</radio>
+	   	<radio id="PNDeterminerNo" dataValue="no">Non, comme en français, ces éléments sont permis, mais pas obligatoires</radio>
+	   	<radio id="PNDeterminerYes" dataValue="yes">Oui, tout nom propre doit contenir au moins un de ces éléments</radio>
+	</radioGroup>
+	   <br/>
+		<br/>
+		<prompt>Entrez ici vos exemples de noms propres avec syntagmes adpositionnels:</prompt>
+		<textBox id="PNPPExample" dataItem="ppExample"/>
+		<br/>
+		<br/>
+		<prompt>Entrez ici vos exemples de noms propres modifiés par des propositions relatives, compris dans des phrases simples mais complètes:</prompt>
+		<textBox id="PNRelClExample" dataItem="relClExample"/>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="PNMainBack" value="Back" goto="Contents.htm"/>
+		    <button id="PNMainNext" value="Next" goto="PNCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+   <showWhen id="swOTClassifierAgr">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>   
+   </showWhen>
+   <showWhen id="swNPArtAndDemArt">
+      <whenValue element="np" attr="artAndDem" value="article"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDem">
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemBoth">
+      <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemNotNo">
+      <whenValue element="np" attr="artAndDem" value="article"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

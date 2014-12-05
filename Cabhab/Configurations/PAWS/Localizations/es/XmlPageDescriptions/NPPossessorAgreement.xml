@@ -30,7 +30,7 @@
             <radio id="NPPossAgrNo" dataValue="no">No</radio>
             <radio id="NPPossAgrYes" dataValue="yes">Sí</radio>
         </radioGroup>
-       <prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYesAndNotPractical">Mire las características de la tabla abajo y compruebe (haga clic) cualquiera que su lengua utiliza. In the lexicon, add that feature to the appropriate entires.  La concordancia de clase fue analizado en <section number="1.">La tipología - clasificadores</section>.  <br/>
+       <prompt id="NPPossAgrYesInstruction" show="swNPPossAgrYesAndNotPractical">Mire las características de la tabla abajo y compruebe (haga clic) cualquiera que su lengua utiliza. In the lexicon, add that feature to the appropriate entires.  La concordancia de clase fue analizado en <section number="1.">La tipología - Clases de sustantivo y clasificadores</section>.  <br/>
             <featureChart>
                 <featureRow>
                     <featureType rowspan="5">persona</featureType>
@@ -103,15 +103,15 @@
        <instruction id="NPPossNounAgrKeyedInstruction" show="swNPArtAndOrDem">If you followed instructions, any agreement marking on nouns for number, gender, animacy and/or class should have already been done in the section on Articles and Demonstratives.  If not, return there to complete the feature marking in the lexicon, before continuing on.</instruction>
        <br/><br/>
  <introduction>
-    Además, algunas lenguas tienen un afijo que se presenta en los sustantivos cuando no están poseídos o pluralizados. Estse afijo es conocido como el indicador absolutivo, pero el nombre no está relacionado con el indicador de caso absolutivo usado en lenguas con un sistema de caso ergativo-absolutivo.  
+    Además, algunas lenguas tienen un afijo que se presenta en los sustantivos cuando no están poseídos o pluralizados, o tal vez cuando no tiene ningún modificador. Estse afijo es conocido como el indicador absolutivo, pero el nombre no está relacionado con el indicador de caso absolutivo usado en lenguas con un sistema de caso ergativo-absolutivo.  
  </introduction>
        <radioGroup>
           <groupName dataItem="possAbsolutive" default="no">RNPPossAbsolutive</groupName>
-          <prompt><br/>¿Tiene su lengua un afijo que se presenta en sustantivos cuando no están poseídos o pluralizados?</prompt>
+          <prompt><br/>¿Tiene su lengua un afijo que se presenta en sustantivos cuando no están poseídos o pluralizados, o tal vez cuando no tiene ningún modificador?</prompt>
           <radio id="NPPossAbsolutiveNo" dataValue="no">No</radio>
           <radio id="NPPossAbsolutiveYes" dataValue="yes">Sí</radio>
        </radioGroup>
-       <prompt id="NPPossAbsolutiveYesPrompt" show="swNPPossAbsolutiveYes">Escriba los afijos que se presentan en sustantivos cuando no están poseídos o pluralizados aquí (con cada uno en linea separada). Utilice un guión después de los caracteres alfabéticos para indicar un prefijo, un guión antes de indicar un sufijo y guiones en ambos lados para indicar un infijo.</prompt>
+       <prompt id="NPPossAbsolutiveYesPrompt" show="swNPPossAbsolutiveYes">Escriba los afijos que se presentan en sustantivos en estas situaciones aquí (con cada uno en linea separada). Utilice un guión después de los caracteres alfabéticos para indicar un prefijo, un guión antes de indicar un sufijo y guiones en ambos lados para indicar un infijo.</prompt>
        <textBox id="NPPossAbsolutiveAffixExample" dataItem="possAbsolutiveAffixExample" rows="3" cols="20" show="swNPPossAbsolutiveYes"/>
        <br/><br/>
        <buttons>

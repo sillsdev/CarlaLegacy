@@ -18,14 +18,15 @@
 	      Escriba algunos ejemplos de frases nominales con posesivos simples aquí.  Incluye tanto pronombres como frases nominales como posesivos en los ejemplos.</prompt>
 	   <textBox id="NPPossExample" dataItem="possessorExample" cols="50"/>
 	   <br/>
+	   <prompt>
+	   	Escriba algunos ejemplos de frases nominales poseídas con frases adposicionales como el posesivo aquí, como en <example>este libro de Juan'</example>, si se permite:</prompt>
+	   <textBox id="NPPossPPExample" dataItem="ppExample"/>
+	   <br/>
 	   <prompt>Observe que los posesivos también pueden ser subordinados uno en otro, como en <example>the boy's sister's dog ‘el perro de la hermana del muchacho'</example>.  Esto se permite en español dentro de la frase preposicional después del sustantivo.</prompt>
 	   <br/>
 	   <prompt>
 	      Escriba algunos ejemplos de frases nominales poseídas con otro posesivo subordinado en el posesivo aquí:</prompt>
 	   <textBox id="NPPossEmbeddedExample" dataItem="embeddedExample"/>
-	   <br/><prompt>
-	      Escriba algunos ejemplos de frases nominales poseídas con frases adposicionales en el posesivo aquí:</prompt>
-		<textBox id="NPPossPPExample" dataItem="ppExample"/>
 		<br/>
 		<prompt>
 		   Escriba algunos ejemplos de oraciones completas con cláusulas relativas en el posesivo aquí:</prompt>
@@ -91,9 +92,9 @@
 	      <radio id="NPPossMarkedYesWordRequiredYes" dataValue="yes">Sí, se requiere siempre</radio>
 	      </radioGroup>
 	   <checkboxGroup id="NPPossMarkedYesWordPosTable" show="swNPPossMarkedYesWord">
-	      <prompt><br/>¿Dónde se presenta el indicador posesivo con respecto de la frase nominal? Seleccione todas las opciones que son correctas en su lengua</prompt>
-	      <checkbox id="NPPossMarkedYesWordBefore" dataItem="possWordBefore">Antes de la frase nominal</checkbox>
-	      <checkbox id="NPPossMarkedYesWordAfter" dataItem="possWordAfter">Después de la frase nominal</checkbox>
+	      <prompt><br/>¿Dónde se presenta el indicador posesivo con respecto de la frase que expresa el poseedor? Seleccione todas las opciones que son correctas en su lengua</prompt>
+	      <checkbox id="NPPossMarkedYesWordBefore" dataItem="possWordBefore">Antes de la frase</checkbox>
+	      <checkbox id="NPPossMarkedYesWordAfter" dataItem="possWordAfter">Después de la frase</checkbox>
 	      <checkbox id="NPPossMarkedYesWordBoth" dataItem="possWordBoth">En ambos lados</checkbox>
 	      <checkbox id="NPPossMarkedYesWordOther" dataItem="possWordOther">En mi lengua, el indicador posesivo se presenta: <textBox  id="NPPossMarkedYesWordOtherContent" dataItem="possWordOther" rows="2"/></checkbox>
 	   </checkboxGroup>

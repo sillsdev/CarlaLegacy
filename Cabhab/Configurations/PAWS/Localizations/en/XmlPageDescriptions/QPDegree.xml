@@ -14,11 +14,11 @@ such as <example>very</example> and <example>so</example>, as in <example>very m
 	<form section="qp">
 	   <radioGroup id="QPQuantifierClassifierAgrTable" show="swOTClassifierAgr"> 
 	      <groupName dataItem="quantifierClassifier" default="no">RQPQuantifierClassifierAgr</groupName>
-	      <prompt>You said that your language has classifiers which mark concord agreement throughout the nominal phrases.  Do these quantifiers have classifiers attached to them?</prompt>
-	      <radio id="QPQuantifierClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
-	      <radio id="QPQuantifierClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement throughout the nominal phrase</radio>
+	      <prompt>You said that your language has noun class markers with concord agreement throughout the nominal phrases.  Are these quantifiers marked for class?</prompt>
+	      <radio id="QPQuantifierClassifierAgrNo" dataValue="no">No, these elements are not marked for class</radio>
+	      <radio id="QPQuantifierClassifierAgrYes" dataValue="yes">Yes, these elements are marked for class as part of the concord agreement throughout the nominal phrase</radio>
 	   </radioGroup>
-	   <prompt id="QPQuantifierClassifierAgrPrompt" show="swOTClassifierAgrAndQuantifierYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the quantifiers here.</prompt>	   
+	   <prompt id="QPQuantifierClassifierAgrPrompt" show="swOTClassifierAgrAndQuantifierYes">Since you have already detailed the forms of the noun class markers, you only need to enter the roots for each of the quantifiers here.</prompt>	   
 <br/>
 	   <prompt>Key the way your language expresses “many” (which modifies nouns which can be counted), with each word on a separate line. </prompt>
 	   <textBox id="QPManyExample" dataItem="many" rows="3"/>
@@ -50,11 +50,11 @@ such as <example>very</example> and <example>so</example>, as in <example>very m
 <br/>
 	   <radioGroup id="QPDegreeClassifierAgrTable" show="swOTClassifierAgrAndDegreeYesOrSome">
 	      <groupName dataItem="degreeClassifier" default="no">RQPDegreeClassifierAgr</groupName>
-	      <prompt>You said that your language has classifiers which mark concord agreement throughout the nominal phrases.  Do these degree words which modify the quantifiers have classifiers attached to them?</prompt>
-	      <radio id="QPDegreeClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
-	      <radio id="QPDegreeClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement throughout the nominal phrase</radio>
+	      <prompt>You said that your language has noun class markers with concord agreement throughout the nominal phrases.  Are these degree words which modify the quantifiers marked for class?</prompt>
+	      <radio id="QPDegreeClassifierAgrNo" dataValue="no">No, these elements are not marked for class</radio>
+	      <radio id="QPDegreeClassifierAgrYes" dataValue="yes">Yes, these elements are marked for class as part of the concord agreement throughout the nominal phrase</radio>
 	   </radioGroup>
-	   <prompt id="QPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAndDegreeYesOrSomeAndClassifierYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the degree words here.</prompt>	   
+	   <prompt id="QPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAndDegreeYesOrSomeAndClassifierYes">Since you have already detailed the forms of the noun class markers, you only need to enter the roots for each of the degree words here.</prompt>	   
 	   
 	   <br/>
 		<prompt id="QPDegreeWordYesExamples" show="swQPDegreeYesOrSome">Key examples of the degree words here, with each on a separate line.  Note that these degree words will most likely not be the same as the ones which can modify an entire nominal phrase dealt with in the first section above.</prompt>

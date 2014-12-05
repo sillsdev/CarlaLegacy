@@ -4,7 +4,7 @@
 	<section1 id="sIP">
 		<secTitle>Las oraciones básicas</secTitle>
 		<p>
-		   <content>E esta sección se consideran las oraciones copulativas, las intransitivas, las transitivas, las ditransitivas, las imperativas, las pasivas y las causativas en su orden de palabras básico (es decir sin cambio del foco, tópico, por interrogación o en construcciones de negación).  
+		   <content>En esta sección se consideran las oraciones copulativas, las intransitivas, las transitivas, las ditransitivas, las imperativas, las condicionales, las subjuntivas, las pasivas y las causativas en su orden de palabras básico (es decir sin cambio del foco, tópico, por interrogación o en construcciones de negación).  
 				De acuerdo con lo observado en la sección </content>
 			<sectionRef sec="sIntro"/>
 			<content>,  la tipología del </content>
@@ -172,9 +172,9 @@
 		   
 		   <section3 id="sIPComparatives">
 		      <secTitle>Comparativas y Superlativas</secTitle>
-		      <p><content>Las oraciones comparativas son un subclase de oraciones copulativas. Consideraremos dos tipos que clasifican dos entidades (objetos o personas) como iguales, después las comparativas en que una entidad (objeto o persona) se considera mejor que la otra, y entonces las superlativas. Todos estos tipos normalmente pueden utilizar un verbo copulativo o un verbo de percepción. </content></p>
-		      <p contentType="ctPracticalIntro"><content>La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción nominal de igualidad utiliza una fórmula que significa </content><langData>‘el mismo Sustantivo que’</langData><content> entre dos frases nominales.</content></p>
-		      <p contentType="ctComparativeIntro"><content>La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción nominal de igualidad utiliza una fórmula que significa </content><langData>‘el mismo Sustantivo que’</langData><content> entre dos frases nominales. Algunos ejemplos en español son: </content>
+		      <p><content>Las oraciones comparativas son una subclase de oraciones copulativas. Consideraremos dos tipos que clasifican dos entidades (objetos o personas) como iguales, después las comparativas en que una entidad (objeto o persona) se considera mejor que la otra, y entonces las superlativas. Todos estos tipos normalmente pueden utilizar un verbo copulativo o un verbo de percepción. </content></p>
+		      <p contentType="ctPracticalIntro"><content>La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción nominal de igualdad utiliza una fórmula que significa </content><langData>‘el mismo Sustantivo que’</langData><content> entre dos frases nominales.</content></p>
+		      <p contentType="ctComparativeIntro"><content>La comparación de iguales puede utilizar un sustantivo o un adjetivo para la comparación.  La construcción nominal de igualdad utiliza una fórmula que significa </content><langData>‘el mismo Sustantivo que’</langData><content> entre dos frases nominales. Algunos ejemplos en español son: </content>
 		         <langData>Las cortinas se ven del mismo color que las paredes</langData><content>, </content><langData>Su mochila es del mismo tamaño que la mía</langData><content> y </content>
 		         <langData>Susana tiene el mismo peinado que María</langData><content>. </content></p>
 		      
@@ -212,8 +212,8 @@
 		         </table>
 		      </example>
 		      <p><content/><case element="ip" attr="compareN">
-		         <caseText value="yes">Se usa la suguiente conjunción comparativa que significa ‘que’ antes de la segunda frase nominal:</caseText>
-		         <caseText value="no">No hay una conjunción comparativa  que significa ‘que’ antes de la segunda frase nominal en la construcción nominal de igualidad.</caseText>
+		         <caseText value="yes">Se usa la siguiente conjunción comparativa que significa ‘que’ antes de la segunda frase nominal:</caseText>
+		         <caseText value="no">No hay una conjunción comparativa  que significa ‘que’ antes de la segunda frase nominal en la construcción nominal de igualdad.</caseText>
 		      </case>
 		      </p>
 		      
@@ -364,7 +364,7 @@
 		         <caseText value="no"> require que la oración completa se repite después del comparativo.   </caseText>
 		      </case>
 		         <content/><case element="ip" attr="comparative">
-		            <caseText value="yes">Hay una conjunción comparativa que significa ‘que’ que utiliza en ambos las comparativas cortas y más completas, como muestra en el cuadro de arriba.</caseText>
+		            <caseText value="yes">Hay una conjunción comparativa que significa ‘que’ que utiliza en ambos las comparativas cortas y más completas, como se muestra en el cuadro de arriba.</caseText>
 		            <caseText value="no">No hay una conjunción comparativa que significa ‘que’, entonces este tipo de comparativa simplemente tendrá las dos partes de la oración seguida una de la otra.</caseText>
 		         </case>
 		      </p>
@@ -375,7 +375,7 @@
 		         <interlinear exampleLoc="ip/comparativeSentExample"/>
 		      </example>
 		      
-		      <p contentType="ctComparativeIntro"><content>Las oraciones superlativas son otro subclase de oraciones copulativas, directamente relacionadas con las comparativas. Comparan una frase nominal con algo plural que puede expresarse como frase </content>
+		      <p contentType="ctComparativeIntro"><content>Las oraciones superlativas son otra subclase de oraciones copulativas, directamente relacionadas con las comparativas. Comparan una frase nominal con algo plural que puede expresarse como frase </content>
 		         <case element="pp" attr="pPos">
 		            <caseText value="before">preposicional</caseText>
 		            <caseText value="after">posposicional</caseText>
@@ -446,7 +446,7 @@
 		         <langData>There is no more food</langData><gloss><content> ‘No hay más comida</content></gloss><content>.</content>            
 		      </p>
 		      <p contentType="ctComparativeIntro"><content>En vez de esta palabra existencial, algunas lenguas tienen un verbo existencial, como </content><langData>hay</langData><content> en español.  Otras lenguas tienen un sistema entero de los verbos existenciales que expresan la posición del objeto que se describe.</content></p> 
-		      <p contentType="ctPracticalIntro"><content>Las oraciones existenciales se distinguen de las oracionea copiulativas por tienen verbos existenciales y/o palabras existenciales junto con una frase nominal y generalmente un lugar..</content></p>
+		      <p contentType="ctPracticalIntro"><content>Las oraciones existenciales se distinguen de las oracionea copulativas en que tienen verbos existenciales y/o palabras existenciales junto con una frase nominal y generalmente un lugar.</content></p>
 		      
 		      <p><content>El </content><langName/>
 		         <text show="swIPExistNone"><content> no distingue las oraciones existenciales en absoluto. Son exactamente la misma que las oraciones copulativas ejemplificadas anteriormente en la sección </content><sectionRef sec="sIPCop"/><content>.</content></text>
@@ -543,7 +543,7 @@
 	         <interlinear exampleLoc="typology/pnIntExample"/>
 	      </example>
 	      <p>
-	         <content>Algunos ejemplos con un sujeto-experimentador se muestran en </content><exampleRef num="xIntranExperiencerNP"/><content>-</content><exampleRef num="xIntranExperiencerPron"/><content>.  En </content><exampleRef num="xIntranExperiencerNP"/><content> una frase nominal o un nombre en la posición del sujeto, mientras que en </content><exampleRef num="xIntranExperiencerPron"/><content> el sujeto es un pronombre.</content>
+	         <content>Algunos ejemplos con un sujeto-experimentador se muestran en </content><exampleRef num="xIntranExperiencerNP"/><content>-</content><exampleRef num="xIntranExperiencerPron"/><content>.  En </content><exampleRef num="xIntranExperiencerNP"/><content> hay una frase nominal o un nombre en la posición del sujeto, mientras que en </content><exampleRef num="xIntranExperiencerPron"/><content> el sujeto es un pronombre.</content>
 	      </p>
 	      <example num="xIntranExperiencerNP">
 	         <interlinear exampleLoc="typology/experiencerIntExample"/>
@@ -783,7 +783,7 @@
 	            <caseText value="yes">se puede indicar con una palabra independiente, que es requerida cuando la frase condicional se presenta primera en la oración condicional.  </caseText>
 	            <caseText value="optional">se puede indicar con una palabra independiente, pero es opcional en todas las oraciones condicionales.  </caseText>
 	            <caseText value="no">nunca se indica con una palabra independiente.</caseText></case>
-	         <content>Esta palabra se presenta </content>
+	         <content> Esta palabra se presenta </content>
 	         <case element="ip" attr="consequencePos">
 	            <caseText value="before">antes</caseText>
 	            <caseText value="after">después</caseText></case>
@@ -950,8 +950,8 @@
 					</text>
 					<content>  En las oraciones pasivas </content>
 					<case element="ip" attr="passiveAux">
-						<caseText value="no">no se</caseText>
-						<caseText value="yes">se</caseText>
+						<caseText value="no">no se requiere</caseText>
+						<caseText value="yes">se requiere</caseText>
 					</case>
 	         <content> un auxiliar específico.</content>
 				
@@ -1137,7 +1137,35 @@
 	         <interlinear exampleLoc="ip/causativeOtherExample"/>
 	      </example>
 	   </section2>
-	   
+		<section2 id="sIPApplcatives" show="swIPApplicativeYes">
+			<secTitle>Aplicativas</secTitle>
+			<p contentType="ctComparativeIntro">
+				<content>Algunas lenguas tienen una construcción adicional aplicativa.  La aplicativa es una voz del verbo que promueve un argumento oblicua del verbo al argumento de objeto e indica la relación gramatical del oblicuo en el significado del verbo. Se convierte un verbo intransitivo a un transitivo y un verbo transitivo se convierte en ditransitivo cuando se añade el afijo aplicativo. Esto está en contraste con expresar estos argumentos con adposiciones.</content></p>
+			<p contentType="ctComparativeIntro"><content> La voz aplicativa puede utilizarse para las relaciones gramaticales de comitativo, locativo, instrumento y benefactivo. Algunas lenguas permiten más de uno afijo aplicativo en un verbo.</content></p>
+			<p contentType="ctPracticalIntro">
+				<content>La aplicativa es una voz del verbo que promueve un argumento oblicua del verbo al argumento de objeto e indica la relación gramatical del oblicuo en el significado del verbo. Se convierte un verbo intransitivo a un transitivo y un verbo transitivo se convierte en ditransitivo cuando se añade el afijo aplicativo. 
+				</content>
+			</p>
+			<p ><content>En el </content><langName/><content>, el afijo aplicativo es:</content></p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>Afijo de voz aplicativa</headerCol>
+						<headerCol>Glosa</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="ip/applicativeVoice"/>
+						<col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
+					</row>
+				</table>
+			</example>
+			<p><content>Algunos ejemplos de oraciones aplicativas en el </content><langName/><content> son:</content></p>
+			<example>
+				<interlinear exampleLoc="ip/applicativeExample"/>
+			</example>
+		</section2>
+		
+		
 	</section1>
 	<showWhen id="swVSOorOSV">
 		<whenValue element="typology" attr="wordOrder" value="VSO"/>
@@ -1925,7 +1953,10 @@
             <and/>
             <whenValue element="ip/subjunctiveCondWordOther" attr="checked" value="yes"/>
          </showWhen>
-   
+	<showWhen id="swIPApplicativeYes">
+		<whenValue element="ip" attr="applicative" value="yes"/>
+	</showWhen>
+	
    <showWhen id="swIPAntipassiveYes">
       <whenValue element="ip" attr="antipassive" value="yes"/>
    </showWhen>

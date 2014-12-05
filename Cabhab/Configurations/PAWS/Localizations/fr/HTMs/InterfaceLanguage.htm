@@ -1,0 +1,35 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css"> 
+    <title>Langue de l'interface</title>
+<script language="jscript" id="clientEventHandlersJS" src="InterfaceLanguage.js">
+  </script></head>
+<body onload="Initialize()">
+    <h2>Langue de l'interface</h2>
+<div class="introduction">
+    <p>L'interface d’utilisateur du programme de PAWS est disponible dans les langues suivantes. Choisissez celle qui vous conviendra ci-dessous.</p>
+</div><br><div class="form">
+<table border="0" style="margin-left: 0.5in">
+<tr>
+    <td colspan="2"><span class="radioPrompt">En quelle langue est l'interface d’utilisateur?  Lorsque vous changer la langue, vous devez redémarrer PAWS pour que les modifications prennent plein effet.  (When you change the language, you must restart PAWS before the changes take full effect.)  (Presione este botón, tiene que empezar el programa PAWS otra vez.)</span></td>
+</tr>
+<tr>
+    <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEn" onclick="RInterfaceLang(InterfaceLangEn)" value="False"></td>
+    <td width="99%" id="InterfaceLangEnPrompt" onclick="RInterfaceLang(InterfaceLangEn)" value="False" onmouseover="this.style.cursor='default'">Anglais (English)</td>
+</tr>
+<tr>
+    <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEs" onclick="RInterfaceLang(InterfaceLangEs)" value="True"></td>
+    <td width="99%" id="InterfaceLangEsPrompt" onclick="RInterfaceLang(InterfaceLangEs)" value="True" onmouseover="this.style.cursor='default'">Espangnol (Spanish) </td>
+</tr>
+    <tr>
+        <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangFr" onclick="RInterfaceLang(InterfaceLangFr)" value="True"></td>
+        <td width="99%" id="InterfaceLangFrPrompt" onclick="RInterfaceLang(InterfaceLangFr)" value="True" onmouseover="this.style.cursor='default'">Français (French) </td>
+    </tr>
+</table>
+</div>
+    <div align="center" id="Return"  class="return" >
+<a href="LeftOffAt" onclick="copyFiles()">Retour</a><br/>
+</div>
+</body>
+</html>

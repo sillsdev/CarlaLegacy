@@ -51,7 +51,7 @@
              <br/>How are the reciprocals that fill the object position formed in your language? Check all options that are correct for your language</prompt>
           <checkbox id="PronRecipAffixNoWord" dataItem="recipDistinct">They are distinct, stand alone words</checkbox>
           <checkbox id="PronRecipAffixYes" dataItem="recipAffix">One or more affixes are chosen among to make another pronoun into a reciprocal</checkbox>
-          <checkbox id="PronRecipAffixNoNoun" dataItem="reciplNounPoss">A phrase consisting of a certain noun with a pronoun as the possessor is used</checkbox>
+          <checkbox id="PronRecipAffixNoNoun" dataItem="recipNounPoss">A certain noun with a pronoun as the possessor is used</checkbox>
           <checkbox id="PronRecipAffixNoQP" dataItem="recipQP">Special quantified noun phrases are used</checkbox>
           <checkbox id="PronRecipAffixOther" dataItem="recipOther">My language does the following to form a reciprocal:<textBox  id="PronRecipAffixOtherContent" dataItem="recipOther" rows="2"/></checkbox>
        </checkboxGroup>
@@ -71,7 +71,7 @@
        </prompt>
        <textBox id="PronReflAffixExamples" dataItem="pronRecipAffixExample"  rows="2" show="swPronRecipAffixYes"/> 
        <instruction id="PronRecipAffixYesInstruction" show="swPronRecipAffixYes">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant affix(es).</instruction>
-       <prompt id="PronRecipAffixNoNounPrompt" show="swPronRecipAffixNoNoun"><br/>Key the special noun that is possessed by the possessor pronouns to form a reciprocal phrase that acts the same as a reciprocal pronoun here:
+       <prompt id="PronRecipAffixNoNounPrompt" show="swPronRecipAffixNoNoun"><br/>Key the special noun that is possessed by the possessor pronouns to form a reciprocal phrase or a reciprocal pronoun here:
        </prompt>
        <textBox id="PronRecipNounPossExamples" dataItem="pronRecipNounPossExample"  rows="2" show="swPronRecipAffixNoNoun"/> 
        <instruction id="PronRecipAffixNoNounInstruction" show="swPronRecipAffixNoNoun">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant noun.</instruction>

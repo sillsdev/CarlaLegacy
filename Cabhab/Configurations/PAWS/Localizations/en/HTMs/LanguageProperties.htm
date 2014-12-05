@@ -3,70 +3,75 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css">
 <title>Language Properties</title>
-<script language="jscript" id="clientEventHandlersJS">
-// LanguageProperties.js
-
-// variables used throughout functions below
-var attr;
-
-function Initialize() {
-	window.external.GetAnswerValue("//language/langNames/langName[@lang='en']");
-	LangPropLangNameEn.value = window.external.OutValue;
-	window.external.GetAnswerValue("//language/langNames/langName[@lang='es']");
-	LangPropLangNameEs.value = window.external.OutValue;
-	window.external.GetAnswerValue("//language/langAbbr");
-	LangPropLangAbbr.value = window.external.OutValue;
-
-	window.external.GetAnswerValue("//language/font/fontName");
-	LangPropFont.value = window.external.OutValue;
-	window.external.GetAnswerValue("//language/font/@rtl");
-	attr = window.external.OutValue;
-	if (attr == "False")
-	LangPropRTLLTR.checked = true; else
-	LangPropRTLRTL.checked = true;
-
-	ShowBackNextButtons.style.display = "none";
-	Return.style.display = "";
-
-	Refresh()
-}
-function RLangPropRTL(radio) {
-	radio.checked = true;
-	saveData();
-	Refresh();
-}
-
-function saveData() {
-	var sTemp;
-	window.external.SetAnswerValue("//language/langNames/langName[@lang='en']", LangPropLangNameEn.value);
-	window.external.SetAnswerValue("//language/langNames/langName[@lang='es']", LangPropLangNameEs.value);
-	window.external.SetAnswerValue("//language/langAbbr", LangPropLangAbbr.value);
-
-	//TODO: figure what to do if any of these are missing!
-	sTemp = "False" // use default if all else fails...
-	if (LangPropRTLLTR.checked)
-	sTemp = "False";
-	if (LangPropRTLRTL.checked)
-	sTemp = "True";
-
-	window.external.SetAnswerValue("//language/font/@rtl", sTemp);
-
-	window.external.LanguageNameChanged();
-	window.external.SaveData();
-}
-function ButtonLangPropFont() {
-	saveData();
-	window.external.ChangeFontInfo();
-	Initialize();
-}
-function ButtonNext() {
-	saveData();
-	window.navigate("LanguageFilesNewMode");
-}
-function Refresh() {
-	var valArray = new Array();
-}
-  </script></head>
+  <!-- we keep the script file here so we can make changes between
+    processing a new language and editing an existing one -->
+  <script language="jscript" id="clientEventHandlersJS">
+  // LanguageProperties.js
+  
+  // variables used throughout functions below
+  var attr;
+  
+  function Initialize() {
+  window.external.GetAnswerValue("//language/langNames/langName[@lang='en']");
+  LangPropLangNameEn.value = window.external.OutValue;
+  window.external.GetAnswerValue("//language/langNames/langName[@lang='es']");
+  LangPropLangNameEs.value = window.external.OutValue;
+  window.external.GetAnswerValue("//language/langNames/langName[@lang='fr']");
+  LangPropLangNameFr.value = window.external.OutValue;
+  window.external.GetAnswerValue("//language/langAbbr");
+  LangPropLangAbbr.value = window.external.OutValue;
+  
+  window.external.GetAnswerValue("//language/font/fontName");
+  LangPropFont.value = window.external.OutValue;
+  window.external.GetAnswerValue("//language/font/@rtl");
+  attr = window.external.OutValue;
+  if (attr == "False")
+  LangPropRTLLTR.checked = true; else
+  LangPropRTLRTL.checked = true;
+  
+  ShowBackNextButtons.style.display = "none";
+  Return.style.display = "";
+  
+  Refresh()
+  }
+  function RLangPropRTL(radio) {
+  radio.checked = true;
+  saveData();
+  Refresh();
+  }
+  
+  function saveData() {
+  var sTemp;
+  window.external.SetAnswerValue("//language/langNames/langName[@lang='en']", LangPropLangNameEn.value);
+  window.external.SetAnswerValue("//language/langNames/langName[@lang='es']", LangPropLangNameEs.value);
+  window.external.SetAnswerValue("//language/langNames/langName[@lang='fr']", LangPropLangNameFr.value);
+  window.external.SetAnswerValue("//language/langAbbr", LangPropLangAbbr.value);
+  
+  //TODO: figure what to do if any of these are missing!
+  sTemp = "False" // use default if all else fails...
+  if (LangPropRTLLTR.checked)
+  sTemp = "False";
+  if (LangPropRTLRTL.checked)
+  sTemp = "True";
+  
+  window.external.SetAnswerValue("//language/font/@rtl", sTemp);
+  
+  window.external.LanguageNameChanged();
+  window.external.SaveData();
+  }
+  function ButtonLangPropFont() {
+  saveData();
+  window.external.ChangeFontInfo();
+  Initialize();
+  }
+  function ButtonNext() {
+  saveData();
+  window.navigate("LanguageFilesNewMode");
+  }
+  function Refresh() {
+  var valArray = new Array();
+  }
+</script></head>
 <body onload="Initialize()">
 <h2>Language Properties</h2>
 <div class="introduction">
@@ -78,7 +83,9 @@ below.</p>
 <textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameEn" name="LangPropLangNameEn" contenteditable="inherit"></textarea>
 	<p style="margin-left: 0.125in">Enter the Spanish name of your language:<br></p>
 	<textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameEs" name="LangPropLangNameEs" contenteditable="inherit"></textarea>
-	<br><br><p style="margin-left: 0.125in">Enter an abbreviation for your language (we suggest using the Ethnologue or ISO639-3 code):<br></p>
+  <p style="margin-left: 0.125in">Enter the French name of your language:<br></p>
+  <textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="50" id="LangPropLangNameFr" name="LangPropLangNameFr" contenteditable="inherit"></textarea>
+  <br><br><p style="margin-left: 0.125in">Enter an abbreviation for your language (we suggest using the Ethnologue or ISO639-3 code):<br></p>
 <textarea class="vernacular" style="margin-left: 0.5in" wrap="off" rows="1" cols="4" id="LangPropLangAbbr" name="LangPropLangAbbr" contenteditable="inherit"></textarea>
 	    <p style="margin-left: 0.125in">The name of the font that will be used to display your language data is shown below.  Click on the 'Change font' button to change it or any of its font properties.<br></p>
 <textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="40" id="LangPropFont" name="LangPropFont" contenteditable="false"></textarea>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="NPAdjP" count="1/1">
+	<title level="2">Syntagmes Nominaux – Modificateurs de Syntagmes Adjectivaux</title>
+	<introduction>Les syntagmes adjectivaux viennent ensuite, déjà discutés dans la <section number="4">Adjectifs et Syntagmes Adjectivaux</section>.  Les adjectifs se trouvent près du nom. Quelques exemples de syntagmes nominaux incluant des syntagmes adjectivaux en anglais sont:</introduction>
+	<EnglishExample>
+		<exItem label="1.">those very dirty old books  « ces vieux livres très sales »</exItem>
+		<exItem label="2.">the boy’s many black dogs  « les nombreux chiens noirs du garçon »</exItem>
+		<exItem label="3.">all the clean dishes  « tous les plats propres »</exItem>
+		<exItem label="4.">happy little children  « des petits enfants heureux »</exItem>
+		<exItem label="5.">only the first ten very eager young boys  « seulement les dix premiers jeunes garçons très passionés »</exItem>
+	</EnglishExample>
+	<introduction>Comme tous les exemples en anglais le montrent, plus qu’un syntagme adjectival est en général permis avant le nom. <span id="NPAdjPRecurringIntro" show="swNotPractical"> Cela sera traité dans l’analyseur syntactique par une règle récursive.</span>  En français normalement l’adjectif se trouve après le nom, avec quelques exceptions précises; où deux ou plusieurs adjectifs accompagnent un nom, on peut se trouve avant et l’autre(s) après.</introduction>
+	<form section="np">
+		<prompt>Entrez ici des exemples de syntagmes nominaux pareils avec des modificateurs adjectivaux dans votre langue:</prompt>
+		<textBox id="NPAdjpExample" dataItem="adjpExample"/>
+		<br/>
+		<br/>
+		<checkboxGroup>
+			<prompt>Entrez ici des exemples de syntagmes nominaux pareils avec des modificateurs adjectivaux dans votre langue</prompt>
+			<checkbox id="NPAdjPPosBefore" dataItem="adjBefore">Avant le nom</checkbox>
+			<checkbox id="NPAdjPPosAfter" dataItem="adjAfter">Après le nom</checkbox>
+			<checkbox id="NPAdjPPosBoth" dataItem="adjBoth">Des deux côtés dans le même syntagme nominal</checkbox>
+			<checkbox id="NPAdjPPosOther" dataItem="adjPosOther">Dans ma langue l’adjectif peut se trouver comme suit par rapport au nom: <textBox  id="NPAdjPPosOtherContent" dataItem="adjPosOther" rows="2"/></checkbox>
+		</checkboxGroup>
+		<prompt id="NPAdjPPosNoCheckPrompt" show="swNPAdjPPosNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les syntagmes adjectivaux par rapport au nom dans votre langue.</prompt>
+	   <instruction id="NPAdjPPosEitherSideRestrictedInstruction" show="swNPAdjPPosEitherSideRestricted">In the lexicon, mark those adjectives which can only occur before the noun with the feature <feature>DP-initial</feature> and those which can only occur after the noun with the feature <feature>DP-final</feature>. Do not enter either feature on any adjective which can occur on either side.</instruction>
+		<radioGroup id="NPAdjClassifierSpecificTable" show="swOTClassifierSpecific">
+			<groupName dataItem="classifierPresentAdj" default="no">RNPAdjClassifierPresent</groupName>
+			<prompt><br/>En regardant les exemples, est-ce que les classificateurs sont utilisés dans ces syntagmes nominaux avec des syntagmes adjectivaux?</prompt>
+			<radio id="NPAdjClassifierPresentYes"  dataValue="yes">Oui, un classificateur est exigé dans tous les syntagmes nominaux de ce type</radio>
+			<radio id="NPAdjClassifierPresentSome" dataValue="some">Un classificateur est présent dans certains syntagmes nominaux de ce type, mais n’est pas exigé dans tous</radio>
+			<radio id="NPAdjClassifierPresentNo" dataValue="no">Non, un classificateur n’est jamais utilisé dans ce type de syntagme nominal</radio>
+		</radioGroup>
+		<checkboxGroup id="NPAdjClassifierSpecificPos" show="swOTClassifierSpecificAndNPAdjClassifierPresentYesOrSome">
+			<prompt><br/>En regardant ces exemples. où les classificateurs se trouvent-ils par rapport aux adjectifs et au nom? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+			<checkbox id="NPAdjClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificAdjPosBeforeBoth">Premièrement avant l’adjectif et le nom</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificAdjPosAfterBoth">Finalement après le nom et l’adjectif</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterAdjBeforeN"  dataItem="classifierSpecificAdjPosAfterAdjBeforeN">Après l’adjectif mais avant le nom</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosAfterNBeforeAdj"  dataItem="classifierSpecificAdjPosAfterNBeforeAdj">Après le nom mais avant l’adjectif</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosPrefixAdj"  dataItem="classifierSpecificAdjPosPrefixAdj">Comme préfixe sur l’adjectif</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosSuffixAdj"  dataItem="classifierSpecificAdjPosSuffixAdj">Comme suffixe sur l’adjectif</checkbox>
+			<checkbox id="NPAdjClassifierSpecificPosOther"  dataItem="classifierSpecificAdjPosOther">Dans ma langue les classificateurs peuvent se trouver dans la position suivante: <textBox  id="NPAdjClassifierSpecificPosOtherContent" dataItem="classifierSpecificAdjPosOther" rows="2"/></checkbox>
+		</checkboxGroup>
+		<prompt id="NPAdjClassifierSpecificPosNoCheckPrompt" show="swNPAdjClassifierPresentYesOrSomeAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où se trouvent les classificateurs par rapport  aux adjectifs et au nom dans votre langue, ou changez à « Non, un classificateur n’est jamais utilisé dans ce type de syntagme nominal ».</prompt>
+		
+		<br/>
+	   <instruction id="NPAdjPNumberAgreementInstruction" show="swNPNumberAgreement">
+	      To handle the number agreement, in the lexicon:
+	      <ul>
+	         <li>Mark the adjectives (or appropriate affixes) that only go with singular nouns with the feature <feature>singular</feature>.</li>
+	         <li>Mark the adjectives (or appropriate affixes) that only go with plural nouns with the feature <feature>plural</feature>.</li>
+	         <li>If your language makes a further distinction for dual marking, add the feature <feature>dual</feature> to the appropriate adjectives, if any.
+	         </li>
+	      </ul>
+	   </instruction>
+	   <instruction id="NPAdjPAgreementAnimacyInstruction" show="swNPAgreementAnimacyYes">
+	      To handle animacy agreement:
+	      <ul>
+	         <li>Mark the adjectives (or the appropriate affixes) that can only go with animate nouns with the feature <feature>animate</feature>.</li>
+	         <li>Mark the adjectives (or the appropriate affixes) that can only go with inanimate nouns with the feature <feature>-animate</feature>.</li>
+	         <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
+	      </ul>
+	   </instruction>
+	   <instruction id="NPAdjPAgreementGenderInstruction" show="swNPAgreementGenderYes">
+	      Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any adjectives (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.</instruction>
+	   <instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
+	      To handle class marking and agreement:
+	      <ul>
+	         <li>It is most likely the case that the same affixes that mark the class number or type on nouns are also used on adjectives.  If this is the case in your language, the appropriate class feature should already have been added to the affixes in <section number="1.">Overall Typology – Classifiers</section>, so all the words will automatically come from the morphological parser with the class number or type marked.</li>
+	         <li>Any adjectives which can only appear with a certain class, yet do not have an affix which marks the class, will require marking of the class feature on the particular lexical item in the lexicon.   Mark those elements with the feature <feature>class_##</feature>, where ## is replaced by a number between 1 and 25.  Alternatively, these can be marked with one of the class type features discussed in <section number="1.">Overall Typology – Classifiers</section>.</li>
+	      </ul>
+	   </instruction>
+	   <br/>
+		
+		<introduction>Les <technicalTermRef term="ttParticiple">participes</technicalTermRef> ou syntagmes participiaux peuvent aussi agir comme adjectifs en modifiant un nom. Quelques exemples en français avec le participe ou le syntagme participial entre les crochets incluent:</introduction>
+		<EnglishExample>
+			<exItem label="6.">le soleil [brillant]</exItem>
+			<exItem label="7.">mon enfant [pleurant]</exItem>
+			<exItem label="8.">les livres [aimés par des millions]</exItem>
+		</EnglishExample>
+		<introduction>Certaines langues ne utilisent pasun participe pour exprimer de semblables significations, mais utilisent à la place une syntagme relatif.
+			Par exemple, en français: <example>le soleil qui brille</example> et <example>l’enfant qui pleure</example>.
+		</introduction>
+		<prompt><br/>Entrez ici comment votre langue exprimerait des exemples pareils comme (6-8):</prompt>
+		<textBox id="NPAdjPPartExample" dataItem="partExample"/>
+	   <radioGroup>
+	      <groupName dataItem="adjpPart" default="no" >RNPAdjPPart</groupName>
+	   	<prompt>Est-ce que votre langue permet à des participes ou à des syntagmes avec participiaux d’agir comme des adjectifs modifiant un nom?</prompt>
+	      <radio id="NPAdjPPartYes" dataValue="yes">Oui</radio>
+	   	<radio id="NPAdjPPartNo" dataValue="no">Non, une proposition relative est utilisée au lieu</radio>
+	   	<radio id="NPAdjPPartOther" dataValue="other">Non, ma langue n’utilise ni un participe ni une proposition relative pour exprimer des significations pareilles, mais a d’autres moyens</radio>
+	   </radioGroup>
+		<prompt id="NPAdjPPartRelClPrompt" show="swNPAdjPPartNo">La structure et la position des propositions relatives seront traitées dans la <section number="12">Propositions Relatives</section>.</prompt>
+	   
+	   <instruction id="NPAdjPInstruction" show="swNPAdjPPartYes">Note that the head of these participle phrases is categorically a verb, so these are derived adjectivals.  They will remain verbs in our grammar rules, but need to be distinguished as participles so that only the participle forms of verbs may be used as adjectives.  The appropriate features will be added in <section number="9.2">Basic Sentences – Inflection Features</section>
+		</instruction>
+		<br/><br/>
+		<introduction id="NPAdjPNounCaseChangeIntroduction" show="swNPPossNounCaseChangeYes">Les langues qui changent le cas du nom principal quand un possesseur est présent changent aussi le cas des adjectifs qui interviennent pour s’y accorder. Certaines langues de ce type changent aussi le cas du nom prinicipal lorsque seulement un modificateur adjectival est présent même s’il n’y a pas de possesseur.  
+<br/>
+			<br/>
+			De plus, certaines langues de ce dernier type ont un affixe explicite qui marque le cas du génitif (ou le cas normal des possesseurs) sur le nom principal pour indiquer qu’il doit y avoir soit un adjectif soit un possesseur dans ce syntagme nominal. Dans cette situation, l’adjectif et/ou le posssesseur seront aussi dans le cas génitif (ou le cas normal des possesseurs) bien que le cas marqué ne sera pas explicite dans les modificateurs les plus élevés du syntagme nominal. </introduction>
+<br/>
+		<radioGroup id="NPAdjPCaseChangeTable" show="swNPPossNounCaseChangeYes">
+			<groupName dataItem="adjpCaseChange" default="no">RNPAdjPCaseChange</groupName>
+			<prompt>
+				Est-ce que la présence d’un adjectif change le marqueur du cas sur le nom  principal pour s’accorder au cas normal d’un possesseur, avec ou sans la présence d’un possesseur?</prompt>
+			<radio id="NPAdjPCaseChangeNo" dataValue="no">Non, le cas du nom principal change seulement lorsqu’un possesseur est present; cependant dans cette situation un adjectif intervenant peut/doit aussi porter ce cas</radio>
+			<radio id="NPAdjPCaseChangeYes" dataValue="yes">Oui, le cas du nom principal change pour s’accorder au cas normal d’un possesseur  même si seulement un modificateur d’adjectif est présent</radio>
+			<radioGroup id="NPAdjPCaseAffixTable" show="swNPAdjPCaseChangeYes">
+				<groupName dataItem="adjpCaseAffix" default="no">RNPAdjPCaseAffix</groupName>
+				<prompt>
+					Y a-t-il un affixe de cas explicite qui marque le cas <span id="NPAdjPCaseAffixGenPrompt" show="swNPPossCaseGen">génitif </span><span id="NPAdjPCaseAffixSplitPrompt" show="swNPCaseSplitNotGen">ou </span>
+					<span id="NPAdjPCaseAffixErgPrompt" show="swNPPossCaseErg">ergatif </span>
+					<span id="NPAdjPCaseAffixAbsPrompt" show="swNPPossCaseAbs">absolutif </span>(le cas normal des possesseurs) sur le nom principal quand il est présent et qui indique qu’il doit y avoir soit un adjectif soit un possesseur dans ce syntagme nominal?</prompt>
+				<radio id="NPAdjPCaseAffixNo" dataValue="no">Non, le marqueur du cas <span id="NPAdjPCaseAffixGenNoSpan" show="swNPPossCaseGen">génitif </span><span id="NPAdjPCaseAffixSplitNoSpan" show="swNPCaseSplitNotGen">ou </span>
+					<span id="NPAdjPCaseAffixErgNoSpan" show="swNPPossCaseErg">ergatif </span>
+					<span id="NPAdjPCaseAffixAbsNoSpan" show="swNPPossCaseAbs">absolutif </span>n’est pas traité de cette façon distincte</radio>
+				<radio id="NPAdjPCaseAffixYesPrefix" dataValue="yesPrefix">Oui, un préfixe: quand un préfixe explicite <span id="NPAdjPCaseAffixGenYesPrefixSpan" show="swNPPossCaseGen">génitif </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan" show="swNPCaseSplitNotGen">ou </span>
+					<span id="NPAdjPCaseAffixErgYesPrefixSpan" show="swNPPossCaseErg">ergatif </span>
+					<span id="NPAdjPCaseAffixAbsYesPrefixSpan" show="swNPPossCaseAbs">absolutif </span>est présent sur le nom principal, cela indique qu’un modificateur adjectif et /ou un possesseur doit être présent dans le syntagme.  (Si l’adjectif est marqué avec ce préfixe <span id="NPAdjPCaseAffixGenYesPrefixSpan1" show="swNPPossCaseGen">génitif </span><span id="NPAdjPCaseAffixSplitYesPrefixSpan1" show="swNPCaseSplitNotGen">ou </span>
+					<span id="NPAdjPCaseAffixErgYesPrefixSpan1" show="swNPPossCaseErg">ergatif </span>
+					<span id="NPAdjPCaseAffixAbsYesPrefixSpan1" show="swNPPossCaseAbs">absolutif </span>alors un autre adjectif et/ou un possesseur doit aussi être présent.) </radio>
+				<radio id="NPAdjPCaseAffixYesSuffix" dataValue="yesSuffix">Oui, un suffixe: quand un suffixe explicite <span id="NPAdjPCaseAffixGenYesSuffixSpan" show="swNPPossCaseGen">génitif </span><span id="NPAdjPCaseAffixSplitYesSuffixSpan" show="swNPCaseSplitNotGen">ou </span>
+					<span id="NPAdjPCaseAffixErgYesSuffixSpan" show="swNPPossCaseErg">ergatif </span>
+					<span id="NPAdjPCaseAffixAbsYesSuffixSpan" show="swNPPossCaseAbs">absolutif </span>est présent sur le nom principal, cela indique qu’un modificateur adjectif et/ou un possesseur doit être présent dans le syntagme. (Si l’adjectif est marqué avec ce suffixe <span id="NPAdjPCaseAffixGenYesSuffixSpan1" show="swNPPossCaseGen">génitif </span><span id="NPAdjPCaseAffixSplitYesSuffixSpan1" show="swNPCaseSplitNotGen">ou </span>
+					<span id="NPAdjPCaseAffixErgYesSuffixSpan1" show="swNPPossCaseErg">ergatif </span>
+					<span id="NPAdjPCaseAffixAbsYesSuffixSpan1" show="swNPPossCaseAbs">absolutif </span>alors un autre adjectif et /ou un possesseur doit être présent.) </radio>
+			</radioGroup>
+		</radioGroup>
+	   <br/>	   
+	   <instruction id="NPAdjPCaseAffixYesPrefixInstruction" show="swNPAdjPCaseAffixYesPrefix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenPrefixSpan" show="swNPPossCaseGen">
+	      <feature>genitive_prefix </feature>
+	   </span><span id="NPAdjPCaseAffixSplitPrefixSpan" show="swNPCaseSplitNotGen">or </span>
+	      <span id="NPAdjPCaseAffixErgPrefixSpan" show="swNPPossCaseErg">
+	         <feature>ergative_prefix </feature>
+	      </span>
+	      <span id="NPAdjPCaseAffixAbsPrefixSpan" show="swNPPossCaseAbs">
+	         <feature>absolutive_prefix </feature>
+	      </span>on the affix which marks <span id="NPAdjPCaseAffixGenPrefixSpan1" show="swNPPossCaseGen">genitive </span><span id="NPAdjPCaseAffixSplitPrefixSpan1" show="swNPCaseSplitNotGen">or </span>
+	      <span id="NPAdjPCaseAffixErgPrefixSpan1" show="swNPPossCaseErg">ergative </span>
+	      <span id="NPAdjPCaseAffixAbsPrefixSpan1" show="swNPPossCaseAbs">absolutive </span>case on the head noun and on an adjective if another adjective or possessor is present.</instruction>
+	   <instruction id="NPAdjPCaseAffixYesSuffixInstruction" show="swNPAdjPCaseAffixYesSuffix">In the lexicon, key the feature <span id="NPAdjPCaseAffixGenSuffixSpan" show="swNPPossCaseGen">
+	      <feature>genitive_suffix </feature>
+	   </span><span id="NPAdjPCaseAffixSplitSuffixSpan" show="swNPCaseSplitNotGen">or </span>
+	      <span id="NPAdjPCaseAffixErgSuffixSpan" show="swNPPossCaseErg">
+	         <feature>ergative_suffix </feature>
+	      </span>
+	      <span id="NPAdjPCaseAffixAbsSuffixSpan" show="swNPPossCaseAbs">
+	         <feature>absolutive_suffix </feature>
+	      </span>on the affix which marks <span id="NPAdjPCaseAffixGenSuffixSpan1" show="swNPPossCaseGen">genitive </span><span id="NPAdjPCaseAffixSplitSuffixSpan1" show="swNPCaseSplitNotGen">or </span>
+	      <span id="NPAdjPCaseAffixErgSuffixSpan1" show="swNPPossCaseErg">ergative </span>
+	      <span id="NPAdjPCaseAffixAbsSuffixSpan1" show="swNPPossCaseAbs">absolutive </span> case on the head noun and on an adjective if another adjective or possessor is present.</instruction>
+	   
+	   <br/>		<br/>
+		<buttons>
+			<button id="NPAdjPBack" value="Back" goto="NPContents.htm"/>
+			<button id="NPAdjPNext" value="Next" goto="NPContents.htm"/>
+		</buttons>
+	</form>
+	<showWhen id="swNPCaseSplitNotGen">
+		<whenValue element="typology" attr="case" value="split"></whenValue>
+		<and/><not/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+	</showWhen>
+	<showWhen id="swNPAdjPCaseChangeYes">
+		<not/>
+		<whenValue element="typology" attr="case" value="none"/>
+<and/>
+		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
+<and/>
+		<whenRadio button="NPAdjPCaseChangeYes"/>
+	</showWhen>
+	<showWhen id="swNPAdjPCaseAffixYesPrefix">
+		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
+<and/>
+		<whenRadio button="NPAdjPCaseAffixYesPrefix"/>
+		<and/>
+		<whenRadio button="NPAdjPCaseChangeYes"/>
+	</showWhen>
+	<showWhen id="swNPAdjPCaseAffixYesSuffix">
+		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
+<and/>
+		<whenRadio button="NPAdjPCaseAffixYesSuffix"/>
+		<and/>
+		<whenRadio button="NPAdjPCaseChangeYes"/>
+	</showWhen>
+	<showWhen id="swNPPossNounCaseChangeYes">
+		<not/>
+		<whenValue element="typology" attr="case" value="none"/>
+<and/>
+		<whenValue element="np" attr="possNounCaseChange" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPPossCaseGen">
+		<openParen/>
+		<whenValue element="np" attr="possCaseErg" value="genitive"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative"/>
+		<closeParen/>
+		<or/>
+			<whenValue element="typology" attr="case" value="nominative"/>
+		<or/>
+			<whenValue element="typology" attr="case" value="split"/>
+	</showWhen>
+	<showWhen id="swNPPossCaseErg">
+	<openParen/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative"/>
+		<closeParen/>
+		<or/>
+		<openParen/>
+		<whenValue element="np" attr="possCaseErg" value="ergative"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="split"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPPossCaseAbs">
+	<openParen/>
+	<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative"/>
+	<closeParen/>
+		<or/>
+	<openParen/>
+	<whenValue element="np" attr="possCaseErg" value="absolutive"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="split"/>
+	<closeParen/>
+	</showWhen>
+	<showWhen id="swNPAdjPPosEitherSideRestricted">
+		<whenCheckbox button="NPAdjPPosBefore"/>
+		<and/>
+		<whenCheckbox button="NPAdjPPosAfter"/>
+	   <or/>
+	   <whenCheckbox button="NPAdjPPosBoth"/>
+	</showWhen>
+   <showWhen id="swNPAdjPPosNoCheck">
+      <not/>
+      <whenCheckbox button="NPAdjPPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPAdjPPosOther"/>
+   </showWhen>
+	<showWhen id="swNPNumberAgreement">
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPAgreementAnimacyYes">
+		<whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPAgreementGenderYes">
+		<whenValue element="np/agreeGender" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPAgreementClassYes">
+		<whenValue element="np/agreeClass" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swNotPractical">
+		<whenValue  element="paws" attr="outputGrammar" value="True"/>
+	</showWhen>
+   <showWhen id="swNPAdjPPartNo">
+      <whenRadio button="NPAdjPPartNo"/>
+   </showWhen>
+   <showWhen id="swNPAdjPPartYes">
+      <whenRadio button="NPAdjPPartYes"/>
+   </showWhen>
+
+	<showWhen id="swOTClassifierSpecific">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swOTClassifierSpecificAndNPAdjClassifierPresentYesOrSome">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPAdjClassifierPresentYes"/>
+		<or/>
+		<whenRadio button="NPAdjClassifierPresentSome"/>
+		<closeParen/>
+	</showWhen>
+	<showWhen id="swNPAdjClassifierPresentYesOrSomeAndNoCheck">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<openParen/>
+		<whenRadio button="NPAdjClassifierPresentYes"/>
+		<or/>
+		<whenRadio button="NPAdjClassifierPresentSome"/>
+		<closeParen/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterBoth"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosBeforeBoth"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterAdjBeforeN"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosAfterNBeforeAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosPrefixAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosSuffixAdj"/>
+		<and/><not/>
+		<whenCheckbox button="NPAdjClassifierSpecificPosOther"/>
+	</showWhen>
+	&TechnicalTerms; 
+</page>

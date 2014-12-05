@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="NPMain" count="1/1">
+    <title>Syntagmes Nominaux – Vue d’ensemble</title>
+    <introduction>Les syntagmes nominaux peuvent être très complexes; ils seront divisés donc en six sections dans ce programme. Cette section se concentra sur les syntagmes nominaux ayant comme tête lexicale les noms communs. Nous allons examiner la modification par les articles, les démonstratifs, les quantificatifs, les mots de degré, les syntagmes adjectivaux et les possesseurs. Les syntagmes nominaux ayant comme tête des noms propres sont traitées dans la <section number="6">Noms Propres</section> et ceux dont la tête est un pronom, un démonstratif ou un quantifi¬catif sont traités dans la <section number="7">Pronoms</section>.  La possibilité de modification par les <technicalTermRef term="ttAdpositionalPhrases">syntagmes adpositionaux</technicalTermRef> est ajoutée dans <section number="8">Syntagmes Adpositionnels</section> et la modification par les propositions relatives est ajoutée dans la <section number="12">Propositions Relatives</section>.   Enfin, la négation du syntagme nominal entier est traitée dans la <section number="14">Constructions Négatives</section>.</introduction>
+    <introduction id="NPPhraseStructureIntro" show="swNotPractical">Because there are so many positions needed for distinct sets of modifiers, we will use the expanded DP (determiner phrase) structure, rather than the simpler NP phrase structure.  These more complex tree structures will be built step-by-step from your answers to the questions here. You simply need to be aware that when you look at the tree structures generated, nominal phrases will have DPs on top of the NPs.  A simple English example is given here:
+<tree img="TreeDescriptions/PawsNPTree.png"/>
+It may be difficult to understand the need for the change in English, because articles, demonstratives and possessors are mutually exclusive, but in many languages all three can occur in a single nominal phrase.  <help href="../Help/Cbgbtext.doc#DPHypothesis">(Click here to see more on the DP hypothesis.)</help>
+    </introduction>  
+    <introduction>Nous commençons par les modificateurs qui ont la plus grande portée et puis nous présentrons ceux d’une portée plus limitée, tout en nous approchant du nom.</introduction>
+    
+    <form section="np" transparent="yes">
+        <prompt><br/>Le plus haut niveau du syntagme nominal (initial ou final) est occupé par les quantificateurs à grande portée et par les mots qui modifient toute le syntagme nominal, tels que <example>tout</example>, <example>presque</example> et <example>seulement</example>, qui ont été discutés et marqués à la première page de la <section number="2">Quantificateurs et Syntagmes de Quantité</section>.</prompt>
+        <prompt id="NPClassifierNotSpecificPrompt" show="swOTClassifierNotSpecific"><br/> Il ne faut rien faire de plus avec ces modificateurs.</prompt>
+        <prompt id="NPClassifierSpecificPrompt" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome"><br/>Les exemples des syntagmes nominaux entiers, y compris les mots indépendents dont les sens sont « tout », « presque » ou « seulement » dans la <section number="2">Quantificateurs et Syntagmes de Quantité</section> sont:
+        </prompt>
+        <textBox id="QPNPExample"  section="qp" dataItem="example" cols="50" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome"/>
+        <radioGroup id="NPClassifierSpecificTable" show="swOTClassifierSpecificAndQPNPDegreeYesOrSome">
+            <groupName dataItem="classifierPresent" default="no">RNPClassifierPresent</groupName>
+            <prompt><br/>Quand on regarde les exemples, est-ce que les classificateurs sont employés dans ces syntagmes nominaux avec les mots qui signifient « tout », « presque » ou « seulement »?</prompt>
+            <radio id="NPClassifierPresentYes"  dataValue="yes">Oui, un classificateur est toujours essentiel dans toutes les syntagmes nominaux de ce type</radio>
+            <radio id="NPClassifierPresentSome" dataValue="some">Un classificateur est présent dans quelques uns des syntagmes nominaux de ce type, mais n’en est pas essentiel à tous</radio>
+            <radio id="NPClassifierPresentNo" dataValue="no">Non, un classificateur n’est jamais employé dans ce type de syntagme nominal</radio>
+        </radioGroup>
+        <checkboxGroup id="NPClassifierSpecificPos" show="swOTClassifierSpecificAndQPNPDegreeYesOrSomeAndNPClassifierPresentYesOrSome">
+            <prompt><br/>Quand on regarde les exemples, les classificateurs où se trouvent-ils relativement à ces quantificateurs à grande portée ou aux mots de degré et le nom? 
+                Cochez toutes les options qui conviennent à votre langue.
+            </prompt>
+            <checkbox id="NPClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificPosBeforeBoth">Au commencement, avant le quantificateur à grande portée ou le mot de degré et le nom</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificPosAfterBoth">A la fin, après le nom et le quantificateur à grande portée ou le mot de degré</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterQBeforeN"  dataItem="classifierSpecificPosAfterQBeforeN">Après le quantificateur à grande portée ou le mot de degré mais avant le nom</checkbox>
+            <checkbox id="NPClassifierSpecificPosAfterNBeforeQ"  dataItem="classifierSpecificPosAfterNBeforeQ">Après le nom mais avant le quantificateur à grande portée ou le mot de degré</checkbox>
+            <checkbox id="NPClassifierSpecificPosPrefixQ"  dataItem="classifierSpecificPosPrefixQ">Comme préfixe au quantificateur à grande portée ou le mot de degré</checkbox>
+            <checkbox id="NPClassifierSpecificPosSuffixQ"  dataItem="classifierSpecificPosSuffixQ">Comme suffixe au quantificateur à grande portée ou le mot de degré</checkbox>
+            <checkbox id="NPClassifierSpecificPosOther"  dataItem="classifierSpecificPosOther">Dans ma langue, les classificateurs peuvent paraître dans la position suivante: <textBox  id="NPClassifierSpecificPosOtherContent" dataItem="classifierSpecificPosOther" rows="2"/></checkbox>
+        </checkboxGroup>
+        <prompt id="NPClassifierSpecificPosNoCheckPrompt" show="swNPClassifierPresentYesOrSomeAndNoCheck">ADVERTISSEMENT: Vous devez cocher au moins une case pour décrire où paraissent les classificateurs par rapport à ces quantificateurs à grande portée ou le mot de degré et le nom dans votre langue ou changer votre réponse ci-dessus à « Non, un classificateur n’est jamais employé dans ce type de syntagme nominal ».</prompt>
+        
+        <br/><br/>
+        <buttons>
+            <button id="NPMainBack" value="Back" goto="NPContents.htm"/>
+            <button id="NPMainNext" value="Next" goto="NPContents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
+    <showWhen id="swOTClassifierNotSpecific">
+        <not/><whenValue element="typology" attr="classifier" value="yesSpecific"/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndQPNPDegreeYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swOTClassifierSpecificAndQPNPDegreeYesOrSomeAndNPClassifierPresentYesOrSome">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPClassifierPresentSome"/>
+        <closeParen/>
+    </showWhen>
+    <showWhen id="swNPClassifierPresentYesOrSomeAndNoCheck">
+        <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+        <and/>
+        <openParen/>
+        <whenValue element="qp" attr="npDegree" value="yes"/>
+        <or/>
+        <whenValue element="qp" attr="npDegree" value="some"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenRadio button="NPClassifierPresentYes"/>
+        <or/>
+        <whenRadio button="NPClassifierPresentSome"/>
+        <closeParen/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosBeforeBoth"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterQBeforeN"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosAfterNBeforeQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosPrefixQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosSuffixQ"/>
+        <and/><not/>
+        <whenCheckbox button="NPClassifierSpecificPosOther"/>
+    </showWhen>
+    &TechnicalTerms; 
+</page>

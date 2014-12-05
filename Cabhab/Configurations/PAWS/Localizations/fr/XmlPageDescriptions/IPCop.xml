@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPCop" count="1/3">
+    <title level="2">Phrases Simples – Copulatifs</title>
+    <introduction>Nous distinguons ici entre les verbes <technicalTermRef term="ttCopular">copulatifs</technicalTermRef> et les verbes de <technicalTermRef term="ttPerception">perception</technicalTermRef>.<br/><br/>
+        Les phrases copulatives peuvent comprendre un syntagme adjectival, prépositionnel, postpositionnel, ou nominal comme complément du verbe copulatif. Certaines langues n’insistent pas qu’un verbe copulatif ou qu’un auxiliaire soit présent. Voici des exemples en français:</introduction>
+        <EnglishExample>
+            <exItem label="1.">La fille est belle.</exItem>
+            <exItem label="2.">Suzanne est malade.</exItem>
+            <exItem label="3.">Ma soeur est à l’hôpital.</exItem>
+            <exItem label="4.">Il est le chef.</exItem>
+        </EnglishExample>
+    <form section="ip">
+        <prompt>Entrez ici des exemples dans votre langue de phrases copulatifs:</prompt>
+        <textBox id="IPExamplesCopularExample" dataItem="copularExample" cols="50"/>
+        <radioGroup>
+            <groupName dataItem="copular" default="yes">RIPCopVerb</groupName>
+            <prompt>Est-ce que votre langue a un ou plusieurs verbes <technicalTermRef term="ttOvert">visibles</technicalTermRef> dans les phrases de type copulatif?</prompt>
+            <radio id="IPCopVerbYes" dataValue="yes">Oui; et il faut un verbe copulatif</radio>
+            <radio id="IPCopVerbYesOptional" dataValue="optional">Oui; la langue possède un verbe copulatif, mais dans plusieurs cas il est facultatif</radio>
+            <radio id="IPCopVerbNo" dataValue="no">Non, il n’y a pas de verbe dans les phrases copulatifs</radio>
+        </radioGroup>
+       <prompt id="IPCopularVerb" show="swIPCopVerbYesOrOptional">
+           <br/>Entrez les verbes copulatives dans le zone de texte, chacun sur une ligne individuelle : 
+       </prompt>
+       <textBox id="IPCopuparVerbExample" dataItem="copularVerb" show="swIPCopVerbYesOrOptional" rows="3"/>
+       <radioGroup id="IPCopVerbNoTable" show="swIPCopVerbNoOrOptional">
+                <groupName dataItem="copularAffix" default="no">RIPCopAffix</groupName>
+           <prompt>Est-ce qu’il y a un affixe qui se trouve sur le prédicat nominal ou le prédicat adjectival dans les phrases copulatifs<span  id="IPCopVerbYesOptionalPrompt" show="swIPCopVerbYesOptional"> où un verbe copulatif est absent</span>?</prompt>
+                <radio id="IPCopAffixNo" dataValue="no">Non</radio>
+           <radio id="IPCopAffixYesPrefix" dataValue="yesPrefix">Oui, un préfixe</radio>
+           <radio id="IPCopAffixYesSuffix" dataValue="yesSuffix">Oui, un suffixe</radio>
+           <radio id="IPCopAffixYesEither" dataValue="yesEither">Oui, quelquefois on utilise un préfixe et quelquefois un suffixe</radio>
+            </radioGroup>
+       <prompt id="IPCopularAffix" show="swIPCopAffixNotNo">
+           <br/>Entrez ici les affixes copulatifs qui apparaîssent sur le prédicat nominal ou le prédicat adjectival<span  id="IPCopVerbYesOptionalPrompt2" show="swIPCopVerbYesOptional"> quand un verbe copulatif est absent</span>, avec un tiret pour indiquer de quel côté il s’attache: 
+       </prompt>
+       <textBox id="IPCopuparAffixExample" dataItem="copularAffix" show="swIPCopAffixNotNo" rows="3"/>
+       
+        <instruction id="IPCopAffixYesEitherInstruction" show="swIPCopAffixYesEither">Add either of the features <feature>copular_prefix</feature> or <feature>copular_suffix</feature> to the appropriate affixes in the lexicon.</instruction>
+        <instruction id="IPCopAffixYesPrefixInstruction" show="swIPCopAffixYesPrefix">Add the feature <feature>copular_prefix</feature> to the appropriate prefix(es) in the lexicon.</instruction>
+        <instruction id="IPCopAffixYesSuffixInstruction" show="swIPCopAffixYesSuffix">Add the feature <feature>copular_suffix</feature> to the appropriate suffix(es) in the lexicon.</instruction>
+        <instruction id="IPCopVerbYesInstruction" show="swIPCopVerbYesOrOptional">Add the feature <feature>copular</feature> to the verbs that take AdjP, PP or predicate nominative complements.  Since the copular verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-copular</feature>.</instruction>   
+        <br/><br/>              
+        <introduction>Maintenant on considère les phrases avec des verbes de perception.<br/><br/>
+            Les verbes de perception permettent d’habitude un syntagme adjectival comme complément, sauf dans les constructions superlatives où un syntagme nominal suit un verbe de perception, comme montré à la page suivante. Des exemples en français comprennent :</introduction>
+       <EnglishExample>
+           <exItem label="5.">La fille a l’aire joli.</exItem>
+           <exItem label="6.">Elle semble sympathique.</exItem>
+           <exItem label="7.">L’eau paraît trouble.</exItem>
+       </EnglishExample> 
+        <prompt>Entrez des exemples pareils en votre langue ici:</prompt>
+       <textBox id="IPExamplesPerceptionExample" dataItem="perceptionExample" cols="50"/>
+       <instruction id="IPCopPerceptionInstruction">Add the feature <feature>perception</feature> to the lexical entry of the perception verbs. Since the perception verbs are a small, closed set, the feature must be entered in the lexicon on the appropriate verbs; the default setting is <feature>-perception</feature>.</instruction>
+       <br/>
+        <introduction>Et les verbes copulatifs et les verbes de perception peuvent contenir un syntagme adjectival comme complément, là où une phrase ou bien une proposition complétive suit l’adjectif. On traitera ces constructions dans la <section number="10.">Propositions Complétives</section> au cours de la discussion  des verbes de perception qui agissent comme verbes « à montée ».</introduction>
+       <br/><br/>
+       <buttons>
+            <button id="IPCopBack" value="Back" goto="IPContents.htm"/>
+            <button id="IPCopNext" value="Next" goto="IPComparative.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swHeadInitial">
+        <whenValue element="typology" attr="wordOrder" value="SVO"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="VOS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="VSO"/>
+    </showWhen>
+    <showWhen id="swHeadFinal">
+        <whenValue element="typology" attr="wordOrder" value="SOV"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OVS"/>
+        <or/>
+        <whenValue element="typology" attr="wordOrder" value="OSV"/>
+    </showWhen>
+<showWhen id="swIPCopVerbYesOptional">
+        <whenRadio button="IPCopVerbYesOptional"/>
+</showWhen>
+    <showWhen id="swIPCopVerbNoOrOptional">
+        <whenRadio button="IPCopVerbNo"/>
+        <or/>
+        <whenRadio button="IPCopVerbYesOptional"/>
+    </showWhen>
+<showWhen id="swIPCopAffixYesEither">
+<openParen/>
+        <whenRadio button="IPCopVerbNo"/>
+        <or/>
+        <whenRadio button="IPCopVerbYesOptional"/>
+<closeParen/> <and/>
+    <whenRadio button="IPCopAffixYesEither"/>
+</showWhen>
+<showWhen id="swIPCopAffixYesPrefix">
+<openParen/>
+        <whenRadio button="IPCopVerbNo"/>
+        <or/>
+        <whenRadio button="IPCopVerbYesOptional"/>
+<closeParen/> <and/>
+    <whenRadio button="IPCopAffixYesPrefix"/>
+</showWhen>
+<showWhen id="swIPCopAffixYesSuffix">
+<openParen/>
+        <whenRadio button="IPCopVerbNo"/>
+        <or/>
+        <whenRadio button="IPCopVerbYesOptional"/>
+<closeParen/> <and/>
+    <whenRadio button="IPCopAffixYesSuffix"/>
+</showWhen>
+<showWhen id="swIPCopVerbYesOrOptional">
+<whenRadio button="IPCopVerbYes"/>
+        <or/>
+        <whenRadio button="IPCopVerbYesOptional"/>
+</showWhen>
+   <showWhen id="swIPCopAffixNotNo">
+      <whenRadio button="IPCopVerbNo"/>
+      <and/><not/>
+      <whenRadio button="IPCopAffixNo"/>
+      <or/>
+      <whenRadio button="IPCopVerbYesOptional"/>
+      <and/><not/>
+      <whenRadio button="IPCopAffixNo"/>
+   </showWhen>
+   &TechnicalTerms; 
+</page>

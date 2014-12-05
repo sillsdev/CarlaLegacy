@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+  <section1 id="sCoord">
+  	<secTitle>Constructions coordonnées</secTitle>
+	<p contentType="ctComparativeIntro">
+		<content>Cette section commence avec des constructions de coordination simples, où il y a une conjonction visible entre les conjoints. Ceci comprend la coordination au niveau de la phrase et au niveau du syntagme verbal, du syntagme nominal, du syntagme </content><case element="pp" attr="pPos">
+			<caseText value="before">prépositionnel</caseText>
+		 <caseText value="after">postpositionnel</caseText>
+		 <caseText value="both">adpositionnel</caseText>
+		 <caseText value="unknown">adpositionnel</caseText>
+		</case><content> et du syntagme adjectival. Ensuite on traitera, au niveau du syntagme nominal seulement, les listes et les constructions appositives. </content></p>
+
+  	<p contentType="ctComparativeIntro"><content>En français, les conjonctions utilisées entre deux conjoints sont </content><langData>et</langData><content>, </content><langData>ou</langData><content>, </content><langData>mais</langData><content> et </content><langData>et/ou</langData><content>.  En plus il y a d’autres constructions de coordination qui ont besoin d’une conjonction initiale, comme </content><langData>ou...ou</langData><content> et </content><langData>ni...ni</langData><content>.  Certaines langues utilisent aussi un mot qui veut dire </content><langData>avec</langData><content> comme conjonction entre syntagmes nominaux.
+</content>
+	</p>
+     <p contentType="ctPracticalIntro">
+     	<content>On donne des exemples de la coordination de phrases, de syntagmes verbaux, de syntagmes nominaux, de syntagmes </content><case element="pp" attr="pPos">
+     		<caseText value="before">prépositionnels</caseText>
+           <caseText value="after">postpositionnels</caseText>
+           <caseText value="both">adpositionnels</caseText>
+           <caseText value="unknown">adpositionnels</caseText>
+     	</case><content> et de syntagmes adjectivaux. Ensuite on décrit les listes et les constructions  appositives. </content></p>
+     
+     <p>
+				<content>En </content>
+				<langName/>
+     	<content> on utilise les conjonctions suivantes entre deux conjoints:</content>
+			</p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>Morphèmes</headerCol>
+						<headerCol>Glose</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="coord/and"/>
+						<col>
+							<content>et</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/andThen"/>
+						<col>
+							<content>et puis</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/or"/>
+						<col>
+							<content>ou</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/andOr"/>
+						<col>
+							<content>et/ou</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/but"/>
+						<col>
+							<content>mais</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/with"/>
+						<col>
+							<content>avec</content>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="coord/other"/>
+						<col>
+							<content>autres</content>
+						</col>
+					</row>
+				</table>
+			</example>
+			<p>
+				<content>En </content>
+				<langName/>
+				<content> on utilise les conjonctions suivantes dans une construction de type </content><langData>ou...ou</langData><content> ou </content><langData>ni...ni</langData><content>:</content>
+			</p>
+			<example>
+				<table border="1">
+					<headerRow>
+						<headerCol>Morphèmes</headerCol>
+						<headerCol>Glose</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="coord/either"/>
+						<col>
+							<content>ou (partie initiale)</content>
+						</col>
+					</row>
+				   <row>
+				      <col exampleLoc="coord/eitherOr"/>
+				      <col>
+				      	<content>ou (deuxième partie)</content>
+				      </col>
+				   </row>
+				   <row>
+						<col exampleLoc="coord/neither"/>
+						<col>
+							<content>ni (partie initiale)</content>
+						</col>
+					</row>
+				   <row>
+					  <col exampleLoc="coord/nor"/>
+					  <col>
+					  	<content>ni (deuxième partie)</content>
+					  </col>
+				   </row>
+				</table>
+			</example>
+
+	 <p><content/><case element="coord" attr="conjWord">
+	 	<caseText value="yes">Toutes les conjonctions ci-dessus sont écrites comme des mots indépendants entre les conjoints.</caseText>
+	 	<caseText value="some">Quelques-unes de ces conjonctions sont écrites comme ces mots indépendants entre les conjoints, mais d’autres s’attachent </caseText>
+	 	<caseText value="no">Toutes les conjonctions s’attachent </caseText>
+	 </case>
+	 <text show="swCoordConjWordNotYes">
+	 	<text show="swCoordConjAttachesProclitic"><content>au début du deuxième conjoint comme des proclitiques</content></text>
+	 	<text show="swCoordConjAttachesEnclitic"><content>à la fin du premier conjoint comme enclitiques</content></text>
+	 	<text show="swCoordConjAttachesClitic"><content>ou bien au début du deuxième conjoint comme des clitiques</content></text>
+	    <text show="swCoordConjAttachesNotOther"><content>. </content></text>
+	 	<text show="swCoordConjAttachesOtherOnly"><content>à ___</content><contentCheckBoxOther contentLoc="coord/attachesOther"/><content>. </content></text>
+	 	<text show="swCoordConjAttachesPosAndOther"><content> et peuvent aussi s’attacher à ___</content><contentCheckBoxOther contentLoc="coord/attachesOther"/><content>. </content></text>
+	 </text>
+	 	<text show="swCoordNoConjYes"><content>  Outre ces conjonctions, deux éléments peuvent se joindre sans aucune conjonction, au moins au niveau du syntagme nominal et de la phrase. </content></text>
+	 	<text show="swCoordNoConjNo"><content>  Lorsque seulement deux éléments se joignent, une des conjonctions ci-dessus doit être présente.</content></text></p>
+
+	 <section2 id="sCoordLevels">
+	 	<secTitle>Les niveaux de coordination</secTitle>
+
+	 	<p><content>Dans les sections qui suivent on présente les différents niveaux de coordination.</content></p>
+		<section3 id="sCoordSentence">
+			<secTitle>Coordination de phrases</secTitle>
+			<p contentType="ctComparativeIntro">
+				<content>En général, la coordination se pratique entre des catégories pareilles. Au niveau de la phrase, ceci veut dire que deux phrases déclaratives peuvent se joindre, comme suit: </content>
+				<langData>Jean est allé au bureau ce matin et il vient de rentrer</langData><content> et </content><langData>Ou je viendrai à la soirée ou j’enverrai ma sœur</langData>
+				<content>, ou deux questions, comme suit: </content><langData>A quelle heure le courrier est-il arrivé et où est mon colis?</langData><content>  Lorsqu’on utilise la conjonction de contraste </content><langData>mais</langData><content>, un des conjoints doit être au négatif, comme suit: </content>
+				<langData>Jean est allé au bureau ce matin mais il n’est pas revenu</langData><content>.</content>  </p>
+		   <p contentType="ctPracticalIntro">
+		   	<content>En général, la coordination existe entre catégories pareilles. Pour les phrases ceci veut dire que deux phrases déclaratives, ou bien deux questions, peuvent être conjointes. Lorsqu’on utilise la conjonction de contraste </content><langData>mais</langData><content>, un des conjoints doit être au négatif. </content>  </p>
+		   <p>
+		   	<content>Voici quelques exemples de la coordination de deux phrases en </content><langName/><content>:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/sentExample"/>
+			</example>
+			<p><content>Voici quelques exemples de la coordination séquentielle entre deux phrases:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/sentSeqExample"/>
+			</example>
+			<p><content>Regardez la section </content><sectionRef sec="sAdvCl"/><content> pour des exemples de mots et propositions d’introduction quelquefois appelés coordination, ainsi que des exemples de propositions adverbiales, appelées subordination.</content></p>
+</section3>
+		<section3 id="sCoordVP">
+			<secTitle>Coordination de syntagmes verbaux</secTitle>
+			<p contentType="ctComparativeIntro">
+				<content>La coordination de syntagmes verbaux consiste de deux syntagmes verbaux qui partagent un même sujet. Voici quelques exemples en français qui ont des syntagmes verbaux de coordination: </content>
+				<langData>Guillaume a fait une course et a gagné le prix</langData><content>, </content><langData>Je viendrai à la soirée ou j’enverrai ma soeur</langData><content> et </content>
+				<langData>Je ne viendrai à la soirée ni n’enverrai ma soeur</langData><content>.</content>
+			</p>
+		   <p contentType="ctPracticalIntro">
+		   	<content>La coordination de syntagmes verbaux consiste de deux syntagmes verbaux qui partagent un même sujet.</content>
+		   </p>
+		   <p>
+		   	<content>Voici des exemples de la coordination de syntagmes verbaux en </content><langName/><content>:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/vpExample"/>
+			</example>
+</section3>
+		<section3 id="sCoordDP">
+			<secTitle>Coordination de syntagmes nominaux</secTitle>
+			<p contentType="ctComparativeIntro">
+				<content>Normalement, les syntagmes nominaux coordonnés se présentent comme sujets, objets, objets indirects, et objets d’une </content><case element="pp" attr="pPos">
+					<caseText value="before">préposition</caseText>
+			      <caseText value="after">postposition</caseText>
+			      <caseText value="both">adposition</caseText>
+			      <caseText value="unknown">adposition</caseText>
+				</case><content>, tout comme pour un syntagme nominal normal. Voici des exemples en français qui comprennent la coordination de syntagmes nominaux: </content>
+				<langData>Guillaume a couru dans le Marathon à Boston et aux Jeux Olympiques</langData><content>, </content><langData>Ma soeur ou moi serons là</langData>
+				<content>, </content><langData>Ni ta soeur ni mon frère seront là</langData><content> et </content>
+				<langData>Je viendrai à la répétition mais pas au dîner</langData><content>. </content>
+</p>
+		   <p contentType="ctPracticalIntro">
+		   	<content>Normalement, les syntagmes nominaux coordonnés se présentent comme sujets, objets, objets indirects, et objets d’une </content><case element="pp" attr="pPos">
+		   		<caseText value="before">préposition</caseText>
+		   		<caseText value="after">postposition</caseText>
+		   		<caseText value="both">adposition</caseText>
+		   		<caseText value="unknown">adposition</caseText>
+		   	</case><content>, tout comme pour un syntagme nominal normal.</content>
+		   </p>
+		   <p>
+		   	<content>Voici des exemples de la coordination de syntagmes nominaux en </content><langName/><content>.</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/dpExample"/>
+			</example>
+</section3>
+	  <section3 id="sCoordPP">
+		  <secTitle>
+		  <case  element="pp" attr="pPos">
+		  	<caseText value="before">Coordination de syntagmes prépositionnels</caseText>
+		  	<caseText value="after">Coordination de syntagmes postpositionnels</caseText>
+		  	<caseText value="both">Coordination de syntagmes adpositionnels</caseText>
+		  	<caseText value="unknown">Coordination de syntagmes adpositionnels</caseText>
+			</case>
+</secTitle>
+		  <p contentType="ctComparativeIntro">
+		  	<content>Normalement il est possible d’avoir les syntagmes </content>
+		     <case  element="pp" attr="pPos">
+		     	<caseText value="before">prépositionnels</caseText>
+				<caseText value="after">postpositionnels</caseText>
+				<caseText value="both">adpositionnels</caseText>
+				<caseText value="unknown">adpositionnels</caseText>
+			 </case>
+		  	<content> de coordination dans toutes les positions occupées par un syntagme </content>
+		     <case  element="pp" attr="pPos">
+		     	<caseText value="before">prépositionnel</caseText>
+		        <caseText value="after">postpositionnel</caseText>
+		        <caseText value="both">adpositionnel</caseText>
+		        <caseText value="unknown">adpositionnel</caseText>
+		     </case>
+		  	<content> normal. Voici des exemples en français de phrases qui comprennent des syntagmes prépositionnels de coordination: </content>
+		  	<langData>Guillaume a couru à travers la forêt et à travers le pont</langData><content>, </content><langData>Je viendrai avec toi à la répétition mais pas chez toi</langData>
+		  	<content> et </content><langData>Je viendrai aux noces et/ou à la réception</langData><content>.</content>
+		  </p>
+	     <p contentType="ctPracticalIntro">
+	     	<content>Normalement il est possible d’avoir les syntagmes </content>
+	     	<case  element="pp" attr="pPos">
+	     		<caseText value="before">prépositionnels</caseText>
+	     		<caseText value="after">postpositionnels</caseText>
+	     		<caseText value="both">adpositionnels</caseText>
+	     		<caseText value="unknown">adpositionnels</caseText>
+	     	</case>
+	     	<content> de coordination dans toutes les positions occupées par un syntagme </content>
+	     	<case  element="pp" attr="pPos">
+	     		<caseText value="before">prépositionnel</caseText>
+	     		<caseText value="after">postpositionnel</caseText>
+	     		<caseText value="both">adpositionnel</caseText>
+	     		<caseText value="unknown">adpositionnel</caseText>
+	     	</case>
+	     	<content> normal.</content>
+	     </p>
+	     <p>
+	     	<content>Voici des exemples en </content>
+			  <langName/>
+	     	<content> de coordination de syntagmes </content>
+			  <case element="pp" attr="pPos">
+			  	<caseText value="before">prépositionnels</caseText>
+				  <caseText value="after">postpositionnels</caseText>
+			  	<caseText value="both">prépositionnels ou postpositionnels</caseText>
+				  <caseText value="unknown">adpositionnels</caseText></case>
+			  <content>:</content>
+		  </p>
+		  <example>
+			  <interlinear exampleLoc="coord/coordppExample"/>
+		  </example>
+	  </section3>
+	  <section3 id="sCoordAdj">
+	  	<secTitle>Coordination de syntagmes adjectivaux</secTitle>
+			<p contentType="ctComparativeIntro">
+				<content>Finalement, les adjectifs ou les syntagmes adjectivaux peuvent normalement être coordinés, et lorsqu’ils modifient un nom, comme suit: </content>
+				<langData>Le chien noir et blanc est à mon fils</langData><content>, </content><langData>Ma soeur veut une bougie rouge vif ou bleu clair</langData>
+				<content> et </content><langData>Cela paraît être une plaie terriblement douloureuse et très dangereuse sur ta jambe</langData>
+				<content>, et lorsqu’ils servent d’adjectif  prédicatif dans une phrase copulative, comme suit: </content>
+				<langData>La plaie sur ta jambe est terriblement douloureuse et très dangereuse</langData><content> et </content>
+				<langData>Cette étoffe est très lisse et soyeuse</langData><content>.</content>
+		  </p>
+	     <p contentType="ctPracticalIntro">
+	     	<content>Finalement, les adjectifs ou les syntagmes adjectivaux peuvent normalement être coordonnés, et lorsqu’ils modifient un nom et lorsqu’ils servent d’adjectif  prédicatif dans une phrase copulative.</content>
+	     </p>
+	     <p>
+	     	<content>Voici des exemples en </content>
+				<langName/>
+	     	<content> de coordination de syntagmes adjectivaux:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="coord/adjExample"/>
+			</example>
+	  </section3>
+	 </section2>
+	 <section2 id="sCoordList">
+		<secTitle>Listes</secTitle>
+	 	<p contentType="ctComparativeIntro"><content>Les listes comprennent trois éléments conjoints (ou plus) qui forment un seul syntagme nominal. Les éléments initiaux sont séparés normalement par des virgules, et il y a une conjonction distincte avant l’élément final, quoique d’autres possibilités existent. Voici des exemples en français de syntagmes nominaux sous forme de listes: </content>
+			<langData>[Jean, Guillaume, Susanne et Marie]</langData><content>, </content><langData>[Jean, Guillaume, Susanne et/ou Marie]</langData><content>, </content>
+			<langData>[Jean et Guillaume ou Susanne et Marie]</langData><content> et </content><langData>[un chat, deux chiens et un poulet, mais pas un singe]</langData><content>.</content>
+		</p>
+	 	<p contentType="ctPracticalIntro"><content>Les listes comprennent trois éléments conjoints (ou plus) qui forment un seul syntagme nominal. Les éléments initiaux sont séparés normalement par des virgules, et il y a une conjonction distincte avant l’élément final, quoique d’autres possibilités existent. </content>
+	    </p>
+	    
+		<p>
+			<content>Voici des exemples de listes en </content>
+		   <langName/>
+			<content> dans un syntagme nominal:</content>
+		</p>
+		<example>
+		   <interlinear exampleLoc="coord/listExample"/>
+		</example>
+	 </section2>
+
+
+	 <section2 id="sCoordAppositive">
+		<secTitle>Appositifs</secTitle>
+	 	<p contentType="ctComparativeIntro"><content>Les appositifs aussi forment un seul syntagme nominal. Les appositifs consistent normalement d’un nom suivi d’une virgule, ensuite une description suivie d’une virgule; l’ordre peut être inversé. Voici quelques exemples en français: </content>
+	 		<langData>[George Washington, le premier président des Etats Unis]</langData><content> et </content><langData>[Mon frère, Jacques]</langData><content>.</content>
+		</p>
+	 	<p contentType="ctPracticalIntro"><content>Les appositifs aussi forment un seul syntagme nominal. Les appositifs consistent normalement d’un nom suivi d’une virgule, ensuite une description suivie d’une virgule; l’ordre peut être inversé.</content>
+	    </p>
+	    <p>
+	    	<content>Voici des exemples d’appositifs en </content>
+		   <langName/>
+	    	<content> dans un syntagme nominal:</content>
+		</p>
+		<example>
+		   <interlinear exampleLoc="coord/appositiveExample"/>
+		</example>
+	 </section2>
+
+
+  </section1>
+
+
+   <showWhen id="swCoordConjWordNotYes">
+	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+   </showWhen>
+   <showWhen id="swCoordNoConjYes">
+	  <whenValue element="coord"  attr="noConj" value="yes"/>
+   </showWhen>
+   <showWhen id="swCoordNoConjNo">
+	  <whenValue element="coord" attr="noConj" value="no"/>
+   </showWhen>
+
+      <showWhen id="swCoordConjAttachesProclitic">
+         <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+         <and/>
+         <whenValue element="coord/enclitic" attr="checked" value="no"/>
+       </showWhen>  
+   <showWhen id="swCoordConjAttachesEnclitic">
+      <whenValue element="coord/proclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesClitic">
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesNotOther">
+      <whenValue element="coord/attachesOther" attr="checked" value="no"/>
+   </showWhen>  
+   <showWhen id="swCoordConjAttachesOtherOnly">
+      <whenValue element="coord/proclitic" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="no"/>
+         <and/>
+         <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+      </showWhen>  
+   <showWhen id="swCoordConjAttachesPosAndOther">
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+   </showWhen>  
+   
+</portion>

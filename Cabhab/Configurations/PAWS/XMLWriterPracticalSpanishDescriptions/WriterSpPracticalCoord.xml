@@ -40,7 +40,13 @@
                             <content>y</content>
                         </col>
                     </row>
-                    <row>
+                   <row>
+                      <col exampleLoc="coord/andThen"/>
+                      <col>
+                         <content>y luego</content>
+                      </col>
+                   </row>
+                   <row>
                         <col exampleLoc="coord/or"/>
                         <col>
                             <content>o</content>
@@ -147,7 +153,12 @@
             <example>
                 <interlinear exampleLoc="coord/sentExample"/>
             </example>
-            <p><content>Véase la sección </content><sectionRef sec="sAdvCl"/><content> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de cláusulas adverbiales, que son subordinación.</content></p>
+           <p><content> Algunos ejemplos de la coordinación a nivel de la oración que expresa una secuencia de eventos son:</content>
+           </p>
+           <example>
+              <interlinear exampleLoc="coord/sentSeqExample"/>
+           </example>
+           <p><content>Véase la sección </content><sectionRef sec="sAdvCl"/><content> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de cláusulas adverbiales, que son subordinación.</content></p>
 </section3>
         <section3 id="sCoordVP">
             <secTitle>Coordinación de la frase verbal</secTitle>

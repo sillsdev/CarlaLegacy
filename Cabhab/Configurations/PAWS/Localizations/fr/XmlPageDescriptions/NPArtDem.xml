@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="NPArtDem" count="1/2">
+   <title level="2">Syntagmes Nominaux – Articles et Démonstratifs: Exemples et cas</title>
+   <introduction>Considérez maintenant les articles et les démonstratifs. En français les articles sont <example>un, une, des, le, la, les</example> et les démonstratifs comprennent <example>ce, cette, ces</example>.  Voici quelques exemples simples:</introduction>
+    <EnglishExample>
+       <exItem label="1.">un livre</exItem>
+       <exItem label="2.">une pomme</exItem>
+       <exItem label="3.">le livre</exItem>
+       <exItem label="4.">les livres</exItem>
+       <exItem label="5.">cette pomme</exItem>
+       <exItem label="6.">ces livres</exItem>
+    </EnglishExample>
+   <introduction>En français, les articles et les démonstratifs ne se trouvent pas ensemble dans le même syntagme nominal et les deux se trouvent avant le nom. Ils se peut qu’ils se trouvent ensemble dans votre langue ou ils peuvent se trouver dans différentes positions par rapport au nom. C’est pourquoi nous leur donnerons des catégories syntactiques différentes. Certaines langues n’ont qu’un seul groupe soit des articles soit des démonstratifs. Certaines langues n’ont pas les deux types exprimés comme des mots indépendants.</introduction>
+    <form section="np">
+        <radioGroup>
+            <groupName dataItem="artAndDem" default="no">RNPArtAndDem</groupName>
+           <prompt><br/>Est-ce que votre langue a des articles et /ou des démonstratifs exprimés comme des mots indépendants?  Si votre langue utilise une forme du numéro « un » comme article indéfini, vérifiez que vous avez aussi des articles. </prompt>
+           <radio id="NPArtAndDemNo" dataValue="no">Non, aucun des deux</radio>
+           <radio id="NPArtAndDemArt" dataValue="article">Seulement des articles, pas de démonstratifs</radio>
+           <radio id="NPArtAndDemDem" dataValue="demonstrative">Seulement des démonstratifs, pas d’articles</radio>
+           <radio id="NPArtAndDemBoth" dataValue="both">Oui, des articles et des démonstratifs</radio>
+           </radioGroup>
+            <radioGroup id="NPArtDefifniteTable" show="swNPArtAndDemArtorBoth">
+                <groupName dataItem="artDefOnly" default="no">RNPArtDefOnly</groupName>
+               <prompt><br/>Est-ce qu’un des articles est sans marque dans votre langue?</prompt>
+               <radio id="NPArtDefOnlyNo" dataValue="no">Non, les articles définis et indéfinis sont des mots manifestes</radio>
+               <radio id="NPArtDefOnlyYes" dataValue="yes">Oui, seul l’article défini est manifeste, les noms indéfinis ne sont pas modifiés par un article</radio>
+               <radio id="NPArtDefOnlyIndef" dataValue="indef">Oui, seul l’article indéfini est manifeste (peut-être une forme du numéro « un »); les noms définis ne sont pas modifiés par un article</radio>
+            </radioGroup>
+            <radioGroup id="NPArtPlTable" show="swNPArtAndDemArtorBothAndAgreeNum">
+                <groupName dataItem="artPl" default="no">RNPArtPl</groupName>
+               <prompt><br/>Est-ce que votre langue a des formes différentes d’articles au singulier et au pluriel qui s’accordent avec le nom?</prompt>
+               <radio id="NPArtPlNo" dataValue="no">Non, il n’y a qu’un groupe d’articles <span id="NPArtDefOnlySpan2" show="swNPArtDefOnly">définis </span><span id="NPArtIndefOnlySpan2" show="swNPArtIndefOnly">indéfinis</span></radio>
+               <radio id="NPArtPlYes" dataValue="yes">Oui, il y a des formes distinctes de singulier et de pluriel</radio>
+            </radioGroup>
+            <radioGroup id="NPDemPlTable" show="swNPArtAndDemDemorBothAndAgreeNum">
+                <groupName dataItem="demPl" default="no">RNPDemPl</groupName>
+               <prompt><br/>Est-ce que votre langue a des formes différentes de démonstratifs au singulier et au pluriel qui s’accordent avec le nom?</prompt>
+               <radio id="NPDemPlNo" dataValue="no">Non, il n’y a qu’un groupe de démonstratifs</radio>
+               <radio id="NPDemPlYes" dataValue="yes">Oui, il y a des formes distinctes de singulier et de pluriel</radio>      
+        </radioGroup>
+       <radioGroup id="NPArtCaseTable" show="swNPArtAndOrDemAndCaseYes">
+          <groupName dataItem="artCase" default="no">RArtCase</groupName>
+          <prompt><br/>Est-ce que votre langue a des formes différentes <span id="NPArtOnlyClassSpan" show="swNPArtAndDemArt">d’articles</span><span id="NPDemOnlyClassSpan" show="swNPArtAndDemDem">de démonstratifs</span><span id="NPArtAndDemClassSpan" show="swNPArtAndDemBoth">d’articles et de démonstratifs</span> basés sur le cas?</prompt>
+          <radio id="NPArtCaseNo" dataValue="no">Non</radio>
+          <radio id="NPArtCaseYes" dataValue="yes">Oui</radio>
+       </radioGroup>
+       <radioGroup id="NPArtAndDemClassifierAgrTable" show="swOTClassifierAgrAndArtAndDemNotNo">
+          <groupName dataItem="artDemClassifier" default="no">RNPArtAndDemClassifierAgr</groupName>
+          <prompt><br/>Vous avez dit que votre langue a des marqueurs de classe et de nom avec accord partout dans les syntagmes nominaux. Est-ce que les <span id="NPArtAndDemArtSpan" show="swNPArtAndDemArt">articles</span><span id="NPArtAndDemDemSpan" show="swNPArtAndDemDem">démonstratifs</span><span id="NPArtAndDemBothSpan" show="swNPArtAndDemBoth">articles  et démonstratifs</span> sont marqués pour la classe?</prompt>
+          <radio id="NPArtAndDemClassifierAgrNo" dataValue="no">Non, ces éléments ne sont pas marqués pour la classe</radio>
+          <radio id="NPArtAndDemClassifierAgrYes" dataValue="yes">Oui, ces éléments sont marqués pour la classe comme une partie du système d’accord concordant</radio>
+       </radioGroup>
+       <prompt id="NPArtAndDemClassifierAgrPrompt" show="swOTClassifierAgrAndArtAndDemNotNoAndClassifierYes">o	Puisque vous avez déjà détaillé les formes du marqueur de classe et du nom vous n’avez qu’à entrer ici les racines pour chacun des <span id="NPArtAndDemArtSpan1" show="swNPArtAndDemArt">articles</span><span id="NPArtAndDemDemSpan1" show="swNPArtAndDemDem">démonstratifs</span><span id="NPArtAndDemBothSpan1" show="swNPArtAndDemBoth">articles  et démonstratifs</span>.  Cependant incluez les classificateurs quand vous donnez des exemples de syntagmes nominaux complets ci-dessous.</prompt>
+       <br/>
+       <prompt id="NPArtCaseNone" show="swNPArtCaseNoOrNone">Puisque votre langue ne distingue pas le cas dans les articles, vous ne devriez avoir qu’un simple groupe d’articles qui peuvent être utilisés dans n’importe quelle position dans le phrase.</prompt>
+       
+       <prompt id="NPArtCaseNoPrompt" show="swNPArtCaseNoOrNoneAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue <span id="SingularSpan" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseNoExample" dataItem="articleExample" rows="4" show="swNPArtCaseNoOrNoneAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseNo" show="swNPArtCaseNoOrNoneAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseNoExample" dataItem="articlePlExample" rows="3" show="swNPArtCaseNoOrNoneAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseNoPrompt" show="swNPArtCaseNoOrNoneAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue <span id="SingularSpan1" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseNoExample" dataItem="articleIndefExample" rows="4" show="swNPArtCaseNoOrNoneAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseNo" show="swNPArtCaseNoOrNoneAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseNoExample" dataItem="articleIndefPlExample" rows="3" show="swNPArtCaseNoOrNoneAndNumberYesAndDefOnlyNotYes"/>
+       
+       <prompt id="NPArtCaseNom" show="swNPArtCaseNom">Puisque votre langue a un système de cas nominatif-accusatif, vous devriez avoir des groupes distincts d’articles qui peuvent être utilisés dans les sujets et les objets et les possessifs.</prompt>
+
+          <prompt id="NPArtCaseNomNumberNo" show="swNPArtCaseNomAndDefOnlyNotIndef">
+             Entrez les articles définis qui peuvent apparaître dans les sujets qu’utilise votre langue <span id="SingularSpan4" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseNomExample" dataItem="articleNomExample" rows="3" show="swNPArtCaseNomAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseNom" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qui peuvent apparaître dans les sujets qu’utilise votre langue pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseNomExample" dataItem="articlePlNomExample" rows="3" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseNomNumberNo" show="swNPArtCaseNomAndDefOnlyNotYes">
+          Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets <span id="SingularSpan5" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+          <textBox id="NPArtIndefCaseNomExample" dataItem="articleIndefNomExample" rows="3" show="swNPArtCaseNomAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseNom" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseNomExample" dataItem="articleIndefPlNomExample" rows="3" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotYes"/>
+       <prompt id="NPArtCaseAcc" show="swNPArtCaseNomAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les objets directs <span id="SingularSpan6" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseAccExample" dataItem="articleAccExample" rows="3" show="swNPArtCaseNomAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseAcc" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les objets directs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseAccExample" dataItem="articlePlAccExample" rows="3" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseAcc" show="swNPArtCaseNomAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les objets directs <span id="SingularSpan7" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseAccExample" dataItem="articleIndefAccExample" rows="3" show="swNPArtCaseNomAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseAcc" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les objets directs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseAccExample" dataItem="articleIndefPlAccExample" rows="3" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotYes"/>
+       <prompt id="NPArtCaseGen" show="swNPArtCaseNomAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les possessifs <span id="SingularSpan8" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseGenExample" dataItem="articleGenExample" rows="3" show="swNPArtCaseNomAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseGen" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les possessifs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseGenExample" dataItem="articlePlGenExample" rows="3" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseGen" show="swNPArtCaseNomAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les possessifs <span id="SingularSpan9" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseGenExample" dataItem="articleIndefGenExample" rows="3" show="swNPArtCaseNomAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseGen" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les possessifs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseGenExample" dataItem="articleIndefPlGenExample" rows="3" show="swNPArtCaseNomAndNumberYesAndDefOnlyNotYes"/>
+       <instruction id="NPArtCaseNomInstruction" show="swNPArtCaseNom">
+          <br/>In the lexicon:
+          <ul>
+             <li>Add the feature <feature>nominative</feature> to all the articles that occur in subjects.</li>
+             <li>Add the feature <feature>accusative</feature> to all the articles that occur in objects.</li>
+             <li>Add the feature <feature>genitive</feature> to all the articles that occur in possessors.</li>
+             <li>If a particular article can show up in any position, do not add any feature.</li>
+          </ul>
+       </instruction>
+       
+       <prompt id="NPArtCaseErg" show="swNPArtCaseErg">Puisque votre langue a un système de cas ergatif-absolutif, vous devriez avoir des groupes d’articles distincts qui peuvent être utilisés comme sujets de verbes transitifs : par contraste avec des sujets de verbes intransitifs et d’objets de verbes transitifs et par contraste avec les possessifs.</prompt>
+       <prompt id="NPArtCaseErgNumberNo" show="swNPArtCaseErgAndDefOnlyNotIndef">
+          Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes transitifs <span id="SingularSpan10" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseErgExample" dataItem="articleErgExample" rows="3" show="swNPArtCaseErgAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseErg" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotIndef">
+          Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes transitifs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseErgExample" dataItem="articlePlErgExample" rows="3" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseErgNumberNo" show="swNPArtCaseErgAndDefOnlyNotYes">
+          Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes transitifs <span id="SingularSpan11" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseErgExample" dataItem="articleIndefErgExample" rows="3" show="swNPArtCaseErgAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseErg" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotYes">
+          Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes transitifs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseErgExample" dataItem="articleIndefPlErgExample" rows="3" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotYes"/>
+       <prompt id="NPArtCaseAbs" show="swNPArtCaseErgAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes intransitifs ou les objets directs de verbes transitifs <span id="SingularSpan12" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseAbsExample" dataItem="articleAbsExample" rows="3" show="swNPArtCaseErgAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseAbs" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes intransitifs ou les objets directs de verbes transitifs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseAbsExample" dataItem="articlePlAbsExample" rows="3" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseAbs" show="swNPArtCaseErgAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes intransitifs ou les objets directs de verbes transitifs <span id="SingularSpan13" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseAbsExample" dataItem="articleIndefAbsExample" rows="3" show="swNPArtCaseErgAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseAbs" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes intransitifs ou les objets directs de verbes transitifs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseAbsExample" dataItem="articleIndefPlAbsExample" rows="3" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotYes"/>
+       <prompt id="NPArtCaseErgGen" show="swNPArtCaseErgAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les possessifs <span id="SingularSpan14" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseErgGenExample" dataItem="articleErgGenExample" rows="3" show="swNPArtCaseErgAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseErgGen" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les possessifs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseErgGenExample" dataItem="articleErgPlGenExample" rows="3" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseErgGen" show="swNPArtCaseErgAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les possessifs <span id="SingularSpan15" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseErgGenExample" dataItem="articleErgIndefGenExample" rows="3" show="swNPArtCaseErgAndDefOnlyNotYes"/>      
+       <prompt id="NPArtIndefPlCaseErgGen" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotYes">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les possessifs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseErgGenExample" dataItem="articleErgIndefPlGenExample" rows="3" show="swNPArtCaseErgAndNumberYesAndDefOnlyNotYes"/>
+       <instruction id="NPArtCaseErgInstruction" show="swNPArtCaseErg">
+          <br/>In the lexicon:
+          <ul>
+             <li>Add the feature <feature>ergative</feature> to all the articles that occur in subjects of transitive verbs.</li>
+             <li>Add the feature <feature>absolutive</feature> to all the articles that occur in objects of transitive verbs and in subjects of intransitive verbs.</li>
+             <li>Add the feature <feature>genitive</feature> to all the articles that occur in possessors.</li>
+             <li>If a particular article can show up in any position, do not add any feature.</li>
+          </ul>
+       </instruction>
+       
+       <prompt id="NPArtCaseSplitNom" show="swNPArtCaseSplit">Puisque votre langue a un système de cas dédoublé, vous devriez avoir des groupes distincts d’articles qui sont normalement utilisés dans des sujets et des objets et des possessifs et aussi dans d’autres groupes spéciaux qui sont utilisés dans les cas ergatifs dédoublés.</prompt> 
+       <prompt id="NPArtCaseSplitNomAndNumberNo" show="swNPArtCaseSplitAndDefOnlyNotIndef">
+          Entrez les articles définis qu’utilise votre langue et qui apparaissent normalement dans les sujets <span id="SingularSpan16" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseSplitNomExample" dataItem="articleSplitNomExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseSplitNom" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef">
+          Entrez les articles définis qu’utilise votre langue et qui apparaissent normalement dans les sujets pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseSplitNomExample" dataItem="articleSplitPlNomExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseSplitNom" show="swNPArtCaseSplitAndDefOnlyNotYes">
+          Entrez les articles indéfinis qu’utilise votre langue et qui apparaissent normalement dans les sujets <span id="SingularSpan17" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseSplitNomExample" dataItem="articleSplitIndefNomExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseSplitNom" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes">
+          Entrez les articles indéfinis qu’utilise votre langue et qui apparaissent normalement dans les sujets pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseSplitNomExample" dataItem="articleSplitIndefPlNomExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes"/>
+       <prompt id="NPArtCaseSplitAcc" show="swNPArtCaseSplitAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui apparaissent normalement dans les objets directs <span id="SingularSpan18" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseSplitAccExample" dataItem="articleSplitAccExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseSplitAcc" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui apparaissent normalement dans les objets directs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseSplitAccExample" dataItem="articleSplitPlAccExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseSplitAcc" show="swNPArtCaseSplitAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui apparaissent normalement dans les objets directs <span id="SingularSpan19" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseSplitAccExample" dataItem="articleSplitIndefAccExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseSplitAcc" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui apparaissent normalement dans les objets directs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseSplitAccExample" dataItem="articleSplitIndefPlAccExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes"/>
+       <prompt id="NPArtCaseSplitGen" show="swNPArtCaseSplitAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui apparaissent normalement dans les possesseurs <span id="SingularSpan20" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseSplitGenExample" dataItem="articleSplitGenExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseSplitGen" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui apparaissent normalement dans les possesseurs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseSplitGenExample" dataItem="articleSplitPlGenExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseSplitGen" show="swNPArtCaseSplitAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui apparaissent normalement dans les possesseurs <span id="SingularSpan21" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseSplitGenExample" dataItem="articleSplitIndefGenExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotYes"/>     
+       <prompt id="NPArtIndefPlCaseSplitGen" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui apparaissent normalement dans les possesseurs pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseSplitGenExample" dataItem="articleSplitIndefPlGenExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes"/>
+       
+       <prompt id="NPArtCaseSplitErg" show="swNPArtCaseSplitAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée <span id="SingularSpan22" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseSplitErgExample" dataItem="articleSplitErgExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseSplitErg" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseSplitErgExample" dataItem="articleSplitPlErgExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseSplitErg" show="swNPArtCaseSplitAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée <span id="SingularSpan23" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseSplitErgExample" dataItem="articleSplitIndefErgExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseSplitErg" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseSplitErgExample" dataItem="articleSplitIndefPlErgExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes"/>
+       <prompt id="NPArtCaseSplitAbs" show="swNPArtCaseSplitAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes intransitifs ou d’objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée <span id="SingularSpan24" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtCaseSplitAbsExample" dataItem="articleSplitAbsExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlCaseSplitAbs" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes intransitifs ou d’objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlCaseSplitAbsExample" dataItem="articleSplitPlAbsExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefCaseSplitAbs" show="swNPArtCaseSplitAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes intransitifs ou d’objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée <span id="SingularSpan25" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefCaseSplitAbsExample" dataItem="articleSplitIndefAbsExample" rows="3" show="swNPArtCaseSplitAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlCaseSplitAbs" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans les sujets de verbes intransitifs ou d’objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlCaseSplitAbsExample" dataItem="articleSplitIndefPlAbsExample" rows="3" show="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes"/>
+       
+       <instruction id="NPArtCaseSplitInstruction" show="swNPArtCaseSplit">
+          <br/>In the lexicon:
+          <ul>
+             <li>Add the feature <feature>nominative</feature> to all the articles that occur in subjects.</li>
+             <li>Add the feature <feature>accusative</feature> to all the articles that occur in objects.</li>
+             <li>Add the feature <feature>genitive</feature> to all the articles that occur in possessors.</li>
+             <li>For the split ergativity cases, add the feature <feature>ergative</feature> to all the articles that can only occur in subjects of transitive verbs and add the feature <feature>absolutive</feature> to all the articles that can only occur in subjects of intransitive verbs and objects of transitive verbs.  Note that if there is some overlap between the sets for nominative-accusative versus ergative-absolutive, you will probably need to have two entries in your lexicon for those articles, each marked with the appropriate case feature.</li>
+             <li>If a particular article can show up in any position, do not add any feature.</li>
+          </ul>
+       </instruction>  
+       <prompt id="NPArtDativeSet" show="swNPCaseNotNoneAndArtCaseArt">
+          <br/>Il se peut que vous ayez un groupe supplémentaire d’articles dans le cas datif.  
+       </prompt>
+       <prompt id="NPArtDative" show="swNPCaseNotNoneAndArtCaseAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans <span id="ExperiencerSpan" show="swExperiencerYesDat">les sujets expérimenteur ou </span>d’objets indirects <span id="SingularSpan26" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtDativeExample" dataItem="articleDatExample" rows="2" show="swNPCaseNotNoneAndArtCaseAndDefOnlyNotIndef"/>
+       <prompt id="NPArtPlDative" show="swNPCaseNotNoneAndArtCaseAndArtPlYesAndDefOnlyNotIndef">Entrez les articles définis qu’utilise votre langue et qui peuvent apparaître dans <span id="ExperiencerSpan2" show="swExperiencerYesDat">les sujets expérimenteur ou </span>d’objets indirects pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtPlDativeExample" dataItem="articlePlDatExample" rows="3" show="swNPCaseNotNoneAndArtCaseAndArtPlYesAndDefOnlyNotIndef"/>
+       <prompt id="NPArtIndefDative" show="swNPCaseNotNoneAndArtCaseAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans <span id="ExperiencerSpan1" show="swExperiencerYesDat">les sujets expérimenteur ou </span>d’objets indirects <span id="SingularSpan27" show="swArtPlYes">pour s’accorder avec les noms au singulier </span>dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefDativeExample" dataItem="articleIndefDatExample" rows="2" show="swNPCaseNotNoneAndArtCaseAndDefOnlyNotYes"/>
+       <prompt id="NPArtIndefPlDative" show="swNPCaseNotNoneAndArtCaseAndArtPlYesAndDefOnlyNotYes">Entrez les articles indéfinis qu’utilise votre langue et qui peuvent apparaître dans <span id="ExperiencerSpan3" show="swExperiencerYesDat">les sujets expérimenteur ou </span>d’objets indirects pour s’accorder aux noms au pluriel dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPArtIndefPlDativeExample" dataItem="articleIndefPlDatExample" rows="3" show="swNPCaseNotNoneAndArtCaseAndArtPlYesAndDefOnlyNotYes"/>
+       <instruction id="NPArtCaseDativeInstruction" show="swNPCaseNotNoneAndArtCaseArt">
+          <br/>In the lexicon, add the feature <feature>dative</feature> to all the articles that occur in indirect objects or Experiencer subjects.</instruction>
+       
+       
+       <prompt id="NPDemProximalCaseNone" show="swNPDemCaseNoOrNone">Puisque votre langue ne distingue pas le cas dans les démonstratifs, vous devriez avoir seulement un simple groupe de démonstratifs qui peuvent être utilisés dans n’importe quelle position dans la phrase.</prompt>
+       
+       <prompt id="NPDemProximalCaseNo" show="swNPDemCaseNoOrNone">Entrez les démonstratifs qui sont utilisés avec des noms <span id="SingularSpan30" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseNoExample" dataItem="demProximalExample" rows="2" show="swNPDemCaseNoOrNone"/>
+       <prompt id="NPDemProximalPlCaseNo" show="swNPDemCaseNoOrNoneAndNumberYes">Entrez les démonstratifs qui sont utilisés avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseNoExample" dataItem="demProximalPlExample" rows="2" show="swNPDemCaseNoOrNoneAndNumberYes"/>
+       <prompt id="NPDemMedialCaseNo" show="swNPDemCaseNoOrNone">Entrez les démonstratifs qui sont utilisés avec des noms <span id="SingularSpan31" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseNoExample" dataItem="demMedialExample" rows="2" show="swNPDemCaseNoOrNone"/>
+       <prompt id="NPDemMedialPlCaseNo" show="swNPDemCaseNoOrNoneAndNumberYes">Entrez les démonstratifs qui sont utilisés avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseNoExample" dataItem="demMedialPlExample" rows="2" show="swNPDemCaseNoOrNoneAndNumberYes"/>
+       <prompt id="NPDemDistalCaseNo" show="swNPDemCaseNoOrNone">Entrez les démonstratifs qui sont utilisés avec des noms <span id="SingularSpan32" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseNoExample" dataItem="demDistalExample" rows="2" show="swNPDemCaseNoOrNone"/>
+       <prompt id="NPDemDistalPlCaseNo" show="swNPDemCaseNoOrNoneAndNumberYes">Entrez les démonstratifs qui sont utilisés avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseNoExample" dataItem="demDistalPlExample" rows="2" show="swNPDemCaseNoOrNoneAndNumberYes"/>
+       
+       <prompt id="NPDemProximalCaseNom" show="swNPDemCaseNom">Puisque votre langue a un système de cas nominatif-accusatif vous devriez avoir des groupes distincts de démonstratifs qui peuvent être utilisés dans des sujets et des objets et des possessifs.<br/><br/>
+          Entrez les démonstratifs qui peuvent apparaître dans les sujets qu’on utilise avec des noms qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseNomExample" dataItem="demProximalNomExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemProximalPlCaseNom" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les sujets qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseNomExample" dataItem="demProximalPlNomExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       <prompt id="NPDemProximalCaseAcc" show="swNPDemCaseNom">Entrez les démonstratifs qui peuvent apparaître dans les objets directs qu’on utilise avec des noms <span id="SingularSpan33" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseAccExample" dataItem="demProximalAccExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemProximalPlCaseAcc" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les objets directs qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseAccExample" dataItem="demProximalPlAccExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       <prompt id="NPDemProximalCaseGen" show="swNPDemCaseNom">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms <span id="SingularSpan34" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseGenExample" dataItem="demProximalGenExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemProximalPlCaseGen" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseGenExample" dataItem="demProximalPlGenExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       <prompt id="NPDemMedialCaseNom" show="swNPDemCaseNom">Entrez les démonstratifs qui peuvent apparaître dans les sujets qu’on utilise avec des noms <span id="SingularSpan35" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseNomExample" dataItem="demMedialNomExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemMedialPlCaseNom" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les sujets qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseNomExample" dataItem="demMedialPlNomExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       <prompt id="NPDemMedialCaseAcc" show="swNPDemCaseNom">Entrez les démonstratifs qui peuvent apparaître dans les objets directs qu’on utilise avec des noms <span id="SingularSpan36" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseAccExample" dataItem="demMedialAccExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemMedialPlCaseAcc" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les objets directs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseAccExample" dataItem="demMedialPlAccExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       <prompt id="NPDemMedialCaseGen" show="swNPDemCaseNom">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms <span id="SingularSpan37" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseGenExample" dataItem="demMedialGenExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemMedialPlCaseGen" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseGenExample" dataItem="demMedialPlGenExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       <prompt id="NPDemDistalCaseNom" show="swNPDemCaseNom">Entrez les démonstratifs qui peuvent apparaître dans les sujets qu’on utilise avec des noms <span id="SingularSpan38" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseNomExample" dataItem="demDistalNomExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemDistalPlCaseNom" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les sujets qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseNomExample" dataItem="demDistalPlNomExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       <prompt id="NPDemDistalCaseAcc" show="swNPDemCaseNom">Entrez les démonstratifs qui peuvent apparaître dans les objets directs qu’on utilise avec des noms <span id="SingularSpan39" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseAccExample" dataItem="demDistalAccExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemDistalPlCaseAcc" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les objets directs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseAccExample" dataItem="demDistalPlAccExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       <prompt id="NPDemDistalCaseGen" show="swNPDemCaseNom">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms <span id="SingularSpan40" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseGenExample" dataItem="demDistalGenExample" rows="2" show="swNPDemCaseNom"/>
+       <prompt id="NPDemDistalPlCaseGen" show="swNPDemCaseNomAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseGenExample" dataItem="demDistalPlGenExample" rows="2" show="swNPDemCaseNomAndNumberYes"/>
+       
+       <prompt id="NPDemProximalCaseErg" show="swNPDemCaseErg">Puisque votre langue a un système de cas ergatif-absolutif, vous devriez avoir des groupes de démonstratifs qui peuvent être utilisés dans des sujets de verbes transitifs par contraste avec des sujets de verbes intransitifs et des objets de verbes transitifs et par contraste avec des possessifs.<br/><br/>
+          Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes transitifs qu’on utilise avec des noms <span id="SingularSpan42" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseErgExample" dataItem="demProximalErgExample" rows="2" show="swNPDemCaseErg"/>
+       <prompt id="NPDemProximalPlCaseErg" show="swNPDemCaseErgAndNumberYes">
+          Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes transitifs qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseErgExample" dataItem="demProximalPlErgExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       <prompt id="NPDemProximalCaseAbs" show="swNPDemCaseErg">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes intransitifs qu’on utilise avec des noms <span id="SingularSpan41" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseAbsExample" dataItem="demProximalAbsExample" rows="2" show="swNPDemCaseErg"/>
+       <prompt id="NPDemProximalPlCaseAbs" show="swNPDemCaseErgAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes intransitifs qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseAbsExample" dataItem="demProximalPlAbsExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       <prompt id="NPDemProximalCaseErgGen" show="swNPDemCaseErg">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms <span id="SingularSpan43" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseErgGenExample" dataItem="demErgProximalGenExample" rows="2" show="swNPDemCaseErg"/>
+       <prompt id="NPDemProximalPlCaseErgGen" show="swNPDemCaseErgAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseErgGenExample" dataItem="demErgProximalPlGenExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       <prompt id="NPDemMedialCaseErg" show="swNPDemCaseErg">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes transitifs qu’on utilise avec des noms <span id="SingularSpan44" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseErgExample" dataItem="demMedialErgExample" rows="2" show="swNPDemCaseErg"/>
+       <prompt id="NPDemMedialPlCaseErg" show="swNPDemCaseErgAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes transitifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseErgExample" dataItem="demMedialPlErgExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       <prompt id="NPDemMedialCaseAbs" show="swNPDemCaseErg">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes intransitifs qu’on utilise avec des noms <span id="SingularSpan45" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseAbsExample" dataItem="demMedialAbsExample" rows="2" show="swNPDemCaseErg"/>
+       <prompt id="NPDemMedialPlCaseAbs" show="swNPDemCaseErgAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes intransitifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseAbsExample" dataItem="demMedialPlAbsExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       <prompt id="NPDemMedialCaseErgGen" show="swNPDemCaseErg">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms <span id="SingularSpan46" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseErgGenExample" dataItem="demErgMedialGenExample" rows="2" show="swNPDemCaseErg"/>
+       <prompt id="NPDemMedialPlCaseErgGen" show="swNPDemCaseErgAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseErgGenExample" dataItem="demErgMedialPlGenExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       <prompt id="NPDemDistalCaseErg" show="swNPDemCaseErg">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes transitifs qu’on utilise avec des noms <span id="SingularSpan47" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseErgExample" dataItem="demDistalErgExample" rows="2" show="swNPDemCaseErg"/>
+       <prompt id="NPDemDistalPlSgCaseErg" show="swNPDemCaseErgAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes transitifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseErgExample" dataItem="demDistalPlErgExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       <prompt id="NPDemDistalCaseAbs" show="swNPDemCaseErg">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes intransitifs qu’on utilise avec des noms <span id="SingularSpan48" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseAbsExample" dataItem="demDistalAbsExample" rows="2" show="swNPDemCaseErg"/>
+       <prompt id="NPDemDistalPlCaseAbs" show="swNPDemCaseErgAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les sujets de verbes intransitifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseAbsExample" dataItem="demDistalPlAbsExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       <prompt id="NPDemDistalCaseErgGen" show="swNPDemCaseErg">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms <span id="SingularSpan49" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseErgGenExample" dataItem="demErgDistalGenExample" rows="2" show="swNPDemCaseErg"/>
+     <prompt id="NPDemDistalPlCaseErgGen" show="swNPDemCaseErgAndNumberYes">Entrez les démonstratifs qui peuvent apparaître dans les possessifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseErgGenExample" dataItem="demErgDistalPlGenExample" rows="2" show="swNPDemCaseErgAndNumberYes"/>
+       
+       <prompt id="NPDemProximalCaseSplitNom" show="swNPDemCaseSplit">Puisque votre langue a un système de cas dédoublé, vous devriez avoir des groupes distincts de démonstratifs qui sont normalement utilisés dans des sujets et des objets et des possessifs et aussi certains groupes spéciaux qui sont utilisés dans des cas d’ergativité dédoublée.<br/><br/>
+          Entrez les démonstratifs qui apparaissent normalement dans les sujets qu’on utilise avec des noms qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseSplitNomExample" dataItem="demSplitProximalNomExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemProximalPlCaseSplitNom" show="swNPDemCaseSplitAndNumberYes">
+          Entrez les démonstratifs qui apparaissent normalement dans les sujets qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseSplitNomExample" dataItem="demSplitProximalPlNomExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemProximalCaseSplitAcc" show="swNPDemCaseSplit">Entrez les démonstratifs qui apparaissent normalement dans les objets directs qu’on utilise avec des noms <span id="SingularSpan50" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseSplitAccExample" dataItem="demSplitProximalAccExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemProximalPlCaseSplitAcc" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstratifs qui apparaissent normalement dans les objets directs qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseSplitAccExample" dataItem="demSplitProximalPlAccExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemProximalCaseSplitGen" show="swNPDemCaseSplit">Entrez les démonstratifs qui apparaissent normalement dans les possessifs qu’on utilise avec des noms <span id="SingularSpan51" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseSplitGenExample" dataItem="demSplitProximalGenExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemProximalPlCaseSplitGen" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstratifs qui apparaissent normalement dans les possessifs qu’on utilise avec des noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseSplitGenExample" dataItem="demSplitProximalPlGenExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemMedialCaseSplitNom" show="swNPDemCaseSplit">Entrez les démonstratifs qui apparaissent normalement dans les sujets qu’on utilise avec des noms <span id="SingularSpan52" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseSplitNomExample" dataItem="demSplitMedialNomExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemMedialPlCaseSplitNom" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstratifs qui apparaissent normalement dans les sujets qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseSplitNomExample" dataItem="demSplitMedialPlNomExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemMedialCaseSplitAcc" show="swNPDemCaseSplit">Entrez les démonstratifs qui apparaissent normalement dans les objets directs qu’on utilise avec des noms <span id="SingularSpan53" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseSplitAccExample" dataItem="demSplitMedialAccExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemMedialPlCaseSplitAcc" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstratifs qui apparaissent normalement dans les objets directs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseSplitAccExample" dataItem="demSplitMedialPlAccExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemMedialCaseSplitGen" show="swNPDemCaseSplit">Entrez les démonstratifs qui apparaissent normalement dans les possessifs qu’on utilise avec des noms <span id="SingularSpan54" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseSplitGenExample" dataItem="demSplitMedialGenExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemMedialPlCaseSplitGen" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstratifs qui apparaissent normalement dans les possessifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseSplitGenExample" dataItem="demSplitMedialPlGenExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemDistalCaseSplitNom" show="swNPDemCaseSplit">Entrez les démonstratifs qui apparaissent normalement dans les sujets qu’on utilise avec des noms <span id="SingularSpan55" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseSplitNomExample" dataItem="demSplitDistalNomExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemDistalPlCaseSplitNom" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstratifs qui apparaissent normalement dans les sujets qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseSplitNomExample" dataItem="demSplitDistalPlNomExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemDistalCaseSplitAcc" show="swNPDemCaseSplit">Entrez les démonstratifs qui apparaissent normalement dans les objets directs qu’on utilise avec des noms <span id="SingularSpan56" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseSplitAccExample" dataItem="demSplitDistalAccExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemDistalPlCaseSplitAcc" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstratifs qui apparaissent normalement dans les objets directs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseSplitAccExample" dataItem="demSplitDistalPlAccExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemDistalCaseSplitGen" show="swNPDemCaseSplit">Entrez les démonstratifs qui apparaissent normalement dans les possessifs qu’on utilise avec des noms <span id="SingularSpan57" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseSplitGenExample" dataItem="demSplitDistalGenExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemDistalPlCaseSplitGen" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstratifs qui apparaissent normalement dans les possessifs qu’on utilise avec des noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseSplitGenExample" dataItem="demSplitDistalPlGenExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       
+       <prompt id="NPDemProximalCaseSplitErg" show="swNPDemCaseSplit">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms <span id="SingularSpan58" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseSplitErgExample" dataItem="demSplitProximalErgExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemProximalPlCaseSplitErg" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseSplitErgExample" dataItem="demSplitProximalPlErgExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemProximalCaseSplitAbs" show="swNPDemCaseSplit">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes intransitifs ou objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms <span id="SingularSpan59" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalCaseSplitAbsExample" dataItem="demSplitProximalAbsExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemProximalPlCaseSplitAbs" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes intransitifs ou objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlCaseSplitAbsExample" dataItem="demSplitProximalPlAbsExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemMedialCaseSplitErg" show="swNPDemCaseSplit">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms <span id="SingularSpan60" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseSplitErgExample" dataItem="demSplitMedialErgExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemMedialPlCaseSplitErg" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseSplitErgExample" dataItem="demSplitMedialPlErgExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemMedialCaseSplitAbs" show="swNPDemCaseSplit">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes intransitifs ou objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms <span id="SingularSpan61" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialCaseSplitAbsExample" dataItem="demSplitMedialAbsExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemMedialPlCaseSplitAbs" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes intransitifs ou objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlCaseSplitAbsExample" dataItem="demSplitMedialPlAbsExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemDistalCaseSplitErg" show="swNPDemCaseSplit">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms <span id="SingularSpan62" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseSplitErgExample" dataItem="demSplitDistalErgExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemDistalPlCaseSplitErg" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseSplitErgExample" dataItem="demSplitDistalPlErgExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       <prompt id="NPDemDistalCaseSplitAbs" show="swNPDemCaseSplit">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes intransitifs ou objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms <span id="SingularSpan63" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalCaseSplitAbsExample" dataItem="demSplitDistalAbsExample" rows="2" show="swNPDemCaseSplit"/>
+       <prompt id="NPDemDistalPlCaseSplitAbs" show="swNPDemCaseSplitAndNumberYes">Entrez les démonstarifs qui peuvent apparaître dans les sujets de verbes intransitifs ou objets de verbes transitifs dans des cas spéciaux d’érgativité dédoublée pour s’accorder aux noms plural  qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlCaseSplitAbsExample" dataItem="demSplitDistalPlAbsExample" rows="2" show="swNPDemCaseSplitAndNumberYes"/>
+       
+        <instruction id="NPArtCaseNomAccInstruction2" show="swNPCaseNom">Since your language has a nominative-accusative case system, in the lexicon:
+<ul>
+                <li>Mark the <span id="NPArtOnlyCaseNomSpan" show="swNPArtAndDemArt">articles</span>
+                    <span id="NPDemOnlyCaseNomSpan" show="swNPArtAndDemDem">demonstratives</span>
+                    <span id="NPArtAndDemCaseNomSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that  go with subjects with the feature <feature>nominative</feature> and those that go with direct objects with the feature <feature>accusative</feature>.</li>
+                <li>If you have a set for possessors, add the feature <feature>genitive</feature> to those entries.</li>
+                <li>If a particular <span id="NPArtOnlyCaseGenSpan" show="swNPArtAndDemArt">article</span>
+                    <span id="NPDemOnlyCaseGenSpan" show="swNPArtAndDemDem">demonstrative</span>
+                    <span id="NPArtAndDemCaseGenSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can show up in any position, do not add any feature.</li>
+                <li>If a particular <span id="NPArtOnlyCaseNomGenSpan" show="swNPArtAndDemArt">article</span>
+                    <span id="NPDemOnlyCaseNomGenSpan" show="swNPArtAndDemDem">demonstrative</span>
+                    <span id="NPArtAndDemCaseNomGenSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can occur in a subject or in a possessor but not in the object of a verb or <technicalTermRef term="ttAdposition"/>, add the feature <feature>nominative.or.genitive</feature>.</li>
+                <li>If a particular <span id="NPArtOnlyCaseNomAccSpan" show="swNPArtAndDemArt">article</span>
+                    <span id="NPDemOnlyCaseNomAccSpan" show="swNPArtAndDemDem">demonstrative</span>
+                    <span id="NPArtAndDemCaseNomAccSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can occur in a subject or in an object but not in a possessor, add the feature <feature>nominative.or.accusative</feature>.</li>
+                <li>If a particular <span id="NPArtOnlyCaseAccGenSpan" show="swNPArtAndDemArt">article</span>
+                    <span id="NPDemOnlyCaseAccGenSpan" show="swNPArtAndDemDem">demonstrative</span>
+                    <span id="NPArtAndDemCaseAccGenSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can occur in an object or in a possessor, but not in a subject, add the feature <feature>accusative.or.genitive</feature>.</li>
+            </ul>
+        </instruction>
+        <instruction id="NPArtCaseErgInstruction2" show="swNPCaseErg">Since your language has an ergative-absolutive case system, in the lexicon:  
+<ul>
+                <li>Mark the <span id="NPArtOnlyCaseErgSpan" show="swNPArtAndDemArt">articles</span>
+                    <span id="NPDemOnlyCaseErgSpan" show="swNPArtAndDemDem">demonstratives</span>
+                    <span id="NPArtAndDemCaseErgSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that  go with subjects of transitive verbs with the feature <feature>ergative</feature> and those that go with direct objects and subjects of intransitive verbs with the feature <feature>absolutive</feature>.</li>
+                <li>If you have a distinct set for possessors, add the feature <feature>genitive</feature> to those entries, but if either the ergative or absolutive set is used for possessors as well, do not add any additional feature.</li>
+                <li>If a particular <span id="NPArtOnlyCaseErg2Span" show="swNPArtAndDemArt">article</span>
+                    <span id="NPDemOnlyCaseErg2Span" show="swNPArtAndDemDem">demonstrative</span>
+                    <span id="NPArtAndDemCaseErg2Span" show="swNPArtAndDemBoth">article or demonstrative</span> can show up in any position, do not add any feature.</li>
+            </ul>
+        </instruction>
+        <instruction id="NPArtCaseSplitInstruction2" show="swNPCaseSplit">Since your language has a split ergativity case system, in the lexicon:  
+<ul>
+                <li>Mark the <span id="NPArtOnlyCaseSplitNomSpan" show="swNPArtAndDemArt">articles</span>
+                    <span id="NPDemOnlyCaseSplitNomSpan" show="swNPArtAndDemDem">demonstratives</span>
+                    <span id="NPArtAndDemCaseSplitNomSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that occur with nominative nouns with the feature <feature>nominative</feature> and those  that occur with accusative nouns with the feature <feature>accusative</feature>.  </li>
+                <li> Mark the <span id="NPArtOnlyCaseSplitErgSpan" show="swNPArtAndDemArt">articles</span>
+                    <span id="NPDemOnlyCaseSplitErgSpan" show="swNPArtAndDemDem">demonstratives</span>
+                    <span id="NPArtAndDemCaseSplitErgSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that occur with ergative nouns with the feature <feature>ergative</feature> and those that occur with absolutive nouns with the feature <feature>absolutive</feature>.</li>
+                <li>If you have a distinct set for possessors, add the feature <feature>genitive</feature> to those entries.</li>
+                <li>If a particular <span id="NPArtOnlyCaseSplitSpan" show="swNPArtAndDemArt">article</span>
+                    <span id="NPDemOnlyCaseSplitSpan" show="swNPArtAndDemDem">demonstrative</span>
+                    <span id="NPArtAndDemCaseSplitSpan" show="swNPArtAndDemBoth">article or demonstrative</span> can show up in any position, do not add any feature.</li>
+            </ul>
+        </instruction>
+       <prompt id="NPDemDativeSet" show="swNPCaseNotNoneAndArtCaseDem">
+          <br/>Il se peut que vous ayez un groupe supplémentaire de démonstratifs dans le cas datif. 
+       </prompt>
+       <prompt id="NPDemProximalDative" show="swNPCaseNotNoneAndArtCase">Entrez lles démonstratifs  qui peuvent apparaître dans <span id="ExperiencerSpan20" show="swExperiencerYesDat">les sujets expérimenteur ou </span>objets indirects qu’on utilise avec les noms <span id="SingularSpan64" show="swDemPlYes">au singulier </span>qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalDativeExample" dataItem="demProximalDatExample" rows="2" show="swNPCaseNotNoneAndArtCase"/>
+       <prompt id="NPDemProximalPlDative" show="swNPCaseNotNoneAndArtCaseAndDemPlYes">Entrez lles démonstratifs  qui peuvent apparaître dans <span id="ExperiencerSpan23" show="swExperiencerYesDat">les sujets expérimenteur ou </span>objets indirects qu’on utilise avec les noms au pluriel qui sont les plus proches de celui qui parle (formes proximales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemProximalPlDativeExample" dataItem="demProximalPlDatExample" rows="2" show="swNPCaseNotNoneAndArtCaseAndDemPlYes"/>
+       <prompt id="NPDemMedialDative" show="swNPCaseNotNoneAndArtCase">Entrez lles démonstratifs  qui peuvent apparaître dans <span id="ExperiencerSpan21" show="swExperiencerYesDat">les sujets expérimenteur ou </span>objets indirects qu’on utilise avec les noms <span id="SingularSpan65" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialDativeExample" dataItem="demMedialDatExample" rows="2" show="swNPCaseNotNoneAndArtCase"/>
+       <prompt id="NPDemMedialPlDative" show="swNPCaseNotNoneAndArtCaseAndDemPlYes">Entrez lles démonstratifs  qui peuvent apparaître dans <span id="ExperiencerSpan24" show="swExperiencerYesDat">les sujets expérimenteur ou </span>objets indirects qu’on utilise avec les noms au pluriel qui sont le plus loin de celui qui parle mais dans le champ visuel  (formes médiales) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemMedialPlDativeExample" dataItem="demMedialPlDatExample" rows="2" show="swNPCaseNotNoneAndArtCaseAndDemPlYes"/>
+       <prompt id="NPDemDistalDative" show="swNPCaseNotNoneAndArtCase">Entrez lles démonstratifs  qui peuvent apparaître dans <span id="ExperiencerSpan22" show="swExperiencerYesDat">les sujets expérimenteur ou </span>objets indirects qu’on utilise avec les noms <span id="SingularSpan66" show="swDemPlYes">au singulier </span>qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalDativeExample" dataItem="demDistalDatExample" rows="2" show="swNPCaseNotNoneAndArtCase"/>
+       <prompt id="NPDemDistalPlDative" show="swNPCaseNotNoneAndArtCaseAndDemPlYes">Entrez lles démonstratifs  qui peuvent apparaître dans <span id="ExperiencerSpan25" show="swExperiencerYesDat">les sujets expérimenteur ou </span>objets indirects qu’on utilise avec les noms au pluriel qui sont le plus loin de celui qui parle mais non visible (formes éloignées) dans la zone de texte, chacun sur une ligne séparée:</prompt> 
+       <textBox id="NPDemDistalPlDativeExample" dataItem="demDistalPlDatExample" rows="2" show="swNPCaseNotNoneAndArtCaseAndDemPlYes"/>
+       
+       
+       <instruction id="NPDemCaseDativeInstruction" show="swNPCaseNotNoneAndArtCaseDem">
+          <br/>In the lexicon, add the feature <feature>dative</feature> to all the demonstratives that occur in indirect objects or Experiencer subjects.</instruction>
+       
+        <br/><br/>
+        <buttons>
+            <button id="NPArtDemBack" value="Back" goto="NPContents.htm"/>
+            <button id="NPArtDemNext" value="Next" goto="NPArtPosition.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swOTClassifierAgrAndArtAndDemNotNo">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/><not/>
+      <whenRadio button="NPArtAndDemNo"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndArtAndDemNotNoAndClassifierYes">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/><not/>
+      <whenRadio button="NPArtAndDemNo"/>
+      <and/>
+      <whenRadio button="NPArtAndDemClassifierAgrYes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndOrDem">
+        <not/>
+        <whenRadio button="NPArtAndDemNo"/>
+        </showWhen>
+        <showWhen id="swNPArtAndOrDemAndCaseYes">
+            <not/>
+            <whenRadio button="NPArtAndDemNo"/>
+            <and/>
+            <whenValue element="typology" attr="case" value="nominative"/>
+            <or/> 
+               <not/>
+                <whenRadio button="NPArtAndDemNo"/>
+                <and/>
+                <whenValue element="typology" attr="case" value="ergative"/>
+                <or/>
+                    <not/>
+                    <whenRadio button="NPArtAndDemNo"/>
+                    <and/>
+                    <whenValue element="typology" attr="case" value="split"/>
+        </showWhen>
+    <showWhen id="swNPArtAndDemArt">
+        <whenRadio button="NPArtAndDemArt"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemDem">
+        <whenRadio button="NPArtAndDemDem"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemBoth">
+        <whenRadio button="NPArtAndDemBoth"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemArtorBoth">
+        <whenRadio button="NPArtAndDemArt"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBoth"/>       
+    </showWhen>
+   <showWhen id="swNPArtAndDemArtorBothAndAgreeNum">
+      <whenRadio button="NPArtAndDemArt"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemArtorBothAndPlNo">
+        <whenRadio button="NPArtAndDemArt"/>
+        <and/>
+        <whenRadio button="NPArtPlNo"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <or/>
+        <whenRadio button="NPArtAndDemBoth"/>       
+        <and/>
+        <whenRadio button="NPArtPlNo"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <or/>
+       <whenRadio button="NPArtAndDemArt"/>
+       <and/>
+       <whenValue element="np" attr="agreeNumber" value="no"/>
+       <or/>
+       <whenRadio button="NPArtAndDemBoth"/>       
+       <and/>
+       <whenValue element="np" attr="agreeNumber" value="no"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemArtorBothAndPlYes">
+        <whenRadio button="NPArtAndDemArt"/>
+        <and/>
+        <whenRadio button="NPArtPlYes"/>
+       <and/>
+       <whenValue element="np" attr="agreeNumber" value="yes"/>
+       <or/>
+        <whenRadio button="NPArtAndDemBoth"/>       
+        <and/>
+        <whenRadio button="NPArtPlYes"/>
+       <and/>
+       <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtDefOnly">
+        <whenRadio button="NPArtAndDemArt"/>
+        <and/>
+        <whenRadio button="NPArtDefOnlyYes"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBoth"/>       
+        <and/>
+        <whenRadio button="NPArtDefOnlyYes"/>
+    </showWhen>
+   <showWhen id="swNPArtIndefOnly">
+      <whenRadio button="NPArtAndDemArt"/>
+      <and/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <and/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+    <showWhen id="swNPArtAndDemDemorBoth">
+        <whenRadio button="NPArtAndDemDem"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBoth"/>       
+    </showWhen>
+   <showWhen id="swNPArtAndDemDemorBothAndAgreeNum">
+      <whenRadio button="NPArtAndDemDem"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPArtAndDemDemorBothAndPlNo">
+        <whenRadio button="NPArtAndDemDem"/>
+        <and/>
+        <whenRadio button="NPDemPlNo"/>
+      <or/>
+        <whenRadio button="NPArtAndDemBoth"/>       
+        <and/>
+        <whenRadio button="NPDemPlNo"/>
+      <or/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="no"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="no"/>
+   </showWhen>
+    <showWhen id="swNPArtAndDemDemorBothAndPlYes">
+        <whenRadio button="NPArtAndDemDem"/>
+        <and/>
+        <whenRadio button="NPDemPlYes"/>
+       <and/>
+       <whenValue element="np" attr="agreeNumber" value="yes"/>
+       <or/>
+        <whenRadio button="NPArtAndDemBoth"/>       
+        <and/>
+        <whenRadio button="NPDemPlYes"/>
+       <and/>
+       <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+    <showWhen id="swNPArtAndDemDemOrBothAndCaseYes">
+        <whenRadio button="NPArtAndDemDem"/>
+        <and/>
+        <whenRadio button="NPArtCaseYes"/>
+        <or/>
+        <whenRadio button="NPArtAndDemBoth"/>       
+        <and/>
+        <whenRadio button="NPArtCaseYes"/>
+    </showWhen>
+    <showWhen id="swNPCaseNom">
+        <not/>
+        <whenRadio button="NPArtAndDemNo"/>
+        <and/>
+        <whenRadio button="NPArtCaseYes"/>
+        <and/>
+        <whenValue element="typology" attr="case" value="nominative"/>
+    </showWhen>
+    <showWhen id="swNPCaseErg">
+        <not/>
+        <whenRadio button="NPArtAndDemNo"/>
+        <and/>
+        <whenRadio button="NPArtCaseYes"/>
+        <and/>
+        <whenValue element="typology" attr="case" value="ergative"/>
+    </showWhen>
+    <showWhen id="swNPCaseSplit">
+        <not/>
+        <whenRadio button="NPArtAndDemNo"/>
+        <and/>
+        <whenRadio button="NPArtCaseYes"/>
+        <and/>
+        <whenValue element="typology" attr="case" value="split"/>
+    </showWhen>
+   <showWhen id="swNPCaseNone">
+      <whenValue element="typology" attr="case" value="none"/>
+   </showWhen>
+   
+    <showWhen id="swNPDemCaseNoOrNoneAndNumberYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseNo"/>
+      <and/>
+      <whenRadio button="NPDemPlYes"/>
+       <and/>
+       <whenValue element="np" attr="agreeNumber" value="yes"/>
+       <or/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPDemPlYes"/>
+       <and/>
+       <whenValue element="np" attr="agreeNumber" value="yes"/>
+    </showWhen>
+   <showWhen id="swNPDemCaseNom">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+   </showWhen>
+   <showWhen id="swNPDemCaseErg">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPDemCaseSplit">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPDemCaseNomAndNumberYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPDemPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPDemCaseErgAndNumberYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPDemPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPDemCaseSplitAndNumberYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPDemPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   
+   <showWhen id="swNPDemCaseNoOrNone">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPArtCaseNo"/>
+      <or/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <closeParen/>
+   </showWhen>
+   
+   <showWhen id="swNPArtCaseNoOrNone">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+ <openParen/>
+      <whenRadio button="NPArtCaseNo"/>
+      <or/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNoOrNoneAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPArtCaseNo"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+      <or/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNoOrNoneAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPArtCaseNo"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+      <or/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+<closeParen/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNoOrNoneAndNumberYesAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPArtCaseNo"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+      <or/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+<closeParen/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNoOrNoneAndNumberYesAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPArtCaseNo"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+      <or/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+ <closeParen/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNom">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseErg">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseSplit">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNomAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNomAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseErgAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseErgAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseSplitAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseSplitAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNomAndNumberYesAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseNomAndNumberYesAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseErgAndNumberYesAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseErgAndNumberYesAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseSplitAndNumberYesAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+   <showWhen id="swNPArtCaseSplitAndNumberYesAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCaseDem">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCaseArt">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCaseAndArtPlYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCaseAndDemPlYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPDemPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCaseAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCaseAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCaseAndArtPlYesAndDefOnlyNotYes">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCaseAndArtPlYesAndDefOnlyNotIndef">
+      <openParen/>
+      <whenRadio button="NPArtAndDemArt"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+      <and/><not/>
+      <whenRadio button="NPArtDefOnlyIndef"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndArtCase">
+      <openParen/>
+      <whenRadio button="NPArtAndDemDem"/>
+      <or/>
+      <whenRadio button="NPArtAndDemBoth"/>       
+      <closeParen/>
+      <and/>
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPArtCaseYes"/>
+   </showWhen>
+   <showWhen id="swArtPlYes">
+      <whenRadio button="NPArtPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swDemPlYes">
+      <whenRadio button="NPDemPlYes"/>
+      <and/>
+      <whenValue element="np" attr="agreeNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swExperiencerYesDat">
+      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   
+   
+   &TechnicalTerms; 
+</page>

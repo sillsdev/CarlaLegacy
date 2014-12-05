@@ -1,30 +1,34 @@
 <html>
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css">
+<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css"> 
 <title>El idioma del interfaz</title>
 <script language="jscript" id="clientEventHandlersJS" src="InterfaceLanguage.js">
   </script></head>
 <body onload="Initialize()">
 <h2>El idioma del interfaz</h2>
 <div class="introduction">
-   <p>El interfaz para el usario de PATAS (PAWS en inglés) es disponible en las lenguas siguientes.  Por favor, selecione la lengua que usted desea utilizar.</p>
+   <p>El interfaz para el usario de PAWS es disponible en las lenguas siguientes.  Por favor, selecione la lengua que usted desea utilizar.</p>
 </div><br><div class="form">
 <table border="0" style="margin-left: 0.5in">
 <tr>
-	<td colspan="2"><span class="radioPrompt">¿Qué lengua desea utilizar para el interfaz?</span></td>
+    <td colspan="2"><span class="radioPrompt">¿Qué lengua desea utilizar para el interfaz?  Presione algún botón, tiene que empezar el programa PAWS otra vez.  (When you change the language, you must restart PAWS before the changes take full effect.)  (Lorsque vous changer la langue, vous devez redémarrer PAWS pour que les modifications prennent plein effet.)</span></td>
 </tr>
 <tr>
-	<td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEn" onclick="RInterfaceLang(InterfaceLangEn)" value="False"></td>
-	<td width="99%" id="InterfaceLangEnPrompt" onclick="RInterfaceLang(InterfaceLangEn)" value="False" onmouseover="this.style.cursor='default'">Inglés (English).  Presione este botón, tiene que empezar el programa PATAS (PAWS en inglés) otra vez.  (When you change to this, you must restart PAWS before the changes take full effect.)</td>
+    <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEn" onclick="RInterfaceLang(InterfaceLangEn)" value="False"></td>
+   <td width="99%" id="InterfaceLangEnPrompt" onclick="RInterfaceLang(InterfaceLangEn)" value="False" onmouseover="this.style.cursor='default'">Inglés (English)</td>
 </tr>
 <tr>
-	<td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEs" onclick="RInterfaceLang(InterfaceLangEs)" value="True"></td>
-	<td width="99%" id="InterfaceLangEsPrompt" onclick="RInterfaceLang(InterfaceLangEs)" value="True" onmouseover="this.style.cursor='default'">Español (Spanish)</td>
+    <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEs" onclick="RInterfaceLang(InterfaceLangEs)" value="True"></td>
+    <td width="99%" id="InterfaceLangEsPrompt" onclick="RInterfaceLang(InterfaceLangEs)" value="True" onmouseover="this.style.cursor='default'">Español (Spanish)</td>
 </tr>
+    <tr>
+        <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangFr" onclick="RInterfaceLang(InterfaceLangFr)" value="True"></td>
+        <td width="99%" id="InterfaceLangFrPrompt" onclick="RInterfaceLang(InterfaceLangFr)" value="True" onmouseover="this.style.cursor='default'">Francés (French)</td>
+    </tr>
 </table>
 </div>
-	<div align="center" id="Return"  class="return" >
+    <div align="center" id="Return"  class="return" >
 <a href="LeftOffAt" onclick="copyFiles()">Regresar</a><br/>
 </div>
 </body>

@@ -1289,7 +1289,7 @@
 </xsl:choose>
 </example>
           <p contentType="ctComparativeIntro">
-<xsl:text>Verbs which take either a finite or a nonfinite sentential complement or a nonfinite complement include the following examples in English: </xsl:text>
+<xsl:text>Verbs which take either a finite or a nonfinite sentential complement include the following examples in English: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -1912,7 +1912,7 @@
 <xsl:text> include:</xsl:text>
 </p>
           <p contentType="ctPracticalIntro">
-<xsl:text>Other verbs have a direct object as well as either a finite or nonfinite clause complement.  Examples of this type in </xsl:text>
+<xsl:text>Other verbs have a direct object as well as a sentential complement.  Examples of this type in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />

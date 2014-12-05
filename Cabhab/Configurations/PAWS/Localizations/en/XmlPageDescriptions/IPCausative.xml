@@ -4,7 +4,7 @@
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPCausative" count="2/3">
-	<title level="2">Basic Sentences - Causatives and Antipassives</title>
+	<title level="2">Basic Sentences - Causatives, Applicatives and Antipassives</title>
 	<introduction>Causatives add an additional <technicalTermRef term="ttArgument"/> to the sentence.  Some languages have single-clause <technicalTermRef term="ttCausative"/> sentences, where the verb is marked with an affix that introduces the additional argument.  That is the type of construction we want to cover here.<br/><br></br>
 	English and Spanish only have syntactic causatives which consist of two clauses, such as:</introduction>
 	<EnglishExample>
@@ -36,9 +36,27 @@
 	   
 	   <instruction id="IPCausativeInstruction">Mark inherently causative verbs <span id="IPCausativeAffixSpan" show="swIPCausativeAffix">and causative affixes </span>with the feature <feature>causative</feature> in the lexicon, if you have not already done so.
 	   </instruction>
-	   
+
+		<br/>
+		<introduction>Some languages have an additional applicative construction.  <technicalTermRef term="ttApplicative" capitalize="yes"/> is a verb <technicalTermRef term="ttVoice"/> that promotes an oblique argument of the verb to the object argument, and indicates the oblique role within the meaning of the verb.  An intransitive verb becomes transitive and a transitive verb becomes ditransitive when the applicative affix is added.  This is in contrast to expressing these arguments with adpositions.
+			<br/><br/>
+			Applicatives may be used for comitative, locative, instrumental and benefactive roles.  Some languages allow more than one applicative in a single verb.
+		</introduction>
+		<radioGroup>
+			<groupName dataItem="applicative" default="no">RIPApplicative</groupName>
+			<prompt><br/>Does your language have applicatives in which the oblique argument is expressed within the verb?</prompt>
+			<radio id="IPApplicativeNo" dataValue="no">No</radio>
+			<radio id="IPApplicativeYes" dataValue="yes">Yes</radio>
+		</radioGroup>
+		<prompt id="IPApplicativeNoPrompt" show="swIPApplicativeNoAndFeaturesYes">WARNING: In <section number="9.2">Basic Sentences - Inflection Features</section> you checked the applicative feature as occurring in your language.  This is inconsistent with your answer here.  Please either change your answer here to say your language does have applicatives, 
+			or return to <section number="9.2">Basic Sentences - Inflection Features</section> and uncheck the applicative feature.</prompt>
+		<prompt id="IPApplicativeYesPrompt" show="swIPApplicativeYesAndFeaturesNo">WARNING: In <section number="9.2">Basic Sentences - Inflection Features</section> you did not check the appliactive feature as occurring in your language.  This is inconsistent with your answer here.  If your language has applicatives, 
+			return to <section number="9.2">Basic Sentences - Inflection Features</section> and check the applicative feature and key the applicative morphemes there.</prompt>
+		<prompt id="IPApplicativePrompt" show="swIPApplicativeYes">Key examples of applicative sentences in your language here:</prompt>
+		<textBox id="IPApplicativeExample" dataItem="applicativeExample" cols="50" show="swIPApplicativeYes"/>
+		
 	   <br/>
-	   <introduction><technicalTermRef term="ttAntipassive" capitalize="yes"/> is a verb <technicalTermRef term="ttVoice"/> that deletes the object of transitive verbs.  Antipassives are found most often in languages with an <technicalTermRef term="ttErgative"/>-<technicalTermRef term="ttAbsolutive"/> <technicalTermRef term="ttCase"/> system, where the deletion of the object changes the subject from ergative case to absolutive case. 
+	   <introduction><technicalTermRef term="ttAntipassive" capitalize="yes"/> is a verb <technicalTermRef term="ttVoice"/> that deletes the object of transitive verbs.  Antipassives are found most often in languages with an <technicalTermRef term="ttErgative"/>-<technicalTermRef term="ttAbsolutive"/> <technicalTermRef term="ttCase"> case</technicalTermRef> system, where the deletion of the object changes the subject from ergative case to absolutive case. 
 	   It is also found in some languages with a <technicalTermRef term="ttNominative"/>-<technicalTermRef term="ttAccusative"/> case system where there is verbal agreement with both the subject and object.  In these languages, the antipassive is usually formed by deleting the object agreement affix.  Most languages with the antipassive voice are Australian Aboriginal or Native American languages.
 	   <br/> <br/>
 	   Similarly to the subject or <technicalTermRef term="ttAgent"/> in passives, some languages allow the object or <technicalTermRef term="ttPatient"/> to be optionally expressed in a prepositional or postpositional phrase.</introduction>
@@ -65,7 +83,7 @@
 	   
 	   <prompt id="IPAntipassiveAffixPrompt" show="swIPAntipassiveYesAffix">Key the antipassive affix(es) in your language with a hyphen to indicate which side they attach to the verb on, with each on a separate line, here: </prompt>
 	   <textBox id="IPAntipassiveAffixExample" dataItem="antipassiveAffixExample" rows="3" show="swIPAntipassiveYesAffix"/>		
-	   <instruction id="IPAntipassiveInstruction" show="swIPAntipassiveYesAffix">Mark the antipassive affixes with the feature <feature>antipasstive</feature> in the lexicon, if you have not already done so.
+	   <instruction id="IPAntipassiveInstruction" show="swIPAntipassiveYesAffix">Mark the antipassive affixes with the feature <feature>antipassive</feature> in the lexicon, if you have not already done so.
 	   </instruction>	   
 	   <br/><br/>
 		<buttons>
@@ -100,7 +118,20 @@
       <and/>
       <whenValue element="ip/ipInflFeatCausative" attr="checked" value="no"/>
    </showWhen>
-   <showWhen id="swIPAntipassiveYes">
+	<showWhen id="swIPApplicativeYes">
+		<whenRadio button="IPApplicativeYes"/>
+	</showWhen>
+	<showWhen id="swIPApplicativeNoAndFeaturesYes">
+		<whenRadio button="IPApplicativeNo"/>
+		<and/>
+		<whenValue element="ip/ipInflFeatApplicative" attr="checked" value="yes"/>
+	</showWhen>
+	<showWhen id="swIPApplicativeYesAndFeaturesNo">
+		<whenRadio button="IPApplicativeYes"/>
+		<and/>
+		<whenValue element="ip/ipInflFeatApplicative" attr="checked" value="no"/>
+	</showWhen>
+	<showWhen id="swIPAntipassiveYes">
       <whenRadio button="IPAntipassiveYes"/>
    </showWhen>
    <showWhen id="swIPAntipassiveYesAffix">

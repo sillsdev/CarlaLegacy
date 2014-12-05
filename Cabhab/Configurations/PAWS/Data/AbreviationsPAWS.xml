@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<abbreviations font-family="Charis SIL CompactSmallCaps" usesmallcaps="no" version="2.3.0">
+    <comment>The following was based on the Leipzig Glossing Rules, List of Standard Abbreviations at <link href="http://www.eva.mpg.de/lingua/resources/glossing-rules.php"
+            >http://www.eva.mpg.de/lingua/resources/glossing-rules.php</link> on 01-October, 2008. Some Otomanguean specific abbreviations were added.</comment>
+    <abbreviation id="v1">
+        <abbrInLang lang="fr">
+            <abbrTerm>1</abbrTerm>
+            <abbrDefinition>première personne</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PL">
+        <abbrInLang lang="fr">
+            <abbrTerm>1pl</abbrTerm>
+            <abbrDefinition>première personne au pluriel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plabs</abbrTerm>
+            <abbrDefinition>première personne au pluriel absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plerg</abbrTerm>
+            <abbrDefinition>première personne au pluriel ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLEX">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plex</abbrTerm>
+            <abbrDefinition>première personne au pluriel exclusif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLEXABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plexabs</abbrTerm>
+            <abbrDefinition>première personne au pluriel exclusif absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLEXSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plexabssuj</abbrTerm>
+            <abbrDefinition>première personne au pluriel exclusif sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLEXERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plexerg</abbrTerm>
+            <abbrDefinition>première personne au pluriel exclusif ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLEXOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plexobj</abbrTerm>
+            <abbrDefinition>première personne au pluriel exclusif objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLEXPOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plexpos</abbrTerm>
+            <abbrDefinition>première personne au pluriel exclusif possesseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLIN">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plin</abbrTerm>
+            <abbrDefinition>première personne au pluriel inclusif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLINABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plinabs</abbrTerm>
+            <abbrDefinition>première personne au pluriel inclusif absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLINSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plinabssuj</abbrTerm>
+            <abbrDefinition>première personne au pluriel inclusif sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLINERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plinerg</abbrTerm>
+            <abbrDefinition>première personne au pluriel inclusif ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLINOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plinobj</abbrTerm>
+            <abbrDefinition>première personne au pluriel inclusif objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLINPOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plinpos</abbrTerm>
+            <abbrDefinition>première personne au pluriel inclusif possesseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plobj</abbrTerm>
+            <abbrDefinition>première personne au pluriel objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLPOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plpos</abbrTerm>
+            <abbrDefinition>première personne au pluriel possesseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1PLSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>1plsbj</abbrTerm>
+            <abbrDefinition>première personne au pluriel sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1R">
+        <abbrInLang lang="fr">
+            <abbrTerm>1r</abbrTerm>
+            <abbrDefinition>première personne de respect</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1SG">
+        <abbrInLang lang="fr">
+            <abbrTerm>1sg</abbrTerm>
+            <abbrDefinition>première personne au singulier</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1SGABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>1sgabs</abbrTerm>
+            <abbrDefinition>première personne au singulier absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1SGERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>1sgerg</abbrTerm>
+            <abbrDefinition>première personne au singulier ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1SGOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>1sgobj</abbrTerm>
+            <abbrDefinition>première personne au singulier objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1SGPOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>1sgpos</abbrTerm>
+            <abbrDefinition>première personne au singulier possesseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v1SGSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>1sgsbj</abbrTerm>
+            <abbrDefinition>première personne au singulier sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2">
+        <abbrInLang lang="fr">
+            <abbrTerm>2</abbrTerm>
+            <abbrDefinition>deuxième personne</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2PL">
+        <abbrInLang lang="fr">
+            <abbrTerm>2pl</abbrTerm>
+            <abbrDefinition>deuxième personne au pluriel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2PLABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>2plabs</abbrTerm>
+            <abbrDefinition>deuxième personne au pluriel absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2PLERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>2plerg</abbrTerm>
+            <abbrDefinition>deuxième personne au pluriel ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2PLOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>2plobj</abbrTerm>
+            <abbrDefinition>deuxième personne au pluriel objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2PLPOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>2plpos</abbrTerm>
+            <abbrDefinition>deuxième personne au pluriel possesseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2PLSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>2plsbj</abbrTerm>
+            <abbrDefinition>deuxième personne au pluriel sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2R">
+        <abbrInLang lang="fr">
+            <abbrTerm>2r</abbrTerm>
+            <abbrDefinition>deuxième personne de respect</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2SG">
+        <abbrInLang lang="fr">
+            <abbrTerm>2sg</abbrTerm>
+            <abbrDefinition>deuxième personne au singulier</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2SGABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>2sgabs</abbrTerm>
+            <abbrDefinition>deuxième personne au singulier absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2SGERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>2sgerg</abbrTerm>
+            <abbrDefinition>deuxième personne au singulier ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2SGOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>2sgobj</abbrTerm>
+            <abbrDefinition>deuxième personne au singulier objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2SGPOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>2sgpos</abbrTerm>
+            <abbrDefinition>deuxième personne au singulier possesseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v2SGSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>2sgsbj</abbrTerm>
+            <abbrDefinition>deuxième personne au singulier sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3">
+        <abbrInLang lang="fr">
+            <abbrTerm>3</abbrTerm>
+            <abbrDefinition>troisième personne</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3AD">
+        <abbrInLang lang="fr">
+            <abbrTerm>3ad</abbrTerm>
+            <abbrDefinition>troisième personne adulte</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3AN">
+        <abbrInLang lang="fr">
+            <abbrTerm>3an</abbrTerm>
+            <abbrDefinition>troisième personne animal</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3BA">
+        <abbrInLang lang="fr">
+            <abbrTerm>3bé</abbrTerm>
+            <abbrDefinition>troisième personne bébé</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3UM">
+        <abbrInLang lang="fr">
+            <abbrTerm>3celm</abbrTerm>
+            <abbrDefinition>troisième personne célibataire masculin</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3DEPR">
+        <abbrInLang lang="fr">
+            <abbrTerm>3depr</abbrTerm>
+            <abbrDefinition>troisième personne désapprobateur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3DE">
+        <abbrInLang lang="fr">
+            <abbrTerm>3div</abbrTerm>
+            <abbrDefinition>troisième personne divinité</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3CH">
+        <abbrInLang lang="fr">
+            <abbrTerm>3enf</abbrTerm>
+            <abbrDefinition>troisième personne enfant</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3F">
+        <abbrInLang lang="fr">
+            <abbrTerm>3f</abbrTerm>
+            <abbrDefinition>troisième personne au féminin</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3FO">
+        <abbrInLang lang="fr">
+            <abbrTerm>3fo</abbrTerm>
+            <abbrDefinition>troisième personne formel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3GEN">
+        <abbrInLang lang="fr">
+            <abbrTerm>3gén</abbrTerm>
+            <abbrDefinition>troisième personne général</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3H">
+        <abbrInLang lang="fr">
+            <abbrTerm>3h</abbrTerm>
+            <abbrDefinition>troisième personne humain</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3IN">
+        <abbrInLang lang="fr">
+            <abbrTerm>3in</abbrTerm>
+            <abbrDefinition>troisième personne inanimé</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3INFO">
+        <abbrInLang lang="fr">
+            <abbrTerm>3info</abbrTerm>
+            <abbrDefinition>troisième personne informel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3M">
+        <abbrInLang lang="fr">
+            <abbrTerm>3m</abbrTerm>
+            <abbrDefinition>troisième personne au masculin</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3PL">
+        <abbrInLang lang="fr">
+            <abbrTerm>3pl</abbrTerm>
+            <abbrDefinition>troisième personne au pluriel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3PLABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>3plabs</abbrTerm>
+            <abbrDefinition>troisième personne au pluriel absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3PLERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>3plerg</abbrTerm>
+            <abbrDefinition>troisième personne au pluriel ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3PLOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>3plobj</abbrTerm>
+            <abbrDefinition>troisième personne au pluriel objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3PLPOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>3plpos</abbrTerm>
+            <abbrDefinition>troisième personne au pluriel possesseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3PLSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>3plsbj</abbrTerm>
+            <abbrDefinition>troisième personne au pluriel sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3R">
+        <abbrInLang lang="fr">
+            <abbrTerm>3r</abbrTerm>
+            <abbrDefinition>troisième personne de respect</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3SG">
+        <abbrInLang lang="fr">
+            <abbrTerm>3sg</abbrTerm>
+            <abbrDefinition>troisième personne au singulier</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3SGLABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>3sgabs</abbrTerm>
+            <abbrDefinition>troisième personne au singulier absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3SGERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>3sgerg</abbrTerm>
+            <abbrDefinition>troisième personne au singulier ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3SGOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>3sgobj</abbrTerm>
+            <abbrDefinition>troisième personne au singulier objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3SGPOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>3sgpos</abbrTerm>
+            <abbrDefinition>troisième personne au singulier possesseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="v3SGSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>3sgsbj</abbrTerm>
+            <abbrDefinition>troisième personne au singulier sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vABL">
+        <abbrInLang lang="fr">
+            <abbrTerm>abl</abbrTerm>
+            <abbrDefinition>ablatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vABS">
+        <abbrInLang lang="fr">
+            <abbrTerm>abs</abbrTerm>
+            <abbrDefinition>absolutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vACC">
+        <abbrInLang lang="fr">
+            <abbrTerm>acs</abbrTerm>
+            <abbrDefinition>accusatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vAGR">
+        <abbrInLang lang="fr">
+            <abbrTerm>acc</abbrTerm>
+            <abbrDefinition>accord</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vADJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>adj</abbrTerm>
+            <abbrDefinition>adjectif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vADV">
+        <abbrInLang lang="fr">
+            <abbrTerm>adv</abbrTerm>
+            <abbrDefinition>adverbe/adverbial</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vAFF">
+        <abbrInLang lang="fr">
+            <abbrTerm>aff</abbrTerm>
+            <abbrDefinition>affirmatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vALL">
+        <abbrInLang lang="fr">
+            <abbrTerm>all</abbrTerm>
+            <abbrDefinition>allatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vANIM">
+        <abbrInLang lang="fr">
+            <abbrTerm>anim</abbrTerm>
+            <abbrDefinition>animé</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vANTIP">
+        <abbrInLang lang="fr">
+            <abbrTerm>antip</abbrTerm>
+            <abbrDefinition>antipassif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vAPPL">
+        <abbrInLang lang="fr">
+            <abbrTerm>appl</abbrTerm>
+            <abbrDefinition>applicatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vAPR">
+        <abbrInLang lang="fr">
+            <abbrTerm>appr</abbrTerm>
+            <abbrDefinition>approximativement</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vART">
+        <abbrInLang lang="fr">
+            <abbrTerm>art</abbrTerm>
+            <abbrDefinition>article</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vAUG">
+        <abbrInLang lang="fr">
+            <abbrTerm>aug</abbrTerm>
+            <abbrDefinition>augmentatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vAUX">
+        <abbrInLang lang="fr">
+            <abbrTerm>aux</abbrTerm>
+            <abbrDefinition>auxiliaire</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vBASE">
+        <abbrInLang lang="fr">
+            <abbrTerm>base</abbrTerm>
+            <abbrDefinition>base pour pronoms dépendents</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vBEN">
+        <abbrInLang lang="fr">
+            <abbrTerm>bén</abbrTerm>
+            <abbrDefinition>bénéfactif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vC">
+        <abbrInLang lang="fr">
+            <abbrTerm>c</abbrTerm>
+            <abbrDefinition>complétif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCAUS">
+        <abbrInLang lang="fr">
+            <abbrTerm>caus</abbrTerm>
+            <abbrDefinition>causatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCF">
+        <abbrInLang lang="fr">
+            <abbrTerm>cf</abbrTerm>
+            <abbrDefinition>contraire aux faits</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl</abbrTerm>
+            <abbrDefinition>classe</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL1">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl1</abbrTerm>
+            <abbrDefinition>classe 1</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL2">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl2</abbrTerm>
+            <abbrDefinition>classe 2</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL3">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl3</abbrTerm>
+            <abbrDefinition>classe 3</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL4">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl4</abbrTerm>
+            <abbrDefinition>classe 4</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL5">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl5</abbrTerm>
+            <abbrDefinition>classe 5</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL6">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl6</abbrTerm>
+            <abbrDefinition>classe 6</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL7">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl7</abbrTerm>
+            <abbrDefinition>classe 7</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL8">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl8</abbrTerm>
+            <abbrDefinition>classe 8</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL9">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl9</abbrTerm>
+            <abbrDefinition>classe 9</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL10">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl10</abbrTerm>
+            <abbrDefinition>classe 10</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL11">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl11</abbrTerm>
+            <abbrDefinition>classe 11</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL12">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl12</abbrTerm>
+            <abbrDefinition>classe 12</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL13">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl13</abbrTerm>
+            <abbrDefinition>classe 13</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL14">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl14</abbrTerm>
+            <abbrDefinition>classe 14</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL15">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl15</abbrTerm>
+            <abbrDefinition>classe 15</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL16">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl16</abbrTerm>
+            <abbrDefinition>classe 16</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL17">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl17</abbrTerm>
+            <abbrDefinition>classe 17</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL18">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl18</abbrTerm>
+            <abbrDefinition>classe 18</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL19">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl19</abbrTerm>
+            <abbrDefinition>classe 19</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL20">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl20</abbrTerm>
+            <abbrDefinition>classe 20</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL21">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl21</abbrTerm>
+            <abbrDefinition>classe 21</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL22">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl22</abbrTerm>
+            <abbrDefinition>classe 22</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL23">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl23</abbrTerm>
+            <abbrDefinition>classe 23</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL24">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl24</abbrTerm>
+            <abbrDefinition>classe 24</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCL25">
+        <abbrInLang lang="fr">
+            <abbrTerm>cl25</abbrTerm>
+            <abbrDefinition>classe 25</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLF">
+        <abbrInLang lang="fr">
+            <abbrTerm>clf</abbrTerm>
+            <abbrDefinition>classificateur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFAN">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfan</abbrTerm>
+            <abbrDefinition>classificateur pour animaux</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFTR">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfarb</abbrTerm>
+            <abbrDefinition>classificateur pour arbres</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFOT">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfaut</abbrTerm>
+            <abbrDefinition>classificateur pour autres objets inanimés</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFBOAT">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfbât</abbrTerm>
+            <abbrDefinition>classificateur pour bateaux</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFWD">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfbois</abbrTerm>
+            <abbrDefinition>classificateur pour objets en bois</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFCLD">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfcld</abbrTerm>
+            <abbrDefinition>classificateur pour objets cylindriques</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFHUM">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfhum</abbrTerm>
+            <abbrDefinition>classificateur pour humains</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFINS">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfins</abbrTerm>
+            <abbrDefinition>classificateur pour insectes</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFLIQ">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfliq</abbrTerm>
+            <abbrDefinition>classificateur pour liquides</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFMEC">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfméc</abbrTerm>
+            <abbrDefinition>classificateur pour objets mécaniques</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFTHIN">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfmin</abbrTerm>
+            <abbrDefinition>classificateur pour objets longs et minces</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFBIRD">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfois</abbrTerm>
+            <abbrDefinition>classificateur pour oiseaux</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFWAVY">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfond</abbrTerm>
+            <abbrDefinition>classificateur pour objets longs et onduleux</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFFLT">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfplt</abbrTerm>
+            <abbrDefinition>classificateur pour objets plats</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFRND">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfrnd</abbrTerm>
+            <abbrDefinition>classificateur pour objets ronds</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFSPH">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfsph</abbrTerm>
+            <abbrDefinition>classificateur pour objets sphériques</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCLFCLO">
+        <abbrInLang lang="fr">
+            <abbrTerm>clfvêt</abbrTerm>
+            <abbrDefinition>classificateur pour vêtements</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCNTP">
+        <abbrInLang lang="fr">
+            <abbrTerm>cntp</abbrTerm>
+            <abbrDefinition>contemplatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCOM">
+        <abbrInLang lang="fr">
+            <abbrTerm>com</abbrTerm>
+            <abbrDefinition>comitatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCOMP">
+        <abbrInLang lang="fr">
+            <abbrTerm>comp</abbrTerm>
+            <abbrDefinition>complétiviseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCOMPL">
+        <abbrInLang lang="fr">
+            <abbrTerm>compl</abbrTerm>
+            <abbrDefinition>complétif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCOND">
+        <abbrInLang lang="fr">
+            <abbrTerm>cond</abbrTerm>
+            <abbrDefinition>conditionnel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vCOP">
+        <abbrInLang lang="fr">
+            <abbrTerm>cop</abbrTerm>
+            <abbrDefinition>copula</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDAT">
+        <abbrInLang lang="fr">
+            <abbrTerm>dat</abbrTerm>
+            <abbrDefinition>datif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDECL">
+        <abbrInLang lang="fr">
+            <abbrTerm>décl</abbrTerm>
+            <abbrDefinition>déclaratif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDEF">
+        <abbrInLang lang="fr">
+            <abbrTerm>déf</abbrTerm>
+            <abbrDefinition>défini</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDEM">
+        <abbrInLang lang="fr">
+            <abbrTerm>dém</abbrTerm>
+            <abbrDefinition>démonstratif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDET">
+        <abbrInLang lang="fr">
+            <abbrTerm>dét</abbrTerm>
+            <abbrDefinition>déterminateur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDIM">
+        <abbrInLang lang="fr">
+            <abbrTerm>dim</abbrTerm>
+            <abbrDefinition>diminutif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDIST">
+        <abbrInLang lang="fr">
+            <abbrTerm>dist</abbrTerm>
+            <abbrDefinition>distal</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDISTR">
+        <abbrInLang lang="fr">
+            <abbrTerm>distr</abbrTerm>
+            <abbrDefinition>distributif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDP">
+        <abbrInLang lang="fr">
+            <abbrTerm>dp</abbrTerm>
+            <abbrDefinition>dépendent</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDTR">
+        <abbrInLang lang="fr">
+            <abbrTerm>dtr</abbrTerm>
+            <abbrDefinition>détransitiviseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDU">
+        <abbrInLang lang="fr">
+            <abbrTerm>du</abbrTerm>
+            <abbrDefinition>dual</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vDUR">
+        <abbrInLang lang="fr">
+            <abbrTerm>dur</abbrTerm>
+            <abbrDefinition>duratif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vEMPH">
+        <abbrInLang lang="fr">
+            <abbrTerm>emph</abbrTerm>
+            <abbrDefinition>emphatique</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vERG">
+        <abbrInLang lang="fr">
+            <abbrTerm>erg</abbrTerm>
+            <abbrDefinition>ergatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vEXCL">
+        <abbrInLang lang="fr">
+            <abbrTerm>excl</abbrTerm>
+            <abbrDefinition>exclusif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vF">
+        <abbrInLang lang="fr">
+            <abbrTerm>f</abbrTerm>
+            <abbrDefinition>féminin</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vFE">
+        <abbrInLang lang="fr">
+            <abbrTerm>fe</abbrTerm>
+            <abbrDefinition>moi femelle (se rapporte à terme de parenté)</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vIF">
+        <abbrInLang lang="fr">
+            <abbrTerm>fi</abbrTerm>
+            <abbrDefinition>futur indéfini</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vFOC">
+        <abbrInLang lang="fr">
+            <abbrTerm>foc</abbrTerm>
+            <abbrDefinition>focus</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vFREQ">
+        <abbrInLang lang="fr">
+            <abbrTerm>freq</abbrTerm>
+            <abbrDefinition>fréquentatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vFUT">
+        <abbrInLang lang="fr">
+            <abbrTerm>fut</abbrTerm>
+            <abbrDefinition>futur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vGEN">
+        <abbrInLang lang="fr">
+            <abbrTerm>gén</abbrTerm>
+            <abbrDefinition>génitif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vGER">
+        <abbrInLang lang="fr">
+            <abbrTerm>gér</abbrTerm>
+            <abbrDefinition>gérondif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vH">
+        <abbrInLang lang="fr">
+            <abbrTerm>h</abbrTerm>
+            <abbrDefinition>habituel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vOS">
+        <abbrInLang lang="fr">
+            <abbrTerm>hdv</abbrTerm>
+            <abbrDefinition>hors de vue</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vIMP">
+        <abbrInLang lang="fr">
+            <abbrTerm>imp</abbrTerm>
+            <abbrDefinition>impératif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vIMPF">
+        <abbrInLang lang="fr">
+            <abbrTerm>impf</abbrTerm>
+            <abbrDefinition>imparfait</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vINAN">
+        <abbrInLang lang="fr">
+            <abbrTerm>inan</abbrTerm>
+            <abbrDefinition>inanimé</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vINCL">
+        <abbrInLang lang="fr">
+            <abbrTerm>incl</abbrTerm>
+            <abbrDefinition>inclusif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vIND">
+        <abbrInLang lang="fr">
+            <abbrTerm>ind</abbrTerm>
+            <abbrDefinition>indicatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vINDEP">
+        <abbrInLang lang="fr">
+            <abbrTerm>indép</abbrTerm>
+            <abbrDefinition>indépendant</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vINDF">
+        <abbrInLang lang="fr">
+            <abbrTerm>indf</abbrTerm>
+            <abbrDefinition>indéfini</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vINF">
+        <abbrInLang lang="fr">
+            <abbrTerm>inf</abbrTerm>
+            <abbrDefinition>infinitif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vINS">
+        <abbrInLang lang="fr">
+            <abbrTerm>ins</abbrTerm>
+            <abbrDefinition>instrumental</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vINTR">
+        <abbrInLang lang="fr">
+            <abbrTerm>intr</abbrTerm>
+            <abbrDefinition>intransitif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vINTS">
+        <abbrInLang lang="fr">
+            <abbrTerm>ints</abbrTerm>
+            <abbrDefinition>intensificateur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vIPFV">
+        <abbrInLang lang="fr">
+            <abbrTerm>ipf</abbrTerm>
+            <abbrDefinition>imperfectif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vIRR">
+        <abbrInLang lang="fr">
+            <abbrTerm>irr</abbrTerm>
+            <abbrDefinition>irréel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vLOC">
+        <abbrInLang lang="fr">
+            <abbrTerm>loc</abbrTerm>
+            <abbrDefinition>locatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vM">
+        <abbrInLang lang="fr">
+            <abbrTerm>m</abbrTerm>
+            <abbrDefinition>masculin</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vMD">
+        <abbrInLang lang="fr">
+            <abbrTerm>md</abbrTerm>
+            <abbrDefinition>médial</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vME">
+        <abbrInLang lang="fr">
+            <abbrTerm>me</abbrTerm>
+            <abbrDefinition>moi male (se rapporte à terme de parenté)</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vN">
+        <abbrInLang lang="fr">
+            <abbrTerm>n</abbrTerm>
+            <abbrDefinition>neutre</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vNEG">
+        <abbrInLang lang="fr">
+            <abbrTerm>nég</abbrTerm>
+            <abbrDefinition>négation/négatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vNFUT">
+        <abbrInLang lang="fr">
+            <abbrTerm>nfut</abbrTerm>
+            <abbrDefinition>non-futur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vNMLZ">
+        <abbrInLang lang="fr">
+            <abbrTerm>nmlz</abbrTerm>
+            <abbrDefinition>nominalisateur/nominalisation</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vNOM">
+        <abbrInLang lang="fr">
+            <abbrTerm>nom</abbrTerm>
+            <abbrDefinition>nominatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vNPRS">
+        <abbrInLang lang="fr">
+            <abbrTerm>nprs</abbrTerm>
+            <abbrDefinition>non-présent</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vNPST">
+        <abbrInLang lang="fr">
+            <abbrTerm>npss</abbrTerm>
+            <abbrDefinition>non-passé</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vNSG">
+        <abbrInLang lang="fr">
+            <abbrTerm>nsg</abbrTerm>
+            <abbrDefinition>non-singulier</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vIO">
+        <abbrInLang lang="fr">
+            <abbrTerm>obi</abbrTerm>
+            <abbrDefinition>objet indirect</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>obj</abbrTerm>
+            <abbrDefinition>objet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vOBL">
+        <abbrInLang lang="fr">
+            <abbrTerm>obl</abbrTerm>
+            <abbrDefinition>oblique</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vUO">
+        <abbrInLang lang="fr">
+            <abbrTerm>ons</abbrTerm>
+            <abbrDefinition>objet non-spécifié</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vP">
+        <abbrInLang lang="fr">
+            <abbrTerm>p</abbrTerm>
+            <abbrDefinition>potentiel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPASS">
+        <abbrInLang lang="fr">
+            <abbrTerm>pass</abbrTerm>
+            <abbrDefinition>passif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPFV">
+        <abbrInLang lang="fr">
+            <abbrTerm>pfv</abbrTerm>
+            <abbrDefinition>perfectif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPL">
+        <abbrInLang lang="fr">
+            <abbrTerm>pl</abbrTerm>
+            <abbrDefinition>pluriel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPOSD">
+        <abbrInLang lang="fr">
+            <abbrTerm>posd</abbrTerm>
+            <abbrDefinition>possédé</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPOSS">
+        <abbrInLang lang="fr">
+            <abbrTerm>poss</abbrTerm>
+            <abbrDefinition>possessif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPOT">
+        <abbrInLang lang="fr">
+            <abbrTerm>pot</abbrTerm>
+            <abbrDefinition>potentiel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPRC">
+        <abbrInLang lang="fr">
+            <abbrTerm>prc</abbrTerm>
+            <abbrDefinition>perception</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vAFM">
+        <abbrInLang lang="fr">
+            <abbrTerm>préc</abbrTerm>
+            <abbrDefinition>précité</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPRED">
+        <abbrInLang lang="fr">
+            <abbrTerm>préd</abbrTerm>
+            <abbrDefinition>prédicatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPRF">
+        <abbrInLang lang="fr">
+            <abbrTerm>prf</abbrTerm>
+            <abbrDefinition>parfait</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPRO">
+        <abbrInLang lang="fr">
+            <abbrTerm>pro</abbrTerm>
+            <abbrDefinition>pro (pronom muet)</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPROG">
+        <abbrInLang lang="fr">
+            <abbrTerm>prog</abbrTerm>
+            <abbrDefinition>progressif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPROH">
+        <abbrInLang lang="fr">
+            <abbrTerm>proh</abbrTerm>
+            <abbrDefinition>prohibitif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPRON">
+        <abbrInLang lang="fr">
+            <abbrTerm>pron</abbrTerm>
+            <abbrDefinition>pronom</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPROX">
+        <abbrInLang lang="fr">
+            <abbrTerm>prox</abbrTerm>
+            <abbrDefinition>proximal/proche</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPRS">
+        <abbrInLang lang="fr">
+            <abbrTerm>prs</abbrTerm>
+            <abbrDefinition>présent</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPST">
+        <abbrInLang lang="fr">
+            <abbrTerm>pss</abbrTerm>
+            <abbrDefinition>passé</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPTCP">
+        <abbrInLang lang="fr">
+            <abbrTerm>ptcp</abbrTerm>
+            <abbrDefinition>participe</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vPURP">
+        <abbrInLang lang="fr">
+            <abbrTerm>purp</abbrTerm>
+            <abbrDefinition>purposif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vQ">
+        <abbrInLang lang="fr">
+            <abbrTerm>q</abbrTerm>
+            <abbrDefinition>particule/marqueur de question</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vQUOT">
+        <abbrInLang lang="fr">
+            <abbrTerm>quot</abbrTerm>
+            <abbrDefinition>quotatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vRECP">
+        <abbrInLang lang="fr">
+            <abbrTerm>récp</abbrTerm>
+            <abbrDefinition>réciproque</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vREFL">
+        <abbrInLang lang="fr">
+            <abbrTerm>réfl</abbrTerm>
+            <abbrDefinition>réflexif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vREL">
+        <abbrInLang lang="fr">
+            <abbrTerm>rél</abbrTerm>
+            <abbrDefinition>rélativiseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vREP">
+        <abbrInLang lang="fr">
+            <abbrTerm>rép</abbrTerm>
+            <abbrDefinition>répétitif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vRES">
+        <abbrInLang lang="fr">
+            <abbrTerm>rés</abbrTerm>
+            <abbrDefinition>résultatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vRL">
+        <abbrInLang lang="fr">
+            <abbrTerm>rl</abbrTerm>
+            <abbrDefinition>réel</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vS">
+        <abbrInLang lang="fr">
+            <abbrTerm>s</abbrTerm>
+            <abbrDefinition>statif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vSBD">
+        <abbrInLang lang="fr">
+            <abbrTerm>sbd</abbrTerm>
+            <abbrDefinition>subordinateur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vSBJV">
+        <abbrInLang lang="fr">
+            <abbrTerm>sbjv</abbrTerm>
+            <abbrDefinition>subjonctif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vSG">
+        <abbrInLang lang="fr">
+            <abbrTerm>sg</abbrTerm>
+            <abbrDefinition>singulier</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vST">
+        <abbrInLang lang="fr">
+            <abbrTerm>st</abbrTerm>
+            <abbrDefinition>statif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vSBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>suj</abbrTerm>
+            <abbrDefinition>sujet</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vTOP">
+        <abbrInLang lang="fr">
+            <abbrTerm>top</abbrTerm>
+            <abbrDefinition>topic</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vTR">
+        <abbrInLang lang="fr">
+            <abbrTerm>tr</abbrTerm>
+            <abbrDefinition>transitif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vVACT">
+        <abbrInLang lang="fr">
+            <abbrTerm>vact</abbrTerm>
+            <abbrDefinition>acteur ou voix active</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vVGL">
+        <abbrInLang lang="fr">
+            <abbrTerm>vbut</abbrTerm>
+            <abbrDefinition>voix de but</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vVDAT">
+        <abbrInLang lang="fr">
+            <abbrTerm>vdat</abbrTerm>
+            <abbrDefinition>voix dative</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vVINS">
+        <abbrInLang lang="fr">
+            <abbrTerm>vins</abbrTerm>
+            <abbrDefinition>voix instrumentale</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vVLOC">
+        <abbrInLang lang="fr">
+            <abbrTerm>vloc</abbrTerm>
+            <abbrDefinition>voix locative</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vVOBJ">
+        <abbrInLang lang="fr">
+            <abbrTerm>vobj</abbrTerm>
+            <abbrDefinition>voix d’objet, de patient ou de thème</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vVOC">
+        <abbrInLang lang="fr">
+            <abbrTerm>voc</abbrTerm>
+            <abbrDefinition>vocatif</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vVRB">
+        <abbrInLang lang="fr">
+            <abbrTerm>vrb</abbrTerm>
+            <abbrDefinition>verbaliseur</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+    <abbreviation id="vTHV">
+        <abbrInLang lang="fr">
+            <abbrTerm>vth</abbrTerm>
+            <abbrDefinition>voyelle de thème</abbrDefinition>
+        </abbrInLang>
+    </abbreviation>
+</abbreviations>

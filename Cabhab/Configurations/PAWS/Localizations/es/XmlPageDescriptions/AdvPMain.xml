@@ -98,18 +98,21 @@
        <introduction>Hay también dos tipos de adverbios de tiempo <technicalTermRef term="ttIndefinite">indefinidos</technicalTermRef>: aquellos que constan de un cuantificador y un sustantivo genérico de tiempo, como <example>cada vez</example> y <example>en algún momento</example>, y aquellos construídos de una palabra <technicalTermRef term="ttInterrogative">interrogativa</technicalTermRef> y una palabra indefinida, como <example>cuandoquiera</example>.  </introduction>
        <br/><br/>
        <checkboxGroup>
-          <prompt><br/>Primero, se consideran los adverbios indefinidos de tiempo que incluyen un cuantificador. ¿Cómo se expresan estos adverbios de tiempo indefinidos en su lengua? Seleccione todas las opciones que son correctas en su lengua</prompt>
+          <prompt><br/>Primero, se consideran los adverbios indefinidos de tiempo que incluyen un cuantificador. ¿Cómo se expresan estos adverbios de tiempo indefinidos en su lengua? Seleccione todas las opciones que son correctas en su lengua.  Si ninguna opción se permite en su lengua, quita estas opciones y seleccione la opción para ‘Ninguno’ más abajo</prompt>
           <checkbox id="AdvPTemporalIndefTypeQWord" dataItem="temporalIndefQWord">Un cuantificador y un sustantivo genérico de tiempo se fusionan en una sola palabra</checkbox>
           <checkbox id="AdvPTemporalIndefTypeQPhrase" dataItem="temporalIndefQPhrase">Un cuantificador se presenta con un sustantivo genérico de tiempo pero las dos palabras se permanecen independientes como una frase</checkbox>
           <checkbox id="AdvPTemporalIndefTypeQOther" dataItem="temporalIndefQOther">En mi lengua estos adverbios de tiempo indefinidos se expresan con:<textBox  id="AdvPTemporalIndefTypeQOtherContent" dataItem="temporalIndefQOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="AdvPTemporalIndefTypeQNoCheckPrompt" show="swAdvPTemporalIndefTypeQNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresan estos adverbios de tiempo indefinidos en su lengua.</prompt>
-       
-       <prompt id="AdvPTemporalIndefTypeQWordPrompt" show="swAdvPTemporalIndefTypeQWord">Escriba sus ejemplos de estos adverbios de tiempo indefinidos que se forman de un cuantificador y un sustantivo genérico de tiempo y que se escriben como una sola palabra aquí:</prompt>
+       <prompt id="AdvPTemporalIndefTypeQNoCheckPrompt" show="swAdvPTemporalIndefTypeQNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresan estos adverbios de tiempo indefinidos en su lengua.  Si ninguna opción es correcto, por favor seleccione ‘Ninguno’ abajo.</prompt>
+       <checkboxGroup id="AdvPTemporalIndefTypeQNoneTable" show="swAdvPTemporalIndefTypeQNoCheck">
+          <prompt>Seleccione esta opción solamente si su lengua no tiene adverbios indefinidos de tiempo que incluyen un cuantificador en absoluto</prompt>
+          <checkbox id="AdvPTemporalIndefTypeQNone" dataItem="temporalIndefTypeQNone">Ninguno</checkbox>
+       </checkboxGroup>
+      <prompt id="AdvPTemporalIndefTypeQWordPrompt" show="swAdvPTemporalIndefTypeQWord">Escriba sus ejemplos de estos adverbios de tiempo indefinidos que se forman de un cuantificador y un sustantivo genérico de tiempo y que se escriben como una sola palabra aquí:</prompt>
        <textBox id="AdvPTemporalIndefTypeQWordExample" dataItem="temporalIndefTypeQWordExample" show="swAdvPTemporalIndefTypeQWord" rows="3"/>
-       <instruction  id="AdvPTemporalIndefTypeQWordInstruction" show="swAdvPTemporalIndefTypeQWord">In the lexicon, key the features <feature>makeAdv temporal</feature> on the general temporal words.</instruction>
+       <instruction  id="AdvPTemporalIndefTypeQWordInstruction" show="swAdvPTemporalIndefTypeQWord">In the lexicon, key the features <feature>temporal makeAdv</feature> on these temporal adverbial indefinite words.</instruction>
        
-       <prompt id="AdvPTemporalIndefTypeQPhrasePrompt" show="swAdvPTemporalIndefTypeQPhrase">Escriba sus ejemplos de las frases adverbiales de tiempo indefinidas que se forman de un cuantificador y un sustantivo genérico de tiempo aquí:</prompt>
+       <prompt id="AdvPTemporalIndefTypeQPhrasePrompt" show="swAdvPTemporalIndefTypeQPhrase">Escriba sus ejemplos de las frases adverbiales de tiempo indefinidas que se forman de un cuantificador y un sustantivo genérico de tiempo pero las dos palabras se permanecen independientes como una frase aquí:</prompt>
        <textBox id="AdvPTemporalIndefTypeQPhraseExample" dataItem="temporalIndefTypeQPhraseExample" show="swAdvPTemporalIndefTypeQPhrase" rows="3"/>
        <checkboxGroup id="AdvPTemporalIndefTypeQPhraseTable" show="swAdvPTemporalIndefTypeQPhrase">
           <prompt><br/>De acuerdo con los ejemplos, ¿Dónde se presenta el cuantificador con respecto al sustantivo genérico de tiempo? Seleccione todas las opciones que son correctas en su lengua</prompt>
@@ -118,25 +121,30 @@
           <checkbox id="AdvPTemporalIndefTypeQPQBoth" checked="yes" dataItem="temporalIndefTypeQPQBoth">En ambos lados en la misma oración</checkbox>
           <checkbox id="AdvPTemporalIndefTypeQPQOther" checked="yes" dataItem="temporalIndefTypeQPQOther">En mi lengua, el cuantificador puede presentarse: <textBox  id="AdvPTemporalIndefTypeQPQOtherContent" dataItem="temporalIndefTypeQPQOther" rows="2"/></checkbox>
        </checkboxGroup>	
-       <prompt id="AdvPTemporalIndefTypeQPPhraseNoCheckPrompt" show="swAdvPTemporalIndefTypeQPPhraseAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el cuantifiacdor con respecto al sustantivo genérico de tiempo en su lengua, o cambia su respuesta de arriba a una forma diferente.</prompt>
-       <instruction  id="AdvPTemporalIndefTypeQPPhraseInstruction" show="swAdvPTemporalIndefTypeQPhrase">In the lexicon, key the features <feature>makeAdv temporal</feature> on the general temporal words.</instruction>
+       <prompt id="AdvPTemporalIndefTypeQPPhraseNoCheckPrompt" show="swAdvPTemporalIndefTypeQPPhraseAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el cuantificador con respecto al sustantivo genérico de tiempo en su lengua, o cambia su respuesta de arriba a una forma diferente.</prompt>
+       <instruction  id="AdvPTemporalIndefTypeQPPhraseInstruction" show="swAdvPTemporalIndefTypeQPhrase">In the lexicon, key the features <feature>temporal generic</feature> on the general temporal nouns, and make sure they also have the category <category>N</category>.</instruction>
        <instruction id="AdvPTemporalIndefTypeQPQEitherRestrictedInstruction" show="swAdvPTemporalIndefTypeQPQEitherRestricted">In the lexicon, mark those quantifier words which can only occur before the general temporal word with the feature <feature>AdvP-initial</feature> and those which can only occur after the general temporal word with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any quantifier words which can occur on either side.</instruction>           
        
        <prompt id="AdvPTemporalIndefTypeQOtherPrompt" show="swAdvPTemporalIndefTypeQOther">Escriba ejemplos de la otra manera que se sxpresan estos adverbios indefinidos de tiempo que incluyen un cuantificador aquí:</prompt>
        <textBox id="AdvPTemporalIndefTypeQOtherExample" dataItem="temporalIndefTypeQOtherExample" show="swAdvPTemporalIndefTypeQOther" rows="3"/>
        <br></br>     
        <checkboxGroup>
-          <prompt><br/>Ahora se consideren los adverbios de tiempo indefinidos que incluyen una palabra intrerrogativa de tiempo y una palabra indefinida,  como ‘cuandoquiera’.  ¿Cómo se expresan estos adverbios de tiempo indefinidos en su lengua? Seleccione todas las opciones que son correctas en su lengua</prompt>
+          <prompt><br/>Ahora se consideren los adverbios de tiempo indefinidos que incluyen una palabra intrerrogativa de tiempo y una palabra indefinida,  como ‘cuandoquiera’.  ¿Cómo se expresan estos adverbios de tiempo indefinidos en su lengua? Seleccione todas las opciones que son correctas en su lengua.  Si ninguna opción se permite en su lengua, quita estas opciones y seleccione la opción para ‘Ninguno’ más abajo</prompt>
           <checkbox id="AdvPTemporalIndefTypeIntWord" dataItem="temporalIndefIntWord">Una palabra interrogativa de tiempo y una palabra indefinida se fusionan en una sola palabra</checkbox>
           <checkbox id="AdvPTemporalIndefTypeIntPhrase" dataItem="temporalIndefIntPhrase">Una palabra interrogativa de tiempo se presenta con una palabra indefinida pero las dos palabras se permanecen independientes como una frase</checkbox>
           <checkbox id="AdvPTemporalIndefTypeIntOther" dataItem="temporalIndefIntOther">En mi lengua estos adverbios de tiempo indefinidos se expresan con:<textBox  id="AdvPTemporalIndefTypeIntOtherContent" dataItem="temporalIndefIntOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="AdvPTemporalIndefTypeIntNoCheckPrompt" show="swAdvPTemporalIndefTypeIntNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresan estos adverbios de tiempo indefinidos en su lengua.</prompt>
+       <prompt id="AdvPTemporalIndefTypeIntNoCheckPrompt" show="swAdvPTemporalIndefTypeIntNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo se expresan estos adverbios de tiempo indefinidos en su lengua.  Si ninguna opción es correcto, por favor seleccione ‘Ninguno’ abajo.</prompt>
+       <checkboxGroup id="AdvPTemporalIndefTypeIntNoneTable" show="swAdvPTemporalIndefTypeIntNoCheck">
+          <prompt>Seleccione esta opción solamente si su lengua no tiene adverbios indefinidos de tiempo que incluyen una palabra intrerrogativa de tiempo en absoluto</prompt>
+          <checkbox id="AdvPTemporalIndefTypeIntNone" dataItem="temporalIndefTypeIntNone">Ninguno</checkbox>
+       </checkboxGroup>
+       <prompt id="AdvPTemporalIndefTypeQAndIntNonePrompt" show="swAdvPTemporalIndefTypeQAndIntNone">ADVERTENCIA: Usted ha seleccionado ‘Ninguno’ para ambos tipos de adverbios de tiempo indefinidos.  Por favor, seleccione el tipo más cerca a los adverbios de tiempo indefinidos en su lengua y seleccione la casilla ‘En mi lengua...’ para describirlos.  Desactive ‘Ninguno’ para esta opción. </prompt>
        <prompt id="AdvPTemporalIndefTypeIntWordPrompt" show="swAdvPTemporalIndefTypeIntWord">Escriba sus ejemplos de estos adverbios de tiempo indefinidos que se forman de una palabra intrerrogativa de tiempo y una palabra indefinida y se escriben como una sola palabra aquí:</prompt>
-       <textBox id="AdvPTemporalIndefTypeIntWordExample" dataItem="temporalIndefTypeIntWordExample" show="swAdvPTemporalIndefTypeIntWord" rows="3"/>
+       <textBox id="AdvPTemporalIndefTypeIntWordExample" dataItem="temporalIndefTypeIntWordExample" show="swAdvPTemporalIndefTypeQWord" rows="3"/>
        <instruction  id="AdvPTemporalIndefTypeIntWordInstruction" show="swAdvPTemporalIndefTypeIntWord">In the lexicon, key the features <feature>makeAdv temporal</feature> on the temporal interrogative words.</instruction>
        
-       <prompt id="AdvPTemporalIndefTypeIntPhrasePrompt" show="swAdvPTemporalIndefTypeIntPhrase">Escriba sus ejemplos de las frases adverbiales de tiempo indefinidas que se forman de de una palabra intrerrogativa de tiempo y una palabra indefinida aquí:</prompt>
+       <prompt id="AdvPTemporalIndefTypeIntPhrasePrompt" show="swAdvPTemporalIndefTypeIntPhrase">Escriba sus ejemplos de las frases adverbiales de tiempo indefinidas que se forman de de una palabra intrerrogativa de tiempo y una palabra indefinida pero las dos palabras se permanecen independientes como una frase aquí:</prompt>
        <textBox id="AdvPTemporalIndefTypeIntPhraseExample" dataItem="temporalIndefTypeIntPhraseExample" show="swAdvPTemporalIndefTypeIntPhrase" rows="3"/>
        <checkboxGroup id="AdvPTemporalIndefTypeIntPhraseTable" show="swAdvPTemporalIndefTypeIntPhrase">
           <prompt><br/>De acuerdo con los ejemplos, ¿Dónde se presenta la palabra interrogativa de tiempo con respecto a la palabra indefinida? Seleccione todas las opciones que son correctas en su lengua</prompt>
@@ -146,7 +154,7 @@
           <checkbox id="AdvPTemporalIndefTypeIntPhraseOther" checked="yes" dataItem="temporalIndefTypeIntOther">En mi lengua, la palabra interrogativa de tiempo puede presentarse:<textBox  id="AdvPTemporalIndefTypeIntPhraseOtherContent" dataItem="temporalIndefTypeIntOther" rows="2"/></checkbox>
        </checkboxGroup>	
        <prompt id="AdvPTemporalIndefTypeIntPhraseNoCheckPrompt" show="swAdvPTemporalIndefTypeIntPhraseAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra interrogativa de tiempo con respecto a la palabra indefinida en su lengua, o cambia su respuesta de arriba a una forma diferente.</prompt>
-       <instruction  id="AdvPTemporalIndefTypeIntPhraseInstruction" show="swAdvPTemporalIndefTypeIntPhrase">In the lexicon, key the features <feature>makeAdv temporal</feature> on the temporal interrogative words.</instruction>
+       <instruction  id="AdvPTemporalIndefTypeIntPhraseInstruction" show="swAdvPTemporalIndefTypeIntPhrase">In the lexicon, key the features <feature>makeAdv temporal wh</feature> on the temporal interrogative words.  Key the feature <feature>makeIndef</feature> on the indefinite word.</instruction>
        <instruction id="AdvPTemporalIndefTypeIntEitherRestrictedInstruction" show="swAdvPTemporalIndefTypeIntEitherRestricted">In the lexicon, mark those temporal interrogative words which can only occur before the indefinite word with the feature <feature>AdvP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any temporal interrogative words which can occur on either side.</instruction>           
        
        <prompt id="AdvPTemporalIndefTypeIntOtherPrompt" show="swAdvPTemporalIndefTypeIntOther">Escriba ejemplos de la otra manera que se sxpresan estos adverbios de tiempo indefinidos que incluyen una palabra interrogativa de tiempo aquí:</prompt>
@@ -304,6 +312,11 @@
       <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseBefore"/>
       <and/>
       <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseAfter"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalIndefTypeQAndIntNone">
+      <whenCheckbox button="AdvPTemporalIndefTypeQNone"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntNone"/>
    </showWhen>
    &TechnicalTerms; 
    

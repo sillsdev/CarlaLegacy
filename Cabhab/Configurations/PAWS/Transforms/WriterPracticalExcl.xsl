@@ -13,11 +13,12 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>How do you do? </langData>
+</xsl:attribute>How do you do?</langData>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>How are you? </langData>
+</xsl:attribute>How are you?</langData>
 <xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -32,17 +33,17 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Hi!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Howdy!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Goodby</langData>
-<xsl:text>, </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -117,12 +118,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Ouch!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>Gross!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
@@ -347,12 +348,12 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>how</langData>
-<xsl:text> in English, followed by an adjective phrase and usually punctuated with an exclamation point.  English examples include:</xsl:text>
+<xsl:text> in English, followed by an adjective phrase and usually punctuated with an exclamation point.  English examples include: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>How awful for you!</langData>
-<xsl:text> </xsl:text>
+<xsl:text> and </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

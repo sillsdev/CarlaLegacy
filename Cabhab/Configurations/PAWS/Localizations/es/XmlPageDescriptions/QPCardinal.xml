@@ -13,11 +13,11 @@
 	<form section="qp">
 	   <radioGroup id="QPNumberClassifierAgrTable" show="swOTClassifierAgr">
 	      <groupName dataItem="numberClassifier" default="no">RQPNumberClassifierAgr</groupName>
-	      <prompt>Usted dijo que su idioma tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar los números?</prompt>
-	      <radio id="QPNumberClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-	      <radio id="QPNumberClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	      <prompt>Usted dijo que su lengua tiene indicadores de clase para la concordancia en las frases nominales. ¿Utiliza los indicadores de clase en los números?</prompt>
+	      <radio id="QPNumberClassifierAgrNo" dataValue="no">No, estos elementos no se marcan la clase</radio>
+	      <radio id="QPNumberClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan la clase como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
-	   <prompt id="QPNumberClassifierAgrPrompt" show="swOTClassifierAgrNumberYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>	   
+	   <prompt id="QPNumberClassifierAgrPrompt" show="swOTClassifierAgrNumberYes">Puesto que usted ha detallado ya las formas de los indicadores de clase, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>	   
 	   <br/>	   
 	   <prompt>Escriba el número cardinal que significa ‘uno’ aquí:</prompt>
 		<textBox id="QPCardinalNumbers1" dataItem="cardinalNumbers1" rows="2"/>
@@ -131,6 +131,13 @@
 	   <textBox id="QPCardinalNumbers100" dataItem="cardinalNumbers100" rows="2"/>
 	   <br/>
 	   <br/>
+		
+		<prompt>Escriba algunos ejemplos de frases nominales que consiste de varios números cardinales con un sustantivo aquí:    
+			<span id="ClassifiersSpecificSpan2" show="swOTClassifierSpecific"> (Por favor, da ejemlos con diversos tipos de sustantivos para ilustrar algunos diferentes clasificadores en su lengua.)</span></prompt>
+		<textBox id="QPCardinalExample" dataItem="cardinalExample"/>
+		<br/>
+		<br/>
+		
 	   <prompt>Ahora para los números ordinales, escriba el número ordinal que significa ‘primero’ aquí:</prompt>
 		<textBox id="QPOrdinalNumbers1" dataItem="ordinalNumbers1" rows="2"/>
 		<br/>
@@ -196,11 +203,11 @@
 	   <prompt id="QPOrdinalWordPosNoCheckPrompt" show="swQPOrdinalWordPosNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra ordinal con respecto al número cardinal en su lengua, o cambia su respuesta de arriba para decir que los números ordinales se forman en otra manera.</prompt>  
 	   <br/>
 	   <br/>
-	   <prompt>Escriba algunos ejemplos de las frases nominales que consisten de un número ordinal con un sustantivo aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de las frases nominales que consisten de un número ordinal con un sustantivo, como en ‘el tercer libro’ o ‘el segundo barco’, aquí:</prompt>
 	   <textBox id="QPOrdinalExample" dataItem="ordinalExample"/>
 	   <br/>
 	   <br/>
-	   <prompt>Escriba algunos ejemplos de las frases nominales que consisten de un número ordinal con un número cardinal y un sustantivo aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de las frases nominales que consisten de un número ordinal con un número cardinal y un sustantivo, como en ‘los primeros diez niños’, si se permite aquí:</prompt>
 	   <textBox id="QPOrdinalCardinalExample" dataItem="ordinalCardinalExample"/>
 	   <br/>
 	   <br/>
@@ -212,19 +219,23 @@
 	   <textBox id="QPLastExample" dataItem="lastExample" rows="2"/>
 	   <br/>
 	   <br/>
-	   <prompt>Escriba algunos ejemplos de las frases nominales que consisten de ‘último’ o ‘siguiente’ con un sustantivo o con un número cardinal y un sustantivo aquí:</prompt>
+		<prompt>Escriba algunos ejemplos de las frases nominales que consisten de ‘último’ o ‘siguiente’ con un sustantivo, como en ‘la siguiente calle’ aquí. También incluye algunos ejemplos de ‘siguiente’ o ‘último’ con un número cardinal y un sustantivo, como en ‘las últimas cinco cajas’, si se permite.</prompt>
 	   <textBox id="QPNextLastNPExample" dataItem="nextlastNPExample"/>
 	   <br/>
 	   <br/>
 	   <checkboxGroup>
-	      <prompt><br/>¿Dónde se presentan los números ordinales y las palabras para ‘último’ y ‘siguiente’ con respecto al número cardinal en una frase como ‘los primeros veinte muchachos’? Seleccione todas las opciones que son correctas en su lengua</prompt>
+	   	<prompt><br/>¿Dónde se presentan los números ordinales y las palabras para ‘último’ y ‘siguiente’ con respecto al número cardinal en una frase como ‘los primeros veinte muchachos’ o ‘los últimos cinco libros’? Seleccione todas las opciones que son correctas en su lengua.  Si su lengua no permite a los números ordinales o las palabras para ‘último’ o ‘siguiente’ presentarse con un número cardinal, quita estas opciones y seleccione la opción para ‘No se permite’ abajo.</prompt>
 	      <checkbox id="QPOrdinalBefore" checked="yes" dataItem="ordinalBefore">Antes del número cardinal</checkbox>
 	      <checkbox id="QPOrdinalAfter" checked="yes" dataItem="ordinalAfter">Después del número cardinal</checkbox>
 	      <checkbox id="QPOrdinalBoth" checked="yes" dataItem="ordinalBoth">En ambos lados del número cardinal en la misma oración</checkbox>
-	      <checkbox id="QPOrdinalNumOther" dataItem="QPOrdinalNumOther">En mi lengua, estos elementos pueden presentarse:  <textBox  id="QPOrdinalNumOtherContent" dataItem="qpOrdinalNumOther" rows="2"/></checkbox>
+	      <checkbox id="QPOrdinalNumOther" dataItem="ordinalNumOther">En mi lengua, estos elementos pueden presentarse:  <textBox  id="QPOrdinalNumOtherContent" dataItem="ordinalNumOther" rows="2"/></checkbox>
 	   </checkboxGroup>		
-	   <prompt id="QPOrdinalNumNoCheckPrompt" show="swQPOrdinalNumNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los números ordinales y las palabras para ‘último’ y ‘siguiente’ con respecto al número cardinal.</prompt>  
-	   
+		<prompt id="QPOrdinalNumNoCheckPrompt" show="swQPOrdinalNumNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los números ordinales y las palabras para ‘último’ y ‘siguiente’ con respecto al número cardinal, a menos que su lengua no permite a los números ordinales o las palabras para ‘último’ o ‘siguiente’ presentarse con un número cardinal. En ese caso, seleccione la opción para ‘No se permite’ abajo.</prompt>  
+		<checkboxGroup id="QPOrdinalNumNowhereTable" show="swQPOrdinalNumNoCheck">
+			<prompt>Seleccione esta opción solamente si su lengua no permite a los números ordinales o las palabras para ‘último’ o ‘siguiente’ presentarse con un número cardinal</prompt>
+			<checkbox id="QPOrdinalNumNowhere" dataItem="ordinalNumNowhere">‘No se permite’</checkbox>
+		</checkboxGroup>
+		
 	   <instruction id="QPOrdinalInstruction">
 	      <span id="QPOrdinalWordInstruction" show="swQPOrdinalWord">In the lexicon, mark the ordinal word with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
 	      <span id="QPOrdinalAffixInstruction" show="swQPOrdinalAffix">In the lexicon, mark the affix with the feature <feature>ordinal</feature>.  Also, mark the words or affixes meaning <example>next</example> and <example>last</example> with this feature.</span>
@@ -263,7 +274,10 @@
       <and/>
       <whenRadio button="QPNumberClassifierAgrYes"/>
    </showWhen>
-   <showWhen id="swQPOrdinalAffix">
+	<showWhen id="swOTClassifierSpecific">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swQPOrdinalAffix">
       <whenCheckbox button="QPOrdinalAffix"/>
    </showWhen>
    <showWhen id="swQPOrdinalIndependent">

@@ -124,8 +124,8 @@
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue1.0">
-<xsl:value-of select="translate(string(//coord/or),'.','')" />
+                   <xsl:variable name="sExampleValue1.0">
+<xsl:value-of select="translate(string(//coord/andThen),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.0" select="string-length(normalize-space($sExampleValue1.0))" />
 <xsl:choose>
@@ -147,8 +147,8 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-                            <xsl:text>o</xsl:text>
-                        </td>
+                         <xsl:text>y luego</xsl:text>
+                      </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
 <xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
@@ -161,13 +161,13 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-                            <xsl:text>o</xsl:text>
-                        </td>
+                         <xsl:text>y luego</xsl:text>
+                      </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue2.0">
-<xsl:value-of select="translate(string(//coord/andOr),'.','')" />
+                   <xsl:variable name="sExampleValue2.0">
+<xsl:value-of select="translate(string(//coord/or),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.0" select="string-length(normalize-space($sExampleValue2.0))" />
 <xsl:choose>
@@ -189,7 +189,7 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-                            <xsl:text>y/o</xsl:text>
+                            <xsl:text>o</xsl:text>
                         </td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -203,13 +203,13 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
 </td>
 <td align="left">
-                            <xsl:text>y/o</xsl:text>
+                            <xsl:text>o</xsl:text>
                         </td>
 </tr>
 </xsl:otherwise>
 </xsl:choose>
                     <xsl:variable name="sExampleValue3.0">
-<xsl:value-of select="translate(string(//coord/but),'.','')" />
+<xsl:value-of select="translate(string(//coord/andOr),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.0" select="string-length(normalize-space($sExampleValue3.0))" />
 <xsl:choose>
@@ -231,6 +231,48 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
+                            <xsl:text>y/o</xsl:text>
+                        </td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+                            <xsl:text>y/o</xsl:text>
+                        </td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+                    <xsl:variable name="sExampleValue4.0">
+<xsl:value-of select="translate(string(//coord/but),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength4.0" select="string-length(normalize-space($sExampleValue4.0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength4.0 != 0 and $sExampleValue4.0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength4.0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
                             <xsl:text>pero</xsl:text>
                         </td>
 </xsl:with-param>
@@ -250,25 +292,25 @@
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue4.0">
+                    <xsl:variable name="sExampleValue5.0">
 <xsl:value-of select="translate(string(//coord/with),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength4.0" select="string-length(normalize-space($sExampleValue4.0))" />
+<xsl:variable name="iExampleLength5.0" select="string-length(normalize-space($sExampleValue5.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength4.0 != 0 and $sExampleValue4.0 != ' '">
+<xsl:when test="$iExampleLength5.0 != 0 and $sExampleValue5.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue4.0" />
+<xsl:value-of select="$sExampleValue5.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue4.0" />
+<xsl:value-of select="$sExampleValue5.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength4.0" />
+<xsl:value-of select="$iExampleLength5.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
@@ -292,25 +334,25 @@
 </tr>
 </xsl:otherwise>
 </xsl:choose>
-                    <xsl:variable name="sExampleValue5.0">
+                    <xsl:variable name="sExampleValue6.0">
 <xsl:value-of select="translate(string(//coord/other),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength5.0" select="string-length(normalize-space($sExampleValue5.0))" />
+<xsl:variable name="iExampleLength6.0" select="string-length(normalize-space($sExampleValue6.0))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength5.0 != 0 and $sExampleValue5.0 != ' '">
+<xsl:when test="$iExampleLength6.0 != 0 and $sExampleValue6.0 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue5.0" />
+<xsl:value-of select="$sExampleValue6.0" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue5.0" />
+<xsl:value-of select="$sExampleValue6.0" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength5.0" />
+<xsl:value-of select="$iExampleLength6.0" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
@@ -678,7 +720,48 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-            <p>
+           <p>
+<xsl:text> Algunos ejemplos de la coordinación a nivel de la oración que expresa una secuencia de eventos son:</xsl:text>
+</p>
+           <example num="xCoord.CoordLevels.CoordSentence.14">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//coord/sentSeqExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//coord/sentSeqExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//coord/sentSeqExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//coord/sentSeqExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xCoord.CoordLevels.CoordSentence.14</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xCoord.CoordLevels.CoordSentence.14.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+           <p>
 <xsl:text>Véase la sección </xsl:text>
 <sectionRef sec="sAdvCl" />
 <xsl:text> para considerar los ejemplos de palabras o cláusulas de introducción, designadas a veces como coordinación, y los ejemplos de cláusulas adverbiales, que son subordinación.</xsl:text>

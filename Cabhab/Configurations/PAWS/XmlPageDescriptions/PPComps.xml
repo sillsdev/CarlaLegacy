@@ -5,17 +5,17 @@
     <title level="2">Adpositional Phrases - Nominal Complements</title>
     <introduction>The main use of prepositions or postpositions is for expressing location.  Therefore, we will cover locative adpositions and PPs first.  Then, for those languages which do not mark case on nouns or nominal phrases, the adpositions used to express each minor case relation will be exemplified. 
     <br/><br/>
-    Locative prepositions in English include: <example>in, under, over, beside, above, near</example> and <example>through</example>.  These can be used in PPs such as <example>in the box</example>, <example>beside the river</example>, and <example>near the wall </example>.
+    Locative prepositions in English include: <example>in, under, over, beside, above, near</example> and <example>through</example>.  These can be used in PPs such as <example>in the box</example>, <example>beside the river</example>, and <example>near the wall</example>.
     <br/><br/>
     Some languages use body part words to express these same meanings.</introduction>
     <form section="pp">
        <radioGroup id="PPClassifierAgrTable" show="swOTClassifierAgr">
           <groupName dataItem="ppClassifier" default="no">RPPClassifierAgr</groupName>
-          <prompt><br/>You said that your language has classifiers which mark concord agreement.  Do the <span id="PPBodyPartPrepSpan7" show="swPPPrep">prepositions</span><span id="PPBodyPartPostSpan7" show="swPPPost">postpositions</span><span id="PPBodyPartBothSpan7" show="swPPBoth">prepositions and postpositions</span> have classifiers attached to them?</prompt>
-          <radio id="PPClassifierAgrPPNo" dataValue="no">No, these elements are not marked with classifiers</radio>
-          <radio id="PPClassifierAgrPPYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement throughout the language</radio>
+          <prompt><br/>You said that your language has noun class markers with concord agreement.  Are the <span id="PPBodyPartPrepSpan7" show="swPPPrep">prepositions</span><span id="PPBodyPartPostSpan7" show="swPPPost">postpositions</span><span id="PPBodyPartBothSpan7" show="swPPBoth">prepositions and postpositions</span> marked for class?</prompt>
+          <radio id="PPClassifierAgrPPNo" dataValue="no">No, these elements are not marked for class</radio>
+          <radio id="PPClassifierAgrPPYes" dataValue="yes">Yes, these elements are marked for class as part of the concord agreement throughout the language</radio>
        </radioGroup>	   
-       <prompt id="PPClassifierAgrPrompt" show="swPPClassifierAgrPPYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the words asked for on this page.</prompt>	   
+       <prompt id="PPClassifierAgrPrompt" show="swPPClassifierAgrPPYes">Since you have already detailed the forms of the noun class markers, you only need to enter the roots for each of the words asked for on this page.</prompt>	   
        <br/>
        <br/>
 <radioGroup>
@@ -45,7 +45,7 @@
        <textBox id="PPBodyPartPostPPExample" dataItem="bodyPartPostPPExample" rows="6" show="swPPPostOrBothAndBodyPartYes"/>
        <br/><br/>
        <introduction id="PPCaseIntroduction" show="swNPCaseNNo">Since your language does not mark case on nouns or nominal phrases, the minor case-type relationships should be detailed by the <span id="PPBodyPartPrepSpan10" show="swPPPrep">prepositions</span><span id="PPBodyPartPostSpan10" show="swPPPost">postpositions</span><span id="PPBodyPartBothSpan10" show="swPPBoth">prepositions and postpositions</span>.  </introduction>
-       <prompt  id="PPCaseTable" show="swNPCaseNNo">For each of the following text boxes, enter the <span id="PPBodyPartPrepSpan11" show="swPPPrep">prepositions</span><span id="PPBodyPartPostSpan11" show="swPPPost">postpositions</span><span id="PPBodyPartBothSpan11" show="swPPBoth">prepositions and/or postpositions</span> that express that type of case relationship in your language.  <span id="PPCiticSpan" show="swPPClitic">Add an equal sign on the appropriate side of each clitic form to indicate which side it attaches on.</span>  If there is more than one marker for a particiular case, enter each on a separate line.  If your language does not distinguish a particular case relation, simply leave that text box empty.</prompt>
+       <prompt  id="PPCaseTable" show="swNPCaseNNo">For each of the following text boxes, enter the <span id="PPBodyPartPrepSpan11" show="swPPPrep">prepositions</span><span id="PPBodyPartPostSpan11" show="swPPPost">postpositions</span><span id="PPBodyPartBothSpan11" show="swPPBoth">prepositions and/or postpositions</span> that express that type of case relationship in your language.  <span id="PPCiticSpan" show="swPPClitic">Add an equal sign on the appropriate side of each clitic form to indicate which side it attaches on.</span>  If there is more than one marker for a particular case, enter each on a separate line.  If your language does not distinguish a particular case relation, simply leave that text box empty.</prompt>
        <br/>
        <prompt id="PPCaseGenitivePrompt" show="swNPCaseNNo">Key the <span id="PPBodyPartPrepSpan12" show="swPPPrep">prepositions</span><span id="PPBodyPartPostSpan12" show="swPPPost">postpositions</span><span id="PPBodyPartBothSpan12" show="swPPBoth">prepositions and/or postpositions</span> your language uses for genitive case to express possession:</prompt>
        <textBox id="PPGen" dataItem="genitiveP" rows="3" show="swNPCaseNNo"/>

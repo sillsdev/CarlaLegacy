@@ -4,9 +4,11 @@
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="NPArtPosition" count="2/2">
-    <title level="2">Las frases nominales - Los artículos y los demonstrativos: su posición y la concordancia</title>
+    <title level="2">Las frases nominales - Los artículos y demonstrativos: posición y concordancia</title>
     <form section="np">
-       <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical">Now we are ready to build the next part of the phrase structure tree.  </span>Escriba ejemplos de las frases nominales con <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">los artículos y los demonstrativos</span><span id="NPArtSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemSpan" show="swNPArtAndDemDem">los demonstrativos</span> aquí:</prompt>
+       <prompt id="NPArtAndDemInstruction" show="swNPArtAndDem"><span id="NPArtandDemTreespan" show="swNotPractical">Now we are ready to build the next part of the phrase structure tree.  
+       
+       </span>Escriba ejemplos de las frases nominales con <span id="NPArtandDemSpan" show="swNPArtAndDemBoth">los artículos y los demonstrativos</span><span id="NPArtSpan" show="swNPArtAndDemArt">los artículos</span><span id="NPDemSpan" show="swNPArtAndDemDem">los demonstrativos</span> aquí:</prompt>
         <textBox id="NPArtPosExample" show="swNPArtAndDem" dataItem="example"/>
         <prompt id="NPArtAndDemNoInstruction" show="swNPArtAndDemNo">Puesto que su lengua no tiene artículos o demonstrativos que se expresan como palabras independientes, no necesitamos determinar una posición sintáctica para ellos.</prompt>
 <instruction id="NPArtAndDemNoInstruction2" show="swNPArtAndDemNo">You will be instructed to add the agreement features to nouns and their affixes when we deal with agreement again in the section on possessors.</instruction>
@@ -41,6 +43,27 @@
            <radio id="NPArtAndDemDemRequiredMass" dataValue="mass">No, un demostrativo es opcional con sustantivos plurales o <technicalTermRef term="ttMass"/>, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos para ahora)</radio>
             <radio id="NPArtAndDemDemRequiredYes" dataValue="yes">Sí, un demostrativo se requiere siempre</radio>
         </radioGroup>
+     
+     <radioGroup id="NPDemClassifierSpecificTable" show="swOTClassifierSpecificAndNPArtAndDemDem">
+      <groupName dataItem="classifierPresentDem" default="no">RNPDemClassifierPresent</groupName>
+      <prompt><br/>De acuerdo con los ejemplos, ¿Se presentan los clasificadores en las frases nominales completas con un demostrativo?</prompt>
+      <radio id="NPDemClassifierPresentYes"  dataValue="yes">Sí, un clasificador se requiere presentarse en todas las frases nominales de esta tipo</radio>
+      <radio id="NPDemClassifierPresentSome" dataValue="some">Se presenta un clasificador en algunas de esta tipo de frase nominal, pero no se requiere en todas</radio>
+      <radio id="NPDemClassifierPresentNo" dataValue="no">No, un clasificador nunca se presenta en esta tipo de frase nominal</radio>
+     </radioGroup>
+     <checkboxGroup id="NPDemClassifierSpecificPos" show="swOTClassifierSpecificAndNPArtAndDemDemAndNPDemClassifierPresentYesOrSome">
+      <prompt><br/>De acuerdo con los ejemplos, ¿dónde se presentan los clasificadores con respecto al demostrativo y al sustantivo?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+      <checkbox id="NPDemClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificDemPosBeforeBoth">Primero, antes de ambos el demostrativo y el sustantivo</checkbox>
+      <checkbox id="NPDemClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificDemPosAfterBoth">Final, después de ambos el sustantivo y el demostrativo</checkbox>
+      <checkbox id="NPDemClassifierSpecificPosAfterDemBeforeN"  dataItem="classifierSpecificDemPosAfterDemBeforeN">Después del demostrativo pero antes del sustantivo</checkbox>
+      <checkbox id="NPDemClassifierSpecificPosAfterNBeforeDem"  dataItem="classifierSpecificDemPosAfterNBeforeDem">Después del sustantivo pero antes del demostrativo</checkbox>
+      <checkbox id="NPDemClassifierSpecificPosPrefixDem"  dataItem="classifierSpecificDemPosPrefixDem">Como un prefijo en el demostrativo</checkbox>
+      <checkbox id="NPDemClassifierSpecificPosSuffixDem"  dataItem="classifierSpecificDemPosSuffixDem">Como un sufijo en el demostrativo</checkbox>
+      <checkbox id="NPDemClassifierSpecificPosOther"  dataItem="classifierSpecificDemPosOther">En mi lengua, los clasificadores pueden presentarse: <textBox  id="NPClassifierSpecificDemPosOtherContent" dataItem="classifierSpecificDemPosOther" rows="2"/></checkbox>
+     </checkboxGroup>
+     <prompt id="NPDemClassifierSpecificPosNoCheckPrompt" show="swNPDemClassifierPresentYesOrSomeAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los clasificadores con respecto al demostrativo y al sustantivo en su lengua, o cambia la respuesta anterior a “No, un clasificador nunca se presenta en esta tipo de frase nominal”.</prompt>
+     
+     
        
         <radioGroup id="NPArtAndDemBothTable" show="swNPArtAndDemBoth">
             <groupName dataItem="artBothCooccur" default="different">RNPArtAndDemBoth</groupName>
@@ -101,7 +124,28 @@
                <radio id="NPArtAndDemBothCooccurYesArtRequiredMass" dataValue="mass">No, un artículo es opcional con sustantivos plurales o <technicalTermRef term="ttMass"/>, pero se requiere con los sustantivos singulares (no considera sustantivos poseídos ahora)</radio>
                 <radio id="NPArtAndDemBothCooccurYesArtRequiredYes" dataValue="yes">Sí, un artículo se requiere siempre</radio>
             </radioGroup>
-       <instruction id="NPArtAgreementNumberInstruction" show="swNPArtAgreementNumberYes">
+ 
+     <radioGroup id="NPDemBothClassifierSpecificTable" show="swOTClassifierSpecificAndNPArtAndDemBoth">
+      <groupName dataItem="classifierPresentDemBoth" default="no">RNPDemBothClassifierPresent</groupName>
+      <prompt><br/>De acuerdo con los ejemplos, ¿Se presentan los clasificadores en las frases nominales completas con un demostrativo?</prompt>
+      <radio id="NPDemBothClassifierPresentYes"  dataValue="yes">Sí, un clasificador se requiere presentarse en todas las frases nominales de esta tipo</radio>
+      <radio id="NPDemBothClassifierPresentSome" dataValue="some">Se presenta un clasificador en algunas de esta tipo de frase nominal, pero ne se requiere en todas</radio>
+      <radio id="NPDemBothClassifierPresentNo" dataValue="no">No, un clasificador nunca se presenta en esta tipo de frase nominal</radio>
+     </radioGroup>
+     <checkboxGroup id="NPDemBothClassifierSpecificPos" show="swOTClassifierSpecificAndNPArtAndDemBothAndNPDemBothClassifierPresentYesOrSome">
+      <prompt><br/>De acuerdo con los ejemplos, ¿dónde se presentan los clasificadores con respecto al demostrativo y al sustantivo?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+      <checkbox id="NPDemBothClassifierSpecificPosBeforeBoth"  dataItem="classifierSpecificDemBothPosBeforeBoth">Primero, antes de ambos el demostrativo y el sustantivo</checkbox>
+      <checkbox id="NPDemBothClassifierSpecificPosAfterBoth"  dataItem="classifierSpecificDemBothPosAfterBoth">Final, después de ambos el sustantivo y el demostrativo</checkbox>
+      <checkbox id="NPDemBothClassifierSpecificPosAfterDemBeforeN"  dataItem="classifierSpecificDemBothPosAfterDemBeforeN">Después del demostrativo pero antes del sustantivo</checkbox>
+      <checkbox id="NPDemBothClassifierSpecificPosAfterNBeforeDem"  dataItem="classifierSpecificDemBothPosAfterNBeforeDem">Después del sustantivo pero antes del demostrativo</checkbox>
+      <checkbox id="NPDemBothClassifierSpecificPosPrefixDem"  dataItem="classifierSpecificDemBothPosPrefixDem">Como un prefijo en el demostrativo</checkbox>
+      <checkbox id="NPDemBothClassifierSpecificPosSuffixDem"  dataItem="classifierSpecificDemBothPosSuffixDem">Como un sufijo en el demostrativo</checkbox>
+      <checkbox id="NPDemBothClassifierSpecificPosOther"  dataItem="classifierSpecificDemBothPosOther">En mi lengua, los clasificadores pueden presentarse: <textBox  id="NPClassifierSpecificDemBothPosOtherContent" dataItem="classifierSpecificDemBothPosOther" rows="2"/></checkbox>
+     </checkboxGroup>
+     <prompt id="NPDemBothClassifierSpecificPosNoCheckPrompt" show="swNPDemBothClassifierPresentYesOrSomeAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los clasificadores con respecto al demostrativo y al sustantivo en su lengua, o cambia la respuesta anterior a “No, un clasificador nunca se presenta en esta tipo de frase nominal”.</prompt>
+     
+     
+     <instruction id="NPArtAgreementNumberInstruction" show="swNPArtAgreementNumberYes">
           To handle the number agreement, in the lexicon:
           <ul>
              <li>Mark the <span id="NPArtOnlySingularSpan" show="swNPArtAndDemArt">articles</span><span id="NPDemOnlySingularSpan" show="swNPArtAndDemDem">demonstratives</span><span id="NPArtAndDemSingularSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that can only go with singular nouns with the feature <feature>singular</feature>.</li>
@@ -598,5 +642,90 @@
     <showWhen id="swNotPractical">
         <whenValue  element="paws" attr="outputGrammar" value="True"/>
     </showWhen>
-   &TechnicalTerms; 
-   </page>
+ 
+ <showWhen id="swOTClassifierSpecificAndNPArtAndDemDem">
+  <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+  <and/>
+  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+ </showWhen>
+ <showWhen id="swOTClassifierSpecificAndNPArtAndDemDemAndNPDemClassifierPresentYesOrSome">
+  <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+  <and/>
+  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+  <and/>
+  <openParen/>
+  <whenRadio button="NPDemClassifierPresentYes"/>
+  <or/>
+  <whenRadio button="NPDemClassifierPresentSome"/>
+  <closeParen/>
+ </showWhen>
+ <showWhen id="swNPDemClassifierPresentYesOrSomeAndNoCheck">
+  <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+  <and/>
+  <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+  <and/>
+  <openParen/>
+  <whenRadio button="NPDemClassifierPresentYes"/>
+  <or/>
+  <whenRadio button="NPDemClassifierPresentSome"/>
+  <closeParen/>
+  <and/><not/>
+  <whenCheckbox button="NPDemClassifierSpecificPosAfterBoth"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemClassifierSpecificPosBeforeBoth"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemClassifierSpecificPosAfterDemBeforeN"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemClassifierSpecificPosAfterNBeforeDem"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemClassifierSpecificPosPrefixDem"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemClassifierSpecificPosSuffixDem"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemClassifierSpecificPosOther"/>
+ </showWhen>
+ 
+ <showWhen id="swOTClassifierSpecificAndNPArtAndDemBoth">
+  <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+  <and/>
+  <whenValue element="np" attr="artAndDem" value="both"/>
+ </showWhen>
+ <showWhen id="swOTClassifierSpecificAndNPArtAndDemBothAndNPDemBothClassifierPresentYesOrSome">
+  <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+  <and/>
+  <whenValue element="np" attr="artAndDem" value="both"/>
+  <and/>
+  <openParen/>
+  <whenRadio button="NPDemBothClassifierPresentYes"/>
+  <or/>
+  <whenRadio button="NPDemBothClassifierPresentSome"/>
+  <closeParen/>
+ </showWhen>
+ <showWhen id="swNPDemBothClassifierPresentYesOrSomeAndNoCheck">
+  <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+  <and/>
+  <whenValue element="np" attr="artAndDem" value="both"/>
+  <and/>
+  <openParen/>
+  <whenRadio button="NPDemBothClassifierPresentYes"/>
+  <or/>
+  <whenRadio button="NPDemBothClassifierPresentSome"/>
+  <closeParen/>
+  <and/><not/>
+  <whenCheckbox button="NPDemBothClassifierSpecificPosAfterBoth"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemBothClassifierSpecificPosBeforeBoth"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemBothClassifierSpecificPosAfterDemBeforeN"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemBothClassifierSpecificPosAfterNBeforeDem"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemBothClassifierSpecificPosPrefixDem"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemBothClassifierSpecificPosSuffixDem"/>
+  <and/><not/>
+  <whenCheckbox button="NPDemBothClassifierSpecificPosOther"/>
+ </showWhen>
+ 
+ &TechnicalTerms; 
+</page>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<paws dbversion="9" outputGrammar="False" outputWriter="True" outputWriterPractical="True" outputWriterPracticalSpanish="True">
+<paws dbversion="11" outputGrammar="False" outputWriter="False" outputWriterPractical="True" outputWriterPracticalSpanish="True" outputWriterPracticalFrench="True">
     <leftOffAt>Contents.htm</leftOffAt>
     <language>
        <langNames>
           <langName lang="en"/>    
-          <langName lang="es"/>    
+         <langName lang="es"/>    
+         <langName lang="fr"/>    
        </langNames>
         <langAbbr/>
         <font bold="False" italic="False" under="False" strike="False" rtl="False">
@@ -18,6 +19,7 @@
         <writerFile/>
         <writerPracticalFile/>
         <writerPracticalSpanishFile/>
+        <writerPracticalFrenchFile/>
         <exampleFilesPath/>
     </language>
    <typology checkedOff="no" wordOrder="SVO" case="nominative" caseExperiencer="no" noCaseExperiencer="no" classifier="no" classifierNum="number"
@@ -87,8 +89,22 @@
       <classTreeExample/>
       <classWoodExample/>
       <classOtherExample/>
-      <classifierAgrExample/>
-      <classifierTypeExample/>
+    <classifierHumanExample/>
+    <classifierAnimalExample/>
+    <classifierBirdExample/>
+    <classifierBoatExample/>
+    <classifierClothingExample/>
+    <classifierTreeExample/>
+    <classifierLongThinExample/>
+    <classifierLongWavyExample/>
+    <classifierFlatExample/>
+    <classifierCylindricalExample/>
+    <classifierMechanicalExample/>
+    <classifierGenericExample/>
+    <classifierOtherExample/>
+    <classifierAgrExample/>
+    <classifierSpecificExample/>
+    <classifierTypeExample/>
     </typology>
    <qp checkedOff="no" npDegreeClassifier="no" npDegree="yes" determinerType="yes" determinerClassifier="no" determiner="yes"  quantifierClassifier="no" degree="no" degreeClassifier="no" numberClassifier="no"  cardinalHead="final" partitive="no" partitivePPPos="unknown">
       <npDegreeTypeProclitic checked="no" />
@@ -114,10 +130,10 @@
       <degreeAfter checked="no" />
       <degreeBoth checked="no" />
       <degreeOther checked="no" />
-      <degreePrefix checked="no" />
-      <degreeSuffix checked="no" />
-      <degreeOther checked="no" />
-      <ordinalAffix checked="no" />
+    <degreeTypePrefix checked="no"/>    
+    <degreeTypeSuffix checked="no"/>    
+    <degreeTypeOther checked="no"/>
+    <ordinalAffix checked="no" />
       <ordinalIndependent checked="no" />
       <ordinalWord checked="no" />
       <ordinalOther checked="no" />
@@ -129,7 +145,8 @@
       <ordinalAfter checked="no" />
       <ordinalBoth checked="no" />
       <ordinalNumOther checked="no" />
-      <all/>
+    <ordinalNumNowhere checked="no" />
+    <all/>
         <almost/>
         <only/>
       <npDegreeCliticExample/>
@@ -179,7 +196,8 @@
       <cardinalNumbers80/>
       <cardinalNumbers90/>
       <cardinalNumbers100/>
-      <ordinalNumbers1/>
+    <cardinalExample/>
+    <ordinalNumbers1/>
       <ordinalNumbers2/>
       <ordinalNumbers3/>
       <ordinalNumbers4/>
@@ -203,10 +221,11 @@
       </lastExample>
       <nextlastNPExample>
       </nextlastNPExample>
+    <cardinalCompoundExample/>
       <partitiveQExample/>
+    <partitiveConstruction/>
       <partitiveOf/>
-      <cardinalCompoundExample/>
-        <cardinalNumberCategory/>
+    <cardinalNumberCategory/>
         <conjunctionCategory/>
     </qp>
    <advp checkedOff="no" temporalDegree="no"  locativeClassifier="no" locativeDem="distinct"
@@ -222,9 +241,9 @@
       </temporalDegreeWordOther>
       <temporalIndefQWord checked="no" />
       <temporalIndefQPhrase checked="no" />
-      <temporalIndefQOther checked="no">
-      </temporalIndefQOther>
-      <temporalIndefTypeQPQBefore checked="no" />
+      <temporalIndefQOther checked="no"/>      
+    <temporalIndefTypeQNone checked="no"/>    
+    <temporalIndefTypeQPQBefore checked="no" />
       <temporalIndefTypeQPQAfter checked="no" />
       <temporalIndefTypeQPQBoth checked="no" />
       <temporalIndefTypeQPQOther checked="no">
@@ -233,7 +252,8 @@
       <temporalIndefIntPhrase checked="no" />
       <temporalIndefIntOther checked="no">
       </temporalIndefIntOther>
-      <temporalIndefTypeIntBefore checked="no" />
+    <temporalIndefTypeIntNone checked="no"/>    
+    <temporalIndefTypeIntBefore checked="no" />
       <temporalIndefTypeIntAfter checked="no" />
       <temporalIndefTypeIntBoth checked="no" />
       <temporalIndefTypeIntOther checked="no">
@@ -251,7 +271,8 @@
       <locativeIndefQPhrase checked="no" />
       <locativeIndefQOther checked="no">
       </locativeIndefQOther>
-      <locativeIndefTypeQPQBefore checked="no" />
+    <locativeIndefTypeQNone checked="no"/>    
+    <locativeIndefTypeQPQBefore checked="no" />
       <locativeIndefTypeQPQAfter checked="no" />
       <locativeIndefTypeQPQBoth checked="no" />
       <locativeIndefTypeQPQOther checked="no">
@@ -260,11 +281,11 @@
       <locativeIndefIntPhrase checked="no" />
       <locativeIndefIntOther checked="no">
       </locativeIndefIntOther>
-      <locativeIndefTypeIntBefore checked="no" />
+    <locativeIndefTypeIntNone checked="no"/>    
+    <locativeIndefTypeIntBefore checked="no" />
       <locativeIndefTypeIntAfter checked="no" />
       <locativeIndefTypeIntBoth checked="no" />
-      <locativeIndefTypeIntOther checked="no">
-      </locativeIndefTypeIntOther>
+      <locativeIndefTypeIntOther checked="no"/>      
       <mannerWordDegreeWord checked= "no"/>
       <mannerWordDegreeAttaches checked= "no"/>
       <mannerWordDegreeRedup checked= "no"/>      
@@ -272,8 +293,7 @@
       <mannerDegreeWordBefore checked="no" />
       <mannerDegreeWordAfter checked="no" />
       <mannerDegreeWordBoth checked="no" />
-      <mannerDegreeWordOther checked="no">
-      </mannerDegreeWordOther>
+      <mannerDegreeWordOther checked="no"/>      
       <mannerAffixDegreeYesBefore checked= "no"/>
       <mannerAffixDegreeYesAfter checked= "no"/>      
       <mannerAffixDegreeRedup checked= "no"/>      
@@ -342,8 +362,7 @@
       <modifiersManner checked="no" />
       <modifiersAttaches checked="no" />
       <modifiersRedup checked="no" />
-      <modifiersOther checked="no">
-      </modifiersOther>
+      <modifiersOther checked="no"/>      
       <degreeBefore checked="no" />
       <degreeAfter checked="no" />
       <degreeBoth checked="no" />
@@ -352,8 +371,7 @@
       <mannerBefore checked="no" />
       <mannerAfter checked="no" />
       <mannerBoth checked="no" />
-      <mannerOther checked="no">
-      </mannerOther>
+      <mannerOther checked="no"/>      
       <example/>
       <adjectiveDegreeExample/>
       <adjectiveDegreePhraseExample/>
@@ -364,66 +382,93 @@
       <adjectiveDegreeOtherExample/>
         <adjectiveCategory/>
     </adjp>
-   <np checkedOff="no" agreeNumber="no" agreeOther="no" caseN="no" caseDefault="no" caseWord="yes" possCaseErg="genitive" artAndDem="no" artDefOnly="no" artPl="no" demPl="no" artDemClassifier="no" artCase="no" artRequired="no" demRequired="no" artBothCooccur="different" demOrArtRequired="no" demAndArtDemRequired="no" demAndArtArtRequired="no" possNP="yes" possPronPos="unknown" possPPPos="unknown" possNounPos="unknown" possMarked="no" possWordRequired="no" possCooccur="yes" possNounCaseChange="no" possAlienable="no" possAgr="no" possAbsolutive="no" qpEitherRestrictedNumPos="unknown" adjpPart="no" adjpCaseChange="no" adjpCaseAffix="no" comp="no" compHead="right" compHeadMorpheme="right" ppComp="no" ppPos="unknown" partNP="no">
-      <agreeClass checked="no" />
-      <agreeGender checked="no" />
+   <np checkedOff="no" classifierPresent="no" agreeNumber="no" caseN="no" caseDefault="no" caseWord="yes" possCaseErg="genitive" artAndDem="no" artDefOnly="no" artPl="no" demPl="no" artDemClassifier="no" artCase="no" artRequired="no" demRequired="no" artBothCooccur="different" demOrArtRequired="no" demAndArtDemRequired="no" demAndArtArtRequired="no" classifierPresentDem="no" classifierPresentDemBoth="no" possNP="yes" possPronPos="unknown" possPPPos="unknown" possNounPos="unknown" possMarked="no" possWordRequired="no" possCooccur="yes" possNounCaseChange="no" possAlienable="no" possAgr="no" possAbsolutive="no" qpEitherRestrictedNumPos="unknown" classifierPresentQ="no" classifierPresentAdj="no" adjPPart="no" adjpCaseChange="no" adjpCaseAffix="no" comp="no" compHead="right" compHeadMorpheme="right" ppComp="no" ppPos="unknown" partNP="no">
+    <classifierSpecificPosBeforeBoth checked="no"/>
+    <classifierSpecificPosAfterBoth checked="no"/>
+    <classifierSpecificPosAfterQBeforeN checked="no"/>
+    <classifierSpecificPosAfterNBeforeQ checked="no"/>
+    <classifierSpecificPosPrefixQ checked="no" />
+    <classifierSpecificPosSuffixQ checked="no" />
+    <classifierSpecificPosOther checked="no"/> 
+    <agreeClass checked="no" />
+    <agreeClassifier checked="no" />
+    <agreeGender checked="no" />
       <agreeAnimacy checked="no" />
-      <agreeOtherFeat checked="no">
-      </agreeOtherFeat>
-      <caseWordBefore checked="no" />
+      <agreeOtherFeat checked="no"/>      
+    <agreeOtherNone checked="no" />
+    <caseWordBefore checked="no" />
       <caseWordAfter checked="no" />
       <caseWordBoth checked="no" />
-      <caseWordOther checked="no">
-      </caseWordOther>
+      <caseWordOther checked="no"/>      
       <caseAttachesProclitic checked="no" />
       <caseAttachesEnclitic checked="no" />
       <caseAttachesPrefix checked="no" />
       <caseAttachesSuffix checked="no" />
-      <caseAttachesOther checked="no">
-      </caseAttachesOther>
+      <caseAttachesOther checked="no"/>      
       <artOnlyBefore checked="no" />
       <artOnlyAfter checked="no" />
       <artOnlyBoth checked="no" />
-      <artOnlyOther checked="no">
-      </artOnlyOther>
+      <artOnlyOther checked="no"/>      
       <demOnlyBefore checked="no" />
       <demOnlyAfter checked="no" />
       <demOnlyBoth checked="no" />
-      <demOnlyOther checked="no">
-      </demOnlyOther>
+      <demOnlyOther checked="no"/>      
       <demOrArtPosBefore checked="no" />
       <demOrArtPosAfter checked="no" />
       <demOrArtPosBoth checked="no" />
-      <demOrArtPosOther checked="no">
-      </demOrArtPosOther>
+      <demOrArtPosOther checked="no"/>      
       <demAndArtDemBefore checked="no" />
       <demAndArtDemAfter checked="no" />
       <demAndArtDemBoth checked="no" />
-      <demAndArtDemOther checked="no">
-      </demAndArtDemOther>
+      <demAndArtDemOther checked="no"/>      
       <demAndArtArtBefore checked="no" />
       <demAndArtArtAfter checked="no" />
       <demAndArtArtBoth checked="no" />
-      <demAndArtArtOther checked="no">
-      </demAndArtArtOther>
-      <possWordBefore checked="no" />
+      <demAndArtArtOther checked="no"/>      
+    <classifierSpecificDemPosBeforeBoth checked="no" />
+    <classifierSpecificDemPosAfterBoth checked="no" />
+    <classifierSpecificDemPosAfterDemBeforeN checked="no" />
+    <classifierSpecificDemPosAfterNBeforeDem checked="no" />
+    <classifierSpecificDemPosPrefixDem checked="no" />
+    <classifierSpecificDemPosSuffixDem checked="no" />
+    <classifierSpecificDemPosOther checked="no"/>    
+    <classifierSpecificDemBothPosBeforeBoth checked="no" />
+    <classifierSpecificDemBothPosAfterBoth checked="no" />
+    <classifierSpecificDemBothPosAfterDemBeforeN checked="no" />
+    <classifierSpecificDemBothPosAfterNBeforeDem checked="no" />
+    <classifierSpecificDemBothPosPrefixDem checked="no" />
+    <classifierSpecificDemBothPosSuffixDem checked="no" />
+    <classifierSpecificDemBothPosOther checked="no"/>    
+    <possWordBefore checked="no" />
       <possWordAfter checked="no" />
       <possWordBoth checked="no" />
-      <possWordOther checked="no">
-      </possWordOther>
+      <possWordOther checked="no"/>      
       <qpPosBefore checked="no" />
       <qpPosAfter checked="no" />
       <qpPosBoth checked="no" />
-      <qpPosOther checked="no">
-      </qpPosOther>
-      <adjBefore checked="no" />
+      <qpPosOther checked="no"/>      
+    <classifierSpecificQPosBeforeBoth checked="no" />
+    <classifierSpecificQPosAfterBoth checked="no" />
+    <classifierSpecificQPosAfterQBeforeN checked="no" />
+    <classifierSpecificQPosAfterNBeforeQ checked="no" />
+    <classifierSpecificQPosPrefixQ checked="no" />
+    <classifierSpecificQPosSuffixQ checked="no" />
+    <classifierSpecificQPosOther checked="no"/>    
+    <adjBefore checked="no" />
       <adjAfter checked="no" />
       <adjBoth checked="no" />
-      <adjPosOther checked="no">
-      </adjPosOther>
-      <agreeNumberExample/>   
+      <adjPosOther checked="no"/>      
+    <classifierSpecificAdjPosBeforeBoth checked="no" />
+    <classifierSpecificAdjPosAfterBoth checked="no" />
+    <classifierSpecificAdjPosAfterAdjBeforeN checked="no" />
+    <classifierSpecificAdjPosAfterNBeforeAdj checked="no" />
+    <classifierSpecificAdjPosPrefixAdj checked="no" />
+    <classifierSpecificAdjPosSuffixAdj checked="no" />
+    <classifierSpecificAdjPosOther checked="no"/>    
+    <agreeNumberExample/>   
       <agreeClassExample/>
-      <agreeGenderExample/>      
+    <agreeClassifierExample/>
+    <agreeGenderExample/>      
       <agreeAnimacyExample/>     
       <agreeOtherExample/>     
       <caseNPExample/>    
@@ -606,7 +651,67 @@
         <articleCategory/>
         <demonstrativeCategory/>
         <nounCategory/>
-        <npContents1 checkedOff="no"/>
+      <articleErgGenExample/>
+      <articleErgPlGenExample/>
+      <articleErgIndefGenExample/>
+      <articleErgIndefPlGenExample/>
+      <articleSplitNomExample/>
+      <articleSplitPlNomExample/>
+      <articleSplitIndefNomExample/>
+      <articleSplitIndefPlNomExample/>
+      <articleSplitAccExample/>
+      <articleSplitPlAccExample/>
+      <articleSplitIndefAccExample/>
+      <articleSplitIndefPlAccExample/>
+      <articleSplitGenExample/>
+      <articleSplitPlGenExample/>
+      <articleSplitIndefGenExample/>
+      <articleSplitIndefPlGenExample/>
+      <articleSplitErgExample/>
+      <articleSplitPlErgExample/>
+      <articleSplitIndefErgExample/>
+      <articleSplitIndefPlErgExample/>
+      <articleSplitAbsExample/>
+      <articleSplitPlAbsExample/>
+      <articleSplitIndefAbsExample/>
+      <articleSplitIndefPlAbsExample/>
+      <demErgProximalGenExample/>
+      <demErgMedialGenExample/>
+      <demErgDistalGenExample/>
+      <demErgProximalPlGenExample/>
+      <demErgMedialPlGenExample/>
+      <demErgDistalPlGenExample/>     
+      <demSplitProximalNomExample/>
+      <demSplitMedialNomExample/>
+      <demSplitDistalNomExample/>
+      <demSplitProximalPlNomExample/>
+      <demSplitMedialPlNomExample/>
+      <demSplitDistalPlNomExample/>
+      <demSplitProximalAccExample/>
+      <demSplitMedialAccExample/>
+      <demSplitDistalAccExample/>
+      <demSplitProximalPlAccExample/>
+      <demSplitMedialPlAccExample/>
+      <demSplitDistalPlAccExample/>
+      <demSplitProximalGenExample/>
+      <demSplitMedialGenExample/>
+      <demSplitDistalGenExample/>
+      <demSplitProximalPlGenExample/>
+      <demSplitMedialPlGenExample/>
+      <demSplitDistalPlGenExample/>
+      <demSplitProximalErgExample/>
+      <demSplitMedialErgExample/>
+      <demSplitDistalErgExample/>
+      <demSplitProximalPlErgExample/>
+      <demSplitMedialPlErgExample/>
+      <demSplitDistalPlErgExample/>
+      <demSplitProximalAbsExample/>
+      <demSplitMedialAbsExample/>
+      <demSplitDistalAbsExample/>
+      <demSplitProximalPlAbsExample/>
+      <demSplitMedialPlAbsExample/>
+      <demSplitDistalPlAbsExample/>     
+      <npContents1 checkedOff="no"/>
         <npContents2 checkedOff="no"/>
         <npContents3 checkedOff="no"/>
         <npContents4 checkedOff="no"/>
@@ -639,49 +744,43 @@
         <propAnimate2Category/>
         <propInanimateCategory/>
     </prop>
-    <pron checkedOff="no" pronounClassifier="no" pronounNumber="no" pronounExcl="no" dependentPron="no" pronDepClassifier="no" poss="no" refl="no" recip="no" demAdjSame="no" demNumber="no" demCase="no"  pronMod="no" partitivePos="unknown">
+    <pron checkedOff="no" pronounClassifier="no" pronounNumber="no" pronounExcl="no" dependentPron="no" pronDepClassifier="no" poss="no" refl="no" recip="no" demAdjSame="no" demNumber="no" demCase="no"  pronMod="no" partitivePos="unknown" classifierNoN="no">
        <dependentTypeProclitic checked="no" />
        <dependentTypeEnclitic checked="no" />
        <dependentTypePrefix checked="no" />
        <dependentTypeSuffix checked="no" />
-       <dependentTypeOther checked="no">
-       </dependentTypeOther>
+       <dependentTypeOther checked="no"/>       
        <possDistinct checked="no" />
        <possAffixPron checked="no" />
        <possAffixWord checked="no" />
        <possPhrase checked="no" />
-       <possOther checked="no">
-       </possOther>
+       <possOther checked="no"/>       
        <reflDistinct checked="no" />
        <reflAffix checked="no" />
        <reflNounPoss checked="no" />
        <reflQP checked="no" />
-       <reflOther checked="no">
-       </reflOther>
+       <reflOther checked="no"/>       
        <recipDistinct checked="no" />
        <recipAffix checked="no" />
        <recipNounPoss checked="no" />
        <recipQP checked="no" />
-       <recipOther checked="no">
-       </recipOther>
+       <recipOther checked="no"/>       
        <indefQWord checked="no" />
        <indefQPhrase checked="no" />
-       <indefQOther checked="no">
-       </indefQOther>
-       <indefTypeQPQBefore checked="no" />
+       <indefQOther checked="no"/>       
+     <pronIndefTypeQNone checked="no"/>     
+     <indefTypeQPQBefore checked="no" />
        <indefTypeQPQAfter checked="no" />
        <indefTypeQPQBoth checked="no" />
-       <indefTypeQPQOther checked="no">
-       </indefTypeQPQOther>
+       <indefTypeQPQOther checked="no"/>       
        <indefIntWord checked="no" />
        <indefIntPhrase checked="no" />
-       <indefIntOther checked="no">
-       </indefIntOther>
-       <indefTypeIntBefore checked="no" />
+       <indefIntOther checked="no"/>       
+     <pronIndefTypeIntNone checked="no"/>     
+     <indefTypeIntBefore checked="no" />
        <indefTypeIntAfter checked="no" />
        <indefTypeIntBoth checked="no" />
-       <indefTypeIntOther checked="no">
-       </indefTypeIntOther>
+       <indefTypeIntOther checked="no"/>       
        <personalFirstSgNoCaseExample/>
        <personalFirstPlNoCaseExample/>
        <personalFirstExclNoCaseExample/>
@@ -725,7 +824,7 @@
        <personalFirstSgNomPossessorExample/>
        <personalFirstPlNomPossessorExample/>
        <personalFirstExclNomPossessorExample/>
-       <personalFirstInclNomPossessortExample/>
+       <personalFirstInclNomPossessorExample/>
        <personalSecondSgNomPossessorExample/>
        <personalSecondPlNomPossessorExample/>
        <personalThirdSgNomPossessorExample/>
@@ -1100,35 +1199,67 @@
        <pronSentExample/>
         <pronRelClExample/>
         <partitiveExample/>
+     <classifierNoNExample/>
         <pronounCategory/>
-           </pron>
+       <demProximalErgGenExample/>
+       <demMedialErgGenExample/>
+       <demDistalErgGenExample/>
+       <demProximalErgPlGenExample/>
+       <demMedialErgPlGenExample/>
+       <demDistalErgPlGenExample/>     
+       <demProximalSplitNomExample/>
+       <demMedialSplitNomExample/>
+       <demDistalSplitNomExample/>
+       <demProximalSplitPlNomExample/>
+          <demMedialSplitPlNomExample/>
+          <demDistalSplitPlNomExample/>
+          <demProximalSplitAccExample/>
+          <demMedialSplitAccExample/>
+          <demDistalSplitAccExample/>
+          <demProximalSplitPlAccExample/>
+          <demMedialSplitPlAccExample/>
+          <demDistalSplitPlAccExample/>
+          <demProximalSplitGenExample/>
+          <demMedialSplitGenExample/>
+          <demDistalSplitGenExample/>
+          <demProximalSplitPlGenExample/>
+          <demMedialSplitPlGenExample/>
+          <demDistalSplitPlGenExample/>
+          <demProximalSplitErgExample/>
+          <demMedialSplitErgExample/>
+          <demDistalSplitErgExample/>
+          <demProximalSplitPlErgExample/>
+          <demMedialSplitPlErgExample/>
+          <demDistalSplitPlErgExample/>
+          <demProximalSplitAbsExample/>
+          <demMedialSplitAbsExample/>
+          <demDistalSplitAbsExample/>
+          <demProximalSplitPlAbsExample/>
+          <demMedialSplitPlAbsExample/>
+          <demDistalSplitPlAbsExample/>
+    </pron>
    <pp checkedOff="no" pPos="unknown" pType="word" attaches="edge" modifiers="no" ppClassifier="no" bodyPart="no" alone="no" locative="no" ppComp="no" tempComp="no">
       <ppModifierDegree checked="no" />
       <ppModifierOrdinal checked="no" />
       <ppModifierManner checked="no" />
       <ppModifierLocative checked="no" />
-      <ppModifierOther checked="no">
-      </ppModifierOther>
+      <ppModifierOther checked="no"/>      
       <ppDegreePosBefore checked="no" />
       <ppDegreePosAfter checked="no" />
       <ppDegreePosBoth checked="no" />
-      <ppDegreePosOther checked="no">
-      </ppDegreePosOther>
+      <ppDegreePosOther checked="no"/>      
       <ppOrdinalPosBefore checked="no" />
       <ppOrdinalPosAfter checked="no" />
       <ppOrdinalPosBoth checked="no" />
-      <ppOrdinalPosOther checked="no">
-      </ppOrdinalPosOther>
+      <ppOrdinalPosOther checked="no"/>      
       <ppMannerPosBefore checked="no" />
       <ppMannerPosAfter checked="no" />
       <ppMannerPosBoth checked="no" />
-      <ppMannerPosOther checked="no">
-      </ppMannerPosOther>
+      <ppMannerPosOther checked="no"/>      
       <ppLocativePosBefore checked="no" />
       <ppLocativePosAfter checked="no" />
       <ppLocativePosBoth checked="no" />
-      <ppLocativePosOther checked="no">
-      </ppLocativePosOther>
+      <ppLocativePosOther checked="no"/>      
       <ppExample/>
       <degree/>      
       <degreeWithPP/>     
@@ -1162,50 +1293,42 @@
     </pp>
     <ip checkedOff="no" proDropObject="no" impPolite="no" conditionWord="yes" consequence="no" consequencePos="unknown" subjunctiveCondWord="yes" aux="no" auxRequired="no" auxMany="no" auxOrder="yes" auxNonfinite="no" auxNonfiniteRequired="no" auxNonfiniteOrder="yes" auxOther="no" auxOtherOrder="yes" heartCompound="no" bodypartCompound="no"
 copular="yes" copularAffix="no" same="yes" compareN="yes" as="yes" compareAdj="yes" comparative="yes" comparativeAdj="no" gap="yes" diCat="pp" diOrder="direct" passive="no" passiveAgent="no" passiveAux="no" passiveAgentCat="pp"
-antipassive="no" voice="no" voiceCase="no">
+applicative="no" antipassive="no" voice="no" voiceCase="no">
        <proDropYes checked="no" />
        <proDropClitic checked="no" />
        <proDropImp checked="no" />
-       <proDropOther checked="no">
-       </proDropOther>
+       <proDropOther checked="no"/>       
        <proDropNone checked="no" />
        <conditionProclitic checked="no" />
        <conditionEnclitic checked="no" />
        <conditionPrefix checked="no" />
        <conditionSuffix checked="no" />
-       <conditionOther checked="no">
-       </conditionOther>
+       <conditionOther checked="no"/>       
        <conditionWordBefore checked="no" />
        <conditionWordAfter checked="no" />
        <conditionWordBoth checked="no" />
-       <conditionWordOther checked="no">
-       </conditionWordOther>
+       <conditionWordOther checked="no"/>       
        <subjunctiveCondProclitic checked="no" />
        <subjunctiveCondEnclitic checked="no" />
        <subjunctiveCondPrefix checked="no" />
        <subjunctiveCondSuffix checked="no" />
-       <subjunctiveCondOther checked="no">
-       </subjunctiveCondOther>
+       <subjunctiveCondOther checked="no"/>       
        <subjunctiveCondWordBefore checked="no" />
        <subjunctiveCondWordAfter checked="no" />
        <subjunctiveCondWordBoth checked="no" />
-       <subjunctiveCondWordOther checked="no">
-       </subjunctiveCondWordOther>
+       <subjunctiveCondWordOther checked="no"/>       
        <existWord checked="no" />
        <existVerb checked="no" />
        <existPosition checked="no" />
-       <existOther checked="no">
-       </existOther>
+       <existOther checked="no"/>       
        <existNone checked="no" />
        <causativeAffix checked="no" />
        <causativeMake checked="no" />
-       <causativeOther checked="no">
-       </causativeOther>
+       <causativeOther checked="no"/>       
        <antipassiveErg checked="no" />
        <antipassiveAgr checked="no" />
        <antipassiveAffix checked="no" />
-       <antipassiveOther checked="no">
-       </antipassiveOther>
+       <antipassiveOther checked="no"/>       
        <presentTense>
        </presentTense>
        <pastTense>
@@ -1214,9 +1337,11 @@ antipassive="no" voice="no" voiceCase="no">
        </futureTense>
        <nonPastTense>
        </nonPastTense>
-       <nonFutureTense>
-       </nonFutureTense>
-       <completiveAspect>
+     <nonFutureTense>
+     </nonFutureTense>
+     <otherTense>
+     </otherTense>
+     <completiveAspect>
        </completiveAspect>
        <contemplativeAspect>
        </contemplativeAspect>
@@ -1240,11 +1365,14 @@ antipassive="no" voice="no" voiceCase="no">
              </potentialAspect>
              <progressiveAspect>
              </progressiveAspect>
-             <stativeAspect>
+     <purposiveAspect>
+     </purposiveAspect>
+     <stativeAspect>
              </stativeAspect>
              <unrealAspect>
              </unrealAspect>
-             <declarativeMood>
+    <otherAspect/>
+     <declarativeMood>
              </declarativeMood>
              <indicativeMood>
                 </indicativeMood>
@@ -1260,7 +1388,36 @@ antipassive="no" voice="no" voiceCase="no">
                    </subjunctiveMood>
                    <irrealisMood>
                    </irrealisMood>
-                   <finiteOther>
+     <otherMood>
+     </otherMood>
+     <witnessEvident>
+                  </witnessEvident>
+     <nonwitnessEvident>
+     </nonwitnessEvident>
+     <firsthandEvident>
+     </firsthandEvident>
+     <secondhandEvident>
+     </secondhandEvident>
+     <thirdhandEvident>
+     </thirdhandEvident>
+     <visualEvident>
+     </visualEvident>
+     <auditoryEvident>
+     </auditoryEvident>
+     <olfactoryEvident>
+     </olfactoryEvident>
+     <inferentialEvident>
+     </inferentialEvident>
+     <reportativeEvident>
+     </reportativeEvident>
+     <hearsayEvident>
+     </hearsayEvident>
+     <quotativeEvident>
+     </quotativeEvident>
+     <assumedEvident>
+     </assumedEvident>
+     <otherEvident/>
+     <finiteOther>
                    </finiteOther>
                    <nonfiniteOther>
                    </nonfiniteOther>
@@ -1270,7 +1427,9 @@ antipassive="no" voice="no" voiceCase="no">
                    </participleOther>
                    <antipassiveVoice>
                    </antipassiveVoice>
-                   <causativeVoice>
+     <applicativeVoice>
+     </applicativeVoice>
+     <causativeVoice>
                    </causativeVoice>
                    <passiveVoice>
                    </passiveVoice>
@@ -1286,13 +1445,16 @@ antipassive="no" voice="no" voiceCase="no">
                    </locativeVoice>
                    <objectVoice>
                    </objectVoice>
+     <otherVoice/>
                    <firstSubjectPerson>
                    </firstSubjectPerson>
                    <firstObjectPerson>
                    </firstObjectPerson>
                    <firstErgativePerson>
                    </firstErgativePerson>
-                   <firstExclusiveSubjectPerson>
+       <firstAbsolutivePerson>
+       </firstAbsolutivePerson>
+       <firstExclusiveSubjectPerson>
                    </firstExclusiveSubjectPerson>
                    <firstExclusiveObjectPerson>
                    </firstExclusiveObjectPerson>
@@ -1444,9 +1606,9 @@ antipassive="no" voice="no" voiceCase="no">
        <sameAffixExample/>
        <compareNExample/>
        <asExample/>
-       <asWordExample/>
        <compareAdjExample/>
-       <comparativeExample/>
+     <asWordExample/>
+     <comparativeExample/>
        <comparativeWordExample/>
        <comparativeAffixExample/>
        <comparativeDegExample/>
@@ -1462,17 +1624,18 @@ antipassive="no" voice="no" voiceCase="no">
        <motionExample/>
         <diExample/>
         <passiveExample/>
-        <auxCategory/>
        <passiveAgentPExample/>
        <passiveAuxExample/>
        <causativeAffixExample/>
        <causativeExample/>
        <causativeMakeExample/>
        <causativeOtherExample/>
-       <antipassiveExample/>
+       <applicativeExample/>
+     <antipassiveExample/>
        <antipassiveAffixExample/>
        <voiceExample/>
-       <verbCategory/>
+     <auxCategory/>
+     <verbCategory/>
         <ipContents1 checkedOff="no"/>
         <ipContents2 checkedOff="no"/>
         <ipContents3 checkedOff="no"/>
@@ -1548,6 +1711,7 @@ antipassive="no" voice="no" voiceCase="no">
         <ipInflFeatFuture checked="no"/>
        <ipInflFeatNonPast checked="no"/>
        <ipInflFeatNonFuture checked="no"/>
+     <ipInflFeatOtherTense checked="no"/>
        <ipInflFeatCompletive checked="no"/>
        <ipInflFeatContemplative checked="no"/>
         <ipInflFeatContinuative checked="no"/>
@@ -1560,9 +1724,11 @@ antipassive="no" voice="no" voiceCase="no">
        <ipInflFeatPerfective checked="no"/>
         <ipInflFeatPotential checked="no"/>
         <ipInflFeatProgressive checked="no"/>
-        <ipInflFeatStative checked="no"/>
+     <ipInflFeatPurposive checked="no"/>
+     <ipInflFeatStative checked="no"/>
        <ipInflFeatUnreal checked="no"/>
-       <ipInflFeatDeclarative checked="no"/>
+     <ipInflFeatOtherAspect checked="no"/>
+     <ipInflFeatDeclarative checked="no"/>
        <ipInflFeatIndicative checked="no"/>
        <ipInflFeatRealis checked="no"/>
        <ipInflFeatImperative checked="no"/>
@@ -1570,32 +1736,47 @@ antipassive="no" voice="no" voiceCase="no">
         <ipInflFeatConditional checked="no"/>
        <ipInflFeatSubjunctive checked="no"/>
        <ipInflFeatIrrealis checked="no"/>
+     <ipInflFeatOtherMood checked="no"/>
        <ipInflFeatAntipassive checked="no"/>
-       <ipInflFeatCausative checked="no"/>
+     <ipInflFeatApplicative checked="no"/>
+     <ipInflFeatCausative checked="no"/>
        <ipInflFeatFinite checked="no"/>
        <ipInflFeatMinusFinite checked="no"/>
-       <ipInflFeatPassive checked="no"/>
        <ipInflFeatGerund checked="no"/>
-       <ipInflFeatParticiple checked="no"/>
-       <ipInflFeatActorVoice checked="no"/>
+     <ipInflFeatPassive checked="no"/>
+     <ipInflFeatParticiple checked="no"/>
+     <ipInflFeatWitness checked="no"/>
+     <ipInflFeatNonwitness checked="no"/>
+     <ipInflFeatFirsthand checked="no"/>
+     <ipInflFeatSecondhand checked="no"/>
+     <ipInflFeatThirdhand checked="no"/>
+     <ipInflFeatVisual checked="no"/>
+     <ipInflFeatAuditory checked="no"/>
+     <ipInflFeatOlfactory checked="no"/>
+     <ipInflFeatInferential checked="no"/>
+     <ipInflFeatReportative checked="no"/>
+     <ipInflFeatHearsay checked="no"/>
+     <ipInflFeatQuotative checked="no"/>
+     <ipInflFeatAssumed checked="no"/>
+     <ipInflFeatOtherEvident checked="no"/>
+     <ipInflFeatActorVoice checked="no"/>
        <ipInflFeatDativeVoice checked="no"/>
        <ipInflFeatGoalVoice checked="no"/>
        <ipInflFeatInstrumentalVoice checked="no"/>
        <ipInflFeatLocativeVoice checked="no"/>
        <ipInflFeatObjectVoice checked="no"/>
+     <ipInflFeatOtherVoice checked="no"/>
     </ip>
     <comp checkedOff="no" compTypeOther="no" comp="no" compNonfinite="no" compWord="yes">
        <compProclitic checked="no" />
        <compEnclitic checked="no" />
        <compPrefix checked="no" />
        <compSuffix checked="no" />
-       <compAttachesOther checked="no">
-       </compAttachesOther>
+       <compAttachesOther checked="no"/>       
        <compBefore checked="no" />
        <compAfter checked="no" />
        <compBoth checked="no" />
-       <compOther checked="no">
-       </compOther>
+       <compOther checked="no"/>       
        <finiteExample/>
         <finiteOrNonfiniteExample/>
         <DPCPExample/>
@@ -1617,60 +1798,50 @@ antipassive="no" voice="no" voiceCase="no">
        <mainYNEnclitic checked="no" />
        <mainYNPrefix checked="no" />
        <mainYNSuffix checked="no" />
-       <mainYNCliticOther checked="no">
-       </mainYNCliticOther>
+       <mainYNCliticOther checked="no"/>       
        <mainYNWordBefore checked="no" />
        <mainYNWordAfter checked="no" />
        <mainYNWordBoth checked="no" />
-       <mainYNWordOther checked="no">
-       </mainYNWordOther>
+       <mainYNWordOther checked="no"/>       
        <embYNProclitic checked="no" />
        <embYNEnclitic checked="no" />
        <embYNPrefix checked="no" />
        <embYNSuffix checked="no" />
-       <embYNCliticOther checked="no">
-       </embYNCliticOther>
+       <embYNCliticOther checked="no"/>       
        <embYNWordBefore checked="no" />
        <embYNWordAfter checked="no" />
        <embYNWordBoth checked="no" />
-       <embYNWordOther checked="no">
-       </embYNWordOther>
+       <embYNWordOther checked="no"/>       
        <mainContProclitic checked="no" />
        <mainContBetweenProclitic checked="no" />
        <mainContEnclitic checked="no" />
        <mainContBetweenEnclitic checked="no" />
        <mainContPrefix checked="no" />
        <mainContSuffix checked="no" />
-       <mainContCliticOther checked="no">
-       </mainContCliticOther>
+       <mainContCliticOther checked="no"/>       
        <mainContWordBefore checked="no" />
        <mainContWordAfter checked="no" />
        <mainContWordBoth checked="no" />
-       <mainContWordOther checked="no">
-       </mainContWordOther>
+       <mainContWordOther checked="no"/>       
        <mainContVSOAfterWh checked="no" />
        <mainContVSOBeforeWh checked="no" />
        <mainContVSOEnd checked="no" />
-       <mainContVSOOther checked="no">
-       </mainContVSOOther>
+       <mainContVSOOther checked="no"/>       
        <embContProclitic checked="no" />
        <embContBetweenProclitic checked="no" />
        <embContEnclitic checked="no" />
        <embContBetweenEnclitic checked="no" />
        <embContPrefix checked="no" />
        <embContSuffix checked="no" />
-       <embContCliticOther checked="no">
-       </embContCliticOther>
+       <embContCliticOther checked="no"/>       
        <embContWordBefore checked="no" />
        <embContWordAfter checked="no" />
        <embContWordBoth checked="no" />
-       <embContWordOther checked="no">
-       </embContWordOther>
+       <embContWordOther checked="no"/>       
        <embContVSOAfterWh checked="no" />
        <embContVSOBeforeWh checked="no" />
        <embContVSOEnd checked="no" />
-       <embContVSOOther checked="no">
-       </embContVSOOther>
+       <embContVSOOther checked="no"/>       
        <example/>
        <mainYNCliticExample/>
        <mainYNAffixExample/>
@@ -1707,19 +1878,17 @@ antipassive="no" voice="no" voiceCase="no">
        <relTypeCPRel checked="no" />
        <relTypeIPRel checked="no" />
        <relTypeIP checked="no" />
-       <relTypeOther checked="no">
-       </relTypeOther>
+       <relTypeOther checked="no"/>       
        <relWordBefore checked="no" />
        <relWordAfter checked="no" />
        <relWordBoth checked="no" />
-       <relWordOther checked="no">
-       </relWordOther>
+       <relWordOther checked="no"/>       
        <example/>
-        <relCliticExample/>
-       <relWordExample/>
-       <relAffixExample/>
        <sentExample/>
-       <headlessExample/>
+     <relCliticExample/>
+     <relWordExample/>
+     <relAffixExample/>
+     <headlessExample/>
     </relcl>
     <advcl checkedOff="no" advOrNPPos="unknown">
         <tempSentExample/>
@@ -1743,8 +1912,7 @@ antipassive="no" voice="no" voiceCase="no">
       <negTemporalAdverbWordBefore checked="no" />
       <negTemporalAdverbWordAfter checked="no" />
       <negTemporalAdverbWordBoth checked="no" />
-      <negTemporalAdverbWordOther checked="no">
-      </negTemporalAdverbWordOther>
+      <negTemporalAdverbWordOther checked="no"/>      
       <negLocativeTypeWord checked= "no"/>
       <negLocativeTypeAdverb checked= "no"/>      
       <negLocativeTypeAdverbWord checked= "no"/>      
@@ -1754,13 +1922,11 @@ antipassive="no" voice="no" voiceCase="no">
       <negLocativeAdverbWordBefore checked="no" />
       <negLocativeAdverbWordAfter checked="no" />
       <negLocativeAdverbWordBoth checked="no" />
-      <negLocativeAdverbWordOther checked="no">
-      </negLocativeAdverbWordOther>
+      <negLocativeAdverbWordOther checked="no"/>      
       <negAuxWord checked="no" />
       <negAuxAffix checked="no" />
       <negVAffix checked="no" />
-      <negVerbalOther checked="no">
-      </negVerbalOther>
+      <negVerbalOther checked="no"/>      
       <not/>
        <negCliticExample/>
        <negAffixExample/>
@@ -1777,6 +1943,7 @@ antipassive="no" voice="no" voiceCase="no">
       <negTemporalAdverbWordExample/>
       <negTemporalAdverbWordsExample/>
       <negTemporalAffixExample/>
+    <negTemporalAffixVerbExample/>
       <negTemporalVerbExample/>
       <negTemporalOtherExample/>
       <advTemporalExample/>
@@ -1811,10 +1978,10 @@ antipassive="no" voice="no" voiceCase="no">
    <coord checkedOff="no" conjWord="yes" noConj="no">
       <proclitic checked="no" />
       <enclitic checked="no" />
-      <attachesOther checked="no">
-      </attachesOther>
+      <attachesOther checked="no"/>      
       <and/>
-        <or/>
+    <andThen/>
+    <or/>
         <but/>
         <andOr/>
         <with/>
@@ -1824,7 +1991,8 @@ antipassive="no" voice="no" voiceCase="no">
       <neither/>
         <nor/>
         <sentExample/>
-        <vpExample/>
+    <sentSeqExample/>
+    <vpExample/>
         <dpExample/>
         <coordppExample/>
         <adjExample/>
@@ -1836,13 +2004,11 @@ antipassive="no" voice="no" voiceCase="no">
        <topicMarkerBefore checked="no" />
        <topicMarkerAfter checked="no" />
        <topicMarkerBoth checked="no" />
-       <topicMarkerOther checked="no">
-       </topicMarkerOther>
+       <topicMarkerOther checked="no"/>       
        <focusMarkerBefore checked="no" />
        <focusMarkerAfter checked="no" />
        <focusMarkerBoth checked="no" />
-       <focusMarkerOther checked="no">
-       </focusMarkerOther>
+       <focusMarkerOther checked="no"/>       
        <topicExample/>
         <topicMarkerExample/>
        <topicMarkerCliticExample/>
@@ -1856,8 +2022,7 @@ antipassive="no" voice="no" voiceCase="no">
        <exclMBefore checked="no" />
        <exclMAfter checked="no" />
        <exclMBoth checked="no" />
-       <exclMOther checked="no">
-       </exclMOther>
+       <exclMOther checked="no"/>       
        <greetExample/>
         <intjExample/>
         <yesExample/>

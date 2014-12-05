@@ -1294,28 +1294,45 @@
 </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:choose>
-		  <xsl:when test="//typology/@classifier='no'"> does not have any system of noun classifiers.</xsl:when>
-		  <xsl:when test="//typology/@classifier='yesAgr'"> has a system of noun classifiers, as detailed in the next section.</xsl:when>
-		  <xsl:when test="//typology/@classifier='yesType'"> has a system of noun classifiers, as detailed in the next section.</xsl:when>
+		  <xsl:when test="//typology/@classifier='no'"> does not have any system of noun classes or classifiers.</xsl:when>
+		  <xsl:when test="//typology/@classifier='yesAgr'"> has a system of noun classes, as detailed in the next section.</xsl:when>
+		  <xsl:when test="//typology/@classifier='yesSpecific'"> has a system of noun classifiers, as detailed in the next section.</xsl:when>
+	   	<xsl:when test="//typology/@classifier='yesType'"> has a system of noun classifiers, as detailed in the next section.</xsl:when>
 	   </xsl:choose>
 </p>
 	</section1>
    <xsl:if test="normalize-space(//typology/@classifier)!='no'">
 <section1 id="sClassifiers">
-	  <secTitle>Classifiers</secTitle>
+	  <secTitle>Noun Classes or Classifiers</secTitle>
       <p contentType="ctPracticalIntro">
-<xsl:text>Classifier systems mark nouns by their shape, position, or other characteristics.  The classifier marking may become an agreement system that requires concord throughout the nominal phrase and even with the verb. In a simpler type of classifier system, classifier affixes derived from either a generic noun or a pronoun appear on most nouns of particular types, such as animals or insects, or liquids.  In this simpler system, there is no concord classifier agreement; these affixes only show up on the nouns and similar distinctions may exist in the third person pronouns that refer to these types of nouns.</xsl:text>
+<xsl:text>Noun classes or classifier mark nouns by their shape, position, or other characteristics.  In a noun class system, the class marking may become an agreement system that requires concord throughout the nominal phrase and even with the verb. Languages may instead have a system of classifiers, sometimes called counter words or measure words.  These classifiers are words or morphemes that accompany nouns when the noun is counted or specified, and serve to classify the noun depending on the type of its referent. The classifier relates to the noun being counted or specified, but there is no other agreement within the nominal phrase or sentence. In a simpler type of classifier system, classifier affixes derived from either a generic noun or a pronoun appear on most nouns of particular types, such as animals, insects, or liquids.  In this simpler system, these affixes only show up on the nouns and similar distinctions may exist in the third person pronouns that refer to these types of nouns.</xsl:text>
 </p>
 	  <p contentType="ctComparativeIntro">
-<xsl:text>Some languages have a classifier system that marks nouns by their shape, position, or other characteristics.  In many of these languages, the classifier marking becomes an agreement system that requires concord throughout the nominal phrase and even with the verb.  Therefore, quantifiers, articles, demonstratives, adjectives, and verbs may need to be marked with the appropriate classifier.</xsl:text>
+<xsl:text>Some languages have a system of noun classes that marks nouns by their shape, position, or other characteristics.  In many of these languages, the class marking becomes an agreement system that requires concord throughout the nominal phrase and even with the verb.  Therefore, quantifiers, articles, demonstratives, adjectives, and verbs may need to be marked with the appropriate noun class marker.</xsl:text>
 </p>
 	  <p contentType="ctComparativeIntro">
-<xsl:text>The Bantu languages spoken in Africa represent perhaps the best known noun classifier system with concord agreement.  These languages have up to 22 distinct classes, which are represented by number.  About half of them are for singular nouns only and an equal number for plural nouns only.  Others are for mass or abstract nouns or locations.</xsl:text>
+<xsl:text>The Bantu languages spoken in Africa represent perhaps the best known noun class system.  These languages have up to 22 distinct classes, which are represented by numbers.  About half of them are for singular nouns only and an equal number for plural nouns only.  Others are for mass or abstract nouns or locations.</xsl:text>
 </p>
-      <p contentType="ctComparativeIntro">
+   	<p contentType="ctComparativeIntro">
+<xsl:text>Languages may instead have a system of classifiers, sometimes called counter words or measure words.  These classifiers are words or morphemes that accompany nouns when the noun is counted or specified, and serve to classify the noun depending on the type of its referent.  Some languages have several hundred classifiers.  The classifier relates to the noun being counted or specified, but there is no other agreement within the nominal phrase or sentence.  This type of classifier is an important part of many East Asian languages.</xsl:text>
+</p>
+   	<p contentType="ctComparativeIntro">
 <xsl:text>There is also a simpler type of classifier system where there are classifier affixes derived from either a generic noun or a pronoun that appear on most nouns that refer to animals or insects, or to liquids, trees or objects made of wood, or objects that are basically round.  In this simpler system, there is usually no concord classifier agreement within the nominal phrase or sentence, so these affixes only show up on the nouns and might be considered more derivational.  However, there may be similar distinctions in the third person pronouns that refer to these types of nouns.  Such a system may use types rather than numbers to identify the classifiers.</xsl:text>
 </p>
-   <xsl:if test="normalize-space(//typology/@classifier)='yesType'">
+   <xsl:if test="normalize-space(//typology/@classifier)='yesSpecific'">
+<p>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> has a classifier system which distinguishes types of nouns.  The classifiers occur with nouns in the nominal phrase when they are counted or specified, but there is no other agreement within the nominal phrase or sentence.</xsl:text>
+</p>
+</xsl:if>
+   	<xsl:if test="normalize-space(//typology/@classifier)='yesType'">
 <p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -1328,7 +1345,7 @@
 <xsl:text> has the simpler kind of classifier system which distinguishes types of nouns, but there is no concord agreement within the nominal phrase or sentence.</xsl:text>
 </p>
 </xsl:if>
-	  <xsl:if test="normalize-space(//typology/@classifier)='yesAgr'">
+   	<xsl:if test="normalize-space(//typology/@classifier)='yesAgr'">
 <p>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -1338,7 +1355,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> has a classifier system with concord agreement throughout the nominal phrase and sentence.  In </xsl:text>
+<xsl:text> has a noun class system with concord agreement throughout the nominal phrase and sentence.  In </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
@@ -1351,14 +1368,15 @@
 <xsl:choose>
 		 <xsl:when test="//typology/@classifierNum='number'">class numbers. </xsl:when>
 		 <xsl:when test="//typology/@classifierNum='type'">types.  <xsl:choose>
-			<xsl:when test="//typology/@classifierTypeNumAgr='no'">The classifiers do not distinguish between singular and plural, so there is only one classifier for each type of noun.</xsl:when>
-			<xsl:when test="//typology/@classifierTypeNumAgr='yes'">There are independent classifiers for singular and plural for each type of noun.</xsl:when>
+			<xsl:when test="//typology/@classifierTypeNumAgr='no'">The classes do not distinguish between singular and plural, so there is only one class for each type of noun.</xsl:when>
+			<xsl:when test="//typology/@classifierTypeNumAgr='yes'">There are independent classes for singular and plural for each type of noun.</xsl:when>
 		 </xsl:choose>
 </xsl:when>
 	  </xsl:choose>
 </p>
 </xsl:if>
-	  <p>
+	  <xsl:if test="normalize-space(//typology/@classifier)='yesType' or normalize-space(//typology/@classifier)='yesSpecific'">
+<p>
 <xsl:text>The classifiers in </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
@@ -1370,8 +1388,571 @@
 </xsl:choose>
 <xsl:text> are shown in the following table:</xsl:text>
 </p>
-	  <xsl:if test="normalize-space(//typology/@classifier)='yesType' or normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//typology/@classifierNum)='type' and normalize-space(//typology/@classifierTypeNumAgr)='no'">
-<example num="xClassifiers.18">
+</xsl:if>
+   	<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific'">
+<example num="xClassifiers.22">
+<table border="1">
+   			<caption>
+   				<xsl:text>Noun classifiers by type</xsl:text>
+   			</caption>
+   			<tr>
+   				<th>
+   					Type
+   				</th>
+   				<th>Classifier</th>
+   			</tr>
+   			<xsl:variable name="sExampleValue0.1">
+<xsl:value-of select="translate(string(//typology/classifierHumanExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.1 != 0 and $sExampleValue0.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>humans</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>humans</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue1.1">
+<xsl:value-of select="translate(string(//typology/classifierAnimalExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength1.1 != 0 and $sExampleValue1.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength1.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>animals</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>animals</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue2.1">
+<xsl:value-of select="translate(string(//typology/classifierBirdExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2.1 != 0 and $sExampleValue2.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>birds</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>birds</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue3.1">
+<xsl:value-of select="translate(string(//typology/classifierBoatExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength3.1 != 0 and $sExampleValue3.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength3.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>boats</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>boats</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue4.1">
+<xsl:value-of select="translate(string(//typology/classifierClothingExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength4.1 != 0 and $sExampleValue4.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength4.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>clothing</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>clothing</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue5.1">
+<xsl:value-of select="translate(string(//typology/classifierTreeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength5.1" select="string-length(normalize-space($sExampleValue5.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength5.1 != 0 and $sExampleValue5.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue5.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue5.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength5.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>trees</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>trees</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue6.1">
+<xsl:value-of select="translate(string(//typology/classifierLongThinExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength6.1" select="string-length(normalize-space($sExampleValue6.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength6.1 != 0 and $sExampleValue6.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength6.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>long, thin items</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>long, thin items</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue7.1">
+<xsl:value-of select="translate(string(//typology/classifierLongWavyExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength7.1" select="string-length(normalize-space($sExampleValue7.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength7.1 != 0 and $sExampleValue7.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue7.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue7.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength7.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>long, wavy items</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>long, wavy items</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue8.1">
+<xsl:value-of select="translate(string(//typology/classifierFlatExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength8.1" select="string-length(normalize-space($sExampleValue8.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength8.1 != 0 and $sExampleValue8.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue8.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue8.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength8.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>flat items</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>flat items</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue9.1">
+<xsl:value-of select="translate(string(//typology/classifierCylindricalExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength9.1" select="string-length(normalize-space($sExampleValue9.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength9.1 != 0 and $sExampleValue9.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue9.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue9.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength9.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>cylindrical items</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>cylindrical items</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue10.1">
+<xsl:value-of select="translate(string(//typology/classifierMechanicalExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength10.1" select="string-length(normalize-space($sExampleValue10.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength10.1 != 0 and $sExampleValue10.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue10.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue10.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength10.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>mechanical items</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>mechanical items</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue11.1">
+<xsl:value-of select="translate(string(//typology/classifierGenericExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength11.1" select="string-length(normalize-space($sExampleValue11.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength11.1 != 0 and $sExampleValue11.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue11.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue11.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength11.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>generic items</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>generic items</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue12.1">
+<xsl:value-of select="translate(string(//typology/classifierOtherExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength12.1" select="string-length(normalize-space($sExampleValue12.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength12.1 != 0 and $sExampleValue12.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue12.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue12.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength12.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>ENTER GLOSS</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>ENTER GLOSS</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   		</table>
+</example>
+</xsl:if>
+   	
+   			<xsl:if test="normalize-space(//typology/@classifier)='yesType'">
+<example num="xClassifiers.24">
 <table border="1">
 			<caption>
 			   <xsl:text>Noun classifiers by type</xsl:text>
@@ -1740,7 +2321,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
-				  <xsl:text>general</xsl:text>
+				  <xsl:text>ENTER GLOSS</xsl:text>
 			   </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -1751,7 +2332,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left">
-				  <xsl:text>general</xsl:text>
+				  <xsl:text>ENTER GLOSS</xsl:text>
 			   </td>
 <td>
 <langData>
@@ -1763,17 +2344,424 @@
 		 </table>
 </example>
 </xsl:if>
-
+   	<xsl:if test="normalize-space(//typology/@classifier)='yesAgr'">
+<p>
+<xsl:text>The noun class markers in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> are shown in the following table:</xsl:text>
+</p>
+</xsl:if>
+   	<xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//typology/@classifierNum)='type' and normalize-space(//typology/@classifierTypeNumAgr)='no'">
+<example num="xClassifiers.28">
+<table border="1">
+   			<caption>
+   				<xsl:text>Noun classes by type</xsl:text>
+   			</caption>
+   			<tr>
+   				<th>
+   					Type
+   				</th>
+   				<th>Noun class marker</th>
+   			</tr>
+   			<xsl:variable name="sExampleValue0.1">
+<xsl:value-of select="translate(string(//typology/classAnimalExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0.1 != 0 and $sExampleValue0.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>animal</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>animal</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue1.1">
+<xsl:value-of select="translate(string(//typology/classInsectExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength1.1 != 0 and $sExampleValue1.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue1.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength1.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>insect</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>insect</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue2.1">
+<xsl:value-of select="translate(string(//typology/classLiquidExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2.1 != 0 and $sExampleValue2.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>liquid</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>liquid</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue3.1">
+<xsl:value-of select="translate(string(//typology/classRoundExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength3.1" select="string-length(normalize-space($sExampleValue3.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength3.1 != 0 and $sExampleValue3.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength3.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>round</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>round</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue4.1">
+<xsl:value-of select="translate(string(//typology/classCylinderExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength4.1" select="string-length(normalize-space($sExampleValue4.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength4.1 != 0 and $sExampleValue4.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue4.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength4.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>cylindrical</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>cylindrical</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue5.1">
+<xsl:value-of select="translate(string(//typology/classSphereExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength5.1" select="string-length(normalize-space($sExampleValue5.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength5.1 != 0 and $sExampleValue5.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue5.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue5.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength5.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>spherical</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>spherical</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue6.1">
+<xsl:value-of select="translate(string(//typology/classTreeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength6.1" select="string-length(normalize-space($sExampleValue6.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength6.1 != 0 and $sExampleValue6.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength6.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>tree</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>tree</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue7.1">
+<xsl:value-of select="translate(string(//typology/classWoodExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength7.1" select="string-length(normalize-space($sExampleValue7.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength7.1 != 0 and $sExampleValue7.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue7.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue7.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength7.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>wooden</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>wooden</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   			<xsl:variable name="sExampleValue8.1">
+<xsl:value-of select="translate(string(//typology/classOtherExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength8.1" select="string-length(normalize-space($sExampleValue8.1))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength8.1 != 0 and $sExampleValue8.1 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue8.1" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue8.1" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength8.1" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+   					<xsl:text>ENTER GLOSS</xsl:text>
+   				</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+   					<xsl:text>ENTER GLOSS</xsl:text>
+   				</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+   		</table>
+</example>
+</xsl:if>
+   	
 	  <xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//typology/@classifierNum)='type' and normalize-space(//typology/@classifierTypeNumAgr)='yes'">
-<example num="xClassifiers.20">
+<example num="xClassifiers.30">
 <table border="1">
 			<caption>
-			   <xsl:text>Noun classifiers by type</xsl:text>
+			   <xsl:text>Noun classes by type</xsl:text>
 			</caption>
 			<tr>
 			   <th>Type</th>
 <th>Number Agreement</th>
-			   <th>Classifier</th>
+			   <th>Noun class marker</th>
 			</tr>
 			<xsl:variable name="sExampleValue0.2">
 <xsl:value-of select="translate(string(//typology/classAnimalSgExample),'.','')" />
@@ -2565,7 +3553,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
-				  <xsl:text>other / general</xsl:text>
+				  <xsl:text>ENTER GLOSS</xsl:text>
 			   </td>
 <td align="left">
 <xsl:text>singular</xsl:text>
@@ -2579,7 +3567,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left">
-				  <xsl:text>other / general</xsl:text>
+				  <xsl:text>ENTER GLOSS</xsl:text>
 			   </td>
 <td align="left">
 <xsl:text>singular</xsl:text>
@@ -2613,7 +3601,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
-				  <xsl:text>other / general</xsl:text>
+				  <xsl:text>ENTER GLOSS</xsl:text>
 			   </td>
 <td align="left">
 <xsl:text>plural</xsl:text>
@@ -2627,7 +3615,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left">
-				  <xsl:text>other / general</xsl:text>
+				  <xsl:text>ENTER GLOSS</xsl:text>
 			   </td>
 <td align="left">
 <xsl:text>plural</xsl:text>
@@ -2643,16 +3631,16 @@
 </example>
 </xsl:if>
 	  <xsl:if test="normalize-space(//typology/@classifier)='yesAgr' and normalize-space(//typology/@classifierNum)='number'">
-<example num="xClassifiers.22">
+<example num="xClassifiers.32">
 <table border="1">
 			<caption>
-			   <xsl:text>Noun classifiers by number</xsl:text>
+			   <xsl:text>Noun classes by number</xsl:text>
 			</caption>
 			<tr>
 			   <th>
 				  Class Number
 			   </th>
-			   <th>Classifier</th>
+			   <th>Class marker</th>
 <th>Number Agreement</th>
 			</tr>
 			<xsl:variable name="sExampleValue0.1">
@@ -4090,7 +5078,7 @@
 </p>
 </xsl:if>
 	  <xsl:if test="normalize-space(//typology/@classifier)='yesType'">
-<example num="xClassifiers.26">
+<example num="xClassifiers.36">
 <table border="1">
 	        <tr>
 	           <th>Noun</th>
@@ -4149,11 +5137,11 @@
 </xsl:if>
 	  <xsl:if test="normalize-space(//typology/@classifier)='yesAgr'">
 <p>
-<xsl:text>Some example sentences showing the concord classifier agreement  within the nominal phrase and on the verb are:</xsl:text>
+<xsl:text>Some example sentences showing the concord noun class agreement within the nominal phrase and on the verb are:</xsl:text>
 </p>
 </xsl:if>
 	  <xsl:if test="normalize-space(//typology/@classifier)='yesAgr'">
-<example num="xClassifiers.30">
+<example num="xClassifiers.40">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//typology/classifierAgrExample" />
 </xsl:variable>
@@ -4167,7 +5155,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//typology/classifierAgrExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xClassifiers.30</xsl:with-param>
+<xsl:with-param name="sExNumber">xClassifiers.40</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -4176,7 +5164,52 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xClassifiers.30.1</xsl:text>
+<xsl:text>xClassifiers.40.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+   	<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific'">
+<p>
+<xsl:text>Some example nominal phrases illustrating different classifiers used with numerals or demonstratives and nouns are:</xsl:text>
+</p>
+</xsl:if>
+   	<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific'">
+<example num="xClassifiers.44">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//typology/classifierSpecificExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//typology/classifierSpecificExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//typology/classifierSpecificExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//typology/classifierSpecificExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xClassifiers.44</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xClassifiers.44.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -4555,30 +5588,45 @@
    
 	  
    
-   
+	
+		
+	
+	
 	  
    
-   
-	  
-	  
-	  
-   
-   
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-   
-   
-	  
-	  
+	
+		
+		
+		
+	
+	
 	  
 	  
 	  
    
+   
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+   
+   
+	  
+	  
+	  
+	  
+	  
+   
+	
+		
+		
+		
+		
+		
+	
    
 	  
    

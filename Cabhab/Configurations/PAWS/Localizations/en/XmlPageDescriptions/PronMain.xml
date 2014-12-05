@@ -10,11 +10,11 @@
     <form section="pron">
        <radioGroup id="PronClassifierAgrTable" show="swOTClassifierAgr">
           <groupName dataItem="pronounClassifier" default="no">RPronClassifierAgr</groupName>
-          <prompt><br/>You said that your language has classifiers which mark concord agreement throughout the nominal phrases.  Do the pronouns that are written as independent words have classifiers attached to them?</prompt>
-          <radio id="PronClassifierAgrNo" dataValue="no">No, the pronouns are not marked with classifiers</radio>
-          <radio id="PronClassifierAgrYes" dataValue="yes">Yes, the pronouns which are written as independent words are marked with classifiers as part of the concord agreement system</radio>
+          <prompt><br/>You said that your language has noun class markers with concord agreement throughout the nominal phrases.  Are the pronouns that are written as independent words marked for class?</prompt>
+          <radio id="PronClassifierAgrNo" dataValue="no">No, the pronouns are not marked for class</radio>
+          <radio id="PronClassifierAgrYes" dataValue="yes">Yes, the pronouns which are written as independent words are marked for class as part of the concord agreement system</radio>
        </radioGroup>
-       <prompt id="PronClassifierAgrPrompt" show="swOTClassifierAgrAndPronYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the pronouns here.  However, if all the personal pronouns carry only a specific classifier (or just a couple of classifiers), you may choose to list the pronouns with the clasifier attached with a hyphen in the Pronouns section.</prompt>	   
+       <prompt id="PronClassifierAgrPrompt" show="swOTClassifierAgrAndPronYes">Since you have already detailed the forms of the noun class markers, you only need to enter the roots for each of the pronouns here.  However, if all the personal pronouns carry only a specific noun class marker (or just a couple of class markers), you may choose to list the pronouns with the noun class marker attached with a hyphen in the Pronouns section.</prompt>	   
        <radioGroup id="PronNumberTable">
           <groupName dataItem="pronounNumber" default="no">RPronNumber</groupName>
           <prompt><br/>Are there different forms for plural and singular pronouns in some or all the persons?</prompt>
@@ -29,7 +29,8 @@
        </radioGroup>
        <br/>
        <prompt>The pronoun sets given below are based on your answers regarding the case system in your language as well as the questions above here.  If the number of sets of pronouns does not seem correct, please reconsider your answer in <section number="1.">Overall Typology Questions - Case System</section> before continuing here.</prompt>
- 
+       <prompt>If your language has emphatic forms for any of the pronouns, add them in the appropriate boxes here, on a seperate line after the regular forms.</prompt>
+       
        <prompt id="PronCaseNoneAndExperiencerNoPrompt" show="swNPCaseNoneAndExperiencerNo">
             <br/>Since your language does not distinguish case, you should have only a single set of independent pronouns that can be used in any position in the sentence.<br/>
        </prompt>
@@ -193,7 +194,7 @@ Key the independent first person <span id="PronNumberSpan" show="swPronNumberYes
        <prompt id="PronFirstInclCaseNomPossPrompt" show="swNPCaseNomAndPronExclYes">
           Key the independent first person <span id="PronNumberPlSpan8" show="swPronNumberYes">plural </span>inclusive pronouns which can appear as possessors in the text box, with each pronoun on a separate line. <br/>
        </prompt>
-       <textBox id="PronPersonalFirstInclNomPossExample" dataItem="personalFirstInclNomPOssessorExample"  rows="2" show="swNPCaseNomAndPronExclYes"/>
+       <textBox id="PronPersonalFirstInclNomPossExample" dataItem="personalFirstInclNomPossessorExample"  rows="2" show="swNPCaseNomAndPronExclYes"/>
        <prompt id="PronSecondSgCaseNomPrompt2" show="swNPCaseNom">
           Key the independent second person <span id="PronNumberSpan10" show="swPronNumberYes">singular </span>pronouns which can appear as possessors in the text box, with each pronoun on a separate line.<br/>
         </prompt>
@@ -261,7 +262,7 @@ Key the independent first person <span id="PronNumberSpan" show="swPronNumberYes
 
        <prompt id="PronCaseErgPrompt" show="swNPCaseErg"> 
            <br/>Since your language has an ergative-absolutive case system, you should have distinct sets of independent pronouns that can be used as subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs. 
-          <span id="ExperNoErgSpan" show="swExperiencerNo">In <section number="1.">Overall Typology Questions - Case System</section>, you said your language uses the same set of pronouns for subjects of verbs which have an <technicalTermRef term="ttExperiencer"/> subject as for verbs which have an <technicalTermRef term="ttAgent"/> subject. we will allow for an additional set of <technicalTermRef term="ttDative"/> pronouns for indirect objects. </span>
+          <span id="ExperNoErgSpan" show="swExperiencerNo">In <section number="1.">Overall Typology Questions - Case System</section>, you said your language uses the same set of pronouns for subjects of verbs which have an <technicalTermRef term="ttExperiencer"/> subject as for verbs which have an <technicalTermRef term="ttAgent"/> subject. We will allow for an additional set of <technicalTermRef term="ttDative"/> pronouns for indirect objects. </span>
           <span id="ExperYesObjErgSpan" show="swExperiencerYesObj">In <section number="1.">Overall Typology Questions - Case System</section>, you said your language uses the same set of pronouns for subjects of verbs which have an <technicalTermRef term="ttExperiencer"/> subject as for the objects of verbs which have an <technicalTermRef term="ttAgent"/> subject. We will allow for an additional set of <technicalTermRef term="ttDative"/> pronouns for indirect objects. </span>
           <span id="ExperYesDatErgSpan" show="swExperiencerYesDat">In <section number="1.">Overall Typology Questions - Case System</section>, you said your language uses a distinct set of pronouns for subjects of verbs which have an <technicalTermRef term="ttExperiencer"/> subject from either the subjects or objects of verbs which have an <technicalTermRef term="ttAgent"/> subject.  We will assume the pronouns which can be used for indirect objects are the ones which express the subjects of Experiencer verbs and will ask you for an additional set of <technicalTermRef term="ttDative"/> pronouns. </span>
            <br/><br/>
@@ -454,7 +455,7 @@ Key the independent first person <span id="PronNumberSpan" show="swPronNumberYes
        <prompt id="PronThirdSgCaseSplitPrompt" show="swNPCaseSplit">
           Key the independent third person <span id="PronNumberSpan29" show="swPronNumberYes">singular </span>pronouns which normally appear as<span id="ExperYesSplitSpan3" show="swExperiencerNotNo"> Agent</span> subjects in the text box, with each pronoun on a separate line.<br/>
         </prompt>
-        <textBox id="PronPersonalThirdSgSplitSubjectExample" dataItem="personalThirdSSgSplitSubjectExample"  rows="5" show="swNPCaseSplit"/>
+        <textBox id="PronPersonalThirdSgSplitSubjectExample" dataItem="personalThirdSgSplitSubjectExample"  rows="5" show="swNPCaseSplit"/>
        <prompt id="PronThirdPlCaseSplitPrompt" show="swNPCaseSplitAndPronNumberYes">
           Key the independent third person plural pronouns which normally appear as<span id="ExperYesSplitSpan3Pl" show="swExperiencerNotNo"> Agent</span> subjects in the text box, with each pronoun on a separate line.<br/>
        </prompt>
@@ -658,9 +659,9 @@ Key the independent first person <span id="PronNumberSpan" show="swPronNumberYes
        <br/>
        <radioGroup id="PronDepClassifierAgrTable" show="swOTClassifierAgrAndDepYes">
           <groupName dataItem="pronounDepClassifier" default="no">RPronDepClassifierAgr</groupName>
-          <prompt>Are the dependent pronouns the same as the classifiers for specific classes?</prompt>
-          <radio id="PronDepClassifierAgrNo" dataValue="no">No, the dependent pronouns are distinct from the classifiers</radio>
-          <radio id="PronDepClassifierAgrYes" dataValue="yes">Yes, the dependent pronouns are either identical or closely related to the appropriate classifiers</radio>
+          <prompt>Are the dependent pronouns the same as the noun class markers for specific classes?</prompt>
+          <radio id="PronDepClassifierAgrNo" dataValue="no">No, the dependent pronouns are distinct from the noun class markers</radio>
+          <radio id="PronDepClassifierAgrYes" dataValue="yes">Yes, the dependent pronouns are either identical or closely related to the appropriate noun class markers</radio>
        </radioGroup>	   
        <br/>
        <prompt id="PronDependentCaseNoneAndExperiencerNoPrompt" show="swNPCaseNoneAndExperiencerNoAndDependentYes">
@@ -826,7 +827,7 @@ Key the independent first person <span id="PronNumberSpan" show="swPronNumberYes
        <prompt id="PronDependentFirstInclCaseNomPossPrompt" show="swNPCaseNomAndPronExclYesAndDependentYes">
           Key the dependent first person <span id="PronDependentNumberPlSpan8" show="swPronNumberYesAndDependentYes">plural </span>inclusive pronouns which can appear as possessors in the text box, with each pronoun on a separate line. <br/>
        </prompt>
-       <textBox id="PronDependentPersonalFirstInclNomPossExample" dataItem="personalDependentFirstInclNomPOssessorExample"  rows="2" show="swNPCaseNomAndPronExclYesAndDependentYes"/>
+       <textBox id="PronDependentPersonalFirstInclNomPossExample" dataItem="personalDependentFirstInclNomPossessorExample"  rows="2" show="swNPCaseNomAndPronExclYesAndDependentYes"/>
        <prompt id="PronDependentSecondSgCaseNomPrompt2" show="swNPCaseNomAndDependentYes">
           Key the dependent second person <span id="PronDependentNumberSpan10" show="swPronNumberYesAndDependentYes">singular </span>pronouns which can appear as possessors in the text box, with each pronoun on a separate line.<br/>
         </prompt>
@@ -1086,7 +1087,7 @@ Key the independent first person <span id="PronNumberSpan" show="swPronNumberYes
        <prompt id="PronDependentThirdSgCaseSplitPrompt" show="swNPCaseSplitAndDependentYes">
           Key the dependent third person <span id="PronDependentNumberSpan29" show="swPronNumberYesAndDependentYes">singular </span>pronouns which normally appear as<span id="ExperYesSplitDependentSpan3" show="swExperiencerNotNoAndDependentYes"> Agent</span> subjects in the text box, with each pronoun on a separate line.<br/>
         </prompt>
-       <textBox id="PronDependentPersonalThirdSgSplitSubjectExample" dataItem="personalDependentThirdSSgSplitSubjectExample"  rows="5" show="swNPCaseSplitAndDependentYes"/>
+       <textBox id="PronDependentPersonalThirdSgSplitSubjectExample" dataItem="personalDependentThirdSgSplitSubjectExample"  rows="5" show="swNPCaseSplitAndDependentYes"/>
        <prompt id="PronDependentThirdPlCaseSplitPrompt" show="swNPCaseSplitAndPronNumberYesAndDependentYes">
           Key the dependent third person plural pronouns which normally appear as<span id="ExperYesSplitDependentSpan3Pl" show="swExperiencerNotNoAndDependentYes"> Agent</span> subjects in the text box, with each pronoun on a separate line.<br/>
        </prompt>

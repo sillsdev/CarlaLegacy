@@ -8,7 +8,7 @@
 	<introduction>Some languages, such as Tagalog and other Austronesian languages, have affixes on the verb which help define the roles and relationships of the nominal phrases in the sentence. This is a <technicalTermRef term="ttVoice"/> change like passive in that it gives empasis to a particular nominal phrase. 
 		The verbal affix marks which nominal phrase is prominent, and may involve a change in word order to a <technicalTermRef term="ttFocus"/> position and/or <technicalTermRef term="ttCase"/> marking.<br/><br/>Some examples from Tagalog (Kroeger, Paul. 1993. Phrase structure and grammatical relations in Tagalog. Stanford, California: CSLI) showing a change in case marking (but not word order), where the voice marker reflects the role of the <technicalTermRef term="ttNominative"/> <technicalTermRef term="ttArgument"/> are:
 		</introduction>
-	<table>
+	<table class="EnglishExample">
 		<tr>
 			<td>1.</td><td>Actor Voice:</td>	<td>B&lt;um&gt;ili</td><td>ang</td><td>lalake</td><td>ng</td><td>isda</td><td>sa</td><td>tindahan.</td>
 		</tr>

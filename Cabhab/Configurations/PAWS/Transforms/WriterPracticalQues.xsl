@@ -1396,10 +1396,10 @@
 <xsl:text>either to the beginning of whatever word begins the question or to the end of whatever word ends the question or following the fronted interrogative phrase to the beginning of whatever word begins the rest of the question as phrasal clitics.</xsl:text>
 </xsl:if>
                          <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
-<xsl:text>either to the beginning of whatever word begins the question or to the end of whatever word ends the question or to the end of whatever word ends the question to the end of the last word in the fronted interrogative phrase, before the rest of the question, as phrasal clitics.</xsl:text>
+<xsl:text>either to the beginning of whatever word begins the question or to the end of whatever word ends the question or to the end of the last word in the fronted interrogative phrase, before the rest of the question, as phrasal clitics.</xsl:text>
 </xsl:if>
                          <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='yes' and normalize-space(//q/mainContEnclitic/@checked)='yes' and normalize-space(//q/mainContBetweenProclitic/@checked)='yes' and normalize-space(//q/mainContBetweenEnclitic/@checked)='yes' and normalize-space(//q/mainContPrefix/@checked)='no' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
-<xsl:text>either to the beginning of whatever word begins the question or to the end of whatever word ends the question or following the fronted interrogative phrase to the beginning of whatever word begins the rest of the question or to the end of whatever word ends the question to the end of the last word in the fronted interrogative phrase, before the rest of the question, as phrasal clitics.</xsl:text>
+<xsl:text>either to the beginning of whatever word begins the question or to the end of whatever word ends the question or following the fronted interrogative phrase to the beginning of whatever word begins the rest of the question or to the end of the last word in the fronted interrogative phrase, before the rest of the question, as phrasal clitics.</xsl:text>
 </xsl:if>
                          <xsl:if test="normalize-space(//q/mainContProclitic/@checked)='no' and normalize-space(//q/mainContEnclitic/@checked)='no' and normalize-space(//q/mainContBetweenProclitic/@checked)='no' and normalize-space(//q/mainContBetweenEnclitic/@checked)='no' and normalize-space(//q/mainContPrefix/@checked)='yes' and normalize-space(//q/mainContSuffix/@checked)='no' and normalize-space(//q/@mainCont)='yes'">
 <xsl:text>to the verb in the question as a prefix.</xsl:text>
@@ -1865,10 +1865,10 @@
 <xsl:text>either to the beginning of whatever word begins the embedded question or to the end of whatever word ends the embedded question as phrasal clitics or following the fronted interrogative phrase to the beginning of whatever word begins the rest of the embedded question as phrasal proclitics.  </xsl:text>
 </xsl:if>
                         <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
-<xsl:text>either to the beginning of whatever word begins the embedded question or to the end of whatever word ends the embedded question as phrasal clitics or to the end of whatever word ends the embedded question to the end of the last word in the fronted interrogative phrase, before the rest of the embedded question, as phrasal enclitics.    </xsl:text>
+<xsl:text>either to the beginning of whatever word begins the embedded question or to the end of whatever word ends the embedded question as phrasal clitics or to the end of the last word in the fronted interrogative phrase, before the rest of the embedded question, as phrasal enclitics.    </xsl:text>
 </xsl:if>
                         <xsl:if test="normalize-space(//q/embContProclitic/@checked)='yes' and normalize-space(//q/embContEnclitic/@checked)='yes' and normalize-space(//q/embContBetweenProclitic/@checked)='yes' and normalize-space(//q/embContBetweenEnclitic/@checked)='yes' and normalize-space(//q/embContPrefix/@checked)='no' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
-<xsl:text>either to the beginning of whatever word begins the embedded question or to the end of whatever word ends the embedded question as phrasal clitics or following the fronted interrogative phrase to the beginning of whatever word begins the rest of the embedded question as phrasal proclitics or to the end of whatever word ends the embedded question to the end of the last word in the fronted interrogative phrase, before the rest of the embedded question, as phrasal enclitics.    </xsl:text>
+<xsl:text>either to the beginning of whatever word begins the embedded question or to the end of whatever word ends the embedded question as phrasal clitics or following the fronted interrogative phrase to the beginning of whatever word begins the rest of the embedded question as phrasal proclitics or to the end of the last word in the fronted interrogative phrase, before the rest of the embedded question, as phrasal enclitics.    </xsl:text>
 </xsl:if>
                         <xsl:if test="normalize-space(//q/embContProclitic/@checked)='no' and normalize-space(//q/embContEnclitic/@checked)='no' and normalize-space(//q/embContBetweenProclitic/@checked)='no' and normalize-space(//q/embContBetweenEnclitic/@checked)='no' and normalize-space(//q/embContPrefix/@checked)='yes' and normalize-space(//q/embContSuffix/@checked)='no' and normalize-space(//q/@embCont)='yes'">
 <xsl:text>to the verb in the embedded question as a prefix.  </xsl:text>
@@ -2102,8 +2102,8 @@
                   </xsl:if>
 <xsl:text> A question marker or complementizer is </xsl:text>
 <xsl:choose>
-                     <xsl:when test="//q/@embContRequired='yes'">required in every content question.</xsl:when>
-                     <xsl:when test="//q/@embContRequired='no'">optional in content questions.</xsl:when>
+                     <xsl:when test="//q/@embContRequired='yes'">required in every embedded content question.</xsl:when>
+                     <xsl:when test="//q/@embContRequired='no'">optional in embedded content questions.</xsl:when>
                   </xsl:choose>
 <xsl:text></xsl:text>
 <xsl:if test="normalize-space(//q/@embContRequired)='special'">

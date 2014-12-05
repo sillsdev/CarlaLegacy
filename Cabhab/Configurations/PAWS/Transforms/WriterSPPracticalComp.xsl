@@ -1392,11 +1392,11 @@
 </xsl:choose>
 </example>
           <p contentType="ctComparativeIntro">
-<xsl:text>Algunos ejemplos de los verbos que pueden tener un complemento finito, con o sin un complementador, o un complemento no finito sin un complementador en inglés son: </xsl:text>
+<xsl:text>Algunos ejemplos de los verbos que pueden tener un complemento finito o no finito en inglés son: </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>I expect that Joe will come to the party</langData>
+</xsl:attribute>I expect Joe will come to the party</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text> ‘Cuento con que José venga a la fiesta’</xsl:text>
@@ -2360,7 +2360,7 @@
            </section2>
            
            <section2 id="sCompSpeech">
-              <secTitle>Discurso  directo e indirecto como complementos</secTitle>
+              <secTitle>Discurso directo e indirecto como complementos</secTitle>
               <p contentType="ctComparativeIntro">
 <xsl:text>Los verbos de habla pueden tener complementos directos o indirectos. Las citas directas pueden consistir en cualquier oración, interjección o saludo, por ejemplo: </xsl:text>
 <langData>

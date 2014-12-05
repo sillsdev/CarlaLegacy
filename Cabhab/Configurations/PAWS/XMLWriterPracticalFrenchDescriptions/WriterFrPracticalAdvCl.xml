@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+    <section1 id="sAdvCl">
+        <secTitle>Propositions adverbiales</secTitle>
+        <p>
+            <content>Cette section considère les compléments qui peuvent suivre les adverbes de temps et de raison, que nous avons présentés à la section </content>
+            <sectionRef sec="sAdvPTemporal"/>
+            <content> et à la section </content>
+            <sectionRef sec="sAdvPReason"/>
+            <content>.  Toutes ces propositions adverbiales fonctionnent de la même façon que les adverbes simples; on les traitera comme des syntagmes adverbiaux complétifs de type approprié. Les propositions adverbiales peuvent normalement se mettre en position initiale ou finale</content>
+        </p>
+        <section2 id="sAdvClTemporal">
+            <secTitle>Les compléments d’adverbes temporels</secTitle>
+            <p contentType="ctComparativeIntro">
+                <content>Des exemples en français d’adverbes temporels avec compléments utilisés dans des phrases complètes: </content><langData>[Depuis ce temps là], Jean est de mauvaise humeur</langData><content>; </content>
+                <langData>Jean est à la maison  [depuis la semaine dernière]</langData><content>; </content><langData>[Depuis que Jean est rentré de l’hôpital], il se porte mieux</langData><content>; </content>
+                <langData>Jean se sent bien  [maintenant qu’il est rentré de l’hôpital]</langData><content>; </content><langData>Le chien a suivi Suzanne partout  [depuis qu’elle est revenue de l’université]</langData>
+                <content> et </content><langData>[Quand elle est revenue de l’université], le chien a suivi Suzanne partout</langData><content>. Ces exemples montrent que certains adverbes temporels admettent certains types de compléments. Par exemple, </content>
+                <langData>depuis</langData>
+                <content> peut être suivi d’un deuxième adverbe temporel ou bien d’un syntagme nominal temporel, ou bien il peut avoir un complément à proposition finie, avec complémentiseur.  L’adverbe temporel </content>
+                <langData>quand</langData>
+                <content> prend un complément sententiel fini; par contre </content>
+                <langData>maintenant</langData>
+                <content> prend un complément à proposition finie, avec complémentiseur.</content>
+            </p>
+            <p>
+                <content>En </content>
+                <langName/>
+                <content>, les adverbes temporels admettent les compléments semblables à ceux qu’on a cités à la section </content>
+               <sectionRef sec="sComp"/>
+                <content>.  Les compléments se mettent </content>
+                <case element="advcl" attr="advOrNPPos">
+                    <caseText value="before">avant</caseText>
+                    <caseText value="after">après</caseText>
+                    <caseText value="either">d’un côté ou de l’autre de</caseText>
+                    <caseText value="unknown">_______</caseText>
+                </case>
+                <content> l’adverbe temporel. Voici des exemples de propositions adverbiales de temps qui figurent dans les phrases complètes: </content>
+            </p>
+            <example>
+                <interlinear exampleLoc="advcl/tempSentExample"/>
+            </example>
+        </section2>
+        <section2 id="sAdvClReason">
+            <secTitle>Les compléments d’adverbes de raison</secTitle>
+            <p contentType="ctComparativeIntro">
+                <content>Les syntagmes adverbiaux ou les propositions adverbiales qui expriment la raison ou le but consistent d’adverbes autonomes comme </content>
+                <langData>donc</langData>
+                <content> (qu’on appelle quelquefois les conjonctions sententielles), et de ceux qui prennent une variété de propositions complétives.  Voici des exemples en anglais et français d’adverbes de raison ou de but qui prennent des propositions complétives: </content>
+                <langData>John rushed to the hospital [because Sue was in an accident]</langData><gloss><content>  « Jean est allé vite à l’hôpital [parce que Suzanne était dans un accident] »</content></gloss><content>; </content>
+                <langData>[Since Jill said that she likes him], Joe smiles all the time</langData><gloss><content>  « [Puisque Jeanne a dit qu’elle l’aime] Jacques sourit tout le temps »</content></gloss>
+                <content>; </content><langData>Bill rushed to the airport [so that he could see Kay before she left]</langData><gloss><content>  « Guillaume est allé vite à l’aéroport [pour qu’il puisse voir Gaby avant qu’elle soit partie] »</content></gloss><content>; </content>
+                <langData>The troops threw grenades at the enemy [in order to escape]</langData><gloss><content>  « Les soldats ont lancé des grenades à l’ennemi [pour qu’il puissent s’évader] »</content></gloss>
+                <content> et </content><langData>The troops threw grenades at the enemy [in order for the prisoners to escape]</langData><gloss><content>  « Les soldats ont lancé des grenades à l’ennemi [pour que les prisonniers puissent s’évader] »</content></gloss>
+                <content>.  Dans ces examples en anglais, </content>
+                <langData>because</langData><gloss><content> « parce que »</content></gloss>
+                <content> et </content>
+                <langData>since</langData><gloss><content> « puisque »</content></gloss>
+                <content> prennent seulement des complements phrastiques finis et </content>
+                <langData>so</langData><gloss><content> « donc, pour »</content></gloss>
+                <content> prend une proposition finie avec un complémentiseur comme complément. Par contre </content>
+                <langData>in order</langData><gloss><content> « pour »</content></gloss>
+                <content> prend ou un complément phrastique non-fini avec un sujet coréférentiel nul, ou bien une proposition non-fini avec un complémentiseur comme complément. Ceci est pareil à la sous-catégorie représentée par </content>
+                <langData>like</langData><gloss><content> « aimer »</content></gloss>
+                <content> et </content>
+                <langData>hate</langData><gloss><content> « haïr »</content></gloss>
+                <content> à la section </content>
+                <sectionRef sec="sComp"/>
+                <content>.</content>
+            </p>
+           <p contentType="ctPracticalIntro">
+               <content>Les syntagmes adverbiaux ou les propositions adverbiales qui expriment la raison ou le but consistent d’adverbes autonomes, comme </content>
+              <langData>donc</langData>
+               <content> (qu’on appelle quelquefois les conjonctions sententielles), et de ceux qui prennent une variété de propositions complétives pareilles à celles qu’on a citées pour les verbes à la section </content>
+              <sectionRef sec="sComp"/>
+              <content>.</content>
+           </p>
+           <p>
+               <content>Voici des exemples en </content>
+                <langName/>
+               <content> de propositions adverbiales de raison ou de but dans des phrases complètes:</content>
+            </p>
+            <example>
+                <interlinear exampleLoc="advp/reasonExample"/>
+            </example>
+        </section2>
+    </section1>
+</portion>

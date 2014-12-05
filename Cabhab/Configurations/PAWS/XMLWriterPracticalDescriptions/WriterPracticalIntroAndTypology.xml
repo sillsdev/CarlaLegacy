@@ -725,33 +725,128 @@
 			<content> (See sections </content><sectionRef sec="sNPCase"/><content> and </content><sectionRef sec="sPron"/><content>.)</content>
 	   </p>
 	   <p><content></content><langName/><content></content><case element="typology" attr="classifier">
-		  <caseText value="no"> does not have any system of noun classifiers.</caseText>
-		  <caseText value="yesAgr"> has a system of noun classifiers, as detailed in the next section.</caseText>
-		  <caseText value="yesType"> has a system of noun classifiers, as detailed in the next section.</caseText>
+		  <caseText value="no"> does not have any system of noun classes or classifiers.</caseText>
+		  <caseText value="yesAgr"> has a system of noun classes, as detailed in the next section.</caseText>
+		  <caseText value="yesSpecific"> has a system of noun classifiers, as detailed in the next section.</caseText>
+	   	<caseText value="yesType"> has a system of noun classifiers, as detailed in the next section.</caseText>
 	   </case></p>
 	</section1>
    <section1 id="sClassifiers" show="swClassifiersNotNo">
-	  <secTitle>Classifiers</secTitle>
+	  <secTitle>Noun Classes or Classifiers</secTitle>
       <p contentType="ctPracticalIntro">
-         <content>Classifier systems mark nouns by their shape, position, or other characteristics.  The classifier marking may become an agreement system that requires concord throughout the nominal phrase and even with the verb. In a simpler type of classifier system, classifier affixes derived from either a generic noun or a pronoun appear on most nouns of particular types, such as animals or insects, or liquids.  In this simpler system, there is no concord classifier agreement; these affixes only show up on the nouns and similar distinctions may exist in the third person pronouns that refer to these types of nouns.</content>
+      	<content>Noun classes or classifier mark nouns by their shape, position, or other characteristics.  In a noun class system, the class marking may become an agreement system that requires concord throughout the nominal phrase and even with the verb. Languages may instead have a system of classifiers, sometimes called counter words or measure words.  These classifiers are words or morphemes that accompany nouns when the noun is counted or specified, and serve to classify the noun depending on the type of its referent. The classifier relates to the noun being counted or specified, but there is no other agreement within the nominal phrase or sentence. In a simpler type of classifier system, classifier affixes derived from either a generic noun or a pronoun appear on most nouns of particular types, such as animals, insects, or liquids.  In this simpler system, these affixes only show up on the nouns and similar distinctions may exist in the third person pronouns that refer to these types of nouns.</content>
       </p>
 	  <p contentType="ctComparativeIntro">
-		 <content>Some languages have a classifier system that marks nouns by their shape, position, or other characteristics.  In many of these languages, the classifier marking becomes an agreement system that requires concord throughout the nominal phrase and even with the verb.  Therefore, quantifiers, articles, demonstratives, adjectives, and verbs may need to be marked with the appropriate classifier.</content></p>
-	  <p contentType="ctComparativeIntro"><content>The Bantu languages spoken in Africa represent perhaps the best known noun classifier system with concord agreement.  These languages have up to 22 distinct classes, which are represented by number.  About half of them are for singular nouns only and an equal number for plural nouns only.  Others are for mass or abstract nouns or locations.</content></p>
-      <p contentType="ctComparativeIntro"><content>There is also a simpler type of classifier system where there are classifier affixes derived from either a generic noun or a pronoun that appear on most nouns that refer to animals or insects, or to liquids, trees or objects made of wood, or objects that are basically round.  In this simpler system, there is usually no concord classifier agreement within the nominal phrase or sentence, so these affixes only show up on the nouns and might be considered more derivational.  However, there may be similar distinctions in the third person pronouns that refer to these types of nouns.  Such a system may use types rather than numbers to identify the classifiers.</content>
+		 <content>Some languages have a system of noun classes that marks nouns by their shape, position, or other characteristics.  In many of these languages, the class marking becomes an agreement system that requires concord throughout the nominal phrase and even with the verb.  Therefore, quantifiers, articles, demonstratives, adjectives, and verbs may need to be marked with the appropriate noun class marker.</content></p>
+	  <p contentType="ctComparativeIntro"><content>The Bantu languages spoken in Africa represent perhaps the best known noun class system.  These languages have up to 22 distinct classes, which are represented by numbers.  About half of them are for singular nouns only and an equal number for plural nouns only.  Others are for mass or abstract nouns or locations.</content></p>
+   	<p contentType="ctComparativeIntro"><content>Languages may instead have a system of classifiers, sometimes called counter words or measure words.  These classifiers are words or morphemes that accompany nouns when the noun is counted or specified, and serve to classify the noun depending on the type of its referent.  Some languages have several hundred classifiers.  The classifier relates to the noun being counted or specified, but there is no other agreement within the nominal phrase or sentence.  This type of classifier is an important part of many East Asian languages.</content></p>
+   	<p contentType="ctComparativeIntro"><content>There is also a simpler type of classifier system where there are classifier affixes derived from either a generic noun or a pronoun that appear on most nouns that refer to animals or insects, or to liquids, trees or objects made of wood, or objects that are basically round.  In this simpler system, there is usually no concord classifier agreement within the nominal phrase or sentence, so these affixes only show up on the nouns and might be considered more derivational.  However, there may be similar distinctions in the third person pronouns that refer to these types of nouns.  Such a system may use types rather than numbers to identify the classifiers.</content>
 	 </p>
-   <p show="swClassifiersYesType"><langName/><content> has the simpler kind of classifier system which distinguishes types of nouns, but there is no concord agreement within the nominal phrase or sentence.</content></p>
-	  <p show="swClassifiersYesAgr"><langName/><content> has a classifier system with concord agreement throughout the nominal phrase and sentence.  In </content><langName/><content>, the classifiers are distinguished by </content>
+   <p show="swClassifiersYesSpecific"><langName/><content> has a classifier system which distinguishes types of nouns.  The classifiers occur with nouns in the nominal phrase when they are counted or specified, but there is no other agreement within the nominal phrase or sentence.</content></p>
+   	<p show="swClassifiersYesType"><langName/><content> has the simpler kind of classifier system which distinguishes types of nouns, but there is no concord agreement within the nominal phrase or sentence.</content></p>
+   	<p show="swClassifiersYesAgr"><langName/><content> has a noun class system with concord agreement throughout the nominal phrase and sentence.  In </content><langName/><content>, the classifiers are distinguished by </content>
 	  <case element="typology" attr="classifierNum">
 		 <caseText value="number">class numbers. </caseText>
 		 <caseText value="type">types.  <case element="typology" attr="classifierTypeNumAgr">
-			<caseText value="no">The classifiers do not distinguish between singular and plural, so there is only one classifier for each type of noun.</caseText>
-			<caseText value="yes">There are independent classifiers for singular and plural for each type of noun.</caseText>
+			<caseText value="no">The classes do not distinguish between singular and plural, so there is only one class for each type of noun.</caseText>
+			<caseText value="yes">There are independent classes for singular and plural for each type of noun.</caseText>
 		 </case></caseText>
 	  </case>
 	  </p>
-	  <p><content>The classifiers in </content><langName/><content> are shown in the following table:</content></p>
-	  <example show="swClassifiersYesTypeOrYesAgrTypeAndNoNumAgr">
+	  <p show="swClassifiersYesTypeOrYesSpecific"><content>The classifiers in </content><langName/><content> are shown in the following table:</content></p>
+   	<example show="swClassifiersYesSpecific">
+   		<table border="1" >
+   			<caption>
+   				<content>Noun classifiers by type</content>
+   			</caption>
+   			<headerRow>
+   				<headerCol>
+   					Type
+   				</headerCol>
+   				<headerCol>Classifier</headerCol>
+   			</headerRow>
+   			<row>
+   				<col>
+   					<content>humans</content>
+   				</col>
+   				<col exampleLoc="typology/classifierHumanExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>animals</content>
+   				</col>
+   				<col exampleLoc="typology/classifierAnimalExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>birds</content>
+   				</col>
+   				<col exampleLoc="typology/classifierBirdExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>boats</content>
+   				</col>
+   				<col exampleLoc="typology/classifierBoatExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>clothing</content>
+   				</col>
+   				<col exampleLoc="typology/classifierClothingExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>trees</content>
+   				</col>
+   				<col exampleLoc="typology/classifierTreeExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>long, thin items</content>
+   				</col>
+   				<col exampleLoc="typology/classifierLongThinExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>long, wavy items</content>
+   				</col>
+   				<col exampleLoc="typology/classifierLongWavyExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>flat items</content>
+   				</col>
+   				<col exampleLoc="typology/classifierFlatExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>cylindrical items</content>
+   				</col>
+   				<col exampleLoc="typology/classifierCylindricalExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>mechanical items</content>
+   				</col>
+   				<col exampleLoc="typology/classifierMechanicalExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>generic items</content>
+   				</col>
+   				<col exampleLoc="typology/classifierGenericExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>ENTER GLOSS</content>
+   				</col>
+   				<col exampleLoc="typology/classifierOtherExample"/>
+   			</row>
+   		</table>
+   	</example>
+   	
+   			<example show="swClassifiersYesType">
 		 <table border="1" >
 			<caption>
 			   <content>Noun classifiers by type</content>
@@ -812,22 +907,90 @@
 			</row>
 			<row>
 			   <col>
-				  <content>general</content>
+				  <content>ENTER GLOSS</content>
 			   </col>
 			   <col exampleLoc="typology/classOtherExample"/>
 			</row>
 		 </table>
 	  </example>
-
+   	<p show="swClassifiersYesAgr"><content>The noun class markers in </content><langName/><content> are shown in the following table:</content></p>
+   	<example show="swClassifiersYesAgrTypeAndNoNumAgr">
+   		<table border="1" >
+   			<caption>
+   				<content>Noun classes by type</content>
+   			</caption>
+   			<headerRow>
+   				<headerCol>
+   					Type
+   				</headerCol>
+   				<headerCol>Noun class marker</headerCol>
+   			</headerRow>
+   			<row>
+   				<col>
+   					<content>animal</content>
+   				</col>
+   				<col exampleLoc="typology/classAnimalExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>insect</content>
+   				</col>
+   				<col exampleLoc="typology/classInsectExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>liquid</content>
+   				</col>
+   				<col exampleLoc="typology/classLiquidExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>round</content>
+   				</col>
+   				<col exampleLoc="typology/classRoundExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>cylindrical</content>
+   				</col>
+   				<col exampleLoc="typology/classCylinderExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>spherical</content>
+   				</col>
+   				<col exampleLoc="typology/classSphereExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>tree</content>
+   				</col>
+   				<col exampleLoc="typology/classTreeExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>wooden</content>
+   				</col>
+   				<col exampleLoc="typology/classWoodExample"/>
+   			</row>
+   			<row>
+   				<col>
+   					<content>ENTER GLOSS</content>
+   				</col>
+   				<col exampleLoc="typology/classOtherExample"/>
+   			</row>
+   		</table>
+   	</example>
+   	
 	  <example show="swClassifiersYesAgrTypeAndYesNumAgr">
 		 <table border="1" >
 			<caption>
-			   <content>Noun classifiers by type</content>
+			   <content>Noun classes by type</content>
 			</caption>
 			<headerRow>
 			   <headerCol>Type</headerCol>
 <headerCol>Number Agreement</headerCol>
-			   <headerCol>Classifier</headerCol>
+			   <headerCol>Noun class marker</headerCol>
 			</headerRow>
 			<row>
 			   <col>
@@ -943,14 +1106,14 @@
 			</row>
 			<row>
 			   <col>
-				  <content>other / general</content>
+				  <content>ENTER GLOSS</content>
 			   </col>
 			   <col><content>singular</content></col>
 			   <col exampleLoc="typology/classOtherSgExample"/>
 			</row>
 			<row>
 			   <col>
-				  <content>other / general</content>
+				  <content>ENTER GLOSS</content>
 			   </col>
 			   <col><content>plural</content></col>
 			   <col exampleLoc="typology/classOtherPlExample"/>
@@ -960,13 +1123,13 @@
 	  <example show="swClassifiersYesAgrNum">
 		 <table border="1" >
 			<caption>
-			   <content>Noun classifiers by number</content>
+			   <content>Noun classes by number</content>
 			</caption>
 			<headerRow>
 			   <headerCol>
 				  Class Number
 			   </headerCol>
-			   <headerCol>Classifier</headerCol>
+			   <headerCol>Class marker</headerCol>
 <headerCol>Number Agreement</headerCol>
 			</headerRow>
 			<row>
@@ -1310,10 +1473,14 @@
 	        </row>
 	     </table>
 	  </example>
-	  <p show="swClassifiersYesAgr"><content>Some example sentences showing the concord classifier agreement  within the nominal phrase and on the verb are:</content></p>
+	  <p show="swClassifiersYesAgr"><content>Some example sentences showing the concord noun class agreement within the nominal phrase and on the verb are:</content></p>
 	  <example show="swClassifiersYesAgr">
 		 <interlinear exampleLoc="typology/classifierAgrExample"/>
 	  </example>
+   	<p show="swClassifiersYesSpecific"><content>Some example nominal phrases illustrating different classifiers used with numerals or demonstratives and nouns are:</content></p>
+   	<example show="swClassifiersYesSpecific">
+   		<interlinear exampleLoc="typology/classifierSpecificExample"/>
+   	</example>
    </section1>
 <showWhen id="swNPPossNPYes">
    <whenValue element="np" attr="possNP" value="yes"/>
@@ -1676,10 +1843,18 @@
    <showWhen id="swClassifiersYesType">
 	  <whenValue element="typology" attr="classifier" value="yesType"/>
    </showWhen>
-   <showWhen id="swClassifiersYesAgr">
+	<showWhen id="swClassifiersYesSpecific">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swClassifiersYesAgr">
 	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
-   <showWhen id="swClassifiersYesAgrNum">
+	<showWhen id="swClassifiersYesTypeOrYesSpecific">
+		<whenValue element="typology" attr="classifier" value="yesType"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>
+	<showWhen id="swClassifiersYesAgrNum">
 	  <whenValue element="typology" attr="classifier" value="yesAgr"/>
 	  <and/>
 	  <whenValue element="typology" attr="classifierNum" value="number"/>
@@ -1700,6 +1875,13 @@
 	  <and/>
 	  <whenValue element="typology" attr="classifierTypeNumAgr" value="yes"/>
    </showWhen>
+	<showWhen id="swClassifiersYesAgrTypeAndNoNumAgr">
+		<whenValue element="typology" attr="classifier" value="yesAgr"/>
+		<and/>
+		<whenValue element="typology" attr="classifierNum" value="type"/>
+		<and/>
+		<whenValue element="typology" attr="classifierTypeNumAgr" value="no"/>
+	</showWhen>
    <showWhen id="swClass1AgrSg">
 	  <whenValue element="typology" attr="class1Agr" value="sg"/>
    </showWhen>

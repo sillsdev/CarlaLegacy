@@ -1,0 +1,48 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>PAWS: Déclaration de But</title>
+         <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+            <script language="jscript" src="Purpose.js">
+            </script>
+   </head>
+   <body onload="Initialize()">
+      <h1>PAWS: Déclaration de But</h1>
+      <div class="introduction">
+         
+         <p>Comme indiqué par son titre, le programme de l’analyseur syntaxique et scripteur (PAWS) a deux buts fondamentaux, et deux types de sortie:</p>
+         <ul>
+            <li>Le scripteur produit une ébauche d’une description de la grammaire et la syntaxe de votre langue, basée sur vos réponses aux questions dans chaque section de PAWS. Un fichier unique sort pour chaque langue d’interface, qui peut produire une grammaire descriptive de la langue et/ou une grammaire comparative à la langue de l’interface, par le moyen d’un simple changement de paramètre.
+               Ce fichier de sortie est à la fois un format de page web et au format XML de <a href="http://www.xlingpaper.org/" target="_blank">XLingPaper</a>.
+               Voir aussi <a href="http://www.sil.org/silepubs/abstract.asp?id=52287" target="_blank">Simons and Black (2009)</a> et <a href="http://www.sil.org/silepubs/abstract.asp?id=52286" target="_blank">Black (2009)</a> pour pourquoi il s'agit d'un bon format à utiliser.</li>
+            
+            <li>L’analyseur produit tous les fichiers requis pour l’utilisation de l’analyseur syntaxique PC-PATR (<a href="../Help/pcpatr.htm" target="_blank">McConnel 2002</a>, inclus dans la section « Ressources » du menu « Aide ») pour l’analyse syntaxique et la désambiguïsation dans <a href="http://www.sil.org/computing/catalog/show_software.asp?id=84" target="_blank">CARLAStudio</a>. </li>
+         </ul>
+         
+         <p>Si vous désirez utiliser seulement le scripteur, veuillez supprimer la coche dans la case « Sortez le fichier grammaire PC-PATR et les fichiers d’exemples » dans la section « Options de sortie ». (Ceci masquera toutes les instructions en rouge dans chaque section qui ont rapport à l’annotation de votre lexique avec les caractéristiques requises pour l’analyseur PC-PATR.)  
+            Une fois les sections achevées le fichier du scripteur peut être sorti et raffiné. (Si vous ne vous intéressez qu’au scripteur, vous pouvez retourner au Sommaire maintenant. <A href="Contents.htm">Retour au Sommaire</A>)
+            Si vous désirez faire des analyses vous aurez en plus la grammaire en anglais et vous pouvez choisir de recevoir la version en français aussi bien.</p>
+         
+         <p>Le but de l’analyseur est d’aider l’usager d’établir les règles initiales de la structure des phrases, des inscriptions lexiques, des gabarits des caractéristiques et les limitations requises pour l’utilisation de PC-PATR. Les caractéristiques de la langue qui sont générales, d’habitude les trois quarts des règles, peuvent être présentées par le moyen de PAWS. Les règles qui sont propres à la langue peuvent être ajoutées plus tard à l’aide des outils de l’interface pourvus pour le support de l’usager et/ou à l’aide de spécialistes.</p>
+         
+         <p>La création d’un analyseur syntaxique complet pour une langue est une tâche immense. On a donc expérimenté pour décider combien il fallait faire pour embrasser la langue à tel point que l’analyseur puisse pleinement désambiguïser la sortie dans CARLAStudio. Cet analyseur se place au milieu entre le plus simple et le plus complexe. Plus précisément, en certains aspects il est plus simple, et en autres plus complexe que l’analyse présenté dans le texte de Bickford (1998) <i>Tools for Analyzing the World's Languages:
+            Morphology and Syntax</i> (qu’on utilise dans beaucoup des cours de grammaire au niveau 1 chez SIL). Les différences les plus importants sont:</p>
+         <ul>
+            <li>On emploie une sous-catégorisation seulement très limitée et partielle, puisque c’est ça qui demande le plus de temps et de complexité dans un analyseur complet.</li>
+            
+            
+            <li>Une syntagmatique articulée qui suit la théorie X-bar (voir <a href="../Help/CBGBTEXT.DOC" target="_blank">Black 1999</a>, inclus dans la section « Ressources » du menu « Aide » pour une introduction), puisque les structures plats avec beaucoup d’options sont beaucoup plus difficile à limiter comme il faut et ont besoin de plus de mémoire et de temps de traitement. </li>
+            
+            
+            <li>•	Un analyseur fonctionne nécessairement sur la structure de la surface, et donc les règles de la syntagmatique doivent modeler la sortie des transformations, non pas la structure sous-jacente. Cet analyseur n’inclut ni les traces ni d’autres éléments nul qui seraient nécessaire dans un analyseur complet  (voir <a href="../Help/Black1997.htm" target="_blank">Black 1997</a> pour un exemple. Ceci est inclus dans la section « Ressources » du menu « Aide »).</li>
+         </ul>
+         
+         <p>Ce programme est conçu en sections. On commence avec les syntagmes les plus courts qui peuvent s’incorporer en d’autres syntagmes jusqu’aux syntagmes et propositions les plus complexes. Ainsi l’usager peut travailler sur une section à la fois, vérifier les hypothèses pour chaque type de syntagme et en même temps s’habituer à l’usage de PC-PATR pour la désambiguïsation dans CARLAStudio. Cependant, il faut compléter le programme de PAWS avant d’essayer l’analyse de textes ordinaires.</p>
+         
+         
+      </div>
+      <div align="center">
+         <A href="Contents.htm" class="return">Retour au Sommaire</A>
+      </div>
+   </body>
+</html>

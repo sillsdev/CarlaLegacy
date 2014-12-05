@@ -21,47 +21,34 @@
 					<caseText value="no"> there is no number agreement.  Instead, number marking comes from the number or quantifier.</caseText>
 					<caseText value="yes"> the various nominal modifiers agree in number with the head noun.</caseText>
 				</case>
-				<content>  Further, </content>
-				<case element="np" attr="agreeOther">
-					<caseText value="no">there is no agreement in animacy, gender, class or other features between the modifiers and the head noun.</caseText>
-					<caseText value="yes">the modifiers and the head noun agree in </caseText>
-				</case>
-			   <text show="swNPAgrClass"><content>class.</content></text>
-			   <text show="swNPAgrGender"><content>gender.</content></text>
-			   <text show="swNPAgrAnimacy"><content>animacy.</content></text>
-			   <text show="swNPAgrOther"><content>___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-			   <text show="swNPAgrClassGender"><content>gender and class.</content></text>
-			   <text show="swNPAgrClassAnimacy"><content>animacy and class.</content></text>
-			   <text show="swNPAgrClassOther"><content>class and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-			   <text show="swNPAgrClassAnimacyGender"><content>gender, animacy and class.</content></text>
-			   <text show="swNPAgrClassAnimacyOther"><content>animacy, class and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-			   <text show="swNPAgrClassGenderOther"><content>gender, class and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-			   <text show="swNPAgrClassAnimacyGenderOther"><content>gender, animacy, class and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-			   <text show="swNPAgrGenderAnimacy"><content>gender and animacy.</content></text>
-			   <text show="swNPAgrGenderOther"><content>gender and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-			   <text show="swNPAgrGenderAnimacyOther"><content>gender, animacy and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-			   <text show="swNPAgrAnimacyOther"><content>animacy and ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.</content></text>
-			   </p>
+			</p>
 			<p show="swNPAgreeYesNumber">
 				<content>Examples showing number agreement in </content><langName/><content> nominal phrases include:</content>	
 			</p>
-<example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
-			<p show="swNPAgreeYesAnimacy">
-				<content>Examples showing animacy agreement in </content><langName/><content> nominal phrases include:</content>	
+			<example show="swNPAgreeYesNumber"><interlinear exampleLoc="np/agreeNumberExample"/></example>
+			<p show="swNPAgreeOtherTypeNone">
+				<content>There is no agreement in animacy, gender, class or other features between the modifiers and the head noun. </content>
 			</p>
-			<example show="swNPAgreeYesAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
-			<p show="swNPAgreeYesClass">
-				<content>Examples showing class agreement in </content><langName/><content> nominal phrases include:</content>	
+			<p show="swNPAgreeClass">
+				<content>The modifiers and the head noun agree in class.  Examples showing class agreement in </content><langName/><content> nominal phrases include:</content>	
 			</p>
-			<example show="swNPAgreeYesClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
-			<p show="swNPAgreeYesGender">
-				<content>Examples showing gender agreement in </content><langName/><content> nominal phrases include:</content>
+			<example show="swNPAgreeClass"><interlinear exampleLoc="np/agreeClassExample"/></example>
+			<p show="swNPAgreeClassifier">
+				<content>A classifier which agrees with the class or type of the noun is present with nouns that are counted or specified, but other modifiers are not marked for class, as shown in the following examples:</content>	
 			</p>
-			<example show="swNPAgreeYesGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
-		   <p show="swNPAgreeYesOther">
-		      <content>Examples showing ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content> agreement in </content><langName/><content> nominal phrases include:</content>
+			<example show="swNPAgreeClassifier"><interlinear exampleLoc="np/agreeClassifierExample"/></example>
+			<p show="swNPAgreeAnimacy">
+				<content>Examples showing animacy agreement between the head noun and its modifiers in </content><langName/><content> nominal phrases include:</content>	
+			</p>
+			<example show="swNPAgreeAnimacy"><interlinear exampleLoc="np/agreeAnimacyExample"/></example>
+			<p show="swNPAgreeGender">
+				<content>The noun and its modifiers agree in gender in </content><langName/><content>, as shown in the followng examples:</content>
+			</p>
+			<example show="swNPAgreeGender"><interlinear exampleLoc="np/agreeGenderExample"/></example>
+		   <p show="swNPAgreeOther">
+		   	<content>Nominal phrases in </content><langName/><content> show agreement in ___</content><contentCheckBoxOther contentLoc="np/agreeOtherFeat"/><content>.  Examples of this type of agreement include:</content>
 		   </p>
-		   <example show="swNPAgreeYesOther"><interlinear exampleLoc="np/agreeOtherExample"/></example>
+		   <example show="swNPAgreeOther"><interlinear exampleLoc="np/agreeOtherExample"/></example>
 		</section2>
 	   <section2 id="sNPCase">
 	   <secTitle>Case</secTitle>
@@ -103,7 +90,12 @@
 	            <caseText value="nominative"> has a nominative-accusative case system.   Subjects of both transitive and intransitive verbs are marked in the same way and use the same set of pronouns, but objects of transitive verbs are marked differently.</caseText>
 	            <caseText value="ergative"> has an ergative-absolutive case system.   Subjects of intransitive verbs and objects of transitive verbs are marked in the same way and use the same set of pronouns, but subjects of transitive verbs are marked differently.</caseText>
 	            <caseText value="split"> has a split case system.    The language normally follows the nominative-accusative case system, but the ergative-absolutive system is used under certain grammatical conditions.</caseText>
-	         </case></p>
+	         </case>
+	      	<text show="swNPCaseSplit"> 
+	      		<content> The conditions where the ergative-absolutive case system is used are ___</content><contentCheckBoxOther contentLoc="typology/splitConditions"/>
+	      		<content>.   </content>
+	      	</text>
+	      </p>
 	      
 	      <p><content>This is shown in the following examples of transitive sentences with Agent subjects where the subject and object are nominal phrases:</content></p>
 	      <example>
@@ -182,14 +174,14 @@
 	         <caseText value="after">postpositional</caseText>
 	         <caseText value="both">prepositional or postpositional</caseText>
 	         <caseText value="unknown">adpositional</caseText>
-	      </case><content> phrases, rather than by nominal phrases (see </content><sectionRef sec="sPP"/><content>).</content>
+	      </case><content> phrases, rather than by nominal phrases (see section </content><sectionRef sec="sPP"/><content>).</content>
 	      </p>
 	      <p show="swNPCaseNotNoneAndCaseNNo"><content>In </content><langName/><content>, case distinctions are not marked on nouns or nominal phrases; only the pronoun sets distinguish case.  Therefore, the minor grammatical relations are expressed by </content><case element="pp" attr="pPos">
 	            <caseText value="before">prepositional</caseText>
 	            <caseText value="after">postpositional</caseText>
 	            <caseText value="both">prepositional or postpositional</caseText>
 	            <caseText value="unknown">adpositional</caseText>
-	      </case><content> phrases, rather than by nominal phrases (see </content><sectionRef sec="sPP"/><content>).  The case distinctions in the pronouns will be delineated in </content><sectionRef sec="sPronPersonal"/><content>.</content>	         
+	      </case><content> phrases, rather than by nominal phrases (see section </content><sectionRef sec="sPP"/><content>).  The case distinctions in the pronouns will be delineated in section </content><sectionRef sec="sPronPersonal"/><content>.</content>	         
 	      </p>
 	      <p show="swNPCaseNotNoneAndCaseNYes"><content>In </content><langName/><content>, case is marked on both pronouns and nouns or nominal phrases. </content>
 	         <text show="swNPCaseDefaultNom">
@@ -475,10 +467,6 @@
 			      <langName/>
 			      <content>, </content>
 			      <case element="np" attr="possNounCaseChange">
-			         <caseText value="no">the grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor.</caseText>
-			         <caseText value="yes">the case of the head noun matches the case of the possessor, when a possessor is present.</caseText>
-			      </case>
-			      <case element="np" attr="possNounCaseChange">
 			         <caseText value="no"> The grammatical function of the head noun relative to the verb determines its case, not the presence of a possessor.</caseText>
 			         <caseText value="yes"> The case of the head noun matches the case of the possessor, when a possessor is present.</caseText>
 			      </case>
@@ -673,10 +661,11 @@
 					</text>
 					<content/>
 				</p>
+			   <p><content>See section </content><sectionRef sec="sNPPoss"/><content> for examples of possessed nouns.</content></p>
 			</section3>
 		   <section3 id="sNPossAbsolutive" show="swNPAbsolutiveYes">
 		      <secTitle>Absolutive Marking</secTitle>
-		      <p><langName/><content> has an affix that occurs on nouns when they are not possessed or pluralized.  This affix is known as the absolutive marker, but the name is not related to the absolutive case marker used in languages with an ergative-absolutive case system.</content></p>
+		      <p><langName/><content> has an affix that occurs on nouns when they are not possessed or pluralized, or possibly when there are no modifiers.  This affix is known as the absolutive marker, but the name is not related to the absolutive case marker used in languages with an ergative-absolutive case system.</content></p>
 		      <p><content>The forms of the affix used in </content><langName/><content> are:</content></p>
 		      <example show="swNPAbsolutiveYes">
 		         <table border="1">
@@ -827,163 +816,41 @@
 <showWhen id="swNPAgreeYesNumber">
 	<whenValue element="np"  attr="agreeNumber" value="yes"/>
 </showWhen>
-   <showWhen id="swNPAgrClass">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrGender">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrAnimacy">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrOther">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassGender">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassAnimacy">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassOther">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassAnimacyGender">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassAnimacyOther">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassGenderOther">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrClassAnimacyGenderOther">
-      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrGenderAnimacy">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swNPAgrGenderOther">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrGenderAnimacyOther">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   <showWhen id="swNPAgrAnimacyOther">
-      <whenValue element="np/agreeClass" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeGender" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-   </showWhen>
-   
-	<showWhen id="swNPAgreeYesAnimacy">
-		<whenValue element="np"  attr="agreeOther" value="yes"/>
-	   <and/>
-	   <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+	<showWhen id="swNPAgreeOtherTypeNone">
+		<whenValue element="np/agreeClass" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeClassifier" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeGender" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeAnimacy" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeOtherFeat" attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/agreeOtherNone" attr="checked" value="yes"/>
+		
 	</showWhen>
-	<showWhen id="swNPAgreeYesClass">
-		<whenValue element="np"  attr="agreeOther" value="yes"/>
-	   <and/>
-	   <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+   <showWhen id="swNPAgreeClass">
+      <whenValue element="np/agreeClass" attr="checked" value="yes"/>
+   	<and/>
+   	<whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+	<showWhen id="swNPAgreeClassifier">
+		<whenValue element="np/agreeClassifier" attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
 	</showWhen>
-	<showWhen id="swNPAgreeYesGender">
-		<whenValue element="np"  attr="agreeOther" value="yes"/>
-	   <and/>
-	   <whenValue element="np/agreeGender" attr="checked" value="yes"/>
-	</showWhen>
-      <showWhen id="swNPAgreeYesOther">
-         <whenValue element="np"  attr="agreeOther" value="yes"/>
-         <and/>
-         <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
-      </showWhen>
-   <showWhen id="swNPCaseNoneAndExperiencerNo">
+	<showWhen id="swNPAgreeGender">
+      <whenValue element="np/agreeGender" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgreeAnimacy">
+      <whenValue element="np/agreeAnimacy" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOther">
+      <whenValue element="np/agreeOtherFeat" attr="checked" value="yes"/>
+   </showWhen>
+ 
+	<showWhen id="swNPCaseNoneAndExperiencerNo">
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
       <whenValue element="typology" attr="caseExperiencer" value="no"/>

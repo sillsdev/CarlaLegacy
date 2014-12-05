@@ -7,18 +7,22 @@
     <title level="2">Los pronombres - Los indefinidos</title>
    <introduction>Un tipo final de pronombres es <technicalTermRef term="ttIndefinite">indefinidos</technicalTermRef>.  Hay dos sistemas básicas de pronombres indefinidos, aunque no todas las lenguas fusionan en una sola palabra:
       <ul>
-         <li>aquellos que expresan con un cuantificador y un sustantivo genérico indefinido, como <example>everybody ‘todo el mundo’</example>, <example>everything ‘todo’</example>, <example>everyone ‘todos’</example>, <example>anybody ‘cualquiera persona’</example>, <example>anything ‘cualquiera cosa’</example>, <example>anyone ‘cualquiera persona’</example>,  <example>somebody ‘alguien’</example>, <example>something ‘algo’</example>, <example>someone ‘alguien’</example>, y</li>
+         <li>aquellos que expresan con un cuantificador y un sustantivo genérico indefinido, como <example>unas (personas o cosas)</example>, <example>everybody ‘todo el mundo’</example>, <example>everything ‘todo’</example>, <example>everyone ‘todos’</example>, <example>anybody ‘cualquiera persona’</example>, <example>anything ‘cualquiera cosa’</example>, <example>anyone ‘cualquiera persona’</example>,  <example>somebody ‘alguien’</example>, <example>something ‘algo’</example>, <example>someone ‘alguien’</example>, y</li>
          <li>aquellos que expresan con una palabra <technicalTermRef term="ttInterrogative">interrogativa</technicalTermRef> y una palabra indefinida, como <example>whoever ‘quienquiera’</example> y <example>whatever ‘quequiera’</example>. </li>
       </ul>
    </introduction>
     <form section="pron">
        <checkboxGroup>
-          <prompt><br/>Empezando con el tipo que se componen de un cuantificador y un sustantivo genérico, ¿cómo se expresan estos indefinidos en su lengua? Seleccione todas las opciones que son correctas en su lengua</prompt>
+          <prompt><br/>Empezando con el tipo que se componen de un cuantificador y un sustantivo genérico (o el uso impersonal para el número ‘uno’), ¿cómo se expresan estos indefinidos en su lengua? Seleccione todas las opciones que son correctas en su lengua.  Si ninguna opción se permite en su lengua, quita estas opciones y seleccione la opción para ‘Ninguno’ más abajo</prompt>
           <checkbox id="PronIndefTypeQWord" dataItem="indefQWord">Un cuantificador y un sustantivo genérico se fusionan en una sola palabra</checkbox>
           <checkbox id="PronIndefTypeQPhrase" dataItem="indefQPhrase">Un cuantificador se presenta con un sustantivo genérico, pero no se combinan en una sola palabra; se permanecen como frases nominales</checkbox>
           <checkbox id="PronIndefTypeQOther" dataItem="indefQOther">En mi lengua, estos significados indefinidos se expresan con: <textBox id="PronIndefTypeQOtherContent" dataItem="indefQOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="PronIndefTypeQNoCheckPrompt" show="swPronIndefTypeQNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo su lengua expresa estos significados indefinidos.</prompt>
+       <prompt id="PronIndefTypeQNoCheckPrompt" show="swPronIndefTypeQNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo su lengua expresa estos significados indefinidos.  Si ninguna opción es correcto, por favor seleccione ‘Ninguno’ abajo.</prompt>
+       <checkboxGroup id="PronIndefTypeQNoneTable" show="swPronIndefTypeQNoCheck">
+          <prompt>Seleccione esta opción solamente si su lengua no tiene pronombres indefinidos que incluyen un cuantificador en absoluto</prompt>
+          <checkbox id="PronIndefTypeQNone" dataItem="pronIndefTypeQNone">Ninguno</checkbox>
+       </checkboxGroup>
        
        <prompt id="ProneIndefTypeQWordPrompt" show="swPronIndefTypeQWord">Escriba ejemplos de los indefinidos formados a partir de un cuantificador y un sustantivo genérico unidos en una sola palabra aquí:</prompt>    <textBox id="PronIndefTypeQWordExample" dataItem="indefTypeQWordExample" show="swPronIndefTypeQWord" rows="3"/>
        <instruction  id="PronIndefTypeQWordInstruction" show="swPronIndefTypeQWord">In the lexicon, you will need to make two entries for the generic nouns, one which remains a noun and one with the category <category>Pron</category>, or else the feature <feature>makePron</feature> to change the category for the syntax.</instruction>
@@ -33,6 +37,7 @@
           <checkbox id="PronIndefTypeQPQOther" checked="yes" dataItem="indefTypeQPQOther">En mi lengua, el cuantificador puede presentarse: <textBox  id="PronIndefTypeQPQOtherContent" dataItem="indefTypeQPQOther" rows="2"/></checkbox>
        </checkboxGroup>	
        <prompt id="PronIndefTypeQPPhraseNoCheckPrompt" show="swPronIndefTypeQPPhraseAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el cuantificador con respecto del sustantivo genérico en su lengua, o cambia la respuesta anterior a una forma diferente.</prompt>
+       <instruction id="PronIndefTypeQPhraseInstruction" show="swPronIndefTypeQPhrase">In the lexicon, mark the generic noun with the feature <feature>generic</feature> and make sure it has the category <category>N</category>.</instruction>           
        <instruction id="PronIndefTypeQPQEitherRestrictedInstruction" show="swPronIndefTypeQPQEitherRestricted">In the lexicon, mark those quantifier words which can only occur before the generic noun with the feature <feature>DP-initial</feature> and those which can only occur after the generic noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier words which can occur on either side.</instruction>           
        
        <prompt id="PronIndefTypeQOtherPrompt" show="swPronIndefTypeQOther">Escriba ejemplos de la otra manera su lengua utiliza para expresar un indefinido que incluye un cuantificador aquí: </prompt>
@@ -40,29 +45,35 @@
        
        <br/><br/>
        <checkboxGroup>
-          <prompt><br/>Ahora, se consideren los indefinidos que se componen de una palabra interrogativa y una indefinida, como ‘whoever (quienquiera)’ y ‘whatever (quequiera)’.  ¿Cómo se expresan estos indefinidos en su lengua? Seleccione todas las opciones que se aplican</prompt>
-          <checkbox id="PronIndefTypeIntWord" dataItem="indefIntWord">Una palabra interrogativa y un indefinido se fusionan en una sola palabra</checkbox>
-          <checkbox id="PronIndefTypeIntPhrase" dataItem="indefIntPhrase">Una palabra interrogativa se presenta con un indefinido, pero no se combinanan en una sola palabra; se permanecen como una frase nominal</checkbox>
+          <prompt><br/>Ahora, se consideren los indefinidos que se componen de un pronombre interrogativo y una palabra indefinida, como ‘whoever (quienquiera)’ y ‘whatever (quequiera)’.  ¿Cómo se expresan estos indefinidos en su lengua? Seleccione todas las opciones que se aplican.  Si ninguna opción se permite en su lengua, quita estas opciones y seleccione la opción para ‘Ninguno’ más abajo</prompt>
+          <checkbox id="PronIndefTypeIntWord" dataItem="indefIntWord">Un pronombre interrogativo y una palabra indefinida se fusionan en una sola palabra</checkbox>
+          <checkbox id="PronIndefTypeIntPhrase" dataItem="indefIntPhrase">Un pronombre interrogativo se presenta con una palabra indefinida, pero no se combinanan en una sola palabra; se permanecen como una frase nominal</checkbox>
           <checkbox id="PronIndefTypeIntOther" dataItem="indefIntOther">En mi lengua, estos significados indefinidos se expresan con:<textBox  id="PronIndefTypeIntOtherContent" dataItem="indefIntOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="PronIndefTypeIntNoCheckPrompt" show="swPronIndefTypeIntNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo su lengua expresa estos significados indefinidos.</prompt>
-       <prompt id="PronIndefTypeIntWordPrompt" show="swPronIndefTypeIntWord">Escriba ejemplos de los indefinidos formados a partir de una palabra interrogativa y una indefinida unidos en una sola palabra aquí:</prompt>
+       <prompt id="PronIndefTypeIntNoCheckPrompt" show="swPronIndefTypeIntNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo su lengua expresa estos significados indefinidos.  Si ninguna opción es correcto, por favor seleccione ‘Ninguno’ abajo.</prompt>
+       <checkboxGroup id="PronIndefTypeIntNoneTable" show="swPronIndefTypeIntNoCheck">
+          <prompt>Seleccione esta opción solamente si su lengua no tiene pronombres indefinidos de tiempo que incluyen una palabra intrerrogativa de tiempo en absoluto</prompt>
+          <checkbox id="PronIndefTypeIntNone" dataItem="pronIndefTypeIntNone">Ninguno</checkbox>
+       </checkboxGroup>
+       <prompt id="PronIndefTypeQAndIntNonePrompt" show="swPronIndefTypeQAndIntNone">ADVERTENCIA: Usted ha seleccionado ‘Ninguno’ para ambos tipos de pronombres indefinidos.  Por favor, seleccione el tipo más cerca a los pronombres indefinidos en su lengua y seleccione la casilla ‘En mi lengua...’ para describirlos.  Desactive ‘Ninguno’ para esta opción. </prompt> 
+       <prompt id="PronIndefTypeIntWordPrompt" show="swPronIndefTypeIntWord">Escriba ejemplos de los indefinidos formados a partir de un prnombre interrogativo y una palabra indefinida unidos en una sola palabra aquí:</prompt>
        <textBox id="PronIndefTypeIntWordExample" dataItem="indefTypeIntWordExample" show="swPronIndefTypeIntWord" rows="3"/>
-       <instruction  id="PronIndefTypeIntWordInstruction" show="swPronIndefTypeIntWord">In the lexicon, key the features <feature>makePron</feature> on the interrogative words if they do not already have the category <category>Pron</category>. </instruction>
+       <instruction  id="PronIndefTypeIntWordInstruction" show="swPronIndefTypeIntWord">In the lexicon, key the features <feature>makePron</feature> on the interrogative words if they do not already have the category <category>Pron</category> and also add the feature <feature>wh</feature> to mark them as interrogative. </instruction>
        
-       <prompt id="PronIndefTypeIntPhrasePrompt" show="swPronIndefTypeIntPhrase">Escriba ejemplos de las frases indefinidas que consisten de una palabra interrogativa y un indefinido aquí:</prompt>
+       <prompt id="PronIndefTypeIntPhrasePrompt" show="swPronIndefTypeIntPhrase">Escriba ejemplos de las frases indefinidas que consisten de un pronombre interrogativo y una palabra indefinida aquí:</prompt>
        <textBox id="PronIndefTypeIntPhraseExample" dataItem="indefTypeIntPhraseExample" show="swPronIndefTypeIntPhrase" rows="3"/>
        <checkboxGroup id="PronIndefTypeIntPhraseTable" show="swPronIndefTypeIntPhrase">
-          <prompt><br/>De acuerdo con los ejemplos, ¿dónde se presenta la palabra interrogativa con respecto del indefinido? Seleccione todas las opciones que son correctas en su lengua</prompt>
+          <prompt><br/>De acuerdo con los ejemplos, ¿dónde se presenta el pronombre interrogativo con respecto de la palabra indefinida? Seleccione todas las opciones que son correctas en su lengua</prompt>
           <checkbox id="PronIndefTypeIntPhraseBefore" checked="yes" dataItem="indefTypeIntBefore">Antes del indefinido</checkbox>
           <checkbox id="PronIndefTypeIntPhraseAfter" checked="yes" dataItem="indefTypeIntAfter">Después del indefinido</checkbox>
           <checkbox id="PronIndefTypeIntPhraseBoth" checked="yes" dataItem="indefTypeIntBoth">En ambos lados en la misma frase</checkbox>
-          <checkbox id="PronIndefTypeIntPhraseOther" checked="yes" dataItem="indefTypeIntOther">En mi lengua, la palabra interrogativa puede presentarse: <textBox  id="PronIndefTypeIntPhraseOtherContent" dataItem="indefTypeIntOther" rows="2"/></checkbox>
+          <checkbox id="PronIndefTypeIntPhraseOther" checked="yes" dataItem="indefTypeIntOther">En mi lengua, el pronombre interrogativo puede presentarse: <textBox  id="PronIndefTypeIntPhraseOtherContent" dataItem="indefTypeIntOther" rows="2"/></checkbox>
        </checkboxGroup>	
-       <prompt id="PronIndefTypeIntPhraseNoCheckPrompt" show="swPronIndefTypeIntPhraseAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta la palabra interrogativa con respecto del indefinido en su lengua, o cambia la respuesta anterior a una forma diferente.</prompt>
-       <instruction id="PronIndefTypeIntEitherRestrictedInstruction" show="swPronIndefTypeIntEitherRestricted">In the lexicon, mark those interrogative words which can only occur before the indefinite word with the feature <feature>DP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>DP-final</feature>.  Do not enter either feature on any interrogative words which can occur on either side.</instruction>           
+       <prompt id="PronIndefTypeIntPhraseNoCheckPrompt" show="swPronIndefTypeIntPhraseAndNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presenta el pronombre interrogativo con respecto de la palabra indefinida en su lengua, o cambia la respuesta anterior a una forma diferente.</prompt>
+       <instruction id="PronIndefTypeIntPhraseInstruction" show="swPronIndefTypeIntPhrase">In the lexicon, key the feature <feature>makeIndef</feature> on the indefinite word to give it a special category. </instruction>
+       <instruction id="PronIndefTypeIntEitherRestrictedInstruction" show="swPronIndefTypeIntEitherRestricted">In the lexicon, mark those interrogative pronouns which can only occur before the indefinite word with the feature <feature>DP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>DP-final</feature>.  Do not enter either feature on any interrogative pronouns which can occur on either side.</instruction>           
        
-       <prompt id="PronIndefTypeIntOtherPrompt" show="swPronIndefTypeIntOther">Escriba ejemplos de la otra manera su lengua utiliza para expresar un indefinido que incluye una palabra interrogativa aquí: </prompt>
+       <prompt id="PronIndefTypeIntOtherPrompt" show="swPronIndefTypeIntOther">Escriba ejemplos de la otra manera su lengua utiliza para expresar un indefinido que incluye un pronombre interrogativo aquí: </prompt>
        <textBox id="PronIndefTypeIntOtherExample" dataItem="indefTypeIntOtherExample" show="swPronIndefTypeIntOther"/>
         <br/>
 <br/>
@@ -148,6 +159,11 @@
       <whenCheckbox button="PronIndefTypeIntPhraseBefore"/>
       <and/>
       <whenCheckbox button="PronIndefTypeIntPhraseAfter"/>
+   </showWhen>
+   <showWhen id="swPronIndefTypeQAndIntNone">
+      <whenCheckbox button="PronIndefTypeQNone"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntNone"/>
    </showWhen>
    
    &TechnicalTerms; 

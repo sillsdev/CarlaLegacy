@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvClFeatures" count="2/3">
+    <title level="2">Propositions Adverbiales – Exemples et Caractéristiques</title>
+    <introduction>Nous répétons les exemples en français d’adverbes temporels avec compléments utilisés dans des phrases complètes citées à la page précédente: </introduction>
+   <EnglishExample>
+       <exItem label="1.">[Depuis ce temps là], Jean est de mauvaise humeur.</exItem>
+       <exItem label="2.">Jean est à la maison  [depuis la semaine dernière].</exItem>
+       <exItem label="3.">[Depuis que Jean est rentré de l'hôpital], il se porte mieux.</exItem>
+       <exItem label="4.">Jean se sent bien  [maintenant qu'il est rentré de l'hôpital].</exItem>
+       <exItem label="5.">Le chien a suivi Suzanne partout  [depuis qu’elle est revenue de l'université].</exItem>
+       <exItem label="6.">[Quand elle est revenue de l'université], le chien a suivi Suzanne partout.</exItem>
+   </EnglishExample>
+    <form section="advcl">
+        <prompt><br/>Entrez ici dans votre langue des exemples pareils de propositions adverbiales temporelles incorporées dans des phrases complètes simples:</prompt>
+        <textBox id="AdvlClTemporalExample" dataItem="tempSentExample" cols="50"/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="advOrNPPos" default="unknown" position="yesHeadDiff">RAdvOrNPPos</groupName>
+            <prompt>Par rapport à l’adverbe principal, où se met le complément, qu’il soit syntagme adverbial ou nominal, ou bien complément phrastique ou proposition complétive?</prompt>
+            <radio id="AdvClAdvOrNPPosBefore" dataValue="before">Avant l’adverbe</radio>
+            <radio id="AdvClAdvOrNPPosAfter" dataValue="after">Après l’adverbe</radio>
+            <radio id="AdvClAdvOrNPPosEither" dataValue="either">D’un côté ou de l’autre</radio>
+        </radioGroup>
+        <br/>
+        <instruction id="AdvClTemporalInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>temporal</feature>.  Note that the first two features can be added to the same entry, and either or both can be added to the other sets of features.
+<ul>
+                <li>If the adverb may have another adverb as its complement, add the feature <feature>takes_Adv</feature>.</li>
+                <li>If the adverb may have a nominal phrase complement, add the feature <feature>takes_DP</feature>.</li>
+                <li>If the adverb may have an IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
+                <li id="CompYesOption" show="swCompYes">If the adverb requires a complementizer to be present in its sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
+            </ul>
+        </instruction>
+        <br/>
+        <introduction>En ce qui concerne les syntagmes adverbiaux ou bien les propositions qui expriment la raison ou le but, nous trouvons des adverbes autonomes comme<example>donc</example> et <example>exprès</example>, ainsi que ceux qui prennent une variété de propositions complétives (exemples comme <example>pour cette raison</example> devrait fonctionner basé sur vos réponses dans <section number="8">Syntagmes Adpositionnels</section>.)
+            <br/><br/> Les exemples en anglais et français d’adverbes de raison ou de but qui prennent les propositions complétives comprennent ceux [entre crochets] 7-11:
+</introduction>
+        <EnglishExample>
+            <exItem label="7.">John rushed to the hospital [because Sue was in an accident].   « Jean est allé vite à l’hôpital [parce que Suzanne était dans un accident]. »</exItem>
+            <exItem label="8.">[Since Jill said that she likes him], Joe smiles all the time.   « [Puisque Jeanne a dit qu’elle l’aime] Jacques sourit tout le temps. »</exItem>
+            <exItem label="9.">Bill rushed to the airport [so that he could see Kay before she left].   « Guillaume est allé vite à l’aéroport [pour qu’il puisse voir Gaby avant qu’elle soit partie]. »</exItem>
+            <exItem label="10.">The troops threw grenades at the enemy [in order to escape].   « Les soldats ont lancé des grenades à l’ennemi [pour qu’il puissent s’évader]. »</exItem>
+            <exItem label="11.">The troops threw grenades at the enemy [in order for the prisoners to escape].   « Les soldats ont lancé des grenades à l’ennemi [pour que les prisonniers puissent s’évader]. »</exItem>
+        </EnglishExample>
+       <introduction id="AdvClReasonIntroNotPractical" show="swNotPractical">In the examples above, <example>because</example> and <example>since</example> take only <technicalTermRef term="ttFinite"/> IP complements and <example>so</example> takes a finite CP complement.  In contrast, <example>in order</example> takes either a <technicalTermRef term="ttNonfinite"/> IP with a subject which is not expressed or a nonfinite CP complement.  This is the same subcategorization as shown for <example>like</example> and <example>hate</example> in <section number="10">Complement Clauses</section>. 
+ </introduction>
+        <introduction id="AdvClReasonIntroPractical" show="swPractical">Dans les exemples ci-dessus en anglais, <example>because  « parce que »</example> et <example>since  « puisque »</example> prennent seulement des complements phrastiques <technicalTermRef term="ttFinite">finis</technicalTermRef> et <example>so  « donc, pour »</example> prend une proposition finie avec un complémentiseur comme complément. Par contre <example>in order   « pour »</example> prend ou un complément phrastique <technicalTermRef term="ttNonfinite">non-fini</technicalTermRef> avec un sujet coréférentiel nul, ou bien une proposition non-fini avec un complémentiseur comme complément. Ceci est pareil à la sous-catégorie représentée par <example>like  « aimer »</example> et <example>hate  « haïr »</example> à la <section number="10">Propositions Complétives</section>. 
+         </introduction>
+        <br/>
+        <prompt>Les exemples que vous avez donnés à la <section number="3">Adverbes et Syntagmes Adverbiaux</section> sont cités en-dessous.  Vous pouvez ajouter d’autres exemples sous forme de phrases (simple) complètes.<span id="CompNoSpan" show="swCompNo">  Puisque votre langue n’a pas de complémentiseur pour les propositions subordonnées, tous vos exemples devraient contenir un complément sententiel.</span></prompt>
+        <textBox id="AdvPReasonSentExample" section="advp" dataItem="reasonSentExample" cols="50"/>
+        <br/>
+        <br/>
+        <instruction id="AdvClReasonInstruction">In the lexicon, add the following features to the adverb entry, in addition to the feature <feature>reason</feature>.
+<ul>
+                <li>If the adverb may have a finite IP complement, add the features <feature>sentential embedded_finite</feature>.</li>
+   <li id="CompYesOptionReason" show="swCompYes">If the adverb requires a complementizer to be present in its finite sentential complement (CP), add the features <feature>sentential embedded_finite embedded_CP</feature>.</li>
+                <li id="CompYesOptionReason1" show="swCompYes">If the adverb requires either a nonfinite IP with a pro-dropped subject or a nonfinite CP complement, add the features <feature>sentential embedded_-finite embedded_IPpro-dropOrCP</feature>.</li>
+</ul>
+           Those that are phrases, like <example>in order</example>, need to be entered in the lexicon with underscores between the words so <tool>Join Compound</tool> will parse them as a single lexical entry within <tool>CARLA Studio</tool>.
+        </instruction>
+        <br/>
+        <buttons>
+            <button id="AdvClFeaturesBack" value="Back" goto="AdvClMain.xml"/>
+            <button id="AdvClFeaturesNext" value="Next" goto="AdvClTesting.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
+   <showWhen id="swCompYes">
+      <whenValue element="comp" attr="comp" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompNo">
+      <whenValue element="comp" attr="comp" value="no"/>
+   </showWhen>
+   <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
+   &TechnicalTerms; 
+</page>

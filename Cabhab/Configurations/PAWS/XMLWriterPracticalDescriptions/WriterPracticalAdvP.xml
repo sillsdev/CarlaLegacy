@@ -4,7 +4,7 @@
     <section1 id="sAdvP">
         <secTitle>Adverbs</secTitle>
         <p>
-           <content>Adverbs express four basic types of information: time, location, manner, and reason or purpose. Adverbial indefinites are also discussed.  Interrogative adverbs are covered in </content><sectionRef sec="sQuesContent"/><content>.</content>
+           <content>Adverbs express four basic types of information: time, location, manner, and reason or purpose. Adverbial indefinites are also discussed.  Interrogative adverbs are covered in section </content><sectionRef sec="sQuesContent"/><content>.</content>
         </p>
 
         <section2 id="sAdvPTemporal">
@@ -44,7 +44,7 @@
               </table>
            </example>
            
-           <p contentType="ctComparativeIntro"><content>Many languages allow degree words to modify adverbs.  Example English positive temporal adverbial phrases including degree word modifiers are: </content>
+           <p contentType="ctComparativeIntro"><content>Many languages allow degree words to modify adverbs.  Example English temporal adverbial phrases including degree word modifiers are: </content>
               <langData>very soon</langData>
               <content>, </content>
               <langData>much later</langData>
@@ -144,7 +144,7 @@
            <example show="swAdvPTemporalDegreeYesOther">
               <table border="1">
                  <headerRow>
-                    <headerCol>Modified or intensified Temporal Adverbs</headerCol>
+                    <headerCol>Modified or Intensified Temporal Adverbs</headerCol>
                     <headerCol>Gloss</headerCol>
                  </headerRow>
                  <row>
@@ -197,7 +197,7 @@ phrases and adverbial clauses.  These phrases occur in the same positions as the
               <content>, and
                  adverbial clauses </content>
               <langData>while you are working</langData>
-              <content>, </content>
+              <content> and </content>
               <langData>when Sue arrived</langData>
               <content>.  These phrases occur in the same positions as the temporal adverbs, normally either initially or finally in the clause.  See section </content>
               <sectionRef sec="sNP"/>
@@ -213,10 +213,8 @@ phrases and adverbial clauses.  These phrases occur in the same positions as the
           <p contentType="ctComparativeIntro">
              <content>Locative adverbs include the English words: </content>
              <langData>here</langData>
-             <content>, </content>
+             <content> and </content>
              <langData>there</langData>
-             <content>, </content>
-             <langData>everywhere</langData>
              <content>. </content>
           </p>
           
@@ -267,7 +265,7 @@ phrases and adverbial clauses.  These phrases occur in the same positions as the
              <langData>right there</langData>  </p>       
          
           <p show="swAdvPLocativeDegreeNo">
-             <content>Locative adverbs are not modified or intensified in.</content><langName/><content>.</content>
+             <content>Locative adverbs are not modified or intensified in </content><langName/><content>.</content>
           </p>
           <p show="swAdvPLocativeDegreeYesWord">
              <content>In </content><langName/><content>, locative adverbs may be modified by degree words which occur </content>
@@ -377,7 +375,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
              <langData>in the mountains</langData>
              <content>, </content>
              <langData>at San Jose</langData>
-             <content>, </content>
+             <content> and </content>
              <langData>across the river</langData>
              <content>.  Many
                 languages allow just a nominal phrase, consisting of a proper name or a description of the place.  Locative expressions may normally occur either initially or finally in the clause, or as complements to motion verbs.  See section </content>
@@ -457,10 +455,10 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
           </p>
           
           <p show="swAdvPMannerTypeWordDegreeNo">
-             <content>Manner adverbs are not modified or intensified in.</content><langName/><content>.</content>
+             <content>Manner adverbs are not modified or intensified in </content><langName/><content>.</content>
           </p>
           <p show="swAdvPMannerTypeBothDegreeNo">
-             <content>Manner adverbs which are written as independent words are not modified or intensified in.</content><langName/><content>.</content>
+             <content>Manner adverbs which are written as independent words are not modified or intensified in </content><langName/><content>.</content>
           </p>
           <p show="swAdvPMannerTypeWordOrBothDegreeYesWord">
              <content>In </content><langName/>
@@ -560,10 +558,10 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
           
           
           <p show="swAdvPMannerTypeAffixDegreeNo">
-             <content>The manner adverb affixes are not modified or intensified in.</content><langName/><content>.</content>
+             <content>The manner adverb affixes are not modified or intensified in </content><langName/><content>.</content>
           </p>
           <p show="swAdvPMannerTypeBothAffixDegreeNo">
-             <content>The manner adverb affxes are not modified or intensified in.</content><langName/><content>.</content>
+             <content>The manner adverb affxes are not modified or intensified in </content><langName/><content>.</content>
           </p>
           <p show="swAdvPMannerTypeAffixOrBothDegreeYesAffix">
              <content>The manner adverb affixes may be modified by degree affixes which occur </content>
@@ -731,13 +729,17 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
              <content>Beginning with the first type which includes a quantifier and a generic noun, in </content>
              <langName/>
              <content> the temporal indefinites </content>
+             <text show="swTemporalIndefTypeQNone"><content>are not expressed using a quantifier.</content></text>
+             <text show="swTemporalIndefTypeQOtherOnly"><content>are expressed by ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
              <text show="swTemporalIndefQWordOnly"><content>are expressed by a quantifier and a generic noun merged into a single word. </content></text>
              <text show="swTemporallndefQWordAndQPhrase"><content>are sometimes expressed by a quantifier and a generic noun merged into a single word, but some remain as a phrase. </content></text>
              <text show="swTemporalIndefQWordAndOther"><content>are sometimes expressed by a quantifier and a generic noun merged into a single word, but some are expressed by ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
              <text show="swTemporalIndefQPhraseOnly"><content>are expressed by a quantifier and a generic noun which do not merge into a single word, but remain as a phrase. </content></text>
-             <text show="swTemporalIndefQPhraseAndOther"><content>are sometimes expressed by a quantifier and a generic noun which do not merge into a single word, but remain as a phrase, and some are expressed by ___</content><contentCheckBoxOther contentLoc="advp/temporralIndefQOther"/><content>. </content></text>
+             <text show="swTemporalIndefQPhraseAndOther"><content>are sometimes expressed by a quantifier and a generic noun which do not merge into a single word, but remain as a phrase, and some are expressed by ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
              <text show="swTemporalIndefQWordAndQPhraseAndOther"><content>are sometimes expressed by a quantifier and a generic noun merged into a single word, but some remain as a phrase, and some are expressed by ___</content><contentCheckBoxOther contentLoc="avdp/temporalIndefQOther"/><content>. </content></text>
              <content> The locative indefinites </content>
+             <text show="swLocativeIndefTypeQNone"><content>are not expressed using a quantifier.</content></text>
+             <text show="swLocativeIndefTypeQOtherOnly"><content>are expressed by ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefQOther"/><content>. </content></text>
              <text show="swLocativeIndefQWordOnly"><content>are expressed by a quantifier and a generic noun merged into a single word. </content></text>
              <text show="swLocativeIndefQWordAndQPhrase"><content>are sometimes expressed by a quantifier and a generic noun merged into a single word, but some remain as a phrase.</content></text>
              <text show="swLocativeIndefQWordAndOther"><content>are sometimes expressed by a quantifier and a generic noun merged into a single word, but some are expressed by ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefQOther"/><content>. </content></text>
@@ -818,7 +820,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
                 <text show="swLocativeIndefQPQBeforeOrBoth"><content>before or on both sides of</content></text>
                 <text show="swLocativeIndefQPQAfterOrBoth"><content>after or on both sides of</content></text>
                 <text show="swLocativeIndefQPQEitherOrBoth"><content>on either side or on  both sides of</content></text>
-                <content> the generic locative noun, and they may also occur ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefTypeQPQOther"/><content>. </content>
+                <content> the generic locative noun, and they may also occur ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefTypeQPQOther"/><content>. </content>
              </text>
              
              <content>  Examples of the indefinite phrases are:</content>
@@ -869,13 +871,17 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
              <content>For the second type of indefinite which includes an interrogative and an indefinite word, in </content>
              <langName/>
              <content> the temporal indefinites </content>
+             <text show="swTemporalIndefTypeIntNone"><content>are not expressed using an interrogative.</content></text>
+             <text show="swTemporalIndefIntOtherOnly"><content>are expressed by ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefIntOther"/><content>. </content></text>
              <text show="swTemporalIndefIntWordOnly"><content>are expressed by a temporal interrogative word and an indefinite merged into a single word. </content></text>
              <text show="swTemporalIndefIntWordAndIntPhrase"><content>are sometimes expressed by a temporal interrogative word and an indefinite merged into a single word, but some remain as a phrase. </content></text>
              <text show="swTemporalIndefIntWordAndOther"><content>are sometimes expressed by a temporal interrogative word and an indefinite merged into a single word, but some are expressed by ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefIntOther"/><content>. </content></text>
              <text show="swTemporalIndefIntPhraseOnly"><content>are expressed by a temporal interrogative word and an indefinite which do not merge into a single word, but remain as a phrase. </content></text>
-             <text show="swTemporalIndefIntPhraseAndOther"><content>are sometimes expressed by a temporal interrogative word and an indefinite which do not merge into a single word, but remain as a phrase, and some are expressed by ___</content><contentCheckBoxOther contentLoc="advp/temporralIndefIntOther"/><content>. </content></text>
+             <text show="swTemporalIndefIntPhraseAndOther"><content>are sometimes expressed by a temporal interrogative word and an indefinite which do not merge into a single word, but remain as a phrase, and some are expressed by ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefIntOther"/><content>. </content></text>
              <text show="swTemporalIndefIntWordAndIntPhraseAndOther"><content>are sometimes expressed by a temporal interrogative word and an indefinite merged into a single word, but some remain as a phrase, and some are expressed by ___</content><contentCheckBoxOther contentLoc="avdp/temporalIndefIntOther"/><content>. </content></text>
              <content> The locative indefinites </content>
+             <text show="swLocativeIndefTypeIntNone"><content>are not expressed using an interrogative.</content></text>
+             <text show="swLocativeIndefIntOtherOnly"><content>are expressed by ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefIntOther"/><content>. </content></text>
              <text show="swLocativeIndefIntWordOnly"><content>are expressed by a locative interrogative word and an indefinite merged into a single word. </content></text>
              <text show="swLocativeIndefIntWordAndIntPhrase"><content>are sometimes expressed by a locative interrogative word and an indefinite merged into a single word, but some remain as a phrase.</content></text>
              <text show="swLocativeIndefIntWordAndOther"><content>are sometimes expressed by a locative interrogative word and an indefinite merged into a single word, but some are expressed by ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefIntOther"/><content>. </content></text>
@@ -956,7 +962,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
                 <text show="swLocativeIndefTypeIntBeforeOrBoth"><content>before or on both sides of</content></text>
                 <text show="swLocativeIndefTypeIntAfterOrBoth"><content>after or on both sides of</content></text>
                 <text show="swLocativeIndefTypeIntEitherOrBoth"><content>on either side or on  both sides of</content></text>
-                <content> the indefinite, and they may also occur ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefTypeIntOther"/><content>. </content>
+                <content> the indefinite, and they may also occur ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefTypeIntOther"/><content>. </content>
              </text>
              
              <content>  Examples of the indefinite phrases are:</content>
@@ -1637,6 +1643,35 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
       <and/>
       <whenValue element="advp/temporalIndefQOther" attr="checked" value="yes"/>
    </showWhen>
+ 
+   <showWhen id="swTemporalIndefTypeQOtherOnly">
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeQOtherOnly">
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntOtherOnly">
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntOtherOnly">
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="no"/>
+   </showWhen>
    
    <showWhen id="swTemporalIndefQWordOnly">
       <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="no"/>
@@ -1774,6 +1809,19 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
       <whenValue element="advp/locativeIndefQWord" attr="checked" value="yes"/>
       <and/>
       <whenValue element="advp/locativeIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+ 
+   <showWhen id="swTemporalIndefTypeQNone">
+      <whenValue element="advp/temporalIndefTypeQNone" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefTypeIntNone">
+      <whenValue element="advp/temporalIndefTypeIntNone" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeQNone">
+      <whenValue element="advp/locativeIndefTypeQNone" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeIntNone">
+      <whenValue element="advp/locativeIndefTypeIntNone" attr="checked" value="yes"/>
    </showWhen>
    
    <showWhen id="swLocativeIndefQWordOnly">
@@ -1979,16 +2027,7 @@ phrase or just a nominal phrase, consisting of a proper name or a description of
       <whenValue element="advp/temporalIndefIntWord" attr="checked" value="yes"/>
    </showWhen>
    
-   <showWhen id="swTemporalIndefTypeIntOtherOnly">
-      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swTemporalIndefIntOtherOnly"> 
+   <showWhen id="swTemporalIndefTypeIntOtherOnly"> 
       <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
       <and/>
       <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>

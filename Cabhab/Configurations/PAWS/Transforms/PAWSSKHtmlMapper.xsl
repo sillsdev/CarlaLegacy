@@ -79,7 +79,7 @@ var SpecPosUnknown = 4;
 
   function Initialize()
 {
-<xsl:apply-templates select="//textBox | //groupName | //catMap | //featureItem | //checkbox" mode="load"/>
+<xsl:apply-templates select="//textBox | //groupName | //catMap | //featureItem | //checkbox | //contentCheckBoxOther" mode="load"/>
 window.external.SetLeftOffAt("<xsl:value-of select="$prmWorkingPath"/>
 			<xsl:value-of select="//page/@id"/>.htm");
 Refresh()
@@ -615,6 +615,12 @@ Refresh();
 		</xsl:comment>&#xa;
 </xsl:template>
 	<!--
+		contentCheckBoxOther
+	-->
+	<xsl:template match="//contentCheckBoxOther">
+		<span id="{@id}"/>
+	</xsl:template>
+	<!--
    contents
 	-->
 	<xsl:template match="//contents">
@@ -715,7 +721,7 @@ Refresh();
 	<xsl:template match="//featureExplanation">
 		<xsl:if test="not(ancestor::featureChart/@explanations='no')">
 			<td valign="top">
-				<xsl:value-of select="."/>
+				<xsl:apply-templates/>
 			</td>
 		</xsl:if>
 	</xsl:template>
@@ -732,7 +738,7 @@ Refresh();
 					<xsl:value-of select="@dataValue"/>
 				</xsl:attribute>
 				<span class="feature">
-					<xsl:value-of select="."/>
+					<xsl:apply-templates/>
 				</span>
 			</input>
 		</td>
@@ -1135,8 +1141,11 @@ Refresh();
 		table
 	-->
 	<xsl:template match="//table">
-		<div align="left" class="EnglishExample">
-			<table border="0">
+		<div align="left" class="{@class}">
+			<table border="1">
+				<xsl:if test="@id and @show">
+					<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+				</xsl:if>
 				<xsl:apply-templates/>
 			</table>
 		</div>
@@ -1153,6 +1162,11 @@ Refresh();
 			</xsl:if>
 			<xsl:apply-templates/>
 		</td>
+	</xsl:template>
+	<xsl:template match="//contentCheckBoxOther" mode="load">
+		<xsl:text>window.external.GetAnswerValue("//</xsl:text>
+		<xsl:value-of select="./@contentLoc"/>");
+		document.getElementById("<xsl:value-of select="@id"/>").innerHTML = window.external.OutValue;
 	</xsl:template>
 <!--
 technicalTermRef
@@ -1213,6 +1227,9 @@ technicalTermRef
 	-->
 	<xsl:template match="//tr">
 		<tr>
+			<xsl:if test="@id and @show">
+				<xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+			</xsl:if>
 			<xsl:apply-templates/>
 		</tr>
 	</xsl:template>

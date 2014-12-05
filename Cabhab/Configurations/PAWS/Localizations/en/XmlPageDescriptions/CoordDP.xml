@@ -11,7 +11,7 @@
       <exItem label="1.">John, Bill, Sue and Mary</exItem>
       <exItem label="2.">John, Bill, Sue and/or Mary</exItem>
       <exItem label="3.">John and Bill or Sue and Mary</exItem>
-      <exItem label="4.">A cat, two dogs, and a chicken but not a monkey</exItem>
+      <exItem label="4.">a cat, two dogs, and a chicken but not a monkey</exItem>
    </EnglishExample>   
    <form section="coord" transparent="no">
       <prompt>Key how your language expresses lists within a nominal phrase here:</prompt>
@@ -21,7 +21,7 @@
       </introduction>
 	<EnglishExample>
 	   <exItem label="5.">George Washington, the first President of the United States</exItem>
-	   <exItem label="6.">My brother, James</exItem>
+	   <exItem label="6.">my brother, James</exItem>
 	</EnglishExample>
   <br/>
       <prompt>Key some nominal phrases containing appositives in your language here:</prompt>

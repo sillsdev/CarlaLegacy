@@ -1,8 +1,8 @@
 <html>
    <head>
 	  <title>Contenido</title>
-	   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		   <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css">
+	   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		   <link rel="stylesheet" href="../styles/PAWSStarterKitMaster.css"/>
 		  <script language="jscript" id="clientEventHandlersJS" src="Contents.js">
 </script>
    </head>
@@ -24,7 +24,7 @@
 						<td valign="top"><A id=ContentsOverallTypologyQuestions href="OverallTypology.xml" >La tipología</A></td>
 						<td rowspan="18" width="50%" class="instruction" valign="top">
 							<div>
-							   <p>Seleccione las salidas que usted quiere haga clic antes de cada salida. Observe por favor que por lo menos una gramática debe estar presente. El escritor que produce una gramática de la lengua nacional del país donde se habla la lengua, si está disponible, será más útil para la comunidad de lengua. Si no escoje una, va a recibir la gramática en inglés. Las instrucciones relevantes a PC-PATR no están disponibles en español ahora.</p>
+							   <p>Seleccione las salidas que usted quiere haga clic antes de cada salida. Observe por favor que por lo menos una gramática debe estar presente. La gramática de la lengua nacional del país donde se habla la lengua, si está disponible, será más útil para la comunidad de lengua. Si no escoje una, va a recibir la gramática en inglés. Las instrucciones relevantes a PC-PATR no están disponibles en español ahora.</p>
 								<table>
 									<tr>
 										<td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
@@ -42,12 +42,16 @@
 										<td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
 										<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Producir el archivo para la gramática en español.</td>
 									</tr>
+									<tr>
+										<td><input type="checkbox" name="OutputWriterPracticalFrench" id="OutputWriterPracticalFrench" onclick="SetOutput('writerPracticalFrench')" value="writerPracticalFrench"></td>
+										<td onclick="SetOutputViaDescription('writerPracticalFrench')">Producir el archivo para la gramática en francés.</td>
+									</tr>
 								</table>
 							</div>
 							<br/>
 							Para cada sección:<br>
 								<ol>
-									<li>Piense en los datos relevantes para su lengua, escogiendo datos sin construcciones especiales específico a su lengua, a menos que se pidan alrededor en las preguntas (ésas tendrán que ser ocupadas después de la terminación del programa PATAS (PAWS en inglés). </li>
+									<li>Piense en los datos relevantes para su lengua, escogiendo datos sin construcciones especiales específico a su lengua, a menos que se pidan alrededor en las preguntas (ésas tendrán que ser ocupadas después de la terminación del programa PAWS. </li>
 
 								   <li>Escoja la respuesta a cada pregunta, basada en los datos. Las preguntas son en forma de botones de radio, donde usted puede sólo elegir una de las opciones, o casillas de verificación donde usted puede marcar todas las opciones que se utilizan en su lengua. La mayoría de las preguntas con las casillas de verificación incluyen una otra opción donde se puede describir cualquier otra forma que su lengua utiliza para esa pregunta.</li>
 
@@ -58,11 +62,11 @@
 									  simplemente escriba el nombre de caraterística (con un espacio entre ella y otras caraterísticas) en el campo de caraterística (normalmente \f).
 									  También necesita asegurarse de CARLAStudio sabe el campo de caraterística tecleando una f (o el marcador que está usando) en el cuadro por *características (uno de los marcadores opcionales) en todas las secciones de análisis marcadores SFM en la ficha de diccionario en el modelo de lengua.</li>
 
-									<li>Escriba sus datos relevantes en el campo, según lo dirigido, con un punto y una nueva línea después de cada ejemplo. (Si está cumpliendo PATAS solamente para la gramática práctica, puede poner después del ejemplo una traduccion libre o la página donde se encuentra, para ayudarle en el proceso de editar la grámatica más tarde.)</li>
+									<li>Escriba sus datos relevantes en el campo, según lo dirigido, con una nueva línea después de cada ejemplo. (Si está cumpliendo PAWS solamente para la gramática práctica, puede poner después del ejemplo una traduccion libre o la página donde se encuentra, para ayudarle en el proceso de editar la grámatica más tarde.)</li>
 
 								   <li id="InstructionsSaveResultsParser">Al final de cada sección, guardar los resultados para producirse los archivos de salida. Vuelva a ejecutar el analizador en el archivo de prueba indicado y compruebe los resultados. Haga clic <A un href="CarlaStudioSetup.htm" >aquí </A> para ver cómo modificar una instalación de CARLAStudio para usar la gramática.</li>
 
-								   <li id="InstructionsMakeChanges">Hace los cambios necesarios en las preguntas de PATAS
+								   <li id="InstructionsMakeChanges">Hace los cambios necesarios en las preguntas de PAWS
 									  (para cambiar la estructura de la frase) o a los nombres de caraterísticas en el léxico,
 									  a continuación, guardar y volver a ejecutar otra vez.   Nota cualquiera detalla que no es correcto para
 									  tratar más tarde. </li>

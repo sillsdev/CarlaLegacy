@@ -41,11 +41,11 @@ o <example>pocos</example>, y</li>
    <form section="qp">
       <radioGroup id="QPClassifierAgrTable" show="swOTClassifierAgr">
          <groupName dataItem="npDegreeClassifier" default="no">RQPClassifierAgr</groupName>
-         <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar estos cuantifiacdores o palabras de grado que modifican a la frase nominal completa?</prompt>
-         <radio id="QPClassifierAgrNPDegreeNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-         <radio id="QPClassifierAgrNPDegreeYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+         <prompt>Usted dijo que su lengua tiene indicadores de clase para la concordancia en las frases nominales. ¿Utiliza los indicadores de clase para marcar estos cuantificadores o palabras de grado que modifican a la frase nominal completa?</prompt>
+         <radio id="QPClassifierAgrNPDegreeNo" dataValue="no">No, estos elementos no se marcan la clase</radio>
+         <radio id="QPClassifierAgrNPDegreeYes" dataValue="yes">Sí, estos elementos se marcan la clase como parte de la concordancia en la frase nominal</radio>
       </radioGroup>
-      <prompt id="QPClassifierAgrPrompt" show="swOTClassifierAgrNPDegreeYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.</prompt>	   
+      <prompt id="QPClassifierAgrPrompt" show="swOTClassifierAgrNPDegreeYes">Puesto que usted ha detallado ya las formas de los indicadores de clase, usted necesita solamente escribir las raíces para cada una de las palabras solicitadas en esta página.  En los ejemplos de frases nominales completas y de oraciones que se pide a lo largo en PAWS, usted debe, por supuesto, incluir los indicadores de clase de sustantivo.</prompt>	   
       <br/>
       <br/>
       <prompt>Escriba la manera que su lengua expresa “todos”, con cada palabra en una línea separada.  (Si “todos” es un afijo o un <technicalTermRef term="ttClitic"/> que se une a otra palabra en la frase nominal, escríbalo aquí con una indicación del guión o signo igual en el lado que se une.)</prompt>
@@ -68,7 +68,8 @@ o <example>pocos</example>, y</li>
          <radio id="QPNPDegreeNo" dataValue="no">No, todos se unen a otra palabra en la frase nominal</radio>
       </radioGroup>
       <br/><br/>	
-      <prompt id="QPNPDegreePromptYes" show="swQPNPDegreeYesOrSome">Escriba algunos ejemplos de frases nominales completas con las palabras independientes que significan ‘todos’, ‘casi’, ‘solamente’ o ‘apenas’ aquí:</prompt>
+      <prompt id="QPNPDegreePromptYes" show="swQPNPDegreeYesOrSome">Escriba algunos ejemplos de frases nominales completas con las palabras independientes que significan ‘todos’, ‘casi’, ‘solamente’ o ‘apenas’ aquí:  
+         <span id="ClassifiersSpecificSpan" show="swOTClassifierSpecific"> (Incluya cualquier clasificadores que se presentan dentro de todos los ejemplos de frases nominales y oraciones que se pide a lo largo en PAWS. Las restricciones acerca de la posición o orden y la concordancia de los clasificadores en las frases nominales se cubren en <section number="5.">Las frases nominales</section>. Asume que los clasificadores son parte ‘del resto de la frase nominal’ en todas las preguntas en que los clasificadores no se tratan directamente.)</span></prompt>
       <textBox id="QPNPExample" dataItem="example" cols="50" show="swQPNPDegreeYesOrSome"/>
          <br/><br/>
       <checkboxGroup id="QPNPDegreePos" show="swQPNPDegreeYesOrSome">
@@ -98,7 +99,8 @@ o <example>pocos</example>, y</li>
       <prompt id="QPNPDegreeAttachesNoCheckPrompt" show="swQPNPDegreeNoandNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir cómo estos cuantificadores o palabras de grado se unen en su lengua, o cambia su respuesta de arriba a ‘Sí, todos son palabras independientes’.</prompt>
       
       <br/><br/>
-      <prompt id="QPNPDegreeCliticPrompt" show="swQPNPDegreeNoOrSomeAndClitic">Ahora escriba ejemplos de frases nominales completas con los clíticos que significan ‘todos', ‘casi'  y ‘solamente' o ‘apenas'  aquí: </prompt>
+      <prompt id="QPNPDegreeCliticPrompt" show="swQPNPDegreeNoOrSomeAndClitic">Ahora escriba ejemplos de frases nominales completas con los clíticos que significan ‘todos’, ‘casi’  y ‘solamente’ o ‘apenas’  aquí:  
+         <span id="ClassifiersSpecificSpan1" show="swOTClassifierSpecific"> (Incluya cualquier clasificadores que se presentan dentro de todos los ejemplos de frases nominales y oraciones que se pide a lo largo en PAWS. Las restricciones acerca de la posición o orden y la concordancia de los clasificadores en las frases nominales se cubren en <section number="5.">Las frases nominales</section>. Asume que los clasificadores son parte ‘del resto de la frase nominal’ en todas las preguntas en que los clasificadores no se tratan directamente.)</span></prompt>
       <textBox id="QPNPDegreeCliticExample" dataItem="npDegreeCliticExample" cols="50" show="swQPNPDegreeNoOrSomeAndClitic"/>
       <instruction id="QPNPDegreeProcliticInstruction" show="swQPNPDegreeNoOrSomeAndProclitic">In the lexicon, mark the proclitics meaning <example>all</example> with the features <feature>plural quantifier_prefix</feature>.
       </instruction>
@@ -123,6 +125,9 @@ o <example>pocos</example>, y</li>
       <whenValue element="typology" attr="classifier" value="yesAgr"/>
       <and/>
       <whenRadio button="QPClassifierAgrNPDegreeYes"/>
+   </showWhen>
+   <showWhen id="swOTClassifierSpecific">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
    </showWhen>
    <showWhen id="swQPNPDegreeNoOrSome">
       <whenRadio button="QPNPDegreeSome"/>

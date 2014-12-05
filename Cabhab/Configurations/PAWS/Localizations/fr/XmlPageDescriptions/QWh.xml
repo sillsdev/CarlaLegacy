@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QWh" count="4/9">
+    <title level="2">Questions – Syntagmes Interrogatifs</title>
+    <introduction>Les questions de contenu diffèrent des questions oui/non en ce sens qu’elles contiennent  un mot ou un syntagme interrogatif, tel <example>que</example>, <example>qu’</example>, <example>qui</example>, <example>pourquoi</example>, <example>où</example>, <example>quand</example>, <example>comment</example> et <example>combien</example>.  Dans quelques langues, certains ou tous ces interrogatifs sont attachés à un autre mot.</introduction>
+    <form section="q">
+        <prompt>Pour chacune des zones de texte suivants, si votre langue exprime l’interrogatif par le moyen d’un affixe ou clitique, entrez-le dans le zone de texte avec un trait d’union ou un signe d’égalité avant ou après pour indiquer si c’est un préfixe ou un proclitique, ou un suffixe ou un enclitique.  Chaque interrogatif devrait être entré sur une ligne individuelle.</prompt>
+        <prompt>Entrez ici la manière dont votre langue exprime « qui »:</prompt>
+        <textBox id="QWho" dataItem="who" rows="3"/>
+        <br/>
+        <prompt>Entrez ici la manière dont votre langue exprime « que / qu’ »:</prompt>
+        <textBox id="QWhat" dataItem="what" rows="3"/>
+        <br/>
+        <prompt>Entrez ici la manière dont votre langue exprime « pourquoi »:</prompt>
+        <textBox id="QWhy" dataItem="why" rows="3"/>
+        <br/>
+        <prompt>Entrez ici la manière dont votre langue exprime « où »:</prompt>
+        <textBox id="QWhere" dataItem="where" rows="3"/>
+        <br/>
+        <prompt>Entrez ici la manière dont votre langue exprime « quand »:</prompt>
+        <textBox id="QWhen" dataItem="when" rows="3"/>
+        <br/>
+        <prompt>Entrez ici la manière dont votre langue exprime « comment »:</prompt>
+        <textBox id="QHow" dataItem="how" rows="3"/>
+        <br/>
+        <prompt>Entrez ici la manière dont votre langue exprime « combien »:</prompt>
+        <textBox id="QHowMany" dataItem="howMany" rows="3"/>
+        <br/>
+        <prompt>Entrez ici la manière dont votre langue exprime « quel »:</prompt>
+        <textBox id="QWhich" dataItem="which" rows="3"/>
+        <br/>
+        <prompt>Entrez ici la manière dont votre langue exprime « de qui »:</prompt>
+        <textBox id="QWhose" dataItem="whose" rows="3"/>
+        <br/>
+        <prompt>Entrez ici tout autre interrogatif utilisé par votre langue:</prompt>
+        <textBox id="QOther" dataItem="other" rows="3"/>
+        <br/>
+        <introduction>Parmi les exemples de mots interrogatifs ci-dessus, la plupart se trouvent seuls comme pronoms ou adverbes, mais <example>comment</example> peut être soit un adverbe de manière par lui-même soit un mot de degré qui modifie un adjectif comme dans en anglais <example>how big  « combien grand / de quelle taille »</example>; <example>what  « que /quel »</example> peut être soit un pronom par lui-même soit un démonstratif modifiant un nom, comme dans <example>what books  « quels livres »</example>; <example>quel/ quels</example> ne se trouve jamais seul mais modifie toujours un nom comme un démonstratif, tel que <example>quel garçon</example>; <example>combien</example> est un quantificateur comme dans <example>combien d’enfants</example> ou <example>combien d’argent</example>; et <example>whose  « de qui »</example> peut soit se trouver seul comme pronom possessif ou il peut remplir la position de possession dans une syntagme nominal comme dans <example>whose toys  « de qui sont ces jouets / ces jouets sont à qui »</example>.</introduction>
+        <instruction id="QContInstruction">In the lexicon, mark all of the interrogative words or affixes with the feature <feature>wh</feature>.  Also, add the feature <feature>makeQ</feature> to the word meaning  ‘how many / how much’ so that it will be treated as a quantifier.
+<br/>
+            <br/>
+            <span id="QContWhichDemInstruction" show="swDemPresent">In addition, make sure that your word meaning  ‘which’ either already has the category <category>Dem</category> or add the feature <feature>makeDem</feature> to the entry.</span>
+            <span id="QContWhichArtInstruction" show="swArtOnlyPresent">In addition, since your language does not have any demonstratives, make sure that your word meaning  ‘which’ either already has the category <category>Art</category> or add the feature <feature>makeArt</feature> to the entry.</span>
+            <span id="QContWhichNoDetInstruction" show="swNoDetPresent">In addition, since your language does not have any demonstratives or articles, if you have a word meaning  ‘which’, it will have to be treated as a possessor.  As such, it simply acts as a pronoun like the majority of the interrogative words, and the category mapping will be handled by the Category Mapper at the end of this section.  Add the case feature <span id="QContGenCaseSpan" show="swPossCaseGen"><feature>genitive</feature> to the entry to restrict its appearance to possessor position.</span><span id="QContAbsCaseSpan" show="swPossCaseAbs"><feature>absolutive</feature> to the entry to restrict the positions where it may appear.</span><span id="QContErgCaseSpan" show="swPossCaseErg"><feature>ergative</feature> to the entry to restrict the positions where it may appear.</span></span>
+            <br/>
+            <br/>
+            The word meaning  ‘why’ needs to have the category <category>Adv</category> (or your morphological category for adverbs that you mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>reason</feature>. <br/>
+            <br/>
+            The word meaning  ‘where’ needs to have the category <category>Adv</category> (or your morphological category for adverbs that you mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>locative</feature>. <br/>
+            <br/>
+            The word meaning  ‘when’ needs to have two entries, if it can be used as both an interrogative word and as a temporal adverb which can take a sentential complement.  Both entries need to have the category <category>Adv</category> (or your morphological category for adverbs that you mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>temporal</feature>.   Add the feature <feature>wh</feature> to one entry and the features <feature>sentential embedded_IP</feature> to the other entry.<br/>
+            <br/>
+            <span id="QContDegPresentSpan" show="swDegPresent">The word meaning  ‘how’ needs to have two entries, one with the category <category>Adv</category> (or your morphological category for adverbs that you mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>manner</feature> and another entry which can have any appropriate morphological category but has the features <feature>makeDeg modifies_Adj modifies_Q</feature>.</span>
+            <span id="QContDegQOnlyPresentSpan" show="swDegQOnlyPresent">The word meaning  ‘how’ needs to have two entries, one with the category <category>Adv</category> (or your morphological category for adverbs that you mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>manner</feature> and another entry which can have any appropriate morphological category but has the features <feature>makeDeg modifies_Q</feature>.</span>
+            <span id="QContDegAdjOnlyPresentSpan" show="swDegAdjOnlyPresent">The word meaning  ‘how’ needs to have two entries, one with the category <category>Adv</category> (or your morphological category for adverbs that you mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>manner</feature> and another entry which can have any appropriate morphological category but has the features <feature>makeDeg modifies_Adj</feature>.  Since your language does not have stand alone degree words that modify quantifiers, you may have another interrogative word meaning  »how many’ and/or  »how much’.  These words/phrases act like quantifiers, so the entry needs to have the features <feature>makeQ wh</feature>.</span>
+            <span id="QContNoDegSpan" show="swNoDegPresent">The word meaning  ‘how’ needs to have the category <category>Adv</category> (or your morphological category for adverbs that you mapped to <category>Adv</category> in <section number="3">Adverbs and AdvP</section>) and the feature <feature>manner</feature>.   Since your language does not have stand alone degree words that modify quantifiers, you may have another interrogative word meaning  »how many’ and/or  »how much’.  These words/phrases act like quantifiers, so the entry needs to have the features <feature>makeQ wh</feature>.</span>
+            <br/>
+            <br/>
+            <span id="QContWhatDemInstruction" show="swDemPresent">The word meaning  ‘what’ also needs two entries if it can modify a noun as in English.  This entry which allows it to modify a noun needs to have the category <category>Dem</category> or add the <feature>makeDem</feature> to the entry.<br/>
+                <br/>
+                The normal pronoun use of the word meaning  ‘what’ and the remainder of the interrogative words above need to be mapped to the category <category>Pron</category>.  This will be handled by the Category Mapper at the end of this section.
+</span>
+            <span id="QContWhatArtInstruction" show="swArtOnlyPresent">The word meaning  ‘what’ also needs two entries if it can modify a noun as in English.  Since your language does not have any demonstratives, this entry which allows it to modify a noun needs to have the category <category>Art</category> or add the feature <feature>makeArt</feature> to the entry.<br/>
+                <br/>
+                The normal pronoun use of the word meaning  ‘what’ and the remainder of the interrogative words above need to be mapped to the category <category>Pron</category>.  This will be handled by the Category Mapper at the end of this section.
+</span>
+            <span id="QContWhatNoDetInstruction" show="swNoDetPresent">Since your language does not have any demonstratives or articles, the word meaning  ‘what’ only needs one entry.  It simply acts as a pronoun like the majority of the interrogative words, and the category mapping to the category <category>Pron</category> will be handled by the Category Mapper at the end of this section.  Do not add any case features to the entry, so it will be allowed in possessor position as well as taking the place of a full nominal phrase.</span>
+            <br/>
+            <br/>
+            The word meaning  ‘whose’ needs to have two entries, both with the category which will be mapped to the category <category>Pron</category> at the end of the section (and both with the feature <feature>wh</feature>).  One entry needs the feature <feature>possessive</feature> for the stand alone case and the other entry needs the case feature <span id="QContGenCaseSpan1" show="swPossCaseGen"><feature>genitive</feature> to restrict its appearance to possessor position.</span><span id="QContAbsCaseSpan1" show="swPossCaseAbs"><feature>absolutive</feature> to restrict the positions where it may appear.</span><span id="QContErgCaseSpan1" show="swPossCaseErg"><feature>ergative</feature> to restrict the positions where it may appear.</span>
+        </instruction>
+  <br/><br/>
+       <radioGroup id="QContWhDemPosTable" show="swDemPosEither">
+            <groupName dataItem="whDemPos" default="unknown" position="yesSpec">RQContWhDemPos</groupName>
+           <prompt>Votre langue permet des démonstratifs d’un côté ou de l’autre du nom. Où les mots qui signifient « quel » se trouvent-ils?</prompt>
+           <radio id="QContWhDemPosBefore" dataValue="before">Toujours avant le nom même si un autre déterminant se trouve après le nom</radio>
+           <radio id="QContWhDemPosAfter" dataValue="after">Toujours après le nom même si un autre déterminant se trouve avant nom</radio>
+           <radio id="QContWhDemPosAgree" dataValue="agree">D’un côté ou de l’autre, mais quand il y a un démonstratif des deux côtés à la fois, ils doivent s’accorder (par exemple ou les deux doivent être des mots interrogatifs ou bien ni l’un ni l’autre)</radio>
+        </radioGroup>
+        <radioGroup id="QContWhArtPosTable" show="swArtOnlyPosEither">
+            <groupName dataItem="whArtPos" default="unknown" position="yesSpec">RQContWhArtPos</groupName>
+            <prompt>Votre langue permet des articles des deux côtés du nom. Où les mots qui signifient « quel » se trouvent-ils?</prompt>
+            <radio id="QContWhArtPosBefore" dataValue="before">Toujours avant le nom même si un autre article se trouve après le nom</radio>
+            <radio id="QContWhArtPosAfter" dataValue="after">Toujours après le nom même si un autre article se trouve avant le nom</radio>
+            <radio id="QContWhArtPosAgree" dataValue="agree">D’un côté ou de l’autre, mais quand il y a un article des deux côtés à la fois, ils doivent s’accorder (par exemple ou les deux doivent être des mots interrogatifs ou bien ni l’un ni l’autre)</radio>
+        </radioGroup>
+        <radioGroup id="QContWhDegAdjPosTable" show="swDegAdjPosEither">
+            <groupName dataItem="whDegAdjPos" default="unknown" position="yesSpec">RQContWhDegAdjPos</groupName>
+            <prompt>Votre langue permet des mots de degré des deux côtés de l’adjectif. Où le mot qui signifie « comment » (ou tout autre mot interrogatif qui modifie les adjectifs) peut se trouver?</prompt>
+            <radio id="QContWhDegAdjPosBefore" dataValue="before">Toujours avant l’adjectif même si un autre mot de degré se trouve après l’adjectif</radio>
+            <radio id="QContWhDegAdjPosAfter" dataValue="after">Toujours après l’adjectif même si un autre mot de degré se trouve avant l’adjectif</radio>
+            <radio id="QContWhDegAdjPosAgree" dataValue="agree">D’un côté ou de l’autre, mais quand il y a un mot de degré des deux côtés à la fois, ils doivent s’accorder (par exemple ou les deux doivent être des mots interrogatifs ou bien ni l’un ni l’autre)</radio>
+        </radioGroup>
+        <radioGroup id="QContWhDegQPosTable" show="swDegQPosEither">
+            <groupName dataItem="whDegQPos" default="unknown" position="yesSpec">RQContWhDegQPos</groupName>
+            <prompt>Votre langue permet des mots de degré des deux côtés du quantificateur. Où le mot qui signifie « comment » (ou tout autre mot interrogatif qui modifie les quantificateurs) peut se trouver?</prompt>
+            <radio id="QContWhDegQPosBefore" dataValue="before">Toujours avant le quantificateur même si un autre mot de degré se trouve après le quantificateur</radio>
+            <radio id="QContWhDegQPosAfter" dataValue="after">Toujours après le quantificateur même si un autre mot de degré se trouve avant le quantificateur</radio>
+            <radio id="QContWhDegQPosAgree" dataValue="agree">D’un côté ou de l’autre, mais quand il y a un mot de degré des deux côtés à la fois, ils doivent s’accorder (par exemple ou les deux doivent être des mots interrogatifs ou bien ni l’un ni l’autre)</radio>
+        </radioGroup>
+        <br/><br/>
+        <buttons>
+            <button id="QWhBack" value="Back" goto="QEmbYN.xml"/>
+            <button id="QWhNext" value="Next" goto="QCont.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swDemPresent">
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <or/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+    </showWhen>
+    <showWhen id="swArtOnlyPresent">
+        <whenValue element="np" attr="artAndDem" value="article"/>
+    </showWhen>
+    <showWhen id="swNoDetPresent">
+        <whenValue element="np" attr="artAndDem" value="no"/>
+    </showWhen>
+    <showWhen id="swPossCaseGen">
+        <whenValue element="typology" attr="case" value="none"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="nominative"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split"/>
+        <or/>
+        <whenValue element="np" attr="possCaseErg" value="genitive"/>
+    </showWhen>
+    <showWhen id="swPossCaseAbs">
+        <whenValue element="np" attr="possCaseErg" value="absolutive"/>
+    </showWhen>
+    <showWhen id="swPossCaseErg">
+        <whenValue element="np" attr="possCaseErg" value="ergative"/>
+    </showWhen>
+    <showWhen id="swDegPresent">
+        <whenValue element="qp" attr="degree" value="yes"/>
+       <and/>
+       <not/>
+       <whenValue element="adjp" attr="modifiers" value="no"/>
+       <or/>
+       <whenValue element="qp" attr="degree" value="some"/>
+       <and/>
+        <not/>
+        <whenValue element="adjp" attr="modifiers" value="no"/>
+    </showWhen>
+    <showWhen id="swDegQOnlyPresent">
+        <whenValue element="qp" attr="degree" value="yes"/>
+        <and/>
+        <whenValue element="adjp" attr="modifiers" value="no"/>
+ <or/>
+       <whenValue element="qp" attr="degree" value="some"/>
+       <and/>
+       <whenValue element="adjp" attr="modifiers" value="no"/>
+    </showWhen>
+    <showWhen id="swDegAdjOnlyPresent">
+        <whenValue element="qp" attr="degree" value="no"/>
+        <and/>
+        <not/>
+        <whenValue element="adjp" attr="modifiers" value="no"/>
+    </showWhen>
+    <showWhen id="swNoDegPresent">
+        <whenValue element="qp" attr="degree" value="no"/>
+        <and/>
+        <whenValue element="adjp" attr="modifiers" value="no"/>
+    </showWhen>
+    <showWhen id="swDemPosEither">
+        <openParen/>
+        <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+        <or/>
+        <whenValue element="np" attr="artAndDem" value="both"/>
+        <closeParen/>
+        <and/>
+        <openParen/>
+        <whenValue element="np/demOnlyBefore" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="np/demOnlyAfter" attr="checked" value="yes"/> 
+        <or/>
+       <whenValue element="np/demOnlyBoth" attr="checked" value="yes"/>
+       <or/>
+       <whenValue element="np/demOrArtPosBefore" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="np/demOrArtPosAfter" attr="checked" value="yes"/> 
+       <or/>
+       <whenValue element="np/demOrArtPosBoth" attr="checked" value="yes"/>
+       <or/>
+       <whenValue element="np/demAndArtDemBefore" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="np/demAndArtDemAfter" attr="checked" value="yes"/> 
+       <or/>
+       <whenValue element="np/demAndArtDemBoth" attr="checked" value="yes"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swArtOnlyPosEither">
+        <whenValue element="np" attr="artAndDem" value="article"/>
+        <and/>
+        <openParen/>
+       <whenValue element="np/artOnlyBefore" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="np/artOnlyAfter" attr="checked" value="yes"/> 
+       <or/>
+       <whenValue element="np/artOnlyBoth" attr="checked" value="yes"/>
+       <closeParen/>
+    </showWhen>
+    <showWhen id="swDegAdjPosEither">
+        <whenValue element="adjp" attr="modifiers" value="yes"/>
+        <and/>
+       <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+       <and/>
+        <whenValue element="adjp/degreeBefore" attr="checked" value="yes"/>
+        <and/>
+       <whenValue element="adjp/degreeAfter" attr="checked" value="yes"/>
+       <or/>
+       <whenValue element="adjp" attr="modifiers" value="yes"/>
+       <and/>
+       <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="adjp/degreeBoth" attr="checked" value="yes"/>
+        <or/>
+       <whenValue element="adjp" attr="modifiers" value="yes"/>
+       <and/>
+       <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="adjp/mannerBefore" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="adjp/mannerAfter" attr="checked" value="yes"/>
+       <or/>
+       <whenValue element="adjp" attr="modifiers" value="yes"/>
+       <and/>
+       <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="adjp/mannerBoth" attr="checked" value="yes"/>
+       </showWhen>
+    <showWhen id="swDegQPosEither">
+        <whenValue element="qp" attr="degree" value="yes"/>
+        <and/>
+        <whenValue element="qp/degreeBefore" attr="checked" value="yes"/>
+        <and/>
+       <whenValue element="qp/degreeAfter" attr="checked" value="yes"/>
+       <or/>
+       <whenValue element="qp" attr="degree" value="yes"/>
+       <and/>
+       <whenValue element="qp/degreeBefore" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="qp/degreeBoth" attr="checked" value="yes"/>
+       <or/>
+       <whenValue element="qp" attr="degree" value="some"/>
+       <and/>
+       <whenValue element="qp/degreeBefore" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="qp/degreeAfter" attr="checked" value="yes"/>
+       <or/>
+       <whenValue element="qp" attr="degree" value="some"/>
+       <and/>
+       <whenValue element="qp/degreeBefore" attr="checked" value="yes"/>
+       <and/>
+       <whenValue element="qp/degreeBoth" attr="checked" value="yes"/>
+       </showWhen>
+</page>

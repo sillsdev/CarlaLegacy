@@ -16,7 +16,7 @@
         <checkboxGroup>
            <prompt><br/>What special elements are used in your language especially in existential sentences?  Check all options that are correct for your language.  If no options are allowed in your language, leave these unchecked and check the button for ‘None’ below</prompt>
            <checkbox id="IPExistWord" dataItem="existWord">An independent existential word like ‘there’ in English</checkbox>
-           <checkbox id="IPExistVerb" dataItem="existVerb">An existential verb like ‘hay’ in Spanish</checkbox>
+           <checkbox id="IPExistVerb" dataItem="existVerb">An existential verb like ‘hay’ in Spanish, or possibly the copular verbs as in English</checkbox>
            <checkbox id="IPExistPosition" dataItem="existPosition">A set of existential verbs which express the position of the object</checkbox>
            <checkbox id="IPExistOther" dataItem="existOther">In my language, existential sentences may be marked as follows: <textBox  id="IPExistOtherContent" dataItem="existOther" rows="2"/></checkbox>
         </checkboxGroup>

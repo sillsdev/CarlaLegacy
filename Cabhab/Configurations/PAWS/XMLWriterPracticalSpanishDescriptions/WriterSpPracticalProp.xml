@@ -30,24 +30,25 @@
             <langData>la Susana que conozco</langData>
             <content>.</content>
         </p>
+       <p show="swClassifiersYesPropYes"><content>En el </content><langName/><content>, los nombres propios se marcan con clasificadores lo mismo que sustantivos como parte del sistema de concordancia.</content></p> 
+       <p show="swClassifiersYesPropNo"><content>En el </content><langName/><content>, los nombres propios no se marcan con clasificadores al contrario que sustantivos.</content></p>       
+       <p show="swNPArtAndDemNotNo"><content>Los nombres propios</content><case element="prop" attr="pnDeterminer">
+          <caseText value="none"> no pueden</caseText>
+           <caseText value="no"> pueden</caseText>
+           <caseText value="yes"> deben</caseText>
+       </case><content> contener un </content><case element="np" attr="artAndDem">
+          <caseText value="article">artículo</caseText>
+          <caseText value="demonstrative">demostrativo</caseText>
+          <caseText value="both">artículo o demostrativo</caseText></case><content> o un posesivo.</content></p>
         <p>
-            <content>Algunos ejemplos de nombres propios simples y compuestos, o los que se presentan con artículos, demostrativeo, adjetivos o posesivos en el </content>
+            <content>Algunos ejemplos de nombres propios simples y compuestos en el </content>
             <langName/>
             <content> son los siguientes:</content>
         </p>
         <example>
             <interlinear exampleLoc="prop/example"/>
         </example>
-       <p show="swClassifiersYesPropYes"><content>En el </content><langName/><content>, los nombres propios se marcan con clasificadores lo mismo que sustantivos como parte del sistema de concordancia.</content></p> 
-       <p show="swClassifiersYesPropNo"><content>En el </content><langName/><content>, los nombres propios no se marcan con clasificadores al contrario que sustantivos.</content></p>       
-       <p show="swNPArtAndDemNotNo"><content>Los nombres propios</content><case element="prop" attr="pnDeterminer">
-          <caseText value="no"> pueden</caseText>
-          <caseText value="yes"> deben</caseText>
-       </case><content> contener un </content><case element="np" attr="artAndDem">
-          <caseText value="article">artículo</caseText>
-          <caseText value="demonstrative">demostrativo</caseText>
-          <caseText value="both">artículo o demostrativo</caseText></case><content> o un posesivo.</content></p>
-       <p>
+        <p>
             <content>Algunos ejemplos de nombres propios con frases </content>
             <case element="pp" attr="pPos">
                 <caseText value="before">preposicionales</caseText>

@@ -6,7 +6,7 @@
 <page id="AdjPMain" count="1/3">
    <title>Las frases adjetivales</title>
    <introduction>En muchas gramáticas, los números, cuantificadores, artículos y demonstratives se consideran los adjetivos, pero pueden presentarse en posiciones diversas de los adjetivos calificativos, así que cada uno tiene una categoría sintáctica distinta.   
-      Esta sección solo se considera los adjetivos calificativos que expresan tamaño, color, edad, textura, forma, o calidad. Una característica de adjetivos calificativos en muchas lenguas es que se permite más de uns frase adjetival modificar a un sustantivo y en general la orden de los adjetivos puede cambiar (con un cambio pequeño en el significado debido a los cambios en <technicalTermRef term="ttScope">ámbito o alcance</technicalTermRef> de cada adjetivo). Por ejemplo, 
+      Esta sección solo se considera los adjetivos calificativos que expresan tamaño, color, edad, textura, forma, o calidad. Una característica de adjetivos calificativos en muchas lenguas es que se permite más de una frase adjetival modificar a un sustantivo y en general el orden de los adjetivos puede cambiar (con un cambio pequeño en el significado debido a los cambios en <technicalTermRef term="ttScope">ámbito o alcance</technicalTermRef> de cada adjetivo). Por ejemplo, 
 	   <example>las barras de cobre amarillo pálido duras</example> contra <example>las barras de cobre amarillo duras pálidas</example> contra <example>las barras pálidas duras de cobre amarillo</example>, etc.  
       <span id="AdjPNotPracticalSpan" show="swNotPractical"> Esta característica de apilar adjetivos se analiza en <section number="5.6">Las frases nominales - Las frases adjetivales</section> por una regla que permita la repetición.</span>
 	   <br/><br/>
@@ -29,11 +29,11 @@
 	<form section="adjp">
 	   <radioGroup id="AdjPClassifierAgrTable" show="swOTClassifierAgr">
 	      <groupName dataItem="adjectiveClassifier" default="no">RAdjPClassifierAgr</groupName>
-	      <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales.  ¿Utiliza su lengua los clasificadores para marcar a los adjetivos calificativos?</prompt>
-	      <radio id="AdjPClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-	      <radio id="AdjPClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	      <prompt>Usted dijo que su lengua tiene indicadores de clase para la concordancia en las frases nominales.  ¿Utiliza su lengua los indicadores de clase en los adjetivos calificativos?</prompt>
+	      <radio id="AdjPClassifierAgrNo" dataValue="no">No, estos elementos no se marcan la clase</radio>
+	      <radio id="AdjPClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan la clase como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
-	   <prompt id="AdjPClassifierAgrPrompt" show="swOTClassifierAgrAdjPYes">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada uno de los adjetivos aquí.</prompt>
+	   <prompt id="AdjPClassifierAgrPrompt" show="swOTClassifierAgrAdjPYes">Puesto que usted ha detallado ya las formas de los indicadores de clase, usted necesita solamente escribir las raíces para cada uno de los adjetivos aquí.</prompt>
 	   <br/>
 	   <prompt>Escriba ejemplos de adjetivos calificativos (sin modificadores) aquí.  Incluye ejemplos de adjetivos calificativos que expresan tamaño, color, edad, textura, forma o calidad.</prompt>
 		<textBox id="AdjPExamples" dataItem="example"/>
@@ -56,11 +56,11 @@
 	   <br/>
 	   <radioGroup id="AdjPDegreeClassifierAgrTable" show="swOTClassifierAgrAdjPModifiersYesOrYesManner">
 	      <groupName dataItem="adjectiveDegreeClassifier" default="no">RAdjPDegreeClassifierAgr</groupName>
-	      <prompt>¿Utiliza su lengua los clasificadores para marcar los modificadores de los adjetivos calificativos, como palabras de grado?</prompt>
-	      <radio id="AdjPDegreeClassifierAgrNo" dataValue="no">No, estos elementos no se marcan con clasificadores</radio>
-	      <radio id="AdjPDegreeClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan con clasificadores como parte de la concordancia en la frase nominal</radio>
+	      <prompt>¿Utiliza su lengua los indicadores de clase para marcar los modificadores de los adjetivos calificativos, como palabras de grado?</prompt>
+	      <radio id="AdjPDegreeClassifierAgrNo" dataValue="no">No, estos elementos no se marcan la clase</radio>
+	      <radio id="AdjPDegreeClassifierAgrYes" dataValue="yes">Sí, estos elementos se marcan la clase como parte de la concordancia en la frase nominal</radio>
 	   </radioGroup>
-	   <prompt id="AdjPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAdjPDegreeYesOrYesManner">Puesto que usted ha detallado ya las formas de los clasificadores, usted necesita solamente escribir las raíces para cada uno de los modificadores aquí.</prompt>
+	   <prompt id="AdjPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAdjPDegreeYesOrYesManner">Puesto que usted ha detallado ya las formas de los indicadores de clase, usted necesita solamente escribir las raíces para cada uno de los modificadores aquí.</prompt>
 	   <br/>
 	   <prompt id="AdjPModifiersYesPrompt" show="swAdjPModifiersYesDegree">Escriba las palabras de grado que pueden modificar a los adjetivos aquí:</prompt>
 	   <textBox id="AdjPModifiersDegreeExample" dataItem="adjectiveDegreeExample" show="swAdjPModifiersYesDegree"/>

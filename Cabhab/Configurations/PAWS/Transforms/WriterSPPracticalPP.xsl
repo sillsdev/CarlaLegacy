@@ -21,7 +21,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, el caso no se indica en sustantivos o frases nominales.  Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después, y pueden ser palabras independientes o clíticos  </xsl:text>
+<xsl:text>, el caso no se indica en sustantivos o frases nominales.  Las preposiciones se presentan antes de los complementos, mientras que las posposiciones se presentan después, y pueden ser palabras independientes o clíticos. </xsl:text>
 </p>
 </xsl:if>
        <xsl:if test="normalize-space(//np/@caseN)='yes'">
@@ -157,9 +157,9 @@
 <p>
 <xsl:text>Algunos ejemplos de las preposiciones </xsl:text>
 <xsl:if test="normalize-space(//pp/@bodyPart)='yes'">
-<xsl:text>regulares</xsl:text>
+<xsl:text>regulares </xsl:text>
 </xsl:if>
-<xsl:text> que se usan en frases locativas son:</xsl:text>
+<xsl:text>que se usan en frases locativas son:</xsl:text>
 </p>
 </xsl:if>
        <xsl:if test="normalize-space(//pp/@pPos)='before'">
@@ -224,9 +224,9 @@
 <p>
 <xsl:text>Algunos ejemplos de las posposiciones </xsl:text>
 <xsl:if test="normalize-space(//pp/@bodyPart)='yes'">
-<xsl:text>regulares</xsl:text>
+<xsl:text>regulares </xsl:text>
 </xsl:if>
-<xsl:text> que se usan en frases locativas son:</xsl:text>
+<xsl:text>que se usan en frases locativas son:</xsl:text>
 </p>
 </xsl:if>
        <xsl:if test="normalize-space(//pp/@pPos)='after'">
@@ -291,9 +291,9 @@
 <p>
 <xsl:text>Algunos ejemplos de las adposiciones </xsl:text>
 <xsl:if test="normalize-space(//pp/@bodyPart)='yes'">
-<xsl:text>regulares</xsl:text>
+<xsl:text>regulares </xsl:text>
 </xsl:if>
-<xsl:text> que se usan en frases locativas son:</xsl:text>
+<xsl:text>que se usan en frases locativas son:</xsl:text>
 </p>
 </xsl:if>
        <xsl:if test="normalize-space(//pp/@pPos)='both' or normalize-space(//pp/@pPos)='unknown'">

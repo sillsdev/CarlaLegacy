@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="PronDem" count="5/9">
+   <title level="2">Pronoms – Démonstratifs</title>
+   <introduction>La plupart des langues ont des pronoms démonstratifs qui sont liés soit aux démonstratifs qui modifient un substantif, soit aux adverbiaux locatifs.  Les pronoms démonstratifs spécifient la distance de celui qui parle et peuvent posséder des formes singuliers et pluriels.  Des exemples en français sont <example>celui-ci, celui-là, ceux-ci</example> et <example>ceux-là</example>.  Les pronoms démonstratifs se présentent seuls comme sujet ou objet de la phrase, tels que:
+    </introduction>
+    <EnglishExample>
+       <exItem label="1.">Ceux-là sont les livres que j’ai demandés.</exItem>
+       <exItem label="2.">Juliette a choisi ceux-là.</exItem>
+       <exItem label="3.">C’est celui-ci.</exItem>
+       <exItem label="4.">Nous aimons celui-là.</exItem>
+    </EnglishExample>
+   <introduction>Comme les exemples ci-dessus le démontrent, le français n’a qu’une seule classe de démonstratifs utilisés dans les positions du sujet et de l’objet.  Certaines langues ont des classes distinctes de pronoms démonstratifs basées sur leur système de cas.</introduction>
+    <form section="pron">
+       <prompt><br/>Considérez comment votre langue exprimerait des exemples pareils à ceux en français ci-dessus, considérant surtout les formes des pronoms démonstratifs qui peuvent se présenter dans chaque position dans la phrase.</prompt>
+<radioGroup id="PronDemAdjSameTable" show="swNPArtAndDemDemOrBoth">
+   <groupName dataItem="demAdjSame" default="no">RPronDemAdjSame</groupName>
+   <prompt><br/>Les formes des pronoms démonstratifs sont-elles identiques aux démonstratifs qui modifient un substantif, y compris les marqueurs pour le cas, le nombre<span id="PronDemClassifierSpan" show="swClassifierYesAgr"> et le classificateur</span>?</prompt>
+   <radio id="PronDemAdjSameYes" dataValue="yes">Oui</radio>
+   <radio id="PronDemAdjSameSome" dataValue="some">Certaines des formes sont les mêmes, mais d’autres sont distinctes</radio>
+   <radio id="PronDemAdjSameNo" dataValue="no">Non, les formes des pronoms démonstratifs sont distinctes</radio>
+</radioGroup>  
+       <radioGroup id="PronDemNumber" show="swPronDemAdjSameNotYes">
+     <groupName dataItem="demNumber" default="no">RPronDemNumber</groupName>
+          <prompt><br/>Votre langue a-t-elle des formes différentes pour les pronoms démonstratifs singuliers et pluriels?</prompt>
+     <radio id="PronDemNumberNo" dataValue="no">Non</radio>
+          <radio id="PronDemNumberYes" dataValue="yes">Oui, il y a des classes distinctes pour le singulier et le pluriel</radio>
+ </radioGroup>
+       <radioGroup id="PronDemCase" show="swNPCaseNotNoneAndPronDemAdjSameNotYes">
+          <groupName dataItem="demCase" default="no">RPronDemCase</groupName>
+          <prompt><br/>Votre langue a-t-elle des formes différentes pour les pronoms démonstratifs basées sur le cas? </prompt>
+          <radio id="PronDemCaseNo" dataValue="no">Non, on peut utiliser les mêmes formes dans toutes les positions</radio>
+          <radio id="PronDemCaseYes" dataValue="yes">Oui, il y a des classes distinctes de démonstratifs pour les différentes positions dans la phrase</radio>
+       </radioGroup>
+       
+ <br/>
+       <prompt id="PronDemAdjSameYesPrompt" show="swPronDemAdjSameYes">
+          Il n’est pas nécessaire d’entrer ici des formes pour les pronoms démonstratifs puisqu’elles sont les mêmes que les démonstratifs qui peuvent modifier un substantif que vous avez déjà entrés dans la <section number="5.3.">Syntagmes Nominaux – Articles et Démonstratifs: Exemples et Cas</section>.
+       </prompt>
+       <instruction id="PronDemFeaturesSameInstruction" show="swPronDemAdjSameYes">Each of the demonstrative pronouns needs to have the feature <feature>demonstrative</feature> and have the category <category>Pron</category> or have a category that will be mapped to it via the category mapper at the end of this section.  Since your langauge is like English and uses the same demonstratives as both stand-alone pronouns and nominal modifiers, they will each need two entries in the lexicon.</instruction>
+         
+       <prompt id="PronDemProximalCaseNone" show="swPronDemCaseNoOrNone">Puisque votre langue ne distingue pas les cas dans les démonstratifs, vous devez n’avoir qu’une seule classe de pronoms démonstratifs qu’on peut utiliser dans toute position dans la phrase.</prompt>
+          
+       <prompt id="PronDemProximalCaseNo" show="swPronDemCaseNoOrNone">Entrez dans le zone de texte les pronoms démonstratifs dont on se sert pour se référer aux choses <span id="SingularSpan" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseNoExample" dataItem="demProximalExample" rows="2" show="swPronDemCaseNoOrNone"/>
+       <prompt id="PronDemProximalPlCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs dont on se sert pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseNoExample" dataItem="demProximalPlExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
+       <prompt id="PronDemMedialCaseNo" show="swPronDemCaseNoOrNone">Entrez dans le zone de texte les pronoms démonstratifs dont on se sert pour se référer aux choses <span id="SingularSpan1" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseNoExample" dataItem="demMedialExample" rows="2" show="swPronDemCaseNoOrNone"/>
+       <prompt id="PronDemMedialPlCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs dont on se sert pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseNoExample" dataItem="demMedialPlExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
+       <prompt id="PronDemDistalCaseNo" show="swPronDemCaseNoOrNone">Entrez dans le zone de texte les pronoms démonstratifs dont on se sert pour se référer aux choses <span id="SingularSpan2" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseNoExample" dataItem="demDistalExample" rows="2" show="swPronDemCaseNoOrNone"/>
+       <prompt id="PronDemDistalPlCaseNo" show="swPronDemCaseNoOrNoneAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs dont on se sert pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseNoExample" dataItem="demDistalPlExample" rows="2" show="swPronDemCaseNoOrNoneAndNumberYes"/>
+       
+              
+       <prompt id="PronDemProximalCaseNom" show="swPronDemCaseNom">Puisque votre langue a un système de cas nominatif-accusatif, vous devez avoir des classes distinctes de pronoms démonstratifs qu’on peut utiliser comme sujets, objets et possesseurs.<br/><br/>
+          Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme sujets qu’on utilise pour se référer aux choses <span id="SingularSpan3" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseNomExample" dataItem="demProximalNomExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemProximalPlCaseNom" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme sujets qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseNomExample" dataItem="demProximalPlNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemProximalCaseAcc" show="swPronDemCaseNom">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme objets qu’on utilise pour se référer aux choses <span id="SingularSpan4" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseAccExample" dataItem="demProximalAccExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemProximalPlCaseAcc" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme objets qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseAccExample" dataItem="demProximalPlAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemProximalCaseGen" show="swPronDemCaseNom">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan11" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseGenExample" dataItem="demProximalGenExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemProximalPlCaseGen" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseGenExample" dataItem="demProximalPlGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemMedialCaseNom" show="swPronDemCaseNom">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme sujets qu’on utilise pour se référer aux choses <span id="SingularSpan5" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseNomExample" dataItem="demMedialNomExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemMedialPlCaseNom" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme sujets qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseNomExample" dataItem="demMedialPlNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemMedialCaseAcc" show="swPronDemCaseNom">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme objets qu’on utilise pour se référer aux choses <span id="SingularSpan6" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseAccExample" dataItem="demMedialAccExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemMedialPlCaseAcc" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme objets qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseAccExample" dataItem="demMedialPlAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemMedialCaseGen" show="swPronDemCaseNom">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan7" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseGenExample" dataItem="demMedialGenExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemMedialPlCaseGen" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseGenExample" dataItem="demMedialPlGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemDistalCaseNom" show="swPronDemCaseNom">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme sujets qu’on utilise pour se référer aux choses <span id="SingularSpan8" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseNomExample" dataItem="demDistalNomExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemDistalPlCaseNom" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme sujets qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseNomExample" dataItem="demDistalPlNomExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemDistalCaseAcc" show="swPronDemCaseNom">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme objets qu’on utilise pour se référer aux choses <span id="SingularSpan9" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseAccExample" dataItem="demDistalAccExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemDistalPlCaseAcc" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme objets qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseAccExample" dataItem="demDistalPlAccExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       <prompt id="PronDemDistalCaseGen" show="swPronDemCaseNom">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan10" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseGenExample" dataItem="demDistalGenExample" rows="2" show="swPronDemCaseNom"/>
+       <prompt id="PronDemDistalPlCaseGen" show="swPronDemCaseNomAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseGenExample" dataItem="demDistalPlGenExample" rows="2" show="swPronDemCaseNomAndNumberYes"/>
+       
+       <instruction id="PronDemCaseNomInstruction" show="swPronDemCaseNom">
+            <br/>In the lexicon:
+<ul>
+                <li>Add the feature <feature>nominative</feature> to all the demonstrative pronouns that occur as subjects.</li>
+                <li>Add the feature <feature>accusative</feature> to all the demonstrative pronouns that occur as objects.</li>
+               <li>Add the feature <feature>genitive</feature> to all the demonstrative pronouns that occur as possessors.</li>
+               <li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
+            </ul>
+        </instruction>
+        
+       <prompt id="PronDemProximalCaseErg" show="swPronDemCaseErg">Puisque votre langue a un système de cas ergatif-absolutif, vous devez avoir des classes de pronoms démonstratifs distinctes qu’on peut utiliser comme les sujets de verbes transitifs contre les sujets de verbes intransitifs, et les objets de verbes transitifs contre les contre les possesseurs.<br/><br/>
+           Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes transitifs qu’on utilise pour se référer aux choses <span id="SingularSpan20" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseErgExample" dataItem="demProximalErgExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemProximalPlCaseErg" show="swPronDemCaseErgAndNumberYes">
+          Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes transitifs qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseErgExample" dataItem="demProximalPlErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemProximalCaseAbs" show="swPronDemCaseErg">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes intransitifs ou comme objets de verbes transitifs qu’on utilise pour se référer aux choses <span id="SingularSpan21" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseAbsExample" dataItem="demProximalAbsExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemProximalPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes intransitifs ou comme objets de verbes transitifs qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseAbsExample" dataItem="demProximalPlAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemProximalCaseErgGen" show="swPronDemCaseErg">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan22" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseErgGenExample" dataItem="demProximalErgGenExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemProximalPlCaseErgGen" show="swPronDemCaseErgAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseErgGenExample" dataItem="demProximalErgPlGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemMedialCaseErg" show="swPronDemCaseErg">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes transitifs qu’on utilise pour se référer aux choses <span id="SingularSpan23" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseErgExample" dataItem="demMedialErgExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemMedialPlCaseErg" show="swPronDemCaseErgAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes transitifs qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseErgExample" dataItem="demMedialPlErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemMedialCaseAbs" show="swPronDemCaseErg">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes intransitifs ou comme objets de verbes transitifs qu’on utilise pour se référer aux choses <span id="SingularSpan24" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseAbsExample" dataItem="demMedialAbsExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemMedialPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes intransitifs ou comme objets de verbes transitifs qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseAbsExample" dataItem="demMedialPlAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemMedialCaseErgGen" show="swPronDemCaseErg">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan25" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseErgGenExample" dataItem="demMedialErgGenExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemMedialPlCaseErgGen" show="swPronDemCaseErgAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseErgGenExample" dataItem="demMedialErgPlGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemDistalCaseErg" show="swPronDemCaseErg">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes transitifs qu’on utilise pour se référer aux choses <span id="SingularSpan26" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseErgExample" dataItem="demDistalErgExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemDistalPlSgCaseErg" show="swPronDemCaseErgAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes transitifs qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseErgExample" dataItem="demDistalPlErgExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemDistalCaseAbs" show="swPronDemCaseErg">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes intransitifs ou comme objets de verbes transitifs qu’on utilise pour se référer aux choses <span id="SingularSpan27" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseAbsExample" dataItem="demDistalAbsExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemDistalPlCaseAbs" show="swPronDemCaseErgAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme les sujets de verbes intransitifs ou comme objets de verbes transitifs qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseAbsExample" dataItem="demDistalPlAbsExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <prompt id="PronDemDistalCaseErgGen" show="swPronDemCaseErg">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan28" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseErgGenExample" dataItem="demDistalErgGenExample" rows="2" show="swPronDemCaseErg"/>
+       <prompt id="PronDemDistalPlCaseErgGen" show="swPronDemCaseErgAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseErgGenExample" dataItem="demDistalErgPlGenExample" rows="2" show="swPronDemCaseErgAndNumberYes"/>
+       <instruction id="PronDemCaseErgInstruction" show="swPronDemCaseErg">
+            <br/>In the lexicon:
+<ul>
+                <li>Add the feature <feature>ergative</feature> to all the demonstrative pronouns that occur as subjects of transitive verbs.</li>
+                <li>Add the feature <feature>absolutive</feature> to all the demonstrative pronouns that occur as objects of transitive verbs and as subjects of intransitive verbs.</li>
+               <li>Add the feature <feature>genitive</feature> to all the demonstrative pronouns that occur as possessors.</li>
+               <li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
+            </ul>
+        </instruction>
+        
+       <prompt id="PronDemProximalCaseSplitNom" show="swPronDemCaseSplit">Puisque votre langue a un système de cas dédoublé, vous devez avoir des classes distinctes de pronoms démonstratifs qu’on utilise normalement comme sujets et objets et comme possesseurs, et des classes spéciales qu’on utilise dans les cas d’ergativité dédoublée.<br/><br/>
+           Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets qu’on utilise pour se référer aux choses <span id="SingularSpan30" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseSplitNomExample" dataItem="demProximalSplitNomExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemProximalPlCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">
+          Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseSplitNomExample" dataItem="demProximalSplitPlNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemProximalCaseSplitAcc" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme objets qu’on utilise pour se référer aux choses <span id="SingularSpan31" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseSplitAccExample" dataItem="demProximalSplitAccExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemProximalPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme objets qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseSplitAccExample" dataItem="demProximalSplitPlAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemProximalCaseSplitGen" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan32" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseSplitGenExample" dataItem="demProximalSplitGenExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemProximalPlCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseSplitGenExample" dataItem="demProximalSplitPlGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemMedialCaseSplitNom" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets qu’on utilise pour se référer aux choses <span id="SingularSpan33" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseSplitNomExample" dataItem="demMedialSplitNomExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemMedialPlCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseSplitNomExample" dataItem="demMedialSplitPlNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemMedialCaseSplitAcc" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme objets qu’on utilise pour se référer aux choses <span id="SingularSpan34" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseSplitAccExample" dataItem="demMedialSplitAccExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemMedialPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme objets qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseSplitAccExample" dataItem="demMedialSplitPlAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemMedialCaseSplitGen" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan35" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseSplitGenExample" dataItem="demMedialSplitGenExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemMedialPlCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseSplitGenExample" dataItem="demMedialSplitPlGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemDistalCaseSplitNom" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets qu’on utilise pour se référer aux choses <span id="SingularSpan36" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseSplitNomExample" dataItem="demDistalSplitNomExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemDistalPlCaseSplitNom" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseSplitNomExample" dataItem="demDistalSplitPlNomExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemDistalCaseSplitAcc" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme objets qu’on utilise pour se référer aux choses <span id="SingularSpan37" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseSplitAccExample" dataItem="demDistalSplitAccExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemDistalPlCaseSplitAcc" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme objets qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseSplitAccExample" dataItem="demDistalSplitPlAccExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemDistalCaseSplitGen" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme possesseurs qu’on utilise pour se référer aux choses <span id="SingularSpan38" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseSplitGenExample" dataItem="demDistalSplitGenExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemDistalPlCaseSplitGen" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme possesseurs qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseSplitGenExample" dataItem="demDistalSplitPlGenExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       
+       <prompt id="PronDemProximalCaseSplitErg" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses <span id="SingularSpan40" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseSplitErgExample" dataItem="demProximalSplitErgExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemProximalPlCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseSplitErgExample" dataItem="demProximalSplitPlErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemProximalCaseSplitAbs" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes intransitifs ou comme objets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses <span id="SingularSpan41" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalCaseSplitAbsExample" dataItem="demProximalSplitAbsExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemProximalPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes intransitifs ou comme objets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlCaseSplitAbsExample" dataItem="demProximalSplitPlAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemMedialCaseSplitErg" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses <span id="SingularSpan42" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseSplitErgExample" dataItem="demMedialSplitErgExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemMedialPlCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseSplitErgExample" dataItem="demMedialSplitPlErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemMedialCaseSplitAbs" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes intransitifs ou comme objets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses <span id="SingularSpan43" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialCaseSplitAbsExample" dataItem="demMedialSplitAbsExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemMedialPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes intransitifs ou comme objets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlCaseSplitAbsExample" dataItem="demMedialSplitPlAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemDistalCaseSplitErg" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses <span id="SingularSpan44" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseSplitErgExample" dataItem="demDistalSplitErgExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemDistalPlCaseSplitErg" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseSplitErgExample" dataItem="demDistalSplitPlErgExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       <prompt id="PronDemDistalCaseSplitAbs" show="swPronDemCaseSplit">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes intransitifs ou comme objets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses <span id="SingularSpan45" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalCaseSplitAbsExample" dataItem="demDistalSplitAbsExample" rows="2" show="swPronDemCaseSplit"/>
+       <prompt id="PronDemDistalPlCaseSplitAbs" show="swPronDemCaseSplitAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui se présentent normalement comme sujets de verbes intransitifs ou comme objets de verbes transitifs dans les cas spéciaux d’ergativité dédoublée qu’on utilise pour se référer aux choses plurielles  qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlCaseSplitAbsExample" dataItem="demDistalSplitPlAbsExample" rows="2" show="swPronDemCaseSplitAndNumberYes"/>
+       
+        <instruction id="PronDemCaseSplitInstruction" show="swPronDemCaseSplit">
+            <br/>In the lexicon:
+            <ul>
+                <li>Add the feature <feature>nominative</feature> to all the demonstrative pronouns that occur as subjects.</li>
+                <li>Add the feature <feature>accusative</feature> to all the demonstrative pronouns that occur as objects.</li>
+               <li>Add the feature <feature>genitive</feature> to all the demonstrative pronouns that occur as possessors.</li>
+               <li>For the split ergativity cases, add the feature <feature>ergative</feature> to all the demonstrative pronouns that can only occur as subjects of transitive verbs and add the feature <feature>absolutive</feature> to all the demonstrative pronouns that can only occur as subjects of intransitive verbs and objects of transitive verbs.  Note that if there is some overlap between the pronoun sets for nominative-accusative versus ergative-absolutive, you will probably need to have two entries in your lexicon for those demonstrative pronouns, each marked with the appropriate case feature.</li>
+                <li>If a particular demonstrative pronoun can show up in any position, do not add any feature.</li>
+            </ul>
+        </instruction>  
+<instruction id="PronDemFeaturesInstruction" show="swPronDemAdjSameNotYes">Each of these demonstrative pronouns needs to have the feature <feature>demonstrative</feature> and have the category <category>Pron</category> or have a category that will be mapped to it via the category mapper at the end of this section.  Note that if your langauge is like English and uses the same demonstratives as both stand-alone pronouns and nominal modifiers, they will each need two entries in the lexicon.
+<br/><br/>
+   <span id="PronDemNumberSpan" show="swPronDemNumberYes">Add the feature <feature>singular</feature> to each of the demonstrative pronouns  that refer only to singulières items and the feature <feature>plural</feature> to each of the demonstrative pronouns that refer only to plurielles items.  Do no add any  number feature to any demonstrative pronouns that can refer to singulières or plurielles items.</span></instruction>
+         
+       <prompt id="PronDemDativeSet" show="swNPCaseNotNone">
+          <br/>Vous pouvez avoir aussi une classe supplémentaire de pronoms démonstratifs dans le cas datif.  
+       </prompt>
+       <prompt id="PronDemProximalDative" show="swNPCaseNotNone">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter <span id="ExperiencerSpan" show="swExperiencerYesDat">comme sujets expérienceur et </span>comme objets indirects qu’on utilise pour se référer aux choses <span id="SingularSpan50" show="swPronDemNumberYes">singulières </span>qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalDativeExample" dataItem="demProximalDatExample" rows="2" show="swNPCaseNotNone"/>
+       <prompt id="PronDemProximalPlDative" show="swNPCaseNotNoneAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter <span id="ExperiencerSpan3" show="swExperiencerYesDat">comme sujets expérienceur et </span>comme objets indirects qu’on utilise pour se référer aux choses plurielles qui sont les plus près de celui qui parle (formes proximales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemProximalPlDativeExample" dataItem="demProximalPlDatExample" rows="2" show="swNPCaseNotNoneAndNumberYes"/>
+       <prompt id="PronDemMedialDative" show="swNPCaseNotNone">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter <span id="ExperiencerSpan1" show="swExperiencerYesDat">comme sujets expérienceur et </span>comme objets indirects qu’on utilise pour se référer aux choses <span id="SingularSpan51" show="swPronDemNumberYes">singulières </span>qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialDativeExample" dataItem="demMedialDatExample" rows="2" show="swNPCaseNotNone"/>
+       <prompt id="PronDemMedialPlDative" show="swNPCaseNotNoneAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter <span id="ExperiencerSpan4" show="swExperiencerYesDat">comme sujets expérienceur et </span>comme objets indirects qu’on utilise pour se référer aux choses plurielles qui sont plus loin de celui qui parle mais visibles (formes médiales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemMedialPlDativeExample" dataItem="demMedialPlDatExample" rows="2" show="swNPCaseNotNoneAndNumberYes"/>
+       <prompt id="PronDemDistalDative" show="swNPCaseNotNone">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter <span id="ExperiencerSpan2" show="swExperiencerYesDat">comme sujets expérienceur et </span>comme objets indirects qu’on utilise pour se référer aux choses <span id="SingularSpan52" show="swPronDemNumberYes">singulières </span>qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistaldativeExample" dataItem="demDistalDatExample" rows="2" show="swNPCaseNotNone"/>
+       <prompt id="PronDemDistalPlDative" show="swNPCaseNotNoneAndNumberYes">Entrez dans le zone de texte les pronoms démonstratifs qui peuvent se présenter <span id="ExperiencerSpan5" show="swExperiencerYesDat">comme sujets expérienceur et </span>comme objets indirects qu’on utilise pour se référer aux choses plurielles qui sont les plus loin de celui qui parle ou pas visibles (formes distales), chacun sur une ligne distincte:</prompt> 
+       <textBox id="PronDemDistalPlDativeExample" dataItem="demDistalPlDatExample" rows="2" show="swNPCaseNotNoneAndNumberYes"/>
+       <instruction id="PronDemCaseDativeInstruction" show="swNPCaseNotNone">
+          <br/>In the lexicon, add the feature <feature>dative</feature> to all the demonstrative pronouns that occur as indirect objects or Experiencer subjects.</instruction>
+             
+       <br/>
+       <br/>
+       <buttons>
+            <button id="PronDemBack" value="Back" goto="PronReciprocal.xml"/>
+            <button id="PronDemNext" value="Next" goto="PronIndefinite.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swNPArtAndDemDemOrBoth">
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
+      <or/>
+      <whenValue element="np" attr="artAndDem" value="both"/>
+   </showWhen>
+   <showWhen id="swPronDemAdjSameYes">
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swClassifierYesAgr">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swPronDemAdjSameNotYes">
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndPronDemAdjSameNotYes">
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemNumberYes">
+      <whenRadio button="PronDemNumberYes"/>
+   </showWhen>
+    <showWhen id="swNPCaseNone">
+       <whenValue element="typology" attr="case" value="none"/>
+       <and/>
+       <not/>
+       <whenRadio button="PronDemAdjSameYes"/>
+    </showWhen>
+   <showWhen id="swPronDemCaseNoOrNone">
+      <whenRadio button="PronDemCaseNo"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+      <or/>
+      <whenRadio button="PronDemCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseNoOrNoneAndNumberYes">
+      <whenRadio button="PronDemCaseNo"/>
+      <and/>
+      <whenRadio button="PronDemNumberYes"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+      <or/>
+      <whenRadio button="PronDemCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="PronDemNumberYes"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseNom">
+      <whenRadio button="PronDemCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseErg">
+      <whenRadio button="PronDemCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseSplit">
+      <whenRadio button="PronDemCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseNomAndNumberNo">
+        <whenRadio button="PronDemCaseYes"/>   
+        <and/>
+        <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="PronDemNumberNo"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseErgAndNumberNo">
+        <whenRadio button="PronDemCaseYes"/>   
+        <and/>
+        <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="PronDemNumberNo"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseSplitAndNumberNo">
+        <whenRadio button="PronDemCaseYes"/>   
+        <and/>
+        <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="PronDemNumberNo"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseNomAndNumberYes">
+      <whenRadio button="PronDemCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="PronDemNumberYes"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseErgAndNumberYes">
+      <whenRadio button="PronDemCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="PronDemNumberYes"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swPronDemCaseSplitAndNumberYes">
+      <whenRadio button="PronDemCaseYes"/>   
+      <and/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="PronDemNumberYes"/>
+      <and/>
+      <not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndExperiencerYesDat">
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+      <and/>
+      <whenRadio button="PronDemCaseYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndNumberYes">
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="PronDemNumberYes"/>
+      <and/>
+      <whenRadio button="PronDemCaseYes"/>
+      <and/><not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNone">
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="PronDemCaseYes"/>
+      <and/><not/>
+      <whenRadio button="PronDemAdjSameYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNoneAndExperiencerYesDatAndNumberNo">
+      <not/>
+      <whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+      <and/>
+      <whenRadio button="PronDemNumberNo"/>
+      <and/>
+      <whenRadio button="PronDemCaseYes"/>
+   </showWhen>
+   <showWhen id="swExperiencerYesDat">
+      <whenValue element="typology" attr="caseExperiencer" value="yesDat"/>
+   </showWhen>
+   
+   <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>   
+</page>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="NPCase" count="2/2">
+   <title level="2">Syntagmes Nominaux – Cas</title>
+   <introduction>Comme discuté dans la <section number="1.">Questions Générales de Typologie – Système de Cas</section>, il se peut que des langues n’aient aucun système de <technicalTermRef term="ttCase">cas</technicalTermRef> ou qu’elles suivent un système <technicalTermRef term="ttNominative">nominatif</technicalTermRef>-<technicalTermRef term="ttAccusative">accusatif</technicalTermRef> ou qu’elles aient un système <technicalTermRef term="ttErgative">ergatif</technicalTermRef>-<technicalTermRef term="ttAbsolutive">absolutif</technicalTermRef> ou qu’elles aient une ergativité dédoublée, ce qui inclut les deux systèmes de cas sous certaines conditions grammaticales.<br/><br/>
+      Certaines langues déterminent le cas sur les noms ou sur les phrases nominales de même que des pronoms alors que d’autres ne déterminent le cas seulement dans les pronoms, si elles déterminent le cas. </introduction>
+    <form section="np">
+       <radioGroup id="NPCaseNTable" show="swNPCaseNotNone">
+          <groupName dataItem="caseN" default="no">RNPCaseN</groupName>
+          <prompt><br/>Votre langue détermine-t-elle le cas sur les noms et sur les syntagmes nominaux?</prompt>
+          <radio id="NPCaseNNo" dataValue="no">Non, il n’y a pas d’indications sur les noms ou les syntagmes nominaux. Seuls les systèmes de pronoms indiquent les distinctions de cas</radio>
+          <radio id="NPCaseNYes" dataValue="yes">Oui, les noms et les syntagmes nominaux portent la distinction du cas de même que des pronoms</radio>
+       </radioGroup>
+       <radioGroup id="NPCaseDefaultTable" show="swNPCaseNomOrSplitAndNYes">
+          <groupName dataItem="caseDefault" default="no">RNPCaseDefault</groupName>
+          <prompt><br/>Y-a-t-il un cas implicite (non spécifié) dans votre langue?</prompt>
+          <radio id="NPCaseDefaultNo" dataValue="no">Non, toutes les distinctions de cas sont manifestes (certains <technicalTermRef term="ttAllomorph">allomorphes</technicalTermRef> nuls sont OK)</radio>
+          <radio id="NPCaseDefaultNom" dataValue="nominative">Oui, le cas nominatif est complètement non distinct, mais les autres cas sont manifestes (certains <technicalTermRef term="ttAllomorph">allomorphes</technicalTermRef> nuls sont OK)</radio>
+       </radioGroup>
+       <prompt id="NPCaseNYesPrompt" show="swNPCaseNYes">Entrez ici des exemples de syntagmes nominaux avec distinction des différents cas:</prompt>
+       <textBox id="NPCaseNPExample" dataItem="caseNPExample" cols="50" show="swNPCaseNYes"/>
+       <br/>
+       <br/>
+       <radioGroup id="NPCaseWordTable" show="swNPCaseNYes">
+          <groupName dataItem="caseWord" default="yes">RNPCaseWord</groupName>
+          <prompt><br/>En regardant les exemples de la case ci-dessus, la distinction du cas est-elle écrite comme mot indépendant?</prompt>
+          <radio id="NPCaseWordYes"  dataValue="yes">Oui, ce sont tous des mots indépendants</radio>
+          <radio id="NPCaseWordSome" dataValue="some">Certains sont des mots indépendants, mais d’autres sont attachés à un autre mot dans le syntagme nominal</radio>
+          <radio id="NPCaseWordNo" dataValue="no">Non, ils sont tous attachés à un autre mot dans le syntagme nominal</radio>
+       </radioGroup>
+       <checkboxGroup id="NPCaseWordPos" show="swNPCaseNYesAndWordYesOrSome">
+          <prompt><br/>Où ces distinctions de cas qui sont écrites comme mots indépendants se trouvent-elles vis-à-vis du reste du syntagme nominal? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+          <checkbox id="NPCaseWordBefore"  dataItem="caseWordBefore">Avant</checkbox>
+          <checkbox id="NPCaseWordAfter"  dataItem="caseWordAfter">Après</checkbox>
+          <checkbox id="NPCaseWordBoth"  dataItem="caseWordBoth">Des deux côtés à la fois</checkbox>
+          <checkbox id="NPCaseWordOther"  dataItem="caseWordOther">Dans ma langue elles peuvent se trouver dans la position suivante: <textBox  id="NPCaseWordOtherContent" dataItem="caseWordOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="NPCaseWordNoCheckPrompt" show="swNPCaseWordYesOrSomeAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où ces distinctions de cas se trouvent par rapport au reste du syntagme nominal dans votre langue, ou changez la réponse ci-dessus en « Non, ce sont tous attachés à un autre mot dans le syntagme nominal ».</prompt>
+       <checkboxGroup id="NPCaseAttachesPosTable" show="swNPCaseNYesAndWordNoOrSome">
+          <prompt><br/>Où ces distinctions de cas qui ne sont pas des mots indépendants s’attachent-elles au syntagme nominal? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+          <checkbox id="NPCaseAttachesProclitic" dataItem="caseAttachesProclitic">Comme proclitique phrasal qui s’attache au début de n’importe quel mot qui commence le syntagme nominal</checkbox>
+          <checkbox id="NPCaseAttachesEnclitic" dataItem="caseAttachesEnclitic">Comme enclitique phrasal qui s’attache au début de n’importe quel mot qui commence le syntagme nominal</checkbox>
+          <checkbox id="NPCaseAttachesPrefix" dataItem="caseAttachesPrefix">Comme préfixe qui s’attache au nom principal du syntagme nominal</checkbox>
+          <checkbox id="NPCaseAttachesSuffix" dataItem="caseAttachesSuffix">Comme suffixe qui s’attache au nom principal du syntagme nominal</checkbox>
+          <checkbox id="NPCaseAttachesOther" dataItem="caseAttachesOther">Dans ma langue, ces distinctions de cas peuvent s’atttacher comme suit: <textBox  id="NPCaseAttachesOtherContent" dataItem="caseAttachesOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="NPCaseAttachesNoCheckPrompt" show="swNPCaseAttachesAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire comment ces distinctions de cas sont attachés dans votre langue, ou changez la réponse ci-dessus en « Oui, ce sont tous des mots indépendants ».</prompt>
+       
+  <br/> <br/>    
+       <radioGroup id="NPPossCaseErg" show="swNPCaseErg">
+          <groupName dataItem="possCaseErg" default="genitive">RNPPossCaseErg</groupName>
+          <prompt><br/>Quel cas est utilisé <span id="NPPossCaseErgNYesSpan" show="swNPCaseNYes">pour définir les possessifs</span><span id="NPPossCaseErgNNoSpan" show="swNPCaseNNo">pour les pronoms possessifs</span> dans votre langue?</prompt>
+          <radio id="NPPossCaseErgative" dataValue="ergative">Ergatif, le même que les sujets des verbes transitifs</radio>
+          <radio id="NPPossCaseAbsolutive" dataValue="absolutive">Absolutif, le même que les sujets des verbes intransitifs et les objets des verbes transitifs</radio>
+          <radio id="NPPossCaseGenitive" dataValue="genitive">Génitif, distinct pour les possessifs</radio>
+       </radioGroup>
+       <radioGroup id="NPPossCaseSplit" show="swNPCaseSplit">
+          <groupName dataItem="possCaseErg" default="genitive">RNPPossCaseSplit</groupName>
+          <prompt><br/>Quel cas est utilisé <span id="NPPossCaseSplitNYesSpan" show="swNPCaseNYes">pour définir les possessifs</span><span id="NPPOssCaseSplitNNoSpan" show="swNPCaseNNo">pour les pronoms possessifs</span> dans les parties de votre langue qui montrent l’ergativité dédoublée?</prompt>
+          <radio id="NPPossCaseSplitErgative" dataValue="ergative">Ergatif, le même que les sujets des verbes transitifs</radio>
+          <radio id="NPPossCaseSplitAbsolutive" dataValue="absolutive">Absolutif, le même que les sujets de verbes transitifs et les objets de verbes transitifs</radio>
+          <radio id="NPPossCaseSplitGenitive" dataValue="genitive">Génitif, le même que dans les constructions nominatives-accusatives</radio>
+       </radioGroup>
+       <br/>
+       <br/>
+       <introduction>     
+          Il y a encore d’autres cas à considérer au delà de celui du sujet et de l’objet. Ils peuvent inclure le cas ablatif pour une source ou une origine, le cas génitif pour sortes ou possesseurs, le cas datif pour les objets indirects, le cas instrumental pour le moyen ou les instruments, le cas locatif pour des endroits, le cas vocatif pour le discours direct et le cas oblique qui est parfois utilisé pour les relations grammaticales mineures.<br/><br/> 
+          Dans les langues qui distinguent normalement le cas pour les noms ou les syntagmes nominaux aussi bien que les pronoms, ces cas complémentaires sont habituellement  distingués des syntagmes eux-mêmes. Dans les langues qui ne distinguent pas de cas et dans celles qui montrent seulement le cas dans les pronoms ces relations grammaticales complémentaires  sont normalement exprimées par des syntagmes prépositionnels ou postpositionnels.
+       </introduction>
+       <introduction id="NPCaseIntro" show="swNotPractical">In the grammar rules generated by this starter kit, languages which have case marking on nouns or nominal phrases will have all of the grammatical relations expressed as DPs, whereas those languages which only show case distinctions in the pronouns or not at all will have DPs for subjects and objects but PPs for all other grammatical relations.</introduction>
+       <prompt id="NPCaseNonePrompt" show="swNPCaseNone">Dans la section <section number="1.">Questions Générales de Typologie – Classes Nominales et Classificateurs</section> vous avez dit que votre langue n’a pas de distinction de cas. Ainsi, les relations grammaticales mineures seront normalement exprimées par des syntagmes prépositionnels ou postpositionnels plutôt que par des syntagmes nominaux.</prompt>     
+       <prompt id="NPCaseNNoPrompt" show="swNPCaseNNo">Puisque votre langue ne fait pas de distinction de cas sur les noms ou sur les syntagmes nominaux, les relations grammaticales mineures seront normalement exprimées par des syntagmes prépositionnels ou postpositionnels plutôt que par des syntagmes nominaux. Les distinctions de cas dans les pronoms seront délimités dans la <section number="7.">Pronoms</section>.</prompt>     
+<br/><br/>
+       <prompt  id="NPCaseTable" show="swNPCaseNYes">Pour toutes les zones de texte suivantes, <span id="NPCaseNYesAndWordNoSpan" show="swNPCaseNYesAndWordNoOrSome">insérez les indicateurs de cas  qui sont affixes ou clitiques avec un trait d’union ou avec un signe d’égalité sur le côté approprié pour indiquer à quel côté il se rattache. S’il</span><span id="NPCaseNYesAndWordYesSpan" show="swNPCaseNYesAndWordYes">s’il</span> y a plus qu’un indicateur pour un cas particulier, insérez chacun sur une ligne séparée. Si votre langue n’a pas de cas particulier, laissez simplement vide la zone de texte.</prompt>
+       <prompt id="NPCaseNominativePrompt" show="swNPCaseNomOrSplitAndNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas nominatif pour exprimer le sujet (au moins pour les agents):</prompt>
+       <textBox id="NPNom" dataItem="nominative" rows="3" show="swNPCaseNomOrSplitAndNYes"/>
+       <br/>
+       <prompt id="NPCaseAccusativePrompt" show="swNPCaseNomOrSplitAndNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas accusatif pour exprimer l’objet direct et d’autres usages:</prompt>
+       <textBox id="NPAcc" dataItem="accusative" rows="3" show="swNPCaseNomOrSplitAndNYes"/>
+       <br/>
+       <prompt id="NPCaseErgativePrompt" show="swNPCaseErgAndNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas ergatif pour exprimer le sujet de verbes transitifs (au moins pour les agents):</prompt>
+       <prompt id="NPCaseSplitErgativePrompt" show="swNPCaseSplitAndNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas ergatif pour exprimer le sujet des verbes transitifs (au moins pour les agents) dans les parties de votre langue qui montrent l’ergativité dédoublée:</prompt>
+       <textBox id="NPErg" dataItem="ergative" rows="3" show="swNPCaseErgOrSplitAndNYes"/>
+       <br/>
+       <prompt id="NPCaseAbsolutivePrompt" show="swNPCaseErgAndNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas absolutif pour exprimer le sujet des verbes intransitifs (au moins pour les agents) et l’objet direct des verbes transitifs:</prompt>
+       <prompt id="NPCaseSplitAbsolutivePrompt" show="swNPCaseSplitAndNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas absolutif pour exprimer le sujet des verbes intransitifs (au moins pour les agents) et l’objet direct des verbes transitifs dans les parties de votre langue qui montrent l’ergativité dédoublée:</prompt>
+       <textBox id="NPAbs" dataItem="absolutive" rows="3" show="swNPCaseErgOrSplitAndNYes"/>
+       <br/>
+       <prompt id="NPCaseGenitivePrompt" show="swNPCaseNomOrSplitOrErgPossGenAndNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas génitif pour exprimer la possession:</prompt>
+       <textBox id="NPGen" dataItem="genitive" rows="3" show="swNPCaseNomOrSplitOrErgPossGenAndNYes"/>
+       <br/>     
+       <prompt id="NPCaseDativePrompt" show="swNPCaseNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas datif pour exprimer l’objet indirect et éventuellement le sujet de verbes avec des sujets expérimentaux:</prompt>
+       <textBox id="NPDat" dataItem="dative" rows="3" show="swNPCaseNYes"/>
+       <br/>     
+       <prompt id="NPCaseAblativePrompt" show="swNPCaseNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas ablatif pour exprimer la source ou l’origine:</prompt>
+       <textBox id="NPAbl" dataItem="ablative" rows="3" show="swNPCaseNYes"/>
+       <br/>     
+       <prompt id="NPCaseInstrumentalPrompt" show="swNPCaseNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas instrumental pour exprimer l’instrument, les moyens ou l’agent:</prompt>
+       <textBox id="NPIns" dataItem="instrumental" rows="3" show="swNPCaseNYes"/>
+       <br/>     
+       <prompt id="NPCaseLocativePrompt" show="swNPCaseNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas locatif pour exprimer l’endroit:</prompt>
+       <textBox id="NPLoc" dataItem="locative" rows="3" show="swNPCaseNYes"/>
+       <br/>     
+       <prompt id="NPCaseVocativePrompt" show="swNPCaseNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas vocatif pour exprimer un message direct:</prompt>
+       <textBox id="NPVoc" dataItem="vocative" rows="3" show="swNPCaseNYes"/>
+       <br/>     
+       <prompt id="NPCaseObliquePrompt" show="swNPCaseNYes">Entrez l’indicateur de cas qu’utilise votre langue pour le cas oblique pour exprimer une relation grammaticale généralement mineure:</prompt>
+       <textBox id="NPObl" dataItem="oblique" rows="3" show="swNPCaseNYes"/>
+       <br/>     
+       <prompt id="NPCaseOtherPrompt" show="swNPCaseNYes">Entrez d’autres indicateurs de cas qu’utilise votre langue pour exprimer une relation grammaticale mineure:</prompt>
+       <textBox id="NPOther" dataItem="otherCase" rows="3" show="swNPCaseNYes"/>
+       <br/>     
+       <instruction id="NPCaseWordEitherRestrictedInstruction" show="swNPCaseWordEitherRestricted">In the lexicon, mark those case markers which can only occur initially with the feature <feature>DP-initial</feature> and those which can only occur finally with the feature <feature>DP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+       
+       <instruction id="NPCaseNAffixInstruction" show="swNPCaseNYesAttachesAffix">In the lexicon, add the appropriate case feature to these affixes: <span id="nomSpan" show="swNPCaseNomOrSplitAndNYes"><feature>nominative</feature>, <feature>accusative</feature>, </span><span id="ergSpan" show="swNPCaseErgOrSplitAndNYes"><feature>ergative</feature>, <feature>absolutive</feature>, </span><span id="genSpan" show="swNPCaseNomOrSplitOrErgPossGenAndNYes"><feature>genitive</feature>, </span><feature>dative</feature>, <feature>ablative</feature>, <feature>instrumental</feature>, <feature>locative</feature>, <feature>vocative</feature> or <feature>oblique</feature>.
+       <span id="NPCaseExpNomYesObjSpan" show="swNPCaseNomOrSplitAndNYesAndExpYesObj">Since your language uses the normal object case for Experiencer subjects, use the feature <feature>accusative.or.dative</feature> instead of simply <feature>accusative</feature> for this case marker.</span> 
+          <span id="NPCaseExpErgYesObjSpan" show="swNPCaseErgOrSplitAndNYesAndExpYesObj">Since your language uses the normal object case for Experiencer subjects, use the feature <feature>absolutive.or.dative</feature> instead of simply <feature>absolutive</feature> for this case marker.</span>       </instruction>
+       <instruction id="NPCaseCliticPrefixInstruction" show="swNPCaseNYesAttachesProclitic">In the lexicon, add the appropriate case feature to these proclitics: <span id="nomSpan2" show="swNPCaseNomOrSplitAndNYes"><feature>case_prefix_nominative</feature>, <feature>case_prefix_accusative</feature>, </span><span id="ergSpan2" show="swNPCaseErgOrSplitAndNYes"><feature>case_prefix_ergative</feature>, <feature>case_prefix_absolutive</feature>, </span><span id="genSpan2" show="swNPCaseNomOrSplitOrErgPossGenAndNYes"><feature>case_prefix_genitive</feature>, </span><feature>case_prefix_dative</feature>, <feature>case_prefix_ablative</feature>, <feature>case_prefix_instrumental</feature>, <feature>case_prefix_locative</feature>, <feature>case_prefix_vocative</feature> or <feature>case_prefix_oblique</feature>.
+          <span id="NPCaseCliticPrefixExpNomYesObjSpan" show="swNPCaseNomOrSplitAndNYesAndExpYesObj">Since your language uses the normal object case for Experiencer subjects, use the feature <feature>case_prefix_accusative.or.dative</feature> instead of simply <feature>case_prefix_accusative</feature> for this case marker.</span> 
+          <span id="NPCaseCliticPrefixExpErgYesObjSpan" show="swNPCaseErgOrSplitAndNYesAndExpYesObj">Since your language uses the normal object case for Experiencer subjects, use the feature <feature>case_prefix_absolutive.or.dative</feature> instead of simply <feature>case_prefix_absolutive</feature> for this case marker.</span> 
+       </instruction>
+       <instruction id="NPCaseCliticSuffixInstruction" show="swNPCaseNYesAttachesEnclitic">In the lexicon, add the appropriate case feature to these enclitics: <span id="nomSpan3" show="swNPCaseNomOrSplitAndNYes"><feature>case_suffix_nominative</feature>, <feature>case_suffix_accusative</feature>, </span><span id="ergSpan3" show="swNPCaseErgOrSplitAndNYes"><feature>case_suffix_ergative</feature>, <feature>case_suffix_absolutive</feature>, </span><span id="genSpan3" show="swNPCaseNomOrSplitOrErgPossGenAndNYes"><feature>case_suffix_genitive</feature>, </span><feature>case_suffix_dative</feature>, <feature>case_suffix_ablative</feature>, <feature>case_suffix_instrumental</feature>, <feature>case_suffix_locative</feature>, <feature>case_suffix_vocative</feature> or <feature>case_suffix_oblique</feature>. 
+          <span id="NPCaseCliticSuffixExpNomYesObjSpan" show="swNPCaseNomOrSplitAndNYesAndExpYesObj">Since your language uses the normal object case for Experiencer subjects, use the feature <feature>case_suffix_accusative.or.dative</feature> instead of simply <feature>case_suffix_accusative</feature> for this case marker.</span>
+          <span id="NPCaseCliticSuffixExpErgYesObjSpan" show="swNPCaseErgOrSplitAndNYesAndExpYesObj">Since your language uses the normal object case for Experiencer subjects, use the feature <feature>case_suffix_absolutive.or.dative</feature> instead of simply <feature>case_suffix_absolutive</feature> for this case marker.</span> 
+       </instruction>
+       <instruction id="NPCaseWordYesInstruction" show="swNPCaseNYesAndWordYesOrSome">In the lexicon, if the case words do not already have the category <category>Case</category>, add the feature <feature>makeCase</feature> to the feature line to change the category for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)  
+          Also, add the appropriate case feature to these case words: <span id="nomSpan6" show="swNPCaseNomOrSplitAndNYes"><feature>nominative</feature>, <feature>accusative</feature>, </span><span id="ergSpan6" show="swNPCaseErgOrSplitAndNYes"><feature>ergative</feature>, <feature>absolutive</feature>, </span><span id="genSpan6" show="swNPCaseNomOrSplitOrErgPossGenAndNYes"><feature>genitive</feature>, </span><feature>dative</feature>, <feature>ablative</feature>, <feature>instrumental</feature>, <feature>locative</feature>, <feature>vocative</feature> or <feature>oblique</feature>.  
+          <span id="NPCaseWordExpNomYesObjSpan" show="swNPCaseNomOrSplitAndNYesAndExpYesObj">Since your language uses the normal object case for Experiencer subjects, use the feature <feature>accusative.or.dative</feature> instead of simply <feature>accusative</feature> for this case marker.</span> 
+          <span id="NPCaseWordExpErgYesObjSpan" show="swNPCaseErgOrSplitAndNYesAndExpYesObj">Since your language uses the normal object case for Experiencer subjects, use the feature <feature>absolutive.or.dative</feature> instead of simply <feature>absolutive</feature> for this case marker.</span>  
+          </instruction>
+       <br/>
+        <br/>
+        <buttons>
+            <button id="NPCaseBack" value="Back" goto="NPAgreement.xml"/>
+            <button id="NPCaseNext" value="Next" goto="NPContents.htm"/>
+        </buttons>
+    </form>
+   <showWhen id="swNotPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swNPCaseNone">
+      <whenValue element="typology" attr="case" value="none"/>
+   </showWhen>
+   <showWhen id="swNPCaseNotNone">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+   </showWhen>
+   <showWhen id="swNPCaseNNo">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNNo"/>
+   </showWhen>
+   <showWhen id="swNPCaseNYes">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNYesAndWordNoOrSome">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordNo"/>
+      <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+   </showWhen>
+   <showWhen id="swNPCaseNYesAndWordYesOrSome">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordYes"/>
+      <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+   </showWhen>
+   <showWhen id="swNPCaseNYesAndWordYes">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplit">
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swNPCaseErg">
+      <whenValue element="typology" attr="case" value="ergative"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomAndNYes">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplitAndNYes">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplitAndNYesAndExpYesObj">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="yesObj"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitAndNYesAndExpYesObj">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenValue element="typology" attr="caseExperiencer" value="yesObj"/>
+   </showWhen>
+   <showWhen id="swNPCaseSplitAndNYes">
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgAndNYes">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseNomOrSplitOrErgPossGenAndNYes">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPPossCaseGenitive"/>
+   </showWhen>
+   <showWhen id="swNPCaseErgOrSplitAndNYes">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordEitherRestricted">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordYes"/>
+      <or/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="NPCaseWordBefore"/>
+      <and/>
+      <whenCheckbox button="NPCaseWordAfter"/>
+      <or/>
+      <whenCheckbox button="NPCaseWordBoth"/>
+      <closeParen/>
+   </showWhen>   
+   <showWhen id="swNPCaseNYesAttachesProclitic">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordNo"/>
+      <and/>
+      <whenCheckbox button="NPCaseAttachesProclitic"/>
+      <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+      <and/>
+      <whenCheckbox button="NPCaseAttachesProclitic"/>
+   </showWhen>
+   <showWhen id="swNPCaseNYesAttachesEnclitic">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordNo"/>
+      <and/>
+      <whenCheckbox button="NPCaseAttachesEnclitic"/>
+      <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+      <and/>
+      <whenCheckbox button="NPCaseAttachesEnclitic"/>
+   </showWhen>
+   <showWhen id="swNPCaseNYesAttachesAffix">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordNo"/>
+      <and/>
+      <whenCheckbox button="NPCaseAttachesPrefix"/>
+      <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+      <and/>
+      <whenCheckbox button="NPCaseAttachesPrefix"/>
+      <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordNo"/>
+      <and/>
+      <whenCheckbox button="NPCaseAttachesSuffix"/>
+      <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+      <and/>
+      <whenCheckbox button="NPCaseAttachesSuffix"/>
+   </showWhen>
+   <showWhen id="swNPCaseWordYesOrSomeAndNoCheck">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordYes"/>
+      <or/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseWordOther"/>
+   </showWhen>
+   <showWhen id="swNPCaseAttachesAndNoCheck">
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
+      <openParen/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordNo"/>
+      <or/>
+      <whenRadio button="NPCaseNYes"/>
+      <and/>
+      <whenRadio button="NPCaseWordSome"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseAttachesProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseAttachesEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseAttachesPrefix"/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseAttachesSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="NPCaseAttachesOther"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

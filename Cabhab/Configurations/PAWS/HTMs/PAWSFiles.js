@@ -19,7 +19,7 @@ function Initialize() {
 		}
 	}
 
-	window.external.GetAnswerValue("//language/writerFile");
+/*	window.external.GetAnswerValue("//language/writerFile");
 	sTemp = FileLocWriter.value = window.external.OutValue;
 	if (sTemp == "") {
 		index = sAnswer.lastIndexOf(".paw");
@@ -29,7 +29,7 @@ function Initialize() {
 			FileLocWriter.value = sTemp;
 		}
 	}
-
+*/
 	window.external.GetAnswerValue("//language/writerPracticalFile");
 	sTemp = FileLocWriterPractical.value = window.external.OutValue;
 	if (sTemp == "") {
@@ -52,6 +52,17 @@ function Initialize() {
 		}
 	}
 
+	window.external.GetAnswerValue("//language/writerPracticalFrenchFile");
+	sTemp = FileLocWriterPracticalFrench.value = window.external.OutValue;
+	if (sTemp == "") {
+		index = sAnswer.lastIndexOf(".paw");
+		if (index > - 1) {
+			sTemp = sAnswer.substr(0, index) + "WriterPracticalFrench.xml";
+			window.external.SetAnswerValue("//language/writerPracticalFrenchFile", sTemp);
+			FileLocWriterPracticalFrench.value = sTemp;
+		}
+	}
+
 	window.external.GetAnswerValue("//language/exampleFilesPath");
 	sTemp = FileLocExampleFiles.value = window.external.OutValue;
 	if (sTemp == "") {
@@ -71,6 +82,7 @@ function Initialize() {
 	/*displayCheckBoxValue(OutputWriter, "/paws/@outputWriter");*/
 	displayCheckBoxValue(OutputWriterPractical, "/paws/@outputWriterPractical");
 	displayCheckBoxValue(OutputWriterPracticalSpanish, "/paws/@outputWriterPracticalSpanish");
+	displayCheckBoxValue(OutputWriterPracticalFrench, "/paws/@outputWriterPracticalFrench");
 
 	ShowBackNextButtons.style.display = "none";
 	Return.style.display = "";
@@ -89,11 +101,13 @@ function saveData() {
 
 	window.external.SetAnswerValue("//language/grammarFile", FileLocGrammar.value);
 
-	window.external.SetAnswerValue("//language/writerFile", FileLocWriter.value);
+/*	window.external.SetAnswerValue("//language/writerFile", FileLocWriter.value);*/
 
 	window.external.SetAnswerValue("//language/writerPracticalFile", FileLocWriterPractical.value);
 
 	window.external.SetAnswerValue("//language/writerPracticalSpanishFile", FileLocWriterPracticalSpanish.value);
+
+	window.external.SetAnswerValue("//language/writerPracticalFrenchFile", FileLocWriterPracticalFrench.value);
 
 	window.external.SetAnswerValue("//language/exampleFilesPath", FileLocExampleFiles.value);
 
@@ -107,8 +121,12 @@ function saveData() {
 
 	window.external.SetAnswerValue("/paws/@outputWriterPracticalSpanish", OutputWriterPracticalSpanish.value);
 
-	window.external.SaveData();
+	window.external.SetAnswerValue("/paws/@outputWriterPracticalFrench", OutputWriterPracticalFrench.value);
 
+	window.external.SaveData();
+}
+function processChanges() {
+    saveData();
 	window.external.InitAnswerTransforms()
 }
 function Refresh() {
@@ -117,8 +135,8 @@ function Refresh() {
 	/*if (! OutputWriter.checked && ! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
 		OutputWriter.checked = true;
 	}*/
-	if (! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
-		OutputWriterPractical.checked = true;
+	if (! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked && ! OutputWriterPracticalFrench.checked) {
+	            OutputWriterPractical.checked = true;
 	}if (OutputGrammar.checked) {
 		BrowseForGrammar.style.display = "";
 		BrowseForGrammarDir.style.display = "";
@@ -144,6 +162,12 @@ function Refresh() {
 	} else {
 		BrowseForWriterPracticalSpanish.style.display = "none";
 	}
+
+	if (OutputWriterPracticalFrench.checked) {
+		BrowseForWriterPracticalFrench.style.display = "";
+	} else {
+		BrowseForWriterPracticalFrench.style.display = "none";
+	}
 }
 function ButtonFileLocAnswer() {
 	var result;
@@ -163,7 +187,7 @@ function ButtonFileLocGrammar() {
 		saveData();
 	}
 }
-function ButtonFileLocWriter() {
+/*function ButtonFileLocWriter() {
 	var result;
 	window.external.FileBrowse(FileLocWriter.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
 	result = window.external.OutValue;
@@ -171,7 +195,7 @@ function ButtonFileLocWriter() {
 		FileLocWriter.value = result;
 		saveData();
 	}
-}
+}*/
 function ButtonFileLocWriterPractical() {
 	var result;
 	window.external.FileBrowse(FileLocWriterPractical.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
@@ -187,6 +211,15 @@ function ButtonFileLocWriterPracticalSpanish() {
 	result = window.external.OutValue;
 	if (result != "Cancel") {
 		FileLocWriterPracticalSpanish.value = result;
+		saveData();
+	}
+}
+function ButtonFileLocWriterPracticalFrench() {
+	var result;
+	window.external.FileBrowse(FileLocWriterPracticalFrench.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
+	result = window.external.OutValue;
+	if (result != "Cancel") {
+		FileLocWriterPracticalFrench.value = result;
 		saveData();
 	}
 }
@@ -229,6 +262,13 @@ function SetOutputViaDescription(item) {
 			OutputWriterPracticalSpanish.checked = true;
 		}
 		break;
+		case "writerPracticalFrench":
+		if (OutputWriterPracticalFrench.checked) {
+			OutputWriterPracticalFrench.checked = false;
+		} else {
+			OutputWriterPracticalFrench.checked = true;
+		}
+		break;
 	}
 	SetOutput(item);
 }
@@ -260,6 +300,13 @@ function SetOutput(item) {
 			OutputWriterPracticalSpanish.value = "True";
 		} else {
 			OutputWriterPracticalSpanish.value = "False";
+		}
+		break;
+		case "writerPracticalFrench":
+		if (OutputWriterPracticalFrench.checked) {
+			OutputWriterPracticalFrench.value = "True";
+		} else {
+			OutputWriterPracticalFrench.value = "False";
 		}
 		break;
 	}

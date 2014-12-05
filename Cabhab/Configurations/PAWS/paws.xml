@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- both the label and settingsId are specific to PAWS -->
 <window label="PAWS Starter Kit" settingsId="paws">
-	<version>0.9.2.0 Beta</version>
+	<version>0.10.0.0 Beta</version>
 	<!--
 Following are common to all Cabhab Applications
 -->
@@ -221,17 +221,17 @@ Following are specific to PAWS
 		<answerFileTransformSet>
 			<transform file="Transforms/PAWSSKMasterGrammarMapper.xsl" resultFileFromAnswerFile="//language/grammarFile" removeBOM="true" applyTransformWhenXPath="/paws/@outputGrammar[.='True']"/>
 		</answerFileTransformSet>
-		<answerFileTransformSet>
+<!--		<answerFileTransformSet>
 			<transform file="Transforms/PAWSSKMasterWriterMapper.xsl" resultFileFromAnswerFile="//language/writerFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriter[.='True']" insertConfigPathInTransformDOCTYPE="true" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;" lang="en">
 				<xsltParameters>
-					<!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
+					<!-\- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -\->
 					<param name="prmSDateTime" value="fake"/>
-					<!-- The name of "prmSVersionNumber" is a special key the FxtViewer.dll knows about; it gets the version number from the <version/> element and then passes it to the transform as a parameter -->
+					<!-\- The name of "prmSVersionNumber" is a special key the FxtViewer.dll knows about; it gets the version number from the <version/> element and then passes it to the transform as a parameter -\->
 					<param name="prmSVersionNumber" value="fake"/>
 				</xsltParameters>
 			</transform>
 			<transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerFile" ext="htm" applyTransformWhenXPath="/paws/@outputWriter[.='True']"/>
-		</answerFileTransformSet>
+		</answerFileTransformSet>-->
 		<!-- We have to do the writers in two steps: produce the htm, then produce the XXE-compatible XLingPaper version.
 		        In order to produce the htm, we have to know exactly where the DTD is.
 		-->
@@ -284,11 +284,35 @@ Following are specific to PAWS
 				</xsltParameters>
 			</transform>
 			<!-- the next is a dummy in order to get the replaceDOCTYPE to work -->
-			<transform file="Transforms/XLingPapRemoveAnyContent.xsl" resultFileFromAnswerFile="//language/writerPracticalSpanishFile" ext="tmp" applyTransformWhenXPath="/paws/@outputWriterPracticalSpanish[.='True']" insertConfigPathInTransformDOCTYPE="true" saveResult="false"/>
+			<transform file="Transforms/XLingPapRemoveAnyContent.xsl" resultFileFromAnswerFile="//language/writerPracticalFrenchFile" ext="tmp" applyTransformWhenXPath="/paws/@outputWriterPracticalFrench[.='True']" insertConfigPathInTransformDOCTYPE="true" saveResult="false"/>
 		</answerFileTransformSet>
 		<answerFileTransformSet>
-			<transform file="Transforms/ExtractGrammarInterlinearExamplesFromPawFile.xsl" resultFileFromAnswerFile="//language/writerFile" ext="sfm" applyTransformWhenXPath="/paws/@outputWriter[.='True']" />
+			<transform file="Transforms/PAWSSKMasterWriterPracticalFrenchMapper.xsl" resultFileFromAnswerFile="//language/writerPracticalFrenchFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriterPracticalFrench[.='True']" insertConfigPathInTransformDOCTYPE="true" lang="fr">
+				<xsltParameters>
+					<!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
+					<param name="prmSDateTime" value="fake"/>
+					<!-- The name of "prmSVersionNumber" is a special key the FxtViewer.dll knows about; it gets the version number from the <version/> element and then passes it to the transform as a parameter -->
+					<param name="prmSVersionNumber" value="fake"/>
+				</xsltParameters>
+			</transform>
+			<transform file="Transforms/XLingPapRemoveAnyContent.xsl" resultFileFromAnswerFile="//language/writerPracticalFrenchFile" ext="tmp" applyTransformWhenXPath="/paws/@outputWriterPracticalFrench[.='True']" insertConfigPathInTransformDOCTYPE="true" saveResult="false"/>
+			<transform file="Transforms/XLingPap1.xsl" resultFileFromAnswerFile="//language/writerPracticalFrenchFile" ext="htm" applyTransformWhenXPath="/paws/@outputWriterPracticalFrench[.='True']"/>
 		</answerFileTransformSet>
+		<answerFileTransformSet>
+			<transform file="Transforms/PAWSSKMasterWriterPracticalFrenchMapper.xsl" resultFileFromAnswerFile="//language/writerPracticalFrenchFile" ext="xml" saveResult="true" applyTransformWhenXPath="/paws/@outputWriterPracticalFrench[.='True']" replaceDOCTYPE="&lt;!DOCTYPE lingPaper PUBLIC &quot;-//XMLmind//DTD XLingPap//EN&quot; &quot;XLingPap.dtd&quot;&gt;" lang="fr">
+				<xsltParameters>
+					<!-- The name of "prmSDateTime" is a special key the FxtViewer.dll knows about; it gets the current date and time and then passes it to the transform as a parameter -->
+					<param name="prmSDateTime" value="fake"/>
+					<!-- The name of "prmSVersionNumber" is a special key the FxtViewer.dll knows about; it gets the version number from the <version/> element and then passes it to the transform as a parameter -->
+					<param name="prmSVersionNumber" value="fake"/>
+				</xsltParameters>
+			</transform>
+			<!-- the next is a dummy in order to get the replaceDOCTYPE to work -->
+			<transform file="Transforms/XLingPapRemoveAnyContent.xsl" resultFileFromAnswerFile="//language/writerPracticalFrenchFile" ext="tmp" applyTransformWhenXPath="/paws/@outputWriterPracticalFrench[.='True']" insertConfigPathInTransformDOCTYPE="true" saveResult="false"/>
+		</answerFileTransformSet>
+		<!--		<answerFileTransformSet>
+			<transform file="Transforms/ExtractGrammarInterlinearExamplesFromPawFile.xsl" resultFileFromAnswerFile="//language/writerFile" ext="sfm" applyTransformWhenXPath="/paws/@outputWriter[.='True']" />
+		</answerFileTransformSet>-->
 		<answerFileTransformSet>
 			<transform file="Transforms/ExtractPracticalGrammarInterlinearExamplesFromPawFile.xsl" resultFileFromAnswerFile="//language/writerPracticalFile" ext="sfm" applyTransformWhenXPath="/paws/@outputWriterPractical[.='True']" />
 		</answerFileTransformSet>
@@ -409,5 +433,8 @@ Following are specific to PAWS
 		<dataMigration dbVersionXPath="/paws[@dbversion='7a']" transform="Transforms/DataMigrations/DBVersion7aTo8.xsl"/>
 		<dataMigration dbVersionXPath="/paws[@dbversion='8']" transform="Transforms/DataMigrations/DBVersion8To9.xsl"/>
 		<dataMigration dbVersionXPath="/paws[@dbversion='9']" transform="Transforms/DataMigrations/DBVersion9To9a.xsl"/>
+		<dataMigration dbVersionXPath="/paws[@dbversion='9a']" transform="Transforms/DataMigrations/DBVersion9aTo9b.xsl"/>
+		<dataMigration dbVersionXPath="/paws[@dbversion='9b']" transform="Transforms/DataMigrations/DBVersion9bTo10.xsl"/>
+		<dataMigration dbVersionXPath="/paws[@dbversion='10']" transform="Transforms/DataMigrations/DBVersion10To11.xsl"/>
 	</dataMigrations>
 </window>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="CoordMain" count="1/4">
+	<title>Constructions Coordonnées</title>
+	<introduction>Cette section se concerne, pour la plupart, de constructions de coordination où il y a une conjonction <technicalTermRef term="ttOvert">explicite</technicalTermRef> entre les parties conjointes (appelées « conjoints »).  On traitera la coordination au niveau de la phrase et dans le syntagme verbal, dans le syntagme nominal, dans les syntagmes <span id="CoordPrepSpan" show="swPPPosPrep">prépositionnels</span><span id="CoordPostSpan" show="swPPPosPost">postpositionnels</span><span id="CoordPBothSpan" show="swPPPosBoth">prépositionnels ou postpositionnels</span>, et dans les syntagmes adjectivaux.  Ensuite, seulement dans le syntagme nominal, on traitera les listes et les constructions appositives.  Il faudra traiter plus tard les sortes de constructions de coordination plus complexes, telles que les trous syntaxiques, et d’autres niveaux possibles de coordination.</introduction>
+	<introduction>En français, les conjonctions qu’on peut utiliser entre les deux conjoints sont <example>et</example>, <example>ou</example>, <example>mais</example> et <example>et/ou</example>.  En plus, il y a des constructions de coordination qui exigent une conjonction initiale, telles que les constructions avec <example>ou...ou</example> et <example>ni...ni</example>.  Certaines langues utilisent aussi un mot avec le sens <example>avec</example> comme une conjonction entre les syntagmes nominaux.</introduction>
+   <form section="coord" transparent="no">
+   	<prompt><br/>Entrez la manière dont votre langue exprime ces conjonctions dans les boîtes suivantes.  S’il y a plus d’une option, entrez chaque forme sur une ligne distincte.  Si la conjonction est un clitique, entrez un signe d’égalité indiquant le côté où il s’attache.</prompt>
+   	<prompt>Entrez ici la/les conjonction(s) que votre langue utilise pour « et »:</prompt>
+		<textBox id="CoordAnd" dataItem="and" rows="3"/>
+		<br/>
+   	<prompt>Entrez ici la/les construction(s) séquentielle(s) que votre langue utilise pour la coordination au niveau de la phrase avec le sens « et puis »:</prompt>
+   	<textBox id="CoordSeq" dataItem="andThen" rows="3"/>
+   	<br/>
+   	<prompt>Entrez ici la/les conjonction(s) qu’utilise votre langue pour « ou »:</prompt>
+		<textBox id="CoordOr" dataItem="or" rows="3"/>
+		<br/>
+   	<prompt>Entrez ici la/les conjonction(s) qu’utilise votre langue pour « mais »:</prompt>
+		<textBox id="CoordBut" dataItem="but" rows="3"/>
+		<br/>
+   	<prompt>Entrez ici la/les conjonction(s) qu’utilise votre langue pour « et/ou »:</prompt>
+		<textBox id="CoordAndOr" dataItem="andOr" rows="3"/>
+   	<instruction id="CoordAndOrInstruction">Note that a word like  ‘and/or’ which is written with a slash (/) in the word, must be entered in your lexicon with a backslash in front of the slash (eg.  »and\/or’) for <tool>CARLA Studio</tool> to process it correctly.</instruction>
+      <br/>
+   	<prompt>Si votre langue utilise « avec » comme une conjonction de syntagme nominal, entrez-le ici:</prompt>
+		<textBox id="CoordWith" dataItem="with" rows="3"/>
+		<br/>
+   	<prompt>Entrez ici d’autres conjonction(s) qu’utilise votre langue seules entre des conjoints:</prompt>
+		<textBox id="CoordOther" dataItem="other" rows="3"/>
+		<br/>
+   	<prompt>Entrez ici la/les conjonction(s) initiales avec les sens « ou » que votre langue utilise pour les constructions « ou...ou » (seulement la partie initiale):</prompt>
+		<textBox id="CoordEither" dataItem="either" rows="3"/>
+		<br/>
+   	<prompt>Entrez la/les conjonction(s)s médiale(s) que votre langue utilise pour les constructions « ou...ou » (seulement la deuxième partie):</prompt>
+      <textBox id="CoordEitherOr" dataItem="eitherOr" rows="3"/>
+      <br/>
+   	<prompt>Entrez ici la/les conjonction(s) négative(s) avec le sens « ni » que votre langue utilise pour les constructions « ni...ni » (seulement la partie initiale):</prompt>
+		<textBox id="CoordNeither" dataItem="neither" rows="3"/>
+		<br/>
+   	<prompt>Entrez la/les construction(s) négative(s) avec le sens « ni » que votre langue utilise, soit seules, soit pour les « ni...ni » constructions (seulement la deuxième partie):</prompt>
+		<textBox id="CoordNor" dataItem="nor" rows="3"/>
+		<br/>
+<radioGroup>
+   <groupName dataItem="conjWord" default="yes">RCoordConjWord</groupName>
+	<prompt><br/>Les conjonctions dans votre langue sont-elles écrites comme des mots indépendants entre les conjoints?</prompt>
+	<radio id="CoordConjWordYes" dataValue="yes">Oui, ce sont tous des mots indépendants</radio>
+	<radio id="CoordConjWordSome" dataValue="some">Certaines sont des mots indépendants, mais certaines s’attachent à l’un des conjoints</radio>
+	<radio id="CoordConjWordNo" dataValue="no">Non, toutes les conjonctions s’attachent à l’un des conjoints</radio>
+</radioGroup>   
+   	<instruction id="CoordInstruction" show="swCoordWordNotNo">In the lexicon, add the feature <feature>plural</feature> to the conjunctions written as an independent word meaning ‘and’, ‘and/or’ and ‘with’, and also to any other conjunctions in your language which require plural agreement when they are used to conjoin nominal phrases.  
+      	Also, add the feature <feature>-conjoins_IP</feature> to any conjunction, such as  ‘with’, used for conjoining nominal phrases only.  
+      	Add the feature <feature>negative</feature> to the negative conjunctions meaning  ‘nor’ and  ‘neither’.  
+      	Add the feature <feature>makeInitialConj</feature> to the conjunction words meaning  ‘either’ and  ‘neither’ that are used in the initial position.  
+      If the same conjunction word can also be used in the medial position, you will need to make two lexical entries, so one can maintain the category <category>Conj</category>. </instruction>
+ 
+      <checkboxGroup id="CoordConjAttachTable" show="swCoordWordNotYes">
+      	<prompt><br/>Comment les constructions s’attachent-elles dans la construction de coordination?  Choisissez toutes les options applicables.</prompt>
+      	<checkbox id="CoordConjAttachesProclitic" dataItem="proclitic">Comme proclitique qui s’attache au début du deuxième conjoint</checkbox>
+      	<checkbox id="CoordConjAttachesEnclitic" dataItem="enclitic">Comme enclitique qui s’attache à la fin du premier conjoint</checkbox>
+      	<checkbox id="CoordConjAttachesOther" dataItem="attachesOther">Dans ma langue, les conjonctions peuvent s’attacher dans cette autre façon dans la construction de coordination: <textBox  id="CoordConjAttachesOtherContent" dataItem="attachesOther" rows="2"/></checkbox>
+      </checkboxGroup>
+   	<prompt id="CoordConjAttachesNoCheckPrompt" show="swCoordConjWordNotYesAndNoCheck">AVERTISSEMENT: Vous n’avez marqué aucune case pour décrire comment les conjonctions peuvent s’attacher dans votre langue.  Veuillez marquer une (ou plusieurs) cases comme il convient, ou changez votre réponse à « Oui, ce sont tous des mots indépendants ».</prompt>
+      
+            <br/>
+	      <instruction id="CoordConjAttachesProcliticInstruction" show="swCoordWordAttachesProclitic">In the lexicon, add the feature <feature>conj_prefix</feature> to the conjunctions that attach to the beginning of the second conjunct.  
+	      	Also add the feature <feature>conj_prefix_pl</feature> to the conjunctions that attach to the beginning of the second conjunct meaning ‘and’, ‘and/or’ and ‘with’, and also to any others which require plural agreement when they are used to conjoin nominal phrases.
+	      	In addition, add the feature <feature>conj_prefix_neg</feature> to the negative conjunctions meaning ‘nor’ that attach to the beginning of the second conjunct.</instruction>	   
+	   <instruction id="CoordConjAttachesEncliticInstruction" show="swCoordWordAttachesEnclitic">In the lexicon, add the feature <feature>conj_suffix</feature> to the conjunctions that attach to the end of the first conjunct. 
+	   	Also add the feature <feature>conj_suffix_pl</feature> to the conjunctions that attach to the end of the first conjunct meaning ‘and’, ‘and/or’ and ‘with’, and also to any others which require plural agreement when they are used to conjoin nominal phrases.
+	   	In addition, add the feature <feature>conj_suffix_neg</feature> to the negative conjunctions meaning ‘nor’ that attach to the end of the first conjunct.</instruction>	   
+	   
+	   <instruction id="CoordConjAttachesOtherInstruction" show="swCoordWordAttachesOther">Specific phrase structure rules for the coordination constructions with attached conjunctions in your language will need to be added after completion of the PAWS Starter Kit.  For now, the rules without any conjunction are given, and they should work fairly well.</instruction>
+	   <br/>
+	   <radioGroup>
+	      <groupName dataItem="noConj" default="no">RCoordNoConj</groupName>
+	   	<prompt><br/>Votre langue permet-elle aussi la coordination normale de syntagmes nominaux et, peut-être, aussi de phrases et d’autres catégories, sans une conjonction entre les deux parties?</prompt>
+	   	<radio id="CoordNoConjNo" dataValue="no">Non, quand il n’y a que deux choses conjointes, une conjonction doit être présente entre les deux</radio>
+	   	<radio id="CoordNoConjYes" dataValue="yes">Oui, deux choses peuvent être conjointes sans conjonction entr’elles</radio>
+	   </radioGroup>  
+	   <br/>
+	   <br/>
+   	<introduction>En général, la coordination fonctionne entre des catégories semblables.  Pour la coordination au niveau de la phrase, cela veut dire que des phrases déclaratives peuvent être conjointes, comme dans 1-2, ou deux questions, comme dans 3.  Quand la conjonction est celle qui veut dire « mais », une des conjoints doit être négative, comme dans 4.  Des exemples français comprennent:</introduction>
+		<EnglishExample>
+			<exItem label="1.">Jenn est allé au bureau ce matin et il vient de rentrer.</exItem>
+			<exItem label="2.">Ou je viendrai à la soirée ou j’enverrai ma sœur.</exItem>
+			<exItem label="3.">A quelle heure le courrier est-il arrivé et où est mon colis?</exItem>	  
+			<exItem label="4.">Jean est allé au bureau ce matin mais il n’est pas revenu.</exItem>
+		</EnglishExample>
+   	<prompt>Entrez ici des exemples de la coordination de phrases complètes:</prompt>
+		<textBox id="CoordSent" dataItem="sentExample" rows="5"/>
+		<br/>
+   	<prompt>Maintenant, entrez ici des exemples de la coordination de phrases complètes, telles que <example>Marie est allée au magasin et puis elle s’est préparée pour la soirée</example>:</prompt>
+   	<textBox id="CoordSeqSent" dataItem="sentSeqExample" rows="5"/>
+   	<br/>
+   	<introduction>La coordination de syntagmes verbaux implique deux syntagmes verbaux complets qui ont le même sujet.  Des exemples de la coordination de syntagmes verbaux, avec les conjoints entre crochets, comprennent:</introduction>
+		<EnglishExample>
+			<exItem label="5.">Guillaume [a fait une course] et [a gagné le prix].</exItem>
+			<exItem label="6.">Je [viendrai à la soirée] ou [j’enverrai ma sœur].</exItem>
+			<exItem label="7.">Je ne [viendrai à la soirée] ni [enverrai ma sœur].</exItem>
+		</EnglishExample>
+   	<prompt>Entrez ici  des exemples de la coordination de syntagmes verbaux dans votre langue [sans crochets]:</prompt>
+		<textBox id="CoordVP" dataItem="vpExample" rows="5"/>
+		<br/>
+   	<introduction>La coordination de syntagmes nominaux  peut se présenter comme sujets, objets, objets indirects et objets d’une préposition ou d’une postposition, tout comme un syntagme nominal normal.  Des exemples de la coordination de syntagmes nominaux, avec les conjoints entre crochets, comprennent:</introduction>
+		<EnglishExample>
+			<exItem label="8.">Guillaume a couru dans [le Marathon de Boston] et [aux Jeux Olympiques].</exItem>
+			<exItem label="9.">[Ma sœur] ou [moi] serons là.</exItem>
+			<exItem label="10.">Ni [ta sœur] ni [mon frère] serons là.</exItem>
+			<exItem label="11.">Je viendrai [à la répétition] mais pas [au dîner].</exItem>
+		</EnglishExample>
+   	<prompt>Entrez ici des exemples de la coordination de syntagmes nominaux dans votre langue (sans crochets).  Entrez seulement des exemples avec deux conjoints et une conjonction manifeste entre les conjoints.  D’autres sortes de coordination de syntagmes nominaux seront traitées à la page suivante.</prompt>
+		<textBox id="CoordDP" dataItem="dpExample" rows="5"/>
+		<br/>
+   	<introduction>Il est normalement possible d’avoir des syntagmes <span id="PPPrepSpan1" show="swPPPosPrep">prépositionnels</span>
+   		<span id="PPPostSpan1" show="swPPPosPost">postpositionnels</span>
+   		<span id="PPBothSpan1" show="swPPPosBoth">prépositionnels ou postpositionnels</span> coordonnés dans toutes les positions où un syntagme <span id="PPPrepSpan2" show="swPPPosPrep">prépositionnel</span>
+         <span id="PPPostSpan2" show="swPPPosPost">postpositionnel</span>
+   		<span id="PPBothSpan2" show="swPPPosBoth">prépositionnel ou postpositionnel</span> se présente normalement.  Des exemples en français de la coordination de syntagmes prépositionnels, avec les conjoints entre crochets, comprennent:</introduction>
+		<EnglishExample>
+			<exItem label="12.">Guillaume a couru [à travers la forêt] et [à travers le pont].</exItem>
+			<exItem label="13.">Je viendrai avec toi [à la répétition] mais pas [chez toi].</exItem>
+			<exItem label="14.">Je viendrai [aux noces] et/ou [à la réception].</exItem>
+			<exItem label="15.">Je viendrai soit [aux noces] soit [à la réception].</exItem>
+		</EnglishExample>
+   	<prompt>Entrez ici des exemples de coordination de syntagmes <span id="PPPrepSpan" show="swPPPosPrep">prépositionnels</span>
+   		<span id="PPPostSpan" show="swPPPosPost">postpositionnels</span>
+   		<span id="PPBothSpan" show="swPPPosBoth">prépositionnels et/ou postpositionnels</span> dans votre langue (sans crochets):</prompt>
+		<textBox id="CoordPP" dataItem="coordppExample" rows="5"/>
+		<br/>
+   	<introduction>Finalement, les adjectifs ou les syntagmes adjectivaux peuvent généralement être coordonnés, quand ils modifient un substantif, comme dans 16-18, et quand ils fonctionnent comme prédicat adjectival dans un phrase copulative, comme dans 19-20.  Des exemples français de la coordination de syntagmes adjectivaux, avec les conjoints entre crochets où le cas n’est pas clair, comprennent:</introduction>
+		<EnglishExample>
+			<exItem label="16.">Le chien noir et blanc est à mon fils.</exItem>
+			<exItem label="17.">Ma sœur veut une bougie [rouge vif] ou [bleu clair].</exItem>
+			<exItem label="18.">Cela paraît être une plaie [terriblement douloureuse] et [très dangereuse] sur ta jambe.</exItem>
+			<exItem label="19.">La plaie sur ta jambe est [terriblement douloureuse] et [très dangereuse].</exItem>
+			<exItem label="20.">Cette étoffe est [très lisse] et [soyeuse].</exItem>
+		</EnglishExample>
+   	<prompt>Entrez ici des exemples de la coordination de syntagmes adjectivaux dans votre langue (sans crochets):</prompt>
+		<textBox id="CoordAdj" dataItem="adjExample" rows="5"/>
+		<br/>
+		<br/>
+		<buttons>
+			<button id="CoordMainBack" value="Back" goto="Contents.htm"/>
+		    <button id="CoordMainNext" value="Next" goto="CoordDP.xml"/>
+		</buttons>
+	</form>
+   <showWhen id="swPPPosPrep">
+      <whenValue element="pp" attr="pPos" value="before"/>
+   </showWhen>
+   <showWhen id="swPPPosPost">
+      <whenValue element="pp" attr="pPos" value="after"/>
+   </showWhen>
+   <showWhen id="swPPPosBoth">
+      <whenValue element="pp" attr="pPos" value="both"/>
+      <or/>
+      <whenValue element="pp" attr="pPos" value="unknown"/>
+   </showWhen>
+   <showWhen id="swCoordWordNotNo">
+      <not/><whenRadio button="CoordConjWordNo"/>
+   </showWhen>
+   <showWhen id="swCoordWordNotYes">
+      <not/><whenRadio button="CoordConjWordYes"/>
+   </showWhen>
+   <showWhen id="swCoordWordAttachesProclitic">
+      <not/><whenRadio button="CoordConjWordYes"/>
+      <and/>
+      <whenCheckbox button="CoordConjAttachesProclitic"/>
+   </showWhen>
+   <showWhen id="swCoordWordAttachesEnclitic">
+      <not/><whenRadio button="CoordConjWordYes"/>
+      <and/>
+      <whenCheckbox button="CoordConjAttachesEnclitic"/>
+   </showWhen>
+   <showWhen id="swCoordWordAttachesOther">
+      <not/><whenRadio button="CoordConjWordYes"/>
+      <and/>
+      <whenCheckbox button="CoordConjAttachesOther"/>
+   </showWhen>
+   <showWhen id="swCoordConjWordNotYesAndNoCheck">
+      <not/><whenRadio button="CoordConjWordYes"/>
+      <and/><not/>
+      <whenCheckbox button="CoordConjAttachesProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="CoordConjAttachesEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="CoordConjAttachesOther"/>
+   </showWhen>
+   &TechnicalTerms; 
+</page>

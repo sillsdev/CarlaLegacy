@@ -82,7 +82,7 @@
                  </row>
               </table>
            </example>     
-           <p show="swAdvPTemporalDegreeYesWord"><content>Algunos ejemplos de los adverbios de tiempo con una palabra de grado que los modifica son::</content></p>          
+           <p show="swAdvPTemporalDegreeYesWord"><content>Algunos ejemplos de los adverbios de tiempo con una palabra de grado que los modifica son:</content></p>          
            <example show="swAdvPTemporalDegreeYesWord">
               <interlinear exampleLoc="advp/temporalPhraseExample"/>
            </example>            
@@ -735,16 +735,20 @@
            <p contentType="ctComparativeIntro"><content>Hay dos sistemas básicas de adverbios indefinidos, aunque no todas las lenguas fusionan en una sola palabra: aquellos que constan de un cuantificador y un sustantivo genérico, como </content><langData>cada vez</langData><content>, </content><langData>por todas partes</langData><content>, </content><langData>en cualquier momento</langData><content>, </content><langData>en cualquier lugar</langData><content>, </content><langData>en algún momento</langData> <content>,</content> <langData>en algún lugar</langData><content> y aquellos construídos de una palabra interrogativa y una palabra indefinida, como </content><langData>cuandoquiera</langData><content> y </content><langData>dondequiera</langData><content>.</content></p>	   
            <p contentType="ctPracticalIntro"><content>Los adverbios indefinidos se utilizan para referirse a un tiempo o un lugar no especificado. Normalmente constan de un cuantificador y un sustantivo genérico o una palabra interrogativa y una palabra indefinida, y no se pueden fusionar en una sola palabra.</content></p>
           <p>
-             <content>El primer tipo, los adverbios indefinidos de tiempo que incluyen un cuantificador y un sustantivo genérico, en el </content>
+             <content>Para el primer tipo de adverbios indefinidos de tiempo que incluyen un cuantificador y un sustantivo genérico, en el </content>
              <langName/>
-             <content/>
+             <content> los adverbios indefinidos de tiempo </content>
+             <text show="swTemporalIndefTypeQNone"><content>no se expresan con un cuantificador.</content></text>
+             <text show="swTemporalIndefTypeQOtherOnly"><content>se expresan con ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
              <text show="swTemporalIndefQWordOnly"><content> se expresan con un cuantificador y un sustantivo genérico de tiempo que se fusionan en una sola palabra. </content></text>
              <text show="swTemporallndefQWordAndQPhrase"><content> se expresan a veces con un cuantificador y un sustantivo genérico de tiempo que se fusionan en una sola palabra, pero otros se permanecen independientes como una frase.</content></text>
              <text show="swTemporalIndefQWordAndOther"><content> se expresan a veces con un cuantificador y un sustantivo genérico de tiempo que se fusionan en una sola palabra, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
              <text show="swTemporalIndefQPhraseOnly"><content> se expresan con un cuantificador y un sustantivo genérico de tiempo que no se pueden fusionar en una sola palabra sino que se permanecen independientes como una frase. </content></text>
              <text show="swTemporalIndefQPhraseAndOther"><content> se expresan con un cuantificador y un sustantivo genérico de tiempo que no se pueden fusionar en una sola palabra sino que se permanecen independientes como una frase, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
              <text show="swTemporalIndefQWordAndQPhraseAndOther"><content> se expresan con un cuantificador y un sustantivo genérico de tiempo que a veces se fusionan en una sola palabra y otros veces se permanecen independientes como una frase, pero otros se expresan con  ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefQOther"/><content>. </content></text>
-             <content> Los adverbio indefinidos de lugar </content>
+             <content> Los adverbios indefinidos de lugar </content>
+             <text show="swLocativeIndefTypeQNone"><content>no se expresan con un cuantificador.</content></text>
+             <text show="swLocativeIndefTypeQOtherOnly"><content>se expresan con ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefQOther"/><content>. </content></text>
              <text show="swLocativeIndefQWordOnly"><content>se expresan con un cuantificador y un sustantivo genérico de lugar que se fusionan en una sola palabra. </content></text>
              <text show="swLocativeIndefQWordAndQPhrase"><content>se expresan a veces con un cuantificador y un sustantivo genérico de lugar que se fusionan en una sola palabra, pero otros se permanecen independientes como una frase.</content></text>
              <text show="swLocativeIndefQWordAndOther"><content>se expresan a veces con un cuantificador y un sustantivo genérico de lugar que se fusionan en una sola palabra, pero otros se expresan con ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefQOther"/><content>. </content></text>
@@ -876,6 +880,8 @@
              <content>Para el segundo tipo de indefinido que incluye una palabra interrogativa y una palabra indefinida, en el </content>
              <langName/>
              <content> los adverbios indefinidos de tiempo </content>
+             <text show="swTemporalIndefTypeIntNone"><content>no se expresan con una palabra interrogativa.</content></text>
+             <text show="swTemporalIndefIntOtherOnly"><content>se expresan con ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefIntOther"/><content>. </content></text>
              <text show="swTemporalIndefIntWordOnly"><content>se expresan con una palabra interrogativa de tiempo y un indefinido unidos en una sola palabra. </content></text>
              <text show="swTemporalIndefIntWordAndIntPhrase"><content>se expresan a veces con una palabra interrogativa de tiempo y un indefinido unidos en una sola palabra, pero otros se escriben como frases. </content></text>
              <text show="swTemporalIndefIntWordAndOther"><content>se expresan a veces con una palabra interrogativa de tiempo y un indefinido unidos en una sola palabra, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="advp/temporalIndefIntOther"/><content>. </content></text>
@@ -883,6 +889,8 @@
              <text show="swTemporalIndefIntPhraseAndOther"><content>se expresan a veces con una palabra interrogativa de tiempo y un indefinido que no se pueden fusionar en una sola palabra sino que  permanecen independientes como una frase, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="advp/temporralIndefIntOther"/><content>. </content></text>
              <text show="swTemporalIndefIntWordAndIntPhraseAndOther"><content>se expresan con una palabra interrogativa de tiempo y un indefinido que a veces se fusionan en una sola palabra y otros veces se permanecen independientes en una frase, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="avdp/temporalIndefIntOther"/><content>. </content></text>
              <content> Los adverbios indefinidos de lugar </content>
+             <text show="swLocativeIndefTypeIntNone"><content>no se expresan con una palabra interrogativa.</content></text>
+             <text show="swLocativeIndefIntOtherOnly"><content>se expresan con ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefIntOther"/><content>. </content></text>
              <text show="swLocativeIndefIntWordOnly"><content>se expresan con una palabra interrogativa de lugar y un indefinido unidos en una sola palabra. </content></text>
              <text show="swLocativeIndefIntWordAndIntPhrase"><content>se expresan a veces con una palabra interrogativa de lugar y un indefinido unidos en una sola palabra, pero otros se escriben como frases. </content></text>
              <text show="swLocativeIndefIntWordAndOther"><content>se expresan a veces con una palabra interrogativa de lugar y un indefinido unidos en una sola palabra, pero otros se expresan por ___</content><contentCheckBoxOther contentLoc="advp/locativeIndefIntOther"/><content>. </content></text>
@@ -1644,6 +1652,35 @@
       <and/>
       <whenValue element="advp/temporalIndefQOther" attr="checked" value="yes"/>
    </showWhen>
+ 
+   <showWhen id="swTemporalIndefTypeQOtherOnly">
+      <whenValue element="advp/temporalIndefQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefQWord" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeQOtherOnly">
+      <whenValue element="advp/locativeIndefQOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefQWord" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefIntOtherOnly">
+      <whenValue element="advp/temporalIndefIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/temporalIndefIntWord" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefIntOtherOnly">
+      <whenValue element="advp/locativeIndefIntOther" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntPhrase" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="advp/locativeIndefIntWord" attr="checked" value="no"/>
+   </showWhen>
    
    <showWhen id="swTemporalIndefQWordOnly">
       <whenValue element="advp/temporalIndefQPhrase" attr="checked" value="no"/>
@@ -1781,6 +1818,19 @@
       <whenValue element="advp/locativeIndefQWord" attr="checked" value="yes"/>
       <and/>
       <whenValue element="advp/locativeIndefQOther" attr="checked" value="yes"/>
+   </showWhen>
+ 
+   <showWhen id="swTemporalIndefTypeQNone">
+      <whenValue element="advp/temporalIndefTypeQNone" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swTemporalIndefTypeIntNone">
+      <whenValue element="advp/temporalIndefTypeIntNone" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeQNone">
+      <whenValue element="advp/locativeIndefTypeQNone" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swLocativeIndefTypeIntNone">
+      <whenValue element="advp/locativeIndefTypeIntNone" attr="checked" value="yes"/>
    </showWhen>
    
    <showWhen id="swLocativeIndefQWordOnly">
@@ -1986,16 +2036,7 @@
       <whenValue element="advp/temporalIndefIntWord" attr="checked" value="yes"/>
    </showWhen>
    
-   <showWhen id="swTemporalIndefTypeIntOtherOnly">
-      <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
-      <and/>
-      <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="advp/temporalIndefTypeIntAfter" attr="checked" value="no"/>
-      <and/>
-      <whenValue element="advp/temporalIndefTypeIntBoth" attr="checked" value="no"/>
-   </showWhen>
-   <showWhen id="swTemporalIndefIntOtherOnly"> 
+   <showWhen id="swTemporalIndefTypeIntOtherOnly"> 
       <whenValue element="advp/temporalIndefTypeIntOther" attr="checked" value="yes"/>
       <and/>
       <whenValue element="advp/temporalIndefTypeIntBefore" attr="checked" value="no"/>

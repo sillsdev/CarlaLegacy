@@ -17,7 +17,7 @@
        <checkboxGroup>
           <prompt><br/>¿Qué elementos especiales se utilizan en oraciones existenciales en su lengua?  Seleccione todas las opciones que son correctas en su lengua.  Si ningún opción se permite en su lengua, quita estas opciones y seleccione la opción para ‘Ninguno’ de abajo</prompt>
           <checkbox id="IPExistWord" dataItem="existWord">Una palabra existencial independiente, como ‘there' en inglés</checkbox>
-          <checkbox id="IPExistVerb" dataItem="existVerb">Un verbo existencial, como ‘hay’ en español</checkbox>
+          <checkbox id="IPExistVerb" dataItem="existVerb">Un verbo existencial, como ‘hay’ en español, o posiblemente los verbos copulativos como en inglés</checkbox>
           <checkbox id="IPExistPosition" dataItem="existPosition">Un sistema de verbos existenciales que expresan la posición del objeto que se describe</checkbox>
           <checkbox id="IPExistOther" dataItem="existOther">En mi lengua, las oraciones existenciales se pueden marcar en esta manera: <textBox  id="IPExistOtherContent" dataItem="existOther" rows="2"/></checkbox>
        </checkboxGroup>

@@ -3,7 +3,7 @@
 <!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
-<page id="IPSubjunctive" count="2/3">
+<page id="IPSubjunctive" count="3/3">
    <title level="2">Las oraciones básicas - Subjuntivas</title>
    <introduction>El modo  <technicalTermRef term="ttSubjunctive"/> se utiliza para expresar ideas supuestas, dudadas, temidas o deseadas; actualmente no son realidad. En los ejemplos las construcciones subjuntivas se ve como parecen condicionales pero en primera persona, por ejemplo:</introduction>
    <EnglishExample>
@@ -65,7 +65,7 @@
          <checkbox id="IPSubjunctiveCondPosOther"  dataItem="subjunctiveCondWordOther">En mi lengua, pueden presentarse: <textBox  id="IPSubjunctiveCondPosOtherContent" dataItem="subjunctiveCondWordOther" rows="2"/></checkbox>
       </checkboxGroup>
       <prompt id="IPSubjunctiveCondPosNoCheckPrompt" show="swIPSubjunctiveCondYesandNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir dónde se presentan los indicadores de la condición subjuntiva con respecto del resto de la frase condicional subjuntiva, o cambia su respuesta de arriba a ‘No, todos se unen a otra palabra en la frase condicional subjuntiva’ o ‘No, no hay ningún indicador para la condición en los subjuntivos en mi lengua, solamente utiliza el modo subjuntivo en el verbo’.</prompt>
-      <instruction id="IPSubjunctiveCondYesInstruction" show="swIPSubjunctiveCondWordYesOrSome">In the lexicon, if this word is the same as the conditional word for conditionals discussed on the last page, simply add the feature <feature>subjunctive_conditional</feature> to the same entry you added on the last page with the category <category>Cond</category>.  If it is distinct from that entry, you will likely need to add a separate entry for this words, if itcan also be used as a complementizers in embedded questions.  Give this entry the category <category>Cond</category> and the feature <feature>subjunctive_conditional</feature>. </instruction>
+      <instruction id="IPSubjunctiveCondYesInstruction" show="swIPSubjunctiveCondWordYesOrSome">In the lexicon, if this word is the same as the conditional word for conditionals discussed on the last page, simply add the feature <feature>subjunctive_conditional</feature> to the same entry you added on the last page with the category <category>Cond</category>.  If it is distinct from that entry, give this entry the category <category>Cond</category> and the feature <feature>subjunctive_conditional</feature>.  If this word can also be used as a complementizers in embedded questions, you will need to add a separate entry for it.   </instruction>
       <instruction id="IPSubjunctiveCondEitherRestrictedInstruction" show="swIPSubjunctiveCondEitherRestricted">In the lexicon, mark those subjunctive condition markers which can only occur before the condition phrase with the feature <feature>IP-initial</feature> and those which can only occur after it with the feature <feature>IP-final</feature>.  Do not enter either feature on any words which can occur on either side.</instruction>
       <br/>
         <br/>

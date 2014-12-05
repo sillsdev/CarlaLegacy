@@ -29,7 +29,7 @@
        <textBox id="IPCopuparVerbExample" dataItem="copularVerb" show="swIPCopVerbYesOrOptional" rows="3"/>
        <radioGroup id="IPCopVerbNoTable" show="swIPCopVerbNoOrOptional">
                 <groupName dataItem="copularAffix" default="no">RIPCopAffix</groupName>
-                <prompt>Is there an affix which occurs on the predicate nominal or predicate adjective in copular sentences <span  id="IPCopVerbYesOptionalPrompt" show="swIPCopVerbYesOptional">when there is no copular verb present</span>?</prompt>
+                <prompt>Is there an affix which occurs on the predicate nominal or predicate adjective in copular sentences<span  id="IPCopVerbYesOptionalPrompt" show="swIPCopVerbYesOptional"> when there is no copular verb present</span>?</prompt>
                 <radio id="IPCopAffixNo" dataValue="no">No</radio>
                 <radio id="IPCopAffixYesPrefix" dataValue="yesPrefix">Yes, a prefix</radio>
                 <radio id="IPCopAffixYesSuffix" dataValue="yesSuffix">Yes, a suffix</radio>

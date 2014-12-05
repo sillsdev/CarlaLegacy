@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE portion SYSTEM "..\Data\PAWSSKWriterDescription.dtd">
+<portion>
+  <section1 id="sExcl">
+     <secTitle>Salutations, interjections et exclamations</secTitle>
+	<p>
+	   <content>Cette section considère les différents types d’expressions communes qui ne sont pas des phrases complètes. Les salutations, interjections et exclamations seront traitées tour à tour.</content>
+	</p>
+<section2 id="sExclGreet">
+	<secTitle>Salutations</secTitle>
+   <p contentType="ctComparativeIntro"><content>Les salutations consistent typiquement d’un mot ou locution particulier, soit qui est seul(e) soit suivi(e) d’un nom ou d’un syntagme nominal qui décrit la personne ou l’animal salué(e). Certains sont des phrases entières ou des questions entières, comme dans </content> <langData>Comment vas-tu?</langData><content> et </content><langData>Comment allez-vous?</langData> <content> et </content><langData>Bonne journée!</langData> <content> qui ne doivent pas être traitées séparément. </content></p>
+   <p contentType="ctComparativeIntro"><content>Certains exemples de salutations en français sont:
+   </content><langData>Salut!</langData><content> et </content><langData>Bonjour!</langData><content> et </content><langData>Au revoir</langData><content> et </content><langData>Bonjour Monsieur</langData><content> et </content><langData>Bonne nuit, doux enfant</langData>
+      <content>.</content>
+   </p>
+   <p contentType="ctPracticalIntro"><content>Les salutations consistent typiquement d’un mot particulier ou d’une locution particulière, qui est soit seul(e) soit suivie(e) d’un nom ou d’un syntagme nominal qui décrit la personne ou l’animal salué(e).</content></p>
+   <p><content>Des exemples de salutations en </content><langName/> <content> comprennent:</content></p>
+			<example>
+				<interlinear exampleLoc="excl/greetExample"/>
+			</example>
+</section2>
+<section2 id="sExclIntj">
+	<secTitle>Interjections</secTitle>
+   <p contentType="ctComparativeIntro"><content>Les interjections consistent typiquement de mots ou locutions particuliers qui sont utilisés seuls, suivis d’habitude d’un point d’exclamation. Bien que beaucoup de mots dans des interjections ne soient pas utilisés ailleurs, les adjectifs réguliers sont utilisés de cette façon. Quelques exemples d’interjections en français sont:
+   </content><langData>Aie!</langData><content> et </content><langData>Super!</langData><content> et </content><langData>Sacré bleu!</langData><content> et </content><langData>Oh là là!</langData>
+</p>
+   <p contentType="ctPracticalIntro"><content>Les interjections consistent typiquement de mots ou locutions particuliers qui sont utilisés seuls, suivis d’habitude d’un point d’exclamation. Bien que beaucoup de mots dans des interjections ne soient pas utilisés ailleurs, les adjectifs réguliers sont utilisés de cette façon.</content></p>
+      
+   <p><content>Des exemples d’interjection en </content><langName/> <content> comprennent:</content></p>
+			<example>
+				<interlinear exampleLoc="excl/intjExample"/>
+			</example>
+   <p><content>Les réponses </content><langData>Oui</langData><content> et </content><langData>Non</langData><content> à des questions sont similaires à des interjections.  En </content><langName/><content> les mots suivants sont utilisés pour exprimer ces réponses:</content></p>
+<example>
+<table border="1">
+					<headerRow>
+					   <headerCol>Morphèmes</headerCol>
+						<headerCol>Glose</headerCol>
+					   <headerCol>Signification</headerCol>
+					</headerRow>
+					<row>
+						<col exampleLoc="excl/yesExample"/>
+					   <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+					   <col rowspan="1">
+						   <gloss><content>oui</content></gloss>
+						</col>
+					</row>
+					<row>
+						<col exampleLoc="excl/noExample"/>
+					   <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+					   <col rowspan="1">
+						   <gloss><content>non</content></gloss>
+						</col>
+					</row>
+</table>
+</example>
+</section2>
+<section2 id="sExclExcl">
+   <secTitle>Exclamations</secTitle>
+   <p contentType="ctComparativeIntro"><content>Les exclamations consistent typiquement en un mot particulier comme </content><langData>comment</langData><content>, </content><langData>combien</langData><content> ou </content><langData>que</langData><content> en français. suivis d’une syntagme adjectival et généralement ponctuée d’un point d’exclamation. Des exemples en français incluent: </content>
+      <langData>Comme tu es grand!</langData><content> et </content><langData>Que c’est chic!</langData><content> et </content><langData>Combien c’est merveilleux que ta famille puisse venir!</langData>
+</p>
+   <p contentType="ctPracticalIntro"><content>Les exclamations consistent typiquement en un mot particulier suivis d’une syntagme adjectival et généralement ponctuée d’un point d’exclamation.</content></p>  
+   <p show="swExclMNo"><content>En </content><langName/><content> il n’y a pas de mot spécial qui marque des exclamations de ce type, elles ne sont donc pas différentes des interjections qui comprennent des adjectifs dans la section précédente.</content></p>
+   <p show="swExclMYes"><content>En </content><langName/> <content> il y a un ou plususieurs mots spéciaux qui signalent une exclamation qui apparaîssent </content>
+      <text show="swExclMBefore"><content>avant le</content></text>
+      <text show="swExclMAfter"><content>après le</content></text>
+      <text show="swExclMBoth"><content>des deux côtés du</content></text>
+      <text show="swExclMEither"><content>d’un côté ou de autre côté du</content></text>
+      <text show="swExclMBeforeOrBoth"><content>avant ou des deux côtés du</content></text>
+      <text show="swExclMAfterOrBoth"><content>après ou des deux côtés du</content></text>
+      <text show="swExclMEitherOrBoth"><content>d’un côté ou de autre côté ou des deux côtés du</content></text>
+      <text show="swExclMNotOther"><content> syntagme adjectival.  </content></text>
+      <text show="swExclMOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="excl/exclMOther"/><content>.    </content></text>
+      <text show="swExclMPosAndOther"><content> syntagme adjectival et peut appaître aussi ___</content><contentCheckBoxOther contentLoc="excl/exclMOther"/><content>.  </content></text>
+      
+      <content>Ces marqueurs d’exclamation sont:</content></p>
+<example show="swExclMYes"><table border="1">
+<headerRow>
+   <headerCol>Marqueurs d’exclamation</headerCol>
+	<headerCol>Glose</headerCol>
+</headerRow>
+	<row>
+		<col exampleLoc="excl/exclMExample"></col>
+		<col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+	</row>
+</table>
+</example>
+
+   <p><content>Des exemples d’exclamations en </content><langName/><content> comprennent:</content></p>
+   <example>
+	  <interlinear exampleLoc="excl/exclExample"/>
+   </example>
+</section2>
+  </section1>
+<showWhen id="swExclMYes">
+	<whenValue element="excl" attr="exclM" value="yes"></whenValue>
+</showWhen>
+<showWhen id="swExclMNo">
+	<whenValue element="excl" attr="exclM" value="no"></whenValue>
+</showWhen>
+   <showWhen id="swExclMBefore">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMAfter">
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMBoth">
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMEither">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMBeforeOrBoth">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMAfterOrBoth">
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMEitherOrBoth">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMNotOther">
+      <whenValue element="excl/exclMOther" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swExclMOtherOnly">
+      <whenValue element="excl/exclMBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/NPDegreePosOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swExclMPosAndOther">
+      <whenValue element="excl/exclMBefore" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="excl/exclMAfter" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="excl/exclMBoth" attr="checked" value="yes"/>
+      <and/>
+      <whenValue element="excl/exclMOther" attr="checked" value="yes"/>
+   </showWhen>
+</portion>

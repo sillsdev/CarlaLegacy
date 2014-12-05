@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="FocusMain" count="1/2">
+    <title>Constructions de Focus et de Thème</title>
+    <introduction>Cette section traite deux sortes de constructions qui attirent l’attention à un élément particulier.  Nous considérerons d’abord les thèmes puisqu’ils ont une portée plus étendue et se trouvent, par conséquent, en dehors des constructions de focus.<br/><br/>
+        Le premier exemple  montre qu’une seule phrase peut avoir un syntagme de thème en même temps qu’un syntagme de focus.  Dans ce cas-ci, le thème <example>Guillaume</example> est introduit par le marqueur de thème <example>quant à</example> et le syntagme de focus <example>football</example>, qui ayant été déplacé de sa position normale après le verbe, suit le syntagme de thème.
+       </introduction>
+       <EnglishExample>
+           <exItem label="1.">Quant à Guillaume, le football il joue __ le mieux.</exItem>
+       </EnglishExample>
+   <introduction> 
+       Selon la définition ici, les constructions de <technicalTermRef term="ttTopic">thème</technicalTermRef> se composent d’un syntagme de thème suivi d’une phrase complète ou d’une question et séparée d’habitude par une virgule.  Certains mots ou syntagmes marqueurs peuvent aussi être utilisés pour signaler les thèmes, comme le montrent les exemples suivants en français:</introduction>
+    <EnglishExample>
+        <exItem label="2.">Quant à Jean, je pense qu’il fera un bon médecin.</exItem>
+        <exItem label="3.">Parlant de Jeanne, où est-elle?</exItem>
+    </EnglishExample>
+    <form section="focus" transparent="no">
+<radioGroup id="TopicTable">
+    <groupName dataItem="topic" default="no">RTopic</groupName>
+    <prompt><br/>Votre langue permet-elle un syntagme de thème avant ou après une phrase complète ou une question, comme dans les exemples ci-dessus ?</prompt>
+    <radio id="TopicNo" dataValue="no">Non</radio>
+    <radio id="TopicYes" dataValue="yes">Oui</radio>
+</radioGroup>
+        <prompt id="TopicYesInstruction" show="swTopicYes">Entrez ici des exemples de constructions de thème dans votre langue:</prompt>
+        <textBox id="Topic" show="swTopicYes" dataItem="topicExample" rows="5"/>
+<br/>
+<radioGroup id="TopicPosTable" show="swTopicYes">
+    <groupName dataItem="topicPos" default="unknown" position="yesHead">RTopicPos</groupName>
+    <prompt><br/>En considérant les exemples que vous avez entrés, où le syntagme de thème se présente-t-il par rapport à la phrase principale ou la question?</prompt>
+    <radio id="TopicPosBefore" dataValue="before">Avant</radio>
+    <radio id="TopicPosAfter" dataValue="after">Après</radio>
+</radioGroup>
+<radioGroup id="TopicMarkerTable" show="swTopicYes">
+    <groupName dataItem="topicMarker" default="no">RTopicMarker</groupName>
+    <prompt>Dans votre langue, y a-t-il un ou plusieurs mots spéciaux ou de clitiques ou d’affixes qui marquent les thèmes?</prompt>
+    <radio id="TopicMarkerNo" dataValue="no">Non, le thème n’est marqué que par sa position</radio>
+    <radio id="TopicMarkerYesWord" dataValue="yesWord">Oui, certains mots ou syntagmes indiquent le thème</radio>
+    <radio id="TopicMarkerYesClitic" dataValue="yesClitic">Oui, le syntagme de thème est marqué par un clitique</radio>
+    <radio id="TopicMarkerYesAffix" dataValue="yesAffix">Oui, le thème est marqué par un affixe qui s’attache au substantif principal</radio>
+</radioGroup>
+        <prompt id="TopicMarkerYesWordInstruction" show="swTopicMarkerYesWord">Entrez dans la boîte suivante les marqueurs utilisés dans votre langue.  Si le marqueur est un syntagme, tel que « quant à » ou « parlant de » en français, entrez le sur la même ligne.</prompt>
+       <textBox id="TopicMarker" show="swTopicMarkerYesWord" dataItem="topicMarkerExample" rows="4"/>
+       <checkboxGroup id="TopicMarkerPosTable" show="swTopicMarkerYesWord">
+           <prompt><br/>Où le marqueur de thème se présente-t-il par rapport au thème lui-même ?  Marquez toutes les options permises.</prompt>
+   <checkbox id="TopicMarkerPosBefore" dataItem="topicMarkerBefore">Avant</checkbox>
+           <checkbox id="TopicMarkerPosAfter" dataItem="topicMarkerAfter">Après</checkbox>
+           <checkbox id="TopicMarkerPosBoth" dataItem="topicMarkerBoth">Des deux côtés du même syntagme de thème</checkbox>
+           <checkbox id="TopicMarkerPosOther" dataItem="topicMarkerOther">Dans ma langue, le marqueur de thème peut se présenter dans cette autre position: <textBox  id="TopicMarkerOtherContent" dataItem="topicMarkerOther" rows="2"/></checkbox>
+</checkboxGroup>
+        <prompt id="TopicMarkerPosNoCheckPrompt" show="swTopicMarkerYesWordAndNoCheck">AVERTISSEMENT: Vous n’avez marqué aucune boîte pour décrire où le marqueur de thème peut se présenter par rapport au syntagme de thème dans votre langue.  Veuillez marquer une ou plusieurs boîtes, ou changez votre réponse à  « Non, le thème n’est marqué que par sa position » ci-dessus.  Dans ce cas il ne vous faudrait pas d’exemples de marqueurs de thème dans la boîte non plus. </prompt>
+       
+<radioGroup id="TopicMarkerRequiredTable" show="swTopicMarkerYesWord">
+    <groupName dataItem="topicMarkerRequired" default="no">RTopicMarkerRequired</groupName>
+    <prompt>Un marqueur de thème est-il obligatoire quand il y a un syntagme de thème?</prompt>
+    <radio id="TopicMarkerRequiredNo" dataValue="no">Non, il est facultatif</radio>
+    <radio id="TopicMarkerRequiredYes" dataValue="yes">Oui, un marqueur de thème est obligatoire dans tous les syntagmes de thème</radio>
+</radioGroup>
+
+<instruction id="TopicMarkerEitherInstruction" show="swTopicMarkerYesWordEitherSide">In the lexicon, add the feature <feature>topic-initial</feature> to the topic markers which can only appear before the topic itself.  Add the feature <feature>topic-final</feature> to the topic markers which can only appear after the topic itself.  Do not add either feature to topic markers which can appear on either side of the topic. </instruction>
+<instruction id="TopicMarkerYesWordInstruction2" show="swTopicMarkerYesWord">In the lexicon, add the feature <feature>makeTopicM</feature> to each topic marker to change the category for the syntax.  (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, such as  »as for’ or  »speaking of’ in English, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
+        <prompt id="TopicMarkerYesCliticInstruction" show="swTopicMarkerYesClitic"><br/>Entrez dans la boîte suivante le(s) clitique(s) qui marque(nt) le thème qu’utilise votre langue, avec un signe d’égalité pour indiquer de quel côté du syntagme de thème il s’attache.</prompt>
+       <textBox id="TopicMarkerClitic" show="swTopicMarkerYesClitic" dataItem="topicMarkerCliticExample" rows="4"/>
+       <instruction id="TopicMarkerYesCliticInstruction2" show="swTopicMarkerYesClitic">In the lexicon, add the feature <feature>topic_prefix</feature> to each topic marker proclitic and the feature <feature>topic_suffix</feature> to each topic marker enclitic.</instruction>
+       
+       <br/>      
+        <prompt id="TopicMarkerYesAffixInstruction" show="swTopicMarkerYesAffix"><br/>Entrez le(s) affixe(s) qui marquent le thème qu’utilise votre langue dans la boîte suivante, avec un trait d’union pour indiquer de quel côté du substantif principal il s’attache.</prompt>
+       <textBox id="TopicMarkerAffix" show="swTopicMarkerYesAffix" dataItem="topicMarkerAffixExample" rows="4"/>
+ <instruction id="TopicMarkerYesAffixInstruction2" show="swTopicMarkerYesAffix">In the lexicon, add the feature <feature>topic</feature> to each topic marker affix.</instruction>
+<br/>
+       <br/>
+       <instruction id="TopicCommaInstruction" show="swTopicYes">Note that the comma is important in topic constructions and may be useful in disambiguating topics from other types of constructions.  As mentioned in <section number="15">Coordination Constructions – Lists and Appositives</section>, you can choose to make the comma (,) a word-formation character in <tool>CarlaStudio</tool>. Then make it a suffix or enclitic that can go on any word category and give it the feature <feature>comma</feature>.  The PC-Patr grammar constraints to disambiguate via commas are already provided, but you will need to activate them by removing the comment character in the S rule(s) including a TopicP.</instruction>
+       <br/>
+        <introduction>Par contraste, tandis que les constructions de <technicalTermRef term="ttFocus">focus</technicalTermRef> ont aussi un élément initial qui peut être séparé par la ponctuation, le syntagme de focus est déplacé de sa position normale dans la phrase, laissant un vide.  Certains marqueurs, tels que « seulement » en français, peuvent être utilisés pour marquer le syntagme de focus.  Les constructions de focus ne sont pas utilisées fréquemment dans les langues SVO, puisque le sujet est généralement en focus et est déjà au début dans l’ordre normal.  D’autres ordres des mots, tels que dans les langues VSO, peuvent utiliser plus fréquemment les constructions de focus.  Des exemples de constructions de focus en français comprennent:
+       </introduction>
+       <EnglishExample>
+           <exItem label="4.">Les filles, j’aime __.</exItem>
+           <exItem label="5.">Le football, Guillaume le joue __ le mieux.</exItem>
+           <exItem label="6.">Seulement ce garçon-là, Gérald l’a frappé __ .</exItem>
+       </EnglishExample>
+       <radioGroup id="FocusTable">
+    <groupName dataItem="focus" default="no">RFocus</groupName>
+           <prompt><br/>Votre langue permet-elle le déplacement  d’un syntagme de focus avant ou après le reste de la phrase hors de sa position normale?</prompt>
+    <radio id="FocusNo" dataValue="no">Non</radio>
+    <radio id="FocusYes" dataValue="yes">Oui</radio>
+</radioGroup>
+        <prompt id="FocusYesInstruction" show="swFocusYes">Entrez ici des exemples de constructions de focus dans votre langue:</prompt>
+        <textBox id="Focus" show="swFocusYes" dataItem="focusExample" rows="5"/>
+<br/>
+<radioGroup id="FocusPosTable" show="swFocusYes">
+    <groupName dataItem="focusPos" default="unknown" position="yesHead">RFocusPos</groupName>
+    <prompt><br/>En considérant les exemples que vous avez entrés, où le syntagme de focus se présente-t-il par rapport au reste de la phrase?</prompt>
+    <radio id="FocusPosBefore" dataValue="before">Avant</radio>
+    <radio id="FocusPosAfter" dataValue="after">Après</radio>
+</radioGroup>
+<radioGroup id="FocusMarkerTable" show="swFocusYes">
+    <groupName dataItem="focusMarker" default="no">RFocusMarker</groupName>
+    <prompt><br/>Dans votre langue, y a-t-il un ou plusieurs mots spéciaux ou de clitiques ou d’affixes qui marquent le syntagme ou le mot en focus?</prompt>
+    <radio id="FocusMarkerNo" dataValue="no">Non, le syntagme de focus n’est marqué que par sa position</radio>
+    <radio id="FocusMarkerYesWord" dataValue="yesWord">Oui, certains mots ou syntagmes peuvent indiquer un syntagme en focus</radio>
+    <radio id="FocusMarkerYesClitic" dataValue="yesClitic">Oui, le syntagme de focus est marqué par un clitique</radio>
+    <radio id="FocusMarkerYesAffix" dataValue="yesAffix">Oui, le focus est marqué par un affixe qui s’attache au substantif principal</radio>
+</radioGroup>
+        <prompt id="FocusMarkerYesWordInstruction" show="swFocusMarkerYesWord"><br/>Entrez dans la boîte suivante les marqueurs de focus qu’utilise votre langue.  Si le marqueur est un syntagme, entrez le sur la même ligne.</prompt>
+       <textBox id="FocusMarker" show="swFocusMarkerYesWord" dataItem="focusMarkerExample" rows="4"/>
+       <checkboxGroup id="FocusMarkerPosTable" show="swFocusMarkerYesWord">
+           <prompt><br/>Où le marqueur de focus se présente-t-il par rapport au thème lui-même ?  Marquez toutes les options permises.</prompt>
+          <checkbox id="FocusMarkerPosBefore" dataItem="focusMarkerBefore">Avant</checkbox>
+           <checkbox id="FocusMarkerPosAfter" dataItem="focusMarkerAfter">Après</checkbox>
+           <checkbox id="FocusMarkerPosBoth" dataItem="focusMarkerBoth">Des deux côtés du même syntagme de focus</checkbox>
+           <checkbox id="FocusMarkerPosOther" dataItem="focusMarkerOther">Dans ma langue, le marqueur de focus peut se présenter dans cette autre position: <textBox  id="FocusMarkerOtherContent" dataItem="focusMarkerOther" rows="2"/></checkbox>
+       </checkboxGroup>
+        <prompt id="FocusMarkerPosNoCheckPrompt" show="swFocusMarkerYesWordAndNoCheck">AVERTISSEMENT: Vous n’avez coché aucune boîte pour décrire où le marqueur de focus peut se présenter par rapport au syntagme de focus dans votre langue.  Veuillez cocher une ou plusieurs boîtes, ou changez votre réponse à « Non, le syntagme de focus n’est marqué que par sa position » ci-dessus.  Dans ce cas il ne vous faudrait pas d’exemples de marqueurs de focus dans la boîte non plus.</prompt>
+       
+<radioGroup id="FocusMarkerRequiredTable" show="swFocusMarkerYesWord">
+    <groupName dataItem="focusMarkerRequired" default="no">RFocusMarkerRequired</groupName>
+    <prompt>Un marqueur de focus, est-il obligatoire quand il y a un syntagme en focus?</prompt>
+    <radio id="FocusMarkerRequiredNo" dataValue="no">Non, il est facultatif</radio>
+    <radio id="FocusMarkerRequiredYes" dataValue="yes">Oui, un marqueur de focus est obligatoire dans tous les syntagmes en focus</radio>
+</radioGroup>
+<instruction id="FocusMarkerEitherInstruction" show="swFocusMarkerYesWordEitherSide">In the lexicon, add the feature <feature>focus-initial</feature> to the focus markers which can only appear before the focused phrase or word itself.  Add the feature <feature>focus-final</feature> to the focus markers which can only appear after the focused phrase or word  itself.  Do not add either feature to focus markers which can appear on either side of the focused phrase or word. </instruction>
+<instruction id="FocusMarkerYesWordInstruction2" show="swFocusMarkerYesWord">In the lexicon, add the feature <feature>makeFocusM</feature> to each focus marker to change the category for the syntax. (If the word can also be used in other ways, make a separate entry for each use.)  If  the marker is a phrase, you will need to key them as a single entry with an underscore between the words and use the <tool>Join Compound</tool> program within <tool>CARLA Studio</tool>.</instruction>
+
+        <prompt id="FocusMarkerYesCliticInstruction" show="swFocusMarkerYesClitic"><br/>Entrez dans la boîte suivante le(s) clitique(s) qu’utilise votre langue, avec un signe d’égalité pour indiquer de quel côté il s’attache au syntagme en focus.</prompt>
+       <textBox id="FocusMarkerClitic" show="swFocusMarkerYesClitic" dataItem="focusMarkerCliticExample" rows="4"/>
+       <br/><instruction id="FocusMarkerYesCliticInstruction2" show="swFocusMarkerYesClitic">In the lexicon, add the feature <feature>focus_prefix</feature> to each focus marker proclitic and the feature <feature>focus_suffix</feature> to each focus marker enclitic.</instruction>
+        <prompt id="FocusMarkerYesAffixInstruction" show="swFocusMarkerYesAffix"><br/>Entrez dans la boîte suivante le(s) affixe(s) qui marquent le focus qu’utilise votre langue, avec un trait d’union pour indiquer de quel côté il s’attache au substantif principal.</prompt>
+       <textBox id="FocusMarkerAffix" show="swFocusMarkerYesAffix" dataItem="focusMarkerAffixExample" rows="4"/>
+       <br/>
+<instruction id="FocusMarkerYesAffixInstruction2" show="swFocusMarkerYesAffix">In the lexicon, add the feature <feature>focus</feature> to each focus marker affix.</instruction>
+        <br/>
+        <buttons>
+            <button id="FocusMainBack" value="Back" goto="Contents.htm"/>
+            <button id="FocusMainNext" value="Next" goto="FocusTesting.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swTopicYes">
+        <whenRadio button="TopicYes"/>
+    </showWhen>
+    <showWhen id="swTopicMarkerYesWord">
+          <whenRadio button="TopicYes"/>
+<and/>
+       <whenRadio button="TopicMarkerYesWord"/>
+    </showWhen>
+    <showWhen id="swTopicMarkerYesClitic">
+          <whenRadio button="TopicYes"/>
+<and/>
+       <whenRadio button="TopicMarkerYesClitic"/>
+    </showWhen>
+    <showWhen id="swTopicMarkerYesAffix">
+           <whenRadio button="TopicYes"/>
+<and/>
+       <whenRadio button="TopicMarkerYesAffix"/>
+    </showWhen>
+    <showWhen id="swTopicMarkerYesWordEitherSide">
+         <whenRadio button="TopicYes"/>
+<and/>        
+       <whenRadio button="TopicMarkerYesWord"/>
+<and/> 
+<whenCheckbox button="TopicMarkerPosBoth"/>
+<or/> 
+       <whenRadio button="TopicYes"/>
+       <and/>        
+       <whenRadio button="TopicMarkerYesWord"/>
+       <and/> 
+       <whenCheckbox button="TopicMarkerPosBefore"/>
+       <and/>
+       <whenCheckbox button="TopicMarkerPosAfter"/>
+    </showWhen>
+   <showWhen id="swTopicMarkerYesWordAndNoCheck">
+      <whenRadio button="TopicYes"/>
+      <and/>
+      <whenRadio button="TopicMarkerYesWord"/>
+      <and/><not/>
+      <whenCheckbox button="TopicMarkerPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="TopicMarkerPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="TopicMarkerPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="TopicMarkerPosOther"/>
+   </showWhen>
+
+    <showWhen id="swFocusYes">
+        <whenRadio button="FocusYes"/>
+    </showWhen>
+    <showWhen id="swFocusMarkerYesWord">
+          <whenRadio button="FocusYes"/>
+<and/>      <whenRadio button="FocusMarkerYesWord"/>
+    </showWhen>
+    <showWhen id="swFocusMarkerYesClitic">
+        <whenRadio button="FocusYes"/>
+<and/>        <whenRadio button="FocusMarkerYesClitic"/>
+    </showWhen>
+    <showWhen id="swFocusMarkerYesAffix">
+         <whenRadio button="FocusYes"/>
+<and/>       <whenRadio button="FocusMarkerYesAffix"/>
+    </showWhen>
+   <showWhen id="swFocusMarkerYesWordEitherSide">
+      <whenRadio button="FocusYes"/>
+      <and/>        
+      <whenRadio button="FocusMarkerYesWord"/>
+      <and/> 
+      <whenCheckbox button="FocusMarkerPosBoth"/>
+      <or/> 
+      <whenRadio button="FocusYes"/>
+      <and/>        
+      <whenRadio button="FocusMarkerYesWord"/>
+      <and/> 
+      <whenCheckbox button="FocusMarkerPosBefore"/>
+      <and/>
+      <whenCheckbox button="FocusMarkerPosAfter"/>
+   </showWhen>
+   <showWhen id="swFocusMarkerYesWordAndNoCheck">
+      <whenRadio button="FocusYes"/>
+      <and/>
+      <whenRadio button="FocusMarkerYesWord"/>
+      <and/><not/>
+      <whenCheckbox button="FocusMarkerPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="FocusMarkerPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="FocusMarkerPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="FocusMarkerPosOther"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

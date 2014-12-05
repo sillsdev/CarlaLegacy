@@ -18,7 +18,10 @@
 	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘y':</prompt>
 		<textBox id="CoordAnd" dataItem="and" rows="3"/>
 		<br/>
-	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘o' aquí:</prompt>
+		<prompt>Escriba la palabra su lengua utiliza para la conjunción ‘y luego’entre dos oraciones aquí:</prompt>
+		<textBox id="CoordSeq" dataItem="andThen" rows="3"/>
+		<br/>
+		<prompt>Escriba la palabra su lengua utiliza para la conjunción ‘o' aquí:</prompt>
 		<textBox id="CoordOr" dataItem="or" rows="3"/>
 		<br/>
 	   <prompt>Escriba la palabra su lengua utiliza para la conjunción ‘pero' aquí:</prompt>
@@ -93,7 +96,10 @@
 		<prompt>Escriba ejemplos de la coordinación a nivel de la oración en su lengua aquí:</prompt>
 		<textBox id="CoordSent" dataItem="sentExample" rows="5"/>
 		<br/>
-	   <introduction>La coordinación de la frase verbal implica dos frases verbales completas que compartan un solo sujeto. Se ejemplifica en las siguientes oraciones en español:</introduction>
+		<prompt>Ahora escriba ejemplos de la coordinación a nivel de la oración que expresa una secuencia de eventos, como en <example>María fue al mercado y luego se prepara para la fiesta</example> aquí:</prompt>
+		<textBox id="CoordSeqSent" dataItem="sentSeqExample" rows="5"/>
+		<br/>
+		<introduction>La coordinación de la frase verbal implica dos frases verbales completas que compartan un solo sujeto. Se ejemplifica en las siguientes oraciones en español:</introduction>
 		<EnglishExample>
 			<exItem label="5.">Guillermo corrió la carrera y ganó el premio.</exItem>
 			<exItem label="6.">Susana irá a la fiesta o enviará a su hermana.</exItem>

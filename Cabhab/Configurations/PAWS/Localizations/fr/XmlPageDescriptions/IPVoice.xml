@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPVoice" count="3/3">
+	<title level="2">Phrases Simples – Autres marqueurs de voix</title>
+	<introduction>Certaines langues, comme le tagalog et autres langues austronésiennes utilisent des affixes verbaux qui aident à définir les rôles et les rapports des syntagmes nominaux de la phrase. Ceci comporte un changement de <technicalTermRef term="ttVoice">voix</technicalTermRef>, comme la voix passive, parce que l’affixe souligne un syntagme nominal. L’affixe verbal indique quel syntagme est le plus important, ce qui entraîne quelquefois un changement à l’ordre des mots qui marquerait une position de <technicalTermRef term="ttFocus">focus</technicalTermRef> et/ou un marqueur de <technicalTermRef term="ttCase">cas</technicalTermRef>.<br/><br/>
+		Voici quelques exemples du tagalog (Kroeger, Paul. 1993. Phrase structure and grammatical relations in Tagalog. Stanford, California: CSLI) qui montrent un changement de marquage de  cas (non pas de l’ordre des mots), là où le marqueur de voix reflète le rôle de <technicalTermRef term="ttArgument">l’argument</technicalTermRef> <technicalTermRef term="ttNominative"> nominatif</technicalTermRef>:
+		</introduction>
+	<table class="EnglishExample">
+		<tr>
+			<td>1.</td><td>Voix de l’agent :</td>	<td>B&lt;um&gt;ili</td><td>ang</td><td>lalake</td><td>ng</td><td>isda</td><td>sa</td><td>tindahan.</td>
+		</tr>
+		<tr>
+			<td></td><td></td><td>PFV.AV-acheter</td><td>NOM</td><td>homme</td><td>GEN</td><td>poisson</td><td>DAT</td><td>magasin</td>
+		</tr>
+		<tr>
+			<td></td><td></td><td colspan="7"> « L’homme a acheté du poisson au magasin. »</td>
+		</tr>
+		<tr>
+			<td>2.</td><td>Voix de l’objet:</td><td>B&lt;in&gt;ili</td><td>ng</td><td>lalake</td><td>ang</td><td>isda</td><td>sa</td><td>tindahan.</td>
+		</tr>
+		<tr>
+			<td></td><td></td><td>PFV.OV-acheter</td><td>GEN</td><td>homme</td><td>NOM</td><td>poisson</td><td>DAT</td><td>magasin</td>
+		</tr>
+		<tr>
+			<td></td><td></td><td colspan="7"> « Un homme a acheté le poisson au magasin. »</td>
+		</tr>
+		<tr>
+			<td>3.</td><td>Voix datif / locatif:</td><td>B&lt;in&gt;il-han</td><td>ng</td><td>lalake</td><td>ng</td><td>isda</td><td>ang</td><td>tindahan.</td>
+		</tr>
+		<tr>
+			<td></td><td></td><td>PFV-acheter-GV</td><td>GEN</td><td>homme</td><td>GEN</td><td>poisson</td><td>NOM</td><td>magasin</td>
+		</tr>
+		<tr>
+			<td></td><td></td><td colspan="7"> « Au magasin, un homme a acheté un poisson. »</td>
+		</tr>
+	</table>
+	<form section="ip">
+		<radioGroup>
+			<groupName dataItem="voice" default="no">RIPvoice</groupName>
+			<prompt><br/>Est-ce que votre langue possède un marqueur de voix de cette sorte?</prompt>
+			<radio id="IPVoiceNo" dataValue="no">Non</radio>
+			<radio id="IPVoiceYes" dataValue="yes">Oui</radio>
+			</radioGroup>
+		<prompt id="IPVoiceNoPrompt" show="swIPVoiceNoAndFeaturesYes">AVERTISSEMENT: A la <section number="9.2">Phrases Simples – La flexion</section> vous avez indiqué les éléments de voix qui figurent dans votre langue; nous espérons que vous avez aussi entré les morphèmes. Ceci est incompatible avec votre réponse ici. Veuillez corriger votre réponse et affirmer que votre langue possède ce genre de marqueur de voix, ou bien revenez à la <section number="9.2">Phrases Simples – La flexion</section> et  décochez les éléments de voix.</prompt>
+		<prompt id="IPVoiceYesPrompt" show="swIPVoiceYesAndFeaturesNo">AVERTISSEMENT: A la <section number="9.2">Phrases Simples – La flexion</section> vous n’avez coché aucun des éléments de voix figurant dans votre langue. Ceci est incompatible avec votre réponse ici. Si votre langue possède ce genre de marqueur de voix, revenez à la <section number="9.2">Phrases Simples – La flexion</section> et cochez les éléments de voix  appropriés, et entrez les morphèmes avant de revenir ici.</prompt>
+		<prompt id="IPVoicePrompt" show="swIPVoiceYes">Entrez quelques exemples de phrases qui illustrent l’emploi de ces marqueurs de voix dans votre langue. Considérez la possibilité de fournir une série de phrases où la seule différence serait un changement de marqueur de voix, comme ci-dessus. </prompt>
+	   <textBox id="IPVoiceExample" dataItem="voiceExample" cols="50" show="swIPVoiceYes"/>
+
+	   <br></br>	
+		<radioGroup id="IPVoiceCase" show="swIPVoiceYesCase">
+			<groupName dataItem="voiceCase" default="no">RIPVoiceCase</groupName>
+			<prompt><br/>Est-ce que votre langue exprime la voix en changeant le marquage casuel, comme en tagalog?</prompt>
+			<radio id="IPVoiceCaseNo" dataValue="no">Non, les changements de voix sont indiqués par les changements à l’ordre des mots, au lieu des marqueurs de cas</radio>
+			<radio id="IPVoiceCaseYesNom" dataValue="yesNom" show="swCaseNomOrSplit">Oui, l’affixe de voix reflète le rôle de l’argument nominatif</radio>
+			<radio id="IPVoiceCaseYesAbs" dataValue="yesAbs" show="swCaseErgOrSplit">Oui, l’affixe de voix reflète le rôle de l’argument absolutif</radio>
+		</radioGroup>
+		<instruction id="IPVoiceInstruction" show="swIPVoiceYes">In the lexicon, mark voice affixes with the appropriate feature <feature>actorVoice</feature>,  
+		   <feature>objectVoice</feature> (also for patient or conveyance or theme), <feature>dativeVoice</feature>, <feature>locativeVoice</feature>, <feature>instrumentalVoice</feature> or <feature>goalVoice</feature> if you have not already done so.  Note that the appropriate voice features should have been checked in <section number="9.2">Inflection Features</section>.
+		</instruction>
+	   <instruction id="IPVoiceYesNomInstruction" show="swIPVoiceYesNom">The phrase structure rules for all the transitive and ditransitive constructions where the voice affix reflects the role of the nominative argument assume that the other main arguments have genitive case, and therefore, accusative case is not used. 
+	      You may choose to have two sets of <span id="IPVoiceYesNomNYesSpan" show="swNPCaseNYes">case markers and </span>pronouns for accusative and genitive, so that the accusative can be used as objects of prepositions or postpositions, or, if they are not distinct, simply use the feature <feature>accusative.or.genitive</feature> on their lexical entries.  
+	      However, if the same <span id="IPVoiceYesNomNYesSpan2" show="swNPCaseNYes">case markers and </span>pronouns are also used for indirect objects and possibly for Experiencer subjects, key instead the feature <feature>-nominative</feature> on their lexical entries to allow accusative, dative and genitive case.
+	   </instruction>
+	   <br/><br/>
+		<buttons>
+			<button id="IPVoiceBack" value="Back" goto="IPCausative.xml"/>
+			<button id="IPVoiceNext" value="Next" goto="IPContents.htm"/>
+		</buttons>
+	</form>
+<showWhen id="swIPVoiceYes">
+   <whenRadio button="IPVoiceYes"/>
+</showWhen>
+   <showWhen id="swIPVoiceYesCase">
+		<whenRadio button="IPVoiceYes"/>
+	   <and/><not/>
+	  <whenValue element="typology" attr="case" value="none"/> 
+	</showWhen>
+   <showWhen id="swNPCaseNYes">
+      <whenValue element="np" attr="caseN" value="yes"/>
+      <and/><not/>
+      <whenValue element="typology" attr="case" value="none"/> 
+   </showWhen>   <showWhen id="swIPVoiceYesNom">
+      <whenRadio button="IPVoiceYes"/>
+      <and/>
+      <whenRadio button="IPVoiceCaseYesNom"/>
+      <and/><not/>
+      <whenValue element="typology" attr="case" value="none"/> 
+   </showWhen>
+   <showWhen id="swIPVoiceNoAndFeaturesYes">
+      <whenRadio button="IPVoiceNo"/>
+      <and/>
+      <openParen/>
+      <whenValue element="ip/ipInflFeatActorVoice" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatObjectVoice" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatDativeVoice" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatGoalVoice" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="ip/ipInflFeatLocativeVoice" attr="checked" value="yes"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swIPVoiceYesAndFeaturesNo">
+      <whenRadio button="IPVoiceYes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatActorVoice" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatObjectVoice" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatDativeVoice" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatGoalVoice" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatLocativeVoice" attr="checked" value="no"/>
+   </showWhen>
+   <showWhen id="swCaseErgOrSplit">
+      <whenValue element="typology" attr="case" value="ergative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   <showWhen id="swCaseNomOrSplit">
+      <whenValue element="typology" attr="case" value="nominative"/>
+      <or/>
+      <whenValue element="typology" attr="case" value="split"/>
+   </showWhen>
+   &TechnicalTerms; 
+</page>

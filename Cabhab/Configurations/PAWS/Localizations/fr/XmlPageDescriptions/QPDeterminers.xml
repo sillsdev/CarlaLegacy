@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPDeterminers" count="2/7">
+   <title level="2">Quantificateurs et Syntagmes de Quantité – Sans autres déterminants</title>
+   <introduction>Le deuxième groupe comprend des quantificateurs comme <example>quelques</example> ou <example>certains</example> ou <example>chaque</example> qui normalement ne permettent pas d’autres <technicalTermRef term="ttDeterminers">déterminatifs</technicalTermRef> comme des <technicalTermRef term="ttArticles">articles</technicalTermRef>, des <technicalTermRef term="ttDemonstratives">démonstratifs</technicalTermRef> ou des <technicalTermRef term="ttPossessors">possesseurs</technicalTermRef> dans le syntagme nominal.  <br/><br/>
+      Les exemples français (1-2) montrent ce qui est grammatical, mais les exemples (3-5) illustrent que ces mots ne peuvent pas se produire avec les articles, les démonstratifs ou les possesseurs.  
+      Remarquez qu’un exemple comme <example>some of the children (quelques’uns des enfants)</example> est grammatical en anglais, mais c’est le cas de <example>some « quelques »</example> comme terme principal du syntagme nominal, avec un syntagme <technicalTermRef term="ttPartitive">partitif</technicalTermRef> <example> of the children « des enfants »</example> qui le modifie.  On en traitera à la page finale de cette section.
+		</introduction>
+		<EnglishExample>
+		   <exItem label="1.">quelques enfants tristes</exItem>
+		   <exItem label="2.">presque chaque petite fille que je vois</exItem>
+		   <exItem label="3.">* chaque le méchant garçon</exItem>
+		   <exItem label="4.">* those some boys (ces quelques garçons)</exItem>
+		   <exItem label="5.">* Sue’s some sad children (les quelques enfants tristes de Suzannes)</exItem>
+		</EnglishExample>
+   <introduction>Parce qu’ils remplacent les articles, les démonstratifs et les possesseurs, nous traiterons ces quantificateurs comme une sorte de déterminant qui modifie un substantif seul<span id="QPDetNotPracticalSpan" show="swNotPractical"> avec sa règle de structure syntagmatique</span>.</introduction>  
+	<form section="qp">
+	   <prompt><br/>Entrez la manière dont votre langue exprime « quelques » ou « certains » avec chaque mot sur une ligne distincte (Si  « quelques » ou « certains » est un affixe ou un clitique qui s’attache à un autre mot dans le syntagme nominal, entrez-le ici avec un trait d’union ou un signe d’égalité pour indiquer où il s’attache.)</prompt>
+	   <textBox id="QPSomeExample" dataItem="some" rows="3"/>
+	   <br/>
+	   <br/>
+	   <prompt>Entrez la manière dont votre langue exprime  « quelconque », avec chaque mot sur une ligne distincte.  (Si  « quelconque »  est un affixe ou un clitique qui s’attache à un autre mot dans le syntagme nominal, entrez-le ici avec un trait’ d’union ou un signe d’égalité pour indiquer où il s’attache.)</prompt>
+	   <textBox id="QPAnyeExample" dataItem="any" rows="3"/>
+	   <br/><br/>
+	   <prompt>Entrez la manière dont votre langue exprime  « chaque », avec chaque mot sur une ligne distincte.  (Si  « chaque »  est un affixe ou un clitique qui s’attache à un autre mot dans le syntagme nominal, entrez-le ici avec un trait d’union ou un signe d’égalité pour indiquer où il s’attache.)</prompt>
+	   <textBox id="QPEveryExample" dataItem="every" rows="3"/>
+	   <br/>
+	   <br/>
+	   <radioGroup>
+			<groupName dataItem="determinerType" default="yes">RDeterminerType</groupName>
+	      <prompt>Votre langue a-t-elle des quantificateurs avec un sens comme « quelques », « certains », « quelconque » et « chaque » qui s’écrivent comme des mots indépendants?</prompt>
+	      <radio id="QPDeterminerTypeYes"  dataValue="yes">Oui, ce sont tous des mots indépendants</radio>
+	      <radio id="QPDeterminerTypeSome" dataValue="some">Quelques-uns sont des mots indépendants, mais il y en a d’autres qui s’attachent à un autre mot</radio>
+	      <radio id="QPDeterminerTypeNo" dataValue="no">Non, ils s’attachent tous à un autre mot dans le syntagme nominal</radio>
+	   </radioGroup>
+	   <radioGroup id="QPDeterminerClassifierAgrTable" show="swOTClassifierAgrAndYesOrSome">
+	      <groupName dataItem="determinerClassifier" default="no">RQPDeterminerClassifierAgr</groupName>
+	      <prompt><br/>Vous avez dit que votre langue a des marqueurs de classe substantive avec un accord partout dans les syntagmes nominaux.  Ces déterminants quantificateurs fonctionnent-ils comme le seul modificateur dans le syntagme nominal marqué pour la classe?</prompt>
+	      <radio id="QPDeterminerClassifierAgrNo" dataValue="no">Non, ces éléments ne sont pas marqués pour la classe</radio>
+	      <radio id="QPDeterminerClassifierAgrYes" dataValue="yes">Oui, ces éléments sont marqués pour la classe comme une partie de l’accord partout dans le syntagme nominal</radio>
+	   </radioGroup>
+	   <prompt id="QPDeterminerClassifierAgrPrompt" show="swOTClassifierAgrAndYesOrSomeAndDeterminerClassifierYes">Puisque vous avez déjà spécifié les formes des marqueurs des classes substantives, vous ne devez entrer que les racines pour chacun des mots demandés sur cette page.</prompt>	   
+	   <br/>
+	   <prompt id="QPDeterminerTypeWordPrompt" show="swQPDeterminerTypeYesOrSome"><br/>Entrez ici des exemples de mots indépendants avec le sens « quelques », « certains », « quelconque » ou « chaque » compris dans le syntagme nominal complet, chacun sur une ligne distincte:</prompt>
+	   <textBox id="QPDeterminerExample" dataItem="determinerExample" cols="50" show="swQPDeterminerTypeYesOrSome"/>
+
+	   <radioGroup id="DeterminerWord" show="swQPDeterminerTypeYesOrSome">
+	      <groupName dataItem="determiner" default="yes">RDeterminer</groupName>
+	      <prompt><br/>En examinant les exemples dans la boîte ci-dessus, les mots avec le sens « quelques », « certains », « quelconque » ou « chaque » qui sont écrits comme mots indépendants, fonctionnent-ils comme le seul déterminant du syntagme nominal?</prompt>	      
+	      <radio id="QPDeterminerYes"  dataValue="yes">Oui, ils ne peuvent pas paraître avec les articles, les démonstratifs ou les possesseurs, comme dans les exemples ici</radio>
+	      <radio id="QPDeterminerSome"  dataValue="some">Certains fonctionnent comme le seul déterminant (comme dans les exemples ici), mais d’autres peuvent paraître et fonctionnent comme « tout » (sur la page précédente), et d’autres peuvent fonctionner comme les quantificateurs plus restreints « beaucoup », « plusiers », « nombreaux » et « peu de » (qu’on traitera sur la page suivante) qui peuvent paraître avec les articles, les démonstratifs et/ou les possesseurs</radio>
+	      <radio id="QPDeterminerNoAll"  dataValue="noAll">Non, « quelques », « certains », « quelconque » et « chaque » sont écrits comme des mots indépendants mais ils sont comme « tout » (sur la page précédente) comme quantificateurs de portée étendue qui peuvent paraître avec les articles, les démonstratifs et/ou les possesseurs </radio>
+	      <radio id="QPDeterminerNoQ"  dataValue="noQ">Non, « quelques », « certains », « quelconque » et « chaque » sont écrits comme des mots indépendants, mais sont comme les quantificateurs de portée plus restreintes « beaucoup », « plusiers », « nombreaux » et « peu de » (qu’on traitera à la page suivante) qui peuvent paraître avec les articles, les démonstratifs et/ou les possesseurs</radio>
+	   </radioGroup>   
+	   <checkboxGroup id="QPDeterminerPos" show="swQPDeterminerTypeYesOrSomeAndDeterminerYesOrSome">
+	      <prompt><br/>En examinant encore les données dans la boîte ci-dessus, ces quantificateurs qui sont écrits comme des mots indépendants et qui fonctionnent comme le seul déterminant dans le syntagme nominal, où paraissent-ils relatif au reste du syntagme nominal? Marquez toutes les options qui sont correctes pour votre langue.</prompt>
+	      <checkbox id="QPDeterminerPosBefore"  dataItem="determinerPosBefore">Avant le syntagme nominal</checkbox>
+	      <checkbox id="QPDeterminerPosAfter"  dataItem="determinerPosAfter">Après le syntagme nominal</checkbox>
+	      <checkbox id="QPDeterminerPosBoth"  dataItem="determinerPosBoth">Des deux côtés du syntagme nominal à la fois</checkbox>
+	      <checkbox id="QPDeterminerPosOther"  dataItem="determinerPosOther">Dans ma langue, ils peuvent paraître dans la position suivante: <textBox  id="QPDeterminerPosOtherContent" dataItem="determinerPosOther" rows="2"/></checkbox>
+	   </checkboxGroup>
+	   <prompt id="QPDeterminerWordNoCheckPrompt" show="swQPDeterminerYesandNoCheck">AVERTISSEMENT: Il faut marquer au moins une boîte pour décrire où ces quantificateurs paraissent relatif au reste du syntagme nominal dans votre langue, ou changez la réponse ci-dessus à  « Non, ils s’attachent tous à un autre mot dans le syntagme nominal ».</prompt>
+	   <instruction id="QPDeterminerYesInstruction" show="swQPDeterminerTypeYesOrSomeAndDeterminerYesOrSome">In the lexicon, mark this type of quantifier determiner that is written as an independent word with the feature <feature>determiner</feature>.  If it does not already have the category <category>Q</category>, add the feature <feature>makeQ</feature> to change the category for the syntax.  If a particular quantifier determiner can only go with plural nouns or if it marks plural itself (such as <example>some</example>), add the feature <feature>plural</feature> to that entry.  If a particular quantifier determiner can only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier determiner which can go with either singular or plural nouns. </instruction>
+	   <instruction id="QPDeterminerEitherRestrictedInstruction" show="swQPDeterminerEitherRestricted">Those which can only occur before the noun also need to have the feature <feature>DP-initial</feature> and those which can only occur after the noun also need the feature <feature>DP-final</feature>.  Do not enter either feature <feature>DP-initial</feature> or <feature>DP-final</feature> on any quantifier determiners which can occur on either side of the noun.</instruction>
+	   <instruction id="QPDeterminerNoAllInstruction" show="swQPDeterminerSomeOrNoAll">In the lexicon, mark the word or words which act like <example>all</example> with the features
+	      <feature>quantifier_wide_scope</feature>.  Add the feature <feature>makeQ</feature> as well if they do not already have the category <category>Q</category>.  Add the feature <feature>plural</feature> as well if they can only go with plural nouns or if it marks plural itself (such as <example>some</example>).  If it can only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier which can go with either singular or plural nouns. </instruction>
+	   <instruction id="QPDeterminerNoQInstruction" show="swQPDeterminerSomeOrNoQ">In the lexicon, mark the word or words which act like <example>many</example> or <example>few</example> with the features
+	      <feature>quantifier_narrow_scope</feature>.  Add the feature <feature>makeQ</feature> as well if they do not already have the category <category>Q</category>.  Add the feature <feature>plural</feature> as well if they can only go with plural nouns or if it marks plural itself (such as <example>some</example>).  If it can only go with singular nouns (such as <example>every</example> in English), add the feature <feature>singular</feature> to that entry.  Do not add either feature to a quantifier which can go with either singular or plural nouns. </instruction>
+	   
+	   <checkboxGroup id="DeterminerAttachesType" show="swQPDeterminerNoOrSome">
+	      <prompt><br/>Où ces quantificateurs qui ne sont pas des mots indépendants s’attachent-ils dans le syntagme nominal?  Marquez toutes les options qui sont correctes dans votre langue.</prompt>
+	      <checkbox id="QPDeterminerProclitic" dataItem="determinerTypeProclitic">Comme un proclitique phrasal qui s’attache au début du mot qui commence le syntagme nominal</checkbox>
+	      <checkbox id="QPDeterminerEnclitic" dataItem="determinerTypeEnclitic">Comme un enclitique phrasal qui s’attache à la fin du mot qui termine le syntagme nominal</checkbox>
+	      <checkbox id="QPDeterminerPrefix" dataItem="determinerTypePrefix">Comme un préfixe qui s’attache au nom principal du syntagme nominal</checkbox>
+	      <checkbox id="QPDeterminerSuffix" dataItem="determinerTypeSuffix">Comme un préfixe qui s’attache au nom principal du syntagme nominal</checkbox>
+	      <checkbox id="QPDeterminerOther" dataItem="determinerTypeOther">Dans ma langue, ces éléments peuvent s’attacher comme suit: <textBox  id="QPDeterminerTypeOtherContent" dataItem="determinerTypeOther" rows="2"/></checkbox>
+	   </checkboxGroup>
+	   <prompt id="QPDeterminerAttachesNoCheckPrompt" show="swQPDeterminerTypeNoAndNoCheck">AVERTISSEMENT: Il faut marquer au moins une boîte pour décrire comment ces quantificateurs s’attachent dans votre langue, ou changez la réponse ci-dessus à « Oui, ils sont tous des mots indépendants ».</prompt>
+	   
+	   <prompt id="QPDeterminerCliticPrompt" show="swQPDeterminerNoOrSomeAndClitic"><br/>Entrez ici maintenant des exemples des clitiques avec le sens « quelque », « certains », « quelconque » ou « chaque » compris dans le syntagme nominal complet:</prompt>  
+	   <textBox id="QPDeterminerCliticExample" dataItem="determinerCliticExample" cols="50" show="swQPDeterminerNoOrSomeAndClitic"/>
+	   <instruction id="QPDeterminerProcliticInstruction" show="swQPDeterminerNoOrSomeAndProclitic">In the lexicon, mark the proclitics meaning <example>some</example> with the features <feature>plural quantifier_prefix</feature> and the proclitics meaning <example>every</example> with the features <feature>singular quantifier_prefix</feature>.
+	   </instruction>
+	   <instruction id="QPDeterminerEncliticInstruction" show="swQPDeterminerNoOrSomeAndEnclitic">In the lexicon, mark the enclitics meaning <example>some</example> with the features <feature>plural quantifier_suffix</feature> and the enclitics meaning <example>every</example> with the features <feature>singular quantifier_suffix</feature>.</instruction>
+	   <prompt id="QPDeterminerAffixPrompt" show="swQPDeterminerNoOrSomeAndAffix"><br/>Maintenant, entrez ici des exemples d’affixes avec le sens « quelque », « certains », « quelconque » ou « chaque » compris dans le syntagme nominal complet:</prompt>  
+	   <textBox id="QPDeterminerAffixExample" dataItem="determinerAffixExample" cols="50" show="swQPDeterminerNoOrSomeAndAffix"/>
+	   <instruction id="QPDeterminerAffixInstruction" show="swQPDeterminerNoOrSomeAndAffix">In the lexicon, mark the affixes meaning <example>some</example> with the feature <feature>plural</feature>.</instruction>
+	   <prompt id="QPDeterminerOtherPrompt" show="swQPDeterminerNoOrSomeAndOther"><br/>Maintenant entrez ici des exemples des éléments avec le sens « quelque », « certains », « quelconque » ou « chaque » compris dans le syntagme nominal, permis dans votre langue:</prompt>  
+	   <textBox id="QPDeterminerOtherExample" dataItem="determinerOtherExample" cols="50" show="swQPDeterminerNoOrSomeAndOther"/>  		<br/>
+		<br/>
+		<buttons>
+			<button id="QPDeterminersBack" value="Back" goto="QPMain.xml"/>
+			<button id="QPDeterminersNext" value="Next" goto="QPDegree.xml"/>
+		</buttons>
+	</form>
+   <showWhen id="swNotPractical">
+      <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+ 	<showWhen id="swQPDeterminerTypeYesOrSome">
+		<whenRadio button="QPDeterminerTypeYes"/>
+		<or/>
+		<whenRadio button="QPDeterminerTypeSome"/>
+	</showWhen>
+   <showWhen id="swOTClassifierAgrAndYesOrSome">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPDeterminerTypeYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>     
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndYesOrSomeAndDeterminerClassifierYes">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPDeterminerTypeYes"/>
+      <and/>
+      <whenRadio button="QPDeterminerClassifierAgrYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>    
+      <and/>
+      <whenRadio button="QPDeterminerClassifierAgrYes"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerTypeYesOrSomeAndDeterminerYesOrSome">
+      <openParen/>
+      <whenRadio button="QPDeterminerTypeYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenRadio button="QPDeterminerYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerSome"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQPDeterminerYesandNoCheck">
+      <openParen/>
+      <whenRadio button="QPDeterminerTypeYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <closeParen/>     
+      <and/>
+      <openParen/>
+      <whenRadio button="QPDeterminerYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerSome"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerPosOther"/>          
+   </showWhen>
+   <showWhen id="swQPDeterminerTypeNoAndNoCheck">
+      <openParen/>
+      <whenRadio button="QPDeterminerTypeNo"/>
+      <or/>
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerPrefix"/>
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="QPDeterminerOther"/>          
+   </showWhen>
+   
+   <showWhen id="swQPDeterminerSomeOrNoQ">
+<openParen/>
+      <whenCheckbox button="QPDeterminerSome"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerNoQ"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenRadio button="QPDeterminerTypeYes"/>
+     <or/>
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQPDeterminerSomeOrNoAll">
+      <openParen/>
+      <whenCheckbox button="QPDeterminerSome"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerNoAll"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenRadio button="QPDeterminerTypeYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <closeParen/>
+   </showWhen>
+   
+   <showWhen id="swQPDeterminerNoOrSome">
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <or></or>
+      <whenRadio button="QPDeterminerTypeNo"/>		
+   </showWhen>
+   <showWhen id="swQPDeterminerNoOrSomeAndAffix">
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPDeterminerPrefix"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerSuffix"/>
+      <closeParen/>
+      <or></or>
+      <whenRadio button="QPDeterminerTypeNo"/>		
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPDeterminerPrefix"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerSuffix"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNoOrSomeAndClitic">
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPDeterminerProclitic"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerEnclitic"/>
+      <closeParen/>
+      <or></or>
+      <whenRadio button="QPDeterminerTypeNo"/>		
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPDeterminerProclitic"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerEnclitic"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNoOrSomeAndProclitic">
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <and/>
+      <whenCheckbox button="QPDeterminerProclitic"/>
+      <or></or>
+      <whenRadio button="QPDeterminerTypeNo"/>		
+      <and/>
+      <whenCheckbox button="QPDeterminerProclitic"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNoOrSomeAndEnclitic">
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <and/>
+      <whenCheckbox button="QPDeterminerEnclitic"/>
+      <or></or>
+      <whenRadio button="QPDeterminerTypeNo"/>		
+      <and/>
+      <whenCheckbox button="QPDeterminerEnclitic"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerNoOrSomeAndOther">
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <and/>
+      <whenCheckbox button="QPDeterminerOther"/>
+      <or/>
+      <whenRadio button="QPDeterminerTypeNo"/>
+      <and/>
+      <whenCheckbox button="QPDeterminerOther"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerClitic">
+      <whenCheckbox button="QPDeterminerProclitic"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerEnclitic"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerAffix">
+      <whenCheckbox button="QPDeterminerPrefix"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerSuffix"/>
+   </showWhen>
+   <showWhen id="swQPDeterminerEitherRestricted">
+      <openParen/>
+      <whenRadio button="QPDeterminerTypeSome"/>
+      <or/>
+      <whenRadio button="QPDeterminerTypeYes"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QPDeterminerPosBefore"/>
+      <and/>
+      <whenCheckbox button="QPDeterminerPosAfter"/>
+      <or/>
+      <whenCheckbox button="QPDeterminerPosBoth"/>
+      <closeParen/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

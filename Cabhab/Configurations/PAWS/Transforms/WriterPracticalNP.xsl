@@ -70,7 +70,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>.  The forms shown in the table are the roots; each one may surface with the apropriate classifier attached.</xsl:text>
+<xsl:text>.  The forms shown in the table are the roots; each one may surface with the appropriate classifier attached.</xsl:text>
 </p>
 </xsl:if>
 		   <xsl:if test="normalize-space(//typology/@classifier)!='yesAgr' or normalize-space(//qp/@npDegreeClassifier)!='yes'">
@@ -239,7 +239,161 @@
 </xsl:choose>
 		      </table>
 </example>
-		      
+			<xsl:if test="normalize-space(//qp/@npDegree)='no'">
+<p>
+<xsl:text>These elements are not expressed as independent words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//qp/@npDegree)='some'">
+<p>
+<xsl:text>Some of these elements are not expressed as independent words which modify the whole nominal phrase.  Instead, they attach to another word in the nominal phrase.</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeProclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeEnclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeProclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeEnclitic/@checked)='yes'">
+<p>
+<xsl:text>Examples of the clitic forms included in full nominal phrases are:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeProclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeEnclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeProclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeEnclitic/@checked)='yes'">
+<example num="xNP.NPDegree.20">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//qp/npDegreeCliticExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/npDegreeCliticExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//qp/npDegreeCliticExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//qp/npDegreeCliticExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPDegree.20</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xNP.NPDegree.20.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+			<xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypePrefix/@checked)='yes' or normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeSuffix/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypePrefix/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeSuffix/@checked)='yes'">
+<p>
+<xsl:text>Examples of the affix forms included in full nominal phrases are:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypePrefix/@checked)='yes' or normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeSuffix/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypePrefix/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeSuffix/@checked)='yes'">
+<example num="xNP.NPDegree.24">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//qp/npDegreeAffixExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/npDegreeAffixExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//qp/npDegreeAffixExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//qp/npDegreeAffixExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPDegree.24</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xNP.NPDegree.24.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+			<xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeOther/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeOther/@checked)='yes'">
+<p>
+<xsl:text>Examples of the forms which attach as allowed in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> included in full nominal phrases are:</xsl:text>
+</p>
+</xsl:if>
+			<xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeOther/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeOther/@checked)='yes'">
+<example num="xNP.NPDegree.28">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//qp/npDegreeOtherExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/npDegreeOtherExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//qp/npDegreeOtherExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//qp/npDegreeOtherExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPDegree.28</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xNP.NPDegree.28.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>     
+			
 		   <xsl:if test="normalize-space(//qp/@npDegree)='yes' or normalize-space(//qp/@npDegree)='some'">
 <p>
 <xsl:text>The wide scope quantifiers and degree elements which are independent words occur </xsl:text>
@@ -285,7 +439,7 @@
 <xsl:text>Examples of the independent word forms included in full nominal phrases are:</xsl:text>
 </p>
 </xsl:if>                        
-		   <example num="xNP.NPDegree.18">
+		   <example num="xNP.NPDegree.34">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/example" />
 </xsl:variable>
@@ -298,159 +452,6 @@
 </xsl:with-param>
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//qp/example))" />
-</xsl:with-param>
-<xsl:with-param name="sExNumber">xNP.NPDegree.18</xsl:with-param>
-<xsl:with-param name="sLetterList">
-<xsl:value-of select="$sMasterLetterList" />
-</xsl:with-param>
-</xsl:call-template>
-</xsl:when>
-<xsl:otherwise>
-<listInterlinear>
-<xsl:attribute name="letter">
-<xsl:text>xNP.NPDegree.18.1</xsl:text>
-</xsl:attribute>
-<lineGroup>
-<line>
-<langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
-</xsl:otherwise>
-</xsl:choose>
-</example>                 
-		   <xsl:if test="normalize-space(//qp/@npDegree)='no'">
-<p>
-<xsl:text>These elements are not expressed as independent words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.</xsl:text>
-</p>
-</xsl:if>
-		   <xsl:if test="normalize-space(//qp/@npDegree)='some'">
-<p>
-<xsl:text>Some of these elements are not expressed as independent words which modify the whole nominal phrase.  Instead, they attach to another word in the nominal phrase.</xsl:text>
-</p>
-</xsl:if>
-		   <xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeProclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeEnclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeProclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeEnclitic/@checked)='yes'">
-<p>
-<xsl:text>Examples of the clitic forms included in full nominal phrases are:</xsl:text>
-</p>
-</xsl:if>
-		   <xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeProclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeEnclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeProclitic/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeEnclitic/@checked)='yes'">
-<example num="xNP.NPDegree.26">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//qp/npDegreeCliticExample" />
-</xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/npDegreeCliticExample))" />
-<xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="//qp/npDegreeCliticExample" />
-</xsl:with-param>
-<xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//qp/npDegreeCliticExample))" />
-</xsl:with-param>
-<xsl:with-param name="sExNumber">xNP.NPDegree.26</xsl:with-param>
-<xsl:with-param name="sLetterList">
-<xsl:value-of select="$sMasterLetterList" />
-</xsl:with-param>
-</xsl:call-template>
-</xsl:when>
-<xsl:otherwise>
-<listInterlinear>
-<xsl:attribute name="letter">
-<xsl:text>xNP.NPDegree.26.1</xsl:text>
-</xsl:attribute>
-<lineGroup>
-<line>
-<langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
-</xsl:otherwise>
-</xsl:choose>
-</example>
-</xsl:if>
-		   <xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypePrefix/@checked)='yes' or normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeSuffix/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypePrefix/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeSuffix/@checked)='yes'">
-<p>
-<xsl:text>Examples of the affix forms included in full nominal phrases are:</xsl:text>
-</p>
-</xsl:if>
-		   <xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypePrefix/@checked)='yes' or normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeSuffix/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypePrefix/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeSuffix/@checked)='yes'">
-<example num="xNP.NPDegree.30">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//qp/npDegreeAffixExample" />
-</xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/npDegreeAffixExample))" />
-<xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="//qp/npDegreeAffixExample" />
-</xsl:with-param>
-<xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//qp/npDegreeAffixExample))" />
-</xsl:with-param>
-<xsl:with-param name="sExNumber">xNP.NPDegree.30</xsl:with-param>
-<xsl:with-param name="sLetterList">
-<xsl:value-of select="$sMasterLetterList" />
-</xsl:with-param>
-</xsl:call-template>
-</xsl:when>
-<xsl:otherwise>
-<listInterlinear>
-<xsl:attribute name="letter">
-<xsl:text>xNP.NPDegree.30.1</xsl:text>
-</xsl:attribute>
-<lineGroup>
-<line>
-<langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
-</xsl:otherwise>
-</xsl:choose>
-</example>
-</xsl:if>
-		   <xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeOther/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeOther/@checked)='yes'">
-<p>
-<xsl:text>Examples of the forms which attach as allowed in </xsl:text>
-<xsl:choose>
-<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
-<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
-</xsl:when>
-<xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
-</xsl:otherwise>
-</xsl:choose>
-<xsl:text> included in full nominal phrases are:</xsl:text>
-</p>
-</xsl:if>
-		   <xsl:if test="normalize-space(//qp/@npDegree)='no' and normalize-space(//qp/npDegreeTypeOther/@checked)='yes' or normalize-space(//qp/@npDegree)='some' and normalize-space(//qp/npDegreeTypeOther/@checked)='yes'">
-<example num="xNP.NPDegree.34">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//qp/npDegreeOtherExample" />
-</xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/npDegreeOtherExample))" />
-<xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="//qp/npDegreeOtherExample" />
-</xsl:with-param>
-<xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//qp/npDegreeOtherExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNP.NPDegree.34</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -475,8 +476,84 @@
 </listInterlinear>
 </xsl:otherwise>
 </xsl:choose>
-</example>
-</xsl:if>     
+</example>         
+			
+			<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//qp/@npDegree)='yes' or normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//qp/@npDegree)='some'">
+<p>
+<xsl:text>In these nominal phrases with the words meaning ‘all’, ‘almost’, ‘only’ or ‘just’, </xsl:text>
+<xsl:choose>
+<xsl:when test="//np/@classifierPresent='yes'"> a classifier is required.</xsl:when>
+					<xsl:when test="//np/@classifierPresent='some'"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</xsl:when>
+					<xsl:when test="//np/@classifierPresent='no'"> a classifier is never used.</xsl:when>
+</xsl:choose>
+<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//qp/@npDegree)='yes' and normalize-space(//np/@classifierPresent)='yes' or normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//qp/@npDegree)='some' and normalize-space(//np/@classifierPresent)='yes' or normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//qp/@npDegree)='yes' and normalize-space(//np/@classifierPresent)='some' or normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//qp/@npDegree)='some' and normalize-space(//np/@classifierPresent)='some'">
+<xsl:text> The classifier </xsl:text>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosOther/@checked)='no'">
+<xsl:text>occurs before both the wide scope quantifier or degree word and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes'">
+<xsl:text>may occur before both the wide scope quantifier or degree word and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes'">
+<xsl:text> It also occurs after both the noun and the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosOther/@checked)='no'">
+<xsl:text>occurs after both the noun and the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes'">
+<xsl:text>may occur after both the noun and the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes'">
+<xsl:text> It also occurs after the wide scope quantifier or degree word but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosOther/@checked)='no'">
+<xsl:text>occurs after the wide scope quantifier or degree word but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes'">
+<xsl:text>may occur after the wide scope quantifier or degree word but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes'">
+<xsl:text> It also occurs after the noun but before the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosOther/@checked)='no'">
+<xsl:text>occurs after the noun but before the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes'">
+<xsl:text>may occur after the noun but before the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes'">
+<xsl:text> It may also attach as a prefix on the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosOther/@checked)='no'">
+<xsl:text>attaches as a prefix on the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes'">
+<xsl:text>may attach as a prefix on the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes'">
+<xsl:text> It may also attach as a suffix on the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='no'">
+<xsl:text>attaches as a suffix on the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes'">
+<xsl:text>may attach as a suffix on the wide scope quantifier or degree word.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='yes' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes'">
+<xsl:text> It may also occur ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificPosOther/@checked)='yes'">
+<xsl:text>occurs ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>	
+				</xsl:if>
+</p>
+</xsl:if>
+			
+			
 		   <p>
 <xsl:text>Negation of a nominal phrase also occurs in this wide scope position.  See section </xsl:text>
 <sectionRef sec="sNegNominal" />
@@ -488,8 +565,8 @@
 			<secTitle>
 <xsl:choose>
 			   <xsl:when test="//np/@artAndDem='no'">Articles and Demonstratives</xsl:when>
-			   <xsl:when test="//np/@artAndDem='art'">Articles</xsl:when>
-			   <xsl:when test="//np/@artAndDem='dem'">Demonstratives</xsl:when>
+			   <xsl:when test="//np/@artAndDem='article'">Articles</xsl:when>
+			   <xsl:when test="//np/@artAndDem='demonstrative'">Demonstratives</xsl:when>
 			   <xsl:when test="//np/@artAndDem='both'">Articles and Demonstratives</xsl:when>
 			</xsl:choose>
 </secTitle>
@@ -570,12 +647,21 @@
 <xsl:value-of select="//np/artOnlyOther" />
 <xsl:text>.  </xsl:text>
 </xsl:if>
+<xsl:if test="normalize-space(//np/@agreeNumber)='yes' and normalize-space(//np/@artPl)='yes'">
+<xsl:text> The presence of an article is </xsl:text>
+					<xsl:choose>
+						<xsl:when test="//np/@artRequired='no'">always optional.</xsl:when>
+						<xsl:when test="//np/@artRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
+						<xsl:when test="//np/@artRequired='yes'">always required.</xsl:when>
+					</xsl:choose>
+</xsl:if>
+<xsl:if test="normalize-space(//np/@agreeNumber)='no' or normalize-space(//np/@agreeNumber)='yes' and normalize-space(//np/@artPl)='no'">
 <xsl:text>  The presence of an article is </xsl:text>
-<xsl:choose>
+				<xsl:choose>
 					<xsl:when test="//np/@artRequired='no'">always optional.</xsl:when>
-					<xsl:when test="//np/@artRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
 					<xsl:when test="//np/@artRequired='yes'">always required.</xsl:when>
 				</xsl:choose>
+				</xsl:if>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
@@ -616,12 +702,21 @@
 <xsl:value-of select="//np/demOnlyOther" />
 <xsl:text>.  </xsl:text>
 </xsl:if>
+<xsl:if test="normalize-space(//np/@agreeNumber)='yes' and normalize-space(//np/@demPl)='yes'">
 <xsl:text>  The presence of a demonstrative is </xsl:text>
-<xsl:choose>
+				<xsl:choose>
 					<xsl:when test="//np/@demRequired='no'">always optional.</xsl:when>
 					<xsl:when test="//np/@demRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
 					<xsl:when test="//np/@demRequired='yes'">always required.</xsl:when>
 				</xsl:choose>
+</xsl:if>
+<xsl:if test="normalize-space(//np/@agreeNumber)='no' or normalize-space(//np/@agreeNumber)='yes' and normalize-space(//np/@demPl)='no'">
+<xsl:text> The presence of a demonstrative is </xsl:text>
+					<xsl:choose>
+						<xsl:when test="//np/@artRequired='no'">always optional.</xsl:when>
+						<xsl:when test="//np/@artRequired='yes'">always required.</xsl:when>
+					</xsl:choose>
+</xsl:if>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
@@ -662,12 +757,21 @@
 <xsl:value-of select="//np/demOrArtPosOther" />
 <xsl:text>.  </xsl:text>
 </xsl:if>
+<xsl:if test="normalize-space(//np/@agreeNumber)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@agreeNumber)='yes' and normalize-space(//np/@demPl)='yes'">
 <xsl:text>  The presence of an article or demonstrative is </xsl:text>
-<xsl:choose>
+				<xsl:choose>
 					<xsl:when test="//np/@demOrArtRequired='no'">always optional.</xsl:when>
 					<xsl:when test="//np/@demOrArtRequired='mass'">optional with plural or mass nouns, but is required with singular nouns.</xsl:when>
 					<xsl:when test="//np/@demOrArtRequired='yes'">always required.</xsl:when>
 				</xsl:choose>
+</xsl:if>
+<xsl:if test="normalize-space(//np/@agreeNumber)='no' or normalize-space(//np/@agreeNumber)='yes' and normalize-space(//np/@artPl)='no' and normalize-space(//np/@demPl)='no'">
+<xsl:text>  The presence of an article or demonstrative is </xsl:text>
+					<xsl:choose>
+						<xsl:when test="//np/@demOrArtRequired='no'">always optional.</xsl:when>
+						<xsl:when test="//np/@demOrArtRequired='yes'">always required.</xsl:when>
+					</xsl:choose>
+</xsl:if>
 <xsl:text></xsl:text>
 </p>
 </xsl:if>
@@ -835,6 +939,157 @@
 </xsl:choose>
 </example>
 </xsl:if>
+	
+			<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@artAndDem)='demonstrative'">
+<p>
+<xsl:text>In these nominal phrases with demonstratives, </xsl:text>
+<xsl:choose>
+<xsl:when test="//np/@classifierPresentDem='yes'"> a classifier is required.</xsl:when>
+					<xsl:when test="//np/@classifierPresentDem='some'"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</xsl:when>
+					<xsl:when test="//np/@classifierPresentDem='no'"> a classifier is never used.</xsl:when>
+</xsl:choose>
+<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@classifierPresentDem)='yes' or normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@classifierPresentDem)='some'">
+<xsl:text> The classifier </xsl:text>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='no'">
+<xsl:text>occurs before both the demonstrative and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes'">
+<xsl:text>may occur before both the demonstrative and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes'">
+<xsl:text> It also occurs after both the noun and the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='no'">
+<xsl:text>occurs after both the noun and the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes'">
+<xsl:text>may occur after both the noun and the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes'">
+<xsl:text> It also occurs after the demonstrative but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='no'">
+<xsl:text>occurs after the demonstrative but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes'">
+<xsl:text>may occur after the demonstrative but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes'">
+<xsl:text> It also occurs after the noun but before the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='no'">
+<xsl:text>occurs after the noun but before the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes'">
+<xsl:text>may occur after the noun but before the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes'">
+<xsl:text> It may also attach as a prefix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='no'">
+<xsl:text>attaches as a prefix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes'">
+<xsl:text>may attach as a prefix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes'">
+<xsl:text> It may also attach as a suffix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='no'">
+<xsl:text>attaches as a suffix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes'">
+<xsl:text>may attach as a suffix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes'">
+<xsl:text> It may also occur ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificDemPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemPosOther/@checked)='yes'">
+<xsl:text>occurs ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificDemPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>	
+				</xsl:if>
+</p>
+</xsl:if>
+			
+			<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@artAndDem)='both'">
+<p>
+<xsl:text>In these nominal phrases with demonstratives, </xsl:text>
+<xsl:choose>
+<xsl:when test="//np/@classifierPresentDemBoth='yes'"> a classifier is required.</xsl:when>
+					<xsl:when test="//np/@classifierPresentDemBoth='some'"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</xsl:when>
+					<xsl:when test="//np/@classifierPresentDemBoth='no'"> a classifier is never used.</xsl:when>
+</xsl:choose>
+<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@classifierPresentDemBoth)='yes' or normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@classifierPresentDemBoth)='some'">
+<xsl:text> The classifier </xsl:text>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='no'">
+<xsl:text>occurs before both the demonstrative and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes'">
+<xsl:text>may occur before both the demonstrative and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes'">
+<xsl:text> It also occurs after both the noun and the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='no'">
+<xsl:text>occurs after both the noun and the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes'">
+<xsl:text>may occur after both the noun and the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes'">
+<xsl:text> It also occurs after the demonstrative but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='no'">
+<xsl:text>occurs after the demonstrative but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes'">
+<xsl:text>may occur after the demonstrative but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes'">
+<xsl:text> It also occurs after the noun but before the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='no'">
+<xsl:text>occurs after the noun but before the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes'">
+<xsl:text>may occur after the noun but before the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes'">
+<xsl:text> It may also attach as a prefix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='no'">
+<xsl:text>attaches as a prefix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes'">
+<xsl:text>may attach as a prefix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes'">
+<xsl:text> It may also attach as a suffix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='no'">
+<xsl:text>attaches as a suffix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes'">
+<xsl:text>may attach as a suffix on the demonstrative.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='yes' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes'">
+<xsl:text> It may also occur ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificDemBothPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificDemBothPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterDemBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosAfterNBeforeDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosPrefixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosSuffixDem/@checked)='no' and normalize-space(//np/classifierSpecificDemBothPosOther/@checked)='yes'">
+<xsl:text>occurs ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificDemBothPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>	
+				</xsl:if>
+</p>
+</xsl:if>
+			
 		</section2>
 		<section2 id="sNPPoss">
 			<secTitle>Possessors</secTitle>
@@ -1013,7 +1268,8 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-			<p>
+		   <xsl:if test="normalize-space(//np/@possNP)!='yesOnly'">
+<p>
 <xsl:text>Examples with </xsl:text>
 <xsl:choose>
 					<xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
@@ -1021,9 +1277,11 @@
 					<xsl:when test="//pp/@pPos='both'">prepositional and/or postpositional</xsl:when>
 					<xsl:when test="//pp/@pPos='unknown'">prepositional and/or postpositional</xsl:when>
 				</xsl:choose>
-<xsl:text> phrases within the possessor include:</xsl:text>
+<xsl:text> phrases as the possessor include:</xsl:text>
 </p>
-			<example num="xNP.NPPoss.18">
+</xsl:if>
+		   <xsl:if test="normalize-space(//np/@possNP)!='yesOnly'">
+<example num="xNP.NPPoss.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/ppExample" />
 </xsl:variable>
@@ -1061,6 +1319,7 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
+</xsl:if>
 			<p>
 <xsl:text>Examples with relative clauses within the possessor, included in simple full sentences are:</xsl:text>
 </p>
@@ -1316,15 +1575,10 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text>, </xsl:text>
-<xsl:choose>
-					   <xsl:when test="//np/@possCooccur='some'">some </xsl:when>
-					</xsl:choose>
-<xsl:text>nominal or pronominal possessors </xsl:text>
+<xsl:text>, nominal and/or pronominal possessors </xsl:text>
 <xsl:choose>
 						<xsl:when test="//np/@possCooccur='yes'">may</xsl:when>
-					   <xsl:when test="//np/@possCooccur='some'">may</xsl:when>
-						<xsl:when test="//np/@possCooccur='no'">may not</xsl:when>
+					   	<xsl:when test="//np/@possCooccur='no'">may not</xsl:when>
 					</xsl:choose>
 <xsl:text> occur in the same phrase as </xsl:text>
 <xsl:choose>
@@ -1335,10 +1589,9 @@
 <xsl:text> in the normal possessor position</xsl:text>
 <xsl:choose>
 				      <xsl:when test="//np/@possCooccur='yes'">.</xsl:when>
-				      <xsl:when test="//np/@possCooccur='some'"> but some may not.  In that case, </xsl:when>
 				      <xsl:when test="//np/@possCooccur='no'">.  Instead, </xsl:when>
 				   </xsl:choose>
-<xsl:if test="normalize-space(//np/@possCooccur)='no' or normalize-space(//np/@possCooccur)='some'">
+<xsl:if test="normalize-space(//np/@possCooccur)='no'">
 <xsl:text>the possessor is expressed in a </xsl:text>
 				      <xsl:choose>
 				         <xsl:when test="//pp/@pPos='before'">prepositional</xsl:when>
@@ -1485,6 +1738,83 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
+			
+			<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific'">
+<p>
+<xsl:text>In these nominal phrases with numbers or other quantifiers, </xsl:text>
+<xsl:choose>
+<xsl:when test="//np/@classifierPresentQ='yes'"> a classifier is required.</xsl:when>
+					<xsl:when test="//np/@classifierPresentQ='some'"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</xsl:when>
+					<xsl:when test="//np/@classifierPresentQ='no'"> a classifier is never used.</xsl:when>
+</xsl:choose>
+<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@classifierPresentQ)='yes' or normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@classifierPresentQ)='some'">
+<xsl:text> The classifier </xsl:text>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosOther/@checked)='no'">
+<xsl:text>occurs before both the quantifier and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes'">
+<xsl:text>may occur before both the quantifier and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes'">
+<xsl:text> It also occurs after both the noun and the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosOther/@checked)='no'">
+<xsl:text>occurs after both the noun and the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes'">
+<xsl:text>may occur after both the noun and the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes'">
+<xsl:text> It also occurs after the quantifier but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosOther/@checked)='no'">
+<xsl:text>occurs after the quantifier but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes'">
+<xsl:text>may occur after the quantifier but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes'">
+<xsl:text> It also occurs after the noun but before the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosOther/@checked)='no'">
+<xsl:text>occurs after the noun but before the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes'">
+<xsl:text>may occur after the noun but before the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes'">
+<xsl:text> It may also attach as a prefix on the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosOther/@checked)='no'">
+<xsl:text>attaches as a prefix on the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes'">
+<xsl:text>may attach as a prefix on the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' or normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes'">
+<xsl:text> It may also attach as a suffix on the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='no'">
+<xsl:text>attaches as a suffix on the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes'">
+<xsl:text>may attach as a suffix on the quantifier.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='yes' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes'">
+<xsl:text> It may also occur ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificQPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificQPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterQBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificQPosAfterNBeforeQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosPrefixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosSuffixQ/@checked)='no' and normalize-space(//np/classifierSpecificQPosOther/@checked)='yes'">
+<xsl:text>occurs ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificQPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>	
+				</xsl:if>
+</p>
+</xsl:if>
+			
+			
 		</section2>
 		<section2 id="sNPAdjP">
 			<secTitle>Adjective Phrases</secTitle>
@@ -1609,7 +1939,82 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		
+			<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific'">
+<p>
+<xsl:text>In these nominal phrases with adjectives, </xsl:text>
+<xsl:choose>
+<xsl:when test="//np/@classifierPresentAdj='yes'"> a classifier is required.</xsl:when>
+					<xsl:when test="//np/@classifierPresentAdj='some'"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</xsl:when>
+					<xsl:when test="//np/@classifierPresentAdj='no'"> a classifier is never used.</xsl:when>
+</xsl:choose>
+<xsl:if test="normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@classifierPresentAdj)='yes' or normalize-space(//typology/@classifier)='yesSpecific' and normalize-space(//np/@classifierPresentAdj)='some'">
+<xsl:text> The classifier </xsl:text>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='no'">
+<xsl:text>occurs before both the adjective and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes'">
+<xsl:text>may occur before both the adjective and the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes'">
+<xsl:text> It also occurs after both the noun and the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='no'">
+<xsl:text>occurs after both the noun and the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes'">
+<xsl:text>may occur after both the noun and the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes'">
+<xsl:text> It also occurs after the adjective but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='no'">
+<xsl:text>occurs after the adjective but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes'">
+<xsl:text>may occur after the adjective but before the noun.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes'">
+<xsl:text> It also occurs after the noun but before the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='no'">
+<xsl:text>occurs after the noun but before the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes'">
+<xsl:text>may occur after the noun but before the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes'">
+<xsl:text> It may also attach as a prefix on the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='no'">
+<xsl:text>attaches as a prefix on the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes'">
+<xsl:text>may attach as a prefix on the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes'">
+<xsl:text> It may also attach as a suffix on the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='no'">
+<xsl:text>attaches as a suffix on the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes'">
+<xsl:text>may attach as a suffix on the adjective.</xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes' or normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='yes' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes'">
+<xsl:text> It may also occur ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificAdjPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>
+					<xsl:if test="normalize-space(//np/classifierSpecificAdjPosBeforeBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterBoth/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterAdjBeforeN/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosAfterNBeforeAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosPrefixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosSuffixAdj/@checked)='no' and normalize-space(//np/classifierSpecificAdjPosOther/@checked)='yes'">
+<xsl:text>occurs ___</xsl:text>
+<xsl:value-of select="//np/classifierSpecificAdjPosOther" />
+<xsl:text>. </xsl:text>
+</xsl:if>	
+				</xsl:if>
+</p>
+</xsl:if>
+			
+			
 		</section2>
 		<section2 id="sNPPP">
 			<secTitle>            <xsl:choose>
@@ -1954,9 +2359,50 @@
    
 </section2>		
 	</section1>
-   
-      
-      
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+		
+		
+	
+	
+		
+		
+		
+	
+		
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+	
       
    
    
@@ -3479,5 +3925,1879 @@
       
       
    
+
+	
+	
+	
+		
+	
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	
+	
+		
+	
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+		
+	
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+		
+	
+		
+		
+		
+		
+		
+		
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	
+		
+		
+		
+		
+		
+		
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
 </xsl:template>
 </xsl:stylesheet>

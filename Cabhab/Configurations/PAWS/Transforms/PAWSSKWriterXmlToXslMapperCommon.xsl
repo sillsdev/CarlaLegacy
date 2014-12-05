@@ -550,10 +550,20 @@ li template
 		</xsl:choose>
 	</xsl:template>
 	<!--
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-ol template
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
--->
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		object template
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	-->
+	<xsl:template match="//object">
+		<object type="{@class}">
+			<xsl:apply-templates/>
+		</object>
+	</xsl:template>
+	<!--
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		ol template
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	-->
 	<xsl:template match="//ol">
 		<xsl:choose>
 			<xsl:when test="@show">
@@ -680,6 +690,28 @@ table template
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:call-template name="DoTable"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<!--
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		tablenumbered template
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	-->
+	<xsl:template match="//tablenumbered">
+		<xsl:choose>
+			<xsl:when test="@show">
+				<xsl:element name="xsl:if">
+					<xsl:attribute name="test">
+						<xsl:call-template name="BuildCondition">
+							<xsl:with-param name="prmCondition" select="@show"/>
+						</xsl:call-template>
+					</xsl:attribute>
+					<xsl:call-template name="DoTableNumbered"/>
+				</xsl:element>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:call-template name="DoTableNumbered"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -1102,6 +1134,49 @@ DoTable
 			</xsl:for-each>
 			<xsl:apply-templates/>
 		</table>
+	</xsl:template>
+	<!--
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		DoExample
+		routine to create an example element
+		Parameters: none
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	-->
+	<xsl:template name="DoTableNumbered">
+		<xsl:element name="tablenumbered">
+			<xsl:variable name="sId">
+				<xsl:choose>
+					<xsl:when test="@id">
+						<xsl:value-of select="@id"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:text>nt</xsl:text>
+						<xsl:value-of select="substring-after(ancestor::section1/@id,'s')"/>
+						<xsl:call-template name="DoSubSectionId">
+							<xsl:with-param name="sSectionId" select="ancestor::section2/@id"/>
+						</xsl:call-template>
+						<xsl:call-template name="DoSubSectionId">
+							<xsl:with-param name="sSectionId" select="ancestor::section3/@id"/>
+						</xsl:call-template>
+						<xsl:call-template name="DoSubSectionId">
+							<xsl:with-param name="sSectionId" select="ancestor::section4/@id"/>
+						</xsl:call-template>
+						<xsl:call-template name="DoSubSectionId">
+							<xsl:with-param name="sSectionId" select="ancestor::section5/@id"/>
+						</xsl:call-template>
+						<xsl:call-template name="DoSubSectionId">
+							<xsl:with-param name="sSectionId" select="ancestor::section6/@id"/>
+						</xsl:call-template>
+						<xsl:value-of select="$sIdSeparator"/>
+						<xsl:value-of select="position()"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			<xsl:attribute name="id">
+				<xsl:value-of select="$sId"/>
+			</xsl:attribute>
+			<xsl:apply-templates select="table"/>
+		</xsl:element>
 	</xsl:template>
 	<!--
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

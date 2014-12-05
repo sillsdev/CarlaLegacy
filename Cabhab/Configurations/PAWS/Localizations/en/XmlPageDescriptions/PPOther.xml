@@ -82,7 +82,7 @@
 
 		<instruction id="PPTempCompYesInstruction" show="swPPTempCompYes">In the lexicon, mark the temporal <span id="PPPrepSpanO15" show="swPPPosPrep">prepositions </span>
 			<span id="PPPostSpanO15" show="swPPPosPost">postpositions </span>
-		   <span id="PPBothSpanO15" show="swPPPosBoth">prepositions and postpositions </span>with the feature <feature>temporal</feature>.  If  these same words can also take a sentential complement, you will need two separate entries so one can have the category <category>P</category> and the other the category <category>Adv</category>.  The adverb entry will also need the features <feature>temporal sentential</feature> as will be discussied further in <section number="13.">Adverbial Clauses</section>.</instruction>
+		   <span id="PPBothSpanO15" show="swPPPosBoth">prepositions and postpositions </span>with the feature <feature>temporal</feature>.  If  these same words can also take a sentential complement, you will need two separate entries so one can have the category <category>P</category> and the other the category <category>Adv</category>.  The adverb entry will also need the features <feature>temporal sentential</feature> as will be discussed further in <section number="13.">Adverbial Clauses</section>.</instruction>
 		<br/>
 		<buttons>
 			<button id="PPOtherBack" value="Back" goto="PPComps.xml"/>

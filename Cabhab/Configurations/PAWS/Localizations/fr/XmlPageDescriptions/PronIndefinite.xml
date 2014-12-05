@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="PronIndefinite" count="6/9">
+   <title level="2">Pronoms – Indéfinis</title>
+   <introduction>Les <technicalTermRef term="ttIndefinite">indéfinis</technicalTermRef> constituent une classe finale de pronoms. Il y a deux sortes de pronoms indéfinis, mais toutes les langues ne les fusionnent pas dans un seul mot:
+      <ul>
+         <li>ceux qui sont formés d’un quantificateur et un substantif indéfini générique, tel que <example>un (personne ou chose)</example>, <example>everybody  « tout le monde »</example>, <example>everything  « tout »</example>, <example>everyone  « tout le monde »</example>, <example>anybody  « n’importe qui »</example>, <example>anything  « n’importe quoi »</example>, <example>anyone  « n’importe qui »</example>,  <example>somebody  « quelqu’un »</example>, <example>something « quelque chose »</example>, <example>someone  « quelqu’un »</example>, et</li>
+         <li>•	ceux qui sont formés d’un mot <technicalTermRef term="ttInterrogative">interrogatif</technicalTermRef>, tel que <example>whoever  « quiconque »</example> et <example>whatever  « quoi que »</example>. </li>
+      </ul>
+</introduction>
+    <form section="pron">
+
+       <checkboxGroup>
+          <prompt><br/>Nous commencerons avec la première sorte ci-dessus qui comprend un quantificateur tel que « tout le monde » et « quelqu’un » (ou l’utilisation impersonnelle du nombre « un »).  Comment votre langue exprime-t-elle ces indéfinis?  Cochez toutes les options qui sont correctes pour votre langue.  Si votre langue n’a pas cette sorte d’indéfinis, laissez toutes ces options sans marque et choisissez l’option  « Aucun » ci-dessous.</prompt>
+          <checkbox id="PronIndefTypeQWord" dataItem="indefQWord">Un quantificateur et un substantif générique se fusionnent en un seul mot</checkbox>
+          <checkbox id="PronIndefTypeQPhrase" dataItem="indefQPhrase">Un quantificateur se présente avec un substantif générique, mais ils ne se fusionnent pas en un seul mot</checkbox>
+          <checkbox id="PronIndefTypeQOther" dataItem="indefQOther">Ma langue exprime ainsi les sens indéfinis:<textBox  id="PronIndefTypeQOtherContent" dataItem="indefQOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="PronIndefTypeQNoCheckPrompt" show="swPronIndefTypeQNoCheck">AVERTISSEMENT: Il faut cocher au moins une case pour décrire comment votre langue exprime ces sens indéfinis, à moins que votre langue n’ait pas cette sorte d’indéfini.  Dans ce cas-là, choisissez « Aucun » ci-dessous.</prompt>
+       <checkboxGroup id="PronIndefTypeQNoneTable" show="swPronIndefTypeQNoCheck">
+          <prompt>Cochez cette case si votre langue n’a aucune sorte de pronoms indéfinis qui comprennent un quantificateur</prompt>
+          <checkbox id="PronIndefTypeQNone" dataItem="pronIndefTypeQNone">Aucun</checkbox>
+       </checkboxGroup>
+       <prompt id="ProneIndefTypeQWordPrompt" show="swPronIndefTypeQWord">Entrez ici vos exemples d’indéfinis formés d’un quantificateur et un substantif générique fusionnés en un seul mot:</prompt>
+       <textBox id="PronIndefTypeQWordExample" dataItem="indefTypeQWordExample" show="swPronIndefTypeQWord" rows="3"/>
+       <instruction  id="PronIndefTypeQWordInstruction" show="swPronIndefTypeQWord">In the lexicon, you will need to make two entries for the generic nouns, one which remains a noun and one with the category <category>Pron</category>, or else the feature <feature>makePron</feature> to change the category for the syntax.</instruction>
+       
+       <prompt id="PronIndefTypeQPhrasePrompt" show="swPronIndefTypeQPhrase">Entrez ici vos exemples de syntagmes indéfinis formés d’un quantificateur et un substantif générique:</prompt>
+       <textBox id="PronIndefTypeQPhraseExample" dataItem="indefTypeQPhraseExample" show="swPronIndefTypeQPhrase" rows="3"/>
+       <checkboxGroup id="PronIndefTypeQPhraseTable" show="swPronIndefTypeQPhrase">
+          <prompt><br/>En considérant les exemples que vous avez entrés ci-dessus, où le quantificateur se présente-t-il par rapport au substantif générique?  Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+          <checkbox id="PronIndefTypeQPQBefore" checked="yes" dataItem="indefTypeQPQBefore">Avant le substantif générique</checkbox>
+          <checkbox id="PronIndefTypeQPQAfter" checked="yes" dataItem="indefTypeQPQAfter">Après le substantif générique</checkbox>
+          <checkbox id="PronIndefTypeQPQBoth" checked="yes" dataItem="indefTypeQPQBoth">Des deux côtés à la fois</checkbox>
+          <checkbox id="PronIndefTypeQPQOther" checked="yes" dataItem="indefTypeQPQOther">Dans ma langue, ces quantificateurs peuvent se présenter comme suit par rapport au substantif générique: <textBox  id="PronIndefTypeQPQOtherContent" dataItem="indefTypeQPQOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="PronIndefTypeQPPhraseNoCheckPrompt" show="swPronIndefTypeQPPhraseAndNoCheck">AVERTISSEMENT: Il faut cocher au moins une case pour décrire où ces quantificateurs et ces substantifs génériques se présentent dans votre langue, ou changez la réponse ci-dessus à une forme différente.</prompt>
+       <instruction id="PronIndefTypeQPhraseInstruction" show="swPronIndefTypeQPhrase">In the lexicon, mark the generic noun with the feature <feature>generic</feature> and make sure it has the category <category>N</category>.</instruction>           
+       <instruction id="PronIndefTypeQPQEitherRestrictedInstruction" show="swPronIndefTypeQPQEitherRestricted">In the lexicon, mark those quantifier words which can only occur before the generic noun with the feature <feature>DP-initial</feature> and those which can only occur after the generic noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier words which can occur on either side.</instruction>           
+       
+       <prompt id="PronIndefTypeQOtherPrompt" show="swPronIndefTypeQOther">Entrez ici des exemples d’une autre manière dont votre langue exprime ces indéfinis qui comprennent un quantificateur:</prompt>
+       <textBox id="PronIndefTypeQOtherExample" dataItem="indefTypeQOtherExample" show="swPronIndefTypeQOther"/>
+       
+       <br/><br/>
+       <checkboxGroup>
+          <prompt><br/>Maintenant considérez les indéfinis qui sont basés sur un mot interrogatif et un mot indéfini, tel que « quiconque » ou « quelque chose ».  Comment votre langue exprime-t-elle ces indéfinis?  Cochez toutes les options qui sont correctes dans votre langue.  Si votre langue n’a pas cette sorte d’indéfinis, laissez toutes ces options sans marque et choisissez l’option « Aucun » ci-dessous.</prompt>
+          <checkbox id="PronIndefTypeIntWord" dataItem="indefIntWord">Un mot interrogatif et un indéfini se fusionnent en un seul mot</checkbox>
+          <checkbox id="PronIndefTypeIntPhrase" dataItem="indefIntPhrase">Un mot interrogatif se présente avec un mot indéfini, mais ils ne se fusionnent pas en un seul mot</checkbox>
+          <checkbox id="PronIndefTypeIntOther" dataItem="indefIntOther">Ma langue fait comme suit pour exprimer cette sorte de sens indéfini:<textBox  id="PronIndefTypeIntOtherContent" dataItem="indefIntOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="PronIndefTypeIntNoCheckPrompt" show="swPronIndefTypeIntNoCheck">AVERTISSEMENT: Il faut cocher au moins une case pour décrire comment votre langue exprime cette sorte de sens indéfini, à moins que votre langue n’ait pas cette sorte d’indéfinis.  Dans ce cas-là, choisissez l’option « Aucun » ci-dessous.</prompt>
+       <checkboxGroup id="PronIndefTypeIntNoneTable" show="swPronIndefTypeIntNoCheck">
+          <prompt>Ne cochez cette case que  si votre langue n’a aucune sorte d’indéfinis pronominaux basés sur un mot interrogatif</prompt>
+          <checkbox id="PronIndefTypeIntNone" dataItem="pronIndefTypeIntNone">Aucun</checkbox>
+       </checkboxGroup>
+       <prompt id="PronIndefTypeQAndIntNonePrompt" show="swPronIndefTypeQAndIntNone">AVERTISSEMENT: Vous avez coché « Aucun » pour les deux sortes d’indéfinis pronominaux.  Veuillez choisir la sorte qui est la plus proche de l’indéfini pronominal dans votre langue et décrivez-la utilisant la boîte « Ma langue.... ».  Eliminez « Aucun » pour cette option. </prompt>
+       
+       <prompt id="PronIndefTypeIntWordPrompt" show="swPronIndefTypeIntWord">Entrez ici vos exemples d’indéfinis formés d’un mot interrogatif et un mot indéfini fusionnés en un seul mot:</prompt>
+       <textBox id="PronIndefTypeIntWordExample" dataItem="indefTypeIntWordExample" show="swPronIndefTypeIntWord" rows="3"/>
+       <instruction  id="PronIndefTypeIntWordInstruction" show="swPronIndefTypeIntWord">In the lexicon, key the feature <feature>makePron</feature> on the interrogative pronouns if they do not already have the category <category>Pron</category> and also add the feature <feature>wh</feature> to mark them as interrogative. </instruction>
+       
+       <prompt id="PronIndefTypeIntPhrasePrompt" show="swPronIndefTypeIntPhrase">Entez ici vos exemples de syntagmes indéfinis formés d’un mot interrogatif et un mot indéfini:</prompt>
+       <textBox id="PronIndefTypeIntPhraseExample" dataItem="indefTypeIntPhraseExample" show="swPronIndefTypeIntPhrase" rows="3"/>
+       <checkboxGroup id="PronIndefTypeIntPhraseTable" show="swPronIndefTypeIntPhrase">
+          <prompt><br/>En considérant les exemples que vous avez entrés ci-dessus, où le mot interrogatif se présente-t-il par rapport au mot indéfini?  Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+          <checkbox id="PronIndefTypeIntPhraseBefore" checked="yes" dataItem="indefTypeIntBefore">Avant l’indéfini</checkbox>
+          <checkbox id="PronIndefTypeIntPhraseAfter" checked="yes" dataItem="indefTypeIntAfter">Après l’indéfini</checkbox>
+          <checkbox id="PronIndefTypeIntPhraseBoth" checked="yes" dataItem="indefTypeIntBoth">Des deux côtés à la fois</checkbox>
+          <checkbox id="PronIndefTypeIntPhraseOther" checked="yes" dataItem="indefTypeIntOther">Dans ma langue, ces mots interrogatifs peuvent se présenter comme suit par rapport au mot indéfini: <textBox  id="PronIndefTypeIntPhraseOtherContent" dataItem="indefTypeIntOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="PronIndefTypeIntPhraseNoCheckPrompt" show="swPronIndefTypeIntPhraseAndNoCheck">AVERTISSEMENT: Il faut cocher au moins une case pour décrire où ces mots interrogatifs et ces mots indéfinis se présentent dans votre langue, ou changez la réponse ci-dessus à une autre forme.</prompt>
+       <instruction id="PronIndefTypeIntPhraseInstruction" show="swPronIndefTypeIntPhrase">In the lexicon, key the feature <feature>makeIndef</feature> on the indefinite word to give it a special category. </instruction>
+       <instruction id="PronIndefTypeIntEitherRestrictedInstruction" show="swPronIndefTypeIntEitherRestricted">In the lexicon, mark those interrogative pronouns which can only occur before the indefinite word with the feature <feature>DP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>DP-final</feature>.  Do not enter either feature on any interrogative pronouns which can occur on either side.</instruction>           
+       
+       <prompt id="PronIndefTypeIntOtherPrompt" show="swPronIndefTypeIntOther">Entrez ici des exemples d’une autre façon dont votre lange exprime ces indéfinis qui comprennent un mot interrogatif:</prompt>
+       <textBox id="PronIndefTypeIntOtherExample" dataItem="indefTypeIntOtherExample" show="swPronIndefTypeIntOther"/>
+<br/>
+<br/>
+        <buttons>
+            <button id="PronIndefiniteBack" value="Back" goto="PronDem.xml"/>
+            <button id="PronIndefiniteNext" value="Next" goto="PronNP.xml"/>
+        </buttons>
+    </form>
+   <showWhen id="swPronIndefTypeQNoCheck">
+      <not/>
+      <whenCheckbox button="PronIndefTypeQWord"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQOther"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeIntNoCheck">
+      <not/>
+      <whenCheckbox button="PronIndefTypeIntWord"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntOther"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeQPQEitherRestricted">
+      <whenRadio button="PronIndefTypeQPhrase"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeQPQBoth"/>
+      <or/>
+      <whenRadio button="PronIndefTypeQPhrase"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeQPQBefore"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeQPQAfter"/>
+   </showWhen>
+   <showWhen id="swPronIndefTypeQPhrase">
+      <whenCheckbox button="PronIndefTypeQPhrase"/>
+   </showWhen>   
+   <showWhen id="swPronIndefTypeQWord">
+      <whenCheckbox button="PronIndefTypeQWord"/>
+   </showWhen>   
+   <showWhen id="swPronIndefTypeQOther">
+      <whenCheckbox button="PronIndefTypeQOther"/>
+   </showWhen>   
+   <showWhen id="swPronIndefTypeQPPhraseAndNoCheck">
+      <whenCheckbox button="PronIndefTypeQPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPQBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPQAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPQBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeQPQOther"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeIntPhrase">
+      <whenCheckbox button="PronIndefTypeIntPhrase"/>
+   </showWhen>
+   <showWhen id="swPronIndefTypeIntWord">
+      <whenCheckbox button="PronIndefTypeIntWord"/>
+   </showWhen>
+   <showWhen id="swPronIndefTypeIntOther">
+      <whenCheckbox button="PronIndefTypeIntOther"/>
+   </showWhen>
+   <showWhen id="swPronIndefTypeIntPhraseAndNoCheck">
+      <whenCheckbox button="PronIndefTypeIntPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhraseBefore"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhraseAfter"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhraseBoth"/>
+      <and/><not/>
+      <whenCheckbox button="PronIndefTypeIntPhraseOther"/>
+   </showWhen> 
+   <showWhen id="swPronIndefTypeIntEitherRestricted">
+      <whenRadio button="PronIndefTypeIntPhrase"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntPhraseBoth"/>
+      <or/>
+      <whenRadio button="PronIndefTypeIntPhrase"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntPhraseBefore"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntPhraseAfter"/>
+   </showWhen>
+   <showWhen id="swPronIndefTypeQAndIntNone">
+      <whenCheckbox button="PronIndefTypeQNone"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntNone"/>
+   </showWhen>
+   
+     &TechnicalTerms; 
+   
+</page>

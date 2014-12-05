@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPPartitive" count="5/7">
+	<title level="2">Quantificateurs et Syntagmes de Quantité – Partitifs</title>
+	<introduction>Tous les quantificateurs y compris les nombres peuvent normalement se trouver dans des constructions <technicalTermRef term="ttPartitive">partitives</technicalTermRef>.  Ces constructions sont employées pour indiquer qu’on parle d’une partie d’un groupe plus grand.  Des exemples:
+	</introduction>
+   <EnglishExample>
+   	<exItem label="1.">quelques-uns des enfants</exItem>
+   	<exItem label="2.">plusieurs des filles plus âgées</exItem>
+   	<exItem label="3.">beaucoup des femmes</exItem>
+   	<exItem label="4.">seulement dix des garçons</exItem>
+   </EnglishExample>
+	<introduction>Comme les exemples le montrent, les constructions partitives de cette sorte ont normalement un syntagme prépositionnel ou postpositionnel, qui indique le groupe ou la chose complet discuté.  Notez que dans tous ces exemples, le substantif dans le syntagme partitif peut être modifié par une proposition relative.<br/><br/>
+		Certaines langues peuvent employer une proposition relative pour exprimer le groupe de la construction partitive au lieu d’un syntagme prépositionnel ou postpositionnel.
+   </introduction>
+	<form section="qp">
+		<prompt><br/>Entrez ici la manière dont votre langue exprimerait des exemples comparables de partitifs avec quantificateurs:</prompt>
+	   <textBox id="QPPartitiveQExample" dataItem="partitiveQExample"/>
+<br/><br/>
+	   <radioGroup>
+	      <groupName dataItem="partitive" default="no" >RQPPartitive</groupName>
+	   	<prompt>Suivant les exemples que vous avez entrés, votre langue utilise-t-elle des syntagmes prépositionnels ou postpositionnels dans les constructions partitives?</prompt>
+	      <radio id="QPPartitiveYes" dataValue="yes">Oui</radio>
+	   	<radio id="QPPartitiveNo" dataValue="no">Non, on utilise plutôt une proposition relative</radio>
+	   	<radio id="QPPartitiveOther" dataValue="other">Non, ma langue utilise d’autres moyens que des syntagmes prépositionnels ou postpositionnels ou des propositions relatives pour exprimer des idées comparables</radio>
+	   </radioGroup>
+		<prompt id="QPPartitiveOtherPrompt" show="swQPPartitiveOther">La construction que ma langue utilise pour indiquer le groupe ou la chose discuté dans cette sorte de construction partitive est:</prompt>
+		<textBox id="QPPartitiveOtherConstruction" dataItem="partitiveConstruction" cols="50" rows="2" show="swQPPartitiveOther"/>
+		
+	   <radioGroup id="QPPartitivePPPosTable" show="swQPPartitiveYes">
+	      <groupName dataItem="partitivePPPos" default="unknown" position="yesHeadDiff">RQPPartitivePPPos</groupName>
+	   	<prompt>Où le syntagme prépositionnel ou postpositionnel se présente-t-il par rapport au quantificateur?</prompt>
+	   	<radio id="QPPartitivePPBefore" checked="yes" dataValue="before">Avant le quantificateur</radio>
+	   	<radio id="QPPartitivePPAfter" checked="yes" dataValue="after">Après le quantificateur</radio>
+	   	<radio id="QPPartitivePPEitherSide" checked="yes" dataValue="either">D’un côté ou de l’autre</radio>
+	   </radioGroup>
+	   
+		<prompt id="QPPartitiveOfPrompt" show="swQPPartitiveYes">Entrez les prépositions ou postpositions qu’on peut utiliser pour dire « de » dans ces constructions partitives, avec chaque mot sur une ligne distincte. </prompt>
+	   <textBox id="QPPartitiveOfExample" dataItem="partitiveOf" rows="3" show="swQPPartitiveYes"/>
+	   <br/>
+	   
+		<prompt id="QPPartitiveRelClPrompt" show="swQPPartitiveNo">La structure des propositions relatives sera traitée dans la <section number="12">Propositions Relatives</section>.</prompt>
+<br/>		<br/>
+		<buttons>
+			<button id="QPPartitiveBack" value="Back" goto="QPCardinal.xml"/>
+		    <button id="QPPartitiveNext" value="Next" goto="QPCatMap.xml" gotoNoGrammar="Contents.htm"/>
+		</buttons>
+	</form>
+   <showWhen id="swQPPartitiveNo">
+      <whenRadio button="QPPartitiveNo"/>  
+   </showWhen> 
+   <showWhen id="swQPPartitiveYes">
+      <whenRadio button="QPPartitiveYes"/>  
+   </showWhen> 
+	<showWhen id="swQPPartitiveOther">
+		<whenRadio button="QPPartitiveOther"/>  
+	</showWhen> 
+	&TechnicalTerms; 
+   
+</page>

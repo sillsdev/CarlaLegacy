@@ -290,9 +290,9 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				   <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+					<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
 <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//ip/completiveAspect),'.','')" />
+<xsl:value-of select="translate(string(//ip/otherTense),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -310,6 +310,56 @@
 </xsl:with-param>
 <xsl:with-param name="iLength">
 <xsl:value-of select="$iExampleLength5.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+							<xsl:text>tense</xsl:text>
+						</td>
+<td align="left">
+							<xsl:text>ENTER GLOSS</xsl:text>
+						</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+							<xsl:text>tense</xsl:text>
+						</td>
+<td align="left">
+							<xsl:text>ENTER GLOSS</xsl:text>
+						</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+					<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<xsl:variable name="sExampleValue6.2">
+<xsl:value-of select="translate(string(//ip/completiveAspect),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength6.2 != 0 and $sExampleValue6.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue6.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength6.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -341,25 +391,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
-<xsl:variable name="sExampleValue6.2">
+<xsl:variable name="sExampleValue7.2">
 <xsl:value-of select="translate(string(//ip/contemplativeAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength6.2" select="string-length(normalize-space($sExampleValue6.2))" />
+<xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength6.2 != 0 and $sExampleValue6.2 != ' '">
+<xsl:when test="$iExampleLength7.2 != 0 and $sExampleValue7.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue6.2" />
+<xsl:value-of select="$sExampleValue7.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue6.2" />
+<xsl:value-of select="$sExampleValue7.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength6.2" />
+<xsl:value-of select="$iExampleLength7.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -391,25 +441,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
-<xsl:variable name="sExampleValue7.2">
+<xsl:variable name="sExampleValue8.2">
 <xsl:value-of select="translate(string(//ip/contrafactualAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength7.2" select="string-length(normalize-space($sExampleValue7.2))" />
+<xsl:variable name="iExampleLength8.2" select="string-length(normalize-space($sExampleValue8.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength7.2 != 0 and $sExampleValue7.2 != ' '">
+<xsl:when test="$iExampleLength8.2 != 0 and $sExampleValue8.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue7.2" />
+<xsl:value-of select="$sExampleValue8.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue7.2" />
+<xsl:value-of select="$sExampleValue8.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength7.2" />
+<xsl:value-of select="$iExampleLength8.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -441,25 +491,25 @@
 </xsl:choose>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
-<xsl:variable name="sExampleValue8.2">
+<xsl:variable name="sExampleValue9.2">
 <xsl:value-of select="translate(string(//ip/continuativeAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength8.2" select="string-length(normalize-space($sExampleValue8.2))" />
+<xsl:variable name="iExampleLength9.2" select="string-length(normalize-space($sExampleValue9.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength8.2 != 0 and $sExampleValue8.2 != ' '">
+<xsl:when test="$iExampleLength9.2 != 0 and $sExampleValue9.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue8.2" />
+<xsl:value-of select="$sExampleValue9.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue8.2" />
+<xsl:value-of select="$sExampleValue9.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength8.2" />
+<xsl:value-of select="$iExampleLength9.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -491,25 +541,25 @@
 </xsl:choose>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
-<xsl:variable name="sExampleValue9.2">
+<xsl:variable name="sExampleValue10.2">
 <xsl:value-of select="translate(string(//ip/habitualAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength9.2" select="string-length(normalize-space($sExampleValue9.2))" />
+<xsl:variable name="iExampleLength10.2" select="string-length(normalize-space($sExampleValue10.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength9.2 != 0 and $sExampleValue9.2 != ' '">
+<xsl:when test="$iExampleLength10.2 != 0 and $sExampleValue10.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue9.2" />
+<xsl:value-of select="$sExampleValue10.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue9.2" />
+<xsl:value-of select="$sExampleValue10.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength9.2" />
+<xsl:value-of select="$iExampleLength10.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -541,25 +591,25 @@
 </xsl:choose>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
-<xsl:variable name="sExampleValue10.2">
+<xsl:variable name="sExampleValue11.2">
 <xsl:value-of select="translate(string(//ip/imperfectAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength10.2" select="string-length(normalize-space($sExampleValue10.2))" />
+<xsl:variable name="iExampleLength11.2" select="string-length(normalize-space($sExampleValue11.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength10.2 != 0 and $sExampleValue10.2 != ' '">
+<xsl:when test="$iExampleLength11.2 != 0 and $sExampleValue11.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue10.2" />
+<xsl:value-of select="$sExampleValue11.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue10.2" />
+<xsl:value-of select="$sExampleValue11.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength10.2" />
+<xsl:value-of select="$iExampleLength11.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -591,25 +641,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
-<xsl:variable name="sExampleValue11.2">
+<xsl:variable name="sExampleValue12.2">
 <xsl:value-of select="translate(string(//ip/imperfectiveAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength11.2" select="string-length(normalize-space($sExampleValue11.2))" />
+<xsl:variable name="iExampleLength12.2" select="string-length(normalize-space($sExampleValue12.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength11.2 != 0 and $sExampleValue11.2 != ' '">
+<xsl:when test="$iExampleLength12.2 != 0 and $sExampleValue12.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue11.2" />
+<xsl:value-of select="$sExampleValue12.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue11.2" />
+<xsl:value-of select="$sExampleValue12.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength11.2" />
+<xsl:value-of select="$iExampleLength12.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -641,25 +691,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
-<xsl:variable name="sExampleValue12.2">
+<xsl:variable name="sExampleValue13.2">
 <xsl:value-of select="translate(string(//ip/incompletiveAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength12.2" select="string-length(normalize-space($sExampleValue12.2))" />
+<xsl:variable name="iExampleLength13.2" select="string-length(normalize-space($sExampleValue13.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength12.2 != 0 and $sExampleValue12.2 != ' '">
+<xsl:when test="$iExampleLength13.2 != 0 and $sExampleValue13.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue12.2" />
+<xsl:value-of select="$sExampleValue13.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue12.2" />
+<xsl:value-of select="$sExampleValue13.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength12.2" />
+<xsl:value-of select="$iExampleLength13.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -691,25 +741,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
-<xsl:variable name="sExampleValue13.2">
+<xsl:variable name="sExampleValue14.2">
 <xsl:value-of select="translate(string(//ip/perfectAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength13.2" select="string-length(normalize-space($sExampleValue13.2))" />
+<xsl:variable name="iExampleLength14.2" select="string-length(normalize-space($sExampleValue14.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength13.2 != 0 and $sExampleValue13.2 != ' '">
+<xsl:when test="$iExampleLength14.2 != 0 and $sExampleValue14.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue13.2" />
+<xsl:value-of select="$sExampleValue14.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue13.2" />
+<xsl:value-of select="$sExampleValue14.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength13.2" />
+<xsl:value-of select="$iExampleLength14.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -741,25 +791,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
-<xsl:variable name="sExampleValue14.2">
+<xsl:variable name="sExampleValue15.2">
 <xsl:value-of select="translate(string(//ip/perfectiveAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength14.2" select="string-length(normalize-space($sExampleValue14.2))" />
+<xsl:variable name="iExampleLength15.2" select="string-length(normalize-space($sExampleValue15.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength14.2 != 0 and $sExampleValue14.2 != ' '">
+<xsl:when test="$iExampleLength15.2 != 0 and $sExampleValue15.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue14.2" />
+<xsl:value-of select="$sExampleValue15.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue14.2" />
+<xsl:value-of select="$sExampleValue15.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength14.2" />
+<xsl:value-of select="$iExampleLength15.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -791,25 +841,25 @@
 </xsl:choose>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
-<xsl:variable name="sExampleValue15.2">
+<xsl:variable name="sExampleValue16.2">
 <xsl:value-of select="translate(string(//ip/potentialAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength15.2" select="string-length(normalize-space($sExampleValue15.2))" />
+<xsl:variable name="iExampleLength16.2" select="string-length(normalize-space($sExampleValue16.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength15.2 != 0 and $sExampleValue15.2 != ' '">
+<xsl:when test="$iExampleLength16.2 != 0 and $sExampleValue16.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue15.2" />
+<xsl:value-of select="$sExampleValue16.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue15.2" />
+<xsl:value-of select="$sExampleValue16.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength15.2" />
+<xsl:value-of select="$iExampleLength16.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -841,25 +891,25 @@
 </xsl:choose>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
-<xsl:variable name="sExampleValue16.2">
+<xsl:variable name="sExampleValue17.2">
 <xsl:value-of select="translate(string(//ip/progressiveAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength16.2" select="string-length(normalize-space($sExampleValue16.2))" />
+<xsl:variable name="iExampleLength17.2" select="string-length(normalize-space($sExampleValue17.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength16.2 != 0 and $sExampleValue16.2 != ' '">
+<xsl:when test="$iExampleLength17.2 != 0 and $sExampleValue17.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue16.2" />
+<xsl:value-of select="$sExampleValue17.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue16.2" />
+<xsl:value-of select="$sExampleValue17.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength16.2" />
+<xsl:value-of select="$iExampleLength17.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -890,26 +940,76 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-					<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
-<xsl:variable name="sExampleValue17.2">
-<xsl:value-of select="translate(string(//ip/stativeAspect),'.','')" />
+					<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<xsl:variable name="sExampleValue18.2">
+<xsl:value-of select="translate(string(//ip/purposiveAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength17.2" select="string-length(normalize-space($sExampleValue17.2))" />
+<xsl:variable name="iExampleLength18.2" select="string-length(normalize-space($sExampleValue18.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength17.2 != 0 and $sExampleValue17.2 != ' '">
+<xsl:when test="$iExampleLength18.2 != 0 and $sExampleValue18.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue17.2" />
+<xsl:value-of select="$sExampleValue18.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue17.2" />
+<xsl:value-of select="$sExampleValue18.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength17.2" />
+<xsl:value-of select="$iExampleLength18.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+							<xsl:text>aspect</xsl:text>
+						</td>
+<td align="left">
+							<xsl:text>purposive</xsl:text>
+						</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+							<xsl:text>aspect</xsl:text>
+						</td>
+<td align="left">
+							<xsl:text>purposive</xsl:text>
+						</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+					<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<xsl:variable name="sExampleValue19.2">
+<xsl:value-of select="translate(string(//ip/stativeAspect),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength19.2" select="string-length(normalize-space($sExampleValue19.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength19.2 != 0 and $sExampleValue19.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue19.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue19.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength19.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -941,25 +1041,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
-<xsl:variable name="sExampleValue18.2">
+<xsl:variable name="sExampleValue20.2">
 <xsl:value-of select="translate(string(//ip/unrealAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength18.2" select="string-length(normalize-space($sExampleValue18.2))" />
+<xsl:variable name="iExampleLength20.2" select="string-length(normalize-space($sExampleValue20.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength18.2 != 0 and $sExampleValue18.2 != ' '">
+<xsl:when test="$iExampleLength20.2 != 0 and $sExampleValue20.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue18.2" />
+<xsl:value-of select="$sExampleValue20.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue18.2" />
+<xsl:value-of select="$sExampleValue20.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength18.2" />
+<xsl:value-of select="$iExampleLength20.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -990,26 +1090,76 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				   <xsl:if test="normalize-space(//ip/ipInflFeatDeclarative/@checked)='yes'">
-<xsl:variable name="sExampleValue19.2">
-<xsl:value-of select="translate(string(//ip/declarativeMood),'.','')" />
+					<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<xsl:variable name="sExampleValue21.2">
+<xsl:value-of select="translate(string(//ip/otherAspect),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength19.2" select="string-length(normalize-space($sExampleValue19.2))" />
+<xsl:variable name="iExampleLength21.2" select="string-length(normalize-space($sExampleValue21.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength19.2 != 0 and $sExampleValue19.2 != ' '">
+<xsl:when test="$iExampleLength21.2 != 0 and $sExampleValue21.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue19.2" />
+<xsl:value-of select="$sExampleValue21.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue19.2" />
+<xsl:value-of select="$sExampleValue21.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength19.2" />
+<xsl:value-of select="$iExampleLength21.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+							<xsl:text>aspect</xsl:text>
+						</td>
+<td align="left">
+							<xsl:text>ENTER GLOSS</xsl:text>
+						</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+							<xsl:text>aspect</xsl:text>
+						</td>
+<td align="left">
+							<xsl:text>ENTER GLOSS</xsl:text>
+						</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+					<xsl:if test="normalize-space(//ip/ipInflFeatDeclarative/@checked)='yes'">
+<xsl:variable name="sExampleValue22.2">
+<xsl:value-of select="translate(string(//ip/declarativeMood),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength22.2" select="string-length(normalize-space($sExampleValue22.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength22.2 != 0 and $sExampleValue22.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue22.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue22.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength22.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1041,25 +1191,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatIndicative/@checked)='yes'">
-<xsl:variable name="sExampleValue20.2">
+<xsl:variable name="sExampleValue23.2">
 <xsl:value-of select="translate(string(//ip/indicativeMood),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength20.2" select="string-length(normalize-space($sExampleValue20.2))" />
+<xsl:variable name="iExampleLength23.2" select="string-length(normalize-space($sExampleValue23.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength20.2 != 0 and $sExampleValue20.2 != ' '">
+<xsl:when test="$iExampleLength23.2 != 0 and $sExampleValue23.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue20.2" />
+<xsl:value-of select="$sExampleValue23.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue20.2" />
+<xsl:value-of select="$sExampleValue23.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength20.2" />
+<xsl:value-of select="$iExampleLength23.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1091,25 +1241,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatRealis/@checked)='yes'">
-<xsl:variable name="sExampleValue21.2">
+<xsl:variable name="sExampleValue24.2">
 <xsl:value-of select="translate(string(//ip/realisMood),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength21.2" select="string-length(normalize-space($sExampleValue21.2))" />
+<xsl:variable name="iExampleLength24.2" select="string-length(normalize-space($sExampleValue24.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength21.2 != 0 and $sExampleValue21.2 != ' '">
+<xsl:when test="$iExampleLength24.2 != 0 and $sExampleValue24.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue21.2" />
+<xsl:value-of select="$sExampleValue24.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue21.2" />
+<xsl:value-of select="$sExampleValue24.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength21.2" />
+<xsl:value-of select="$iExampleLength24.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1141,25 +1291,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatImperative/@checked)='yes'">
-<xsl:variable name="sExampleValue22.2">
+<xsl:variable name="sExampleValue25.2">
 <xsl:value-of select="translate(string(//ip/imperativeMood),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength22.2" select="string-length(normalize-space($sExampleValue22.2))" />
+<xsl:variable name="iExampleLength25.2" select="string-length(normalize-space($sExampleValue25.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength22.2 != 0 and $sExampleValue22.2 != ' '">
+<xsl:when test="$iExampleLength25.2 != 0 and $sExampleValue25.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue22.2" />
+<xsl:value-of select="$sExampleValue25.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue22.2" />
+<xsl:value-of select="$sExampleValue25.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength22.2" />
+<xsl:value-of select="$iExampleLength25.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1191,25 +1341,25 @@
 </xsl:choose>
 </xsl:if>
 					<xsl:if test="normalize-space(//ip/ipInflFeatInterrogative/@checked)='yes'">
-<xsl:variable name="sExampleValue23.2">
+<xsl:variable name="sExampleValue26.2">
 <xsl:value-of select="translate(string(//ip/interrogativeMood),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength23.2" select="string-length(normalize-space($sExampleValue23.2))" />
+<xsl:variable name="iExampleLength26.2" select="string-length(normalize-space($sExampleValue26.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength23.2 != 0 and $sExampleValue23.2 != ' '">
+<xsl:when test="$iExampleLength26.2 != 0 and $sExampleValue26.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue23.2" />
+<xsl:value-of select="$sExampleValue26.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue23.2" />
+<xsl:value-of select="$sExampleValue26.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength23.2" />
+<xsl:value-of select="$iExampleLength26.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1241,25 +1391,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipinflFeatConditional/@checked)='yes'">
-<xsl:variable name="sExampleValue24.2">
+<xsl:variable name="sExampleValue27.2">
 <xsl:value-of select="translate(string(//ip/conditionalMood),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength24.2" select="string-length(normalize-space($sExampleValue24.2))" />
+<xsl:variable name="iExampleLength27.2" select="string-length(normalize-space($sExampleValue27.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength24.2 != 0 and $sExampleValue24.2 != ' '">
+<xsl:when test="$iExampleLength27.2 != 0 and $sExampleValue27.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue24.2" />
+<xsl:value-of select="$sExampleValue27.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue24.2" />
+<xsl:value-of select="$sExampleValue27.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength24.2" />
+<xsl:value-of select="$iExampleLength27.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1291,25 +1441,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
-<xsl:variable name="sExampleValue25.2">
+<xsl:variable name="sExampleValue28.2">
 <xsl:value-of select="translate(string(//ip/subjunctiveMood),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength25.2" select="string-length(normalize-space($sExampleValue25.2))" />
+<xsl:variable name="iExampleLength28.2" select="string-length(normalize-space($sExampleValue28.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength25.2 != 0 and $sExampleValue25.2 != ' '">
+<xsl:when test="$iExampleLength28.2 != 0 and $sExampleValue28.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue25.2" />
+<xsl:value-of select="$sExampleValue28.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue25.2" />
+<xsl:value-of select="$sExampleValue28.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength25.2" />
+<xsl:value-of select="$iExampleLength28.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1341,25 +1491,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatIrrealis/@checked)='yes'">
-<xsl:variable name="sExampleValue26.2">
+<xsl:variable name="sExampleValue29.2">
 <xsl:value-of select="translate(string(//ip/irrealisMood),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength26.2" select="string-length(normalize-space($sExampleValue26.2))" />
+<xsl:variable name="iExampleLength29.2" select="string-length(normalize-space($sExampleValue29.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength26.2 != 0 and $sExampleValue26.2 != ' '">
+<xsl:when test="$iExampleLength29.2 != 0 and $sExampleValue29.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue26.2" />
+<xsl:value-of select="$sExampleValue29.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue26.2" />
+<xsl:value-of select="$sExampleValue29.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength26.2" />
+<xsl:value-of select="$iExampleLength29.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1390,26 +1540,749 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-                        	   <xsl:if test="normalize-space(//ip/ipInflFeatFinite/@checked)='yes'">
-<xsl:variable name="sExampleValue27.2">
-<xsl:value-of select="translate(string(//ip/finiteOther),'.','')" />
+					<xsl:if test="normalize-space(//ip/ipInflFeatOtherMood/@checked)='yes'">
+<xsl:variable name="sExampleValue30.2">
+<xsl:value-of select="translate(string(//ip/otherMood),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength27.2" select="string-length(normalize-space($sExampleValue27.2))" />
+<xsl:variable name="iExampleLength30.2" select="string-length(normalize-space($sExampleValue30.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength27.2 != 0 and $sExampleValue27.2 != ' '">
+<xsl:when test="$iExampleLength30.2 != 0 and $sExampleValue30.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue27.2" />
+<xsl:value-of select="$sExampleValue30.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue27.2" />
+<xsl:value-of select="$sExampleValue30.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength27.2" />
+<xsl:value-of select="$iExampleLength30.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+							<xsl:text>mood</xsl:text>
+						</td>
+<td align="left">
+							<xsl:text>ENTER GLOSS</xsl:text>
+						</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+							<xsl:text>mood</xsl:text>
+						</td>
+<td align="left">
+							<xsl:text>ENTER GLOSS</xsl:text>
+						</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+					<xsl:variable name="sExampleValue31.2">
+<xsl:value-of select="translate(string(//ip/witnessEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength31.2" select="string-length(normalize-space($sExampleValue31.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength31.2 != 0 and $sExampleValue31.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue31.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue31.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength31.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>witness</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>witness</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue32.2">
+<xsl:value-of select="translate(string(//ip/nonwitnessEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength32.2" select="string-length(normalize-space($sExampleValue32.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength32.2 != 0 and $sExampleValue32.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue32.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue32.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength32.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>nonwitness</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>nonwitness</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue33.2">
+<xsl:value-of select="translate(string(//ip/firsthandEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength33.2" select="string-length(normalize-space($sExampleValue33.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength33.2 != 0 and $sExampleValue33.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue33.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue33.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength33.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>firsthand</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>firsthand</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue34.2">
+<xsl:value-of select="translate(string(//ip/secondhandEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength34.2" select="string-length(normalize-space($sExampleValue34.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength34.2 != 0 and $sExampleValue34.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue34.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue34.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength34.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>secondhand</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>secondhand</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue35.2">
+<xsl:value-of select="translate(string(//ip/thirdhandEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength35.2" select="string-length(normalize-space($sExampleValue35.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength35.2 != 0 and $sExampleValue35.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue35.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue35.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength35.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>thirdhand</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>thirdhand</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue36.2">
+<xsl:value-of select="translate(string(//ip/visualEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength36.2" select="string-length(normalize-space($sExampleValue36.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength36.2 != 0 and $sExampleValue36.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue36.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue36.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength36.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>visual</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>visual</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue37.2">
+<xsl:value-of select="translate(string(//ip/auditoryEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength37.2" select="string-length(normalize-space($sExampleValue37.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength37.2 != 0 and $sExampleValue37.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue37.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue37.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength37.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>auditory</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>auditory</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue38.2">
+<xsl:value-of select="translate(string(//ip/olfactoryEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength38.2" select="string-length(normalize-space($sExampleValue38.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength38.2 != 0 and $sExampleValue38.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue38.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue38.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength38.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>olfactory</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>olfactory</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue39.2">
+<xsl:value-of select="translate(string(//ip/inferentialEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength39.2" select="string-length(normalize-space($sExampleValue39.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength39.2 != 0 and $sExampleValue39.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue39.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue39.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength39.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>inferential</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>inferential</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue40.2">
+<xsl:value-of select="translate(string(//ip/reportativeEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength40.2" select="string-length(normalize-space($sExampleValue40.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength40.2 != 0 and $sExampleValue40.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue40.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue40.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength40.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>reportative</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>reportative</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue41.2">
+<xsl:value-of select="translate(string(//ip/hearsayEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength41.2" select="string-length(normalize-space($sExampleValue41.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength41.2 != 0 and $sExampleValue41.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue41.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue41.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength41.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>hearsay</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>hearsay</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue42.2">
+<xsl:value-of select="translate(string(//ip/quotativeEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength42.2" select="string-length(normalize-space($sExampleValue42.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength42.2 != 0 and $sExampleValue42.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue42.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue42.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength42.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>quotative</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>quotative</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue43.2">
+<xsl:value-of select="translate(string(//ip/assumedEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength43.2" select="string-length(normalize-space($sExampleValue43.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength43.2 != 0 and $sExampleValue43.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue43.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue43.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength43.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>assumed</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>assumed</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					<xsl:variable name="sExampleValue44.2">
+<xsl:value-of select="translate(string(//ip/otherEvident),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength44.2" select="string-length(normalize-space($sExampleValue44.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength44.2 != 0 and $sExampleValue44.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue44.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue44.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength44.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>ENTER GLOSS</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>evidentiality</xsl:text>
+</td>
+<td align="left">
+<xsl:text>ENTER GLOSS</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+					
+					<xsl:if test="normalize-space(//ip/ipInflFeatFinite/@checked)='yes'">
+<xsl:variable name="sExampleValue45.2">
+<xsl:value-of select="translate(string(//ip/finiteOther),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength45.2" select="string-length(normalize-space($sExampleValue45.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength45.2 != 0 and $sExampleValue45.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue45.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue45.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength45.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1441,25 +2314,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatMinusFinite/@checked)='yes'">
-<xsl:variable name="sExampleValue28.2">
+<xsl:variable name="sExampleValue46.2">
 <xsl:value-of select="translate(string(//ip/nonfiniteOther),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength28.2" select="string-length(normalize-space($sExampleValue28.2))" />
+<xsl:variable name="iExampleLength46.2" select="string-length(normalize-space($sExampleValue46.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength28.2 != 0 and $sExampleValue28.2 != ' '">
+<xsl:when test="$iExampleLength46.2 != 0 and $sExampleValue46.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue28.2" />
+<xsl:value-of select="$sExampleValue46.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue28.2" />
+<xsl:value-of select="$sExampleValue46.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength28.2" />
+<xsl:value-of select="$iExampleLength46.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1491,25 +2364,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatGerund/@checked)='yes'">
-<xsl:variable name="sExampleValue29.2">
+<xsl:variable name="sExampleValue47.2">
 <xsl:value-of select="translate(string(//ip/gerundOther),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength29.2" select="string-length(normalize-space($sExampleValue29.2))" />
+<xsl:variable name="iExampleLength47.2" select="string-length(normalize-space($sExampleValue47.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength29.2 != 0 and $sExampleValue29.2 != ' '">
+<xsl:when test="$iExampleLength47.2 != 0 and $sExampleValue47.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue29.2" />
+<xsl:value-of select="$sExampleValue47.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue29.2" />
+<xsl:value-of select="$sExampleValue47.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength29.2" />
+<xsl:value-of select="$iExampleLength47.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1541,25 +2414,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatParticiple/@checked)='yes'">
-<xsl:variable name="sExampleValue30.2">
+<xsl:variable name="sExampleValue48.2">
 <xsl:value-of select="translate(string(//ip/participleOther),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength30.2" select="string-length(normalize-space($sExampleValue30.2))" />
+<xsl:variable name="iExampleLength48.2" select="string-length(normalize-space($sExampleValue48.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength30.2 != 0 and $sExampleValue30.2 != ' '">
+<xsl:when test="$iExampleLength48.2 != 0 and $sExampleValue48.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue30.2" />
+<xsl:value-of select="$sExampleValue48.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue30.2" />
+<xsl:value-of select="$sExampleValue48.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength30.2" />
+<xsl:value-of select="$iExampleLength48.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1591,25 +2464,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatAntipassive/@checked)='yes'">
-<xsl:variable name="sExampleValue31.2">
+<xsl:variable name="sExampleValue49.2">
 <xsl:value-of select="translate(string(//ip/antipassiveVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength31.2" select="string-length(normalize-space($sExampleValue31.2))" />
+<xsl:variable name="iExampleLength49.2" select="string-length(normalize-space($sExampleValue49.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength31.2 != 0 and $sExampleValue31.2 != ' '">
+<xsl:when test="$iExampleLength49.2 != 0 and $sExampleValue49.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue31.2" />
+<xsl:value-of select="$sExampleValue49.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue31.2" />
+<xsl:value-of select="$sExampleValue49.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength31.2" />
+<xsl:value-of select="$iExampleLength49.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1640,26 +2513,76 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				   <xsl:if test="normalize-space(//ip/ipInflFeatCausative/@checked)='yes'">
-<xsl:variable name="sExampleValue32.2">
-<xsl:value-of select="translate(string(//ip/causativeVoice),'.','')" />
+				   	<xsl:if test="normalize-space(//ip/ipInflFeatApplicative/@checked)='yes'">
+<xsl:variable name="sExampleValue50.2">
+<xsl:value-of select="translate(string(//ip/applicativeVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength32.2" select="string-length(normalize-space($sExampleValue32.2))" />
+<xsl:variable name="iExampleLength50.2" select="string-length(normalize-space($sExampleValue50.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength32.2 != 0 and $sExampleValue32.2 != ' '">
+<xsl:when test="$iExampleLength50.2 != 0 and $sExampleValue50.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue32.2" />
+<xsl:value-of select="$sExampleValue50.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue32.2" />
+<xsl:value-of select="$sExampleValue50.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength32.2" />
+<xsl:value-of select="$iExampleLength50.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+				   			<xsl:text>voice</xsl:text>
+				   		</td>
+<td align="left">
+				   			<xsl:text>applicative</xsl:text>
+				   		</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+				   			<xsl:text>voice</xsl:text>
+				   		</td>
+<td align="left">
+				   			<xsl:text>applicative</xsl:text>
+				   		</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+				   <xsl:if test="normalize-space(//ip/ipInflFeatCausative/@checked)='yes'">
+<xsl:variable name="sExampleValue51.2">
+<xsl:value-of select="translate(string(//ip/causativeVoice),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength51.2" select="string-length(normalize-space($sExampleValue51.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength51.2 != 0 and $sExampleValue51.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue51.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue51.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength51.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1691,25 +2614,25 @@
 </xsl:choose>
 </xsl:if>	
 				   <xsl:if test="normalize-space(//ip/ipInflFeatPassive/@checked)='yes'">
-<xsl:variable name="sExampleValue33.2">
+<xsl:variable name="sExampleValue52.2">
 <xsl:value-of select="translate(string(//ip/passiveVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength33.2" select="string-length(normalize-space($sExampleValue33.2))" />
+<xsl:variable name="iExampleLength52.2" select="string-length(normalize-space($sExampleValue52.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength33.2 != 0 and $sExampleValue33.2 != ' '">
+<xsl:when test="$iExampleLength52.2 != 0 and $sExampleValue52.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue33.2" />
+<xsl:value-of select="$sExampleValue52.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue33.2" />
+<xsl:value-of select="$sExampleValue52.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength33.2" />
+<xsl:value-of select="$iExampleLength52.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1741,25 +2664,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatActorVoice/@checked)='yes'">
-<xsl:variable name="sExampleValue34.2">
+<xsl:variable name="sExampleValue53.2">
 <xsl:value-of select="translate(string(//ip/actorVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength34.2" select="string-length(normalize-space($sExampleValue34.2))" />
+<xsl:variable name="iExampleLength53.2" select="string-length(normalize-space($sExampleValue53.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength34.2 != 0 and $sExampleValue34.2 != ' '">
+<xsl:when test="$iExampleLength53.2 != 0 and $sExampleValue53.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue34.2" />
+<xsl:value-of select="$sExampleValue53.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue34.2" />
+<xsl:value-of select="$sExampleValue53.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength34.2" />
+<xsl:value-of select="$iExampleLength53.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1791,25 +2714,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatDativeVoice/@checked)='yes'">
-<xsl:variable name="sExampleValue35.2">
+<xsl:variable name="sExampleValue54.2">
 <xsl:value-of select="translate(string(//ip/dativeVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength35.2" select="string-length(normalize-space($sExampleValue35.2))" />
+<xsl:variable name="iExampleLength54.2" select="string-length(normalize-space($sExampleValue54.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength35.2 != 0 and $sExampleValue35.2 != ' '">
+<xsl:when test="$iExampleLength54.2 != 0 and $sExampleValue54.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue35.2" />
+<xsl:value-of select="$sExampleValue54.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue35.2" />
+<xsl:value-of select="$sExampleValue54.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength35.2" />
+<xsl:value-of select="$iExampleLength54.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1841,25 +2764,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatGoalVoice/@checked)='yes'">
-<xsl:variable name="sExampleValue36.2">
+<xsl:variable name="sExampleValue55.2">
 <xsl:value-of select="translate(string(//ip/goalVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength36.2" select="string-length(normalize-space($sExampleValue36.2))" />
+<xsl:variable name="iExampleLength55.2" select="string-length(normalize-space($sExampleValue55.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength36.2 != 0 and $sExampleValue36.2 != ' '">
+<xsl:when test="$iExampleLength55.2 != 0 and $sExampleValue55.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue36.2" />
+<xsl:value-of select="$sExampleValue55.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue36.2" />
+<xsl:value-of select="$sExampleValue55.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength36.2" />
+<xsl:value-of select="$iExampleLength55.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1891,25 +2814,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatInstrumentalVoice/@checked)='yes'">
-<xsl:variable name="sExampleValue37.2">
+<xsl:variable name="sExampleValue56.2">
 <xsl:value-of select="translate(string(//ip/instrumentalVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength37.2" select="string-length(normalize-space($sExampleValue37.2))" />
+<xsl:variable name="iExampleLength56.2" select="string-length(normalize-space($sExampleValue56.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength37.2 != 0 and $sExampleValue37.2 != ' '">
+<xsl:when test="$iExampleLength56.2 != 0 and $sExampleValue56.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue37.2" />
+<xsl:value-of select="$sExampleValue56.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue37.2" />
+<xsl:value-of select="$sExampleValue56.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength37.2" />
+<xsl:value-of select="$iExampleLength56.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1941,25 +2864,25 @@
 </xsl:choose>
 </xsl:if>
 				   <xsl:if test="normalize-space(//ip/ipInflFeatLocativeVoice/@checked)='yes'">
-<xsl:variable name="sExampleValue38.2">
+<xsl:variable name="sExampleValue57.2">
 <xsl:value-of select="translate(string(//ip/locativeVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength38.2" select="string-length(normalize-space($sExampleValue38.2))" />
+<xsl:variable name="iExampleLength57.2" select="string-length(normalize-space($sExampleValue57.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength38.2 != 0 and $sExampleValue38.2 != ' '">
+<xsl:when test="$iExampleLength57.2 != 0 and $sExampleValue57.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue38.2" />
+<xsl:value-of select="$sExampleValue57.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue38.2" />
+<xsl:value-of select="$sExampleValue57.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength38.2" />
+<xsl:value-of select="$iExampleLength57.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -1990,26 +2913,26 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
-				   <xsl:if test="normalize-space(//ip/ipInflFeatObjectoice/@checked)='yes'">
-<xsl:variable name="sExampleValue39.2">
+				   <xsl:if test="normalize-space(//ip/ipInflFeatObjectVoice/@checked)='yes'">
+<xsl:variable name="sExampleValue58.2">
 <xsl:value-of select="translate(string(//ip/objectVoice),'.','')" />
 </xsl:variable>
-<xsl:variable name="iExampleLength39.2" select="string-length(normalize-space($sExampleValue39.2))" />
+<xsl:variable name="iExampleLength58.2" select="string-length(normalize-space($sExampleValue58.2))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength39.2 != 0 and $sExampleValue39.2 != ' '">
+<xsl:when test="$iExampleLength58.2 != 0 and $sExampleValue58.2 != ' '">
 <xsl:variable name="sCalculatedRows">
 <xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue39.2" />
+<xsl:value-of select="$sExampleValue58.2" />
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
 <xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="$sExampleValue39.2" />
+<xsl:value-of select="$sExampleValue58.2" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="$iExampleLength39.2" />
+<xsl:value-of select="$iExampleLength58.2" />
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left">
@@ -2040,6 +2963,54 @@
 </xsl:otherwise>
 </xsl:choose>
 </xsl:if>
+					<xsl:variable name="sExampleValue59.2">
+<xsl:value-of select="translate(string(//ip/otherVoice),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength59.2" select="string-length(normalize-space($sExampleValue59.2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength59.2 != 0 and $sExampleValue59.2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue59.2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue59.2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength59.2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore">
+<td align="left">
+<xsl:text>voice</xsl:text>
+</td>
+<td align="left">
+<xsl:text>ENTER GLOSS</xsl:text>
+</td>
+</xsl:with-param>
+<xsl:with-param name="columnsAfter" />
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td align="left">
+<xsl:text>voice</xsl:text>
+</td>
+<td align="left">
+<xsl:text>ENTER GLOSS</xsl:text>
+</td>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
 				</table>
 </example>
 		</section2>
@@ -5082,12 +6053,1303 @@
 </p>
 	  <section3 id="sVerbParadigmsRegular">
 	     <secTitle>Paradigms for some regular verbs</secTitle>
-	  <p>
+	  	<p>
 <xsl:text>Paradigms for four regular verbs are shown here:  </xsl:text>
-<object type="tComment">You will need to add the forms in each cell.  You can change verbs if these are not regular in your language.  You can delete some columns if the table is too wide in the pdf output.</object>
+<object type="tComment">You will need to add the forms in each cell.  You can change verbs if these are not regular in your language.  
+	  		<xsl:choose>
+	  			<xsl:when test="//pron/@dependentPron='yes'"> You can delete some columns if the table is too wide in the pdf output.</xsl:when>
+	  			<xsl:when test="//pron/@dependentPron='no'"> Since your language does not make changes in the verb for different subjects, the paradigms are quite simple.  You may want to add some columns for changes that are marked in the verbs, such as mood and/or plural subjects.</xsl:when>
+	  		</xsl:choose>
+</object>
 </p>
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='no'">
-<example num="xV.VerbParadigms.VerbParadigmsRegular.6">
+
+	  		     <xsl:if test="normalize-space(//pron/@dependentPron)='no'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.6">
+<table border="1">
+	           <caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to speak’</langData>
+</caption>
+	           <tr>
+	              <th>Tense / Aspect</th>
+	              <th>Verb form</th>
+	           </tr>	
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	        </table>
+</tablenumbered>
+</xsl:if>
+	  	<xsl:if test="normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.8">
+<table border="1">
+	  			<caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to speak’</langData>
+</caption>
+	  			<tr>
+	  				<th>Subject</th>
+	  				<th>First</th>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Exclusive</th>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Inclusive</th>
+</xsl:if>
+	  				<th>Second</th>
+	  				<th>Third</th>
+	  			</tr>	
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  		</table>
+</tablenumbered>
+</xsl:if>
+	  	
+	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.10">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -5098,852 +7360,6 @@
 </caption>
 	           <tr>
 	              <th>Subject</th>
-	              <th>First</th>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Exclusive</th>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Inclusive</th>
-</xsl:if>
-	              <th>Second</th>
-	              <th>Third</th>
-	           </tr>	
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Present</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Past</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Future</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Non Past</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Non Future</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Completive</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Contemplative</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Continuative</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Contrafactual</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Habitual</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Imperfect</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Imperfective</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Incompletive</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Perfect</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Perfective</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Potential</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Progressive</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Stative</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Unreal</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Subjunctive</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	        </table>
-</example>
-</xsl:if>
-	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xV.VerbParadigms.VerbParadigmsRegular.8">
-<table border="1">
-	           <caption>
-<xsl:text>Paradigm for the verb meaning </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>‘to speak’</langData>
-</caption>
-	           <tr>
-	              <th>Subject</th>
 	              <th>First Sg</th>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <th>First Excl</th>
@@ -5967,14 +7383,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -5982,7 +7398,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -5990,32 +7406,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6028,14 +7444,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6043,7 +7459,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6051,32 +7467,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6089,14 +7505,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6104,7 +7520,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6112,32 +7528,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6150,14 +7566,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6165,7 +7581,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6173,32 +7589,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6211,14 +7627,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6226,7 +7642,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6234,37 +7650,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -6272,14 +7749,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6287,7 +7764,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6295,32 +7772,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6333,14 +7810,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6348,7 +7825,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6356,32 +7833,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6394,14 +7871,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6409,7 +7886,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6417,32 +7894,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6455,14 +7932,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6470,7 +7947,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6478,32 +7955,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6516,14 +7993,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6531,7 +8008,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6539,32 +8016,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6577,14 +8054,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6592,7 +8069,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6600,32 +8077,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6638,14 +8115,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6653,7 +8130,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6661,32 +8138,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6699,14 +8176,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6714,7 +8191,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6722,32 +8199,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6760,14 +8237,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6775,7 +8252,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6783,32 +8260,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6821,14 +8298,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6836,7 +8313,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6844,32 +8321,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6882,14 +8359,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6897,7 +8374,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6905,32 +8382,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -6943,14 +8420,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6958,7 +8435,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -6966,37 +8443,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -7004,14 +8542,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -7019,7 +8557,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -7027,32 +8565,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7065,14 +8603,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -7080,7 +8618,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -7088,37 +8626,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -7126,14 +8725,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -7141,7 +8740,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -7149,42 +8748,42 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
 	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='no'">
-<example num="xV.VerbParadigms.VerbParadigmsRegular.10">
+	  		     <xsl:if test="normalize-space(//pron/@dependentPron)='no'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.12">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -7194,16 +8793,8 @@
 </xsl:attribute>‘to eat’</langData>
 </caption>
 	           <tr>
-	              <th>Subject</th>
-	              <th>First</th>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Exclusive</th>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Inclusive</th>
-</xsl:if>
-	              <th>Second</th>
-	              <th>Third</th>
+	              <th>Tense / Aspect</th>
+	              <th>Verb form</th>
 	           </tr>	
 	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
 <tr>
@@ -7213,35 +8804,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7254,35 +8817,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7295,35 +8830,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7336,35 +8843,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7377,40 +8856,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -7418,35 +8882,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7459,35 +8895,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7500,35 +8908,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7541,35 +8921,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7582,35 +8934,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7623,35 +8947,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7664,35 +8960,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7705,35 +8973,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7746,35 +8986,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7787,35 +8999,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7828,35 +9012,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7869,40 +9025,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -7910,35 +9051,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -7951,40 +9064,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -7992,45 +9090,985 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
-	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xV.VerbParadigms.VerbParadigmsRegular.12">
+	  	<xsl:if test="normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.14">
+<table border="1">
+	  			<caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to eat’</langData>
+</caption>
+	  			<tr>
+	  				<th>Subject</th>
+	  				<th>First</th>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Exclusive</th>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Inclusive</th>
+</xsl:if>
+	  				<th>Second</th>
+	  				<th>Third</th>
+	  			</tr>	
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  		</table>
+</tablenumbered>
+</xsl:if>
+	  	
+	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.16">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -8064,14 +10102,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8079,7 +10117,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8087,32 +10125,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8125,14 +10163,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8140,7 +10178,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8148,32 +10186,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8186,14 +10224,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8201,7 +10239,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8209,32 +10247,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8247,14 +10285,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8262,7 +10300,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8270,32 +10308,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8308,14 +10346,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8323,7 +10361,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8331,37 +10369,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -8369,14 +10468,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8384,7 +10483,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8392,32 +10491,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8430,14 +10529,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8445,7 +10544,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8453,32 +10552,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8491,14 +10590,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8506,7 +10605,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8514,32 +10613,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8552,14 +10651,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8567,7 +10666,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8575,32 +10674,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8613,14 +10712,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8628,7 +10727,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8636,32 +10735,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8674,14 +10773,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8689,7 +10788,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8697,32 +10796,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8735,14 +10834,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8750,7 +10849,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8758,32 +10857,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8796,14 +10895,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8811,7 +10910,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8819,32 +10918,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8857,14 +10956,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8872,7 +10971,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8880,32 +10979,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8918,14 +11017,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8933,7 +11032,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8941,32 +11040,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -8979,14 +11078,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -8994,7 +11093,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9002,32 +11101,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9040,14 +11139,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9055,7 +11154,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9063,37 +11162,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -9101,14 +11261,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9116,7 +11276,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9124,32 +11284,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9162,14 +11322,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9177,7 +11337,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9185,37 +11345,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -9223,14 +11444,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9238,7 +11459,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -9246,42 +11467,42 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
 	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='no'">
-<example num="xV.VerbParadigms.VerbParadigmsRegular.14">
+	  		     <xsl:if test="normalize-space(//pron/@dependentPron)='no'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.18">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -9291,16 +11512,8 @@
 </xsl:attribute>‘to live’</langData>
 </caption>
 	           <tr>
-	              <th>Subject</th>
-	              <th>First</th>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Exclusive</th>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Inclusive</th>
-</xsl:if>
-	              <th>Second</th>
-	              <th>Third</th>
+	              <th>Tense / Aspect</th>
+	              <th>Verb form</th>
 	           </tr>	
 	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
 <tr>
@@ -9310,35 +11523,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9351,35 +11536,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9392,35 +11549,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9433,35 +11562,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9474,40 +11575,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -9515,35 +11601,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9556,35 +11614,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9597,35 +11627,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9638,35 +11640,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9679,35 +11653,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9720,35 +11666,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9761,35 +11679,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9802,35 +11692,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9843,35 +11705,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9884,35 +11718,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9925,35 +11731,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -9966,40 +11744,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -10007,35 +11770,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10048,40 +11783,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -10089,45 +11809,985 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
-	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xV.VerbParadigms.VerbParadigmsRegular.16">
+	  	<xsl:if test="normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.20">
+<table border="1">
+	  			<caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to live’</langData>
+</caption>
+	  			<tr>
+	  				<th>Subject</th>
+	  				<th>First</th>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Exclusive</th>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Inclusive</th>
+</xsl:if>
+	  				<th>Second</th>
+	  				<th>Third</th>
+	  			</tr>	
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  		</table>
+</tablenumbered>
+</xsl:if>
+	  	
+	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.22">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -10161,14 +12821,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10176,7 +12836,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10184,32 +12844,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10222,14 +12882,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10237,7 +12897,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10245,32 +12905,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10283,14 +12943,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10298,7 +12958,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10306,32 +12966,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10344,14 +13004,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10359,7 +13019,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10367,32 +13027,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10405,14 +13065,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10420,7 +13080,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10428,37 +13088,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -10466,14 +13187,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10481,7 +13202,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10489,32 +13210,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10527,14 +13248,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10542,7 +13263,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10550,32 +13271,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10588,14 +13309,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10603,7 +13324,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10611,32 +13332,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10649,14 +13370,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10664,7 +13385,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10672,32 +13393,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10710,14 +13431,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10725,7 +13446,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10733,32 +13454,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10771,14 +13492,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10786,7 +13507,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10794,32 +13515,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10832,14 +13553,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10847,7 +13568,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10855,32 +13576,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10893,14 +13614,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10908,7 +13629,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10916,32 +13637,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -10954,14 +13675,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10969,7 +13690,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -10977,32 +13698,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11015,14 +13736,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11030,7 +13751,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11038,32 +13759,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11076,14 +13797,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11091,7 +13812,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11099,32 +13820,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11137,14 +13858,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11152,7 +13873,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11160,37 +13881,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -11198,14 +13980,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11213,7 +13995,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11221,32 +14003,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11259,14 +14041,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11274,7 +14056,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11282,37 +14064,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -11320,14 +14163,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11335,7 +14178,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -11343,42 +14186,42 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
 	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='no'">
-<example num="xV.VerbParadigms.VerbParadigmsRegular.18">
+	     <xsl:if test="normalize-space(//pron/@dependentPron)='no'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.24">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -11388,16 +14231,8 @@
 </xsl:attribute>‘to see’</langData>
 </caption>
 	           <tr>
-	              <th>Subject</th>
-	              <th>First</th>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Exclusive</th>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Inclusive</th>
-</xsl:if>
-	              <th>Second</th>
-	              <th>Third</th>
+	              <th>Tense / Aspect</th>
+	              <th>Verb form</th>
 	           </tr>	
 	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
 <tr>
@@ -11407,35 +14242,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11448,35 +14255,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11489,35 +14268,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11530,35 +14281,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11571,40 +14294,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -11612,35 +14320,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11653,35 +14333,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11694,35 +14346,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11735,35 +14359,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11776,35 +14372,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11817,35 +14385,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11858,35 +14398,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11899,35 +14411,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11940,35 +14424,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -11981,35 +14437,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12022,35 +14450,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12063,40 +14463,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -12104,35 +14489,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12145,40 +14502,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -12186,45 +14528,985 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
-	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xV.VerbParadigms.VerbParadigmsRegular.20">
+	  	<xsl:if test="normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.26">
+<table border="1">
+	  			<caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to see’</langData>
+</caption>
+	  			<tr>
+	  				<th>Subject</th>
+	  				<th>First</th>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Exclusive</th>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Inclusive</th>
+</xsl:if>
+	  				<th>Second</th>
+	  				<th>Third</th>
+	  			</tr>	
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  		</table>
+</tablenumbered>
+</xsl:if>
+	  	
+	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsRegular.28">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -12258,14 +15540,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12273,7 +15555,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12281,32 +15563,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12319,14 +15601,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12334,7 +15616,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12342,32 +15624,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12380,14 +15662,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12395,7 +15677,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12403,32 +15685,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12441,14 +15723,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12456,7 +15738,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12464,32 +15746,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12502,14 +15784,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12517,7 +15799,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12525,37 +15807,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -12563,14 +15906,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12578,7 +15921,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12586,32 +15929,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12624,14 +15967,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12639,7 +15982,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12647,32 +15990,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12685,14 +16028,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12700,7 +16043,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12708,32 +16051,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12746,14 +16089,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12761,7 +16104,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12769,32 +16112,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12807,14 +16150,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12822,7 +16165,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12830,32 +16173,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12868,14 +16211,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12883,7 +16226,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12891,32 +16234,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12929,14 +16272,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12944,7 +16287,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -12952,32 +16295,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -12990,14 +16333,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13005,7 +16348,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13013,32 +16356,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -13051,14 +16394,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13066,7 +16409,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13074,32 +16417,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -13112,14 +16455,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13127,7 +16470,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13135,32 +16478,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -13173,14 +16516,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13188,7 +16531,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13196,32 +16539,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -13234,14 +16577,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13249,7 +16592,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13257,37 +16600,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -13295,14 +16699,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13310,7 +16714,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13318,32 +16722,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -13356,14 +16760,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13371,7 +16775,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13379,37 +16783,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -13417,14 +16882,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13432,7 +16897,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -13440,50 +16905,1341 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
-</xsl:if> 
+</tablenumbered>
+</xsl:if>
 	     
 	  </section3>
 	      
 	      <section3 id="sVerbParadigmsIrregular">
 	         <secTitle>Paradigms for some irregular verbs</secTitle>
-	         <p>
+	      	<p>
 <xsl:text>Paradigms for three irregular verbs are shown here:  </xsl:text>
-<object type="tComment">You will need to add the forms in each cell.  You can change verbs if these are not expressed or not irregular in your language.  Note that ‘to come’ may be ‘to go toward base’ and ‘to go’ may be ‘to go to non-base’ or ‘to go away from base’ in your language.  You can delete some columns if the table is too wide in the pdf output.</object>
+<object type="tComment">You will need to add the forms in each cell.  You can change verbs if these are not expressed or not irregular in your language.  Note that ‘to come’ may be ‘to go toward base’ and ‘to go’ may be ‘to go to non-base’ or ‘to go away from base’ in your language.  
+	      		<xsl:choose>
+	      			<xsl:when test="//pron/@dependentPron='yes'"> You can delete some columns if the table is too wide in the pdf output.</xsl:when>
+	      			<xsl:when test="//pron/@dependentPron='no'"> Since your language does not make changes in the verb for different subjects, the paradigms are quite simple.  You may want to add some columns for changes that are marked in the verbs, such as mood and/or plural subjects.</xsl:when>
+	      		</xsl:choose>
+</object>
 </p>
-		     <xsl:if test="normalize-space(//pron/@pronounNumber)='no'">
-<example num="xV.VerbParadigms.VerbParadigmsIrregular.6">
+
+	      	<xsl:if test="normalize-space(//pron/@dependentPron)='no'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.6">
+<table border="1">
+	           <caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to be’</langData>
+</caption>
+	           <tr>
+	              <th>Tense / Aspect</th>
+	              <th>Verb form</th>
+	           </tr>	
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	           <xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	              <td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	              <td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	           </tr>
+</xsl:if>
+	        </table>
+</tablenumbered>
+</xsl:if>
+	  	<xsl:if test="normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.8">
+<table border="1">
+	  			<caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to be’</langData>
+</caption>
+	  			<tr>
+	  				<th>Subject</th>
+	  				<th>First</th>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Exclusive</th>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Inclusive</th>
+</xsl:if>
+	  				<th>Second</th>
+	  				<th>Third</th>
+	  			</tr>	
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  		</table>
+</tablenumbered>
+</xsl:if>
+	  	
+	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.10">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -13494,852 +18250,6 @@
 </caption>
 	           <tr>
 	              <th>Subject</th>
-	              <th>First</th>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Exclusive</th>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Inclusive</th>
-</xsl:if>
-	              <th>Second</th>
-	              <th>Third</th>
-	           </tr>	
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Present</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Past</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Future</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Non Past</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Non Future</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Completive</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Contemplative</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Continuative</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Contrafactual</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Habitual</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Imperfect</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Imperfective</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Incompletive</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Perfect</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Perfective</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Potential</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Progressive</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Stative</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Unreal</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
-<tr>
-	              <td align="left" rowspan="1">
-<xsl:text>Subjunctive</xsl:text>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	           </tr>
-</xsl:if>
-	           </table>
-</example>
-</xsl:if>
-	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xV.VerbParadigms.VerbParadigmsIrregular.8">
-<table border="1">
-	           <caption>
-<xsl:text>Paradigm for the verb meaning </xsl:text>
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>‘to be’</langData>
-</caption>
-	           <tr>
-	              <th>Subject</th>
 	              <th>First Sg</th>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <th>First Excl</th>
@@ -14363,14 +18273,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14378,7 +18288,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14386,32 +18296,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14424,14 +18334,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14439,7 +18349,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14447,32 +18357,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14485,14 +18395,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14500,7 +18410,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14508,32 +18418,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14546,14 +18456,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14561,7 +18471,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14569,32 +18479,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14607,14 +18517,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14622,7 +18532,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14630,37 +18540,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -14668,14 +18639,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14683,7 +18654,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14691,32 +18662,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14729,14 +18700,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14744,7 +18715,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14752,32 +18723,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14790,14 +18761,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14805,7 +18776,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14813,32 +18784,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14851,14 +18822,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14866,7 +18837,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14874,32 +18845,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14912,14 +18883,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14927,7 +18898,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14935,32 +18906,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -14973,14 +18944,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14988,7 +18959,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -14996,32 +18967,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15034,14 +19005,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15049,7 +19020,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15057,32 +19028,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15095,14 +19066,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15110,7 +19081,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15118,32 +19089,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15156,14 +19127,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15171,7 +19142,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15179,32 +19150,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15217,14 +19188,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15232,7 +19203,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15240,32 +19211,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15278,14 +19249,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15293,7 +19264,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15301,32 +19272,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15339,14 +19310,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15354,7 +19325,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15362,37 +19333,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -15400,14 +19432,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15415,7 +19447,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15423,32 +19455,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15461,14 +19493,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15476,7 +19508,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15484,37 +19516,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -15522,14 +19615,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15537,7 +19630,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -15545,42 +19638,42 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
 	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='no'">
-<example num="xV.VerbParadigms.VerbParadigmsIrregular.10">
+	     <xsl:if test="normalize-space(//pron/@dependentPron)='no'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.12">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -15590,16 +19683,8 @@
 </xsl:attribute>‘to come’</langData>
 </caption>
 	           <tr>
-	              <th>Subject</th>
-	              <th>First</th>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Exclusive</th>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Inclusive</th>
-</xsl:if>
-	              <th>Second</th>
-	              <th>Third</th>
+	              <th>Tense / Aspect</th>
+	              <th>Verb form</th>
 	           </tr>	
 	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
 <tr>
@@ -15609,35 +19694,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15650,35 +19707,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15691,35 +19720,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15732,35 +19733,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15773,40 +19746,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -15814,35 +19772,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15855,35 +19785,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15896,35 +19798,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15937,35 +19811,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -15978,35 +19824,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16019,35 +19837,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16060,35 +19850,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16101,35 +19863,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16142,35 +19876,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16183,35 +19889,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16224,35 +19902,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16265,40 +19915,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -16306,35 +19941,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16347,40 +19954,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -16388,45 +19980,985 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
-	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xV.VerbParadigms.VerbParadigmsIrregular.12">
+	  	<xsl:if test="normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.14">
+<table border="1">
+	  			<caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to come’</langData>
+</caption>
+	  			<tr>
+	  				<th>Subject</th>
+	  				<th>First</th>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Exclusive</th>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Inclusive</th>
+</xsl:if>
+	  				<th>Second</th>
+	  				<th>Third</th>
+	  			</tr>	
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  		</table>
+</tablenumbered>
+</xsl:if>
+	  	
+	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.16">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -16460,14 +20992,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16475,7 +21007,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16483,32 +21015,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16521,14 +21053,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16536,7 +21068,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16544,32 +21076,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16582,14 +21114,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16597,7 +21129,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16605,32 +21137,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16643,14 +21175,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16658,7 +21190,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16666,32 +21198,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16704,14 +21236,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16719,7 +21251,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16727,37 +21259,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -16765,14 +21358,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16780,7 +21373,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16788,32 +21381,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16826,14 +21419,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16841,7 +21434,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16849,32 +21442,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16887,14 +21480,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16902,7 +21495,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16910,32 +21503,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -16948,14 +21541,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16963,7 +21556,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -16971,32 +21564,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17009,14 +21602,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17024,7 +21617,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17032,32 +21625,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17070,14 +21663,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17085,7 +21678,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17093,32 +21686,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17131,14 +21724,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17146,7 +21739,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17154,32 +21747,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17192,14 +21785,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17207,7 +21800,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17215,32 +21808,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17253,14 +21846,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17268,7 +21861,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17276,32 +21869,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17314,14 +21907,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17329,7 +21922,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17337,32 +21930,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17375,14 +21968,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17390,7 +21983,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17398,32 +21991,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17436,14 +22029,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17451,7 +22044,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17459,37 +22052,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -17497,14 +22151,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17512,7 +22166,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17520,32 +22174,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17558,14 +22212,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17573,7 +22227,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17581,37 +22235,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -17619,14 +22334,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17634,7 +22349,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -17642,42 +22357,42 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
 	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='no'">
-<example num="xV.VerbParadigms.VerbParadigmsIrregular.14">
+	     <xsl:if test="normalize-space(//pron/@dependentPron)='no'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.18">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -17687,16 +22402,8 @@
 </xsl:attribute>‘to go’</langData>
 </caption>
 	           <tr>
-	              <th>Subject</th>
-	              <th>First</th>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Exclusive</th>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<th>Inclusive</th>
-</xsl:if>
-	              <th>Second</th>
-	              <th>Third</th>
+	              <th>Tense / Aspect</th>
+	              <th>Verb form</th>
 	           </tr>	
 	           <xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
 <tr>
@@ -17706,35 +22413,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17747,35 +22426,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17788,35 +22439,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17829,35 +22452,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17870,40 +22465,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -17911,35 +22491,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17952,35 +22504,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -17993,35 +22517,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18034,35 +22530,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18075,35 +22543,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18116,35 +22556,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18157,35 +22569,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18198,35 +22582,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18239,35 +22595,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18280,35 +22608,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18321,35 +22621,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18362,40 +22634,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -18403,35 +22660,7 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18444,40 +22673,25 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -18485,45 +22699,985 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
-<td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-</xsl:if>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>FORM</langData>
-</td>
-	              <td align="left">
-<langData>
-<xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
-	     
-	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes'">
-<example num="xV.VerbParadigms.VerbParadigmsIrregular.16">
+	  	<xsl:if test="normalize-space(//pron/@pronounNumber)='no' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.20">
+<table border="1">
+	  			<caption>
+<xsl:text>Paradigm for the verb meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>‘to go’</langData>
+</caption>
+	  			<tr>
+	  				<th>Subject</th>
+	  				<th>First</th>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Exclusive</th>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<th>Inclusive</th>
+</xsl:if>
+	  				<th>Second</th>
+	  				<th>Third</th>
+	  			</tr>	
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPresent/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Present</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonPast/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Past</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatNonFuture/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Non Future</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Completive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContemplative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contemplative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContinuative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Continuative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatContrafactual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Contrafactual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatHabitual/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Habitual</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatImperfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Imperfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatIncompletive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Incompletive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPerfective/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Perfective</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPotential/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Potential</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatProgressive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Progressive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Stative</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatUnreal/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Unreal</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  			<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+<tr>
+	  				<td align="left" rowspan="1">
+<xsl:text>Subjunctive</xsl:text>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  				<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	  			</tr>
+</xsl:if>
+	  		</table>
+</tablenumbered>
+</xsl:if>
+	  	
+	     <xsl:if test="normalize-space(//pron/@pronounNumber)='yes' and normalize-space(//pron/@dependentPron)='yes'">
+<tablenumbered id="ntV.VerbParadigms.VerbParadigmsIrregular.22">
 <table border="1">
 	           <caption>
 <xsl:text>Paradigm for the verb meaning </xsl:text>
@@ -18557,14 +23711,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18572,7 +23726,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18580,32 +23734,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18618,14 +23772,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18633,7 +23787,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18641,32 +23795,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18679,14 +23833,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18694,7 +23848,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18702,32 +23856,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18740,14 +23894,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18755,7 +23909,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18763,32 +23917,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18801,14 +23955,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18816,7 +23970,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18824,37 +23978,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherTense/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Tense</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatCompletive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Completive</xsl:text>
@@ -18862,14 +24077,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18877,7 +24092,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18885,32 +24100,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18923,14 +24138,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18938,7 +24153,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18946,32 +24161,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -18984,14 +24199,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -18999,7 +24214,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19007,32 +24222,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19045,14 +24260,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19060,7 +24275,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19068,32 +24283,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19106,14 +24321,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19121,7 +24336,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19129,32 +24344,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19167,14 +24382,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19182,7 +24397,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19190,32 +24405,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19228,14 +24443,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19243,7 +24458,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19251,32 +24466,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19289,14 +24504,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19304,7 +24519,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19312,32 +24527,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19350,14 +24565,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19365,7 +24580,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19373,32 +24588,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19411,14 +24626,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19426,7 +24641,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19434,32 +24649,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19472,14 +24687,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19487,7 +24702,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19495,32 +24710,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19533,14 +24748,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19548,7 +24763,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19556,37 +24771,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatPurposive/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Purposive</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatStative/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Stative</xsl:text>
@@ -19594,14 +24870,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19609,7 +24885,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19617,32 +24893,32 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
@@ -19655,14 +24931,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19670,7 +24946,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19678,37 +24954,98 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
-	           <xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
+	        	<xsl:if test="normalize-space(//ip/ipInflFeatOtherAspect/@checked)='yes'">
+<tr>
+	        		<td align="left" rowspan="1">
+<xsl:text>Other Aspect</xsl:text>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<xsl:if test="normalize-space(//pron/@pronounExcl)='no'">
+<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+</xsl:if>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        		<td align="left">
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lVernacular</xsl:text>
+</xsl:attribute>FORM</langData>
+</td>
+	        	</tr>
+</xsl:if>
+	        	<xsl:if test="normalize-space(//ip/ipinflFeatSubjunctive/@checked)='yes'">
 <tr>
 	              <td align="left" rowspan="1">
 <xsl:text>Subjunctive</xsl:text>
@@ -19716,14 +25053,14 @@
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <xsl:if test="normalize-space(//pron/@pronounExcl)='yes'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19731,7 +25068,7 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
@@ -19739,38 +25076,38 @@
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	              <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	           </tr>
 </xsl:if>
 	        </table>
-</example>
+</tablenumbered>
 </xsl:if>
 	     
       
@@ -21145,7 +26482,10 @@ Some languages are not really pro-drop languages, but at least some of the prono
    
       
    
-   
+	
+		
+	
+	
       
    
    
@@ -21184,21 +26524,12 @@ Some languages are not really pro-drop languages, but at least some of the prono
 	
 		
 	
-   
-      
-   
 	
 		
 	
    
       
    
-   
-		
-	
-	
-		
-	
 	
 		
 	
@@ -21209,24 +26540,12 @@ Some languages are not really pro-drop languages, but at least some of the prono
       
    
    
-      
-   
-   
-      
-   
-   
-      
-   
-   
-      
-   
-   
-      
-   
-   
-      
-   
-   
+		
+	
+	
+		
+	
+	
 		
 	
 	
@@ -21238,7 +26557,16 @@ Some languages are not really pro-drop languages, but at least some of the prono
    
       
    
+	
+		
+	
+	
+      
    
+	
+		
+	
+	
       
    
    
@@ -21251,6 +26579,75 @@ Some languages are not really pro-drop languages, but at least some of the prono
       
    
    
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+		
+	
+	
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+   
+      
+   
+	
+		
+	
+	
 
 	
 		
@@ -21629,7 +27026,10 @@ Some languages are not really pro-drop languages, but at least some of the prono
    
       
    
-   
+	
+		
+	
+	
       
    
    
@@ -21642,6 +27042,18 @@ Some languages are not really pro-drop languages, but at least some of the prono
       
       
    
-   
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+	
 </xsl:template>
 </xsl:stylesheet>

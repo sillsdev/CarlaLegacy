@@ -58,7 +58,7 @@
       </radioGroup>
       <prompt id="IPCopComparativeAsWord" show="swIPCopComparativeAsYes">Escriba la(s) palabra(s) comparativa(s) que significa ‘tan' aquí:</prompt>     
       <textBox id="IPComparativeAsWordExample" dataItem="asWordExample" rows="3" show="swIPCopComparativeAsYes"/>
-      <instruction id="IPCopComparativeAsWordInstruction" show="swIPCopComparativeAsYes">In the lexicon, key the feature <feature>equalAdj</feature> on the comparative degree words meaning ‘as’ which are used before the adjective.  These words also need to have the category <category>Deg</category> and are dictinct lexical entries from the comparative conjunctions.</instruction>
+      <instruction id="IPCopComparativeAsWordInstruction" show="swIPCopComparativeAsYes">In the lexicon, key the feature <feature>equalAdj</feature> on the comparative degree words meaning ‘as’ which are used before the adjective.  These words also need to have the category <category>Deg</category> and are distinct lexical entries from the comparative conjunctions.</instruction>
       <br/><br/>
       <radioGroup>
          <groupName dataItem="compareAdj" default="yes">RIPCopCompareAdj</groupName>
@@ -111,11 +111,11 @@
  <br/><br/>
       <introduction>Ahora consideremos comparativas que consisten en dos oraciones alrededor la conjunción comparativa, aunque a la segunda frase le pueda faltar el adjetivo. Como las comparativas más cortas, estas comparan las calidades o las acciones de los sujetos de las oraciones y pueden tener un verbo copulativo o un verbo de percepción o un verbo de acción, junto con un adjetivo que sea modificado por una palabra o un afijo de grado. Algunos ejemplos en inglés son:</introduction>
       <EnglishExample>
-         <exItem label="1.">John is more handsome than Bill is. ‘Juan es más hermoso que Guillermo.'</exItem>
-         <exItem label="2.">Sue runs much faster than Mary can run. ‘Susana corre mucho más rápido de lo que María puede correr.'</exItem>
-         <exItem label="3.">David appears lots shorter than Michael does. ‘David parece mucho más corto que Miguel.'</exItem>  
-         <exItem label="4.">Mary looks prettier than Julie looks. ‘María se ve mucho más bonita que Julia aparece.'</exItem>
-         <exItem label="5.">John seems less certain of his answers than Sue seems. ‘Juan parece menos seguro de sus respuestas que Susana.'</exItem>
+         <exItem label="12.">John is more handsome than Bill is. ‘Juan es más hermoso que Guillermo.'</exItem>
+         <exItem label="13.">Sue runs much faster than Mary can run. ‘Susana corre mucho más rápido de lo que María puede correr.'</exItem>
+         <exItem label="14.">David appears lots shorter than Michael does. ‘David parece mucho más corto que Miguel.'</exItem>  
+         <exItem label="15.">Mary looks prettier than Julie looks. ‘María se ve mucho más bonita que Julia aparece.'</exItem>
+         <exItem label="16.">John seems less certain of his answers than Sue seems. ‘Juan parece menos seguro de sus respuestas que Susana.'</exItem>
       </EnglishExample>
       <introduction>Algunas lenguas no permiten que ninguna parte de la segunda oración sea omitida, más bien aparecen dos oraciones completas, las cuales van a ser comparadas. También, algunas lenguas que no tienen una palabra comparativa independiente que significa ‘than (que)'  en las construcciones comparativas más cortas, simplemente tendrá las dos partes de la oración seguida una de la otra en esta construcción.</introduction>
       <prompt><br/>Escriba ejemplos de oraciones comparativas en su lengua aquí:</prompt>
@@ -130,13 +130,13 @@
          </radioGroup>    
           <br/>
       <br/>
-      <introduction>Los superlativos son otro subclase de oraciones copulativos, directamente relacionados con los comparativos. Comparan una frase nominal con algo plural que puede expresarse como frase adposicional o simplemente estar implícito. Como las comparativas, las superlativas incluyen cualquier cópula usada en la lengua o un verbo de percepción, junto con el indicador de grado en el adjetivo predicativo o la frase nominal. Los ejemplos de inglés en 12-16 muestran que el indicador de grado superlativo puede ser una palabra independiente o un afijo en el adjetivo predicativo. </introduction>
+      <introduction>Los superlativos son otro subclase de oraciones copulativos, directamente relacionados con los comparativos. Comparan una frase nominal con algo plural que puede expresarse como frase adposicional o simplemente estar implícito. Como las comparativas, las superlativas incluyen cualquier cópula usada en la lengua o un verbo de percepción, junto con el indicador de grado en el adjetivo predicativo o la frase nominal. Los ejemplos de inglés en 17-21 muestran que el indicador de grado superlativo puede ser una palabra independiente o un afijo en el adjetivo predicativo. </introduction>
       <EnglishExample>
-         <exItem label="12.">John is the most handsome of the boys. ‘Juan es el más guapo de los muchachos.'</exItem>
-         <exItem label="13.">Sue is the worst runner (in the class). ‘Susana es el peor corredora (en la clase).'</exItem>
-         <exItem label="14.">David appears (to be) the tallest (of all). ‘David aparece (ser) el más alto (de todos).'</exItem>  
-         <exItem label="15.">Mary looks prettiest. ‘Maria parece la más bonita.'</exItem>
-         <exItem label="16.">John seems the least certain of his answers of all my students. ‘Juan parece el menos seguro de sus respuestas de todos mis estudiantes.'</exItem>
+         <exItem label="17.">John is the most handsome of the boys. ‘Juan es el más guapo de los muchachos.'</exItem>
+         <exItem label="18.">Sue is the worst runner (in the class). ‘Susana es el peor corredora (en la clase).'</exItem>
+         <exItem label="19.">David appears (to be) the tallest (of all). ‘David aparece (ser) el más alto (de todos).'</exItem>  
+         <exItem label="20.">Mary looks prettiest. ‘Maria parece la más bonita.'</exItem>
+         <exItem label="21.">John seems the least certain of his answers of all my students. ‘Juan parece el menos seguro de sus respuestas de todos mis estudiantes.'</exItem>
       </EnglishExample>
       <prompt>Escriba ejemplos similares en su lengua aquí:</prompt>
       <textBox id="IPExamplesSuperlativeExample" dataItem="superlativeExample" cols="50"/>     

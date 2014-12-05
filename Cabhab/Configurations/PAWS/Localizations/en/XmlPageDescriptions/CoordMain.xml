@@ -12,7 +12,10 @@
 		<prompt>Key the conjunction(s) your language uses for ‘and’ here:</prompt>
 		<textBox id="CoordAnd" dataItem="and" rows="3"/>
 		<br/>
-		<prompt>Key the conjunction(s) your language uses for ‘or’ here:</prompt>
+   	<prompt>Key the sequential conjunction(s) your language uses for sentence level coordination meaning ‘and then’ here:</prompt>
+   	<textBox id="CoordSeq" dataItem="andThen" rows="3"/>
+   	<br/>
+   	<prompt>Key the conjunction(s) your language uses for ‘or’ here:</prompt>
 		<textBox id="CoordOr" dataItem="or" rows="3"/>
 		<br/>
 		<prompt>Key the conunction(s) your language uses for ‘but’ here:</prompt>
@@ -81,7 +84,7 @@
 	   <br/>
 	   <introduction>In general, coordination is between like categories.  For sentence-level coordination, this means that two declarative sentences may be conjoined, as in 1-2, or two questions, as in 3.  When the conjunction is the one meaning ‘but’, one of the conjuncts must be negative, as in 4.  English examples of full sentence coordination include:</introduction>
 		<EnglishExample>
-			<exItem label="1.">John went to the office this morning but he did not return.</exItem>
+			<exItem label="1.">John went to the office this morning and he just returned.</exItem>
 		   <exItem label="2.">Either I will come to the party or I will send my sister.</exItem>
 		   <exItem label="3.">When did the mail come and where is my package?</exItem>	  
 		   <exItem label="4.">John went to the office this morning but he did not return.</exItem>
@@ -89,7 +92,10 @@
 		<prompt>Key examples of full sentence coordination in your language here:</prompt>
 		<textBox id="CoordSent" dataItem="sentExample" rows="5"/>
 		<br/>
-		<introduction>Verb phrase coordination involves two full verb phrases that share a single subject.  English examples of verb phrase coordination, with the coordinates bracketed, include:</introduction>
+   	<prompt>Now key some examples of full sentence coordination using the sequential conjunction, such as <example>Mary went to the store and then she got ready for the party</example> here:</prompt>
+   	<textBox id="CoordSeqSent" dataItem="sentSeqExample" rows="5"/>
+   	<br/>
+   	<introduction>Verb phrase coordination involves two full verb phrases that share a single subject.  English examples of verb phrase coordination, with the coordinates bracketed, include:</introduction>
 		<EnglishExample>
 			<exItem label="5.">Bill [ran the race] and [won the prize].</exItem>
 			<exItem label="6.">I will [come to the party] or [send my sister].</exItem>
@@ -106,7 +112,7 @@
 			<exItem label="11.">I will come to [the rehearsal] but not [the dinner].</exItem>
 			<exItem label="12.">I will come to [the wedding] and/or [the reception].</exItem>
 		</EnglishExample>
-		<prompt>Key examples of nominal phrase coordination in your language here (without bracktes).  Include only examples with two conjucts and an overt conjunction between the conjuncts.  Other types of nominal phrase coordination will be dealt with on the next page.</prompt>
+		<prompt>Key examples of nominal phrase coordination in your language here (without brackets).  Include only examples with two conjuncts and an overt conjunction between the conjuncts.  Other types of nominal phrase coordination will be dealt with on the next page.</prompt>
 		<textBox id="CoordDP" dataItem="dpExample" rows="5"/>
 		<br/>
       <introduction>It is also normally possible to have coordinate <span id="PPPrepSpan1" show="swPPPosPrep">prepositional</span>

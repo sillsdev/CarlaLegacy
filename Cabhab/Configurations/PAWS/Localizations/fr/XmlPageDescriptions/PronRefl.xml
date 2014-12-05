@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="PronRefl" count="3/9">
+   <title level="2">Pronoms – Réfléchis</title>
+   <introduction>Les <technicalTermRef term="ttReflexives">réfléchis</technicalTermRef> réfléchis sont une autre sorte de pronom qui existe en la plupart des langues.  Ils se présentent normalement dans la position de l’objet d’une phrase transitive, se référant au sujet.  Les réfléchis se présentent seulement dans le même cas que les objets directs et s’accordent normalement avec le sujet quant à la personne, au genre, et au nombre.  Des exemples en français sont: <example>me</example>, <example>te</example>, <example>se</example>, <example>nous</example> et <example>vous</example>.   
+      <br/><br/>Il y a une variété considérable dans la façon dont les réfléchis sont formés.  Certaines langues ont une classe de formes de pronoms complètement à part pour les réfléchis.  D’autres langues utilisent un syntagme qui comprend un substantif (généralement avec le sens de l’anglais <example>self  « même »</example>) qui est possédé par le pronom qui se réfère au sujet. Certaines langues utilisent un syntagme nominal quantifié spécial comme « l’un l’autre » en français pour les <technicalTermRef term="ttReciprocals">inverses</technicalTermRef>.  Certaines langues ont un affixe verbal pour indiquer une action réféchie, et certaines langues ne distinguent pas du tout les constructions réfléchies.</introduction>
+    <form section="pron">
+        <radioGroup>
+            <groupName dataItem="refl" default="no">RPronRefl</groupName>
+           <prompt>Votre langue a-t-elle des réfléchis?</prompt>
+            <radio id="PronReflNo" dataValue="no">Non</radio>
+           <radio id="PronReflYes" dataValue="yes">Oui, un pronom ou un substantif possédé ou un syntagme nominal spécial occupe la position de l’objet</radio>
+           <radio id="PronReflYesVerbal" dataValue="yesVerbal">Oui, un affixe verbal indique une action réfléchie</radio>
+        </radioGroup>
+       <prompt id="PronReflVerbExamples" show="swPronReflYesVerbal">
+          <br/>Entrez ici l’affixe réfléchi qui s’attache aux verbes, avec un trait d’union pour indiquer le côté où il s’attache au verbe:</prompt>
+       <textBox id="PronReflVerbAffixExample" dataItem="reflVerbAffixExample" show="swPronReflYesVerbal" rows="2"/>
+       <prompt id="PronReflVerbSentExamples" show="swPronReflYesVerbal">
+          <br/>Entrez plusieurs exemples de phrases simples avec un affixe réfléchi sur le verbe pour indiquer une action réfléchie par le sujet:</prompt>
+       <textBox id="PronReflVerbSentExample" dataItem="reflVerbSentExample" show="swPronReflYesVerbal"/>
+       <instruction id="PronReflYesVerbalInstruction" show="swPronReflYesVerbal">In the lexicon, add the feature <feature>reflexive</feature> to the relevant verbal affix(es).</instruction>
+       <prompt id="PronReflFirstSgExamples" show="swPronReflYes">
+          <br/>Entrez ici les réfléchis de la première personne <span id="PronNumberSpan" show="swPronNumberYes">du singulier </span>qui peuvent occuper la position de l’objet:</prompt>
+       <textBox id="PronReflFirstSgExample" dataItem="reflFirstSgExample" show="swPronReflYes" rows="2"/>
+       <prompt id="PronReflFirstPlExamples" show="swPronReflYesAndPronNumberYesExclNo">
+          <br/>Entrez ici les réfléchis de la première personne du pluriel qui peuvent occuper la position de l’objet:</prompt>
+       <textBox id="PronReflFirstPlExample" dataItem="reflFirstPlExample" show="swPronReflYesAndPronNumberYesExclNo" rows="2"/>
+       <prompt id="PronReflFirstExclExamples" show="swPronReflYesAndPronExclYes">
+          <br/>Entrez ici les réfléchis de la première personne exclusive <span id="PronNumberPlSpan" show="swPronNumberYes">plural </span>qui peuvent occuper la position de l’objet:</prompt>
+       <textBox id="PronReflFirstExclExample" dataItem="reflFirstExclExample" show="swPronReflYesAndPronExclYes" rows="2"/>
+       <prompt id="PronReflFirstInclExamples" show="swPronReflYesAndPronExclYes">
+          <br/>Entrez ici les réfléchis de la première personne inclusive <span id="PronNumberPlSpan1" show="swPronNumberYes">plural </span>qui peuvent occuper la position de l’objet:</prompt>
+       <textBox id="PronReflFirstInclExample" dataItem="reflFirstInclExample" show="swPronReflYesAndPronExclYes" rows="2"/>
+       <prompt id="PronReflSecondSgExamples" show="swPronReflYes">
+          <br/>Entrez ici les réfléchis de la deuxième personne <span id="PronNumberSpan1" show="swPronNumberYes">du singulier </span>qui peuvent occuper la position de l’objet:</prompt>
+       <textBox id="PronReflSecondSgExample" dataItem="reflSecondSgExample" show="swPronReflYes" rows="2"/>
+       <prompt id="PronReflSecondPlExamples" show="swPronReflYesAndPronNumberYes">
+          <br/>Entrez ici les réfléchis de la deuxième personne du pluriel qui peuvent occuper la position de l’objet:</prompt>
+       <textBox id="PronReflSecondPlExample" dataItem="reflSecondPlExample" show="swPronReflYesAndPronNumberYes" rows="2"/>
+       <prompt id="PronReflThirdSgExamples" show="swPronReflYes">
+          <br/>Entrez ici les réfléchis de la troisième personne <span id="PronNumberSpan2" show="swPronNumberYes">du singulier </span>qui peuvent occuper la position de l’objet:</prompt>
+       <textBox id="PronReflThirdSgExample" dataItem="reflThirdSgExample" show="swPronReflYes" rows="2"/>
+       <prompt id="PronReflThirdPlExamples" show="swPronReflYesAndPronNumberYes">
+          <br/>Entrez ici les réfléchis de la troisième personne du pluriel qui peuvent occuper la position de l’objet:</prompt>
+       <textBox id="PronReflThirdPlExample" dataItem="reflThirdPlExample" show="swPronReflYesAndPronNumberYes" rows="2"/>
+       <prompt id="PronReflSentExamples" show="swPronReflYes">
+          <br/>Entrez ici plusieurs exemples avec de différents exemples des réfléchis que vous avez entrés ci-dessus dans la position de l’objet dans des phrases simples<span id="PronReflSentExamplesSpan" show="swNotPractical"> pour qu’on puisse vérifier plus tard l’accord entre le réfléchi et le sujet</span>:</prompt>
+        <textBox id="PronReflSentExample" dataItem="reflSentExample" show="swPronReflYes"/>
+        <checkboxGroup id="PronReflYesTable" show="swPronReflYes">
+            <prompt>
+               <br/>Comment sont formés dans votre langue les réfléchis qui occupent la position de l’objet ?  Marquez toutes les options qui sont correctes dans votre langue.</prompt>
+           <checkbox id="PronReflAffixNoWord" dataItem="reflDistinct">Ils sont des mots distincts qui se présentent seuls</checkbox>
+           <checkbox id="PronReflAffixYes" dataItem="reflAffix">Un ou plusieurs affixes sont choisis pour former un autre pronom réfléchi</checkbox>
+           <checkbox id="PronReflAffixNoNoun" dataItem="reflNounPoss">Un certain substantif est utilisé avec un pronom comme possesseur</checkbox>
+           <checkbox id="PronReflAffixNoQP" dataItem="reflQP">Des syntagmes nominaux quantifiés sont utilisés</checkbox>
+           <checkbox id="PronReflAffixOther" dataItem="reflOther">Ma langue forme le réfléchi comme suit:<textBox  id="PronReflAffixOtherContent" dataItem="reflOther" rows="2"/></checkbox>
+        </checkboxGroup>
+       <br/><br/>
+       <prompt id="PronReflAffixNoCheckPrompt" show="swPronReflYesNoCheck">AVERTISSEMENT: Vous avez dit ci-dessus que votre langue a des réfléchis, mais vous n’avez marqué aucune option pour dire comment ils sont formés.  Veuillez marquer une ou plusieurs options correctes, à moins que vous n’ayez pas de réfléchis.  Dans ce cas, il ne vous aurait pas fallu ajouter des formes dans les zones de texte, et devez changer la réponse à « Non » ou à « Oui, un affixe verbal indique l’action réfléchie ».</prompt>
+       
+        <instruction id="PronReflAffixNoWordInstruction" show="swPronReflAffixNoWord">In the lexicon, mark each reflexive pronoun with the feature <feature>reflexive</feature> and also all the relevant
+<ul>
+                <li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>),</li>
+                <li>number (<feature>singular</feature>, <feature>dual</feature>, <feature>plural</feature>), and</li>
+                <li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
+            </ul>
+        </instruction>
+       <prompt id="PronReflAffixYesPrompt" show="swPronReflAffixYes"><br/>Entrez ici les affixes réfléchis qui changent un autre pronom en un pronom réfléchi, avec un trait d’union pour indiquer de quel côté il s’attache au pronom:
+       </prompt>
+       <textBox id="PronReflAffixExamples" dataItem="pronReflAffixExample"  rows="2" show="swPronReflAffixYes"/> 
+       
+       <instruction id="PronReflAffixYesInstruction" show="swPronReflAffixYes">In the lexicon, add the feature <feature>reflexive</feature> to the relevant affixes.</instruction>
+       <prompt id="PronReflAffixNoNounPrompt" show="swPronReflAffixNoNoun"><br/>Entrez ici le substantif spécial qui est possédé par les pronoms possesseurs pour former un syntagme réfléchi ou un pronom réfléchi:
+       </prompt>
+       <textBox id="PronReflNounPossExamples" dataItem="pronReflNounPossExample"  rows="2" show="swPronReflAffixNoNoun"/> 
+       
+       <instruction id="PronReflAffixNoNounInstruction" show="swPronReflAffixNoNoun">In the lexicon, add the feature <feature>reflexive</feature> to the relevant noun.</instruction>
+       <prompt id="PronReflAffixNoQPPrompt" show="swPronReflAffixNoQP"><br/>Entrez ici le quantificateur spécial ou le syntagme qui est utilisé dans les réfléchis:
+       </prompt>
+       <textBox id="PronReflQPExamples" dataItem="pronReflQExample"  rows="2" show="swPronReflAffixNoQP"/> 
+       <instruction id="PronReflAffixNoQPInstruction" show="swPronReflAffixNoQP">In the lexicon, add the feature <feature>reflexive</feature> to the relevant nouns and quantifiers.</instruction>
+       <br/><br/>
+        <buttons>
+            <button id="PronReflBack" value="Back" goto="PronPoss.xml"/>
+            <button id="PronReflNext" value="Next" goto="PronReciprocal.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swPronReflYesVerbal">
+        <whenRadio button="PronReflYesVerbal"/>
+    </showWhen>
+    <showWhen id="swPronReflYes">
+        <whenRadio button="PronReflYes"/>
+    </showWhen>
+    <showWhen id="swPronReflAffixYes">
+        <whenRadio button="PronReflYes"/>
+        <and/>
+        <whenCheckbox button="PronReflAffixYes"/>
+    </showWhen>
+    <showWhen id="swPronReflAffixNoWord">
+        <whenRadio button="PronReflYes"/>
+        <and/>
+        <whenCheckbox button="PronReflAffixNoWord"/>
+    </showWhen>
+    <showWhen id="swPronReflAffixNoNoun">
+        <whenRadio button="PronReflYes"/>
+        <and/>
+       <whenCheckbox button="PronReflAffixNoNoun"/>
+    </showWhen>
+   <showWhen id="swPronReflAffixNoQP">
+      <whenRadio button="PronReflYes"/>
+      <and/>
+      <whenCheckbox button="PronReflAffixNoQP"/>
+   </showWhen>
+   <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+   </showWhen>
+   <showWhen id="swPronReflYesNoCheck">
+      <whenRadio button="PronReflYes"/>
+      <and/><not/>
+      <whenCheckbox button="PronReflAffixNoWord"/>
+      <and/><not/>
+      <whenCheckbox button="PronReflAffixYes"/>
+      <and/><not/>
+      <whenCheckbox button="PronReflAffixNoNoun"/>
+      <and/><not/>
+      <whenCheckbox button="PronReflAffixNoQP"/>
+      <and/><not/>
+      <whenCheckbox button="PronReflAffixOther"/>
+   </showWhen>
+   <showWhen id="swPronReflYesAndPronExclYes">
+      <whenRadio button="PronReflYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounExcl" value="yes"/>
+   </showWhen>
+   <showWhen id="swPronReflYesAndPronNumberYes">
+      <whenRadio button="PronReflYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+   </showWhen>
+   <showWhen id="swPronReflYesAndPronNumberYesExclNo">
+      <whenRadio button="PronReflYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounExcl" value="no"/>
+   </showWhen>
+   <showWhen id="swPronNumberYes">
+      <whenValue element="pron" attr="pronounNumber" value="yes"/>
+   </showWhen>
+   
+   &TechnicalTerms; 
+   
+</page>

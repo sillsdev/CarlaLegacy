@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="IPConditional" count="2/3">
+   <title level="2">Phrases Simples – Conditionnels</title>
+   <introduction>Les conditionnels ont deux parties: une condition et une conséquence. La condition est présentée par un mot de condition, par exemple <example>si</example>, <example>quand</example> ou <example>après</example>, et se sépare avec un virgule. La conséquence peut être marquée par un mot qui signifie <example>alors</example> dans des examples où la comparaison vient en tête. Des exemples en français:</introduction>
+   <EnglishExample>
+      <exItem label="1.">Si tu épargnes assez d’argent, alors tu pourras acheter cela.</exItem>
+      <exItem label="2.">Après que tu auras nettoyé ta chambre, alors tu pourras jouer.</exItem>
+      <exItem label="3.">Quand tu auras mangé tes legumes, je te donnerai le dessert .</exItem>
+   </EnglishExample>
+   <introduction>La conséquence peut aussi se présenter avant la condition, dans quel cas la conséquence ne porte pas de marqueur, seule la condition le porte. Voici des exemples en français:</introduction>   
+   <EnglishExample>
+      <exItem label="4.">Tu peux acheter cela si tu as épargné assez d’argent.</exItem>
+      <exItem label="5.">Tu  pourras jouer avec tes amis quand tu auras nettoyé ta chambre.</exItem>
+      <exItem label="6.">Je te donnerai le dessert quand tu auras mangé tes légumes.</exItem>
+   </EnglishExample>
+   <form section="ip">
+      <prompt id="IPConditionalExamplesPrompt"><br/>Entrez ici des exemples de conditionnels dans votre langue:</prompt>
+      <textBox id="IPConditionalExamples" dataItem="conditionalExample" cols="50"/>
+      <radioGroup>
+         <groupName dataItem="conditionWord" default="yes">RIPConditionWord</groupName>
+         <prompt><br/>Est-ce que votre langue indique la condition au moyen de mots indépendants qui modifient tout le syntagme conditionnel?</prompt>
+         <radio id="IPConditionWordYes"  dataValue="yes">Oui, ce sont tous des mot indépendants</radio>
+         <radio id="IPConditionWordSome" dataValue="some">Certains sont des mots indépendants, d’autres s’attachent à un autre mot</radio>
+         <radio id="IPConditionWordNo" dataValue="no">Non, ils s’attachent tous à un autre mot du syntagme conditionnel</radio>
+         <radio id="IPConditionWordMood" dataValue="mood">Non, le seul marqueur de conditionnel dans ma langue est le mode conditionnel qui se marque au verbe</radio>
+      </radioGroup>
+      <instruction id="IPConditionalMoodInstruction" show="swIPConditionWordMood">In the lexicon, key the feature <feature>conditional</feature> on the verbal affixes which mark conditional mood, if you have not already done so.</instruction>
+      <checkboxGroup id="IPConditionAttachesType" show="swIPConditionWordNoOrSome">
+         <prompt>Dans le syntagme conditionnel comment et où s’attachent-ils, ces marqueurs de condition qui ne sont pas des mots indépendents? Cochez toutes les options qui sont valables pour votre langue.</prompt>
+         <checkbox id="IPConditionProclitic" dataItem="conditionProclitic">Comme proclitique qui s’attache au début du mot qui commence le syntagme conditionnel</checkbox>
+         <checkbox id="IPConditionEnclitic" dataItem="conditionEnclitic">Comme enclitique qui s’attache au début du mot qui termine le syntagme conditionnel</checkbox>
+         <checkbox id="IPConditionPrefix" dataItem="conditionPrefix">Comme préfixe qui s’attache au verbe du syntagme conditionnel</checkbox>
+         <checkbox id="IPConditionSuffix" dataItem="conditionSuffix">Comme suffixe qui s’attache au verbe du syntagme conditionnel</checkbox>
+         <checkbox id="IPConditionOther" dataItem="conditionOther">Dans ma langue, ces éléments peuvent s’attacher comme suit: <textBox  id="IPConditionOtherContent" dataItem="conditionOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="IPConditionAttachesNoCheckPrompt" show="swIPConditionWordNoOrSomeandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire comment ces marqueurs de condition fonctionnent dans votre langue; sinon, changez la réponse ci-dessus en « Oui, ce sont tous des mots indépendants » , ou bien « Non, le seul marqueur de conditionnels dans ma langue est le mode conditionnel visible au verbe même » .</prompt>
+      
+      <prompt id="IPConditionCliticPrompt" show="swIPConditionNoOrSomeAndClitic">Entrez ici les clitiques qui peuvent marquer un syntagme conditionnel, indiquez d’un signe d’égalité de quel côté il s’attache:</prompt>  
+      <textBox id="IPConditionCliticExample" dataItem="conditionCliticExample" cols="40"  rows="3" show="swIPConditionNoOrSomeAndClitic"/>
+      <instruction id="IPConditionProcliticInstruction" show="swIPConditionNoOrSomeAndProclitic">In the lexicon, add the feature <feature>conditional_prefix</feature> to the proclitics which mark conditional phrases.
+      </instruction>
+      <instruction id="IPConditionEncliticInstruction" show="swIPConditionNoOrSomeAndEnclitic">In the lexicon, add the feature <feature>conditional_suffix</feature> to the enclitics which mark conditional phrases.</instruction>
+      <prompt id="IPConditionAffixPrompt" show="swIPConditionNoOrSomeAndAffix">Entrez ici les affixes qui peuvent marquer un syntagme conditionnel, indiquez d’un tiret de quel côté il s’attache:</prompt>  
+      <textBox id="IPConditionAffixExample" dataItem="conditionAffixExample" cols="40" rows="3" show="swIPConditionNoOrSomeAndAffix"/>
+      <instruction id="IPConditionAffixInstruction" show="swIPConditionNoOrSomeAndAffix">In the lexicon, add the feature <feature>conditional</feature> to the affixes which can mark the verb in a conditional phrase.</instruction>
+      <prompt id="IPConditionOtherPrompt" show="swIPConditionNoOrSomeAndOther">Entrez des exemples des autres éléments qui peuvent marquer un syntagme conditionnel de l’autre manière permise par votre langue:</prompt>  
+      <textBox id="IPConditionOtherExample" dataItem="conditionOtherExample" cols="40" rows="3" show="swIPConditionNoOrSomeAndOther"/>   
+      <prompt id="IPConditionYesPrompt" show="swIPConditionWordYesOrSome">Entrez ici les mots indépendants qui peuvent marquer un syntagme conditionnel:</prompt>
+      <textBox id="IPConditionWordExample" dataItem="conditionWordExample" cols="40"  rows="3" show="swIPConditionWordYesOrSome"/>
+      <br/><br/>		
+      <checkboxGroup id="IPConditionPos" show="swIPConditionWordYesOrSome">
+         <prompt>Dans les exemples ci-dessus, par rapport au reste du syntagme conditionnel, où se mettent les marqueurs de condition sous forme de mots indépendants? Cochez toutes les options qui sont valables pour votre langue.</prompt>
+         <checkbox id="IPConditionPosBefore"  dataItem="conditionWordBefore">Avant</checkbox>
+         <checkbox id="IPConditionPosAfter"  dataItem="conditionWordAfter">Après</checkbox>
+         <checkbox id="IPConditionPosBoth"  dataItem="conditionWordBoth">Des deux côtés dans le même syntagme</checkbox>
+         <checkbox id="IPConditionPosOther"  dataItem="conditionWordOther">Dans ma langue les marqueurs peuvent se mettre dans la position suivante: <textBox  id="IPConditionPosOtherContent" dataItem="conditionWordOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="IPConditionPosNoCheckPrompt" show="swIPConditionYesandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire pour votre langue la position de ces marqueurs de condition par rapport au reste du syntagme conditionnel, sinon changez la réponse ci-dessus en « Non, ils s’attachent à un autre mot du syntagme conditionnel » , ou bien « Non, le seul marqueur de conditionnels dans ma langue est le mode conditionnel visible au verbe même » .</prompt>
+      <instruction id="IPConditionYesInstruction" show="swIPConditionWordYesOrSome">In the lexicon, you will likely need to add a separate entry for each of these words, if they can also be used as adverbs and/or complementizers in embedded questions.  Give this entry the category <category>Cond</category> and the feature <feature>conditional</feature>.</instruction>
+      <instruction id="IPConditionEitherRestrictedInstruction" show="swIPConditionEitherRestricted">In the lexicon, mark those condition markers which can only occur before the condition phrase with the feature <feature>IP-initial</feature> and those which can only occur after it with the feature <feature>IP-final</feature>.  Do not enter either feature on any words which can occur on either side.</instruction>
+     
+      <radioGroup id="IPConsequence" show="swIPConditionWordNotMood">
+         <groupName dataItem="consequence" default="no">RIPConsequence</groupName>
+         <prompt>Est-ce que votre langue possède un mot indépendant qui marque la conséquence, comme  « alors » dans les exemples 1-3 ci-dessus?</prompt>
+         <radio id="IPConsequenceYes" dataValue="yes">Oui, et il est nécessaire lorsque le syntagme conditionnel commence la phrase</radio>
+         <radio id="IPConsequenceOptional" dataValue="optional">Oui, mais il est facultatif</radio>
+         <radio id="IPConsequenceNo" dataValue="no">Non, la conséquence n’est jamais marquée par un mot indépendant</radio>
+      <radioGroup id="IPConsequencePos" show="swIPConsequenceYesOrOptional">
+         <groupName dataItem="consequencePos" default="unknown" position="yesHead">RIPConsequencePos</groupName>
+         <prompt>Où se met le mot de conséquence par rapport au reste du syntagme de conséquence?</prompt>
+         <radio id="IPConsequencePosBefore"  dataValue="before">Avant</radio>
+         <radio id="IPConsequencePosAfter"  dataValue="after">Après</radio>
+      </radioGroup>
+      </radioGroup>
+      <instruction id="IPConsequenceYesInstruction" show="swIPConsequenceYesOrOptionalButNotMood">In the lexicon, you will likely need to add a separate entry for this word, if it can also be used as an adverb.  Give this entry the category <category>Conseq</category>.</instruction>
+
+      <br/>
+        <br/>
+        <buttons>
+            <button id="IPConditionalBack" value="Back" goto="IPProDrop.xml"/>
+               <button id="IPConditionalNext" value="Next" goto="IPSubjunctive.xml"/>
+        </buttons>
+   </form>
+<showWhen id="swIPConditionWordMood">
+   <whenRadio button="IPConditionWordMood"/>
+</showWhen>
+   <showWhen id="swIPConditionWordNotMood">
+      <not/><whenRadio button="IPConditionWordMood"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordYesOrSome">
+      <whenRadio button="IPConditionWordYes"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordNoOrSome">
+      <whenRadio button="IPConditionWordNo"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+   </showWhen>
+   <showWhen id="swIPConditionWordNoOrSomeandNoCheck">
+<openParen/>
+      <whenRadio button="IPConditionWordNo"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+ <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionPrefix"/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionOther"/>
+   </showWhen>
+   <showWhen id="swIPConditionNoOrSomeAndOther">
+      <openParen/>
+      <whenRadio button="IPConditionWordNo"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+      <closeParen/>
+    <and/>
+      <whenCheckbox button="IPConditionOther"/>
+   </showWhen> 
+   <showWhen id="swIPConditionNoOrSomeAndProclitic">
+      <openParen/>
+      <whenRadio button="IPConditionWordNo"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+      <closeParen/>
+      <and/>
+      <whenCheckbox button="IPConditionProclitic"/>
+   </showWhen> 
+   <showWhen id="swIPConditionNoOrSomeAndEnclitic">
+      <openParen/>
+      <whenRadio button="IPConditionWordNo"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+      <closeParen/>
+      <and/>
+      <whenCheckbox button="IPConditionEnclitic"/>
+   </showWhen> 
+   <showWhen id="swIPConditionNoOrSomeAndClitic">
+      <openParen/>
+      <whenRadio button="IPConditionWordNo"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="IPConditionEnclitic"/>
+      <or/>
+      <whenCheckbox button="IPConditionProclitic"/>
+      <closeParen/>
+   </showWhen> 
+   <showWhen id="swIPConditionNoOrSomeAndAffix">
+      <openParen/>
+      <whenRadio button="IPConditionWordNo"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="IPConditionPrefix"/>
+      <or/>
+      <whenCheckbox button="IPConditionSuffix"/>
+      <closeParen/>
+   </showWhen> 
+   <showWhen id="swIPConditionEitherRestricted">
+      <openParen/>
+      <whenRadio button="IPConditionWordYes"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="IPConditionPosBoth"/>
+      <or/>
+      <whenCheckbox button="IPConditionPosBefore"/>
+      <and/>
+      <whenCheckbox button="IPConditionPosAfter"/>
+      <closeParen/>      
+   </showWhen>   
+   <showWhen id="swIPConditionYesandNoCheck">
+      <openParen/>
+      <whenRadio button="IPConditionWordYes"/>
+      <or/>
+      <whenRadio button="IPConditionWordSome"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="IPConditionPosOther"/>     
+   </showWhen>
+   <showWhen id="swIPConsequenceYesOrOptional">
+      <whenRadio button="IPConsequenceYes"/>
+      <or/>
+      <whenRadio button="IPConsequenceOptional"/>
+   </showWhen>
+   <showWhen id="swIPConsequenceYesOrOptionalButNotMood">
+<not/><whenRadio button="IPConditionWordMood"/>
+      <and/>
+      <whenRadio button="IPConsequenceYes"/>
+      <or/>
+      <not/><whenRadio button="IPConditionWordMood"/>
+      <and/>
+      <whenRadio button="IPConsequenceOptional"/>
+   </showWhen>
+</page>

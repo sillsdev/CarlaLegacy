@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE technicalTerms SYSTEM "../Data/PAWSSKHtmlMapper.dtd">-->
 <technicalTerms version="1.0">
    <technicalTerm id="ttAbsolutive">
       <termInLang lang="es">
@@ -54,6 +55,12 @@
          <termDefinition>La voz del verbo antipasiva es en la que no se expresa el objeto de un verbo transitivo. </termDefinition>
       </termInLang>
    </technicalTerm>
+   <technicalTerm id="ttApplicative">
+      <termInLang lang="es">
+         <term>aplicativo</term>
+         <termDefinition>La voz del verbo aplicativa es en la que se expresa un argumento oblícuo del verbo como el objeto.  Puede cambiar un verbo intransitivo a un verbo transitivo o un verbo transitivo a un verbo ditransitivo. </termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttArgument">
       <termInLang lang="es">
          <term>argumento</term>
@@ -99,7 +106,7 @@
  <technicalTerm id="ttClassifier">
     <termInLang lang="es">
        <term>clasificador</term>
-       <termDefinition>Un clasificador es un afijo o una palabra independiente que marca sustantivos según su forma, posición, color, animacidad u otras características. Los clasificadores pueden identificarse con grupos enumerados   o por clases, es decir, según la característica que tienen en común , y pueden o no ser parte del sistema de concordancia. </termDefinition>
+       <termDefinition>Un clasificador es un afijo o una palabra independiente que caracteriza a los sustantivos según su forma, posición, color, animacidad u otras características. Los clasificadores se presentan a menudo con números o cuantificadores o demostrativos.  Generalmente no son parte del sistema de concordancia como son los indicadores de clase de sustantivo. </termDefinition>
     </termInLang>
  </technicalTerm>
    <technicalTerm id="ttClitic">
@@ -112,6 +119,30 @@
       <termInLang lang="es">
          <term>complemento</term>
          <termDefinition>Los complementos del verbo incluyen aquellos elementos que se presentan en la frase verbal: el objeto directo y el objeto indirecto y un locativo para verbos de movimiento, así como como los diferentes tipos de cláusulas subordinadas menos las adverbiales. El sujeto no es un complemento. El complemento de un adverbio o adjetivo es normalmente una cláusula subordinada. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttCompletive">
+      <termInLang lang="es">
+         <term>completivo</term>
+         <termDefinition>El aspecto completivo se utiliza cuando la acción se ha completado. Ya no está sucediendo. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContemplative">
+      <termInLang lang="es">
+         <term>contempletivo</term>
+         <termDefinition>El aspecto contemplativo se utiliza para acciones que puedan producirse en el futuro. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContinuative">
+      <termInLang lang="es">
+         <term>continuativo</term>
+         <termDefinition>El aspecto continuativo se utiliza para acciones que son continuas o en curso. El aspecto continuativo es un subtipo de aspecto imperfectivo. Los aspectos progresivo y estativo son subtipos de continuativo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttContrafactual">
+      <termInLang lang="es">
+         <term>contrario al hecho</term>
+         <termDefinition>El aspecto contrario al hecho se utiliza para las declaraciones que expresan una idea que se presupone que es falsa.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttCopular">
@@ -160,6 +191,12 @@
       <termInLang lang="es">
          <term>ergativo</term>
          <termDefinition>El ergativo es el nombre del caso que se usa para marcar los sujetos de verbos transitivos en lenguas que utilizan un sistema de caso ergativo-absolutivo. </termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttStative">
+      <termInLang lang="es">
+         <term>estativo</term>
+         <termDefinition>El aspecto estativo se utiliza cuando la situación se describe como en curso pero no evoluciona. El estativo es un subtipo de continuativo que es un subtipo de imperfectivo.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttExclusive">
@@ -222,12 +259,30 @@
          <termDefinition>Un gerundio es un verbo o una frase verbal que actúa como un sustantivo o frase nominal en algunas lenguas. Por ejemplo, ‘jugando fútbol’ es una frase de gerundio que funciona como el sujeto de la oración: ‘Jugando fútbol es divertido’. En español se usa la forma infinitiva del verbo, no el gerundio: ‘Jugar fútbol es divertido’. </termDefinition>
       </termInLang >
    </technicalTerm>
+   <technicalTerm id="ttHabitual">
+      <termInLang lang="es">
+         <term>habitual</term>
+         <termDefinition>El aspecto habitual se utiliza para acciones que ocurren en varias ocasiones, habitualmente. Pueden ocurrir en el pasado, presente o futuro. El aspecto habitual es un subtipo de imperfectivo.</termDefinition>
+      </termInLang >
+   </technicalTerm>
    <technicalTerm id="ttImperative">
      <termInLang lang="es">
         <term>imperativo</term>
         <termDefinition>Los imperativos son mandatos, que pueden expresarse fuerte o más suavemente.</termDefinition>
      </termInLang>
   </technicalTerm>
+   <technicalTerm id="ttImperfect">
+      <termInLang lang="es">
+         <term>imperfecto</term>
+         <termDefinition>El imperfecto es la forma en el pasado del imperfectivo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttImperfective">
+      <termInLang lang="es">
+         <term>imperfectivo</term>
+         <termDefinition>El aspecto imperfectivo se utiliza para describir una actividad que está en curso. Combina los significados de los aspectos habitual y progresivo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttInalienably">
       <termInLang lang="es">
          <term>inalienable</term>
@@ -238,6 +293,12 @@
       <termInLang lang="es">
          <term>inclusivo</term>
          <termDefinition>El pronombre inclusivo se refiere al hablante, el oyente y posiblemente otros.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttIncompletive">
+      <termInLang lang="es">
+         <term>incompletivo</term>
+         <termDefinition>El aspecto incompletivo se utiliza para acciones que no han terminado. Es lo contrario del aspecto completivo.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttIndefinite">
@@ -264,6 +325,18 @@
       <termDefinition>Una oración intransitiva solo tiene un sujeto, no objeto directo.</termDefinition>
    </termInLang>
 </technicalTerm>
+   <technicalTerm id="ttUnreal">
+      <termInLang lang="es">
+         <term>irreal, no realidad</term>
+         <termDefinition>El aspecto irreal o no realidad es similar al modo irrelis para expresar situaciones imaginarias o proyectadas, cosas que posiblemente pueden ocurrir.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttIrrealis">
+      <termInLang lang="es">
+         <term>irrealis</term>
+         <termDefinition>El modo irrealis es similar al aspecto irreal o no realidad para expresar situaciones imaginarias o proyectadas, cosas que posiblemente pueden ocurrir. Los modos subjuntivo y condicional son subtipos del modo irrealis.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttMorphemes">
       <termInLang lang="es">
          <term>morfema</term>
@@ -342,6 +415,18 @@
          <termDefinition>Los verbos de percepción expresan cómo percibimos algo con nuestros sentidos. Por ejemplo: ver, tocar, oler, sentir, etc.</termDefinition>
       </termInLang>
    </technicalTerm>
+   <technicalTerm id="ttPerfect">
+      <termInLang lang="es">
+         <term>perfecto</term>
+         <termDefinition>El aspecto perfecto describe un evento en el pasado con pertinencia actual o un estado en el presente resultante de una situación pasada.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPerfective">
+      <termInLang lang="es">
+         <term>perfectivo</term>
+         <termDefinition>El aspecto perfectivo describe una acción completa. Puede expresar un evento simple en el pasado.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttPolarity">
       <termInLang lang="es">
          <term>polaridad</term>
@@ -354,16 +439,28 @@
          <termDefinition>El posesivo es el elemento que identifica a un poseedor:  la persona, animal o cosa que posee algo o a alguien. Este programa considera al posesivo como una frase nominal independiente, no un afijo pronominal. Si se presenta, el afijo pronominal concuerda con el posesivo independiente de la frase nominal, aunque lenguas con afijos pronominales permiten un posesivo independiente tácito (no explícito). </termDefinition>
       </termInLang>
    </technicalTerm>
+   <technicalTerm id="ttPotential">
+      <termInLang lang="es">
+         <term>potencial</term>
+         <termDefinition>El aspecto potencial se utiliza para los eventos que pueden ocurrir en el futuro.</termDefinition>
+      </termInLang>
+   </technicalTerm>
    <technicalTerm id="ttPredicates">
       <termInLang lang="es">
          <term>predicado</term>
          <termDefinition>El predicado consiste normalmente en el verbo y sus modificadores, y expresa la acción del sujeto. En una oración copulativa, el predicado puede ser un adjetivo o un sustantivo que  expresa una cualidad o la posición del sujeto.  </termDefinition>
       </termInLang>
    </technicalTerm>
-   <technicalTerm id="ttPossessives">
+   <technicalTerm id="ttProgressive">
       <termInLang lang="es">
-         <term>pronombre posesivo</term>
-         <termDefinition>Los pronombres posesivos expresan una relación de propiedad, por ejemplo, ‘suyo’, ‘mío’, ‘nuestro’. Son distintos de los pronombres que pueden utilizarse para expresar el poseedor de un sustantivo dentro de una frase nominal como en ‘tu casa’.  </termDefinition>
+         <term>progresivo</term>
+         <termDefinition>El aspecto progresivo se utiliza para la acción en curso y en constante evolución. Es un subtipo de continuativo y de imperfectivo.</termDefinition>
+      </termInLang>
+   </technicalTerm>
+   <technicalTerm id="ttPurposive">
+      <termInLang lang="es">
+         <term>propósito</term>
+         <termDefinition>El aspecto propósito expresa la razón o la necesidad de hacer algo.</termDefinition>
       </termInLang>
    </technicalTerm>
    <technicalTerm id="ttReciprocals">

@@ -39,11 +39,11 @@
 	   </radioGroup>
 	   <radioGroup id="QPDeterminerClassifierAgrTable" show="swOTClassifierAgrAndYesOrSome">
 	      <groupName dataItem="determinerClassifier" default="no">RQPDeterminerClassifierAgr</groupName>
-	      <prompt><br/>You said that your language has classifiers which mark concord agreement throughout the nominal phrases.  Do these quantifier determiners which act as the only modifier within the nominal phrase have classifiers attached to them?</prompt>
-	      <radio id="QPDeterminerClassifierAgrNo" dataValue="no">No, these elements are not marked with classifiers</radio>
-	      <radio id="QPDeterminerClassifierAgrYes" dataValue="yes">Yes, these elements are marked with classifiers as part of the concord agreement throughout the nominal phrase</radio>
+	      <prompt><br/>You said that your language has noun class markers with concord agreement throughout the nominal phrases.  Are these quantifier determiners which act as the only modifier within the nominal phrase marked for class?</prompt>
+	      <radio id="QPDeterminerClassifierAgrNo" dataValue="no">No, these elements are not marked for class</radio>
+	      <radio id="QPDeterminerClassifierAgrYes" dataValue="yes">Yes, these elements are marked for class as part of the concord agreement throughout the nominal phrase</radio>
 	   </radioGroup>
-	   <prompt id="QPDeterminerClassifierAgrPrompt" show="swOTClassifierAgrAndYesOrSomeAndDeterminerClassifierYes">Since you have already detailed the forms of the classifiers, you only need to enter the roots for each of the words asked for on this page.</prompt>	   
+	   <prompt id="QPDeterminerClassifierAgrPrompt" show="swOTClassifierAgrAndYesOrSomeAndDeterminerClassifierYes">Since you have already detailed the forms of the noun class markers, you only need to enter the roots for each of the words asked for on this page.</prompt>	   
 	   <br/>
 	   <prompt id="QPDeterminerTypeWordPrompt" show="swQPDeterminerTypeYesOrSome"><br/>Key examples of the independent words meaning ‘some’, ‘any’ or 'every' included in full nominal phrases here, with each on a separate line:</prompt>
 	   <textBox id="QPDeterminerExample" dataItem="determinerExample" cols="50" show="swQPDeterminerTypeYesOrSome"/>
@@ -146,6 +146,12 @@
       <or/>
       <whenRadio button="QPDeterminerTypeSome"/>
       <closeParen/>     
+      <and/>
+      <openParen/>
+      <whenRadio button="QPDeterminerYes"/>
+      <or/>
+      <whenRadio button="QPDeterminerSome"/>
+      <closeParen/>
       <and/><not/>
       <whenCheckbox button="QPDeterminerPosBefore"/>
       <and/><not/>

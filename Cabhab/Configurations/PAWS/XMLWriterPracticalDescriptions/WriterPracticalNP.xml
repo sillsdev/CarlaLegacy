@@ -42,7 +42,7 @@
 		   
 		   <p show="swQPNPDegreeClassifierYes">
 		      <content>The following table reviews how the wide scope quantifiers and degree elements which modify the whole nominal phrase are expressed in </content><langName/>
-		      <content>.  The forms shown in the table are the roots; each one may surface with the apropriate classifier attached.</content>
+		      <content>.  The forms shown in the table are the roots; each one may surface with the appropriate classifier attached.</content>
 		   </p>
 		   <p show="swQPNPDegreeClassifierNo">
 		      <content>The following table reviews how the wide scope quantifiers and degree elements which modify the whole nominal phrase are expressed in </content><langName/>
@@ -74,7 +74,29 @@
 		         </row>
 		      </table>
 		   </example>
-		      
+			<p show="swQPNPDegreeNo">
+				<content>These elements are not expressed as independent words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.</content></p>
+			<p show="swQPNPDegreeSome">
+				<content>Some of these elements are not expressed as independent words which modify the whole nominal phrase.  Instead, they attach to another word in the nominal phrase.</content></p>
+			<p show="swQPNPDegreeNoOrSomeAndClitic">
+				<content>Examples of the clitic forms included in full nominal phrases are:</content>
+			</p>
+			<example show="swQPNPDegreeNoOrSomeAndClitic">
+				<interlinear exampleLoc="qp/npDegreeCliticExample"/>
+			</example>
+			<p show="swQPNPDegreeNoOrSomeAndAffix">
+				<content>Examples of the affix forms included in full nominal phrases are:</content>
+			</p>
+			<example show="swQPNPDegreeNoOrSomeAndAffix">
+				<interlinear exampleLoc="qp/npDegreeAffixExample"/>
+			</example>
+			<p show="swQPNPDegreeNoOrSomeAndOther">
+				<content>Examples of the forms which attach as allowed in </content><langName/><content> included in full nominal phrases are:</content>
+			</p>
+			<example show="swQPNPDegreeNoOrSomeAndOther">
+				<interlinear exampleLoc="qp/npDegreeOtherExample"/>
+			</example>     
+			
 		   <p show="swQPNPDegreeYesOrSome">
 		      <content>The wide scope quantifiers and degree elements which are independent words occur </content>
 		      <text show="swQPNPDegreePosBefore"><content>before</content></text>
@@ -96,37 +118,43 @@
 		   </p>                        
 		   <example>
 		      <interlinear exampleLoc="qp/example"/>
-		   </example>                 
-		   <p show="swQPNPDegreeNo">
-		      <content>These elements are not expressed as independent words which modify the whole nominal phrase.  Instead, they all attach to another word in the nominal phrase.</content></p>
-		   <p show="swQPNPDegreeSome">
-		      <content>Some of these elements are not expressed as independent words which modify the whole nominal phrase.  Instead, they attach to another word in the nominal phrase.</content></p>
-		   <p show="swQPNPDegreeNoOrSomeAndClitic">
-		      <content>Examples of the clitic forms included in full nominal phrases are:</content>
-		   </p>
-		   <example show="swQPNPDegreeNoOrSomeAndClitic">
-		      <interlinear exampleLoc="qp/npDegreeCliticExample"/>
-		   </example>
-		   <p show="swQPNPDegreeNoOrSomeAndAffix">
-		      <content>Examples of the affix forms included in full nominal phrases are:</content>
-		   </p>
-		   <example show="swQPNPDegreeNoOrSomeAndAffix">
-		      <interlinear exampleLoc="qp/npDegreeAffixExample"/>
-		   </example>
-		   <p show="swQPNPDegreeNoOrSomeAndOther">
-		      <content>Examples of the forms which attach as allowed in </content><langName/><content> included in full nominal phrases are:</content>
-		   </p>
-		   <example show="swQPNPDegreeNoOrSomeAndOther">
-		      <interlinear exampleLoc="qp/npDegreeOtherExample"/>
-		   </example>     
+		   </example>         
+			
+			<p show="swOTClassifierSpecificAndQPNPDegreeYesOrSome"><content>In these nominal phrases with the words meaning ‘all’, ‘almost’, ‘only’ or ‘just’, </content>
+				<case element="np" attr="classifierPresent"><caseText value="yes"> a classifier is required.</caseText>
+					<caseText value="some"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</caseText>
+					<caseText value="no"> a classifier is never used.</caseText></case>
+				<text show="swOTClassifierSpecificAndQPNPDegreeYesOrSomeAndNPClassifierPresentYesOrSome"><content> The classifier </content>
+					<text show="swNPClassifierSpecificPosBeforeBothOnly"><content>occurs before both the wide scope quantifier or degree word and the noun.</content></text>
+					<text show="swNPClassifierSpecificPosBeforeBothAnd"><content>may occur before both the wide scope quantifier or degree word and the noun.</content></text>
+					<text show="swNPClassifierSpecificPosAfterBothCont"><content> It also occurs after both the noun and the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosAfterBothOnly"><content>occurs after both the noun and the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosAfterBothAnd"><content>may occur after both the noun and the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosAfterQBeforeNCont"><content> It also occurs after the wide scope quantifier or degree word but before the noun.</content></text>
+					<text show="swNPClassifierSpecificPosAfterQBeforeNOnly"><content>occurs after the wide scope quantifier or degree word but before the noun.</content></text>
+					<text show="swNPClassifierSpecificPosAfterQBeforeNAnd"><content>may occur after the wide scope quantifier or degree word but before the noun.</content></text>
+					<text show="swNPClassifierSpecificPosAfterNBeforeQCont"><content> It also occurs after the noun but before the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosAfterNBeforeQOnly"><content>occurs after the noun but before the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosAfterNBeforeQAnd"><content>may occur after the noun but before the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosPrefixQCont"><content> It may also attach as a prefix on the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosPrefixQOnly"><content>attaches as a prefix on the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosPrefixQAnd"><content>may attach as a prefix on the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosSuffixQCont"><content> It may also attach as a suffix on the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosSuffixQOnly"><content>attaches as a suffix on the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosSuffixQAnd"><content>may attach as a suffix on the wide scope quantifier or degree word.</content></text>
+					<text show="swNPClassifierSpecificPosOtherCont"><content> It may also occur ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificPosOther"/><content>. </content></text>
+					<text show="swNPClassifierSpecificPosOtherOnly"><content>occurs ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificPosOther"/><content>. </content></text>	
+				</text></p>
+			
+			
 		   <p><content>Negation of a nominal phrase also occurs in this wide scope position.  See section </content><sectionRef sec="sNegNominal"/><content> for examples.</content></p>
 		   
 		</section2>
 		<section2 id="sNPArtDem">
 			<secTitle><case element="np" attr="artAndDem">
 			   <caseText value="no">Articles and Demonstratives</caseText>
-			   <caseText value="art">Articles</caseText>
-			   <caseText value="dem">Demonstratives</caseText>
+			   <caseText value="article">Articles</caseText>
+			   <caseText value="demonstrative">Demonstratives</caseText>
 			   <caseText value="both">Articles and Demonstratives</caseText>
 			</case></secTitle>
 			<p contentType="ctComparativeIntro" show="swNPArtAndDem">
@@ -172,12 +200,18 @@
 			   <text show="swNPArtOnlyOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/artOnlyOther"/><content>.  </content>
 			   </text>
 			   <text show="swNPArtOnlyAndOther"><content> the noun and may also occur ___</content><contentCheckBoxOther contentLoc="np/artOnlyOther"/><content>.  </content></text>
-				<content>  The presence of an article is </content>
+				<text show="swNPArtAgreementNumberYes"><content> The presence of an article is </content>
+					<case element="np" attr="artRequired">
+						<caseText value="no">always optional.</caseText>
+						<caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
+						<caseText value="yes">always required.</caseText>
+					</case></text>
+				<text show="swNPArtAgreementNumberNo"><content>  The presence of an article is </content>
 				<case element="np" attr="artRequired">
 					<caseText value="no">always optional.</caseText>
-					<caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
 					<caseText value="yes">always required.</caseText>
 				</case>
+				</text>
 				<content/>
 			</p>
 			<p show="swNPArtAndDemDem">
@@ -194,12 +228,17 @@
 			   <text show="swNPDemOnlyOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/demOnlyOther"/><content>r.  </content>
 			   </text>
 			   <text show="swNPDemOnlyAndOther"><content> the noun and may also occur ___</content><contentCheckBoxOther contentLoc="np/demOnlyOther"/><content>.  </content></text>
-			   <content>  The presence of a demonstrative is </content>
+				<text show="swNPDemAgreementNumberYes"><content>  The presence of a demonstrative is </content>
 				<case element="np" attr="demRequired">
 					<caseText value="no">always optional.</caseText>
 					<caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
 					<caseText value="yes">always required.</caseText>
-				</case>
+				</case></text>
+				<text show="swNPDemAgreementNumberNo"><content> The presence of a demonstrative is </content>
+					<case element="np" attr="artRequired">
+						<caseText value="no">always optional.</caseText>
+						<caseText value="yes">always required.</caseText>
+					</case></text>
 				<content/>
 			</p>
 			<p show="swNPArtAndDemBothCooccurNo">
@@ -216,12 +255,17 @@
 			   <text show="swNPDemOrArtPosOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="np/demOrArtPosOther"/><content>.  </content>
 				   </text>
 			   <text show="swNPDemOrArtPosAndOther"><content> the noun and may also occur ___</content><contentCheckBoxOther contentLoc="np/demOrArtPosOther"/><content>.  </content></text>
-				 <content>  The presence of an article or demonstrative is </content>
+				 <text show="swNPArtOrDemAgreementNumberYes"><content>  The presence of an article or demonstrative is </content>
 				<case element="np" attr="demOrArtRequired">
 					<caseText value="no">always optional.</caseText>
 					<caseText value="mass">optional with plural or mass nouns, but is required with singular nouns.</caseText>
 					<caseText value="yes">always required.</caseText>
-				</case>
+				</case></text>
+				<text show="swNPArtOrDemAgreementNumberNo"><content>  The presence of an article or demonstrative is </content>
+					<case element="np" attr="demOrArtRequired">
+						<caseText value="no">always optional.</caseText>
+						<caseText value="yes">always required.</caseText>
+					</case></text>
 				<content/>
 			</p>
 			<p show="swNPArtAndDemBothCooccurYes">
@@ -289,6 +333,59 @@
 			<example show="swNPArtAndOrDem">
 				<interlinear exampleLoc="np/example"/>
 			</example>
+	
+			<p show="swOTClassifierSpecificAndNPArtAndDemDem"><content>In these nominal phrases with demonstratives, </content>
+				<case element="np" attr="classifierPresentDem"><caseText value="yes"> a classifier is required.</caseText>
+					<caseText value="some"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</caseText>
+					<caseText value="no"> a classifier is never used.</caseText></case>
+				<text show="swOTClassifierSpecificAndNPArtAndDemDemAndNPClassifierPresentDemYesOrSome"><content> The classifier </content>
+					<text show="swNPClassifierSpecificDemPosBeforeBothOnly"><content>occurs before both the demonstrative and the noun.</content></text>
+					<text show="swNPClassifierSpecificDemPosBeforeBothAnd"><content>may occur before both the demonstrative and the noun.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterBothCont"><content> It also occurs after both the noun and the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterBothOnly"><content>occurs after both the noun and the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterBothAnd"><content>may occur after both the noun and the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterDemBeforeNCont"><content> It also occurs after the demonstrative but before the noun.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterDemBeforeNOnly"><content>occurs after the demonstrative but before the noun.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterDemBeforeNAnd"><content>may occur after the demonstrative but before the noun.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterNBeforeDemCont"><content> It also occurs after the noun but before the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterNBeforeDemOnly"><content>occurs after the noun but before the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosAfterNBeforeDemAnd"><content>may occur after the noun but before the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosPrefixDemCont"><content> It may also attach as a prefix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosPrefixDemOnly"><content>attaches as a prefix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosPrefixDemAnd"><content>may attach as a prefix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosSuffixDemCont"><content> It may also attach as a suffix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosSuffixDemOnly"><content>attaches as a suffix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosSuffixDemAnd"><content>may attach as a suffix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemPosOtherCont"><content> It may also occur ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificDemPosOther"/><content>. </content></text>
+					<text show="swNPClassifierSpecificDemPosOtherOnly"><content>occurs ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificDemPosOther"/><content>. </content></text>	
+				</text></p>
+			
+			<p show="swOTClassifierSpecificAndNPArtAndDemBoth"><content>In these nominal phrases with demonstratives, </content>
+				<case element="np" attr="classifierPresentDemBoth"><caseText value="yes"> a classifier is required.</caseText>
+					<caseText value="some"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</caseText>
+					<caseText value="no"> a classifier is never used.</caseText></case>
+				<text show="swOTClassifierSpecificAndNPArtAndDemBothAndNPClassifierPresentDemBothYesOrSome"><content> The classifier </content>
+					<text show="swNPClassifierSpecificDemBothPosBeforeBothOnly"><content>occurs before both the demonstrative and the noun.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosBeforeBothAnd"><content>may occur before both the demonstrative and the noun.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterBothCont"><content> It also occurs after both the noun and the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterBothOnly"><content>occurs after both the noun and the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterBothAnd"><content>may occur after both the noun and the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterDemBeforeNCont"><content> It also occurs after the demonstrative but before the noun.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterDemBeforeNOnly"><content>occurs after the demonstrative but before the noun.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterDemBeforeNAnd"><content>may occur after the demonstrative but before the noun.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterNBeforeDemCont"><content> It also occurs after the noun but before the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterNBeforeDemOnly"><content>occurs after the noun but before the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosAfterNBeforeDemAnd"><content>may occur after the noun but before the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosPrefixDemCont"><content> It may also attach as a prefix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosPrefixDemOnly"><content>attaches as a prefix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosPrefixDemAnd"><content>may attach as a prefix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosSuffixDemCont"><content> It may also attach as a suffix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosSuffixDemOnly"><content>attaches as a suffix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosSuffixDemAnd"><content>may attach as a suffix on the demonstrative.</content></text>
+					<text show="swNPClassifierSpecificDemBothPosOtherCont"><content> It may also occur ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificDemBothPosOther"/><content>. </content></text>
+					<text show="swNPClassifierSpecificDemBothPosOtherOnly"><content>occurs ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificDemBothPosOther"/><content>. </content></text>	
+				</text></p>
+			
 		</section2>
 		<section2 id="sNPPoss">
 			<secTitle>Possessors</secTitle>
@@ -375,7 +472,7 @@
 			<example>
 				<interlinear exampleLoc="np/embeddedExample"/>
 			</example>
-			<p>
+		   <p show="swNPPossNPNotYesOnly">
 				<content>Examples with </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">prepositional</caseText>
@@ -383,9 +480,9 @@
 					<caseText value="both">prepositional and/or postpositional</caseText>
 					<caseText value="unknown">prepositional and/or postpositional</caseText>
 				</case>
-				<content> phrases within the possessor include:</content>
+				<content> phrases as the possessor include:</content>
 			</p>
-			<example>
+		   <example show="swNPPossNPNotYesOnly">
 				<interlinear exampleLoc="np/ppExample"/>
 			</example>
 			<p>
@@ -462,13 +559,10 @@
 				<p>
 					<content>In </content>
 					<langName/>
-					<content>, </content><case element="np" attr="possCooccur">
-					   <caseText value="some">some </caseText>
-					</case><content>nominal or pronominal possessors </content>
+					<content>, nominal and/or pronominal possessors </content>
 					<case element="np" attr="possCooccur">
 						<caseText value="yes">may</caseText>
-					   <caseText value="some">may</caseText>
-						<caseText value="no">may not</caseText>
+					   	<caseText value="no">may not</caseText>
 					</case>
 					<content> occur in the same phrase as </content>
 					<case element="np" attr="artAndDem">
@@ -479,10 +573,9 @@
 				   <content> in the normal possessor position</content>
 				   <case element="np" attr="possCooccur">
 				      <caseText value="yes">.</caseText>
-				      <caseText value="some"> but some may not.  In that case, </caseText>
 				      <caseText value="no">.  Instead, </caseText>
 				   </case>				   
-				   <text show="swNPPossCooccurNoOrSome"><content>the possessor is expressed in a </content>
+				   <text show="swNPPossCooccurNo"><content>the possessor is expressed in a </content>
 				      <case element="pp" attr="pPos">
 				         <caseText value="before">prepositional</caseText>
 				         <caseText value="after">postpositional</caseText>
@@ -542,6 +635,34 @@
 			<example>
 				<interlinear exampleLoc="np/qpExample"/>
 			</example>
+			
+			<p show="swOTClassifierSpecific"><content>In these nominal phrases with numbers or other quantifiers, </content>
+				<case element="np" attr="classifierPresentQ"><caseText value="yes"> a classifier is required.</caseText>
+					<caseText value="some"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</caseText>
+					<caseText value="no"> a classifier is never used.</caseText></case>
+				<text show="swOTClassifierSpecificAndNPClassifierPresentQYesOrSome"><content> The classifier </content>
+					<text show="swNPClassifierSpecificQPosBeforeBothOnly"><content>occurs before both the quantifier and the noun.</content></text>
+					<text show="swNPClassifierSpecificQPosBeforeBothAnd"><content>may occur before both the quantifier and the noun.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterBothCont"><content> It also occurs after both the noun and the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterBothOnly"><content>occurs after both the noun and the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterBothAnd"><content>may occur after both the noun and the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterQBeforeNCont"><content> It also occurs after the quantifier but before the noun.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterQBeforeNOnly"><content>occurs after the quantifier but before the noun.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterQBeforeNAnd"><content>may occur after the quantifier but before the noun.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterNBeforeQCont"><content> It also occurs after the noun but before the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterNBeforeQOnly"><content>occurs after the noun but before the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosAfterNBeforeQAnd"><content>may occur after the noun but before the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosPrefixQCont"><content> It may also attach as a prefix on the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosPrefixQOnly"><content>attaches as a prefix on the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosPrefixQAnd"><content>may attach as a prefix on the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosSuffixQCont"><content> It may also attach as a suffix on the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosSuffixQOnly"><content>attaches as a suffix on the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosSuffixQAnd"><content>may attach as a suffix on the quantifier.</content></text>
+					<text show="swNPClassifierSpecificQPosOtherCont"><content> It may also occur ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificQPosOther"/><content>. </content></text>
+					<text show="swNPClassifierSpecificQPosOtherOnly"><content>occurs ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificQPosOther"/><content>. </content></text>	
+				</text></p>
+			
+			
 		</section2>
 		<section2 id="sNPAdjP">
 			<secTitle>Adjective Phrases</secTitle>
@@ -584,7 +705,33 @@
 			<example>
 				<interlinear exampleLoc="np/adjpExample"/>
 			</example>
-		
+			<p show="swOTClassifierSpecific"><content>In these nominal phrases with adjectives, </content>
+				<case element="np" attr="classifierPresentAdj"><caseText value="yes"> a classifier is required.</caseText>
+					<caseText value="some"> a classifier is present in some nominal phrases of this type, but is not required in all of them.</caseText>
+					<caseText value="no"> a classifier is never used.</caseText></case>
+				<text show="swOTClassifierSpecificAndNPClassifierPresentAdjYesOrSome"><content> The classifier </content>
+					<text show="swNPClassifierSpecificAdjPosBeforeBothOnly"><content>occurs before both the adjective and the noun.</content></text>
+					<text show="swNPClassifierSpecificAdjPosBeforeBothAnd"><content>may occur before both the adjective and the noun.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterBothCont"><content> It also occurs after both the noun and the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterBothOnly"><content>occurs after both the noun and the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterBothAnd"><content>may occur after both the noun and the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterAdjBeforeNCont"><content> It also occurs after the adjective but before the noun.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterAdjBeforeNOnly"><content>occurs after the adjective but before the noun.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterAdjBeforeNAnd"><content>may occur after the adjective but before the noun.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterNBeforeAdjCont"><content> It also occurs after the noun but before the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterNBeforeAdjOnly"><content>occurs after the noun but before the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosAfterNBeforeAdjAnd"><content>may occur after the noun but before the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosPrefixAdjCont"><content> It may also attach as a prefix on the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosPrefixAdjOnly"><content>attaches as a prefix on the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosPrefixAdjAnd"><content>may attach as a prefix on the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosSuffixAdjCont"><content> It may also attach as a suffix on the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosSuffixAdjOnly"><content>attaches as a suffix on the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosSuffixAdjAnd"><content>may attach as a suffix on the adjective.</content></text>
+					<text show="swNPClassifierSpecificAdjPosOtherCont"><content> It may also occur ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificAdjPosOther"/><content>. </content></text>
+					<text show="swNPClassifierSpecificAdjPosOtherOnly"><content>occurs ___</content><contentCheckBoxOther contentLoc="np/classifierSpecificAdjPosOther"/><content>. </content></text>	
+				</text></p>
+			
+			
 		</section2>
 		<section2 id="sNPPP">
 			<secTitle>            <case  element="pp" attr="pPos">
@@ -723,10 +870,51 @@
    
 </section2>		
 	</section1>
-   <showWhen id="swNPPossCooccurNoOrSome">
+	<showWhen id="swNPArtAgreementNumberYes">
+	<whenValue element="np" attr="agreeNumber" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="artPl" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtAgreementNumberNo">
+		<whenValue element="np" attr="agreeNumber" value="no"/>
+		<or/>
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="artPl" value="no"/>
+	</showWhen>
+	<showWhen id="swNPDemAgreementNumberYes">
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="demPl" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPDemAgreementNumberNo">
+		<whenValue element="np" attr="agreeNumber" value="no"/>
+		<or/>
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="demPl" value="no"/>
+	</showWhen>
+	<showWhen id="swNPArtOrDemAgreementNumberYes">
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="artPl" value="yes"/>
+	<or/>
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="demPl" value="yes"/>
+	</showWhen>
+	<showWhen id="swNPArtOrDemAgreementNumberNo">
+		<whenValue element="np" attr="agreeNumber" value="no"/>
+		<or/>
+		<whenValue element="np" attr="agreeNumber" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="artPl" value="no"/>
+		<and/>
+		<whenValue element="np" attr="demPl" value="no"/>
+	</showWhen>
+
+	<showWhen id="swNPPossCooccurNo">
       <whenValue element="np" attr="possCooccur" value="no"/>
-      <or/>
-      <whenValue element="np" attr="possCooccur" value="some"/>
    </showWhen>
    <showWhen id="swPossDemAndArtCooccurYesOrSome">
       <whenValue element="np" attr="artAndDem" value="both"/>
@@ -2248,4 +2436,1878 @@
       <or/>
       <whenValue element="qp" attr="npDegreeClassifier" value="yes" negateValue="yes"/>
    </showWhen>
+
+	
+	<showWhen id="swOTClassifierSpecificAndQPNPDegreeYesOrSome">
+	<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+	<whenValue element="qp" attr="npDegree" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="some"/>
+	</showWhen>	
+	<showWhen id="swOTClassifierSpecificAndQPNPDegreeYesOrSomeAndNPClassifierPresentYesOrSome">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresent" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="some"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresent" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="yes"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresent" value="some"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="qp" attr="npDegree" value="some"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresent" value="some"/>
+	</showWhen>
+		<showWhen id="swNPClassifierSpecificPosBeforeBothOnly">
+			<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+			<and/>
+			<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="no"/>
+		</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosBeforeBothAnd">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterBothCont">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterBothOnly">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterBothAnd">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterQBeforeNCont">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterQBeforeNOnly">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterQBeforeNAnd">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterNBeforeQCont">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterNBeforeQOnly">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosAfterNBeforeQAnd">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosPrefixQCont">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosPrefixQOnly">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosPrefixQAnd">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosSuffixQCont">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosSuffixQOnly">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosSuffixQAnd">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosOtherCont">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificPosOtherOnly">
+		<whenValue element="np/classifierSpecificPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+
+	<showWhen id="swOTClassifierSpecificAndNPArtAndDemDem">
+	<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+	<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+	</showWhen>	
+	<showWhen id="swOTClassifierSpecificAndNPArtAndDemDemAndNPClassifierPresentDemYesOrSome">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresentDem" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="np" attr="artAndDem" value="demonstrative"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresentDem" value="some"/>
+	</showWhen>
+		<showWhen id="swNPClassifierSpecificDemPosBeforeBothOnly">
+			<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="no"/>
+		</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosBeforeBothAnd">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterBothCont">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterBothOnly">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterBothAnd">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterDemBeforeNCont">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterDemBeforeNOnly">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterDemBeforeNAnd">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterNBeforeDemCont">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterNBeforeDemOnly">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosAfterNBeforeDemAnd">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosPrefixDemCont">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosPrefixDemOnly">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosPrefixDemAnd">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosSuffixDemCont">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosSuffixDemOnly">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosSuffixDemAnd">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosOtherCont">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemPosOtherOnly">
+		<whenValue element="np/classifierSpecificDemPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	
+	<showWhen id="swOTClassifierSpecificAndNPArtAndDemBoth">
+	<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+	<whenValue element="np" attr="artAndDem" value="both"/>
+	</showWhen>	
+	<showWhen id="swOTClassifierSpecificAndNPArtAndDemBothAndNPClassifierPresentDemBothYesOrSome">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresentDemBoth" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="np" attr="artAndDem" value="both"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresentDemBoth" value="some"/>
+	</showWhen>
+		<showWhen id="swNPClassifierSpecificDemBothPosBeforeBothOnly">
+			<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="no"/>
+		</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosBeforeBothAnd">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterBothCont">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterBothOnly">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterBothAnd">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterDemBeforeNCont">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterDemBeforeNOnly">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterDemBeforeNAnd">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterNBeforeDemCont">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterNBeforeDemOnly">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosAfterNBeforeDemAnd">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosPrefixDemCont">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosPrefixDemOnly">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosPrefixDemAnd">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosSuffixDemCont">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosSuffixDemOnly">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosSuffixDemAnd">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosOtherCont">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificDemBothPosOtherOnly">
+		<whenValue element="np/classifierSpecificDemBothPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterDemBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosAfterNBeforeDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosPrefixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosSuffixDem"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificDemBothPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	
+	<showWhen id="swOTClassifierSpecific">
+	<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+	</showWhen>	
+	<showWhen id="swOTClassifierSpecificAndNPClassifierPresentQYesOrSome">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresentQ" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresentQ" value="some"/>
+	</showWhen>
+		<showWhen id="swNPClassifierSpecificQPosBeforeBothOnly">
+			<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+			<and/>
+			<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="no"/>
+		</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosBeforeBothAnd">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterBothCont">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterBothOnly">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterBothAnd">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterQBeforeNCont">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterQBeforeNOnly">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterQBeforeNAnd">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterNBeforeQCont">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterNBeforeQOnly">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosAfterNBeforeQAnd">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosPrefixQCont">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosPrefixQOnly">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosPrefixQAnd">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosSuffixQCont">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosSuffixQOnly">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosSuffixQAnd">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosOtherCont">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificQPosOtherOnly">
+		<whenValue element="np/classifierSpecificQPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterQBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosAfterNBeforeQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosPrefixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosSuffixQ"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificQPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+
+	<showWhen id="swOTClassifierSpecificAndNPClassifierPresentAdjYesOrSome">
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresentAdj" value="yes"/>
+		<or/>
+		<whenValue element="typology" attr="classifier" value="yesSpecific"/>
+		<and/>
+		<whenValue element="np" attr="classifierPresentAdj" value="some"/>
+	</showWhen>
+		<showWhen id="swNPClassifierSpecificAdjPosBeforeBothOnly">
+			<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+			<and/>
+			<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="no"/>
+			<and/>
+			<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="no"/>
+		</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosBeforeBothAnd">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterBothCont">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterBothOnly">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterBothAnd">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterAdjBeforeNCont">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterAdjBeforeNOnly">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterAdjBeforeNAnd">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterNBeforeAdjCont">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterNBeforeAdjOnly">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosAfterNBeforeAdjAnd">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosPrefixAdjCont">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosPrefixAdjOnly">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosPrefixAdjAnd">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosSuffixAdjCont">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosSuffixAdjOnly">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="no"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosSuffixAdjAnd">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosOtherCont">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+		<or/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+	<showWhen id="swNPClassifierSpecificAdjPosOtherOnly">
+		<whenValue element="np/classifierSpecificAdjPosBeforeBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterBoth"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterAdjBeforeN"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosAfterNBeforeAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosPrefixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosSuffixAdj"  attr="checked" value="no"/>
+		<and/>
+		<whenValue element="np/classifierSpecificAdjPosOther"  attr="checked" value="yes"/>
+	</showWhen>	
+
+
 </portion>

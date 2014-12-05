@@ -12,13 +12,13 @@ Note that the grammar write up will also contain some statements based on the de
   These should be in the normal word order with no special characteristics, such as <technicalTermRef term="ttFocus"/>, 
 <technicalTermRef term="ttTopic"/>, <technicalTermRef term="ttPassive"/> or other <technicalTermRef term="ttVoice"/> changes, <technicalTermRef term="ttImperative"/>, <technicalTermRef term="ttInterrogative"/>, or <technicalTermRef term="ttNegation"/>.  Further, choose sentences with proper names 
 or simple nominal phrases in the subject and direct object positions, rather than pronouns.  Finally, choose sentences that have an <technicalTermRef term="ttAgent"/>, rather than an <technicalTermRef term="ttExperiencer"/>, as the subject, as in the English examples given here.
-(Do not key in the brackets and subscripts like the example has - these are for your information only.)</instruction>
+</instruction>
     <EnglishExample>
         <exItem label="1.">[John]<sub>S</sub> [hit]<sub>V</sub> [the ball]<sub>O</sub>.</exItem>
         <exItem label="2.">[The dog]<sub>S</sub> [buried]<sub>V</sub> [a bone]<sub>O</sub>.</exItem>
     </EnglishExample>
     <form section="typology">
-        <prompt>Key your examples here:</prompt>
+        <prompt>Key your examples here:  (Do not key in the brackets and subscripts like the examples have - those are for your information only.)</prompt>
         <textBox id="OTExample" dataItem="example" cols="50"/>
         <radioGroup>
             <groupName dataItem="wordOrder" default="SVO">RTypology</groupName>

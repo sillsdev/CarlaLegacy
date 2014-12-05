@@ -10,61 +10,53 @@ PP = (InitConj) PP_1 Conj PP_2
 	&lt;PP option&gt; = conj
 </rule>
    <showWhen id="PPoptionconj">
-	  <whenValue element="coord" attr="conjWord" value="no" negateValue="yes"/>
+      <whenValue element="coord" attr="conjWord" value="no" negateValue="yes"/>
    </showWhen>
    <rule show="PPoptionconjPrefix">
-	  rule {PP option conjPrefix - conjoined PPs}
-	  PP = PP_1  PP_2
-	  &lt;PP head&gt; = &lt;PP_2 head&gt;
-	  &lt;PP conjoined&gt; = +
-	  &lt;PP_1 conjoined&gt; = -	|limit recursion
-	  &lt;PP_2 head type prefix conj&gt; = +
-	  &lt;PP option&gt; = conjPrefix
+      rule {PP option conjPrefix - conjoined PPs}
+      PP = PP_1  PP_2
+      &lt;PP head&gt; = &lt;PP_2 head&gt;
+      &lt;PP conjoined&gt; = +
+      &lt;PP_1 conjoined&gt; = -	|limit recursion
+      &lt;PP_2 head type prefix conj&gt; = +
+      &lt;PP option&gt; = conjPrefix
    </rule>
    <showWhen id="PPoptionconjPrefix">
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="before"/>
-	  <or/>
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="either"/>
+      <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+      <and/>
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
    </showWhen>
    <rule show="PPoptionconjSuffix">
-	  rule {PP option conjSuffix - conjoined PPs}
-	  PP = PP_1  PP_2
-	  &lt;PP head&gt; = &lt;PP_2 head&gt;
-	  &lt;PP conjoined&gt; = +
-	  &lt;PP_1 conjoined&gt; = -	|limit recursion
-	  &lt;PP_1 head type suffix conj&gt; = +
-	  &lt;PP option&gt; = conjSuffix
+      rule {PP option conjSuffix - conjoined PPs}
+      PP = PP_1  PP_2
+      &lt;PP head&gt; = &lt;PP_2 head&gt;
+      &lt;PP conjoined&gt; = +
+      &lt;PP_1 conjoined&gt; = -	|limit recursion
+      &lt;PP_1 head type suffix conj&gt; = +
+      &lt;PP option&gt; = conjSuffix
    </rule>
    <showWhen id="PPoptionconjSuffix">
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="after"/>
-	  <or/>
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="either"/>
+      <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
    </showWhen>
    <rule show="PPoptionconjNone">
-	  rule {PP option conjNone - conjoined PPs}
-	  PP = PP_1  PP_2
-	  &lt;PP head&gt; = &lt;PP_2 head&gt;
-	  &lt;PP conjoined&gt; = +
-	  &lt;PP_1 conjoined&gt; = -	|limit recursion
-	  &lt;PP_2 head type prefix conj&gt; = -
-	  &lt;PP_1 head type suffix conj&gt; = -
-	  &lt;PP_1 head type comma&gt; = -
-	  &lt;PP option&gt; = conjNone
+      rule {PP option conjNone - conjoined PPs}
+      PP = PP_1  PP_2
+      &lt;PP head&gt; = &lt;PP_2 head&gt;
+      &lt;PP conjoined&gt; = +
+      &lt;PP_1 conjoined&gt; = -	|limit recursion
+      &lt;PP_2 head type prefix conj&gt; = -
+      &lt;PP_1 head type suffix conj&gt; = -
+      &lt;PP_1 head type comma&gt; = -
+      &lt;PP option&gt; = conjNone
    </rule>
    <showWhen id="PPoptionconjNone">
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="other"/>
-	  <or/>
-	  <whenValue element="coord" attr="noConj" value="yes" negateValue="no"/>
+      <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+       <and/>
+       <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+       <or/>
+       <whenValue element="coord" attr="noConj" value="yes" negateValue="no"/>
    </showWhen>
    <rule>
 rule {PP option 0 - no modifiers}
@@ -72,7 +64,7 @@ PP = P'
 	&lt;PP head&gt; = &lt;P' head&gt;
 	&lt;PP option&gt; = 0
 </rule>
-	<rule show="PPoption1a">
+    <rule show="PPoption1a">
 rule {PP option 1a - degree word before}
 PP = Deg P'
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -81,128 +73,14 @@ PP = Deg P'
 	&lt;Deg head type comma&gt; = -
 	&lt;PP option&gt; = 1a
 </rule>
-	<showWhen id="PPoption1a">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="before" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption1b">
+    <showWhen id="PPoption1a">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierDegree" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppDegreePosBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption1b">
 rule {PP option 1b - degree word after}
 PP = P' Deg
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -212,128 +90,14 @@ PP = P' Deg
 	&lt;PP head type comma&gt; &lt;= &lt;Deg head type comma&gt;
 	&lt;PP option&gt; = 1b
 </rule>
-	<showWhen id="PPoption1b">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="after" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption1c">
+    <showWhen id="PPoption1b">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierDegree" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppDegreePosAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption1c">
 rule {PP option 1c - degree word both sides}
 PP = Deg_1 P' Deg_2
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -346,32 +110,14 @@ PP = Deg_1 P' Deg_2
 	&lt;PP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
 	&lt;PP option&gt; = 1c
 </rule>
-	<showWhen id="PPoption1c">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degree" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption2a">
+    <showWhen id="PPoption1c">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierDegree" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppDegreePosBoth" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption2a">
 rule {PP option 2a - adverbial before}
 PP = AdvP P'
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -380,152 +126,14 @@ PP = AdvP P'
 	&lt;AdvP head type comma&gt; = -
 	&lt;PP option&gt; = 2a
 </rule>
-	<showWhen id="PPoption2a">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	   <or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption2b">
+    <showWhen id="PPoption2a">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierManner" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppMannerPosBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption2b">
 rule {PP option 2b - adverbial after}
 PP = P' AdvP
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -535,152 +143,14 @@ PP = P' AdvP
 	&lt;PP head type comma&gt; &lt;= &lt;AdvP head type comma&gt;
 	&lt;PP option&gt; = 2b
 </rule>
-	<showWhen id="PPoption2b">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-	   <or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption2c">
+    <showWhen id="PPoption2b">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierManner" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppMannerPosAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption2c">
 rule {PP option 2c - adverbial both sides}
 PP = AdvP_1 P' AdvP_2
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -693,32 +163,14 @@ PP = AdvP_1 P' AdvP_2
 	&lt;PP head type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
 	&lt;PP option&gt; = 2c
 </rule>
-	<showWhen id="PPoption2c">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="manner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	   </showWhen>
-	 <rule show="PPoption2aLoc">
+    <showWhen id="PPoption2c">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierManner" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppMannerPosBoth" attr="checked" value="yes"/>
+    </showWhen>
+     <rule show="PPoption2aLoc">
 rule {PP option 2aLoc - locative adverbial before}
 PP = AdvP P'
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -727,80 +179,14 @@ PP = AdvP P'
 	&lt;AdvP head type comma&gt; = -
 	&lt;PP option&gt; = 2aLoc
 </rule>
-	<showWhen id="PPoption2aLoc">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="beforeOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="before" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption2bLoc">
+    <showWhen id="PPoption2aLoc">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierLocative" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppLocativePosBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption2bLoc">
 rule {PP option 2bLoc - locativeadverbial after}
 PP = P' AdvP
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -810,80 +196,14 @@ PP = P' AdvP
 	&lt;PP head type comma&gt; &lt;= &lt;AdvP head type comma&gt;
 	&lt;PP option&gt; = 2bLoc
 </rule>
-	<showWhen id="PPoption2bLoc">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="afterOrBoth" negateValue="no"/>
-	  <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="after" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="afterOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="after" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="afterOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption2cLoc">
+    <showWhen id="PPoption2bLoc">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierLocative" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppLocativePosAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption2cLoc">
 rule {PP option 2cLoc - locative adverbial both sides}
 PP = AdvP_1 P' AdvP_2
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -896,32 +216,14 @@ PP = AdvP_1 P' AdvP_2
 	&lt;PP head type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
 	&lt;PP option&gt; = 2cLoc
 </rule>
-	<showWhen id="PPoption2cLoc">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="locative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="locativePos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption3a">
+    <showWhen id="PPoption2cLoc">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierLocative" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppLocativePosBoth" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption3a">
 rule {PP option 3a - ordinal before}
 PP = AdjP P'
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -930,128 +232,14 @@ PP = AdjP P'
 	&lt;AdjP head type comma&gt; = -
 	&lt;PP option&gt; = 3a
 </rule>
-	<showWhen id="PPoption3a">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="before" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption3b">
+    <showWhen id="PPoption3a">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierOrdinal" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppOrdinalPosBefore" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption3b">
 rule {PP option 3b - ordinal after}
 PP = P' AdjP
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -1061,128 +249,14 @@ PP = P' AdjP
 	&lt;PP head type comma&gt; &lt;= &lt;AdjP head type comma&gt;
 	&lt;PP option&gt; = 3b
 </rule>
-	<showWhen id="PPoption3b">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="after" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="either" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-	   <or/>
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption3c">
+    <showWhen id="PPoption3b">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierOrdinal" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppOrdinalPosAfter" attr="checked" value="yes"/>
+    </showWhen>
+    <rule show="PPoption3c">
 rule {PP option 3c - ordinal both sides}
 PP = AdjP_1 P' AdjP_2
 	&lt;PP head&gt; = &lt;P' head&gt;
@@ -1195,736 +269,18 @@ PP = AdjP_1 P' AdjP_2
 	&lt;PP head type comma&gt; &lt;= &lt;AdjP_2 head type comma&gt;
 	&lt;PP option&gt; = 3c
 </rule>
-	<showWhen id="PPoption3c">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="ordinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption4a">
-rule {PP option 4a - degree word or adverbial both sides}
-PP = {Deg_1 / AdvP_1} P' {Deg_2 / AdvP_2}
-	&lt;PP head&gt; = &lt;P' head&gt;
-	&lt;Deg_1 head type modifies_PP&gt; = +
-	&lt;Deg_1 head type PP-initial&gt; = +
-	&lt;AdvP_1 head type manner&gt; = +
-	&lt;AdvP_1 head type PP-initial&gt; = +
-	&lt;Deg_2 head type modifies_PP&gt; = +
-	&lt;Deg_2 head type PP-final&gt; = +
-	&lt;AdvP_2 head type manner&gt; = +
-	&lt;AdvP_2 head type PP-final&gt; = +
-	&lt;Deg_1 head type comma&gt; = -
-	&lt;AdvP_1 head type comma&gt; = -
-	&lt;P' head type comma&gt; = -
-	&lt;PP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;PP head type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
-	&lt;PP option&gt; = 4a
-</rule>
-	<showWhen id="PPoption4a">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrboth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrboth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndManner" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption4b">
-rule {PP option 4b - degree word or ordinal both sides}
-PP = {Deg_1 / AdjP_1} P' {Deg_2 / AdjP_2}
-	&lt;PP head&gt; = &lt;P' head&gt;
-	&lt;Deg_1 head type modifies_PP&gt; = +
-	&lt;Deg_1 head type PP-initial&gt; = +
-	&lt;AdjP_1 head type ordinal&gt; = +
-	&lt;AdjP_1 head type PP-initial&gt; = +
-	&lt;Deg_2 head type modifies_PP&gt; = +
-	&lt;Deg_2 head type PP-final&gt; = +
-	&lt;AdjP_2 head type ordinal&gt; = +
-	&lt;AdjP_2 head type PP-final&gt; = +
-	&lt;Deg_1 head type comma&gt; = -
-	&lt;AdjP_1 head type comma&gt; = -
-	&lt;P' head type comma&gt; = -
-	&lt;PP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;PP head type comma&gt; &lt;= &lt;AdjP_2 head type comma&gt;
-	&lt;PP option&gt; = 4b
-</rule>
-	<showWhen id="PPoption4b">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrboth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrboth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="degreeAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-	<rule show="PPoption4c">
-rule {PP option 4c - ordinal or adverbial both sides}
-PP = {AdjP_1 / AdvP_1} P' {AdjP_2 / AdvP_2}
-	&lt;PP head&gt; = &lt;P' head&gt;
-	&lt;AdjP_1 head type ordinal&gt; = +
-	&lt;AdjP_1 head type PP-initial&gt; = +
-	&lt;AdvP_1 head type manner&gt; = +
-	&lt;AdvP_1 head type PP-initial&gt; = +
-	&lt;AdjP_2 head type ordinal&gt; = +
-	&lt;AdjP_2 head type PP-final&gt; = +
-	&lt;AdvP_2 head type manner&gt; = +
-	&lt;AdvP_2 head type PP-final&gt; = +
-	&lt;AdjP_1 head type comma&gt; = -
-	&lt;AdvP_1 head type comma&gt; = -
-	&lt;P' head type comma&gt; = -
-	&lt;PP head type comma&gt; &lt;= &lt;AdjP_2 head type comma&gt;
-	&lt;PP head type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
-	&lt;PP option&gt; = 4c
-</rule>
-	<showWhen id="PPoption4c">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrboth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrboth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="afterOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="eitherOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-		<or/>
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="mannerAndOrdinal" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="beforeOrBoth" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	</showWhen>
-   <rule show="PPoption4cLoc">
-	  rule {PP option 4cLoc - locative or manner adverbial both sides}
-	  PP = {AdvP_1 / AdvP_2} P' {AdvP_3 / AdvP_4}
-	  &lt;PP head&gt; = &lt;P' head&gt;
-	  &lt;AdvP_1 head type locative&gt; = +
-	  &lt;AdvP_1 head type PP-initial&gt; = +
-	  &lt;AdvP_2 head type manner&gt; = +
-	  &lt;AdvP_2 head type PP-initial&gt; = +
-	  &lt;AdvP_3 head type locative&gt; = +
-	  &lt;AdvP_3 head type PP-final&gt; = +
-	  &lt;AdvP_4 head type manner&gt; = +
-	  &lt;AdvP_4 head type PP-final&gt; = +
-	  &lt;AdvP_1 head type comma&gt; = -
-	  &lt;AdvP_2 head type comma&gt; = -
-	  &lt;P' head type comma&gt; = -
-	  &lt;PP head type comma&gt; &lt;= &lt;AdvP_3 head type comma&gt;
-	  &lt;PP head type comma&gt; &lt;= &lt;AdvP_4 head type comma&gt;
-	  &lt;PP option&gt; = 4cLoc
-   </rule>
-   <showWhen id="PPoption4cLoc">
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="both" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="afterOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="beforeOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="both" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="both" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="afterOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="beforeOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="afterOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="both" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="afterOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="eitherOrboth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="eitherOrboth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="beforeOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="eitherOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="both" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="afterOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="eitherOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-	  <or/>
-	  <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="modifierType" value="mannerAndLocative" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="locativePos" value="beforeOrBoth" negateValue="no"/>
-	  <and/>
-	  <whenValue element="pp" attr="mannerPos" value="beforeOrBoth" negateValue="no"/>
-   </showWhen>
-   <rule show="PPoption4d">
-rule {PP option 4d - degree word or ordinal or adverbial both sides}
-PP = {Deg_1 / AdjP_1 / AdvP_1} P' {Deg_2 / AdjP_2 / AdvP_2}
-	&lt;PP head&gt; = &lt;P' head&gt;
-	&lt;Deg_1 head type modifies_PP&gt; = +
-	&lt;Deg_1 head type PP-initial&gt; = +
-	&lt;AdjP_1 head type ordinal&gt; = +
-	&lt;AdjP_1 head type PP-initial&gt; = +
-	&lt;AdvP_1 head type manner&gt; = +
-	&lt;AdvP_1 head type PP-initial&gt; = +
-	&lt;Deg_2 head type modifies_PP&gt; = +
-	&lt;Deg_2 head type PP-final&gt; = +
-	&lt;AdjP_2 head type ordinal&gt; = +
-	&lt;AdjP_2 head type PP-final&gt; = +
-	&lt;AdvP_2 head type manner&gt; = +
-	&lt;AdvP_2 head type PP-final&gt; = +
-	&lt;Deg_1 head type comma&gt; = -
-	&lt;AdjP_1 head type comma&gt; = -
-	&lt;AdvP_1 head type comma&gt; = -
-	&lt;P' head type comma&gt; = -
-	&lt;PP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;PP head type comma&gt; &lt;= &lt;AdjP_2 head type comma&gt;
-	&lt;PP head type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
-	&lt;PP option&gt; = 4d
-</rule>
-	<showWhen id="PPoption4d">
-	   <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="modifierType" value="all" negateValue="no"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	  <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	  <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="either" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="either" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="either" negateValue="yes"/>
-   </showWhen>
-	<rule show="PPoption4e">
-rule {PP option 4e - degree word or ordinal or manner or lacative adverbial both sides}
-PP = {Deg_1 / AdjP_1 / AdvP_1 / AdvP_2} P' {Deg_2 / AdjP_2 / AdvP_3 / AdvP_4}
-	&lt;PP head&gt; = &lt;P' head&gt;
-	&lt;Deg_1 head type modifies_PP&gt; = +
-	&lt;Deg_1 head type PP-initial&gt; = +
-	&lt;AdjP_1 head type ordinal&gt; = +
-	&lt;AdjP_1 head type PP-initial&gt; = +
-	&lt;AdvP_1 head type manner&gt; = +
-	&lt;AdvP_1 head type PP-initial&gt; = +
-	&lt;AdvP_2 head type locative&gt; = +
-	&lt;AdvP_2 head type PP-initial&gt; = +
-	&lt;Deg_2 head type modifies_PP&gt; = +
-	&lt;Deg_2 head type PP-final&gt; = +
-	&lt;AdjP_2 head type ordinal&gt; = +
-	&lt;AdjP_2 head type PP-final&gt; = +
-	&lt;AdvP_3 head type manner&gt; = +
-	&lt;AdvP_3 head type PP-final&gt; = +
-	&lt;AdvP_4 head type locative&gt; = +
-	&lt;AdvP_4 head type PP-final&gt; = +
-	&lt;Deg_1 head type comma&gt; = -
-	&lt;AdjP_1 head type comma&gt; = -
-	&lt;AdvP_1 head type comma&gt; = -
-	&lt;AdvP_2 head type comma&gt; = -
-	&lt;P' head type comma&gt; = -
-	&lt;PP head type comma&gt; &lt;= &lt;Deg_2 head type comma&gt;
-	&lt;PP head type comma&gt; &lt;= &lt;AdjP_2 head type comma&gt;
-	&lt;PP head type comma&gt; &lt;= &lt;AdvP_3 head type comma&gt;
-	&lt;PP head type comma&gt; &lt;= &lt;AdvP_4 head type comma&gt;
-	&lt;PP option&gt; = 4e
-</rule>
-	<showWhen id="PPoption4e">
-		<whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="modifierType" value="all4" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="ordinalPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="degreePos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="mannerPos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="before" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="after" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="ordinalPos" value="either" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="degreePos" value="either" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="mannerPos" value="either" negateValue="yes"/>
-	   <and/>
-	   <whenValue element="pp" attr="locativePos" value="either" negateValue="yes"/>
-	</showWhen>
-	<!--
+    <showWhen id="PPoption3c">
+        <whenValue element="pp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/>
+        <whenValue element="pp/ppModifierOrdinal" attr="checked" value="yes"/>
+        <and/>
+        <whenValue element="pp/ppOrdinalPosBoth" attr="checked" value="yes"/>
+    </showWhen>
+    <!--
 |*********************************************************
-| use appropriate case versions, then locative,
+| use appropriate case versions, then locative, 
 | IP and stranded and prefix/suffix as needed-->
-	<rule show="PBaroption1a">
+    <rule show="PBaroption1a">
 rule {PBar option 1a - prepositions, accusative DP complement}
 P' = P DP
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -1941,20 +297,32 @@ P' = P DP
 	&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
 	&lt;P' option&gt; = 1a
 </rule>
-	<showWhen id="PBaroption1a">
-		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="before"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1aA">
+    <showWhen id="PBaroption1a">
+        <whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+ <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+    </showWhen>
+    <rule show="PBaroption1aA">
 rule {PBar option 1aA - prepositions, absolutive DP complement}
 P' = P DP
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -1972,32 +340,56 @@ P' = P DP
 	&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
 	&lt;P' option&gt; = 1aA
 </rule>
-	<showWhen id="PBaroption1aA">
-		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="before"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="before"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1aE">
+    <showWhen id="PBaroption1aA">
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+<or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+    </showWhen>
+    <rule show="PBaroption1aE">
 rule {PBar option 1aE - prepositions, ergative DP complement}
 P' = P DP
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2015,32 +407,56 @@ P' = P DP
 	&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
 	&lt;P' option&gt; = 1aE
 </rule>
-	<showWhen id="PBaroption1aE">
-		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="before"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="before"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1aG">
+    <showWhen id="PBaroption1aE">
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+ <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+    </showWhen>
+    <rule show="PBaroption1aG">
 rule {PBar option 1aG - prepositions, genitive DP complement}
 P' = P DP
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2058,63 +474,83 @@ P' = P DP
 	&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
 	&lt;P' option&gt; = 1aG
 </rule>
-	<showWhen id="PBaroption1aG">
-		<whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="before"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="before"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1aD">
+    <showWhen id="PBaroption1aG">
+        <whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+        <or/>
+        <whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word"/>
+<or/>
+        <whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+        <or/>
+        <whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="both"/>
+    </showWhen>
+    <rule show="PBaroption1aD">
 rule {PBar option 1aD - prepositions, dative DP complement}
 P' = P DP
-		&lt;P' head&gt; = &lt;P head&gt;
-		&lt;P' head object&gt; = &lt;DP&gt;
-		&lt;P head type PP-initial&gt; = +
-		&lt;DP head case&gt; = dative
-		&lt;DP head type relative&gt; = -		| no relative clauses, use IP rule
-		&lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
-		&lt;P' head type stranded&gt; = -		| not missing a complement
-		&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;P head type comma&gt; = -
-		&lt;P' head type comma&gt; &lt;= &lt;DP head type comma&gt;
-		&lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
-		&lt;P' option&gt; = 1aD
-	</rule>
-	<showWhen id="PBaroption1aD">
-		<whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="before"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1b">
+        &lt;P' head&gt; = &lt;P head&gt;
+        &lt;P' head object&gt; = &lt;DP&gt;
+        &lt;P head type PP-initial&gt; = +
+        &lt;DP head case&gt; = dative
+        &lt;DP head type relative&gt; = -		| no relative clauses, use IP rule
+        &lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
+        &lt;P' head type stranded&gt; = -		| not missing a complement
+        &lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
+        &lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+        &lt;DP head type suffix copular&gt; = -
+        &lt;P head type comma&gt; = -
+        &lt;P' head type comma&gt; &lt;= &lt;DP head type comma&gt;
+        &lt;P' head type suffix poss&gt; &lt;= &lt;DP head type suffix poss&gt;
+        &lt;P' option&gt; = 1aD
+    </rule>
+    <showWhen id="PBaroption1aD">
+        <whenValue element="pp" attr="pPos" value="before"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+    </showWhen>
+    <rule show="PBaroption1b">
 rule {PBar option 1b - postpositions, accusative DP complement}
 P' = DP P
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2124,26 +560,26 @@ P' = DP P
 	&lt;DP head type relative&gt; = -		| no relative clauses, use IP rule
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars   
 	&lt;DP head type suffix copular&gt; = -
 	&lt;DP head type comma&gt; = -
 	&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
 	&lt;P' option&gt; = 1b
 </rule>
-	<showWhen id="PBaroption1b">
-		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="after"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1bA">
+    <showWhen id="PBaroption1b">
+        <whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="after"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+    </showWhen>
+    <rule show="PBaroption1bA">
 rule {PBar option 1bA - postpositions, absolutive DP complement}
 P' = DP P
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2154,38 +590,38 @@ P' = DP P
 	&lt;P' head type absolutive_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars   
 	&lt;DP head type suffix copular&gt; = -
 	&lt;DP head type comma&gt; = -
 	&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
 	&lt;P' option&gt; = 1bA
 </rule>
-	<showWhen id="PBaroption1bA">
-		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="after"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="after"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1bE">
+    <showWhen id="PBaroption1bA">
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="after"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="after"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+    </showWhen>
+    <rule show="PBaroption1bE">
 rule {PBar option 1bE - postpositions, ergative DP complement}
 P' = DP P
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2196,68 +632,68 @@ P' = DP P
 	&lt;P' head type ergative_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars   
 	&lt;DP head type suffix copular&gt; = -
 	&lt;DP head type comma&gt; = -
 	&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
 	&lt;P' option&gt; = 1bE
 </rule>
-	<showWhen id="PBaroption1bE">
-		<whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="after"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="split" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="after"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1bG">
-		rule {PBar option 1bG - postpositions, genitive DP complement}
-		P' = DP P
-		&lt;P' head&gt; = &lt;P head&gt;
-		&lt;P' head object&gt; = &lt;DP&gt;
-		&lt;P head type PP-final&gt; = +
-		&lt;DP head case&gt; = genitive
-		&lt;DP head type relative&gt; = -		| no relative clauses, use IP rule
-		&lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
-		&lt;P' head type stranded&gt; = -		| not missing a complement
-		&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-		&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
-		&lt;DP head type suffix copular&gt; = -
-		&lt;DP head type comma&gt; = -
-		&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
-		&lt;P' option&gt; = 1bG
-	</rule>
-	<showWhen id="PBaroption1bG">
-		<whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="after"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="after"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption1bD">
+    <showWhen id="PBaroption1bE">
+        <whenValue element="typology" attr="case" value="ergative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="after"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="split" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="after"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+    </showWhen>
+    <rule show="PBaroption1bG">
+        rule {PBar option 1bG - postpositions, genitive DP complement}
+        P' = DP P
+        &lt;P' head&gt; = &lt;P head&gt;
+        &lt;P' head object&gt; = &lt;DP&gt;
+        &lt;P head type PP-final&gt; = +
+        &lt;DP head case&gt; = genitive
+        &lt;DP head type relative&gt; = -		| no relative clauses, use IP rule
+        &lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
+        &lt;P' head type stranded&gt; = -		| not missing a complement
+        &lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
+        &lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars   
+        &lt;DP head type suffix copular&gt; = -
+        &lt;DP head type comma&gt; = -
+        &lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
+        &lt;P' option&gt; = 1bG
+    </rule>
+    <showWhen id="PBaroption1bG">
+        <whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="after"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="after"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="np" attr="possCaseErg" value="genitive" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+    </showWhen>
+    <rule show="PBaroption1bD">
 rule {PBar option 1bD - postpositions, dative DP complement}
 P' = DP P
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2268,26 +704,22 @@ P' = DP P
 	&lt;P' head type genitive_PP&gt; = +        | for restricting w/ possessor
 	&lt;P' head type stranded&gt; = -		| not missing a complement
 	&lt;P' head type wh&gt; = &lt;DP head type wh&gt;	| wh for pied-piping
-	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars   
 	&lt;DP head type suffix copular&gt; = -
 	&lt;DP head type comma&gt; = -
 	&lt;P' head type prefix poss&gt; &lt;= &lt;DP head type prefix poss&gt;
 	&lt;P' option&gt; = 1bD
 </rule>
-	<showWhen id="PBaroption1bD">
-		<whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="after"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="typology" attr="case" value="nominative" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pPos" value="both"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption2a">
+    <showWhen id="PBaroption1bD">
+        <whenValue element="pp" attr="pPos" value="after"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="pp" attr="pPos" value="both"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value=" clitic" negateValue="yes"/>
+    </showWhen>
+    <rule show="PBaroption2a">
 rule {PBar option 2a - prepositions, locative AdvP complement}
 P' = P AdvP
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2302,20 +734,20 @@ P' = P AdvP
 	&lt;P' head type sentential&gt; &lt;= -
 	&lt;P' option&gt; = 2a
 </rule>
-	<showWhen id="PBaroption2a">
-		<whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="locative" value="yes"/>
-		<or/>
-		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="locative" value="yes"/>
-	</showWhen>
-	<rule show="PBaroption2b">
+    <showWhen id="PBaroption2a">
+        <whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="locative" value="yes"/>
+        <or/>
+        <whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="locative" value="yes"/>
+    </showWhen>
+    <rule show="PBaroption2b">
 rule {PBar option 2b - postpositions, locative AdvP complement}
 P' = AdvP P
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2329,20 +761,20 @@ P' = AdvP P
 	&lt;P' head type sentential&gt; &lt;= -
 	&lt;P' option&gt; = 2b
 </rule>
-	<showWhen id="PBaroption2b">
-		<whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="locative" value="yes"/>
-		<or/>
-		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="locative" value="yes"/>
-	</showWhen>
-	<rule show="PBaroption2c">
+    <showWhen id="PBaroption2b">
+        <whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="locative" value="yes"/>
+        <or/>
+        <whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="locative" value="yes"/>
+    </showWhen>
+    <rule show="PBaroption2c">
 rule {PBar option 2c - prepositions, temporal AdvP complement}
 P' = P AdvP
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2357,16 +789,20 @@ P' = P AdvP
 	&lt;P' head type sentential&gt; &lt;= -
 	&lt;P' option&gt; = 2c
 </rule>
-	<showWhen id="PBaroption2c">
-		<whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption2d">
+    <showWhen id="PBaroption2c">
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+    </showWhen>
+    <rule show="PBaroption2d">
 rule {PBar option 2d - postpositions, temporal AdvP complement}
 P' = AdvP P
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2380,16 +816,20 @@ P' = AdvP P
 	&lt;P' head type sentential&gt; &lt;= -
 	&lt;P' option&gt; = 2d
 </rule>
-	<showWhen id="PBaroption2d">
-		<whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<or/>
-		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-	</showWhen>
-	<rule show="PBaroption3a">
+    <showWhen id="PBaroption2d">
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <or/>
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+    </showWhen>
+    <rule show="PBaroption3a">
 rule {PBar option 3a - prepositions, locative PP complement}
 P' = P PP
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2403,20 +843,20 @@ P' = P PP
 	&lt;P' head type sentential&gt; &lt;= -
 	&lt;P' option&gt; = 3a
 </rule>
-	<showWhen id="PBaroption3a">
-		<whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="ppComp" value="yes"/>
-		<or/>
-		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="ppComp" value="yes"/>
-	</showWhen>
-	<rule show="PBaroption3b">
+    <showWhen id="PBaroption3a">
+        <whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="ppComp" value="yes"/>
+        <or/>
+        <whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="ppComp" value="yes"/>
+    </showWhen>
+    <rule show="PBaroption3b">
 rule {PBar option 3b - postpositions, locative PP complement}
 P' = PP P
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2429,20 +869,20 @@ P' = PP P
 	&lt;P' head type sentential&gt; &lt;= -
 	&lt;P' option&gt; = 3b
 </rule>
-	<showWhen id="PBaroption3b">
-		<whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="ppComp" value="yes"/>
-		<or/>
-		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="ppComp" value="yes"/>
-	</showWhen>
-	<rule show="PBaroption4a">
+    <showWhen id="PBaroption3b">
+        <whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="ppComp" value="yes"/>
+        <or/>
+        <whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="ppComp" value="yes"/>
+    </showWhen>
+    <rule show="PBaroption4a">
 rule {PBar option 4a - prepositions, gerund complement }
 P' = P VP
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2454,20 +894,20 @@ P' = P VP
 	&lt;P' head type comma&gt; &lt;= &lt;VP head type comma&gt;
 	&lt;P' option&gt; = 4a
 </rule>
-	<showWhen id="PBaroption4a">
-		<whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="tempComp" value="yes"/>
-		<or/>
-		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="tempComp" value="yes"/>
-	</showWhen>
-	<rule show="PBaroption4b">
+    <showWhen id="PBaroption4a">
+        <whenValue element="pp" attr="pPos" value="before" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+        <or/>
+        <whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+    </showWhen>
+    <rule show="PBaroption4b">
 rule {PBar option 4b - postpositions, gerund complement}
 P' = VP P
 	&lt;P' head&gt; = &lt;P head&gt;
@@ -2478,108 +918,108 @@ P' = VP P
 	&lt;IP head type comma&gt; = -
 	&lt;P' option&gt; = 4b
 </rule>
-	<showWhen id="PBaroption4b">
-		<whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="tempComp" value="yes"/>
-		<or/>
-		<whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word"/>
-		<and/>
-		<whenValue element="pp" attr="tempComp" value="yes"/>
-	</showWhen>
+    <showWhen id="PBaroption4b">
+        <whenValue element="pp" attr="pPos" value="after" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+        <or/>
+        <whenValue element="pp" attr="pPos" value="both" negateValue="no"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="clitic" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+    </showWhen>
 
-	<rule show="PBaroption5">
+    <rule show="PBaroption5">
 rule {PBar option 5 - prepositions or postpositions with no complement}
 P' = P
 	&lt;P' head&gt; = &lt;P head&gt;
 	&lt;P' head type stranded&gt; = +		| missing a complement
 	&lt;P' option&gt; = 5
 </rule>
-	<showWhen id="PBaroption5">
-		<whenValue element="pp" attr="alone" value="yes" negateValue="no"/>
-	</showWhen>
-	<rule show="PBaroption5a">
+    <showWhen id="PBaroption5">
+        <whenValue element="pp" attr="alone" value="yes" negateValue="no"/>
+    </showWhen>
+    <rule show="PBaroption5a">
 rule {PBar option 5a - P_prefix}
 P' = DP
-		&lt;P' head&gt; = &lt;DP head&gt;
+     	&lt;P' head&gt; = &lt;DP head&gt;
 	&lt;DP head type prefix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' option&gt; = 5a
 </rule>
-	<showWhen id="PBaroption5a">
-		<whenValue element="pp" attr="pPos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="attaches" value="edge"/>
-	</showWhen>
-	<rule show="PBaroption5b">
+    <showWhen id="PBaroption5a">
+        <whenValue element="pp" attr="pPos" value="after" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="attaches" value="edge"/>
+    </showWhen>
+    <rule show="PBaroption5b">
 rule {PBar option 5b - P_suffix}
 P' = DP
-		&lt;P' head&gt; = &lt;DP head&gt;
+     	&lt;P' head&gt; = &lt;DP head&gt;
 	&lt;DP head type suffix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' option&gt; = 5b
 </rule>
-	<showWhen id="PBaroption5b">
-		<whenValue element="pp" attr="pPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="attaches" value="edge"/>
-	</showWhen>
-	<rule show="PBaroption5aN">
+    <showWhen id="PBaroption5b">
+        <whenValue element="pp" attr="pPos" value="before" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="attaches" value="edge"/>
+    </showWhen>
+    <rule show="PBaroption5aN">
 rule {PBar option 5aN - PP affix on N}
 P' = DP
-		&lt;P' head&gt; = &lt;DP head&gt;
+     	&lt;P' head&gt; = &lt;DP head&gt;
 	&lt;DP head type PP&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' option&gt; = 5aN
 </rule>
-	<showWhen id="PBaroption5aN">
-		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="attaches" value="head"/>
-	</showWhen>
-	<rule show="PBaroption6a">
+    <showWhen id="PBaroption5aN">
+        <whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="attaches" value="head"/>
+    </showWhen>
+    <rule show="PBaroption6a">
 rule {PBar option 6a - P_prefix, gerund complement}
 P' = VP
-		&lt;P' head&gt; = &lt;VP head&gt;
+     	&lt;P' head&gt; = &lt;VP head&gt;
 	&lt;VP head type prefix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' head type gerund&gt; = +
 	&lt;P' option&gt; = 6a
 </rule>
-	<showWhen id="PBaroption6a">
-		<whenValue element="pp" attr="pPos" value="after" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="attaches" value="edge"/>
-		<and/>
-		<whenValue element="pp" attr="tempComp" value="yes"/>
-	</showWhen>
-	<rule show="PBaroption6b">
+    <showWhen id="PBaroption6a">
+        <whenValue element="pp" attr="pPos" value="after" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="attaches" value="edge"/>
+        <and/>
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+    </showWhen>
+    <rule show="PBaroption6b">
 rule {PBar option 6b - P_suffix, gerund complement}
 P' = VP
-		&lt;P' head&gt; = &lt;VP head&gt;
+     	&lt;P' head&gt; = &lt;VP head&gt;
 	&lt;VP head type suffix P&gt; = +
 	&lt;P' head type stranded&gt; = -
 	&lt;P' head type gerund&gt; = +
 	&lt;P' option&gt; = 6b
 </rule>
-	<showWhen id="PBaroption6b">
-		<whenValue element="pp" attr="pPos" value="before" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
-		<and/>
-		<whenValue element="pp" attr="attaches" value="edge"/>
-		<and/>
-		<whenValue element="pp" attr="tempComp" value="yes"/>
-	</showWhen>
+    <showWhen id="PBaroption6b">
+        <whenValue element="pp" attr="pPos" value="before" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="pType" value="word" negateValue="yes"/>
+        <and/>
+        <whenValue element="pp" attr="attaches" value="edge"/>
+        <and/>
+        <whenValue element="pp" attr="tempComp" value="yes"/>
+    </showWhen>
 
 </masterGrammar>

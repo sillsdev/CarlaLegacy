@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="PronReciprocal" count="4/9">
+   <title level="2">Pronoms – Inverses</title>
+   <introduction>Les <technicalTermRef term="ttReciprocals">inverses</technicalTermRef> sont comparables aux réfléchis sauf qu’ils se présentent seulement avec des sujets pluriels.  Ils peuvent être formés de la même façon que les réfléchis ou ils peuvent être distincts.  Par exemple, en anglais, les inverses sont des syntagmes quantificateurs spéciaux: <example>each other</example> et <example>one another</example>; en français:<example>l’un l’autre</example>.  Mais les inverses en français sont généralement marqués avec <example>se</example>.  Certaines langues utilise seulement un affixe verbal pour indiquer une action inverse de la part du sujet pluriel, d’autres ont des pronoms distincts, d’autres utilisent un syntagme nominal possédé, et d’autres encore ne marquent pas du tout l’action inverse.</introduction>
+    <form section="pron">
+        <radioGroup>
+            <groupName dataItem="recip" default="no">RPronRecip</groupName>
+           <prompt>Votre langue a-t-elle des inverses?</prompt>
+            <radio id="PronRecipNo" dataValue="no">Non</radio>
+           <radio id="PronRecipYes" dataValue="yes">Oui, un pronom spécial ou un syntagme nominal qui indique une action inverse occupe la position de l’objet</radio>
+           <radio id="PronRecipVerbal" dataValue="yesVerbal">Oui, un affixe verbal indique l’action inverse</radio>
+        </radioGroup>
+       <prompt id="PronRecipVerbExamples" show="swPronRecipVerbal">
+          <br/>Entrez ici l’affixe inverse qui s’attache aux verbes, avec un trait d’union pour indiquer de quel côté il s’attache au verbe:</prompt>
+       <textBox id="PronRecipVerbAffixExample" dataItem="recipVerbAffixExample" show="swPronRecipVerbal" rows="2"/>
+       <prompt id="PronRecipVerbSentExamples" show="swPronRecipVerbal">
+          <br/>Entrez plusieurs exemples de phrases simples avec un affixe inverse sur le verbe pour indiquer une action inverse par le sujet:</prompt>
+       <textBox id="PronRecipVerbSentExample" dataItem="recipVerbSentExample" show="swPronRecipVerbal"/>  
+       
+       <prompt id="PronRecipFirstExamples" show="swPronRecipYesAndPronExclNo">
+          <br/>Entrez ici les pronoms ou les syntagmes nominaux utilisés comme inverses pour se référer au sujets de la première personne du pluriel:
+        </prompt>
+        <textBox id="PronRecipFirstPlExample" dataItem="recipFirstPlExample" show="swPronRecipYesAndPronExclNo" rows="2"/>
+       <prompt id="PronRecipFirstExclExamples" show="swPronRecipYesAndPronExclYes">
+          <br/>Entrez ici les pronoms ou les syntagmes nominaux utilisés comme inverses pour se référer au sujets de la première personne exclusive du pluriel:
+       </prompt>
+       <textBox id="PronRecipFirstExclExample" dataItem="recipFirstExclExample" show="swPronRecipYesAndPronExclYes" rows="2"/>
+       <prompt id="PronRecipFirstInclExamples" show="swPronRecipYesAndPronExclYes">
+          <br/>Entrez ici les pronoms ou les syntagmes nominaux utilisés comme inverses pour se référer au sujets de la première personne inclusive du pluriel:
+       </prompt>
+       <textBox id="PronRecipFirstInclExample" dataItem="recipFirstInclExample" show="swPronRecipYesAndPronExclYes" rows="2"/>
+       <prompt id="PronRecipSecondExamples" show="swPronRecipYes">
+          <br/>Entrez ici les pronoms ou les syntagmes nominaux utilisés comme inverses pour se référer au sujets de la deuxième personne du pluriel:
+       </prompt>
+       <textBox id="PronRecipSecondExample" dataItem="recipSecondExample" show="swPronRecipYes" rows="2"/>
+       <prompt id="PronRecipThirdExamples" show="swPronRecipYes">
+          <br/>Entrez ici les pronoms ou les syntagmes nominaux utilisés comme inverses pour se référer au sujets de la troisième personne du pluriel:
+       </prompt>
+       <textBox id="PronRecipThirdExample" dataItem="recipThirdExample" show="swPronRecipYes" rows="2"/>
+       <prompt id="PronRecipSentExamples" show="swPronRecipYes">
+          <br/>Entrez ici des exemples dans de phrases simples:
+        </prompt>
+        <textBox id="PronRecipSentExample" dataItem="recipSentExample" show="swPronRecipYes"/>
+
+       <checkboxGroup id="PronRecipYesTable" show="swPronRecipYes">
+          <prompt>
+             <br/>Comment les inverses qui occupent la position de l’objet sont-ils formés dans votre langue?  Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+          <checkbox id="PronRecipAffixNoWord" dataItem="recipDistinct">Ce sont des mots distincts qui se présentent seuls</checkbox>
+          <checkbox id="PronRecipAffixYes" dataItem="recipAffix">On choisit un affixe (ou plusieurs) pour créer un inverse à partir d’un autre pronom</checkbox>
+          <checkbox id="PronRecipAffixNoNoun" dataItem="recipNounPoss">On utilise un certain substantif avec un pronom comme possesseur</checkbox>
+          <checkbox id="PronRecipAffixNoQP" dataItem="recipQP">On utilise des substantifs quantifiés spéciaux</checkbox>
+          <checkbox id="PronRecipAffixOther" dataItem="recipOther">Ma langue forme un inverse comme suit:<textBox  id="PronRecipAffixOtherContent" dataItem="recipOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <br/><br/>
+       <prompt id="PronRecipAffixNoCheckPrompt" show="swPronRecipYesNoCheck">AVERTISSEMENT:  Vous avez dit ci-dessus que votre langue a des inverses, mais vous n’avez marqué aucune des options pour dire comment ils sont formés.  Veuillez marquer une ou plus des options , à moins que vous n’ayez pas d’inverses.  Dans ce cas-là il ne vous fallait pas entrer des formes dans les zones de texte et devez changer la réponse à « Non » ou à « Oui, un affixe verbal indique une action inverse ».</prompt>
+       
+       <instruction id="PronRecipVerbalInstruction" show="swPronRecipVerbal">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant verbal affix(es).</instruction>
+        <instruction id="PronRecipAffixNoWordInstruction" show="swPronRecipAffixNoWord">In the lexicon, mark each reciprocal pronoun with the feature <feature>reciprocal</feature> and also all the relevant
+<ul>
+                <li>person (<feature>first</feature>, <feature>first_exclusive</feature>, <feature>first_inclusive</feature>, <feature>second</feature>, <feature>third</feature>) and</li>
+                <li>gender (<feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature>) features.</li>
+                <li>Also, add the appropriate case feature (<feature>accusative</feature>, <feature>absolutive</feature>).</li>
+                <li>We assume that reciprocals require a plural subject.</li>
+            </ul>
+        </instruction>
+       <prompt id="PronRecipAffixYesPrompt" show="swPronRecipAffixYes"><br/>Entrez ici les affixes inverses qui changent un pronom en un pronom inverse, avec un trait d’union pour indiquer de quel côté il s’attache au pronom:
+       </prompt>
+       <textBox id="PronReflAffixExamples" dataItem="pronRecipAffixExample"  rows="2" show="swPronRecipAffixYes"/> 
+       <instruction id="PronRecipAffixYesInstruction" show="swPronRecipAffixYes">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant affix(es).</instruction>
+       <prompt id="PronRecipAffixNoNounPrompt" show="swPronRecipAffixNoNoun"><br/>Entrez ici le substantif spécial qui est possédé par les pronoms possesseur pour former un syntagme inverse ou un pronom inverse:
+       </prompt>
+       <textBox id="PronRecipNounPossExamples" dataItem="pronRecipNounPossExample"  rows="2" show="swPronRecipAffixNoNoun"/> 
+       <instruction id="PronRecipAffixNoNounInstruction" show="swPronRecipAffixNoNoun">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant noun.</instruction>
+       <prompt id="PronRecipAffixNoQPPrompt" show="swPronRecipAffixNoQP"><br/>Entrez ici le quantificateur ou syntagme spécial qu’on utilise dans les inverses:
+       </prompt>
+       <textBox id="PronRecipQPExamples" dataItem="pronRecipQExample"  rows="2" show="swPronRecipAffixNoQP"/> 
+       <instruction id="PronRecipAffixNoQPInstruction" show="swPronRecipAffixNoQP">In the lexicon, add the feature <feature>reciprocal</feature> to the relevant nouns and quantifiers.</instruction>
+<br/>       <br/>
+        <buttons>
+            <button id="PronReciprocalBack" value="Back" goto="PronRefl.xml"/>
+            <button id="PronReciprocalNext" value="Next" goto="PronDem.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swPronRecipYes">
+        <whenRadio button="PronRecipYes"/>
+    </showWhen>
+    <showWhen id="swPronRecipVerbal">
+        <whenRadio button="PronRecipVerbal"/>
+    </showWhen>
+    <showWhen id="swPronRecipAffixYes">
+        <whenRadio button="PronRecipYes"/>
+        <and/>
+        <whenCheckbox button="PronRecipAffixYes"/>
+    </showWhen>
+    <showWhen id="swPronRecipAffixNoNoun">
+        <whenRadio button="PronRecipYes"/>
+        <and/>
+       <whenCheckbox button="PronRecipAffixNoNoun"/>
+    </showWhen>
+    <showWhen id="swPronRecipAffixNoQP">
+        <whenRadio button="PronRecipYes"/>
+        <and/>
+       <whenCheckbox button="PronRecipAffixNoQP"/>
+    </showWhen>
+    <showWhen id="swPronRecipAffixNoWord">
+        <whenRadio button="PronRecipYes"/>
+        <and/>
+       <whenCheckbox button="PronRecipAffixNoWord"/>
+    </showWhen>
+   <showWhen id="swPronRecipYesNoCheck">
+      <whenRadio button="PronRecipYes"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixNoWord"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixYes"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixNoNoun"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixNoQP"/>
+      <and/><not/>
+      <whenCheckbox button="PronRecipAffixOther"/>
+   </showWhen>
+   <showWhen id="swPronRecipYesAndPronExclNo">
+      <whenRadio button="PronRecipYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounExcl" value="no"/>
+   </showWhen>
+   <showWhen id="swPronRecipYesAndPronExclYes">
+      <whenRadio button="PronRecipYes"/>
+      <and/>
+      <whenValue element="pron" attr="pronounExcl" value="yes"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

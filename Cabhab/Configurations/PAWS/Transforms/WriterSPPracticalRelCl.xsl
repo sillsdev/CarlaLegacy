@@ -538,13 +538,13 @@
 </xsl:if>
        <xsl:if test="normalize-space(//relcl/@exist)='yes'">
 <p contentType="ctPracticalIntro">
-<xsl:text>Algunas lenguas también permiten que una cláusula relativa se presenta sola como frase nominal sin un sustantivo principal que la modifique..</xsl:text>
+<xsl:text>Algunas lenguas también permiten que una cláusula relativa se presenta sola como frase nominal sin un sustantivo principal que la modifique.</xsl:text>
 </p>
 </xsl:if>
        
        <xsl:if test="normalize-space(//relcl/@exist)='yes'">
 <p>
-<xsl:text>En el</xsl:text>
+<xsl:text>En el </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
@@ -608,15 +608,6 @@
 </xsl:if>
     </section1>
    
-    <section1 id="sTexts">
-        <secTitle>Los textos</secTitle>
-        <p>
-<object type="tComment">Incluya varios textos aquí para mostrar cómo se forman las construcciones más complejas como párrafos, conversaciones e historias narrativas. Incluya los ejemplos de varios tipos literarios.</object>
-</p>
-        <p>
-<object type="tComment">  Un formato sugerido para presentar los textos es presente el texto completo en la lengua vernáculo primero, así los hablantes pueden apreciarla. Después presente la forma interlineal, como en los ejemplos a través de la gramática. Finalmente, dé una traducción libre completa, así el hablante extranjero puede apreciar más sobre la cultura.</object>
-</p>
-    </section1>
     
     
         

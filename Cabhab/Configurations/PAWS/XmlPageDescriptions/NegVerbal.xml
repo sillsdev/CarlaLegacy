@@ -8,7 +8,7 @@
     </introduction>
    <form section="neg">
    <checkboxGroup id="NegTemporalType">
-      <prompt>How does your language express the negative temporal meaning of 'never' or 'at no time'?  Check all options that are correct for your language</prompt>
+      <prompt>How does your language express the negative temporal meaning of ‘never’ or ‘at no time’?  Check all options that are correct for your language</prompt>
       <checkbox id="NegTemporalTypeWord" dataItem="negTemporalTypeWord">An independent word or phrase unrelated to the positive forms expresses this negative temporal meaning</checkbox>
       <checkbox id="NegTemporalTypeAdverb" dataItem="negTemporalTypeAdverb">A negative affix is added to the positive temporal adverb(s) to form the negative adverb word(s)</checkbox>
       <checkbox id="NegTemporalTypeAdverbWord" dataItem="negTemporalTypeAdverbWord">An independent negative word occurs with the positive temporal adverb(s) to form the negative temporal adverb phrase(s)</checkbox>
@@ -43,7 +43,7 @@
       <checkbox id="NegTemporalAdverbWordOther" checked="yes" dataItem="negTemporalAdverbWordOther">In my language, these negative words may occur as follows: <textBox  id="NegTemporalAdverbWordOtherContent" dataItem="negTemporalAdverbWordOther" rows="2"/></checkbox>
    </checkboxGroup>	
    <prompt id="NegTemporalAdverbWordNoCheckPrompt" show="swNegTemporalAdverbWordAndNoCheck">WARNING: You need to check at least one box to describe where these negative words occur in your language, or change the answer above as to how the negative temporal adverbs are related to the positive forms.</prompt>
-   <instruction id="NegTemporalTypeAdverbWordInstruction" show="swNegTemporalTypeAdverbWord">In the lexicon, key the feature <feature>negative</feature>
+   <instruction id="NegTemporalTypeAdverbWordInstruction" show="swNegTemporalTypeAdverbWord">In the lexicon, key the features <feature>makeNeg modifies_temporal</feature>
       on the negative word which appears with the positive temporal adverbs.
    </instruction>
    <instruction id="NegTemporalAdverbWordEitherRestrictedInstruction" show="swNegTemporalTypeAdverbWordEitherRestricted">In the lexicon, mark those negative words which can only occur before the adverb with the feature <feature>AdvP-initial</feature> and those which can only occur after the adverb with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any negative words which can occur on either side.</instruction>       
@@ -72,7 +72,7 @@
       <br/>
       
    <checkboxGroup id="NegLocativeType">
-      <prompt>How does your language express the negative locative meaning of 'nowhere' or 'at no place'?  Check all options that are correct for your language</prompt>
+      <prompt>How does your language express the negative locative meaning of ‘nowhere’ or ‘at no place’?  Check all options that are correct for your language</prompt>
       <checkbox id="NegLocativeTypeWord" dataItem="negLocativeTypeWord"> An independent word or phrase unrelated to the positive forms expresses this negative locative meaning</checkbox>
       <checkbox id="NegLocativeTypeAdverb" dataItem="negLocativeTypeAdverb">A negative affix is added to the positive locative adverb(s) to form the negative adverb word(s)</checkbox>
       <checkbox id="NegLocativeTypeAdverbWord" dataItem="negLocativeTypeAdverbWord"> An independent negative word occurs with the positive locative adverb(s) to form the negative locative adverb phrase(s)</checkbox>
@@ -107,8 +107,8 @@
       <checkbox id="NegLocativeAdverbWordOther" checked="yes" dataItem="negLocativeAdverbWordOther">In my language, these negative words may occur as follows: <textBox  id="NegLocativeAdverbWordOtherContent" dataItem="negLocativeAdverbWordOther" rows="2"/></checkbox>
    </checkboxGroup>	
    <prompt id="NegLocativeAdverbWordNoCheckPrompt" show="swNegLocativeAdverbWordAndNoCheck">WARNING: You need to check at least one box to describe where these negative words occur in your language, or change the answer above as to how the negative locative adverbs are related to the positive forms.</prompt>
-   <instruction id="NegLocativeTypeAdverbWordInstruction" show="swNegLocativeTypeAdverbWord">In the lexicon, key the feature <feature>negative</feature>
-      on the negative word which appears with the positive locative adverbs.
+   <instruction id="NegLocativeTypeAdverbWordInstruction" show="swNegLocativeTypeAdverbWord">In the lexicon, key the features <feature>makeNeg modifies_locative</feature>
+      on the negative word which appears with the positive locative adverbs.  You may simply add the additional feature <feature>modifies_locative</feature> if this same negative word is used for temporals above.
    </instruction>
    <instruction id="NegLocativeAdverbWordEitherRestrictedInstruction" show="swNegLocativeTypeAdverbWordEitherRestricted">In the lexicon, mark those negative words which can only occur before the adverb with the feature <feature>AdvP-initial</feature> and those which can only occur after the adverb with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any negative words which can occur on either side.</instruction>       
    
@@ -152,7 +152,7 @@
       <br/>
       <radioGroup>
          <groupName dataItem="negVerbal" default="yes">RNegAux</groupName>
-         <prompt>Does you language have a way to express negation on either an auxiliary or the verb?</prompt>
+         <prompt>Does your language have a way to express negation on either an auxiliary or the verb?</prompt>
          <radio id="NegVerbalNo" dataValue="no">No</radio>
          <radio id="NegVerbalYes" dataValue="yes">Yes, negation may be expressed in the following ways</radio>
       </radioGroup>
@@ -174,7 +174,7 @@
       <prompt id="NegAuxAffixButNoAuxInstruction" show="swNegAuxAffixButNoAux">WARNING - The answers you have entered are incompatible!! A negative auxiliary affix cannot attach to anything if your language does not have (positive) auxiliaries that are written as independent words.  Please change your answer either here or in <section number="9.3">Basic Sentences - Auxiliaries</section> to correct this problem before proceeding.</prompt>
       <prompt id="NegAuxWordPrompt" show="swNegAuxAndVerbalYes">Key the negative auxiliary word(s) only (each on a separate line) here:</prompt>
       <textBox id="NegAuxWordExample" dataItem="negAuxExample" rows="3" show="swNegAuxAndVerbalYes"></textBox>
-      <instruction id="NegAuxYesInstruction" show="swNegAuxAndVerbalYes">Add the features <feature>negative makeAux</feature> to the negative auxiliary elements that are written as independent words.  This will mark them as negative and also assure that they have the category <category>Aux</category>.</instruction>
+      <instruction id="NegAuxYesInstruction" show="swNegAuxAndVerbalYes">Add the features <feature>negative makeAux</feature> to the negative auxiliary elements that are written as independent words.  This will mark them as negative and also assure that they have the category <category>Aux</category>.  If this same negative word can be used to modify nouns or adverbs, you will need to make two separate entries in the lexicon.</instruction>
       <prompt id="NegAuxAffixPrompt" show="swNegAuxAffixAndVerbalYes">Key examples of the negative auxiliary affix(es) attached to an auxiliary (each on a separate line) here:</prompt>
       <textBox id="NegAuxAffixExample" dataItem="negAuxAffixExample" rows="3" show="swNegAuxAffixAndVerbalYes"></textBox>
       <instruction id="NegAuxAffixInstruction" show="swNegAuxAffixAndVerbalYes">Add the feature <feature>negative</feature> to the negative auxiliary affix(es).</instruction>
@@ -187,7 +187,7 @@
       <br/>
       <prompt id="NegAuxWordSentPrompt" show="swNegAuxAndVerbalYes">Now use at least one of the above negative auxiliaries in a complete sentence where the subject and object are positive, such as in <example>John could not find the treasure</example>, and key it here:</prompt>
         <textBox id="NegAuxWordSentExample" dataItem="auxExample" rows="4" cols="50" show="swNegAuxAndVerbalYes"/>
-      <prompt id="NegAuxAffixSentPrompt" show="swNegAuxAffixAndVerbalYes">Now use at least one of the above examples of a negative auxiliary affix attached to an auxiliary in a complete sentence where the subject and object are positive, as in <example>Bill didn't go to school</example>, and key it here:</prompt>
+      <prompt id="NegAuxAffixSentPrompt" show="swNegAuxAffixAndVerbalYes">Now use at least one of the above examples of a negative auxiliary affix attached to an auxiliary in a complete sentence where the subject and object are positive, as in <example>Bill didn’t go to school</example>, and key it here:</prompt>
         <textBox id="NegAuxAffixSentExample" dataItem="auxAffixExample" rows="4" cols="50" show="swNegAuxAffixAndVerbalYes"/>
         <prompt id="NegVerbSentPrompt" show="swNegVAffixAndVerbalYes">Now take several of the examples of negative verbs above and use each in a complete sentence where it is the only negative element here:</prompt>
         <textBox id="NegVerbSentExample" dataItem="verbAffixExample" rows="4" cols="50" show="swNegVAffixAndVerbalYes"/>

@@ -1,7 +1,7 @@
 <html>
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css">
+<link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css"> 
 <title>Interface Language</title>
 <script language="jscript" id="clientEventHandlersJS" src="InterfaceLanguage.js">
   </script></head>
@@ -12,19 +12,23 @@
 </div><br><div class="form">
 <table border="0" style="margin-left: 0.5in">
 <tr>
-<td colspan="2"><span class="radioPrompt">What language is the user interface in?</span></td>
+    <td colspan="2"><span class="radioPrompt">What language is the user interface in?  When you change the language, you must restart PAWS before the changes take full effect.  (Presione algún botón, tiene que empezar el programa PAWS otra vez.)  (Lorsque vous changer la langue, vous devez redémarrer PAWS pour que les modifications prennent plein effet.)</span></td>
 </tr>
 <tr>
-	<td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEn" onclick="RInterfaceLang(InterfaceLangEn)" value="False"></td>
-	<td width="99%" id="InterfaceLangEnPrompt" onclick="RInterfaceLang(InterfaceLangEn)" value="False" onmouseover="this.style.cursor='default'">English</td>
+    <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEn" onclick="RInterfaceLang(InterfaceLangEn)" value="False"></td>
+    <td width="99%" id="InterfaceLangEnPrompt" onclick="RInterfaceLang(InterfaceLangEn)" value="False" onmouseover="this.style.cursor='default'">English</td>
 </tr>
 <tr>
-	<td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEs" onclick="RInterfaceLang(InterfaceLangEs)" value="True"></td>
-	<td width="99%" id="InterfaceLangEsPrompt" onclick="RInterfaceLang(InterfaceLangEs)" value="True" onmouseover="this.style.cursor='default'">Spanish  (Español). When you change to this, you must restart PAWS before the changes take full effect. (Presione este botón, tiene que empezar el programa PATAS (PAWS en inglés) otra vez.)</td>
+    <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangEs" onclick="RInterfaceLang(InterfaceLangEs)" value="True"></td>
+    <td width="99%" id="InterfaceLangEsPrompt" onclick="RInterfaceLang(InterfaceLangEs)" value="True" onmouseover="this.style.cursor='default'">Spanish (Español) </td>
 </tr>
+    <tr>
+        <td valign="top"><input type="radio" name="RInterfaceLang" id="InterfaceLangFr" onclick="RInterfaceLang(InterfaceLangFr)" value="True"></td>
+        <td width="99%" id="InterfaceLangFrPrompt" onclick="RInterfaceLang(InterfaceLangFr)" value="True" onmouseover="this.style.cursor='default'">French (Français) </td>
+    </tr>
 </table>
 </div>
-	<div align="center" id="Return"  class="return" >
+    <div align="center" id="Return"  class="return" >
 <a href="LeftOffAt" onclick="copyFiles()">Return</a><br/>
 </div>
 </body>

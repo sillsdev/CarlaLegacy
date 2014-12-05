@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="QPDegree" count="3/7">
+	<title level="2">Quantificateurs et Syntagmes de Quantité – D’autres quantificateurs et mots de degré</title>
+	<introduction>D’autres quantificateurs comme <example>beaucoup</example>, <example>plusiers</example>, <example>nombreaux</example> et <example>peu de</example> se trouvent dans une position différente dans le syntagme nominal montrant leur <technicalTermRef term="ttScope">portée</technicalTermRef> plus réduite.  
+		En anglais c’est après un article, démonstratif ou possessif et avant un adjectif et nom, comme par exemple <example>a few sad children (peu de enfants tristes)</example> ou <example>Sue’s many black dogs  (les nombreux chiens noirs de Suzanne)</example>.  De plus, ces quantificateurs peuvent normalement être modifiés par des mots de degré tels que 
+		<example>très</example> et <example>tant</example>, par exemple <example>des chiens très nombreux</example> ou <example>tant d’ordures</example> ou <example>très peu de enfants</example>.</introduction>
+	<form section="qp">
+	   <radioGroup id="QPQuantifierClassifierAgrTable" show="swOTClassifierAgr">
+	      <groupName dataItem="quantifierClassifier" default="no">RQPQuantifierClassifierAgr</groupName>
+	   	<prompt>Vous avez dit que votre langue a des marqueurs de classe substantive avec accord partout dans le syntagme nominal.  Ces quantificateurs sont-ils marqués pour la classe?</prompt>
+	   	<radio id="QPQuantifierClassifierAgrNo" dataValue="no">Non, ces éléments ne sont pas marqués pour la classe</radio>
+	   	<radio id="QPQuantifierClassifierAgrYes" dataValue="yes">Oui, ces éléments sont marqués pour la classe comme une partie de l’accord partout dans le syntagme nominal</radio>
+	   </radioGroup>
+		<prompt id="QPQuantifierClassifierAgrPrompt" show="swOTClassifierAgrAndQuantifierYes">Puisque vous avez déjà identifié les formes des marqueurs de classe substantive, vous n’avez qu’à entrer ici les racines de chaque quantificateur.</prompt>	   
+<br/>
+		<prompt>Entrez la manière dont votre langue exprime « beaucoup » ou « plusiers » ou « nombreaux » (qui modifie les substantifs qu’on peut compter), avec chaque mot sur une ligne distincte. </prompt>
+	   <textBox id="QPManyExample" dataItem="many" rows="3"/>
+	   <br/>
+	   <br/>
+		<prompt>Entrez la manière dont votre langue exprime  « beaucoup » ou « plusiers » ou « nombreaux » (qui modifie les substantifs de <technicalTermRef term="ttMass">masse</technicalTermRef>), avec chaque mot sur une ligne distincte.</prompt>
+	   <textBox id="QPMuchExample" dataItem="much" rows="3"/>
+	   <br/><br/>
+		<prompt>Entrez la manière dont votre langue exprime  « peu de », avec chaque mot sur une ligne distincte. </prompt>
+	   <textBox id="QPFewExample" dataItem="few" rows="3"/>
+	   <br/>
+	   <br/>
+		<prompt>Entrez la manière dont votre langue exprime d’autres quantificateurs de cette sorte, avec chaque mot sur une ligne distincte.</prompt>
+	   <textBox id="QPOtherQExample" dataItem="otherQ" rows="3"/>
+		<instruction id="QPDegreeInstruction">In the lexicon, if this type of quantifier does not already have the category <category>Q</category>, mark them
+			with the feature <feature>makeQ</feature>.  This will change
+			their category to <category>Q</category> for the syntax.  If a particular quantifier can
+			only go with plural nouns or if it marks plural itself (such as <example>many</example>), add the feature <feature>plural</feature> to that entry.</instruction>  
+		<br/>
+	   <br/>	   
+		<radioGroup>
+			<groupName dataItem="degree" default="no">RDegreeYesNo</groupName>
+			<prompt>Votre langue a-t-elle des mots de degré qui peuvent modifier cette sorte de quantificateur?</prompt>
+			<radio id="QPDegreeYes" checked="yes" dataValue="yes">Oui, ils sont tous écrits comme des mots indépendants</radio>
+			<radio id="QPDegreeSome" checked="yes" dataValue="some">Certains des éléments de degré sont écrits comme des mots indépendants, mais d’autres s’attachent à un autre mot</radio>
+			<radio id="QPDegreeAttaches" checked="yes" dataValue="attaches">Non, le degré de ces quantificateurs n’est pas exprimé comme un mot indépendant</radio>
+			<radio id="QPDegreeNo" checked="yes" dataValue="no">Non, ces quantificateurs ne sont pas modifiés ou intensifiés</radio>
+		</radioGroup>
+<br/>
+	   <radioGroup id="QPDegreeClassifierAgrTable" show="swOTClassifierAgrAndDegreeYesOrSome">
+	      <groupName dataItem="degreeClassifier" default="no">RQPDegreeClassifierAgr</groupName>
+	   	<prompt>Vous avez dit que votre langue a des marqueurs de classe substantive avec accord partout dans le syntagme nominal.  Ces mots de degré sont-ils marqués pour la classe?</prompt>
+	   	<radio id="QPDegreeClassifierAgrNo" dataValue="no">Non, ces éléments ne sont pas marqués pour la classe</radio>
+	   	<radio id="QPDegreeClassifierAgrYes" dataValue="yes">Oui, ces éléments sont marqués pour la classe comme une partie de l’accord partout dans le syntagme nominal</radio>
+	   </radioGroup>
+		<prompt id="QPDegreeClassifierAgrPrompt" show="swOTClassifierAgrAndDegreeYesOrSomeAndClassifierYes">Puisque vous avez déjà identifié les formes des marqueurs de classe substantive, vous n’avez qu’à entrer ici les racines de chaque mot de degré.</prompt>	   
+	   
+	   <br/>
+		<prompt id="QPDegreeWordYesExamples" show="swQPDegreeYesOrSome">Entrez ici des exemples de mots de degré, avec chacun sur une ligne distincte.  Notez que ces mots de degré ne seront pas probablement les mêmes que ceux qui peuvent modifier un syntagme nominal entier qu’on a traités dans la section ci-dessus.</prompt>
+		<textBox id="QPDegreeWordExample" dataItem="degreeWordExample" show="swQPDegreeYesOrSome"/>
+		<prompt id="QPDegreeYesExamples" show="swQPDegreeYesOrSome">Entrez ici des exemples de mots de degré qui modifient un quantificateur dans un syntagme nominal simple:</prompt>
+		<textBox id="QPDegreeExample" dataItem="degreeExample" show="swQPDegreeYesOrSome"/>
+	   <br/><br/>
+	   <checkboxGroup id="QPDegreePos" show="swQPDegreeYesOrSome">
+	   	<prompt>D’après les exemples dans la boîte ci-dessus, où les mots de degré se présentent-ils (facultativement) par rapport au quantificateur?  Marquez toutes les options qui sont correctes pour votre langue.</prompt>
+	   	<checkbox id="QPDegreeBefore"  dataItem="degreeBefore">Avant le quantificateur</checkbox>
+	   	<checkbox id="QPDegreeAfter"  dataItem="degreeAfter">Après le quantificateur</checkbox>
+	   	<checkbox id="QPDegreeBoth"  dataItem="degreeBoth">Des deux côtés du quantificateur à la fois</checkbox>
+	   	<checkbox id="QPDegreeOther"  dataItem="degreeOther">Dans ma langue, ils peuvent se présenter dans la position suivante: <textBox  id="QPDegreeOtherContent" dataItem="degreeOther" rows="2"/></checkbox>
+	   </checkboxGroup>
+		<prompt id="QPDegreeWordPosNoCheckPrompt" show="swQPDegreeWordPosNoCheck">AVERTISSEMENT: Il faut marquer au moins une boîte pour décrire où ces mots de degré se présentent par rapport au quantificateur dans votre langue, ou changez votre réponse ci-dessus pour dire que les éléments de degré ne sont pas exprimés comme mots indépendants.</prompt>  
+	   <instruction id="QPDegreeYesInstruction" show="swQPDegreeYesOrSome">
+	      In the lexicon, mark the degree words which can modify these quantifiers with the features <feature>makeDeg modifies_Q</feature>.   (If any of these degree words are the same as those which can modify an entire nominal phrase, you can simply add the additional feature <feature>modifies_Q</feature> to the same lexical entry.)</instruction>
+	   <instruction id="QPDegreeEitherNoInstruction" show="swQPDegreeEitherRestricted">Those which can only occur before the quantifier also need to have the feature <feature>QP-initial</feature> and those which can only occur after the quantifier also need the
+	      feature <feature>QP-final</feature>.  Do not enter either feature <feature>QP-initial</feature> or <feature>QP-final</feature> on any degree words which can occur on either side.</instruction>
+	   <br/><br/>
+		<prompt id="QPDegreeWordAttachesExamples" show="swQPDegreeAttachesOrSome">Entrez des exemples d’affixes ou de clitiques de degré, avec un trait d’union ou un signe d’égalité pour indiquer le côté où ils s’attachent, chacun sur une ligne distincte.  Notez que ces éléments de degré ne seront pas probablement les mêmes que ceux qui peuvent modifier un syntagme nominal entier qu’on a traités dans la section ci-dessus.</prompt>
+	   <textBox id="QPDegreeAttachesExample" dataItem="degreeAttachesExample" show="swQPDegreeAttachesOrSome"/>
+		<prompt id="QPDegreeAttachesExamples" show="swQPDegreeAttachesOrSome">Maintenant, entrez ici des exemples d’affixes ou de clitiques de degré modifiant un quantificateur dans un syntagme nominal simple:</prompt>
+	   <textBox id="QPDegreeAttachesNPExample" dataItem="degreeAttachesNPExample" show="swQPDegreeAttachesOrSome"/>
+	   <checkboxGroup id="QPDegreeAttachesPos" show="swQPDegreeAttachesOrSome">
+	   	<prompt>D’après les exemples dans la boîte ci-dessus, où les éléments de degré s’attachent-ils (facultativement) par rapport au quantificateur?  Marquez toutes les options qui sont correctes pour votre langue.</prompt>
+	   	<checkbox id="QPDegreeTypePrefix" dataItem="degreeTypePrefix">Comme un préfixe qui s’attache au quantificateur</checkbox>
+	   	<checkbox id="QPDegreeTypeSuffix" dataItem="degreeTypeSuffix">Comme un suffixe qui s’attache au quantificateur</checkbox>
+	   	<checkbox id="QPDegreeTypeOther" dataItem="degreeTypeOther">Dans ma langue, ces éléments peuvent s’attacher comme suit: <textBox  id="QPDegreeTypeOtherContent" dataItem="degreeTypeOther" rows="2"/></checkbox>
+	   </checkboxGroup>
+		<prompt id="QPDegreeAttachesPosNoCheckPrompt" show="swQPDegreeAttachesPosNoCheck">AVERTISSEMENT: Il faut marquer au moins une boîte pour décrire où ces affixes de degré se présentent par rapport au quantificateur dans votre langue, ou changez votre réponse pour dire que les éléments de degré sont tous écrits comme des mots indépendants.</prompt>  
+<br/>
+		<br/>
+		<prompt>Ces quantificateurs seront discutés davantage dans <section number="5.5">Syntagmes Nominaux – Modificateurs de Syntagmes de Quantité</section>.</prompt>		
+	   <br/>
+	   <br/>
+	   <buttons>
+			<button id="QPDegreeBack" value="Back" goto="QPDeterminers.xml"/>
+			<button id="QPDegreeNext" value="Next" goto="QPCardinal.xml"/>
+		</buttons>
+	</form>
+   <showWhen id="swOTClassifierAgr">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndQuantifierYes">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPQuantifierClassifierAgrYes"/>
+   </showWhen>
+   <showWhen id="swQPDegreeYesOrSome">
+		<whenRadio button="QPDegreeYes"/>
+      <or/>
+      <whenRadio button="QPDegreeSome"/>
+   </showWhen>
+   <showWhen id="swQPDegreeAttachesOrSome">
+      <whenRadio button="QPDegreeAttaches"/>
+      <or/>
+      <whenRadio button="QPDegreeSome"/>
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndDegreeYesOrSome">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPDegreeYes"/>     
+ <or/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPDegreeSome"/>     
+   </showWhen>
+   <showWhen id="swOTClassifierAgrAndDegreeYesOrSomeAndClassifierYes">
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPDegreeYes"/>     
+      <and/>
+      <whenRadio button="QPDegreeClassifierAgrYes"/>
+<or/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+      <and/>
+      <whenRadio button="QPDegreeSome"/>     
+      <and/>
+      <whenRadio button="QPDegreeClassifierAgrYes"/>
+   </showWhen>
+	<showWhen id="swQPDegreeEitherRestricted">
+	   <openParen/>
+	   <whenRadio button="QPDegreeSome"/>
+	   <or/>
+	   <whenRadio button="QPDegreeYes"/>
+	   <closeParen/>
+	   <and/>
+	   <openParen/>
+	   <openParen/>
+	   <whenCheckbox button="QPDegreeBefore"/>
+	   <and/>
+	   <whenCheckbox button="QPDegreeAfter"/>
+	   <closeParen/>
+	   <or/>
+	   <openParen/>
+	   <whenCheckbox button="QPDegreeBefore"/>
+	   <and/>
+	   <whenCheckbox button="QPDegreeBoth"/>
+	   <closeParen/>
+	   <or/>
+	   <openParen/>
+	   <whenCheckbox button="QPDegreeAfter"/>
+	   <and/>
+	   <whenCheckbox button="QPDegreeBoth"/>
+	   <closeParen/>
+	   <or/>
+	   <openParen/>
+	   <whenCheckbox button="QPDegreeAfter"/>
+	   <and/>
+	   <whenCheckbox button="QPDegreeBefore"/>
+	   <and/>
+	   <whenCheckbox button="QPDegreeBoth"/>
+	   <closeParen/>
+	   <closeParen/>
+	</showWhen>
+   <showWhen id="swQPDegreeAttachesPosNoCheck">
+      <openParen/>
+      <whenRadio button="QPDegreeAttaches"/>
+      <or/>
+      <whenRadio button="QPDegreeSome"/>
+      <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="QPDegreeTypePrefix"/>
+      <and/><not/>
+      <whenCheckbox button="QPDegreeTypeSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="QPDegreeTypeOther"/>          
+   </showWhen> 
+   <showWhen id="swQPDegreeWordPosNoCheck">
+      <openParen/>
+      <whenRadio button="QPDegreeYes"/>
+      <or/>
+      <whenRadio button="QPDegreeSome"/>
+      <closeParen/>     
+      <and/><not/>
+      <whenCheckbox button="QPDegreeBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QPDegreeAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QPDegreeBoth"/>          
+      <and/><not/>
+      <whenCheckbox button="QPDegreeOther"/>          
+   </showWhen> 
+   &TechnicalTerms; 
+   
+</page>

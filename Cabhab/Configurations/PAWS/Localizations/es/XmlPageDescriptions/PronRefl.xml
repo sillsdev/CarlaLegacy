@@ -52,10 +52,10 @@
        <textBox id="PronReflSentExample" dataItem="reflSentExample" show="swPronReflYes"/>
        <checkboxGroup id="PronReflYesTable" show="swPronReflYes">
           <prompt>
-             <br/>¿Cómo son construidos los recíprocos que se presentan en la posición del objeto en su lengua?  Seleccione todas las opciones que son correctas en su lengua</prompt>
+             <br/>¿Cómo son construidos los reflexivos que se presentan en la posición del objeto en su lengua?  Seleccione todas las opciones que son correctas en su lengua</prompt>
           <checkbox id="PronReflAffixNoWord" dataItem="reflDistinct">Son un sistema distinto de los pronombres personales</checkbox>
           <checkbox id="PronReflAffixYes" dataItem="reflAffix">Uno o más afijos se eligen entre para hacer otro pronombre en un reflexivo</checkbox>
-          <checkbox id="PronReflAffixNoNoun" dataItem="reflNounPoss">Se utiliza una frase que consiste en cierto sustantivo especial con un pronombre como el posesivo</checkbox>
+          <checkbox id="PronReflAffixNoNoun" dataItem="reflNounPoss">Se utiliza un cierto sustantivo especial con un pronombre como el posesivo</checkbox>
           <checkbox id="PronReflAffixNoQP" dataItem="reflQP">Se utiliza unas frases nominales cuantificadas especiales</checkbox>
           <checkbox id="PronReflAffixOther" dataItem="reflOther">En mi lengua, los reflexivos son construidos con:<textBox  id="PronReflAffixOtherContent" dataItem="reflOther" rows="2"/></checkbox>
        </checkboxGroup>
@@ -73,7 +73,7 @@
        <textBox id="PronReflAffixExamples" dataItem="pronReflAffixExample"  rows="2" show="swPronReflAffixYes"/> 
        
        <instruction id="PronReflAffixYesInstruction" show="swPronReflAffixYes">In the lexicon, add the feature <feature>reflexive</feature> to the relevant affixes.</instruction>
-       <prompt id="PronReflAffixNoNounPrompt" show="swPronReflAffixNoNoun"><br/>Escriba la palabra especial que está poseída por los pronombres posesivos para formar una frase reflexiva que actúa igual que un pronombre reflexivo aquí:
+       <prompt id="PronReflAffixNoNounPrompt" show="swPronReflAffixNoNoun"><br/>Escriba la palabra especial que está poseída por los pronombres posesivos para formar una frase reflexiva o un pronombre reflexivo aquí:
        </prompt>
        <textBox id="PronReflNounPossExamples" dataItem="pronReflNounPossExample"  rows="2" show="swPronReflAffixNoNoun"/> 
        

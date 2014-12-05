@@ -54,7 +54,7 @@
                 <br/>How are the reflexives that fill the object position formed in your language? Check all options that are correct for your language</prompt>
            <checkbox id="PronReflAffixNoWord" dataItem="reflDistinct">They are distinct, stand alone words</checkbox>
            <checkbox id="PronReflAffixYes" dataItem="reflAffix">One or more affixes are chosen among to make another pronoun reflexive</checkbox>
-           <checkbox id="PronReflAffixNoNoun" dataItem="reflNounPoss">A phrase consisting of a certain noun with a pronoun as the possessor is used</checkbox>
+           <checkbox id="PronReflAffixNoNoun" dataItem="reflNounPoss">A certain noun with a pronoun as the possessor is used</checkbox>
            <checkbox id="PronReflAffixNoQP" dataItem="reflQP">Special quantified noun phrases are used</checkbox>
            <checkbox id="PronReflAffixOther" dataItem="reflOther">My language does the following to form a reflexive:<textBox  id="PronReflAffixOtherContent" dataItem="reflOther" rows="2"/></checkbox>
         </checkboxGroup>
@@ -73,7 +73,7 @@
        <textBox id="PronReflAffixExamples" dataItem="pronReflAffixExample"  rows="2" show="swPronReflAffixYes"/> 
        
        <instruction id="PronReflAffixYesInstruction" show="swPronReflAffixYes">In the lexicon, add the feature <feature>reflexive</feature> to the relevant affixes.</instruction>
-       <prompt id="PronReflAffixNoNounPrompt" show="swPronReflAffixNoNoun"><br/>Key the special noun that is possessed by the possessor pronouns to form a reflexive phrase that acts the same as a reflexive pronoun here:
+       <prompt id="PronReflAffixNoNounPrompt" show="swPronReflAffixNoNoun"><br/>Key the special noun that is possessed by the possessor pronouns to form a reflexive phrase or a reflexive pronoun here:
        </prompt>
        <textBox id="PronReflNounPossExamples" dataItem="pronReflNounPossExample"  rows="2" show="swPronReflAffixNoNoun"/> 
        

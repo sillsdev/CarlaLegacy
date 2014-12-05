@@ -12,75 +12,67 @@ AdjP = (InitConj) AdjP_1 Conj AdjP_2
 	&lt;AdjP option&gt; = conj
 </rule>
    <showWhen id="AdjPoptionconj">
-	  <whenValue element="coord" attr="conjWord" value="no" negateValue="yes"/>
+      <whenValue element="coord" attr="conjWord" value="no" negateValue="yes"/>
    </showWhen>
    <rule show="AdjPoptionconjPrefix">
-	  rule {AdjP option conjPrefix - conjoined AdjPs}
-	  AdjP = AdjP_1  AdjP_2
-	  &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
-	  &lt;AdjP conjoined&gt; = +
-	  &lt;AdjP_1 conjoined&gt; = -	|limit recursion
-	  &lt;AdjP head type clausal-comp&gt; = -
-	  &lt;AdjP_2 head type prefix conj&gt; = +
-	  &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
-	  &lt;AdjP option&gt; = conjPrefix
+      rule {AdjP option conjPrefix - conjoined AdjPs}
+      AdjP = AdjP_1  AdjP_2
+      &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
+      &lt;AdjP conjoined&gt; = +
+      &lt;AdjP_1 conjoined&gt; = -	|limit recursion
+      &lt;AdjP head type clausal-comp&gt; = -
+      &lt;AdjP_2 head type prefix conj&gt; = +
+      &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
+      &lt;AdjP option&gt; = conjPrefix
    </rule>
    <showWhen id="AdjPoptionconjPrefix">
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="before"/>
-	  <or/>
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="either"/>
+      <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+      <and/>
+      <whenValue element="coord/proclitic" attr="checked" value="yes"/>
    </showWhen>
    <rule show="AdjPoptionconjSuffix">
-	  rule {AdjP option conjSuffix - conjoined AdjPs}
-	  AdjP = AdjP_1  AdjP_2
-	  &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
-	  &lt;AdjP conjoined&gt; = +
-	  &lt;AdjP_1 conjoined&gt; = -	|limit recursion
-	  &lt;AdjP head type clausal-comp&gt; = -
-	  &lt;AdjP_1 head type suffix conj&gt; = +
-	  &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
-	  &lt;AdjP option&gt; = conjSuffix
+      rule {AdjP option conjSuffix - conjoined AdjPs}
+      AdjP = AdjP_1  AdjP_2
+      &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
+      &lt;AdjP conjoined&gt; = +
+      &lt;AdjP_1 conjoined&gt; = -	|limit recursion
+      &lt;AdjP head type clausal-comp&gt; = -
+      &lt;AdjP_1 head type suffix conj&gt; = +
+      &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
+      &lt;AdjP option&gt; = conjSuffix
    </rule>
    <showWhen id="AdjPoptionconjSuffix">
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="after"/>
-	  <or/>
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="either"/>
+      <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+      <and/>
+      <whenValue element="coord/enclitic" attr="checked" value="yes"/>
    </showWhen>
    <rule show="AdjPoptionconjNone">
-	  rule {AdjP option conjNone - conjoined AdjPs}
-	  AdjP = AdjP_1  AdjP_2
-	  &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
-	  &lt;AdjP conjoined&gt; = +
-	  &lt;AdjP_1 conjoined&gt; = -	|limit recursion
-	  &lt;AdjP head type clausal-comp&gt; = -
-	  &lt;AdjP_2 head type prefix conj&gt; = -
-	  &lt;AdjP_1 head type suffix conj&gt; = -
-	  &lt;AdjP_1 head type comma&gt; = -
-	  &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
-	  &lt;AdjP option&gt; = conjNone
+      rule {AdjP option conjNone - conjoined AdjPs}
+      AdjP = AdjP_1  AdjP_2
+      &lt;AdjP head&gt; = &lt;AdjP_2 head&gt;
+      &lt;AdjP conjoined&gt; = +
+      &lt;AdjP_1 conjoined&gt; = -	|limit recursion
+      &lt;AdjP head type clausal-comp&gt; = -
+      &lt;AdjP_2 head type prefix conj&gt; = -
+      &lt;AdjP_1 head type suffix conj&gt; = -
+      &lt;AdjP_1 head type comma&gt; = -
+      &lt;AdjP head type prefix&gt; &lt;= &lt;AdjP_1 head type prefix&gt;
+      &lt;AdjP option&gt; = conjNone
    </rule>
    <showWhen id="AdjPoptionconjNone">
-	  <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
-	  <and/>
-	  <whenValue element="coord" attr="conjPos" value="other"/>
-	  <or/>
-	  <whenValue element="coord" attr="noConj" value="yes" negateValue="no"/>
+      <whenValue element="coord" attr="conjWord" value="yes" negateValue="yes"/>
+      <and/>
+      <whenValue element="coord/attachesOther" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="coord" attr="noConj" value="yes" negateValue="no"/>
    </showWhen>
    <rule>
 rule {AdjP option part - participle phrases}
 AdjP = VP
-			&lt;AdjP head&gt; = &lt;VP head&gt;
-			&lt;VP head type participle&gt; = +
-			&lt;AdjP head type comma&gt; &lt;= &lt;VP head type comma&gt;
-			&lt;AdjP option&gt; = part
+            &lt;AdjP head&gt; = &lt;VP head&gt; 
+            &lt;VP head type participle&gt; = +
+            &lt;AdjP head type comma&gt; &lt;= &lt;VP head type comma&gt;
+            &lt;AdjP option&gt; = part            
    </rule>
 <rule>
 rule {AdjP option 0 - no modifiers}
@@ -99,24 +91,55 @@ AdjP = Deg Adj'
 	&lt;AdjP option&gt; = 1d
 </rule>
 <showWhen id="AdjPoption1d">
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="before"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="either"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="eitherOrBoth"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="beforeOrBoth"></whenValue>
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeBefore" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="no"/>
+        <or/>
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeBefore" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/mannerBefore" attr="checked" value="no"/>
 </showWhen>
-<rule show="AdjPoption1m">
-rule {AdjP option 1m - degree or AdvP modifiers initial}
+        <rule show="AdjPoption1m">
+                rule {AdjP option 1m - manner modifiers initial}
+                AdjP = AdvP Adj'
+                &lt;AdjP head&gt; = &lt;Adj' head&gt;
+                &lt;AdvP head type modifies_Adj&gt; = +
+                &lt;AdvP head type AdjP-initial&gt;   = +
+                &lt;AdvP head type comma&gt; = -
+                &lt;AdjP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
+                &lt;AdjP option&gt; = 1m
+        </rule>
+        <showWhen id="AdjPoption1m">
+                <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+                <and/> 
+                <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/mannerBefore" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/modifiersDegree" attr="checked" value="no"/>
+                <or/>
+                <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+                <and/> 
+                <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/mannerBefore" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/degreeBefore" attr="checked" value="no"/>
+        </showWhen>
+        <rule show="AdjPoption1n">
+rule {AdjP option 1n - degree or AdvP modifiers initial}
 AdjP = {Deg / AdvP} Adj'
 	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg head type modifies_Adj&gt; = +
@@ -127,24 +150,18 @@ AdjP = {Deg / AdvP} Adj'
 	&lt;AdvP head type comma&gt; = -
 	&lt;AdjP head type prefix&gt; &lt;= &lt;Deg head type prefix&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;AdvP head type prefix&gt;
-	&lt;AdjP option&gt; = 1m
+	&lt;AdjP option&gt; = 1n
 </rule>
-<showWhen id="AdjPoption1m">
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="before"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="either"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="eitherOrBoth"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="beforeOrBoth"></whenValue>
+<showWhen id="AdjPoption1n">
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeBefore" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/mannerBefore" attr="checked" value="yes"/>
 </showWhen>
 <rule show="AdjPoption2d">
 rule {AdjP option 2d - degree modifiers final}
@@ -158,24 +175,55 @@ AdjP = Adj' Deg
 	&lt;AdjP option&gt; = 2d
 </rule>
 <showWhen id="AdjPoption2d">
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="after"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="either"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="eitherOrBoth"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="afterOrBoth"></whenValue>
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeAfter" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="no"/>
+        <or/>
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeAfter" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/mannerAfter" attr="checked" value="no"/>
 </showWhen>
-<rule show="AdjPoption2m">
-rule {AdjP option 2m - degree or AdvP modifiers final}
+        <rule show="AdjPoption2m">
+                rule {AdjP option 2m - manner modifiers final}
+                AdjP = Adj' AdvP
+                &lt;AdjP head&gt; = &lt;Adj' head&gt;
+                &lt;AdvP head type modifies_Adj&gt; = +
+                &lt;AdvP head type AdjP-final&gt;   = +
+                &lt;Adj' head type comma&gt; = -
+                &lt;AdjP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
+                &lt;AdjP option&gt; = 2m
+        </rule>
+        <showWhen id="AdjPoption2m">
+                <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+                <and/> 
+                <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/mannerAfter" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/modifiersDegree" attr="checked" value="no"/>
+                <or/>
+                <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+                <and/> 
+                <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/mannerAfter" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/degreeAfter" attr="checked" value="no"/>
+        </showWhen>
+        <rule show="AdjPoption2n">
+rule {AdjP option 2n - degree or AdvP modifiers final}
 AdjP = Adj' {Deg / AdvP}
 	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;Deg head type modifies_Adj&gt; = +
@@ -187,24 +235,18 @@ AdjP = Adj' {Deg / AdvP}
 	&lt;AdjP head type comma&gt; &lt;= &lt;AdvP head type comma&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg head type suffix&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;AdvP head type suffix&gt;
-	&lt;AdjP option&gt; = 2m
+	&lt;AdjP option&gt; = 2n
 </rule>
-<showWhen id="AdjPoption2m">
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="after"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="either"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="eitherOrBoth"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="advp" attr="mannerPos" value="afterOrBoth"></whenValue>
+<showWhen id="AdjPoption2n">
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeAfter" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/mannerAfter" attr="checked" value="yes"/>
 </showWhen>
 <rule show="AdjPoption3d">
 rule {AdjP option 3d - degree modifiers both sides}
@@ -222,24 +264,60 @@ AdjP = Deg_1 Adj' Deg_2
 	&lt;AdjP option&gt; = 3d
 </rule>
 <showWhen id="AdjPoption3d">
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="both"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="beforeOrBoth"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="eitherOrBoth"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="degreePos" value="afterOrBoth"></whenValue>
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeBoth" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="no"/>
+        <or/>
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeBoth" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/mannerBoth" attr="checked" value="no"/>
 </showWhen>
-<rule show="AdjPoption3m">
-rule {AdjP option 3m - degree or AdvP modifiers both sides}
+        <rule show="AdjPoption3m">
+                rule {AdjP option 3m - manner modifiers both sides}
+                AdjP = AdvP_1 Adj' AdvP_2
+                &lt;AdjP head&gt; = &lt;Adj' head&gt;
+                &lt;AdvP_1 head type modifies_Adj&gt; = +
+                &lt;AdvP_2 head type modifies_Adj&gt; = +
+                &lt;AdvP_1 head type AdjP-initial&gt; = +
+                &lt;AdvP_2 head type AdjP-final&gt;   = +
+                &lt;AdvP_1 head type comma&gt; = -
+                &lt;Adj' head type comma&gt; = -
+                &lt;AdjP head type comma&gt; &lt;= &lt;AdvP_2 head type comma&gt;
+                &lt;AdjP head type prefix&gt; &lt;= &lt;AdvP_1 head type prefix&gt;
+                &lt;AdjP head type suffix&gt; &lt;= &lt;AdvP_2 head type suffix&gt;
+                &lt;AdjP option&gt; = 3m
+        </rule>
+        <showWhen id="AdjPoption3m">
+                <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+                <and/> 
+                <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/mannerBoth" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/modifiersDegree" attr="checked" value="no"/>
+                <or/>
+                <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+                <and/> 
+                <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/mannerBoth" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+                <and/> 
+                <whenValue element="adjp/degreeBoth" attr="checked" value="no"/>
+        </showWhen>
+        <rule show="AdjPoption3n">
+rule {AdjP option 3n - degree or AdvP modifiers both sides}
 AdjP = {Deg_1 / AdvP_1} Adj' {Deg_2 / AdvP_2}
 	&lt;AdjP head&gt; = &lt;Adj' head&gt;
 	&lt;AdvP_1 head type manner&gt;      = +
@@ -257,24 +335,18 @@ AdjP = {Deg_1 / AdvP_1} Adj' {Deg_2 / AdvP_2}
 	&lt;AdjP head type suffix&gt; &lt;= &lt;Deg_2 head type suffix&gt;
 	&lt;AdjP head type prefix&gt; &lt;= &lt;AdvP_1 head type prefix&gt;
 	&lt;AdjP head type suffix&gt; &lt;= &lt;AdvP_2 head type suffix&gt;
-	&lt;AdjP option&gt; = 3m
+	&lt;AdjP option&gt; = 3n
 </rule>
-<showWhen id="AdjPoption3m">
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="both"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="afterOrBoth"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="eitherOrBoth"></whenValue>
-<or/>
-		<whenValue element="adjp" attr="modifiers" value="yesManner" negateValue="no"/>
-<and/>
-		<whenValue element="adjp" attr="mannerPos" value="beforeOrBoth"></whenValue>
+<showWhen id="AdjPoption3n">
+        <whenValue element="adjp" attr="modifiers" value="yes" negateValue="no"/>
+        <and/> 
+        <whenValue element="adjp/modifiersDegree" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/degreeBoth" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/modifiersManner" attr="checked" value="yes"/>
+        <and/> 
+        <whenValue element="adjp/mannerBoth" attr="checked" value="yes"/>
 </showWhen>
 <!-- |***********Adj'*********************************-->
 <rule>

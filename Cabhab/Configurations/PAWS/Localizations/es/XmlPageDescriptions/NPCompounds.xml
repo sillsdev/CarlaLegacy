@@ -81,7 +81,7 @@
 	      Algunas lenguas no utiliza un gerundio para expresar significados similares, pero en su lugar, utiliza una cláusula relativa.</introduction>
 	   <br/>
 		<br/>
-	   <prompt>Escriba cómo su lengua se expresan ejemplos similares de frases nominales (como las partes entre corchetes de 6-8 o los ejemplos en el siguiente párrafo) aquí:</prompt>
+	   <prompt>Escriba cómo su lengua se expresan ejemplos similares de frases nominales (como las partes entre corchetes de ejemplos 6-8 o los ejemplos en el párrafo que sigue 6-8) aquí:</prompt>
 		<textBox id="NPPartExample" dataItem="partHeadExample"/>
 		<br/>
 <br/>

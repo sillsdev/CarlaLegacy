@@ -45,79 +45,13 @@
 	            <xsl:when test="//np/@agreeNumber='no'"> no hay concordancia de número. En lugar del indicador del número aparece el número o el cuantificador.</xsl:when>
 	            <xsl:when test="//np/@agreeNumber='yes'">los diversos modificadores nominales concuerdan en número con el sustantivo principal.</xsl:when>
 	         </xsl:choose>
-<xsl:text>  Además, </xsl:text>
-<xsl:choose>
-	            <xsl:when test="//np/@agreeOther='no'">no hay concordancia en animacidad, clase, ni género entre los modificadores y el sustantivo principal.</xsl:when>
-	            <xsl:when test="//np/@agreeOther='yes'">los modificadores y el sustantivo principal concuerdan en </xsl:when>
-	         </xsl:choose>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//np/agreeGender/@checked)='no' and normalize-space(//np/agreeAnimacy/@checked)='no' and normalize-space(//np/agreeOtherFeat/@checked)='no'">
-<xsl:text>clase.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='no' and normalize-space(//np/agreeGender/@checked)='yes' and normalize-space(//np/agreeAnimacy/@checked)='no' and normalize-space(//np/agreeOtherFeat/@checked)='no'">
-<xsl:text>género.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='no' and normalize-space(//np/agreeGender/@checked)='no' and normalize-space(//np/agreeAnimacy/@checked)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='no'">
-<xsl:text>animacidad.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='no' and normalize-space(//np/agreeGender/@checked)='no' and normalize-space(//np/agreeAnimacy/@checked)='no' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
-<xsl:text>___</xsl:text>
-<xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text>.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//np/agreeGender/@checked)='yes' and normalize-space(//np/agreeAnimacy/@checked)='no' and normalize-space(//np/agreeOtherFeat/@checked)='no'">
-<xsl:text>género y clase.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//np/agreeGender/@checked)='no' and normalize-space(//np/agreeAnimacy/@checked)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='no'">
-<xsl:text>animacidad y clase.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//np/agreeGender/@checked)='no' and normalize-space(//np/agreeAnimacy/@checked)='no' and normalize-space(//np/agreeOtherFeat/@checked)='no'">
-<xsl:text>clase y ___</xsl:text>
-<xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text>.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//np/agreeGender/@checked)='yes' and normalize-space(//np/agreeAnimacy/@checked)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='no'">
-<xsl:text>género, animacidad y clase.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//np/agreeGender/@checked)='no' and normalize-space(//np/agreeAnimacy/@checked)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
-<xsl:text>animacidad, clase y ___</xsl:text>
-<xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text>.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//np/agreeGender/@checked)='yes' and normalize-space(//np/agreeAnimacy/@checked)='no' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
-<xsl:text>género, clase y ___</xsl:text>
-<xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text>.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//np/agreeGender/@checked)='yes' and normalize-space(//np/agreeAnimacy/@checked)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
-<xsl:text>género, animacidad, clase y  ___</xsl:text>
-<xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text>.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='no' and normalize-space(//np/agreeGender/@checked)='yes' and normalize-space(//np/agreeAnimacy/@checked)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='no'">
-<xsl:text>género y animacidad.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='no' and normalize-space(//np/agreeGender/@checked)='yes' and normalize-space(//np/agreeAnimacy/@checked)='no' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
-<xsl:text>género y ___</xsl:text>
-<xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text>.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='no' and normalize-space(//np/agreeGender/@checked)='yes' and normalize-space(//np/agreeAnimacy/@checked)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
-<xsl:text>género, animacidad y ___</xsl:text>
-<xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text>.</xsl:text>
-</xsl:if>
-<xsl:if test="normalize-space(//np/agreeClass/@checked)='no' and normalize-space(//np/agreeGender/@checked)='no' and normalize-space(//np/agreeAnimacy/@checked)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
-<xsl:text>animacidad y ___</xsl:text>
-<xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text>.</xsl:text>
-</xsl:if>
 </p>
-	      <xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
+	   	<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
 <p>
 <xsl:text>Algunos ejemplos que muestran la concordancia de número en las frases nominales son:</xsl:text>
 </p>
 </xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
+	   	<xsl:if test="normalize-space(//np/@agreeNumber)='yes'">
 <example num="xN.NPAgr.12">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/agreeNumberExample" />
@@ -157,58 +91,19 @@
 </xsl:choose>
 </example>
 </xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeOther)='yes' and normalize-space(//np/agreeAnimacy/@checked)='yes'">
+	   	
+	   	<xsl:if test="normalize-space(//np/agreeClass/@checked)='no' and normalize-space(//np/agreeClassifier/@checked)='no' and normalize-space(//np/agreeGender/@checked)='no' and normalize-space(//np/agreeAnimacy/@checked)='no' and normalize-space(//np/agreeOtherFeat/@checked)='no' and normalize-space(//np/agreeOtherNone/@checked)='yes'">
 <p>
-<xsl:text>Algunos ejemplos que muestran la concordancia de animacidad en las frases nominales son:</xsl:text>
+<xsl:text>No hay concordancia en animacidad, clase, ni género entre los modificadores y el sustantivo principal. </xsl:text>
 </p>
 </xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeOther)='yes' and normalize-space(//np/agreeAnimacy/@checked)='yes'">
-<example num="xN.NPAgr.16">
-<xsl:variable name="sExampleValue">
-<xsl:value-of select="//np/agreeAnimacyExample" />
-</xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeAnimacyExample))" />
-<xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
-<xsl:with-param name="sExamples">
-<xsl:value-of select="//np/agreeAnimacyExample" />
-</xsl:with-param>
-<xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//np/agreeAnimacyExample))" />
-</xsl:with-param>
-<xsl:with-param name="sExNumber">xN.NPAgr.16</xsl:with-param>
-<xsl:with-param name="sLetterList">
-<xsl:value-of select="$sMasterLetterList" />
-</xsl:with-param>
-</xsl:call-template>
-</xsl:when>
-<xsl:otherwise>
-<listInterlinear>
-<xsl:attribute name="letter">
-<xsl:text>xN.NPAgr.16.1</xsl:text>
-</xsl:attribute>
-<lineGroup>
-<line>
-<langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
-</xsl:otherwise>
-</xsl:choose>
-</example>
-</xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeOther)='yes' and normalize-space(//np/agreeClass/@checked)='yes'">
+	   	<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//typology/@classifier)='yesAgr'">
 <p>
-<xsl:text>Algunos ejemplos que muestran la concordancia de clase en las frases nominales son:</xsl:text>
+<xsl:text>Los modificadores y el sustantivo principal concuerdan en clase.  Algunos ejemplos que muestran la concordancia de clase en las frases nominales son:</xsl:text>
 </p>
 </xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeOther)='yes' and normalize-space(//np/agreeClass/@checked)='yes'">
-<example num="xN.NPAgr.20">
+	   	<xsl:if test="normalize-space(//np/agreeClass/@checked)='yes' and normalize-space(//typology/@classifier)='yesAgr'">
+<example num="xN.NPAgr.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/agreeClassExample" />
 </xsl:variable>
@@ -222,7 +117,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//np/agreeClassExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xN.NPAgr.20</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPAgr.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -231,7 +126,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xN.NPAgr.20.1</xsl:text>
+<xsl:text>xN.NPAgr.18.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -247,13 +142,103 @@
 </xsl:choose>
 </example>
 </xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeOther)='yes' and normalize-space(//np/agreeGender/@checked)='yes'">
+	   	<xsl:if test="normalize-space(//np/agreeClassifier/@checked)='yes' and normalize-space(//typology/@classifier)='yesSpecific'">
+<p>
+<xsl:text>Un clasificador que concuerda con la clase o tipo del sustantivo está presente con los sustantivos que son contados o especificados, pero otros modificadores no se marcan para clase, como se muestran en estos ejemplos:</xsl:text>
+</p>
+</xsl:if>
+	   	<xsl:if test="normalize-space(//np/agreeClassifier/@checked)='yes' and normalize-space(//typology/@classifier)='yesSpecific'">
+<example num="xN.NPAgr.22">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//np/agreeClassifierExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeClassifierExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//np/agreeClassifierExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//np/agreeClassifierExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPAgr.22</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xN.NPAgr.22.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+	   	<xsl:if test="normalize-space(//np/agreeAnimacy/@checked)='yes'">
+<p>
+<xsl:text>Algunos ejemplos que muestran la concordancia de animacidad en las frases nominales son:</xsl:text>
+</p>
+</xsl:if>
+	   	<xsl:if test="normalize-space(//np/agreeAnimacy/@checked)='yes'">
+<example num="xN.NPAgr.26">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//np/agreeAnimacyExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeAnimacyExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//np/agreeAnimacyExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//np/agreeAnimacyExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPAgr.26</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xN.NPAgr.26.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+	   	<xsl:if test="normalize-space(//np/agreeGender/@checked)='yes'">
 <p>
 <xsl:text>Algunos ejemplos que muestran la concordancia de género en las frases nominales son:</xsl:text>
 </p>
 </xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeOther)='yes' and normalize-space(//np/agreeGender/@checked)='yes'">
-<example num="xN.NPAgr.24">
+	   	<xsl:if test="normalize-space(//np/agreeGender/@checked)='yes'">
+<example num="xN.NPAgr.30">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/agreeGenderExample" />
 </xsl:variable>
@@ -267,7 +252,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//np/agreeGenderExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xN.NPAgr.24</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPAgr.30</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -276,7 +261,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xN.NPAgr.24.1</xsl:text>
+<xsl:text>xN.NPAgr.30.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -292,15 +277,24 @@
 </xsl:choose>
 </example>
 </xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeOther)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
+	   	<xsl:if test="normalize-space(//np/agreeOtherFeat/@checked)='yes'">
 <p>
-<xsl:text>Algunos ejemplos que muestran la concordancia de  ___</xsl:text>
+<xsl:text>Las frases nominales en el </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> muestran la concordancia de  ___</xsl:text>
 <xsl:value-of select="//np/agreeOtherFeat" />
-<xsl:text> en las frases nominales son:</xsl:text>
+<xsl:text>.  Algunos ejemplos de este tipo de concordancia son:</xsl:text>
 </p>
 </xsl:if>
-	      <xsl:if test="normalize-space(//np/@agreeOther)='yes' and normalize-space(//np/agreeOtherFeat/@checked)='yes'">
-<example num="xN.NPAgr.28">
+	   	<xsl:if test="normalize-space(//np/agreeOtherFeat/@checked)='yes'">
+<example num="xN.NPAgr.34">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/agreeOtherExample" />
 </xsl:variable>
@@ -314,7 +308,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//np/agreeOtherExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xN.NPAgr.28</xsl:with-param>
+<xsl:with-param name="sExNumber">xN.NPAgr.34</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -323,7 +317,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xN.NPAgr.28.1</xsl:text>
+<xsl:text>xN.NPAgr.34.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -420,7 +414,11 @@
 	            <xsl:when test="//typology/@case='ergative'"> tiene un sistema de caso ergativo-absolutivo. Los sujetos de los verbos intransitivos y los objetos de los verbos transitivos se indican de la misma manera y utilizan el mismo sistema de pronombres, pero los sujetos de los verbos transitivos se indican de una manera diferente.</xsl:when>
 	            <xsl:when test="//typology/@case='split'"> tiene un sistema de caso de ergatividad escindida. La lengua sigue normalmente el sistema de caso del nominativo-acusativo, pero el sistema ergativo-absolutivo se utiliza bajo ciertas condiciones gramaticales.</xsl:when>
 	         </xsl:choose>
-<xsl:text></xsl:text>
+<xsl:if test="normalize-space(//typology/@case)='split'"> 
+	      		<xsl:text> Las condiciones gramaticales en que el sistema ergativo-absolutivo se utiliza son ___</xsl:text>
+<xsl:value-of select="//typology/splitConditions" />
+	      		<xsl:text>.   </xsl:text>
+	      	</xsl:if>
 </p>
 	      
 	      <p>
@@ -1930,15 +1928,15 @@
 			            <xsl:text> genitivo </xsl:text>
 			         </xsl:if>
 			         <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='genitive'">
-			            <xsl:text>o </xsl:text>
+			            <xsl:text>o</xsl:text>
 			         </xsl:if>
 			         <xsl:text></xsl:text>
 			         <xsl:if test="normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='split'">
-			            <xsl:text>ergativo </xsl:text>
+			            <xsl:text> ergativo </xsl:text>
 			         </xsl:if>
 			         <xsl:text></xsl:text>
 			         <xsl:if test="normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//typology/@case)='split'">
-			            <xsl:text>absolutivo </xsl:text>
+			            <xsl:text> absolutivo </xsl:text>
 			         </xsl:if>
 			         <xsl:text> se presenta en el sustantivo principal, indica que un modificador adjetival y/o un posesivo deben estar presentes en la frase. Si el adjetivo está marcado con este </xsl:text>
 			         <xsl:text></xsl:text>
@@ -1950,15 +1948,15 @@
 			            <xsl:text> genitivo </xsl:text>
 			         </xsl:if>
 			         <xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='genitive'">
-			            <xsl:text>o </xsl:text>
+			            <xsl:text>o</xsl:text>
 			         </xsl:if>
 			         <xsl:text></xsl:text>
 			         <xsl:if test="normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='split'">
-			            <xsl:text>ergativo </xsl:text>
+			            <xsl:text> ergativo </xsl:text>
 			         </xsl:if>
 			         <xsl:text></xsl:text>
 			         <xsl:if test="normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//typology/@case)='split'">
-			            <xsl:text>absolutivo </xsl:text>
+			            <xsl:text> absolutivo </xsl:text>
 			         </xsl:if>
 			         <xsl:text> entonces otro adjetivo y/o un posesivo también deben estar presentes.</xsl:text>
 			      </xsl:if>
@@ -2052,38 +2050,38 @@
 					      <xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefijo</xsl:when>
 					   </xsl:choose>
 					   <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//typology/@case)='nominative'">
-							<xsl:text>genitivo </xsl:text>
+							<xsl:text> genitivo </xsl:text>
 						</xsl:if>
 						<xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='genitive'">
-							<xsl:text>o el </xsl:text>
+							<xsl:text>o</xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
 						<xsl:if test="normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='split'">
-							<xsl:text>ergativo </xsl:text>
+							<xsl:text> ergativo </xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
 						<xsl:if test="normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//typology/@case)='split'">
-							<xsl:text>absolutivo </xsl:text>
+							<xsl:text> absolutivo </xsl:text>
 						</xsl:if>
 						<xsl:text> se presenta en el sustantivo principal, indica que un modificador adjetival y/o un posesivo debe presentarse en la frase. Si el adjetivo está marcado con este </xsl:text>
 					   <xsl:text></xsl:text>
 					   <xsl:choose>
-					      <xsl:when test="//np/@adjpCaseAffix='yesSuffix'">sufijo,</xsl:when>
-					      <xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefijo,</xsl:when>
+					      <xsl:when test="//np/@adjpCaseAffix='yesSuffix'">sufijo</xsl:when>
+					      <xsl:when test="//np/@adjpCaseAffix='yesPrefix'">prefijo</xsl:when>
 					   </xsl:choose>
 					   <xsl:if test="normalize-space(//typology/@case)!='none' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//typology/@case)='nominative'">
-							<xsl:text>genitivo </xsl:text>
+							<xsl:text> genitivo </xsl:text>
 						</xsl:if>
 						<xsl:if test="normalize-space(//typology/@case)='split' and normalize-space(//np/@possCaseErg)!='genitive'">
-							<xsl:text>o </xsl:text>
+							<xsl:text>o</xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
 						<xsl:if test="normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='ergative' and normalize-space(//typology/@case)='split'">
-							<xsl:text>ergativo </xsl:text>
+							<xsl:text> ergativo </xsl:text>
 						</xsl:if>
 						<xsl:text></xsl:text>
 						<xsl:if test="normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//typology/@case)='ergative' or normalize-space(//np/@possCaseErg)='absolutive' and normalize-space(//typology/@case)='split'">
-							<xsl:text>absolutivo </xsl:text>
+							<xsl:text> absolutivo </xsl:text>
 						</xsl:if>
 						<xsl:text> entonces otro adjetivo y/o un posesivo también debe presentarse.</xsl:text>
 					</xsl:if>
@@ -2207,11 +2205,16 @@
 					</xsl:if>
 <xsl:text></xsl:text>
 </p>
+			   <p>
+<xsl:text>Véase la sección </xsl:text>
+<sectionRef sec="sNPPoss" />
+<xsl:text> para ejemplos de sustantivos poseídos.</xsl:text>
+</p>
 			</section3>
 		   <xsl:if test="normalize-space(//np/@possAbsolutive)='yes'">
 <section3 id="sNPossAbsolutive">
 		      <secTitle>Indicador absolutivo</secTitle>
-		      <p>
+		   	<p>
 <xsl:text>El </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
@@ -2221,7 +2224,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> tiene un afijo que se presenta en sustantivos cuando no están poseídos o pluralizados. Este afijo es conocido como el indicador absolutivo, pero el nombre no está relacionado con el indicador de caso absolutivo usado en lenguas con un sistema de caso ergativo-absolutivo.</xsl:text>
+<xsl:text> tiene un afijo que se presenta en sustantivos cuando no están poseídos o pluralizados, o tal vez cuando no tiene ningún modificador. Este afijo es conocido como el indicador absolutivo, pero el nombre no está relacionado con el indicador de caso absolutivo usado en lenguas con un sistema de caso ergativo-absolutivo.</xsl:text>
 </p>
 		      <p>
 <xsl:text>Las formas de esta afijo que se utilizan en el </xsl:text>
@@ -2769,166 +2772,44 @@
 			</section2>
 
 	</section1>
-
-	
-
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
-      
-      
-      
-      
-      
-      
-      
-   
-   
 	
 		
-	   
-	   
 	
 	
 		
-	   
-	   
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
 		
-	   
-	   
+			
+			
+			
+		
+		
+			
+			
+			
+		
+		
+			
+		
+		
+			
+		
+		
+			
+		
+		
 	
-      
-         
-         
-         
-      
-   
       
       
       

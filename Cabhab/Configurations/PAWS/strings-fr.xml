@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	you do not have to specify the text attribute if it is identical to the id one.
+		e.g. <string id="Anywhere"/> is equivalent to <string id="Anywhere" txt="Anywhere"/>
+-->
+<!-- Strings which are shared by more than 1 application go in this file. -->
+<!-- For LexText we're going to put all strings here, rather then work up code to do includes.  2004.08.18 -->
+<strings>
+	<group id="DialogStrings">
+		<string id="OpenAnswerFile" txt="Ouvrir un fichier de langue PAWS"/>
+		<string id="SaveAnswerFile" txt="Enregistrer un fichier de langue PAWS"/>
+		<string id="CreateNewLanguage" txt="Nouveau fichier de langue PAWS"/>
+		<string id="SaveLanguageAs" txt="Enregistrer un fichier de langue PAWS sous"/>
+		<string id="OutputFileBadMessageTitle" txt="Fichier de sortie introuvable"/>
+		<string id="OutputFileBadMessage" txt="Un fichier de sortie n'a pas été trouvé. Vérifiez que tous les noms de fichiers sont dans des emplacements existants en cherchant dans « Menu Langues / Emplacements de fichier » Le message était: "/>
+	</group>
+</strings>

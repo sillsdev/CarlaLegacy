@@ -4,7 +4,7 @@
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="IPCausative" count="2/3">
-   <title level="2">Las oraciones básicas - Causativas y antipasivas</title>
+   <title level="2">Las oraciones básicas - Causativas, aplicativas y antipasivas</title>
    <introduction>Las oraciones causativas agregan un <technicalTermRef term="ttArgument"/> adicional a la oración. Algunas lenguas tienen oraciones <technicalTermRef term="ttCausative">causativas</technicalTermRef> de una sola cláusula, en que el verbo se marca con un afijo que presenta el argumento adicional. Ese es el tipo de construcción que se cubre aquí. <br/><br/>Inglés y español tienen solamente causativas sintácticas que consistan en dos cláusulas, por ejemplo:</introduction>
 	<EnglishExample>
 	   <exItem label="1.">My mother made me clean my room. ‘Mi madre me hizo limpiar mi dormitorio.'</exItem>
@@ -33,10 +33,24 @@
 	   
 	   <instruction id="IPCausativeInstruction">Mark inherently causative verbs <span id="IPCausativeAffixSpan" show="swIPCausativeAffix">and causative affixes </span>with the feature <feature>causative</feature> in the lexicon, if you have not already done so.
 	   </instruction>
-	   
-	   	<br/>
 	   <br/>
-	   <introduction>En vez de convertir el objeto en sujeto como lo hace en voz pasiva, la <technicalTermRef term="ttAntipassive">antipasiva</technicalTermRef> es una <technicalTermRef term="ttVoice"/> del verbo que suprime el objeto de verbos transitivos. Las oraciones antipasivas se encuentran principalmente en las lenguas con un sistema de <technicalTermRef term="ttCase"/> <technicalTermRef term="ttErgative"/>-<technicalTermRef term="ttAbsolutive"/>, en que el sujeto cambia de caso ergativo al caso absolutivo cuando el objeto se suprime. 
+	   <introduction>Algunas lenguas tienen una construcción adicional aplicativa.  La <technicalTermRef term="ttApplicative" capitalize="yes">aplicativa</technicalTermRef> es una <technicalTermRef term="ttVoice"/> del verbo que promueve un argumento oblicua del verbo al argumento de objeto e indica la relación gramatical del oblicuo en el significado del verbo. Se convierte un verbo intransitivo a un transitivo y un verbo transitivo se convierte en ditransitivo cuando se añade el afijo aplicativo. Esto está en contraste con expresar estos argumentos con adposiciones.
+	      <br/><br/>
+	      La voz aplicativa puede utilizarse para las relaciones gramaticales de comitativo, locativo, instrumento y benefactivo. Algunas lenguas permiten más de uno afijo aplicativo en un verbo.
+	   </introduction>
+	   <radioGroup>
+	      <groupName dataItem="applicative" default="no">RIPApplicative</groupName>
+	      <prompt><br/>¿Su lengua tiene aplicativas en que e expresa un argumento oblícuo dentro del verbo?</prompt>
+	      <radio id="IPApplicativeNo" dataValue="no">No</radio>
+	      <radio id="IPApplicativeYes" dataValue="yes">Sí</radio>
+	   </radioGroup>
+	   <prompt id="IPApplicativeNoPrompt" show="swIPApplicativeNoAndFeaturesYes">ADVERTENCIA: En <section number="9.2"> Las oraciones básicas - La flexión verbal</section> usted seleccionó el accidente gramatical de voz aplicativa para su lengua. Esto es inconsistente con su respuesta aquí. Por favor cambia su respuesta aquí a ‘Sí’ o vuelva a <section number="9.2"> Las oraciones básicas - La flexión verbal</section> y desactive el accidente gramatical de voz aplicativa.</prompt>
+	   <prompt id="IPApplicativeYesPrompt" show="swIPApplicativeYesAndFeaturesNo">ADVERTENCIA: En <section number="9.2"> Las oraciones básicas - La flexión verbal</section> no seleccionó el accidente gramatical de voz aplicativa para su lengua. Esto es inconsistente con su respuesta aquí. Si su lengua tiene aplicativas, vuelva a <section number="9.2"> Las oraciones básicas - La flexión verbal</section> y seleccione el accidente gramatical de voz aplicativa y escriba los morfemas aplicativos allí.</prompt>
+	   <prompt id="IPApplicativePrompt" show="swIPApplicativeYes">Escriba algunos ejemplos de oraciones aplicativas en su lengua aquí:</prompt>
+	   <textBox id="IPApplicativeExample" dataItem="applicativeExample" cols="50" show="swIPApplicativeYes"/>
+	   
+	   <br/>
+	   <introduction>En vez de convertir el objeto en sujeto como lo hace en voz pasiva, la <technicalTermRef term="ttAntipassive">antipasiva</technicalTermRef> es una <technicalTermRef term="ttVoice"/> del verbo que suprime el objeto de verbos transitivos. Las oraciones antipasivas se encuentran principalmente en las lenguas con un sistema de <technicalTermRef term="ttCase">caso </technicalTermRef> <technicalTermRef term="ttErgative"/>-<technicalTermRef term="ttAbsolutive"/>, en que el sujeto cambia de caso ergativo al caso absolutivo cuando el objeto se suprime. 
 	      También se encuentran en algunas lenguas con un sistema de caso <technicalTermRef term="ttNominative"/>-<technicalTermRef term="ttAccusative"/> en que el sujeto y el objeto directo concuerden con el verbo.  
 	      En estas lenguas, la antipasiva normalmente se forma por suprimiendo el afijo de la concordancia del objeto. La mayoría de las lenguas con voz antipasiva son lenguas aborígenes australianas o del nativo americano. 
 	      <br/> <br/>
@@ -97,6 +111,20 @@
       <whenCheckbox button="IPCausativeAffix"/>
       <and/>
       <whenValue element="ip/ipInflFeatCausative" attr="checked" value="no"/>
+   </showWhen>
+ 
+   <showWhen id="swIPApplicativeYes">
+      <whenRadio button="IPApplicativeYes"/>
+   </showWhen>
+   <showWhen id="swIPApplicativeNoAndFeaturesYes">
+      <whenRadio button="IPApplicativeNo"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatApplicative" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swIPApplicativeYesAndFeaturesNo">
+      <whenRadio button="IPApplicativeYes"/>
+      <and/>
+      <whenValue element="ip/ipInflFeatApplicative" attr="checked" value="no"/>
    </showWhen>
    <showWhen id="swIPAntipassiveYes">
       <whenRadio button="IPAntipassiveYes"/>

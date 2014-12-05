@@ -7,9 +7,12 @@ function Initialize() {
 	window.external.GetInterfaceLanguage();
 	attr = window.external.OutValue;
 	if (attr == "en")
-	InterfaceLangEn.checked = true; else
+	InterfaceLangEn.checked = true;
+	else if (attr == "es")
 	InterfaceLangEs.checked = true;
-
+	else
+    InterfaceLangFr.checked = true;
+    
 	Return.style.display = "";
 
 	Refresh()
@@ -29,6 +32,8 @@ function saveData() {
 	sTemp = "en";
 	if (InterfaceLangEs.checked)
 	sTemp = "es";
+	if (InterfaceLangFr.checked)
+	sTemp = "fr";
 
 	window.external.SetInterfaceLanguage(sTemp);
 }
@@ -41,6 +46,8 @@ function copyFiles() {
 	sTemp = "en";
 	if (InterfaceLangEs.checked)
 	sTemp = "es";
+	if (InterfaceLangFr.checked)
+	sTemp = "fr";
 
 	window.external.CopyFiles("Localizations/" + sTemp + "/HTMs", "HTMs");
 	window.external.CopyFiles("Localizations/" + sTemp + "/Transforms", "Transforms");

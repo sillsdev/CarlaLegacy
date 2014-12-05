@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="QMainYN" count="2/9">
+   <title level="2">Questions – Les questions oui/non comme proposition principale</title>
+   <introduction>En anglais les questions oui/non comme proposition principale sont formées en plaçant le verbe auxiliaire devant le sujet.  En français les questions oui/non se forment ou par l’inversion du verbe et du sujet ou par l’addition de <example>est-ce que/qu’</example> au début de la phrase.  D’autres langues utilisent un marqueur de question oui/non ou un complétiseur spécial au lieu de l’auxiliaire au début de la phrase. (L’anglais fait ceci dans les questions subordonnées oui/non .) Voici des exemples en anglais de questions oui/non comme proposition principale:</introduction> 
+        <EnglishExample>
+           <exItem label="1.">Are you going to the store?  « Allez-vous au magasin? / Est-ce que vous allez au magasin? »</exItem>
+           <exItem label="2.">Will Sue buy the present for her mother?  « Est-ce que Sue achètera le cadeau pour sa mère?? »</exItem>
+           <exItem label="3.">Could the boy have hit the ball?  « Est-ce que le garçon aurait pu toucher la balle? »</exItem>
+        </EnglishExample>
+   <introduction>La construction « est-ce que » est plus courant en français; seul le premier exemple ci-dessus serait possible avec un verbe initial suivi du sujet, mais quand même la construction « est-ce-que » serait plus naturelle. En français on peut aussi indiquer la présence d’une question par le moyen de l’intonation: </introduction>
+ <EnglishExample>
+    <exItem label="4.">Vous allez aux magasins?</exItem>
+ </EnglishExample>
+   
+   <form section="q">
+      <prompt><br/>Entrez ici des exemples de questions oui/non comme proposition principale dans votre langue:</prompt>
+        <textBox id="QExample" dataItem="example" cols="50"/>
+        <br/>
+        <br/>
+        <radioGroup>
+            <groupName dataItem="mainYN" default="no">RQMainYN</groupName>
+           <prompt><br/>Pour les questions oui/non comme proposition principale, votre langue a-t-elle un ou plusieurs marqueurs de questions oui/non ou de complétiseurs (incluez affixes ou clitiques en répondant à cette question)?</prompt>
+            <radio id="QMainYNYes" dataValue="yes">Oui</radio>
+           <radio id="QMainYNNoAux" dataValue="noAux">Non, mais un auxiliaire se place au début de la phrase</radio>
+           <radio id="QMainYNNo" dataValue="no">Non, il n’y a pas de marqueur ou de changement dans l’ordre des mots dans les questions oui/non comme proposition principale, juste une différence dans l’intonation ou le ton ou un autre marqueur non syntactique</radio>
+        </radioGroup>
+      <prompt id="QMainYNAuxAndNoAuxPrompt" show="swQMainYNAuxAndNoAux">AVERTISSEMENT: Vos réponses ne sont pas cohérentes.  Ce n’est pas possible d’avoir un auxiliaire au début de la phrase si la langue n’a pas d’auxiliaires qui sont écrits comme mots indépendants.  Veuillez changer votre réponse ici et retournez à la <section number="9.3">Phrases Simples – Auxiliaires</section> et changez votre réponse ici en « Oui » avant de continuer.</prompt>
+      
+      <radioGroup id="QMainYNWordTable" show="swQMainYNYes">
+         <groupName dataItem="mainYNWord" default="yes">RQMainYNWord</groupName>
+         <prompt><br/>Est-ce que les marqueurs des questions oui/non sont écrits comme des mots indépendants?</prompt>
+         <radio id="QMainYNWordYes" dataValue="yes">Oui, ce sont tous des mots indépendants</radio>
+         <radio id="QMainYNWordSome" dataValue="some">Certains sont des mots indépendants mais d’autres se rattachent à un autre mot</radio>
+         <radio id="QMainYNWordNo" dataValue="no">Non, ils se rattachent tous à un autre mot</radio>
+      </radioGroup>
+  
+      <checkboxGroup  id="QMainYNCliticPosTable" show="swQMainYNWordNoOrSome">
+         <prompt><br/>Où est-ce que les marqueurs oui/non <span id="QMainYNCliticSomeSpan" show="swQMainYNWordSome">qui ne sont pas des mots indépendants </span>se rattachent ils dans la question oui/non?  Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+         <checkbox id="QMainYNCliticProclitic" dataItem="mainYNProclitic">Comme un proclitique qui se rattache au début du premier mot dans la question oui/non</checkbox>
+         <checkbox id="QMainYNCliticEnclitic" dataItem="mainYNEnclitic">Comme un enclitique qui se rattache à la fin du dernier mot dans la questions oui/non</checkbox>
+         <checkbox id="QMainYNCliticPrefix" dataItem="mainYNPrefix">Comme un préfixe qui se rattache au verbe</checkbox>
+         <checkbox id="QMainYNCliticSuffix" dataItem="mainYNSuffix">Comme un suffixe qui se rattache au verbe</checkbox>
+         <checkbox id="QMainYNCliticOther" dataItem="mainYNCliticOther">Dans ma langue ces éléments peuvent se rattacher comme suit: <textBox  id="QMainYNCliticOtherContent" dataItem="mainYNCliticOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="QMainYNCliticPosNoCheckPrompt" show="swQMainYNWordNoOrSomeandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire comment ces marqueurs de question oui/non se rattachent dans votre langue ou changez la réponse ci-dessus en « Oui, ce sont tous des mots indépendants ».</prompt>
+      <prompt id="QMainYNCliticsExamplesPrompt" show="swQMainYNCliticProcliticOrEnclitic"><br/>Entrez ici les clitiques qui sont utilisés pour marquer des questions oui/non avec un signe d’égalité pour indiquer de quel côté ils se rattachent à la question oui/non:</prompt>    
+      <textBox id="QMainYNCliticExamples" dataItem="mainYNCliticExample" show="swQMainYNCliticProcliticOrEnclitic" rows="3"/>    
+      <instruction id="QMainYNProcliticInstruction" show="swQMainYNCliticProclitic">In the lexicon, add the feature <feature>YNQ_prefix</feature> to these proclitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+      <instruction id="QMainYNEncliticInstruction" show="swQMainYNCliticEnclitic">In the lexicon, add the feature <feature>YNQ_suffix</feature> to these enclitics.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+      
+      <prompt id="QMainYNAffixExamplesPrompt" show="swQMainYNCliticPrefixOrSuffix"><br/>Entrez ici les affixes qui sont utilisés pour marquer les questions oui/non avec un trait d’union pour indiquer de quel côté ils se rattachent au verbe:</prompt>    
+      <textBox id="QMainYNAffixExamples" dataItem="mainYNAffixExample" show="swQMainYNCliticPrefixOrSuffix" rows="3"/>    
+      <instruction id="QMainYNAffixInstruction" show="swQMainYNCliticPrefixOrSuffix">In the lexicon, add the feature <feature>YNQ</feature> to these verbal affixes.   If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+
+      <prompt id="QMainYNWordExamplesPrompt" show="swQMainYNWordYesOrSome"><br/>Entrez ici les mots qui sont utilisés pour marquer les questions oui/non:</prompt>    
+      <textBox id="QMainYNWordExamples" dataItem="mainYNWordExample" show="swQMainYNWordYesOrSome" rows="3"/>    
+
+      <checkboxGroup id="QMainYNPosTable" show="swQMainYNWordYesOrSome">
+         <prompt><br/>Où les marqueurs de question oui/non qui sont écrits comme mots indépendants se trouvent-ils par rapport au reste de la question? 
+            Cochez toutes les options qui sont correctes dans votre langue.
+         </prompt>
+         <checkbox id="QMainYNPosBefore"  dataItem="mainYNWordBefore">Avant</checkbox>
+         <checkbox id="QMainYNPosAfter"  dataItem="mainYNWordAfter">Après</checkbox>
+         <checkbox id="QMainYNPosBoth"  dataItem="mainYNWordBoth">Des deux côtés en même temps</checkbox>
+         <checkbox id="QMainYNPosOther"  dataItem="mainYNWordOther">Dans ma langue ils peuvent se trouver dans la position suivante: <textBox  id="QMainYNPosOtherContent" dataItem="mainYNWordOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="QMainYNPosNoCheckPrompt" show="swQMainYNWordYesOrSomeandNoCheck">AVERTISSEMENT: Vous devez cliquer au moins une case pour décrire où ces marqueurs de question oui/non se trouvent par rapport au reste de la question dans votre langue ou changez la réponse ci-dessus en « Non, ils se rattachent à un autre mot ».</prompt>
+           
+      <instruction id="QMainYNWordYesInstruction" show="swQMainYNWordYesOrSome">In the lexicon, if this word does not already have the category <category>C</category>, add the feature <feature>makeC</feature> to the feature line to change the category for the syntax.  (If a particular entry can also be used as another syntactic category, make a separate lexical entry for each use.)  In either case, add the feature <feature>question</feature>.  If a different marker is used in embedded questions, add the feature <feature>+root</feature> to this entry.  If this same marker is used in embedded questions, do not add any <feature>root</feature> feature.</instruction>
+        <instruction id="QMainYNEitherRestrictedInstruction" show="swQMainYNWordYesOrSomeAndBoth">In the lexicon, mark those words which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any markers which can occur on either side.</instruction>
+      
+      <radioGroup id="QMainYNAuxPosTable" show="swQMainYNNoAux">
+         <groupName dataItem="mainYNAuxPos" default="unknown" position="yesHead">RQMainYNAuxPos</groupName>
+         <prompt><br/>Où l’auxiliaire se trouve-t-il par rapport au reste de la question?</prompt>
+         <radio id="QMainYNAuxPosBefore" dataValue="before">Avant</radio>
+         <radio id="QMainYNAuxPosAfter" dataValue="after">Après</radio>
+      </radioGroup>
+      
+      
+        <br/><br/>
+        <buttons>
+            <button id="QMainYNBack" value="Back" goto="QMain.xml"/>
+            <button id="QMainYNNext" value="Next" goto="QEmbYN.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swQMainYNYes">
+        <whenRadio button="QMainYNYes"/>
+    </showWhen>
+   <showWhen id="swQMainYNAuxAndNoAux">
+      <whenRadio button="QMainYNNoAux"/>
+      <and/>
+      <whenValue element="ip" attr="aux" value="no"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordNoOrSome">
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+   </showWhen>
+    <showWhen id="swQMainYNWordSome">
+        <whenRadio button="QMainYNWordSome"/>
+        <and/>
+        <whenRadio button="QMainYNYes"/>
+    </showWhen>
+   <showWhen id="swQMainYNWordNoOrSomeandNoCheck">
+ <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticPrefix"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNCliticOther"/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticProcliticOrEnclitic">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QMainYNCliticProclitic"/>
+   <or/>
+      <whenCheckbox button="QMainYNCliticEnclitic"/>
+   <closeParen/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticProclitic">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/>
+      <whenCheckbox button="QMainYNCliticProclitic"/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticEnclitic">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/>
+      <whenCheckbox button="QMainYNCliticEnclitic"/>
+   </showWhen>
+   <showWhen id="swQMainYNCliticPrefixOrSuffix">
+      <openParen/>
+      <whenRadio button="QMainYNWordNo"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="QMainYNCliticPrefix"/>
+      <or/>
+      <whenCheckbox button="QMainYNCliticSuffix"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swQMainYNWordYesOrSome">
+      <whenRadio button="QMainYNWordYes"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordYesOrSomeandNoCheck">
+ <openParen/>
+      <whenRadio button="QMainYNWordYes"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="QMainYNPosOther"/>
+   </showWhen>
+   <showWhen id="swQMainYNWordYesOrSomeAndBoth">
+      <whenRadio button="QMainYNWordYes"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <and/>
+      <whenCheckbox button="QMainYNPosBefore"/>
+      <and/>
+      <whenCheckbox button="QMainYNPosAfter"/>
+      <or/>
+      <whenRadio button="QMainYNWordSome"/>
+      <and/>
+      <whenRadio button="QMainYNYes"/>
+      <and/>
+      <whenCheckbox button="QMainYNPosBoth"/>
+   </showWhen>
+    <showWhen id="swQMainYNNoAux">
+        <whenRadio button="QMainYNNoAux"/>
+    </showWhen>
+</page>

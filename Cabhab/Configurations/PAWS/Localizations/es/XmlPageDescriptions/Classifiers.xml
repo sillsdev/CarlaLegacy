@@ -4,11 +4,11 @@
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="Classifiers" count="3/3">
-   <title level="2">La tipología - clasificadores</title>
-   <introduction>Algunas lenguas tienen un sistema de <technicalTermRef term="ttClassifier">clasificadores</technicalTermRef> para sustantivos que indican su forma, posición u otras características.  En muchos de estas lenguas, el clasificador es un tipo de concordancia que es requerido entre todos los modificadores en la frase nominal y también con el verbo.  Por eso, los <technicalTermRef term="ttQuantifiers">cuantificadores</technicalTermRef>, <technicalTermRef term="ttArticles">artículos</technicalTermRef>, <technicalTermRef term="ttDemonstratives">demostrativos</technicalTermRef>, adjetivos y verbos posiblemente necesitan ser marcados con un clasificador appropriado.
+   <title level="2">La tipología - Clases de sustantivo y clasificadores</title>
+   <introduction>Algunas lenguas tienen un sistema de clases de sustantivo que indican su forma, posición u otras características.  En muchas de estas lenguas, el indicador de clase es un tipo de concordancia que es requerido entre todos los modificadores en la frase nominal y también con el verbo.  Por eso, los <technicalTermRef term="ttQuantifiers">cuantificadores</technicalTermRef>, <technicalTermRef term="ttArticles">artículos</technicalTermRef>, <technicalTermRef term="ttDemonstratives">demostrativos</technicalTermRef>, adjetivos y verbos posiblemente necesitan ser marcados con un indicador de clase appropriado.
        <br/><br/>
-      Las lenguas Bantu que se habla en África tienen el sistema de clasificadores para sustantivos más conocido en el mundo.  Estas lenguas poseen hasta 22 clases distintas, que son representadas con los números.  Aproximadamente la mitad son para los sustantivos singulares solamente y un número igual para los sustantivos plurales solamente. Otros están para los sustantivos no contables o abstractos o para los lugares.   
-      Tenemos aquí algunos ejemplos de Sesotho, una lengua Bantu que se habla mayormente en el sur de África, (1) mostrando la concordancia de los clasificadores en las frases nominales de ambos el sujeto y objeto y (2) mostrando el uso de los clasificadores en el verbo para ambos el sujeto y objeto cuando son pronombres. (Datos de Demuth, K. 2000. Bantu noun class systems: Loan word and acquistion evidence of semantic productivity.  En G. Senft (ed.), Classification Systems.  Cambridge University Press: 270-292.) 
+      Las lenguas Bantu que se habla en África tienen el sistema de clases de sustantivo más conocido en el mundo.  Estas lenguas poseen hasta 22 clases distintas, que son representadas con los números.  Aproximadamente la mitad son para los sustantivos singulares solamente y un número igual para los sustantivos plurales solamente. Otros están para los sustantivos no contables o abstractos o para los lugares.   
+      Tenemos aquí algunos ejemplos de Sesotho, una lengua Bantu que se habla mayormente en el sur de África, (1) mostrando la concordancia de los indicadores de clase en las frases nominales de ambos el sujeto y objeto y (2) mostrando el uso de los indicadores de clasie en el verbo para ambos el sujeto y objeto cuando son pronombres. (Datos de Demuth, K. 2000. Bantu noun class systems: Loan word and acquistion evidence of semantic productivity.  En G. Senft (ed.), Classification Systems.  Cambridge University Press: 270-292.) 
     </introduction>
    <table>
       <tr>
@@ -30,8 +30,60 @@
          <td></td><td>‘They found them.'  (Los encontraron.)</td>
       </tr>
    </table>
+   <introduction>En cambio, unas lenguas pueden tener un sistema de <technicalTermRef term="ttClassifier">clasificadores</technicalTermRef>, a veces llamado palabras de contador o palabras de medida.  Estos clasificadores son palabras o morfemas que acompañan a los sustantivos cuando el sustantivo es contado o especificado y sirven para clasificar el sustantivo dependiendo del tipo de su referente. Algunas lenguas tienen varios cientos clasificadores. El clasificador se relaciona con el sustantivo contado o especificado, pero no hay otra concordancia dentro de la frase nominal u oración.
+      <br/><br/>
+      Los clasificadores son una característica importante de muchas lenguas del este asiático. Ejemplos de chino mandarín (forma pinyin) ilustran el uso de los clasificadores con un numeral (3-6) y un demostrativo (7). (Los ejemplos son de Wikipedia).</introduction>
+   
+   <table>
+      <tr>
+         <td>3.</td><td>sān</td><td>gè</td><td>xuéshēng</td>
+      </tr>
+      <tr>
+         <td></td><td>tres</td><td>clasificador.humano</td><td>estudiante</td>
+      </tr>
+      <tr>
+         <td></td><td>‘tres estudiantes’</td>
+      </tr>
+      <tr>
+         <td>4.</td><td>sān</td><td>kē</td><td>shù</td>
+      </tr>
+      <tr>
+         <td></td><td>tres</td><td>clasificador.árbol</td><td>árbol</td>
+      </tr>
+      <tr>
+         <td></td><td>‘tres árboles’</td>
+      </tr>
+      <tr>
+         <td>5.</td><td>sān</td><td>zhī</td><td>niǎo</td>
+      </tr>
+      <tr>
+         <td></td><td>tres</td><td>clasificador.ave</td><td>ave</td>
+      </tr>
+      <tr>
+         <td></td><td>‘tres aves’</td>
+      </tr>
+      <tr>
+         <td>6.</td><td>sān</td><td>tiáo</td><td>hé</td>
+      </tr>
+      <tr>
+         <td></td><td>tres</td><td>clasificador.largo.ondulado</td><td>río</td>
+      </tr>
+      <tr>
+         <td></td><td>‘tres ríos’</td>
+      </tr>
+      <tr>
+         <td>7.</td><td>zhè</td><td>gè</td><td>rén</td>
+      </tr>
+      <tr>
+         <td></td><td>esto</td><td>clasificador.humano</td><td>persona</td>
+      </tr>
+      <tr>
+         <td></td><td>‘esta persona’</td>
+      </tr>
+   </table>
+   
    <introduction>Un sistema de clasificadores más simple es illustrado en los ejemplos (3-5) del mixteco de Ayutla, que se habla en el sur de México.  En esta lengua, se encuentran prefijos clasificadores que son derivados de un sustantivo genérico o de un pronombre y estos deben aparecer con muchos de los sustantivos que refieren a animales, insectos, líquidos, árboles, objetos de madera u objetos que son básicamente redondos.  En mixteco, no existe concordancia de clasificador en la frase nominal ni en la oración, entonces estos prefijos solamente marcan los sustantivos y tal vez son más <technicalTermRef term="ttDerivational">derivacionales</technicalTermRef>.  
-      Sin embargo, existen distincciones similares en los pronombres de la tercera persona que refieren a estos sustantivos.  El mixteco utiliza tipos en vez de números para identificar los clasificadores. Algunas de las raíces del sustantivo son claramente una palabra, pero otros son elementos indeterminables. (Datos de Hills, Robert. 1990. A Syntactic Sketch of Ayutla Mixtec.  En Bradley, C. Henry and Barbara E. Hollenbach, (eds.) Studies in the Syntax of Mixtecan Languages. Vol.2. The Summer Institute of Linguistics and The University of Texas at Arlington:Dallas. 200-201.)</introduction>
+      Sin embargo, existen distincciones similares en los pronombres de la tercera persona que refieren a estos sustantivos.  El mixteco utiliza nombres en vez de números para identificar los clasificadores. Algunas de las raíces del sustantivo son claramente una palabra, pero otros son elementos indeterminables. (Datos de Hills, Robert. 1990. A Syntactic Sketch of Ayutla Mixtec.  En Bradley, C. Henry and Barbara E. Hollenbach, (eds.) Studies in the Syntax of Mixtecan Languages. Vol.2. The Summer Institute of Linguistics and The University of Texas at Arlington:Dallas. 200-201.)</introduction>
    <table>
       <tr>
          <td>3.</td>	<td>si-ndīkih</td>
@@ -64,20 +116,21 @@
     <form section="typology">
         <radioGroup>
             <groupName dataItem="classifier" default="no">RTypologyClassifier</groupName>
-           <prompt>¿Existe algún tipo de sistema de clasificador ilustrado arriba en su lengua?</prompt>
+           <prompt>¿Existe en su lengua algún sistema de clase de sustantivo o clasificador ilustrado arriba?</prompt>
             <radio id="OTClassifierNo" dataValue="no">No</radio>
            <radio id="OTClassifierAgr" dataValue="yesAgr">Sí, con la concordancia en varios elementos como el sistema de bantu arriba</radio>
+           <radio id="OTClassifierSpecific" dataValue="yesSpecific">Sí, los clasificadores se presentan con sustantivos cuando son contados o especificados como el sistema de chino arriba, pero no existe otra concordancia</radio>
            <radio id="OTClassifierType" dataValue="yesType">Sí, las clases de sustantivos son distinguidos como el sistema de mixteco arriba, pero no existe concordancia</radio>
 <radioGroup id="OTClassifierAgrTable" show="swOTClassifierAgr">
    <groupName dataItem="classifierNum" default="number">RTypologyClassifierNumber</groupName>
-   <prompt>¿Los clasificadores son distinguidos por números o por los clases?</prompt>
+   <prompt>¿Los indicadores de clase son distinguidos por números o por los clases?</prompt>
    <radio id="OTClassifierAgrNum" dataValue="number">Por números de clases</radio>
    <radio id="OTClassifierAgrType" dataValue="type">Por los nombres de clases</radio>
 </radioGroup>        
         </radioGroup>
 <br/>
-       <introduction id="OTClassifierChartsIntroduction" show="swOTClassifierNotNo">Ahora se le pedirá información acerca de cada clasificador para producir una tabla en la gramática. Complete por favor todos los campos relevantes y haga clic en la accidente gramatical de número apropiado para cada clase. Si se utiliza más de una forma del morfema para una clase particular, escriba por favor cada uno en una línea separada. También, agregue por favor un guión a cada forma para indicar si es un prefijo o un sufijo. <span id="OTClassifierAgrNumSpan" show="swOTClassifierAgrNum" >Estamos asumiendo que los números utilizados comienzan con uno. Si no, se necesita cambiarlos cuando corrija la gramática. </span>Si usted no tiene tantas clases como los solicitados aquí, simplemente deje los campos vacíos. </introduction>
-<br/>
+       <introduction id="OTClassifierChartsIntroduction" show="swOTClassifierNotNo">Ahora se le pedirá información acerca de cada <span id="OTClassifierAgrSpan1" show="swOTClassifierAgr">indicador de clase</span><span id="OTClassifierNotAgrSpan" show="swOTClassifierTypeOrSpecific">clasificador</span> para producir una tabla en la gramática.  Complete por favor todos los campos relevantes<span id="OTClassifierYesAgrSpan" show="swOTClassifierAgrNum"> y haga clic en la accidente gramatical de número apropiado para cada clase</span>.  Si se utiliza más de una forma del morfema para una <span id="OTClassifierAgrSpan2" show="swOTClassifierAgr">clase</span><span id="OTClassifierNotAgrSpan2" show="swOTClassifierTypeOrSpecific">clasificador</span> particular, escriba por favor cada uno en una línea separada.   También, agregue por favor un guión a cada forma para indicar si es un prefijo o un sufijo. <span id="OTClassifierAgrNumSpan" show="swOTClassifierAgrNum" >Estamos asumiendo que los números utilizados comienzan con uno. Si no, se necesita cambiarlos cuando corrija la gramática. </span>Si usted no tiene tantas clases como los solicitados aquí, simplemente deje los campos vacíos. </introduction>
+            <br/>
        <prompt id="OTClassifierAgrNumPrompt1" show="swOTClassifierAgrNum">Escriba las formas para la clase 1 aquí:</prompt>
        <textBox id="OTClassifierAgrNumExample1" dataItem="class1Example" show="swOTClassifierAgrNum" rows="2"/>
        <radioGroup id="OTClassifierAgrNum1" show="swOTClassifierAgrNum">
@@ -365,20 +418,50 @@
        <textBox id="OTClassifierAgrTypeWoodExample" dataItem="classWoodExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
        <prompt id="OTClassifierAgrTypeOtherPrompt" show="swOTClassifierTypeOrNumAgrNo">Escriba las formas de la clase para inanimado general u otro aquí:</prompt>
        <textBox id="OTClassifierAgrTypeOtherExample" dataItem="classOtherExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
-       <br/>
+       
+       <prompt id="OTClassifierSpecificHumanPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para humanos aquí:</prompt>
+       <textBox id="OTClassifierSpecificHumanExample" dataItem="classifierHumanExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificAnimalPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para animales aquí:</prompt>
+       <textBox id="OTClassifierSpecificAnimalExample" dataItem="classifierAnimalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificBirdPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para aves aquí:</prompt>
+       <textBox id="OTClassifierSpecificBirdExample" dataItem="classifierBirdExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificBoatPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para barcos aquí:</prompt>
+       <textBox id="OTClassifierSpecificBoatExample" dataItem="classifierBoatExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificClothingPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para ropa aquí:</prompt>
+       <textBox id="OTClassifierSpecificClothingExample" dataItem="classifierClothingExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificTreePrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para árboles aquí:</prompt>
+       <textBox id="OTClassifierSpecificTreeExample" dataItem="classifierTreeExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificLongThinPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para artículos largos y delgados aquí:</prompt>
+       <textBox id="OTClassifierSpecificLongThinExample" dataItem="classifierLongThinExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificLongWavyPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para artículos largos y ondulados aquí:</prompt>
+       <textBox id="OTClassifierSpecificLongWavyExample" dataItem="classifierLongWavyExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificFlatPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para artículos planos aquí:</prompt>
+       <textBox id="OTClassifierSpecificFlatExample" dataItem="classifierFlatExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificCylindricalPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para artículos cilíndricos aquí:</prompt>
+       <textBox id="OTClassifierSpecificCylindricalExample" dataItem="classifierCylindricalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificMechanicalPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador para artículos mecánicos aquí:</prompt>
+       <textBox id="OTClassifierSpecificMechanicalExample" dataItem="classifierMechanicalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificGenericPrompt" show="swOTClassifierSpecific">Escriba las formas del clasificador genérico aquí:</prompt>
+       <textBox id="OTClassifierSpecificGenericExample" dataItem="classifierGenericExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificOtherPrompt" show="swOTClassifierSpecific">Escriba las formas del cualquier otro clasificador aquí:</prompt>
+       <textBox id="OTClassifierSpecificOtherExample" dataItem="classifierOtherExample" show="swOTClassifierSpecific" rows="2"/>
+       <br/><br/>
        <prompt id="OTClassifierAgrPrompt" show="swOTClassifierAgr">Ahora escriba algunos ejemplos de oraciones que muestran la concordancia dentro de las frases nominales y en el verbo aquí:</prompt>
        <textBox id="OTClassifierAgrExample" dataItem="classifierAgrExample" cols="50" show="swOTClassifierAgr"/>
+       <prompt id="OTClassifierSpecificPrompt" show="swOTClassifierSpecific">Ahora escriba algunos ejemplos de frases nominales que ilustra algunos de los diferentes clasificadores utilizados con números o demostrativos y sustantivos aquí:</prompt>
+       <textBox id="OTClassifierSpecificExample" dataItem="classifierSpecificExample" rows="5" show="swOTClassifierSpecific"/>      
        <prompt id="OTClassifierTypePrompt" show="swOTClassifierType">Ahora escriba algunos ejemplos de sustantivos que muestran los diversos clasificadores aquí:</prompt>
        <textBox id="OTClassifierTypeExample" dataItem="classifierTypeExample" rows="5" show="swOTClassifierType"/>      
        <br/>
        <instruction id="OTClassifierAgrNumInstruction" show="swOTClassifierAgrNum">In the lexicon, enter the feature <feature>singular</feature> on all the singular classifiers and the feature <feature>plural</feature> on all the plural classifiers.  Do not enter a number feature on any classifiers which can go with either singular or plural or mass nouns.  Also enter a feature of the form <feature>class_##</feature>,  replacing the ## with a number between 1 and 25, on each classifier as appropriate.</instruction>
-       <instruction id="OTClassifierAgrTyyeNumAgrYesInstruction" show="swOTClassifierAgrTypeNumAgrYes">In the lexicon, enter the feature <feature>singular</feature> on all the singular classifiers and the feature <feature>plural</feature> on all the plural classifiers.  Also enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>     
-       <instruction id="OTClassifierTypeOrNumAgrNoInstruction" show="swOTClassifierTypeOrNumAgrNo">In the lexicon, enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>
+       <instruction id="OTClassifierAgrTypeNumAgrYesInstruction" show="swOTClassifierAgrTypeNumAgrYes">In the lexicon, enter the feature <feature>singular</feature> on all the singular classifiers and the feature <feature>plural</feature> on all the plural classifiers.  Also enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>     
+       <instruction id="OTClassifierTypeNumAgrNoInstruction" show="swOTClassifierTypeOrNumAgrNo">In the lexicon, enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>
+       <instruction id="OTClassifierSpecificInstruction" show="swOTClassifierSpecific">In the lexicon, enter one of the features <feature>class_human</feature> <feature>class_animal</feature>, <feature>class_bird</feature>, <feature>class_boat</feature>, <feature>class_clothing</feature>, <feature>class_tree</feature>, <feature>class_thin</feature>, <feature>class_wavy</feature>, <feature>class_flat</feature>, <feature>class_cylindrical</feature>, <feature>class_mechanical</feature>, <feature>class_generic</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>
        <br/>
-        <buttons>
-            <button id="ClassifiersBack" value="Back" goto="Case.xml"/>
-            <button id="ClassifiersNext" value="Next" goto="Contents.htm"/>
-        </buttons>
+       <buttons>
+          <button id="ClassifiersBack" value="Back" goto="Case.xml"/>
+          <button id="ClassifiersNext" value="Next" goto="Contents.htm"/>
+       </buttons>
     </form>
    <showWhen id="swNotPractical">
       <whenValue  element="paws" attr="outputGrammar" value="True"/>
@@ -401,6 +484,14 @@
       <whenRadio button="OTClassifierAgr"/>
       <and/>
       <whenRadio button="OTClassifierAgrType"/>
+   </showWhen>
+   <showWhen id="swOTClassifierTypeOrSpecific">
+      <whenRadio button="OTClassifierType"/>
+      <or/>
+      <whenRadio button="OTClassifierSpecific"/>
+   </showWhen>
+   <showWhen id="swOTClassifierSpecific">
+      <whenRadio button="OTClassifierSpecific"/>
    </showWhen>
    <showWhen id="swOTClassifierAgrTypeNumAgrYes">
       <whenRadio button="OTClassifierAgrTypeNumAgrYes"/>

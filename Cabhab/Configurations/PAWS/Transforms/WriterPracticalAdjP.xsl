@@ -1992,7 +1992,48 @@
 </xsl:choose>
                         </table>
 </example>
-                    <p contentType="ctPracticalIntro">
+                   <p>
+<xsl:text>Some examples of nominal phrases containing different cardinal numbers with a noun are:</xsl:text>
+</p>
+                   <example num="xAdjP.AdjNumbers.QPNumbersCardinal.12">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//qp/cardinalExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/cardinalExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//qp/cardinalExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//qp/cardinalExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.AdjNumbers.QPNumbersCardinal.12</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xAdjP.AdjNumbers.QPNumbersCardinal.12.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+                   <p contentType="ctPracticalIntro">
 <xsl:text>Larger cardinal numbers can be compounds which may be
                             written as independent words.  Examples of compound numbers in </xsl:text>
 <xsl:choose>
@@ -2034,7 +2075,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-                   <example num="xAdjP.AdjNumbers.QPNumbersCardinal.14">
+                   <example num="xAdjP.AdjNumbers.QPNumbersCardinal.18">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/cardinalCompoundExample" />
 </xsl:variable>
@@ -2048,7 +2089,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//qp/cardinalCompoundExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdjP.AdjNumbers.QPNumbersCardinal.14</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.AdjNumbers.QPNumbersCardinal.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -2057,7 +2098,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdjP.AdjNumbers.QPNumbersCardinal.14.1</xsl:text>
+<xsl:text>xAdjP.AdjNumbers.QPNumbersCardinal.18.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -2152,7 +2193,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>primero</xsl:text>
+<xsl:text>first</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2163,7 +2204,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>primero</xsl:text>
+<xsl:text>first</xsl:text>
 </td>
 <td>
 <langData>
@@ -2194,7 +2235,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>segundo</xsl:text>
+<xsl:text>second</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2205,7 +2246,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>segundo</xsl:text>
+<xsl:text>second</xsl:text>
 </td>
 <td>
 <langData>
@@ -2236,7 +2277,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>tercero</xsl:text>
+<xsl:text>third</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2247,7 +2288,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>tercero</xsl:text>
+<xsl:text>third</xsl:text>
 </td>
 <td>
 <langData>
@@ -2278,7 +2319,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>cuarto</xsl:text>
+<xsl:text>fourth</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2289,7 +2330,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>cuarto</xsl:text>
+<xsl:text>fourth</xsl:text>
 </td>
 <td>
 <langData>
@@ -2320,7 +2361,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>quinto</xsl:text>
+<xsl:text>fifth</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2331,7 +2372,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>quinto</xsl:text>
+<xsl:text>fifth</xsl:text>
 </td>
 <td>
 <langData>
@@ -2362,7 +2403,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>sexto</xsl:text>
+<xsl:text>sixth</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2373,7 +2414,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>sexto</xsl:text>
+<xsl:text>sixth</xsl:text>
 </td>
 <td>
 <langData>
@@ -2404,7 +2445,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>séptimo</xsl:text>
+<xsl:text>seventh</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2415,7 +2456,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>séptimo</xsl:text>
+<xsl:text>seventh</xsl:text>
 </td>
 <td>
 <langData>
@@ -2446,7 +2487,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>octavo</xsl:text>
+<xsl:text>eighth</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2457,7 +2498,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>octavo</xsl:text>
+<xsl:text>eighth</xsl:text>
 </td>
 <td>
 <langData>
@@ -2488,7 +2529,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>noveno</xsl:text>
+<xsl:text>ninth</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2499,7 +2540,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>noveno</xsl:text>
+<xsl:text>ninth</xsl:text>
 </td>
 <td>
 <langData>
@@ -2530,7 +2571,7 @@
 </xsl:with-param>
 <xsl:with-param name="columnsBefore">
 <td align="left" rowspan="1">
-<xsl:text>décimo</xsl:text>
+<xsl:text>tenth</xsl:text>
 </td>
 </xsl:with-param>
 <xsl:with-param name="columnsAfter" />
@@ -2541,7 +2582,7 @@
 <xsl:otherwise>
 <tr>
 <td align="left" rowspan="1">
-<xsl:text>décimo</xsl:text>
+<xsl:text>tenth</xsl:text>
 </td>
 <td>
 <langData>
@@ -2913,7 +2954,8 @@
 </xsl:choose>
 </example>
                    
-                   <p>
+                   <xsl:if test="normalize-space(//qp/ordinalBefore/@checked)='yes' or normalize-space(//qp/ordinalAfter/@checked)='yes' or normalize-space(//qp/ordinalBoth/@checked)='yes' or normalize-space(//qp/ordinalNumOther/@checked)='yes'">
+<p>
 <xsl:text>When the ordinal numbers or the words meaning </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -2960,7 +3002,9 @@
 <xsl:text>.   Examples of nominal phrases with ordinal numbers modifying a cardinal number and a noun are:</xsl:text>
 </xsl:if>
 </p>
-                   <example num="xAdjP.AdjNumbers.QPNumbersOrdinal.32">
+</xsl:if>
+                   <xsl:if test="normalize-space(//qp/ordinalBefore/@checked)='yes' or normalize-space(//qp/ordinalAfter/@checked)='yes' or normalize-space(//qp/ordinalBoth/@checked)='yes' or normalize-space(//qp/ordinalNumOther/@checked)='yes'">
+<example num="xAdjP.AdjNumbers.QPNumbersOrdinal.32">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/ordinalCardinalExample" />
 </xsl:variable>
@@ -2998,7 +3042,9 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-                   <p>
+</xsl:if>
+                   <xsl:if test="normalize-space(//qp/ordinalBefore/@checked)='yes' or normalize-space(//qp/ordinalAfter/@checked)='yes' or normalize-space(//qp/ordinalBoth/@checked)='yes' or normalize-space(//qp/ordinalNumOther/@checked)='yes'">
+<p>
 <xsl:text>Examples of the modifiers meaning </xsl:text>
 <langData>
 <xsl:attribute name="lang">
@@ -3011,7 +3057,43 @@
 </xsl:attribute>last</langData>
 <xsl:text> modifying a cardinal number and noun or just a noun within a nominal phrase include:</xsl:text>
 </p>
-                    <example num="xAdjP.AdjNumbers.QPNumbersOrdinal.36">
+</xsl:if>
+                   <xsl:if test="normalize-space(//qp/ordinalBefore/@checked)='no' and normalize-space(//qp/ordinalAfter/@checked)='no' and normalize-space(//qp/ordinalBoth/@checked)='no' and normalize-space(//qp/ordinalNumOther/@checked)='no' and normalize-space(//qp/ordinalNumNowhere/@checked)='yes'">
+<p>
+<xsl:text>The ordinal numbers or the words meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>next</langData>
+<xsl:text> or </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>last</langData>
+<xsl:text> do not modify a cardinal number in </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='en'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='en'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>.  
+                      Examples of the modifiers meaning </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>next</langData>
+<xsl:text> or </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>last</langData>
+<xsl:text> modifying just a noun within a nominal phrase include:</xsl:text>
+</p>
+</xsl:if>
+                    <example num="xAdjP.AdjNumbers.QPNumbersOrdinal.38">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//qp/nextlastNPExample" />
 </xsl:variable>
@@ -3025,7 +3107,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//qp/nextlastNPExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xAdjP.AdjNumbers.QPNumbersOrdinal.36</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdjP.AdjNumbers.QPNumbersOrdinal.38</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -3034,7 +3116,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xAdjP.AdjNumbers.QPNumbersOrdinal.36.1</xsl:text>
+<xsl:text>xAdjP.AdjNumbers.QPNumbersOrdinal.38.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -4885,7 +4967,7 @@
            <xsl:when test="//pp/@pPos='both'">an adpositional </xsl:when>
            <xsl:when test="//pp/@pPos='unknown'">an adpositional </xsl:when>
         </xsl:choose> phrase to express the group.</xsl:when>
-        <xsl:when test="//qp/@partitive='other'">another means than either an adpostional phrase or a relative clause is used to express the partitive meaning.</xsl:when>
+        <xsl:when test="//qp/@partitive='other'">another means than either an adpostional phrase or a relative clause is used to express the partitive meaning. </xsl:when>
         <xsl:when test="//qp/@partitive='yes'"> <xsl:choose>
            <xsl:when test="//pp/@pPos='before'">a prepositional </xsl:when>
            <xsl:when test="//pp/@pPos='after'">a postpositional </xsl:when>
@@ -4903,6 +4985,11 @@
            <xsl:when test="//pp/@pPos='unknown'">prepositions or postpositions </xsl:when>
         </xsl:choose> used in partitive phrases are:</xsl:when>
      </xsl:choose>
+<xsl:if test="normalize-space(//qp/@partitive)='other'"> 
+           <xsl:text> This construction is ___</xsl:text>
+<xsl:value-of select="//qp/partitiveConstruction" />
+           <xsl:text>.   </xsl:text>
+        </xsl:if>
 </p>      
            <xsl:if test="normalize-space(//qp/@partitive)='yes'">
 <example num="xAdjP.AdjQP.QPPartitive.10">
@@ -5124,7 +5211,7 @@
                <xsl:text> are marked with classifiers to agree with the noun.  Just the roots are shown here; each one may surface with the appropriate classifier attached.</xsl:text>
             </xsl:if>
 </p>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' or normalize-space(//np/@artAndDem)='both'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' or normalize-space(//np/@artAndDem)='both'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
@@ -5149,7 +5236,7 @@
 </p>
 </xsl:if>
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='none' or normalize-space(//np/@artAndDem)='art' and normalize-space(//np/@artCase)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='none' or normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artCase)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no'">
 <p>
 <xsl:text>The articles in </xsl:text>
 <xsl:choose>
@@ -5163,7 +5250,7 @@
 <xsl:text> are:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='art' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.14">
 <table border="1">
               <tr>
@@ -5288,7 +5375,7 @@
            </table>
 </example>
 </xsl:if>		   
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='art' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='article' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.16">
 <table border="1">
               <tr>
@@ -5553,7 +5640,7 @@
 </example>
 </xsl:if>	
 
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>Since </xsl:text>
 <xsl:choose>
@@ -5567,7 +5654,7 @@
 <xsl:text> has a nominative-accusative case system, there are separate sets of articles to modify subjects and objects and possessors.  The articles which can be used in subjects are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.20">
 <table border="1">
               <tr>
@@ -5692,7 +5779,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.22">
 <table border="1">
               <tr>
@@ -5956,12 +6043,12 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The articles which can be used in direct objects are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.26">
 <table border="1">
               <tr>
@@ -6086,7 +6173,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.28">
 <table border="1">
               <tr>
@@ -6350,12 +6437,12 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The articles which can be used in possessors are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.32">
 <table border="1">
               <tr>
@@ -6480,7 +6567,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.34">
 <table border="1">
               <tr>
@@ -6745,7 +6832,7 @@
 </example>
 </xsl:if>	      
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>Since </xsl:text>
 <xsl:choose>
@@ -6763,7 +6850,7 @@
 <xsl:text>.  The articles which can be used in subjects of transitive verbs are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.38">
 <table border="1">
               <tr>
@@ -6888,7 +6975,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.40">
 <table border="1">
               <tr>
@@ -7152,12 +7239,12 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The articles which can be used in subjects of intransitive verbs and objects of transitive verbs  are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.44">
 <table border="1">
               <tr>
@@ -7282,7 +7369,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.46">
 <table border="1">
               <tr>
@@ -7546,12 +7633,12 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive'">
 <p>
 <xsl:text>The articles which can be used in possessors are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.50">
 <table border="1">
               <tr>
@@ -7561,7 +7648,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/articleGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleErgGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -7618,7 +7705,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/articleIndefGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleErgIndefGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -7676,7 +7763,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.52">
 <table border="1">
               <tr>
@@ -7687,7 +7774,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/articleGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleErgGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -7750,7 +7837,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/articlePlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleErgPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -7813,7 +7900,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/articleIndefGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleErgIndefGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -7876,7 +7963,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/articleIndefPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleErgIndefPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -7941,7 +8028,7 @@
 </example>
 </xsl:if>	      
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>Since </xsl:text>
 <xsl:choose>
@@ -7955,7 +8042,7 @@
 <xsl:text> has a split case system, there are separate sets of articles to modify subjects and objects and possessors, plus some additional sets for use under the special split ergativity conditions.  The articles which can be used in subjects are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.56">
 <table border="1">
               <tr>
@@ -7965,7 +8052,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/articleNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -8022,7 +8109,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/articleIndefNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -8080,7 +8167,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.58">
 <table border="1">
               <tr>
@@ -8091,7 +8178,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/articleNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -8154,7 +8241,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/articlePlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -8217,7 +8304,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/articleIndefNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -8280,7 +8367,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/articleIndefPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -8344,12 +8431,12 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The articles which can be used in direct objects are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.62">
 <table border="1">
               <tr>
@@ -8359,7 +8446,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/articleAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -8416,7 +8503,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/articleIndefAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -8474,7 +8561,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.64">
 <table border="1">
               <tr>
@@ -8485,7 +8572,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/articleAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -8548,7 +8635,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/articlePlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -8611,7 +8698,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/articleIndefAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -8674,7 +8761,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/articleIndefPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -8738,12 +8825,12 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The articles which can be used in possessors are:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.68">
 <table border="1">
               <tr>
@@ -8753,7 +8840,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/articleGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -8810,7 +8897,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/articleIndefGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -8868,7 +8955,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.70">
 <table border="1">
               <tr>
@@ -8879,7 +8966,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/articleGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -8942,7 +9029,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/articlePlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -9005,7 +9092,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/articleIndefGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -9068,7 +9155,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/articleIndefPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -9133,12 +9220,12 @@
 </example>
 </xsl:if>	      
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The articles which can be used in subjects of transitive verbs under the split ergativity conditions are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.74">
 <table border="1">
               <tr>
@@ -9148,7 +9235,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/articleErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -9205,7 +9292,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/articleIndefErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -9263,7 +9350,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.76">
 <table border="1">
               <tr>
@@ -9274,7 +9361,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/articleErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -9337,7 +9424,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/articlePlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -9400,7 +9487,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/articleIndefErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -9463,7 +9550,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/articleIndefPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -9527,12 +9614,12 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The articles which can be used in subjects of intransitive verbs and objects of transitive verbs under the split ergativity conditions are:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.80">
 <table border="1">
               <tr>
@@ -9542,7 +9629,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/articleAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -9599,7 +9686,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/articleIndefAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -9657,7 +9744,7 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.82">
 <table border="1">
               <tr>
@@ -9668,7 +9755,7 @@
               </tr>			
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/articleAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -9731,7 +9818,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='indef'">
 <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/articlePlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -9794,7 +9881,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/articleIndefAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -9857,7 +9944,7 @@
 </xsl:if>
               <xsl:if test="normalize-space(//np/@artDefOnly)!='yes'">
 <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/articleIndefPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/articleSplitIndefPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -9922,7 +10009,7 @@
 </example>
 </xsl:if>	      
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>There is another set of articles which can be used in </xsl:text>
 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
@@ -9931,7 +10018,7 @@
 <xsl:text>indirect objects, which are shown in the following table:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@caseExperiencer)='yesDat' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.86">
 <table border="1">
               <tr>
@@ -10056,7 +10143,7 @@
            </table>
 </example>
 </xsl:if>	      	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.88">
 <table border="1">
               <tr>
@@ -10321,13 +10408,13 @@
 </example>
 </xsl:if>	      	
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.92">
 <table border="1">
               <caption>
@@ -10348,25 +10435,25 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10379,25 +10466,25 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10405,13 +10492,13 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.96">
 <table border="1">
               <caption>
@@ -10436,25 +10523,25 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10467,25 +10554,25 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10501,25 +10588,25 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10532,25 +10619,25 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10558,13 +10645,13 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.100">
 <table border="1">
               <caption>
@@ -10587,27 +10674,27 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10620,27 +10707,27 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10648,13 +10735,13 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.104">
 <table border="1">
               <caption>
@@ -10681,27 +10768,27 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10714,27 +10801,27 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10750,27 +10837,27 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10783,27 +10870,27 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10812,13 +10899,13 @@
 </example>
 </xsl:if>	     
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.108">
 <table border="1">
               <caption>
@@ -10841,37 +10928,37 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10884,37 +10971,37 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10922,13 +11009,13 @@
            </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment">You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='art' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='article' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.112">
 <table border="1">
               <caption>
@@ -10955,37 +11042,37 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -10998,37 +11085,37 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -11044,37 +11131,37 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -11087,37 +11174,37 @@
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
                  <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
               </tr>
@@ -11127,7 +11214,7 @@
 </xsl:if>	      
           
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' or normalize-space(//np/@artAndDem)='both'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' or normalize-space(//np/@artAndDem)='both'">
 <p>
 <xsl:text>In </xsl:text>
 <xsl:choose>
@@ -11155,7 +11242,7 @@
 </p>
 </xsl:if>
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='dem' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no'">
 <p>
 <xsl:text>The demonstratives in </xsl:text>
 <xsl:choose>
@@ -11169,7 +11256,7 @@
 <xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='dem' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='no'">
 <example num="xAdjP.AdjArtDem.118">
 <table border="1">
               <tr>
@@ -11346,7 +11433,7 @@
 </example>
 </xsl:if>
         
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='dem' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes'">
 <p>
 <xsl:text>The demonstratives in </xsl:text>
 <xsl:choose>
@@ -11360,7 +11447,7 @@
 <xsl:text> are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='dem' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='none' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//np/@artCase)='no' and normalize-space(//np/@artPl)='yes'">
 <example num="xAdjP.AdjArtDem.122">
 <table border="1">
               <tr>
@@ -11739,7 +11826,7 @@
 </example>
 </xsl:if>
         
-	      <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
+	      <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>Since </xsl:text>
 <xsl:choose>
@@ -11753,7 +11840,7 @@
 <xsl:text> has a nominative-accusative case system, there are separate sets of demonstratives which can be used in subjects and objects and possessors.  The demonstratives which can be used as subjects are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.126">
 <table border="1">
 	            <tr>
@@ -11929,7 +12016,7 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.128">
 <table border="1">
 	            <tr>
@@ -12308,12 +12395,12 @@
 </example>
 </xsl:if>	      
 
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The demonstratives which can be used in direct objects are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.132">
 <table border="1">
 	            <tr>
@@ -12489,7 +12576,7 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.134">
 <table border="1">
 	            <tr>
@@ -12867,12 +12954,12 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The demonstratives which can be used in possessors are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.138">
 <table border="1">
 	            <tr>
@@ -13048,7 +13135,7 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.140">
 <table border="1">
 	            <tr>
@@ -13427,7 +13514,7 @@
 </example>
 </xsl:if>	      
 	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>Since </xsl:text>
 <xsl:choose>
@@ -13445,7 +13532,7 @@
 <xsl:text>.  The demonstratives which can be used in subjects of transitive verbs are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.144">
 <table border="1">
 	            <tr>
@@ -13621,7 +13708,7 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.146">
 <table border="1">
 	            <tr>
@@ -13999,12 +14086,12 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used in subjects of intransitive verbs or in objects of transitive verbs are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstratives which can be used in subjects of intransitive verbs or in objects of transitive verbs are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.150">
 <table border="1">
 	            <tr>
@@ -14180,7 +14267,7 @@
 	         </table>
 </example>
 </xsl:if>	      	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.152">
 <table border="1">
 	            <tr>
@@ -14559,12 +14646,12 @@
 </example>
 </xsl:if>	      	      
 
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used in possessors  are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstratives which can be used in possessors  are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@demPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@demPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@demPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@demPl)='no'">
 <example num="xAdjP.AdjArtDem.156">
 <table border="1">
 	            <tr>
@@ -14573,7 +14660,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgProximalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -14628,7 +14715,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgMedialGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -14683,7 +14770,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//np/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgDistalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -14740,7 +14827,7 @@
 	         </table>
 </example>
 </xsl:if>	      	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@demPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@demPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@demPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@artCase)='yes' and normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//np/@demPl)='yes'">
 <example num="xAdjP.AdjArtDem.158">
 <table border="1">
 	            <tr>
@@ -14750,7 +14837,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgProximalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -14811,7 +14898,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgProximalPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -14872,7 +14959,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgMedialGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -14933,7 +15020,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demMedialPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgMedialPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -14994,7 +15081,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//np/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgDistalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -15055,7 +15142,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demDistalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demErgDistalPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -15119,7 +15206,7 @@
 </example>
 </xsl:if>	      	       
 	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>Since </xsl:text>
 <xsl:choose>
@@ -15133,12 +15220,12 @@
 <xsl:text> has a split case system, there are separate sets of demonstratives for the normal nominative-accusative case system, for use in subjects versus objects versus possessors, plus others for the special cases when the ergative-absolutive case system is used which modify subjects of transitive verbs versus subjects of intransitive verbs and objects of transitive verbs.</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
-<xsl:text>The demonstrative pronouns which can be used in subjects in the normal nominative-accusative system are shown in the following table, based on the distance from the speaker:</xsl:text>
+<xsl:text>The demonstratives which can be used in subjects in the normal nominative-accusative system are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.164">
 <table border="1">
 	            <tr>
@@ -15147,7 +15234,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/demProximalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -15202,7 +15289,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demMedialNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -15257,7 +15344,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//np/demDistalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -15314,7 +15401,7 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.166">
 <table border="1">
 	            <tr>
@@ -15324,7 +15411,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/demProximalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -15385,7 +15472,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -15446,7 +15533,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/demMedialNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -15507,7 +15594,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demMedialPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -15568,7 +15655,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//np/demDistalNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -15629,7 +15716,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demDistalPlNomExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlNomExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -15692,12 +15779,12 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The demonstratives which can be used in direct objects in the normal nominative-accusative system are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.170">
 <table border="1">
 	            <tr>
@@ -15706,7 +15793,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/demProximalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -15761,7 +15848,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demMedialAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -15816,7 +15903,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//np/demDistalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -15873,7 +15960,7 @@
 	         </table>
 </example>
 </xsl:if>	   
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.172">
 <table border="1">
 	            <tr>
@@ -15883,7 +15970,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/demProximalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -15944,7 +16031,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -16005,7 +16092,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/demMedialAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -16066,7 +16153,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demMedialPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -16127,7 +16214,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//np/demDistalAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -16188,7 +16275,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demDistalPlAccExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlAccExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -16252,12 +16339,12 @@
 </example>
 </xsl:if>	   
 
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The demonstratives which can be used in possessors are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.176">
 <table border="1">
 	            <tr>
@@ -16266,7 +16353,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -16321,7 +16408,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -16376,7 +16463,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//np/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -16433,7 +16520,7 @@
 	         </table>
 </example>
 </xsl:if>	   
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.178">
 <table border="1">
 	            <tr>
@@ -16443,7 +16530,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/demProximalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -16504,7 +16591,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -16565,7 +16652,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/demMedialGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -16626,7 +16713,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demMedialPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -16687,7 +16774,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//np/demDistalGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -16748,7 +16835,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demDistalPlGenExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlGenExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -16812,12 +16899,12 @@
 </example>
 </xsl:if>	   
 	      	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The demonstratives that can be used in subjects ot transitive verbs in the split ergativity situations are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.182">
 <table border="1">
 	            <tr>
@@ -16826,7 +16913,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/demProximalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -16881,7 +16968,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demMedialErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -16936,7 +17023,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//np/demDistalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -16993,7 +17080,7 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.184">
 <table border="1">
 	             <tr>
@@ -17003,7 +17090,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/demProximalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -17064,7 +17151,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -17125,7 +17212,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/demMedialErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -17186,7 +17273,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demMedialPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -17247,7 +17334,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//np/demDistalErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -17308,7 +17395,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demDistalPlErgExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlErgExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -17371,12 +17458,12 @@
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The demonstratives which can be used in subjects of intransitive verbs or in objects of transitive verbs n the split ergativity situations are shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.188">
 <table border="1">
 	            <tr>
@@ -17385,7 +17472,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.1">
-<xsl:value-of select="translate(string(//np/demProximalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.1" select="string-length(normalize-space($sExampleValue0.1))" />
 <xsl:choose>
@@ -17440,7 +17527,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.1">
-<xsl:value-of select="translate(string(//np/demMedialAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.1" select="string-length(normalize-space($sExampleValue1.1))" />
 <xsl:choose>
@@ -17495,7 +17582,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.1">
-<xsl:value-of select="translate(string(//np/demDistalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.1" select="string-length(normalize-space($sExampleValue2.1))" />
 <xsl:choose>
@@ -17552,7 +17639,7 @@
 	         </table>
 </example>
 </xsl:if>	      	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.190">
 <table border="1">
 	            <tr>
@@ -17562,7 +17649,7 @@
 	               <th>Gloss</th>
 	            </tr>			
 	            <xsl:variable name="sExampleValue0.2">
-<xsl:value-of select="translate(string(//np/demProximalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.2" select="string-length(normalize-space($sExampleValue0.2))" />
 <xsl:choose>
@@ -17623,7 +17710,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue1.2">
-<xsl:value-of select="translate(string(//np/demProximalPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitProximalPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength1.2" select="string-length(normalize-space($sExampleValue1.2))" />
 <xsl:choose>
@@ -17684,7 +17771,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue2.2">
-<xsl:value-of select="translate(string(//np/demMedialAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength2.2" select="string-length(normalize-space($sExampleValue2.2))" />
 <xsl:choose>
@@ -17745,7 +17832,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue3.2">
-<xsl:value-of select="translate(string(//np/demMedialPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitMedialPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength3.2" select="string-length(normalize-space($sExampleValue3.2))" />
 <xsl:choose>
@@ -17806,7 +17893,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue4.2">
-<xsl:value-of select="translate(string(//np/demDistalAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength4.2" select="string-length(normalize-space($sExampleValue4.2))" />
 <xsl:choose>
@@ -17867,7 +17954,7 @@
 </xsl:otherwise>
 </xsl:choose>
 	            <xsl:variable name="sExampleValue5.2">
-<xsl:value-of select="translate(string(//np/demDistalPlAbsExample),'.','')" />
+<xsl:value-of select="translate(string(//np/demSplitDistalPlAbsExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength5.2" select="string-length(normalize-space($sExampleValue5.2))" />
 <xsl:choose>
@@ -17931,7 +18018,7 @@
 </example>
 </xsl:if>	      	      
 
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)!='none' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none'">
 <p>
 <xsl:text>There is another set of demonstratives which can be used in </xsl:text>
 <xsl:if test="normalize-space(//typology/@caseExperiencer)='yesDat'">
@@ -17940,7 +18027,7 @@
 <xsl:text>indirect objects, as shown in the following table, based on the distance from the speaker:</xsl:text>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='no'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='no' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='no'">
 <example num="xAdjP.AdjArtDem.194">
 <table border="1">
 	            <tr>
@@ -18116,7 +18203,7 @@
 	         </table>
 </example>
 </xsl:if>	      	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)!='none' and normalize-space(//np/@demPl)='yes'">
 <example num="xAdjP.AdjArtDem.196">
 <table border="1">
 	            <tr>
@@ -18495,13 +18582,13 @@
 </example>
 </xsl:if>	      	      
 	      
-	      <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+	      <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.200">
 <table border="1">
 	            <caption>
@@ -18521,25 +18608,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18550,25 +18637,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18579,38 +18666,38 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='nominative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.204">
 <table border="1">
 	            <caption>
@@ -18634,25 +18721,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18663,25 +18750,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18695,25 +18782,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18724,25 +18811,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18756,25 +18843,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18785,25 +18872,25 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18812,13 +18899,13 @@
 </xsl:if>	      
 
 
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.208">
 <table border="1">
 	            <caption>
@@ -18840,27 +18927,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18871,27 +18958,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -18902,40 +18989,40 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='ergative' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.212">
 <table border="1">
 	            <caption>
@@ -18961,27 +19048,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               </tr>
@@ -18992,27 +19079,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               </tr>
@@ -19026,27 +19113,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               </tr>
@@ -19057,27 +19144,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               </tr>
@@ -19091,27 +19178,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               </tr>
@@ -19122,27 +19209,27 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <xsl:if test="normalize-space(//np/@possCaseErg)='genitive'">
 <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 </xsl:if>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               </tr>
@@ -19150,13 +19237,13 @@
 </example>
 </xsl:if>	     
 	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment"> You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='no' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.216">
 <table border="1">
 	            <caption>
@@ -19178,37 +19265,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -19219,37 +19306,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -19260,50 +19347,50 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
 	         </table>
 </example>
 </xsl:if>	      
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <p>
 <xsl:text>The following table shows all the forms for easier comparison: </xsl:text>
 <object type="tComment">You need to enter the form in each cell here.  Delete this paragraph and table if you do not wish to use it.</object>
 </p>
 </xsl:if>
-        <xsl:if test="normalize-space(//np/@artAndDem)='dem' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
+        <xsl:if test="normalize-space(//np/@artAndDem)='demonstrative' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes' or normalize-space(//np/@artAndDem)='both' and normalize-space(//typology/@case)='split' and normalize-space(//np/@demPl)='yes' and normalize-space(//np/@artCase)='yes'">
 <example num="xAdjP.AdjArtDem.220">
 <table border="1">
 	            <caption>
@@ -19329,37 +19416,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -19370,37 +19457,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -19414,37 +19501,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -19455,37 +19542,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -19499,37 +19586,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -19540,37 +19627,37 @@
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	               <td align="left">
 <langData>
 <xsl:attribute name="lang">
-<xsl:text>lPAWSSKEnglish</xsl:text>
+<xsl:text>lVernacular</xsl:text>
 </xsl:attribute>FORM</langData>
 </td>
 	            </tr>
@@ -19591,7 +19678,7 @@
      </section2>
         
     </section1>
- 
+  
       
    
    
@@ -22363,6 +22450,30 @@
       
       
       
+      
+   
+   
+   
+      
+    
+      
+      
+      
+      
+      
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   
       
    
 </xsl:template>

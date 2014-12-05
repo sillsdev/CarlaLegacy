@@ -4,13 +4,13 @@
 ]>
 <?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
 <page id="Classifiers" count="3/3">
-    <title level="2">Overall Typology Questions - Classifiers</title>
-    <introduction>Some languages have a <technicalTermRef term="ttClassifier"/> system that marks nouns by their shape, position, or other characteristics.  In many of these languages, the classifier marking becomes an agreement system that requires concord throughout the nominal phrase and even with the verb.  Therefore, <technicalTermRef term="ttQuantifiers"/>, <technicalTermRef term="ttArticles"/>, <technicalTermRef term="ttDemonstratives"/>, adjectives, and verbs may need to be marked with the appropriate classifier.
+    <title level="2">Overall Typology Questions - Noun Classes and Classifiers</title>
+    <introduction>Some languages have a system of noun classes that marks nouns by their shape, position, or other characteristics.  In many of these languages, the class marking becomes an agreement system that requires concord throughout the nominal phrase and even with the verb.  Therefore, <technicalTermRef term="ttQuantifiers"/>, <technicalTermRef term="ttArticles"/>, <technicalTermRef term="ttDemonstratives"/>, adjectives, and verbs may need to be marked with the appropriate noun class marker.
        <br/><br/>
-       The Bantu languages spoken in Africa represent perhaps the best known noun classifier system.  These languages have up to 22 distinct classes, which are represented by number.  About half of them are for singular nouns only and an equal number for plural nouns only.  Others are for mass or abstract nouns or locations.  
-       Examples from Sesotho, a Bantu language spoken primarily in South Africa are given here, with (1) showing the concord classifier agreement through both the subject and object nominal phrases and (2) showing the use of the classifiers on the verb for both subject and object  when the nominal phrases are pronominalized. (Data from Demuth, K. 2000. Bantu noun class systems: Loan word and acquistion evidence of semantic productivity.  In G. Senft (ed.), Classification Systems.  Cambridge University Press:270-292.) 
+       The Bantu languages spoken in Africa represent perhaps the best known noun class system.  These languages have up to 22 distinct classes, which are represented by numbers.  About half of them are for singular nouns only and an equal number for plural nouns only.  Others are for mass or abstract nouns or locations.  
+       Examples from Sesotho, a Bantu language spoken primarily in South Africa are given here, with (1) showing the concord noun class agreement through both the subject and object nominal phrases and (2) showing the use of the noun class marker on the verb for both subject and object when the nominal phrases are pronominalized. (Data from Demuth, K. 2000. Bantu noun class systems: Loan word and acquistion evidence of semantic productivity.  In G. Senft (ed.), Classification Systems.  Cambridge University Press:270-292.) 
     </introduction>
-   <table>
+   <table class="EnglishExample">
       <tr>
          <td>1.</td>	<td>Ba-shányana</td><td>bá-ne</td><td>bá-fúmáné</td><td>di-perekisi</td><td>tsé-moná</td>
       </tr>
@@ -30,10 +30,61 @@
          <td></td><td>‘They found them.’</td>
       </tr>
    </table>
-   <introduction>A simpler type of classifier system is illustrated in examples (3-5) from Ayutla Mixtec, spoken in southern Mexico.  In this language, there are classifier prefixes derived from either a generic noun or a pronoun that appear on most nouns that refer to animals or insects, or to liquids, trees or objects made of wood, or objects that are basically round.  In Mixtec, there is no concord classifier agreement within the nominal phrase or sentence, so these prefixes only show up on the nouns and might be considered more <technicalTermRef term="ttDerivational"/>.  There are, however, similar distinctions in the third person pronouns that refer to them.  Mixtec uses types rather than numbers to identify the classifiers. Some of the noun roots are identifiable as other words, but some are indeterminate elements. (Data from Hills, Robert. 1990. A Syntactic Sketch of Ayutla Mixtec.  In Bradley, C. Henry and Barbara E. Hollenbach, (eds.) Studies in the Syntax of Mixtecan Languages. Vol.2. The Summer Institute of Linguistics and The University of Texas at Arlington:Dallas. 200-201.)</introduction>
-   <table>
+   <introduction>Languages may instead have a system of <technicalTermRef term="ttClassifier">classifiers</technicalTermRef>, sometimes called counter words or measure words.  These classifiers are words or morphemes that accompany nouns when the noun is counted or specified, and serve to classify the noun depending on the type of its referent.  Some languages have several hundred classifiers.  The classifier relates to the noun being counted or specified, but there is no other agreement within the nominal phrase or sentence.
+   <br/><br/>
+   Classifiers are an important feature of many East Asian languages.  Examples from Mandarin Chinese (pinyin form) illustrate the use of classifiers with a numeral (3-6) and a demonstrative (7). (Examples are from Wikipedia.)</introduction>
+   <table class="EnglishExample">
       <tr>
-         <td>3.</td>	<td>si-ndīkih</td>
+         <td>3.</td><td>sān</td><td>gè</td><td>xuéshēng</td>
+      </tr>
+      <tr>
+         <td></td><td>three</td><td>human.classifier</td><td>student</td>
+      </tr>
+      <tr>
+         <td></td><td>‘three students’</td>
+      </tr>
+      <tr>
+         <td>4.</td><td>sān</td><td>kē</td><td>shù</td>
+      </tr>
+      <tr>
+         <td></td><td>three</td><td>tree.classifier</td><td>tree</td>
+      </tr>
+      <tr>
+         <td></td><td>‘three trees’</td>
+      </tr>
+      <tr>
+         <td>5.</td><td>sān</td><td>zhī</td><td>niǎo</td>
+      </tr>
+      <tr>
+         <td></td><td>three</td><td>bird.classifier</td><td>bird</td>
+      </tr>
+      <tr>
+         <td></td><td>‘three birds’</td>
+      </tr>
+      <tr>
+         <td>6.</td><td>sān</td><td>tiáo</td><td>hé</td>
+      </tr>
+      <tr>
+         <td></td><td>three</td><td>long.wavy.classifier</td><td>river</td>
+      </tr>
+      <tr>
+         <td></td><td>‘three rivers’</td>
+      </tr>
+      <tr>
+         <td>7.</td><td>zhè</td><td>gè</td><td>rén</td>
+      </tr>
+      <tr>
+         <td></td><td>this</td><td>human.classifier</td><td>person</td>
+      </tr>
+      <tr>
+         <td></td><td>‘this person’</td>
+      </tr>
+   </table>
+   
+   <introduction>A simpler type of classifier system is illustrated in examples (8-10) from Ayutla Mixtec, spoken in southern Mexico.  In this language, there are classifier prefixes derived from either a generic noun or a pronoun that appear on most nouns that refer to animals or insects, or to liquids, trees or objects made of wood, or objects that are basically round.  In Mixtec, there is no concord classifier agreement within the nominal phrase or sentence, so these prefixes only show up on the nouns and might be considered more <technicalTermRef term="ttDerivational"/>.  There are, however, similar distinctions in the third person pronouns that refer to them.  Mixtec uses types rather than numbers to identify the classifiers. Some of the noun roots are identifiable as other words, but some are indeterminate elements. (Data from Hills, Robert. 1990. A Syntactic Sketch of Ayutla Mixtec.  In Bradley, C. Henry and Barbara E. Hollenbach, (eds.) Studies in the Syntax of Mixtecan Languages. Vol.2. The Summer Institute of Linguistics and The University of Texas at Arlington:Dallas. 200-201.)</introduction>
+   <table class="EnglishExample">
+      <tr>
+         <td>8.</td>	<td>si-ndīkih</td>
       </tr>
       <tr>
          <td></td><td>ANIMAL-horn</td>
@@ -42,7 +93,7 @@
          <td></td><td>‘cow, cattle’</td>
       </tr>
       <tr>
-         <td>4.</td><td>tē-hnīh</td>
+         <td>9.</td><td>tē-hnīh</td>
       </tr>
       <tr>
          <td></td><td>LIQUID-hot</td>
@@ -51,7 +102,7 @@
          <td></td><td>‘liquor’</td>
       </tr>
       <tr>
-         <td>5.</td><td>tun-tāhnūh</td>
+         <td>10.</td><td>tun-tāhnūh</td>
       </tr>
       <tr>
          <td></td><td>WOOD-is.flying</td>
@@ -63,19 +114,20 @@
     <form section="typology">
         <radioGroup>
             <groupName dataItem="classifier" default="no">RTypologyClassifier</groupName>
-           <prompt>Does your language have either type of classifier system illustrated above?</prompt>
+           <prompt>Does your language have any type of noun class or classifier system illustrated above?</prompt>
             <radio id="OTClassifierNo" dataValue="no">No</radio>
-            <radio id="OTClassifierAgr" dataValue="yesAgr">Yes, with concord agreement throughout like the Bantu system above</radio>
-            <radio id="OTClassifierType" dataValue="yesType">Yes, types of nouns are distinguished like the Mixtec system above, but there is no concord agreement</radio>
-<radioGroup id="OTClassifierAgrTable" show="swOTClassifierAgr">
+            <radio id="OTClassifierAgr" dataValue="yesAgr">Yes, with concord noun class agreement throughout like the Bantu system above</radio>
+            <radio id="OTClassifierSpecific" dataValue="yesSpecific">Yes, classifiers occur with nouns when they are counted or specified like the Chinese system above, but there is no concord agreement</radio>
+           <radio id="OTClassifierType" dataValue="yesType">Yes, types of nouns are distinguished like the Mixtec system above, but there is no concord agreement</radio>
+           <radioGroup id="OTClassifierAgrTable" show="swOTClassifierAgr">
    <groupName dataItem="classifierNum" default="number">RTypologyClassifierNumber</groupName>
-   <prompt>Are the classifiers distinguished by numbers or by type labels?</prompt>
+   <prompt>Are the noun classes distinguished by numbers or by type labels?</prompt>
    <radio id="OTClassifierAgrNum" dataValue="number">By class numbers</radio>
    <radio id="OTClassifierAgrType" dataValue="type">By types</radio>
 </radioGroup>        
         </radioGroup>
 <br/>
-       <introduction id="OTClassifierChartsIntroduction" show="swOTClassifierNotNo">You will now be asked for information about each classifier so that a table can be created for the grammar writer output.  Please fill in all relevant text boxes and click on the appropriate number agreement feature for each class.  If more than one morpheme form is used for a particular class, please enter each on a separate line.  Also, please add a hyphen to each form to indicate whether it is a prefix or suffix. <span id="OTClassifierAgrNumSpan" show="swOTClassifierAgrNum" >We are assuming you use numbers beginning with one.  If not, you will need to change them when you edit the grammar output.</span>  If you do not have as many classes as asked for here, simply leave the appropriate boxes empty.</introduction>
+       <introduction id="OTClassifierChartsIntroduction" show="swOTClassifierNotNo">You will now be asked for information about each <span id="OTClassifierAgrSpan1" show="swOTClassifierAgr">class marker</span><span id="OTClassifierNotAgrSpan" show="swOTClassifierTypeOrSpecific">classifier</span> so that a table can be created for the grammar writer output.  Please fill in all relevant text boxes<span id="OTClassifierYesAgrSpan" show="swOTClassifierAgrNum"> and click on the appropriate number agreement feature for each class</span>.  If more than one morpheme form is used for a particular <span id="OTClassifierAgrSpan2" show="swOTClassifierAgr">class</span><span id="OTClassifierNotAgrSpan2" show="swOTClassifierTypeOrSpecific">classifier</span>, please enter each on a separate line.  Also, please add a hyphen to each form that is an affix to indicate whether it is a prefix or suffix. <span id="OTClassifierAgrNumSpan" show="swOTClassifierAgrNum" >We are assuming you use numbers beginning with one.  If not, you will need to change them when you edit the grammar output.  If you do not have as many classes as asked for here, simply leave the appropriate text boxes empty.</span> <span id="OTClassifierTypeOrSpecificSpan" show="swOTClassifierTypeOrSpecific" >If you do not have certain classifiers asked for here, simply leave those text boxes empty.  List additional classifiers in the final ‘other’ text box, so they can be glossed in the grammar output.</span> </introduction>
 <br/>
        <prompt id="OTClassifierAgrNumPrompt1" show="swOTClassifierAgrNum">Enter the forms for class 1 here:</prompt>
        <textBox id="OTClassifierAgrNumExample1" dataItem="class1Example" show="swOTClassifierAgrNum" rows="2"/>
@@ -304,9 +356,9 @@
        </radioGroup>
        <radioGroup id="OTClassifierAgrTypeTable" show="swOTClassifierAgrType">
           <groupName dataItem="classifierTypeNumAgr" default="unknown">RTypologyClassifierAgrTypeNumAgr</groupName>
-          <prompt>Does your language have different classifiers for each type based on number agreement?</prompt>
-          <radio id="OTClassifierAgrTypeNumAgrNo" dataValue="no">No, there is only one classifier for each type of noun</radio>
-          <radio id="OTClassifierAgrTypeNumAgrYes" dataValue="yes">Yes, there are different classifiers for singular and plural for each type of  noun</radio>
+          <prompt>Does your language have different class markers for each type based on number agreement?</prompt>
+          <radio id="OTClassifierAgrTypeNumAgrNo" dataValue="no">No, there is only one class marker for each type of noun</radio>
+          <radio id="OTClassifierAgrTypeNumAgrYes" dataValue="yes">Yes, there are different class markers for singular and plural for each type of  noun</radio>
        </radioGroup>
 <br/>     
        <prompt id="OTClassifierAgrTypeAnimalSgPrompt" show="swOTClassifierAgrTypeNumAgrYes">Enter the forms for the singular animal type here:</prompt>
@@ -364,15 +416,45 @@
        <textBox id="OTClassifierAgrTypeWoodExample" dataItem="classWoodExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
        <prompt id="OTClassifierAgrTypeOtherPrompt" show="swOTClassifierTypeOrNumAgrNo">Enter the forms for the general inanimate or any other type here:</prompt>
        <textBox id="OTClassifierAgrTypeOtherExample" dataItem="classOtherExample" show="swOTClassifierTypeOrNumAgrNo" rows="2"/>
-       <br/>
+       
+       <prompt id="OTClassifierSpecificHumanPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for humans here:</prompt>
+       <textBox id="OTClassifierSpecificHumanExample" dataItem="classifierHumanExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificAnimalPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for animals here:</prompt>
+       <textBox id="OTClassifierSpecificAnimalExample" dataItem="classifierAnimalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificBirdPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for birds here:</prompt>
+       <textBox id="OTClassifierSpecificBirdExample" dataItem="classifierBirdExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificBoatPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for boats here:</prompt>
+       <textBox id="OTClassifierSpecificBoatExample" dataItem="classifierBoatExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificClothingPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for items of clothing here:</prompt>
+       <textBox id="OTClassifierSpecificClothingExample" dataItem="classifierClothingExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificTreePrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for trees here:</prompt>
+       <textBox id="OTClassifierSpecificTreeExample" dataItem="classifierTreeExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificLongThinPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for long, thin items here:</prompt>
+       <textBox id="OTClassifierSpecificLongThinExample" dataItem="classifierLongThinExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificLongWavyPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for long, wavy items here:</prompt>
+       <textBox id="OTClassifierSpecificLongWavyExample" dataItem="classifierLongWavyExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificFlatPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for flat items here:</prompt>
+       <textBox id="OTClassifierSpecificFlatExample" dataItem="classifierFlatExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificCylindricalPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for cylindrical items here:</prompt>
+       <textBox id="OTClassifierSpecificCylindricalExample" dataItem="classifierCylindricalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificMechanicalPrompt" show="swOTClassifierSpecific">Enter the forms for the classifier for mechanical items here:</prompt>
+       <textBox id="OTClassifierSpecificMechanicalExample" dataItem="classifierMechanicalExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificGenericPrompt" show="swOTClassifierSpecific">Enter the forms for the generic classifier here:</prompt>
+       <textBox id="OTClassifierSpecificGenericExample" dataItem="classifierGenericExample" show="swOTClassifierSpecific" rows="2"/>
+       <prompt id="OTClassifierSpecificOtherPrompt" show="swOTClassifierSpecific">Enter the forms for any other classifier here:</prompt>
+       <textBox id="OTClassifierSpecificOtherExample" dataItem="classifierOtherExample" show="swOTClassifierSpecific" rows="2"/>
+       <br/><br/>
        <prompt id="OTClassifierAgrPrompt" show="swOTClassifierAgr">Now key some example sentences showing the concord agreement within the nominal phrases and on the verb here:</prompt>
        <textBox id="OTClassifierAgrExample" dataItem="classifierAgrExample" cols="50" show="swOTClassifierAgr"/>
+       <prompt id="OTClassifierSpecificPrompt" show="swOTClassifierSpecific">Now key some example nominal phrases illustrating some of the different classifiers used with numerals or demonstratives and nouns here:</prompt>
+       <textBox id="OTClassifierSpecificExample" dataItem="classifierSpecificExample" rows="5" show="swOTClassifierSpecific"/>      
        <prompt id="OTClassifierTypePrompt" show="swOTClassifierType">Now key some example nouns illustrating the different type markers here:</prompt>
        <textBox id="OTClassifierTypeExample" dataItem="classifierTypeExample" rows="5" show="swOTClassifierType"/>      
        <br/>
        <instruction id="OTClassifierAgrNumInstruction" show="swOTClassifierAgrNum">In the lexicon, enter the feature <feature>singular</feature> on all the singular classifiers and the feature <feature>plural</feature> on all the plural classifiers.  Do not enter a number feature on any classifiers which can go with either singular or plural or mass nouns.  Also enter a feature of the form <feature>class_##</feature>,  replacing the ## with a number between 1 and 25, on each classifier as appropriate.</instruction>
-       <instruction id="OTClassifierAgrTyyeNumAgrYesInstruction" show="swOTClassifierAgrTypeNumAgrYes">In the lexicon, enter the feature <feature>singular</feature> on all the singular classifiers and the feature <feature>plural</feature> on all the plural classifiers.  Also enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>     
-       <instruction id="OTClassifierTypeOrNumAgrNoInstruction" show="swOTClassifierTypeOrNumAgrNo">In the lexicon, enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>
+       <instruction id="OTClassifierAgrTypeNumAgrYesInstruction" show="swOTClassifierAgrTypeNumAgrYes">In the lexicon, enter the feature <feature>singular</feature> on all the singular classifiers and the feature <feature>plural</feature> on all the plural classifiers.  Also enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>     
+       <instruction id="OTClassifierTypeNumAgrNoInstruction" show="swOTClassifierTypeOrNumAgrNo">In the lexicon, enter one of the features <feature>class_animal</feature>, <feature>class_insect</feature>, <feature>class_liquid</feature>, <feature>class_round</feature>, <feature>class_cylinder</feature>, <feature>class_sphere</feature>, <feature>class_tree</feature>, <feature>class_wood</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>
+       <instruction id="OTClassifierSpecificInstruction" show="swOTClassifierSpecific">In the lexicon, enter one of the features <feature>class_human</feature>, <feature>class_animal</feature>, <feature>class_bird</feature>, <feature>class_boat</feature>, <feature>class_clothing</feature>, <feature>class_tree</feature>, <feature>class_thin</feature>, <feature>class_wavy</feature>, <feature>class_flat</feature>, <feature>class_cylindrical</feature>, <feature>class_mechanical</feature>, <feature>class_generic</feature> or <feature>class_other</feature> on each classifier as appropriate.</instruction>
        <br/>
         <buttons>
             <button id="ClassifiersBack" value="Back" goto="Case.xml"/>
@@ -400,6 +482,14 @@
       <whenRadio button="OTClassifierAgr"/>
      <and/>
       <whenRadio button="OTClassifierAgrType"/>
+   </showWhen>
+   <showWhen id="swOTClassifierTypeOrSpecific">
+      <whenRadio button="OTClassifierType"/>
+      <or/>
+      <whenRadio button="OTClassifierSpecific"/>
+   </showWhen>
+   <showWhen id="swOTClassifierSpecific">
+      <whenRadio button="OTClassifierSpecific"/>
    </showWhen>
    <showWhen id="swOTClassifierAgrTypeNumAgrYes">
       <whenRadio button="OTClassifierAgrTypeNumAgrYes"/>

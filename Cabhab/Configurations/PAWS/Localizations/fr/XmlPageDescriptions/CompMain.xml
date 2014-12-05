@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="CompMain" count="1/4">
+    <title>Propositions Complétives</title>
+    <introduction>Cette section considère divers types de propositions subordonnées qui sont <technicalTermRef term="ttComplements">compléments</technicalTermRef> de verbes principaux ou d’adjectifs qui fonctionnent comme <technicalTermRef term="ttPredicates">prédicats</technicalTermRef>, comme les exemples suivants en anglais. </introduction>
+    <EnglishExample>
+        <exItem label="1.">I believe that Jill is my friend.  « Je crois que Jeanne est mon amie. »</exItem>
+        <exItem label="2.">Jill insists that she is my friend.  « Jeanne insiste qu’elle est mon amie. »</exItem>
+        <exItem label="3.">I expect that Joe will come to the party.  « Je m’attends que Jacques va venir à la soirée. »</exItem>
+        <exItem label="4.">I expect Joe to come to the party.  « Je m’attends à Jacques à venir à la soirée. »</exItem>
+        <exItem label="5.">I will persuade Joe that he should come to the party.  « Je vais persuader Jacques qu’il devrait venir à la soirée. »</exItem>
+        <exItem label="6.">I will persuade Joe to come to the party.  « Je vais persuader Jacques de venir à la soirée. »</exItem>
+        <exItem label="7.">Joe would hate for Sue to be at the party.  « Jacques n’aimerait pas que Suzanne soit à la soirée. »</exItem>
+        <exItem label="8.">Joe tried to come to the party.  « Jacques a essayé de venir à la soirée. »</exItem>
+        <exItem label="9.">John seemed to like the tortillas.  « Jean semblait aimer les tortillas. »</exItem>
+        <exItem label="10.">It seems likely that Joe will come.  « Il semble probable que Jacques viendra. »</exItem>
+    </EnglishExample>
+    <introduction>Les constructions <technicalTermRef term="ttCausative">causatives</technicalTermRef> qui consistent en deux propositions, sont aussi couvertes ici comme exemples dans 11-12 (Les causatifs qui consistent d’une seule proposition avec un affixe causatif sur le verbe sont discutés dans la <section number="9.8">Phrases Simples – Causatifs, Applicatifs et Antipassifs</section>.)</introduction>
+   <EnglishExample>
+       <exItem label="11.">My mother made me clean my room.  « Ma mère m’a fait nettoyer ma chambre. »</exItem>
+       <exItem label="12.">The other girl forced us to leave the group.  « L’autre fille nous a forcé de quitter le groupe. »</exItem>
+   </EnglishExample>
+    <introduction>Le discours direct et indirect comme montré dans 13-14 est aussi une proposition complétive qui seront couvertes dans cette section. Cependant, des question subordonnées seront traitées dans la <section number="11">Questions</section>.</introduction>
+  <EnglishExample>
+      <exItem label="13.">Sue said, « I will come to your house tomorrow. »  « Suzannee a dit, « je viendrai demain chez toi. » »</exItem>
+      <exItem label="14."> Sue said that she would come here tomorrow.  « Suzanne a dit qu’elle viendrait ici demain. »</exItem>
+  </EnglishExample>  
+   <introduction id="CompIntroNotPractical" show="swNotPractical">The examples illustrate that the main verb selects one or more particular types of complement clauses which can occur gramatically.  For example, <example>try</example> cannot have a complement clause beginning with <example>that</example> and the subject of the embedded clause must be coreferent to the main clause subject and pro-dropped.  Further, <example>believe, insist</example> and <example>persuade</example> cannot have a complement clause beginning with <example>for</example> and none of the verbs above can have an embedded question complement.
+<br/>
+        <br/>
+A second point the examples illustrate is that the presence of a particular complementizer determines the finiteness of the embedded verb which follows it.  This evidence of subcategorization by the main verb for the complementizer and by the complementizer for the embedded verb form leads to the conclusion that the complementizer is the head of the embedded clause.  Therefore, within X-Bar Theory, embedded clauses which have complementizers are CPs, which sit on top of the IP.
+<br/>
+        <br/>A sample tree for example 1 is shown here:
+<tree img="TreeDescriptions/PawsCompCP.png"/>
+        <br/>
+When there is no complementizer present, as in examples 4, 6 and 8 above, the complement clause is simply an IP.  A sample tree for example 4 with a nonfinite complement is shown here:
+<tree img="TreeDescriptions/PawsCompIPnonfinite.png"/>
+<br/>
+There is an important difference between <example>expect</example> (in examples 3 and 4) and <example>persuade</example> (in examples 5 and 6): <example>expect</example> can have either a finite CP or a nonfinite IP for its complement while <example>persuade</example> has a direct object as well as either of those complement clauses.  A tree for example 5 is shown here:
+<tree img="TreeDescriptions/PawsCompDPCP.png"/>
+<br/>
+Next, a tree for example 8 with a nonfinite IP complement and required pro-drop is shown here:
+<tree img="TreeDescriptions/PawsCompIPprodrop.png"/>
+      <br/>
+      Finally, verbs like <example>seem</example> ( including other perception verbs and copulas) are called  »raising’ verbs, since <example>seem</example> doesn’t really have its own subject, and takes either a nonfinite sentence as a complement or an adjective which can have a finite sentence with a complementizer as its complement.  In the nonfinite case (9), the subject of the complement appears in the subject postion of <example>seem</example>.  In the finite complement case, there is no overt subject for <example>seem</example>, so a « dummy » word <example>it</example> fills that position in English.  Some languages simply leave the main clause subject postion empty.
+ <br/><br/>     A tree for example 9 with a nonfinite IP complement and  coreferent subjects due to raising will look just like the tree for example 8 with <example>try</example>, since we are not modelling the null elements.  Similarly, 
+      a tree for example 10 would be vey similar to the tree above for example 1 with <example>believe</example>, except for the adjective complement and the dummy <example>it</example> in the main clause subject position.
+  <br/>    <br/>
+        <help href="Help/Cbgbtext.doc#ClausalComplements">Click here for more information about the CP phrase structure of embedded clauses.</help>
+    </introduction>
+    <introduction id="CompIntroPractical" show="swPractical">Les exemples illustrent que le verbe principal sélectionne une ou plusieurs propositions complétives qui peuvent apparaître gramatiquement. Par exemple en anglais, <example>try  « essayer »</example> ne peut pas être suivi d’une proposition complétive qui commence avec <example>that  « que »</example> et le sujet de la proposition dépendant doit se référer au sujet de la proposition principale et non exprimé. De plus, <example>believe  « croire », insist  « insister »</example> et <example>persuade  « persuader »</example> ne peuvent pas être suivi d’une proposition complétive qui commence avec <example>for  « pour »</example> et aucun des verbes ci-dessus ne peut avoir de complément de question dépendant. 
+    </introduction>
+    <form section="comp" transparent="yes">
+        <br/>
+        <buttons>
+            <button id="CompMainBack" value="Back" goto="Contents.htm"/>
+            <button id="CompMainNext" value="Next" goto="CompFeatures.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+    <showWhen id="swPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="False"/>
+    </showWhen>
+   &TechnicalTerms; 
+</page>

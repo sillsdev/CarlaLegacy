@@ -12,7 +12,7 @@
       <exItem label="1.">Juan, Guillermo, Susana y María</exItem>
       <exItem label="2.">Juan, Guillermo, Susana y/o María</exItem>
       <exItem label="3.">Juan y Guillermo o Susana y María</exItem>
-      <exItem label="4.">Un gato, dos perros y un pollo pero no un mono</exItem>
+      <exItem label="4.">un gato, dos perros y un pollo pero no un mono</exItem>
    </EnglishExample>   
    <form section="coord" transparent="no">
       <prompt>Escriba cómo su lengua expresa elementos consecutivos dentro de una frase nominal aquí:</prompt>

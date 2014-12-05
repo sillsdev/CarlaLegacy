@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="AdvPMain" count="1/6">
+   <title>Adverbes et Syntagmes Adverbiaux</title>
+   <introduction>Les adverbes expriment quatre sortes d’informations:
+<ul>
+            <li> temps,</li>
+            <li> lieu,</li>
+   <li>manière, et</li>
+   <li>raison ou but.</li>
+        </ul>
+      Les adverbes <technicalTermRef term="ttIndefinite">indéfinis</technicalTermRef> aussi sont présentés ici et on s’occupera des adverbes <technicalTermRef term="ttInterrogative">interrogatifs</technicalTermRef> dans la <section number="11.">Questions – Syntagmes Interrogatifs</section>. Ceux-ci ont des caractéristiques différentes selon leur position dans la phrase et la façon dont on peut les modifier<span id="AdvPTemporalNotPracticalInstruction" show="swNotPractical">, donc il faut les distinguer l’un de l’autre par une caractéristique</span>. 
+       On s’occupera de chacun à son tour.
+</introduction>
+   <introduction>Les adverbes de temps comprennent, par exemple, les mots français: <example>déjà</example>, <example>alors</example>, <example>bientôt</example>, <example>maintenant</example>,
+      <example>plus tard</example> et <example>toujours</example>. 
+<br/>
+        <br/>
+      Il faut les distinguer des autres genres de mots et syntagmes qui expriment aussi le temps, tels que:
+<ul>
+   <li>les syntagmes nominaux <example>hier</example>,
+      <example>hier soir</example>, <example>l’année prochaine</example>, <example>demain</example>, <example>il y a longtemps</example>,</li> 
+   <li>les syntagmes prépositionnels <example>pendant une longtemps</example>, <example>dans peu de temps</example>, <example>à 10 heures</example>, et </li>
+   <li>les propositions adverbiales <example>pendant que vous travaillez</example>, <example>lorsque Suzanne est arrivée</example>.</li> 
+</ul>
+      Il y aura des questions ci-dessous au sujet des noms simples qui expriment le temps. On s’occupera des syntagmes temporels, prépositionnels ou postpositionnels dans la <section number="8">Phrases Adpositionnels</section>; et les propositions adverbiales dans la <section number="13">Propositions Adverbiales</section>. 
+       <br/><br/>
+      Veuillez répondre avec des adverbes simples tout d’abord. Les exemples de syntagmes adverbiaux de temps avec des mots de degré en français, sont:
+</introduction>
+    <EnglishExample>
+       <exItem label="1.">très bientôt</exItem>
+       <exItem label="2.">bien plus tard</exItem>
+       <exItem label="3.">seulement maintenant</exItem>
+    </EnglishExample>
+    <form section="advp">
+       <prompt><br/>Entrez vos exemples des adverbes de temps (sans aucun modificateur ni intensificateur):</prompt>
+        <textBox id="AdvPExample" dataItem="temporalExample"/>
+       <instruction id="AdvPInstruction">In the lexicon, key the feature <feature>temporal</feature> on all adverbs that express
+          time.
+       </instruction>
+      
+        <radioGroup>
+            <groupName dataItem="temporalDegree" default="no">RAdvPTemporalDegree</groupName>
+           <prompt><br/>Dans votre langue est-ce qu’il y a le moyen d’exprimer l’intensité des adverbes de temps?</prompt>
+           <radio id="AdvPTemporalDegreeNo" dataValue="no">Non, les adverbes de temps ne sont ni modifiés ni intensifiés</radio>
+           <radio id="AdvPTemporalDegreeYes" dataValue="yes">Oui, les adverbes de temps peuvent être modifiés ou intensifiés ainsi:</radio>
+           <checkboxGroup id="AdvPTemporalDegreeType" show="swAdvPTemporalDegreeYes">
+              <prompt>Cochez chaque option qui est correcte pour votre langue.</prompt> 
+              <checkbox id="AdvPTemporalDegreeWord" dataItem="temporalDegreeWord">L’adverbe de temps peut être modifié par des mots de degré</checkbox>
+              <checkbox id="AdvPTemporalDegreeAttaches" dataItem="temporalDegreeAttaches">Il y a un affixe ou un clitique qui s’attache à l’adverbe de temps pour l’intensifier</checkbox>
+              <checkbox id="AdvPTemporalDegreeRedup" dataItem="temporalDegreeRedup">Le redoublement est utilisé pour intensifier le sens d’un adverbe de temps</checkbox>
+              <checkbox id="AdvPTemporalDegreeOther" dataItem="temporalDegreeOther">Ma langue intensifie ainsi le sens d’un adverbe de temps:<textBox  id="AdvPTemporalDegreeOtherContent" dataItem="temporalDegreeOther" rows="2"/></checkbox>
+           </checkboxGroup>
+       </radioGroup>
+       <br/><br/>
+       <prompt id="AdvPTemporalDegreeNoCheckPrompt" show="swAdvPTemporalDegreeYesNoCheck">AVERTISSEMENT: Vous avez indiqué ci-dessus qu’il est possible de modifier ou intensifier les adverbes de temps, mais vous n’avez coché aucune case. Cochez une ou plusieurs cases, ou changez votre réponse ci-dessus à « Non, les adverbes de temps ne sont ni modifiés ni intensifiés ».</prompt>
+       <prompt id="AdvPTemporalDegreeYesPrompt" show="swAdvPTemporalDegreeYesWord">Entrez les mots de degré qui modifient les adverbes de temps:</prompt>
+        <textBox id="AdvPTemporalDegreeExample" dataItem="temporalDegreeExample" show="swAdvPTemporalDegreeYesWord" rows="3"/>
+       <prompt id="AdvPTemporalDegreePhrasePrompt" show="swAdvPTemporalDegreeYesWord">Entrez des exemples d’adverbes de temps avec des mots de degré qui les modifient:</prompt>
+       <textBox id="AdvPTemporalExample" dataItem="temporalPhraseExample" show="swAdvPTemporalDegreeYesWord"/>   
+       <br/><br/>
+       <checkboxGroup id="AdvPTemporalDegreeWordTable" show="swAdvPTemporalDegreeYesWord">
+          <prompt>Regardez les exemples ci-dessus encore une fois. Quelle est la position des mots de degré en ce qui concerne l’adverbe de temps?
+             Cochez chaque option qui est correcte pour votre langue.
+          </prompt>
+          <checkbox id="AdvPTemporalDegreeWordBefore" checked="yes" dataItem="temporalDegreeWordBefore">Avant l’adverbe de temps</checkbox>
+          <checkbox id="AdvPTemporalDegreeWordAfter" checked="yes" dataItem="temporalDegreeWordAfter">Après l’adverbe de temps</checkbox>
+          <checkbox id="AdvPTemporalDegreeWordBoth" checked="yes" dataItem="temporalDegreeWordBoth">Avant et après en même temps</checkbox>
+          <checkbox id="AdvPTemporalDegreeWordOther" checked="yes" dataItem="temporalDegreeWordOther">Dans ma langue, ces mots de degré se trouvent comme suit: <textBox  id="AdvPTemporalDegreeWordOtherContent" dataItem="temporalDegreeWordOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="AdvPTemporalDegreeWordNoCheckPrompt" show="swAdvPTemporalDegreeWordAndNoCheck">AVERTISSEMENT: Il faut cocher au moins une case pour décrire où on trouve des quantificateurs dans votre langue, ou changer la réponse ci-dessus pour un autre modificateur.</prompt>
+       <instruction  id="AdvPTemporalDegreeYesInstruction" show="swAdvPTemporalDegreeYesWord">In the lexicon, key the features <feature>makeDeg modifies_temporal</feature> on the degree words to change the category and allow it to modify temporal adverbs.</instruction>
+       <instruction id="AdvPTemporalDegreeEitherRestrictedInstruction" show="swAdvPTemporalDegreeEitherRestricted">In the lexicon, mark those degree words which can only occur before the adverb with the feature <feature>AdvP-initial</feature> and those which can only occur after the adverb with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any degree words which can occur on either side.</instruction>      
+       
+       <prompt id="AdvPTemporalDegreeAttachesPrompt" show="swAdvPTemporalDegreeAttaches"><br/>Entrez ici vos exemples d’affixes de degré ou de clitiques qui peuvent modifier les adverbes de temps, avec un trait d’union ou signe d’égalité pour indiquer de quel côté ils s’attachent à l’adverbe de temps:</prompt>
+        <textBox id="AdvPTemporalDegreeAffixExample" dataItem="temporalDegreeAffixExample" show="swAdvPTemporalDegreeAttaches" rows="3"/>
+       <prompt id="AdvPTemporalDegreeAffixPhrasePrompt" show="swAdvPTemporalDegreeAttaches"><br/>Puis, entrez ici des exemples d’affixes de degré ou de clitiques attachés aux adverbes de temps:</prompt>
+       <textBox id="AdvPTemporalPhraseAffixExample" dataItem="temporalPhraseAffixExample" show="swAdvPTemporalDegreeAttaches"/>
+       <prompt id="AdvPTemporalDegreeRedupPrompt" show="swAdvPTemporalDegreeRedup"><br/>Entrez ici des exemples des adverbes de temps avec redoublement pour les modifier ou intensifier:</prompt>
+        <textBox id="AdvPTemporalDegreeRedupExample" dataItem="temporalDegreeRedupExample" show="swAdvPTemporalDegreeRedup"/>              
+       <prompt id="AdvPTemporalDegreeOtherPrompt" show="swAdvPTemporalDegreeOther"><br/>Entrez ici des exemples qu’utilise votre langue d’adverbes de temps avec d’autres moyens d’intensification:</prompt>
+       <textBox id="AdvPTemporalDegreeOtherExample" dataItem="temporalDegreeOtherExample" show="swAdvPTemporalDegreeOther"/>   
+<br></br><br></br>
+       <introduction>Maintenant, considérez les noms simples qui expriment le temps, comme <example>la nuit</example>, <example>l’année</example>,
+          <example>le jour</example>, <example>hier</example>, <example>demain</example>, <example>le matin</example> et <example>l’heure</example>. Les noms propres pour les jours de la semaine et les mois sont aussi des noms temporels. </introduction>  
+       <prompt id="AdvPTemporalNounPrompt"><br/>Entrez ici des exemples de la façon dont votre langue exprime de telles idées:</prompt>
+       <textBox id="AdvPTemporalNounExample" dataItem="temporalNounExample"/>
+       <instruction id="AdvPTemporalNounInstruction">In the lexicon, add the feature <feature>temporal</feature> to each of the nouns that relate to time. </instruction>     
+       <prompt id="AdvPTemporalNounModifierPrompt">D’habitude, ces noms peuvent être modifiés par la plupart des modificateurs avec lesquels on modifie les autres noms – par exemple, les articles, les démonstratifs et les quantificateurs, aussi que les mots comme <example>tôt</example> et <example>tard</example> comme par exemple <example>très tôt le matin</example>.  A noter: un nom temporel ou plusieurs peuvent aussi faire partie d’un composé, comme suit: <example>late yesterday morning (tard hier matin)</example>.
+       <br/> <br/>
+          Entrez ici des exemples de noms de temps modifiés par d’autres éléments:</prompt>
+       <textBox id="AdvPTemporaNounModifierExample" dataItem="temporalNounModifierExample"/>
+       <instruction id="AdvPTemporalNounModifierInstruction">We will assume that the words <example>early</example> and <example>late</example> act as adjectives when they occur in a nominal phrase and as prepositions or postpositions when they take either a nominal phrase or a PP as their complement.  Therefore, in the lexicon, you will likely need to have two entries for these words, one with the category <category>Adj</category> and one with the category <category>P</category> and the feature <feature>temporal</feature> (or you can use the features <feature>makeP temporal</feature> instead). </instruction>     
+       <br/><br/>
+       <introduction>
+          Il y a aussi en anglais deux types <technicalTermRef term="ttIndefinite">d’indéfinis</technicalTermRef> adverbiaux de temps: ceux composés d’un quantificateur et un nom de temps général, comme <example>everytime  « chaque fois »</example> et <example>sometime  « quelque temps »</example>, et ceux composés d’un mot <technicalTermRef term="ttInterrogative">interrogatif</technicalTermRef> et un mot indéfini, comme <example>whenever  « n’importe quand »</example>.                
+       </introduction>
+       <br/><br/>
+       <checkboxGroup>
+          <prompt>Considérez d’abord les indéfinis adverbiaux de temps  qui contiennent un quantificateur. Comment exprime-t-on ces indéfinis adverbiaux de temps dans votre langue? Cochez chaque option qui est correcte pour votre langue. Si aucun indéfini adverbial de ce type n’existe dans votre langue, ne cochez rien et cochez « Aucun » ci-dessous.</prompt>
+          <checkbox id="AdvPTemporalIndefTypeQWord" dataItem="temporalIndefQWord">Un quantificateur et un nom de temps général fusionnent en un seul mot</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeQPhrase" dataItem="temporalIndefQPhrase">Un quantificateur se trouve avec un nom de temps général mais ils ne fusionnent pas en un seul mot</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeQOther" dataItem="temporalIndefQOther">Ma langue fait ainsi pour exprimer ces sens de temps indéfini:<textBox  id="AdvPTemporalIndefTypeQOtherContent" dataItem="temporalIndefQOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="AdvPTemporalIndefTypeQNoCheckPrompt" show="swAdvPTemporalIndefTypeQNoCheck">AVERTISSEMENT: Cochez au moins une case pour décrire comment on exprime ces sens indéfinis de temps dans votre langue, sauf s’il n’y a aucun indéfini adverbial de ce type dans votre langue. Dans ce cas-là, cochez « Aucun » ci-dessous.</prompt>
+       <checkboxGroup id="AdvPTemporalIndefTypeQNoneTable" show="swAdvPTemporalIndefTypeQNoCheck">
+          <prompt>Cochez cette case seulement si votre langue n’a aucun type d’indéfini adverbial de temps  qui contient un quantificateur</prompt>
+          <checkbox id="AdvPTemporalIndefTypeQNone" dataItem="temporalIndefTypeQNone">Aucun</checkbox>
+       </checkboxGroup>
+       
+       <prompt id="AdvPTemporalIndefTypeQWordPrompt" show="swAdvPTemporalIndefTypeQWord">Entrez ici vos exemples d’indéfinis adverbiaux de temps composés d’un quantificateur et un nom de temps général, fusionnés en un seul mot:</prompt>
+       <textBox id="AdvPTemporalIndefTypeQWordExample" dataItem="temporalIndefTypeQWordExample" show="swAdvPTemporalIndefTypeQWord" rows="3"/>
+       <instruction  id="AdvPTemporalIndefTypeQWordInstruction" show="swAdvPTemporalIndefTypeQWord">In the lexicon, key the features <feature>temporal makeAdv</feature> on these temporal adverbial indefinite words.</instruction>
+       
+       <prompt id="AdvPTemporalIndefTypeQPhrasePrompt" show="swAdvPTemporalIndefTypeQPhrase">Entrez ici vos exemples d’indéfinis adverbiaux de temps composés d’un quantificateur et d’un nom de temps général que ne fusionnent pas en un seul mot:</prompt>
+       <textBox id="AdvPTemporalIndefTypeQPhraseExample" dataItem="temporalIndefTypeQPhraseExample" show="swAdvPTemporalIndefTypeQPhrase" rows="3"/>
+       <checkboxGroup id="AdvPTemporalIndefTypeQPhraseTable" show="swAdvPTemporalIndefTypeQPhrase">
+          <prompt><br/>En regardant vos exemples ci-dessus encore une fois, où se trouve le quantificateur par rapport au nom de temps général? Cochez chaque option qui est correcte pour votre langue.</prompt>
+          <checkbox id="AdvPTemporalIndefTypeQPQBefore" checked="yes" dataItem="temporalIndefTypeQPQBefore">Avant le nom</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeQPQAfter" checked="yes" dataItem="temporalIndefTypeQPQAfter">Après le nom</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeQPQBoth" checked="yes" dataItem="temporalIndefTypeQPQBoth">Avant et après le nom en même temps</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeQPQOther" checked="yes" dataItem="temporalIndefTypeQPQOther">Dans ma langue, ces quantificateurs se trouvent ainsi: <textBox  id="AdvPTemporalIndefTypeQPQOtherContent" dataItem="temporalIndefTypeQPQOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="AdvPTemporalIndefTypeQPPhraseNoCheckPrompt" show="swAdvPTemporalIndefTypeQPPhraseAndNoCheck">AVERTISSEMENT: Cochez au moins une case pour décrire où se trouvent ces quantificateurs et noms de temps généraux dans votre langue, ou changez la réponse ci-dessus dans une autre forme.</prompt>
+       <instruction  id="AdvPTemporalIndefTypeQPPhraseInstruction" show="swAdvPTemporalIndefTypeQPhrase">In the lexicon, key the features <feature>temporal generic</feature> on the general temporal nouns, and make sure they also have the category <category>N</category>.</instruction>
+       
+       <instruction id="AdvPTemporalIndefTypeQPQEitherRestrictedInstruction" show="swAdvPTemporalIndefTypeQPQEitherRestricted">In the lexicon, mark those quantifier words which can only occur before the general temporal noun with the feature <feature>AdvP-initial</feature> and those which can only occur after the general temporal word with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any quantifier words which can occur on either side.</instruction>           
+       
+       <prompt id="AdvPTemporalIndefTypeQOtherPrompt" show="swAdvPTemporalIndefTypeQOther">Entrez ici quelques exemples de l’autre façon dont on exprime ces indéfinis adverbiaux de temps qui contiennent un quantificateur dans votre langue:</prompt>
+       <textBox id="AdvPTemporalIndefTypeQOtherExample" dataItem="temporalIndefTypeQOtherExample" show="swAdvPTemporalIndefTypeQOther" rows="3"/>
+       
+       <br/><br/>
+       <checkboxGroup>
+          <prompt><br/>Maintenant, considérez les indéfinis adverbiaux de temps qui sont composés d’un mot interrogatif de temps et un mot indéfini, comme « whenever » en anglais. Comment exprime-t-on ces indéfinis adverbiaux de temps dans votre langue? Cochez chaque option qui est correcte pour votre langue. Si votre langue n’a pas ce type d’indéfini adverbial, ne cochez aucune de ces options et cochez « Aucun » ci-dessous.</prompt>
+          <checkbox id="AdvPTemporalIndefTypeIntWord" dataItem="temporalIndefIntWord">Un mot interrogatif de temps et un mot indéfini fusionnent en un seul mot</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeIntPhrase" dataItem="temporalIndefIntPhrase">Un mot interrogatif de temps se trouve avec un mot indéfini mais ils ne fusionnent pas en un seul mot</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeIntOther" dataItem="temporalIndefIntOther">Ma langue fait ainsi pour exprimer ce type de sens de temps  indéfini:<textBox  id="AdvPTemporalIndefTypeIntOtherContent" dataItem="temporalIndefIntOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="AdvPTemporalIndefTypeIntNoCheckPrompt" show="swAdvPTemporalIndefTypeIntNoCheck">AVERTISSEMENT: Cochez au moins une case pour décrire comment on exprime ce type de sens indéfini de temps, sauf si votre langue n’a pas ce genre d’indéfini adverbial. Dans ce cas-là, cochez « Aucun » ci-dessous.</prompt>
+       <checkboxGroup id="AdvPTemporalIndefTypeIntNoneTable" show="swAdvPTemporalIndefTypeIntNoCheck">
+          <prompt>Cochez cette case seulement si votre langue n’a aucun type d’indéfinis adverbiaux de temps  qui sont fondés sur un mot interrogatif de temps.</prompt>
+          <checkbox id="AdvPTemporalIndefTypeIntNone" dataItem="temporalIndefTypeIntNone">Aucun</checkbox>
+       </checkboxGroup>
+       <prompt id="AdvPTemporalIndefTypeQAndIntNonePrompt" show="swAdvPTemporalIndefTypeQAndIntNone">AVERTISSEMENT: Vous avez coché « Aucun » pour les deux types d’indéfinis de temps adverbiaux. Choisissez le type qui ressemble de plus près à l’adverbe de temps indéfini dans votre langue et décrivez-le en vous servant de la case « Ma langue… ». Décochez « Aucun » pour cette option-là. </prompt>
+       
+       
+       <prompt id="AdvPTemporalIndefTypeIntWordPrompt" show="swAdvPTemporalIndefTypeIntWord">Entrez ici vos exemples des indéfinis adverbiaux de temps composés d’un mot interrogatif de temps et d’un mot indéfini fusionnés en un seul mot:</prompt>
+       <textBox id="AdvPTemporalIndefTypeIntWordExample" dataItem="temporalIndefTypeIntWordExample" show="swAdvPTemporalIndefTypeIntWord" rows="3"/>
+       <instruction  id="AdvPTemporalIndefTypeIntWordInstruction" show="swAdvPTemporalIndefTypeIntWord">In the lexicon, key the features <feature>makeAdv temporal</feature> on the temporal interrogative words.</instruction>
+       
+       <prompt id="AdvPTemporalIndefTypeIntPhrasePrompt" show="swAdvPTemporalIndefTypeIntPhrase">Entrez ici vos exemples des indéfinis adverbiaux de temps composés d’un mot interrogatif de temps et un mot indéfini que ne fusionnent pas en un seul mot:</prompt>
+       <textBox id="AdvPTemporalIndefTypeIntPhraseExample" dataItem="temporalIndefTypeIntPhraseExample" show="swAdvPTemporalIndefTypeIntPhrase" rows="3"/>
+       <checkboxGroup id="AdvPTemporalIndefTypeIntPhraseTable" show="swAdvPTemporalIndefTypeIntPhrase">
+          <prompt><br/>En regardant vos exemples encore une fois, où se trouve le mot interrogatif par rapport au mot indéfini? Cochez chaque option qui est correcte pour votre langue.</prompt>
+          <checkbox id="AdvPTemporalIndefTypeIntPhraseBefore" checked="yes" dataItem="temporalIndefTypeIntBefore">Avant l’indéfini</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeIntPhraseAfter" checked="yes" dataItem="temporalIndefTypeIntAfter">Après l’indéfini</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeIntPhraseBoth" checked="yes" dataItem="temporalIndefTypeIntBoth">Avant et après en même temps</checkbox>
+          <checkbox id="AdvPTemporalIndefTypeIntPhraseOther" checked="yes" dataItem="temporalIndefTypeIntOther">Dans ma langue, ces mots interrogatifs de temps peuvent se trouver comme suit, par rapport au mot indéfini: <textBox  id="AdvPTemporalIndefTypeIntPhraseOtherContent" dataItem="temporalIndefTypeIntOther" rows="2"/></checkbox>
+       </checkboxGroup>	
+       <prompt id="AdvPTemporalIndefTypeIntPhraseNoCheckPrompt" show="swAdvPTemporalIndefTypeIntPhraseAndNoCheck">AVERTISSEMENT: Cochez au moins une case pour décrire où se trouvent ces mots interrogatifs de temps et mots indéfinis dans votre langue, ou changez la réponse ci-dessus en une forme différente.</prompt>
+       <instruction  id="AdvPTemporalIndefTypeIntPhraseInstruction" show="swAdvPTemporalIndefTypeIntPhrase">In the lexicon, key the features <feature>makeAdv temporal wh</feature> on the temporal interrogative words.  Key the feature <feature>makeIndef</feature> on the indefinite word.</instruction>
+       <instruction id="AdvPTemporalIndefTypeIntEitherRestrictedInstruction" show="swAdvPTemporalIndefTypeIntEitherRestricted">In the lexicon, mark those temporal interrogative words which can only occur before the indefinite word with the feature <feature>AdvP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>AdvP-final</feature>.  Do not enter either feature on any temporal interrogative words which can occur on either side.</instruction>           
+       
+       <prompt id="AdvPTemporalIndefTypeIntOtherPrompt" show="swAdvPTemporalIndefTypeIntOther">Entrez ici des exemples de l’autre façon dont on exprime ces adverbes de temps indéfinis qui comprennent un mot interrogatif de temps:</prompt>
+       <textBox id="AdvPTemporalIndefTypeIntOtherExample" dataItem="temporalIndefTypeIntOtherExample" show="swAdvPTemporalIndefTypeIntOther" rows="3"/>
+       
+       
+        <br/>
+        <br/>
+        <buttons>
+            <button id="AdvPExamplesBack" value="Back" goto="Contents.htm"/>
+            <button id="AdvPExamplesNext" value="Next" goto="AdvPLocative.xml"/>
+        </buttons>
+    </form>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+<showWhen id="swAdvPTemporalDegreeYes">
+   <whenRadio button="AdvPTemporalDegreeYes"/>
+</showWhen>
+   <showWhen id="swAdvPTemporalDegreeYesWord">
+      <not/>
+      <whenRadio button="AdvPTemporalDegreeNo"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalDegreeWord"/>
+    </showWhen>
+    <showWhen id="swAdvPTemporalDegreeAttaches">
+       <not/>
+       <whenRadio button="AdvPTemporalDegreeNo"/>
+       <and/>
+       <whenCheckbox button="AdvPTemporalDegreeAttaches"/> 
+    </showWhen>
+    <showWhen id="swAdvPTemporalDegreeRedup">
+       <not/>
+       <whenRadio button="AdvPTemporalDegreeNo"/>
+       <and/>
+       <whenCheckbox button="AdvPTemporalDegreeRedup"/>
+    </showWhen>
+   <showWhen id="swAdvPTemporalDegreeOther">
+      <not/>
+      <whenRadio button="AdvPTemporalDegreeNo"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalDegreeOther"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeYesNoCheck">
+      <whenRadio button="AdvPTemporalDegreeYes"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalDegreeWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalDegreeAttaches"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalDegreeRedup"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalDegreeOther"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeWordAndNoCheck">
+      <whenRadio button="AdvPTemporalDegreeYes"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalDegreeWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalDegreeWordBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalDegreeWordAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalDegreeWordBoth"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalDegreeWordOther"/>     
+   </showWhen>
+   <showWhen id="swAdvPTemporalDegreeEitherRestricted">
+      <whenRadio button="AdvPTemporalDegreeYes"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalDegreeWord"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="AdvPTemporalDegreeWordBefore"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalDegreeWordAfter"/>
+      <or/>
+      <whenCheckbox button="AdvPTemporalDegreeWordBoth"/>
+      <closeParen/>
+   </showWhen>
+   
+   <showWhen id="swAdvPTemporalIndefTypeQNoCheck">
+      <not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQOther"/>
+   </showWhen> 
+   <showWhen id="swAdvPTemporalIndefTypeIntNoCheck">
+      <not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntWord"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntOther"/>
+   </showWhen> 
+   <showWhen id="swAdvPTemporalIndefTypeQPQEitherRestricted">
+      <whenRadio button="AdvPTemporalIndefTypeQPhrase"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQPQBoth"/>
+      <or/>
+      <whenRadio button="AdvPTemporalIndefTypeQPhrase"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQPQBefore"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQPQAfter"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalIndefTypeQPhrase">
+      <whenCheckbox button="AdvPTemporalIndefTypeQPhrase"/>
+   </showWhen>   
+   <showWhen id="swAdvPTemporalIndefTypeQWord">
+      <whenCheckbox button="AdvPTemporalIndefTypeQWord"/>
+   </showWhen>   
+   <showWhen id="swAdvPTemporalIndefTypeQOther">
+      <whenCheckbox button="AdvPTemporalIndefTypeQOther"/>
+   </showWhen>   
+   <showWhen id="swAdvPTemporalIndefTypeQPPhraseAndNoCheck">
+      <whenCheckbox button="AdvPTemporalIndefTypeQPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQPQBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQPQAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQPQBoth"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeQPQOther"/>
+   </showWhen> 
+   <showWhen id="swAdvPTemporalIndefTypeIntPhrase">
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhrase"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalIndefTypeIntWord">
+      <whenCheckbox button="AdvPTemporalIndefTypeIntWord"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalIndefTypeIntOther">
+      <whenCheckbox button="AdvPTemporalIndefTypeIntOther"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalIndefTypeIntPhraseAndNoCheck">
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhrase"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseBefore"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseAfter"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseBoth"/>
+      <and/><not/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseOther"/>
+   </showWhen> 
+   <showWhen id="swAdvPTemporalIndefTypeIntEitherRestricted">
+      <whenRadio button="AdvPTemporalIndefTypeIntPhrase"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseBoth"/>
+      <or/>
+      <whenRadio button="AdvPTemporalIndefTypeIntPhrase"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseBefore"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntPhraseAfter"/>
+   </showWhen>
+   <showWhen id="swAdvPTemporalIndefTypeQAndIntNone">
+      <whenCheckbox button="AdvPTemporalIndefTypeQNone"/>
+      <and/>
+      <whenCheckbox button="AdvPTemporalIndefTypeIntNone"/>
+   </showWhen>
+   &TechnicalTerms; 
+   
+</page>

@@ -52,7 +52,7 @@
   <br/> <br/>    
        <radioGroup id="NPPossCaseErg" show="swNPCaseErg">
           <groupName dataItem="possCaseErg" default="genitive">RNPPossCaseErg</groupName>
-          <prompt><br/>Which case is used <span id="NPPossCaseErgNYesSpan" show="swNPCaseNYes">to mark the possessors</span><span id="NPPOssCaseErgNNoSpan" show="swNPCaseNNo">for the possessive pronouns</span> in your language?</prompt>
+          <prompt><br/>Which case is used <span id="NPPossCaseErgNYesSpan" show="swNPCaseNYes">to mark the possessors</span><span id="NPPossCaseErgNNoSpan" show="swNPCaseNNo">for the possessive pronouns</span> in your language?</prompt>
           <radio id="NPPossCaseErgative" dataValue="ergative">Ergative, the same as the subjects of transitive verbs</radio>
           <radio id="NPPossCaseAbsolutive" dataValue="absolutive">Absolutive, the same as the subjects of intransitive verbs and the objects of transitive verbs</radio>
           <radio id="NPPossCaseGenitive" dataValue="genitive">Genitive, distinct for possessors</radio>
@@ -74,7 +74,7 @@
        <prompt id="NPCaseNonePrompt" show="swNPCaseNone">In <section number="1.">Overall Typology Questions - Case System</section>, you said your language does not have any case distinctions.  Therefore, the minor grammatical relations will normally be expressed by prepositional or postpositional phrases, rather than by nominal phrases.</prompt>     
        <prompt id="NPCaseNNoPrompt" show="swNPCaseNNo">Since your language does not mark any case distinctions on nouns or nominal phrases, the minor grammatical relations will normally be expressed by prepositional or postpositional phrases, rather than by nominal phrases.  The case distinctions in the pronouns will be delineated in <section number="7.">Pronouns</section>.</prompt>     
 <br/><br/>
-       <prompt  id="NPCaseTable" show="swNPCaseNYes">For all of the following text boxes, <span id="NPCaseNYesAndWordNoSpan" show="swNPCaseNYesAndWordNoOrSome">enter the case markers which are affixes or clitics with a hyphen or equal sign on the appropriate side to indicate which side it attaches on.  If</span><span id="NPCaseNYesAndWordYesSpan" show="swNPCaseNYesAndWordYes">if</span> there is more than one marker for a particiular case, enter each on a separate line.  If your language does not use a particular case, simply leave that text box empty.</prompt>
+       <prompt  id="NPCaseTable" show="swNPCaseNYes">For all of the following text boxes, <span id="NPCaseNYesAndWordNoSpan" show="swNPCaseNYesAndWordNoOrSome">enter the case markers which are affixes or clitics with a hyphen or equal sign on the appropriate side to indicate which side it attaches on.  If</span><span id="NPCaseNYesAndWordYesSpan" show="swNPCaseNYesAndWordYes">if</span> there is more than one marker for a particular case, enter each on a separate line.  If your language does not use a particular case, simply leave that text box empty.</prompt>
        <prompt id="NPCaseNominativePrompt" show="swNPCaseNomOrSplitAndNYes">Key the case marker your language uses for nominative case to express the subject (at least  for Agents):</prompt>
        <textBox id="NPNom" dataItem="nominative" rows="3" show="swNPCaseNomOrSplitAndNYes"/>
        <br/>
@@ -296,6 +296,8 @@
       <and/>
       <whenCheckbox button="NPCaseAttachesProclitic"/>
       <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
@@ -311,6 +313,8 @@
       <and/>
       <whenCheckbox button="NPCaseAttachesEnclitic"/>
       <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
@@ -326,18 +330,24 @@
       <and/>
       <whenCheckbox button="NPCaseAttachesPrefix"/>
       <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>
       <and/>
       <whenCheckbox button="NPCaseAttachesPrefix"/>
       <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordNo"/>
       <and/>
       <whenCheckbox button="NPCaseAttachesSuffix"/>
       <or/>
+      <not/><whenValue element="typology" attr="case" value="none"/>
+      <and/>
       <whenRadio button="NPCaseNYes"/>
       <and/>
       <whenRadio button="NPCaseWordSome"/>

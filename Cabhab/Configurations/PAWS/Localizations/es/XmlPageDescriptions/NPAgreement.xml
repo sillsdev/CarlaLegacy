@@ -22,32 +22,37 @@
       </radioGroup>
         <br/>
         <br/>
-      <introduction>>Además de número, los sustantivos pueden ser marcados con clase, género o animado, con que algunos o todos los modificadores del sustantivo se necesitan concordar. 
+      <introduction>Además de número, los sustantivos pueden ser marcados con clase, género o animado, con que algunos o todos los modificadores del sustantivo se necesitan concordar. 
          <br/><br/>Un ejemplo de concordancia en el número de clase en el bantu es <example>Ba-shányana bá-ne ‘2-niños 2-DEM’ ‘los niños’</example>. 
          <br/> <br/>Algunos ejemplos de concordancia de género en español son: <example>el hombre viejo</example> y <example>la mujer vieja</example>. 
          <br/> <br/>El chinanteco tiene concordancia de animacidad, como en: <example>e ta'ˊe néeˉ ‘el.miel INAN.INAN REL.amarillo INAN.INAN’ ‘la miel amarilla'</example> y <example>̱ta'ˊ ̱ neáangˉ ‘él.UNA abeja.UNA REL.UN amarillo ‘la abeja amarilla'</example>.</introduction>
-      <radioGroup>
-            <groupName dataItem="agreeOther" default="no">RAgreementOther</groupName>
-            <prompt><br/>¿En su lengua, se marcan los modificadores de modo que concuerdan con el sustantivo principal?</prompt>
-         <radio id="NPAgreeOtherNo" checked="yes" dataValue="no">No</radio>
-         <radio id="NPAgreeOtherYes" checked="yes" dataValue="yes">Sí, los sustantivos y sus modificadores pueden/deben concordar en las siguientes características: </radio>
-        </radioGroup>
-      <checkboxGroup id="NPAgreeOtherType" show="swNPAgreeOtherYes">
-         <prompt>Seleccione todas las opciones que son correctas en su lengua</prompt> 
-         <checkbox id="NPAgreeYesClass" dataItem="agreeClass">Pueden/deben concordar en clase </checkbox>
+ 
+      <checkboxGroup id="NPAgreeOtherType">
+         <prompt><br/>¿Qué características adicionales pueden o deben marcarse en modificadores que concuerdan con el sustantivo principal? Seleccione todas las opciones que son correctas en su lengua.  Si no hay ningún tipo de concordancia, quita estas opciones y seleccione la opción para ‘Ninguno’ más abajo</prompt>
+         <checkbox id="NPAgreeYesClass" dataItem="agreeClass">Pueden/deben concordar en clase</checkbox>
+         <checkbox id="NPAgreeClassifier" dataItem="agreeClassifier" show="swOTClassifiersYesSpecific">Un clasificador que concuerda con la clase o tipo del sustantivo está presente con los sustantivos que son contados o especificados, pero otros modificadores no se marcan para clase</checkbox>
          <checkbox id="NPAgreeYesGender" dataItem="agreeGender">Pueden/deben concordar en género</checkbox>
-         <checkbox id="NPAgreeYesAnimacy" dataItem="agreeAnimacy">Pueden/deben concordar en género</checkbox>
+         <checkbox id="NPAgreeYesAnimacy" dataItem="agreeAnimacy">Pueden/deben concordar en animacidad</checkbox>
          <checkbox id="NPAgreeYesOtherFeat" dataItem="agreeOtherFeat">En mi lengua, pueden/deben concordar en este otra característica:<textBox  id="NPAgreeYesOtherFeatContent" dataItem="agreeOtherFeat" rows="2"/></checkbox>
       </checkboxGroup>
-      <prompt id="NPAgreeOtherTypeNoCheckPrompt" show="swNPAgreeOtherYesNoCheck">ADVERTENCIA: Usted dijo anteriormente que los sustantivos y sus modificadores pueden/deben concordar en otras características además de número, pero no ha marcado ninguna de las opciones. Por favor marque uno o más opciones según corresponda, o cambia la respuesta de arriba a ‘No’.</prompt>
-      <prompt id="NPAgreeOtherTypeClassNoCheckButClassifiersYesPrompt" show="swNPAgreeOtherTypeClassNoCheckAndClassifiersYes"> ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Los clasificadores</section> que su lengua tiene un sistema de clasificadores con concordancia, así que usted debe seleccionar que pueden/deben concordar en clase aquí.</prompt>
-      <prompt id="NPAgreeOtherNoButClassifiersYesPrompt" show="swNPAgreeOtherNoAndClassifiersYes">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Los clasificadores</section> que su lengua tiene un sistema de clasificadores con concordancia, así que debe cambiar su respuesta aquí a ‘Sí’ y luego debe seleccionar que concuerden en clase.</prompt>
-      <prompt id="NPAgreeOtherTypeClassYesButClassifiersNoPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersNo">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Los clasificadores</section> que su lengua no tiene un sistema de clasificadores, así que no debe seleccionar que pueden/deben concordar en clase aquí. Si su lengua tiene un sistema de clasificadores, por favor vuelva a <section number="1.">La tipología - Los clasificadores</section> y cambia su respuesta antes de continuar aquí. </prompt>
-      <prompt id="NPAgreeOtherTypeClassYesButClassifiersNotAgrPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersYesNotAgr">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Los clasificadores</section> que su lengua tiene un sistema de clasificadores más simple que no incluye la concordancia en la frase nominal, así que no debe seleccionar que pueden/deben concordar en clase aquí  Si su lengua tiene un sistema de clasificadores con concordancia, por favor vuelva a <section number="1.">La tipología - Los clasificadores</section> y cambia su respuesta antes de continuar aquí. </prompt>
-      
+      <prompt id="NPAgreeOtherTypeNoCheckPrompt" show="swNPAgreeOtherTypeNoCheck">ADVERTENCIA: Usted necesita seleccionar al menos una opción para describir qué características adicionales pueden o deben marcarse en modificadores que concuerdan con el sustantivo principal en su lengua.  Si ninguna opción es correcto, por favor seleccione ‘Ninguno’ abajo.</prompt>  
+      <checkboxGroup id="NPAgreeOtherNoneTable" show="swNPAgreeOtherTypeNoCheck">
+         <prompt>Seleccione esta opción solamente si su lengua no tiene características de concordancia en absoluto (excepto posiblemente la concordancia de número cubrido anteriormente).</prompt>
+         <checkbox id="NPAgreeOtherNone" dataItem="agreeOtherNone">Ninguno</checkbox>
+      </checkboxGroup>
+      <prompt id="NPAgreeOtherNoneButClassifiersYesPrompt" show="swNPAgreeOtherNoneAndClassifiersYes">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> que su lengua tiene un sistema de indicadores de la concordancia de clase, así que usted debe seleccionar que pueden/deben concordar en clase aquí y desmarque la casilla arriba para ‘Ninguno’.</prompt>
+      <prompt id="NPAgreeOtherNoneButClassifiersSpecificPrompt" show="swNPAgreeOtherNoneAndClassifiersSpecific">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> que en su lengua un clasificador que concuerda con la clase o tipo del sustantivo está presente con los sustantivos que son contados o especificados, así que usted debe seleccionar esta casilla aquí y desmarque la casilla arriba para ‘Ninguno’.</prompt>
+      <prompt id="NPAgreeOtherTypeClassNoCheckButClassifiersYesPrompt" show="swNPAgreeOtherTypeClassNoCheckAndClassifiersYes">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> que su lengua tiene un sistema de indicadores de la concordancia de clase, así que usted debe seleccionar que pueden/deben concordar en clase aquí.</prompt>
+      <prompt id="NPAgreeOtherTypeClassYesButClassifiersNoPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersNo">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> que su lengua no tiene un sistema de clasificadores, así que no debe seleccionar que pueden/deben concordar en clase aquí. Si su lengua tiene un sistema de clasificadores, por favor vuelva a <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> y cambia su respuesta antes de continuar aquí. </prompt>
+      <prompt id="NPAgreeOtherTypeClassYesButClassifiersNotAgrPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersYesNotAgr">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> que su lengua tiene un sistema de clasificadores más simple que no incluye la concordancia en la frase nominal, así que no debe seleccionar que pueden/deben concordar en clase aquí  Si su lengua tiene un sistema de indicadores de la concordancia de clase, por favor vuelva a <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> y cambia su respuesta antes de continuar aquí. </prompt>
+      <prompt id="NPAgreeOtherTypeClassYesButClassifiersSpecificPrompt" show="swNPAgreeOtherTypeClassYesAndClassifiersYesSpecific">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> que su lengua tiene un sistema de clasificadores que no incluyen concordancia en la frase nominal o en oraciones, así que no debe seleccionar que pueden/deben concordar en clase aquí, pero en su lugar, marque la casilla siguiente: ‘Un clasificador que concuerda con la clase o tipo del sustantivo está presente con los sustantivos que son contados o especificados....’  Si su lengua en realidad tiene un sistema de indicadores de la concordancia de clase, por favor vuelva a <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> y cambia su respuesta antes de continuar aquí. </prompt>
+      <prompt id="NPAgreeOtherTypeClassifierNoButClassifiersSpecificPrompt" show="swNPAgreeOtherTypeClassifierNoAndClassifiersYesSpecific">ADVERTENCIA: Usted dijo en <section number="1.">La tipología - Clases de sustantivo y clasificadores</section> que su lengua tiene un sistema de clasificadores que no incluyen concordancia en la frase nominal o en oraciones, así que usted debe seleccionar la casilla: ‘Un clasificador que concuerda con la clase o tipo del sustantivo está presente con los sustantivos que son contados o especificados....’ aquí. </prompt>      
+
       <prompt id="NPAgreeClassPrompt" show="swNPAgreeYesClass">Escriba algunos ejemplos de las frases nominales que muestran la concordancia de clase aquí:</prompt>
       <textBox id="NPAgreeClassExample" dataItem="agreeClassExample" cols="50" show="swNPAgreeYesClass"/>
-     <prompt id="NPAgreeGenderPrompt" show="swNPAgreeYesGender">Escriba algunos ejemplos de las frases nominales que muestran la concordancia de género aquí:</prompt>
+      <prompt id="NPAgreeClassifierPrompt" show="swNPAgreeYesClassifier">Escriba algunos ejemplos de las frases nominales que muestran los clasificadores con sustantivos contados o especificados aquí:</prompt>
+      <textBox id="NPAgreeClassifierExample" dataItem="agreeClassifierExample" cols="50" show="swNPAgreeYesClassifier"/>
+      <prompt id="NPAgreeGenderPrompt" show="swNPAgreeYesGender">Escriba algunos ejemplos de las frases nominales que muestran la concordancia de género aquí:</prompt>
       <textBox id="NPAgreeGenderExample" dataItem="agreeGenderExample" cols="50" show="swNPAgreeYesGender"/>
       <prompt id="NPAgreeAnimacyPrompt" show="swNPAgreeYesAnimacy">Escriba algunos ejemplos de las frases nominales que muestran la concordancia de animado aquí:</prompt>
         <textBox id="NPAgreeAnimacyExample" dataItem="agreeAnimacyExample" cols="50" show="swNPAgreeYesAnimacy"/>
@@ -60,35 +65,26 @@
             <button id="NPAgreementNext" value="Next" goto="NPCase.xml"/>
         </buttons>
     </form>
-   <showWhen id="swNPAgreeOtherYes">
-      <whenRadio button="NPAgreeOtherYes"/>
-   </showWhen>
    <showWhen id="swNPAgreeYesNumber">
       <whenRadio button="NPAgreeYesNumber"/>
    </showWhen>
    <showWhen id="swNPAgreeYesAnimacy">
       <whenCheckbox button="NPAgreeYesAnimacy"/>
-      <and/>
-      <whenRadio button="NPAgreeOtherYes"/>
    </showWhen>
    <showWhen id="swNPAgreeYesClass">
       <whenCheckbox button="NPAgreeYesClass"/>
-      <and/>
-      <whenRadio button="NPAgreeOtherYes"/>
    </showWhen>
    <showWhen id="swNPAgreeYesGender">
       <whenCheckbox button="NPAgreeYesGender"/>
-      <and/>
-      <whenRadio button="NPAgreeOtherYes"/>
    </showWhen>
    <showWhen id="swNPAgreeYesOther">
       <whenCheckbox button="NPAgreeYesOtherFeat"/>
-      <and/>
-      <whenRadio button="NPAgreeOtherYes"/>
    </showWhen>
-   <showWhen id="swNPAgreeOtherYesNoCheck">
-      <whenRadio button="NPAgreeOtherYes"/>
-      <and/><not/>
+   <showWhen id="swNPAgreeYesClassifier">
+      <whenCheckbox button="NPAgreeClassifier"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeNoCheck">
+      <not/>
       <whenCheckbox button="NPAgreeYesClass"/>
       <and/><not/>
       <whenCheckbox button="NPAgreeYesGender"/>
@@ -96,37 +92,60 @@
       <whenCheckbox button="NPAgreeYesAnimacy"/>
       <and/><not/>
       <whenCheckbox button="NPAgreeYesOtherFeat"/>
+      <and/>
+      <openParen/>
+      <not/>
+      <whenCheckbox button="NPAgreeClassifier"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>   
+      <or/>
+      <not/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherNoneAndClassifiersYes">
+      <whenCheckbox button="NPAgreeOtherNone"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesAgr"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherNoneAndClassifiersSpecific">
+      <whenCheckbox button="NPAgreeOtherNone"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
    </showWhen>
    <showWhen id="swNPAgreeOtherTypeClassNoCheckAndClassifiersYes">
-      <whenRadio button="NPAgreeOtherYes"/>
-      <and/><not/>
+      <not/>
       <whenCheckbox button="NPAgreeYesClass"/>     
       <and/>
       <whenValue element="typology" attr="classifier" value="yesAgr"/>
    </showWhen>
-   <showWhen id="swNPAgreeOtherNoAndClassifiersYes">
-      <whenRadio button="NPAgreeOtherNo"/>
-      <and/>
-      <whenValue element="typology" attr="classifier" value="yesAgr"/>
-   </showWhen>
    <showWhen id="swNPAgreeOtherTypeClassYesAndClassifiersYesNotAgr">
-      <whenRadio button="NPAgreeOtherYes"/>
-      <and/>
       <whenCheckbox button="NPAgreeYesClass"/>     
       <and/>
       <whenValue element="typology" attr="classifier" value="yesType"/>
    </showWhen>
    <showWhen id="swNPAgreeOtherTypeClassYesAndClassifiersNo">
-      <whenRadio button="NPAgreeOtherYes"/>
-      <and/>
       <whenCheckbox button="NPAgreeYesClass"/>     
       <and/>
       <whenValue element="typology" attr="classifier" value="no"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeClassYesAndClassifiersYesSpecific">
+      <whenCheckbox button="NPAgreeYesClass"/>     
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
+   </showWhen>
+   <showWhen id="swNPAgreeOtherTypeClassifierNoAndClassifiersYesSpecific">
+      <not/><whenCheckbox button="NPAgreeClassifier"/>
+      <and/>
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
    </showWhen>
    <showWhen id="swNotPractical">
       <whenValue  element="paws" attr="outputGrammar" value="True"/>
    </showWhen>
    <showWhen id="swPractical">
       <whenValue  element="paws" attr="outputGrammar" value="False"/>
+   </showWhen>
+   <showWhen id="swOTClassifiersYesSpecific">
+      <whenValue element="typology" attr="classifier" value="yesSpecific"/>
    </showWhen>
 </page>

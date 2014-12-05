@@ -58,7 +58,7 @@
        </radioGroup>
        <prompt id="IPCopComparativeAsWord" show="swIPCopComparativeAsYes">Key the comparative degree word(s) meaning ‘as’ which are used before the adjective here:</prompt>     
        <textBox id="IPComparativeAsWordExample" dataItem="asWordExample" rows="3" show="swIPCopComparativeAsYes"/>
-       <instruction id="IPCopComparativeAsWordInstruction" show="swIPCopComparativeAsYes">In the lexicon, key the feature <feature>equalAdj</feature> on the comparative degree words meaning ‘as’ which are used before the adjective.  These words also need to have the category <category>Deg</category> and are dictinct lexical entries from the comparative conjunctions.</instruction>
+       <instruction id="IPCopComparativeAsWordInstruction" show="swIPCopComparativeAsYes">In the lexicon, key the feature <feature>equalAdj</feature> on the comparative degree words meaning ‘as’ which are used before the adjective.  These words also need to have the category <category>Deg</category> and are distinct lexical entries from the comparative conjunctions.</instruction>
        <br/><br/>
        <radioGroup>
           <groupName dataItem="compareAdj" default="yes">RIPCopCompareAdj</groupName>

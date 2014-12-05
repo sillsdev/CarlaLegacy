@@ -18,7 +18,7 @@
 	   <textBox id="NPCompKinshipExample" dataItem="compKinshipExample"/>
 	   <prompt><br/>Compounds for foods:</prompt>
 	   <textBox id="NPCompFoodExample" dataItem="compFoodExample"/>
-	   <prompt><br/>Compounds for the material someting was made from:</prompt>
+	   <prompt><br/>Compounds for the material something was made from:</prompt>
 	   <textBox id="NPCompMaterialExample" dataItem="compMaterialExample"/>
 	   <prompt><br/>Other noun compounds:</prompt>
 	   <textBox id="NPCompExample" dataItem="compExample"/>
@@ -81,7 +81,7 @@
 	      Some languages may not use a gerund to express similar meanings, but instead use a relative clause.</introduction>
 	      <br/>
 		<br/>
-	   <prompt>Key how your language would express similar kinds of nominal phrase examples (like the bracketed parts of 6-8 or the examples in the following paragraph) here:</prompt>
+	   <prompt>Key how your language would express similar kinds of nominal phrase examples (like the bracketed parts of examples 6-8 or the examples in the paragraph following 6-8) here:</prompt>
 		<textBox id="NPPartExample" dataItem="partHeadExample"/>
 		<br/>
 <br/>

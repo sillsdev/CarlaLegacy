@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd" [
+<!ENTITY TechnicalTerms SYSTEM  "TechnicalTerms.xml">
+]>
+<?xml-stylesheet type="text/xsl" href="..\Transforms\PAWSSKHtmlMapper.xsl"?>
+<page id="IPSubjunctive" count="3/3">
+   <title level="2">Phrases Simples – Subjonctifs</title>
+   <introduction>On emploie le mode du <technicalTermRef term="ttSubjunctive">subjonctif</technicalTermRef> pour exprimer les notions qui sont spéculatives, qu’on doute, craint, ou désire. Elles ne constituent pas la réalité du moment. En anglais on n’emploie pas beaucoup les subjonctifs; les exemples ressemblent à des conditionnels, sauf à la première personne, comme suit: </introduction>
+   <EnglishExample>
+      <exItem label="1.">If I were in charge, I would fix the problem.  « Si j’étais le responsable, je résoudrais le problème. »</exItem>
+      <exItem label="2.">If I were a man, I would be a soccer player.  « Si j’étais un homme, je serais joueur de foot. »</exItem>
+   </EnglishExample>
+   <introduction>Dans les exemples en anglias ci-dessus, le verbe au subjonctif est <example>were  « étais »</example> et il vient après le mot au conditionnel <example>if  « si »</example>. La conséquence est normalement au future.  En français ces phrases seraient à l’imparfait et au conditionel.  La conséquence peut se présenter avant la condition au subjonctif, comme suit:</introduction>   
+   <EnglishExample>
+      <exItem label="3.">I would fix the problem if I were in charge.  « Je résoudrais le problème si j’étais le responsable. »</exItem>
+      <exItem label="4.">I would like to be a soccer player if I were a man.  « J’aimerais être joueur de foot si j’étais homme. »</exItem>
+   </EnglishExample>
+   <introduction>Dans beaucoup de langues – comme français – les subjonctifs s’emploient le plus souvent dans les propositions subordonnées, après les verbe principaux comme <example>exiger</example>, <example>douter</example>, <example>vouloir</example>, <example>craindre</example> et <example>souhaiter</example> avec the complémentiseur <example>que</example>.  (Les exemples de les propositions subordonnées seront traits plus tard à la <section number="10.">Propositions Complétives</section>.)  Des exemples en français comprennent:
+   </introduction>
+   <EnglishExample>
+      <exItem label="5.">Je souhaite que Benjamin fasse du progrès vite.</exItem>
+      <exItem label="6.">J’exige qu’il étudie.</exItem>
+   </EnglishExample>
+   <form section="ip">
+      <prompt id="IPSubjunctiveExamplesPrompt"><br/>Entrez ici de pareils exemples de 1-4 dans votre langue du subjonctifs dans le syntagme principal:</prompt>
+      <textBox id="IPSubjunctiveExamples" dataItem="subjunctiveExample" cols="50"/>
+      <radioGroup>
+         <groupName dataItem="subjunctiveCondWord" default="yes">RIPSubjunctiveCondWord</groupName>
+         <prompt><br/>Est-ce que votre langue marque la condition au subjonctif en utilisant des mots indépendants comme « si » modifiant tout le syntagme conditionnel au subjonctif?</prompt>
+         <radio id="IPSubjunctiveCondWordYes"  dataValue="yes">Oui, ce sont tous des mots indépendants</radio>
+         <radio id="IPSubjunctiveCondWordSome" dataValue="some">Certains sont des mots indépendants, d’autres s’attachent à un autre mot</radio>
+         <radio id="IPSubjunctiveCondWordNo" dataValue="no">Non, ils s’attachent tous à un autre mot du syntagme conditionnel au subjonctif</radio>
+         <radio id="IPSubjunctiveCondWordMood" dataValue="mood">Non, il n’y a pas de marqueur du conditionnel dans les subjonctifs de ma langue, seul le mode subjonctif marqué au verbe</radio>
+      </radioGroup>
+      <instruction id="IPSubjunctiveCondWordMoodInstruction" show="swIPSubjunctiveCondWordMood">In the lexicon, key the feature <feature>subjunctive</feature> on the verbal affixes which mark subjunctive mood and also on any inherently subjunctive irregular verbs, if you have not already done so.</instruction>
+      <checkboxGroup id="IPSubjunctiveCondAttachesType" show="swIPSubjunctiveCondWordNoOrSome">
+         <prompt>Où et comment ces marqueurs du conditionnel au subjonctif s’attachent-ils dans le syntagme conditionnel au subjonctif? Cochez toutes les options valables pour votre langue.</prompt>
+         <checkbox id="IPSubjunctiveCondProclitic" dataItem="subjunctiveCondProclitic">Comme proclitique qui s’attache au début du mot qui commence le syntagme conditionnel au subjonctif</checkbox>
+         <checkbox id="IPSubjunctiveCondEnclitic" dataItem="subjunctiveCondEnclitic">Comme enclitique qui s’attache à la fin du mot qui finit le syntagme conditionnel au subjonctif</checkbox>
+         <checkbox id="IPSubjunctiveCondPrefix" dataItem="subjunctiveCondPrefix">Comme préfixe qui s’attache au verbe dans le syntagme conditionnel au subjonctif</checkbox>
+         <checkbox id="IPSubjunctiveCondSuffix" dataItem="subjunctiveCondSuffix">Comme suffixe qui s’attache au verbe dans le syntagme conditionnel au subjonctif</checkbox>
+         <checkbox id="IPSubjunctiveCondOther" dataItem="subjunctiveCondOther">Dans ma langue, ces éléments peuvent s’attacher comme suit:: <textBox  id="IPSubjunctiveCondOtherContent" dataItem="subjunctiveCondOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="IPSubjunctiveCondAttachesNoCheckPrompt" show="swIPSubjunctiveCondWordNoOrSomeandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire comment ces marqueurs du conditionnel au subjonctif s’attachent dans votre langue, sinon changez la réponse ci-dessus en « Oui, ce sont tous des mots indépendants » ou bien « Non, il n’y a pas de marqueur pour le conditionnel aux subjonctifs dans ma langue, seul le mode subjonctif marqué au verbe même ».</prompt>
+      
+      <prompt id="IPSubjunctiveCondCliticPrompt" show="swIPSubjunctiveCondNoOrSomeAndClitic">Entrez ici les clitiques qui peuvent marquer un syntagme conditionnel au subjonctif; indiquez d’un signe d’égalité de quel côté ils s’y attachent:</prompt>  
+      <textBox id="IPSubjunctiveCondCliticExample" dataItem="subjunctiveCondCliticExample" cols="40"  rows="3" show="swIPSubjunctiveCondNoOrSomeAndClitic"/>
+      <instruction id="IPSubjunctiveCondProcliticInstruction" show="swIPSubjunctiveCondNoOrSomeAndProclitic">In the lexicon, add the feature <feature>subjunctive_conditional_prefix</feature> to the proclitics which mark subjunctive conditional phrases.  If it is the same as the marker for conditionals, simply add this additional feature to the same entry.
+      </instruction>
+      <instruction id="SubjunctiveCondEncliticInstruction" show="swIPSubjunctiveCondNoOrSomeAndEnclitic">In the lexicon, add the feature <feature>subjunctive_conditional_suffix</feature> to the enclitics which mark subjunctive conditional phrases. If it is the same as the marker for conditionals, simply add this additional feature to the same entry.</instruction>
+      <prompt id="IPSubjunctiveCondAffixPrompt" show="swIPSubjunctiveCondNoOrSomeAndAffix">Entrez ici les affixes qui peuvent marquer un syntagme conditionnel au subjonctif; indiquez d’un tiret de quel côté ils s’y attachent:</prompt>  
+      <textBox id="IPSubjunctiveCondAffixExample" dataItem="subjunctiveCondAffixExample" cols="40" rows="3" show="swIPSubjunctiveCondNoOrSomeAndAffix"/>
+      <instruction id="IPSubjunctiveCondAffixInstruction" show="swIPSubjunctiveCondNoOrSomeAndAffix">In the lexicon, add the feature <feature>subjunctive_conditional</feature> to the affixes which can mark the verb in a conditional phrase. If it is the same as the marker for conditionals, simply add this additional feature to the same entry.</instruction>
+      <prompt id="IPSubjunctiveCondOtherPrompt" show="swIPSubjunctiveCondNoOrSomeAndOther">Entrez ici des exemples d’autres éléments qui peuvent marquer un syntagme conditionnel au subjonctif de l’autre manière permise dans votre langue:</prompt>  
+      <textBox id="IPSubjunctiveCondOtherExample" dataItem="subjunctiveCondOtherExample" cols="40" rows="3" show="swIPSubjunctiveCondNoOrSomeAndOther"/>   
+      <prompt id="IPSubjunctiveCondYesPrompt" show="swIPSubjunctiveCondWordYesOrSome">Entrez ici les mots  indépendants qui peuvent marquer un syntagme conditionnel au subjonctif:</prompt>
+      <textBox id="IPSubjunctiveCondWordExample" dataItem="subjunctiveCondWordExample" cols="40"  rows="3" show="swIPSubjunctiveCondWordYesOrSome"/>
+      <br/><br/>		
+      <checkboxGroup id="IPSubjunctiveCondPos" show="swIPSubjunctiveCondWordYesOrSome">
+         <prompt>Ces marqueurs du conditionnel au subjonctif  écrits sous forme de mots indépendants, où se mettent-ils par rapport au reste du syntagme conditionnel? Cochez toutes les options valables pour votre langue.</prompt>
+         <checkbox id="IPSubjunctiveCondPosBefore"  dataItem="subjunctiveCondWordBefore">Avant</checkbox>
+         <checkbox id="IPSubjunctiveCondPosAfter"  dataItem="subjunctiveCondWordAfter">Après</checkbox>
+         <checkbox id="IPSubjunctiveCondPosBoth"  dataItem="subjunctiveCondWordBoth">Des deux côtés du même syntagme</checkbox>
+         <checkbox id="IPSubjunctiveCondPosOther"  dataItem="subjunctiveCondWordOther">Dans ma langue ils peuvent se mettre dans la position suivante: <textBox  id="IPSubjunctiveCondPosOtherContent" dataItem="subjunctiveCondWordOther" rows="2"/></checkbox>
+      </checkboxGroup>
+      <prompt id="IPSubjunctiveCondPosNoCheckPrompt" show="swIPSubjunctiveCondYesandNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire la position de ces marqueurs du conditionnel au subjonctif par rapport au reste du syntagme conditionnel au subjonctif, sinon changez votre réponse « Non » à une des questions ci-dessus.</prompt>
+      <instruction id="IPSubjunctiveCondYesInstruction" show="swIPSubjunctiveCondWordYesOrSome">In the lexicon, if this word is the same as the conditional word for conditionals discussed on the last page, simply add the feature <feature>subjunctive_conditional</feature> to the same entry you added on the last page with the category <category>Cond</category>.  If it is distinct from that entry, give this entry the category <category>Cond</category> and the feature <feature>subjunctive_conditional</feature>.  If this word can also be used as a complementizers in embedded questions, you will need to add a separate entry for it.   </instruction>
+      <instruction id="IPSubjunctiveCondEitherRestrictedInstruction" show="swIPSubjunctiveCondEitherRestricted">In the lexicon, mark those subjunctive condition markers which can only occur before the condition phrase with the feature <feature>IP-initial</feature> and those which can only occur after it with the feature <feature>IP-final</feature>.  Do not enter either feature on any words which can occur on either side.</instruction>
+      <br/>
+        <br/>
+        <buttons>
+            <button id="IPSubjunctiveBack" value="Back" goto="IPConditional.xml"/>
+               <button id="IPSubjunctiveNext" value="Next" goto="IPContents.htm"/>
+        </buttons>
+   </form>
+   <showWhen id="swIPSubjunctiveCondWordMood">
+      <whenRadio button="IPSubjunctiveCondWordMood"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordYesOrSome">
+      <whenRadio button="IPSubjunctiveCondWordYes"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordNoOrSome">
+      <whenRadio button="IPSubjunctiveCondWordNo"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondWordNoOrSomeandNoCheck">
+<openParen/>
+      <whenRadio button="IPSubjunctiveCondWordNo"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+ <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondPrefix"/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondOther"/>
+   </showWhen>
+   <showWhen id="swIPSubjunctiveCondNoOrSomeAndOther">
+      <openParen/>
+      <whenRadio button="IPSubjunctiveCondWordNo"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+      <closeParen/>
+    <and/>
+      <whenCheckbox button="IPSubjunctiveCondOther"/>
+   </showWhen> 
+   <showWhen id="swIPSubjunctiveCondNoOrSomeAndProclitic">
+      <openParen/>
+      <whenRadio button="IPSubjunctiveCondWordNo"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+      <closeParen/>
+      <and/>
+      <whenCheckbox button="IPSubjunctiveCondProclitic"/>
+   </showWhen> 
+   <showWhen id="swIPSubjunctiveCondNoOrSomeAndEnclitic">
+      <openParen/>
+      <whenRadio button="IPSubjunctiveCondWordNo"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+      <closeParen/>
+      <and/>
+      <whenCheckbox button="IPSubjunctiveCondEnclitic"/>
+   </showWhen> 
+   <showWhen id="swIPSubjunctiveCondNoOrSomeAndClitic">
+      <openParen/>
+      <whenRadio button="IPSubjunctiveCondWordNo"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="IPSubjunctiveCondEnclitic"/>
+      <or/>
+      <whenCheckbox button="IPSubjunctiveCondProclitic"/>
+      <closeParen/>
+   </showWhen> 
+   <showWhen id="swIPSubjunctiveCondNoOrSomeAndAffix">
+      <openParen/>
+      <whenRadio button="IPSubjunctiveCondWordNo"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="IPSubjunctiveCondPrefix"/>
+      <or/>
+      <whenCheckbox button="IPSubjunctiveCondSuffix"/>
+      <closeParen/>
+   </showWhen> 
+   <showWhen id="swIPSubjunctiveCondEitherRestricted">
+      <openParen/>
+      <whenRadio button="IPSubjunctiveCondWordYes"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+      <closeParen/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="IPSubjunctiveCondPosBoth"/>
+      <or/>
+      <whenCheckbox button="IPSubjunctiveCondPosBefore"/>
+      <and/>
+      <whenCheckbox button="IPSubjunctiveCondPosAfter"/>
+      <closeParen/>      
+   </showWhen>   
+   <showWhen id="swIPSubjunctiveCondYesandNoCheck">
+      <openParen/>
+      <whenRadio button="IPSubjunctiveCondWordYes"/>
+      <or/>
+      <whenRadio button="IPSubjunctiveCondWordSome"/>
+      <closeParen/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="IPSubjunctiveCondOther"/>     
+   </showWhen>
+   
+   &TechnicalTerms; 
+</page>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page SYSTEM "..\Data\PAWSSKHtmlMapper.dtd">
+<?xml-stylesheet type="text/xsl" href="..\Templates\PAWSSKHtmlMapper.xsl"?>
+<page id="CompPosition" count="3/4">
+   <title level="2">Propositions Complétives – Position du complétiviseur</title>
+    <form section="comp">
+        <radioGroup>
+            <groupName dataItem="comp" default="no">RComp</groupName>
+           <prompt><br/>En considérant les exemples que vous avez donnés de propositions complétives, est-ce que votre langue a un complétiviseur (ou plusieurs) qui marque les propositions subordonnées (incluez ici les formes clitiques dans votre réponse)? (Les questions et les propositions relatives seront considérées dans les sections suivantes, ne répondez donc pas pour ces deux types ici). </prompt>
+           <radio id="CompNo" dataValue="no">Non, il n’y a pas un complétiviseur de mot complétif ou clitique pour les propositions complétives, alors toutes les propositions subordonnées sont de simples phrases<span id="CompNoSpanNotPractical" show="swNotPractical"> (IPs)</span> dans cette langue </radio>
+           <radio id="CompYes" dataValue="yes">Oui, comme <example>that  « que »</example> et <example>for  « pour »</example> en anglais</radio>
+        </radioGroup>
+       <prompt id="NonfIniteNoPrompt" show="swIPAuxNonfiniteNone">Puisque vous avez dit dans la <section number="9.3">Phrases Simples – Auxiliaires</section> qu’il n’y a pas de formes infinitives ou non-finies nous supposons que votre langue ne fait pas de distinction non plus dans des propositions subordonnées. </prompt>
+       <prompt id="CompNoFIniteYesVerbPrompt" show="swCompNoAndIPAuxNonfiniteNo">Puisque vous avez dit dans la <section number="9.3">Phrases Simples – Auxiliaires</section> qu’il y a des formes verbales infinitives ou non-finies nous supposons que votre langue fait une distinction aussi entre les propositions subordonnées finies et non-finies. </prompt>
+       <prompt id="CompNoFIniteYesAuxPrompt" show="swCompNoAndIPAuxNonfiniteYes">Puisque vous avez dit dans la <section number="9.3">Phrases Simples – Auxiliaires</section> qu’il y a une auxiliaire non-finie, nous supposons que votre langue fait une distinction aussi entre les propositions subordonnées finies et non-finies.</prompt>
+       <radioGroup id="CompNonfiniteTable" show="swCompYesAndIPAuxNonfiniteNotNone">
+          <groupName dataItem="compNonfinite" default="no">RCompNonfinite</groupName>
+          <prompt><br/>Y a-t-il un complétiviseur distinct (ou un groupe de complétiviseurs) pour des propositions non-finies?</prompt>
+          <radio id="CompNonfiniteYes"  dataValue="yes">Oui</radio>
+          <radio id="CompNonfiniteNo" dataValue="no">Non, tous les types de proposition complétive utilisent les mêmes complétiviseurs</radio>
+       </radioGroup>
+       
+       <radioGroup id="CompWordTable" show="swCompYes">
+          <groupName dataItem="compWord" default="yes">RCompWord</groupName>
+          <prompt><br/>Est-ce que tous les complétiviseurs sont écrits comme des mots indépendants?</prompt>
+          <radio id="CompWordYes"  dataValue="yes">Oui, ce sont tous des mots indépendants</radio>
+          <radio id="CompWordSome" dataValue="some">Certains sont des mots indépendants mais d’autres sont attachés à un autre mot</radio>
+          <radio id="CompWordNo" dataValue="no">Non, ils s’attachent tous à un autre mot</radio>
+       </radioGroup>
+       <checkboxGroup id="CompAttachesType" show="swCompWordNoOrSome">
+          <prompt><br/>Où ces complétiviseurs qui ne sont pas des mots indépendants s’attachent-ils ? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+          <checkbox id="CompAttachesProclitic" dataItem="compProclitic">Comme proclitique qui est attaché au début du mot qui commence la proposition complétive</checkbox>
+          <checkbox id="CompAttachesEnclitic" dataItem="compEnclitic">Comme enclitique qui s’attache à la fin du mot qui termine la proposition complétive</checkbox>
+          <checkbox id="CompAttachesPrefix" dataItem="compPrefix">Comme préfixe qui s’attache au verbe dans la proposition complétive</checkbox>
+          <checkbox id="CompAttachesSuffix" dataItem="compSuffix">Comme suffixe qui s’attache au verbe dans la proposition complétive</checkbox>
+          <checkbox id="CompAttachesOther" dataItem="compAttachesOther">Dans ma langue ces éléments peuvent s’attacher comme suit: <textBox  id="CompAttachesOtherContent" dataItem="compAttachesOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="CompAttachesNoCheckPrompt" show="swCompWordNoOrSomeandNoCheck">AVERTISSEMENT: Il faut cochez au moins une case pour décrire comment ces complétiviseurs clitiques s’attachent dans votre langue ou changez la réponse ci-dessus en « Oui, ce sont des mots indépendants ».</prompt>
+       
+       <prompt id="CompCliticPrompt" show="swCompWordNoOrSomeAndClitic">Entrez ici les compétiviseurs clitiques avec un signe d’égalité pour indiquer de quel côté ils s’attachent:</prompt>  
+       <textBox id="CompCliticExample" dataItem="compCliticExample" cols="50" show="swCompWordNoOrSomeAndClitic"/>
+       <instruction id="CompProcliticInstruction" show="swCompWordNoOrSomeAndProclitic">In the lexicon, add the feature <feature>comp_prefix</feature> to the proclitics.</instruction>
+       <instruction id="CompEncliticInstruction" show="swCompWordNoOrSomeAndEnclitic">In the lexicon, add the feature <feature>comp_suffix</feature> to the enclitics.</instruction>
+       
+       <prompt id="CompAffixPrompt" show="swCompWordNoOrSomeAndAffix">Entrez ici les compétiviseurs qui sont des affixes verbaux avec un trait d’union pour indiquer de quel côté ils s’attachent:</prompt>  
+       <textBox id="CompAffixExample" dataItem="compAffixExample" cols="50" show="swCompWordNoOrSomeAndAffix"/>
+       <instruction id="CompAffixInstruction" show="swCompWordNoOrSomeAndAffix">In the lexicon, add the feature <feature>comp</feature> to these verbal affixes.</instruction>
+       
+       <prompt id="CompAtachesOtherPrompt" show="swCompWordNoOrSomeAndOther">Entrez ici les compétiviseurs qui s’attachent d’autre manière permise dans votre langue, avec un signe d’égalité ou trait d’union pour indiquer de quel côté ils s’attachent:</prompt>  
+       <textBox id="CompAttachesOtherExample" dataItem="compAttachesOtherExample" cols="50" show="swCompWordNoOrSomeAndOther"/>   
+       
+       <prompt id="CompWordYesPrompt" show="swCompWordYesOrSome">Entrez ici les complétiviseurs qui sont écrits comme mots indépendants:</prompt>
+       <textBox id="CompWordYesExample" dataItem="compExample" cols="50" show="swCompWordYesOrSome"/>
+       <br/><br/>		
+       <checkboxGroup id="CompWordPos" show="swCompWordYesOrSome">
+          <prompt>En regardant les données de la case ci-dessus, où ces complétiviseurs écrits comme mots indépendants se placent-ils par rapport au reste de la proposition complétive? Cochez toutes les options qui sont correctes dans votre langue.</prompt>
+          <checkbox id="CompWordPosBefore"  dataItem="compBefore">Avant</checkbox>
+          <checkbox id="CompWordPosAfter"  dataItem="compAfter">Après</checkbox>
+          <checkbox id="CompWordPosBoth"  dataItem="compBoth">Des deux côtés dans la même proposition</checkbox>
+          <checkbox id="CompWordPosOther"  dataItem="compOther">Dans ma langue, ils peuvent se trouver dans la position suivante: <textBox  id="CompWordPosOtherContent" dataItem="compOther" rows="2"/></checkbox>
+       </checkboxGroup>
+       <prompt id="CompWordNoCheckPrompt" show="swCompWordYesOrSomeAndNoCheck">AVERTISSEMENT: Vous devez cocher au moins une case pour décrire où ces complétiviseurs se placent par rapport au reste de la proposition dépendant dans votre langue ou changez la réponse en « Non, ils s’attachent tous à un autre mot. »</prompt>
+       
+       <instruction id="CompMakeCInstruction" show="swCompWordYesOrSome">In the lexicon, add the feature <feature>makeC</feature> to the complementizers so it will show up in the correct position in the tree structure.  (For a word like English <example>that</example>, which can be both a complementizer <category>C</category> and a demonstrative <category>Dem</category>, you will need to have two separate lexical entries.)  
+          <br/><br/><span id="CompNonfiniteSpan" show="swCompNonfniteYes">If the complementizer is like English <example>for</example>, add the additonal feature <feature>-finite</feature> so it will be restricted to nonfinite clauses.  (If your complementizer can also occur in finite clauses, do not add the feature <feature>-finite</feature>.</span>  Also, remember that if the word is like English <example>for</example>, which can be used both as a complementizer <category>C</category> and as a preposition <category>P</category>, you will need to make two separate lexical entries.)
+       </instruction>
+       
+        <instruction id="CompEitherRestrictedInstruction" show="swCompWordBoth">Mark those complementizers which can only occur initially with the feature <feature>CP-initial</feature> and those which can only occur finally with the feature <feature>CP-final</feature>.  Do not enter either feature on any which can occur on either side.</instruction>
+        <br/><br/>
+        <buttons>
+            <button id="CompPositionBack" value="Back" goto="CompFeatures.xml"/>
+            <button id="CompPositionNext" value="Next" goto="CompTesting.xml" gotoNoGrammar="Contents.htm"/>
+        </buttons>
+    </form>
+    <showWhen id="swCompYes">
+        <whenRadio button="CompYes"/>
+    </showWhen>
+    <showWhen id="swCompWordYesOrSome">
+        <not/><whenRadio button="CompWordNo"/>
+        <and/>
+        <whenRadio button="CompYes"/>
+    </showWhen>
+    <showWhen id="swCompWordNoOrSome">
+        <not/><whenRadio button="CompWordYes"/>
+        <and/>
+        <whenRadio button="CompYes"/>
+    </showWhen>
+   <showWhen id="swIPAuxNonfiniteNone">
+      <whenValue element="ip" attr="auxNonfinite" value="none"/>
+   </showWhen>
+   <showWhen id="swCompNoAndIPAuxNonfiniteNo">
+      <whenRadio button="CompNo"/>
+      <and/>
+      <whenValue element="ip" attr="auxNonfinite" value="no"/>
+   </showWhen>
+   <showWhen id="swCompNoAndIPAuxNonfiniteYes">
+      <whenRadio button="CompNo"/>
+      <and/>
+      <whenValue element="ip" attr="auxNonfinite" value="yes"/>
+   </showWhen>
+   <showWhen id="swCompYesAndIPAuxNonfiniteNotNone">
+      <whenRadio button="CompYes"/>
+      <and/><not/>
+      <whenValue element="ip" attr="auxNonfinite" value="none"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeandNoCheck">
+      <not/><whenRadio button="CompWordYes"/>
+      <and/>
+      <whenRadio button="CompYes"/>
+      <and/><not/>
+      <whenCheckbox button="CompAttachesProclitic"/>
+      <and/><not/>
+      <whenCheckbox button="CompAttachesEnclitic"/>
+      <and/><not/>
+      <whenCheckbox button="CompAttachesPrefix"/>
+      <and/><not/>
+      <whenCheckbox button="CompAttachesSuffix"/>
+      <and/><not/>
+      <whenCheckbox button="CompAttachesOther"/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndProclitic">
+        <not/><whenRadio button="CompWordYes"/>
+        <and/>
+        <whenRadio button="CompYes"/>
+        <and/>
+        <whenCheckbox button="CompAttachesProclitic"/>
+    </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndEnclitic">
+       <not/><whenRadio button="CompWordYes"/>
+       <and/>
+       <whenRadio button="CompYes"/>
+       <and/>
+       <whenCheckbox button="CompAttachesEnclitic"/>
+    </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndClitic">
+      <not/><whenRadio button="CompWordYes"/>
+      <and/>
+      <whenRadio button="CompYes"/>
+      <and/>
+      <openParen/>
+      <whenCheckbox button="CompAttachesProclitic"/>
+      <or/>
+      <whenCheckbox button="CompAttachesEnclitic"/>
+      <closeParen/>
+   </showWhen>  
+   <showWhen id="swCompWordNoOrSomeAndAffix">
+        <not/><whenRadio button="CompWordYes"/>
+        <and/>
+        <whenRadio button="CompYes"/>
+        <and/>
+      <openParen/>
+        <whenCheckbox button="CompAttachesPrefix"/>
+        <or/>
+        <whenCheckbox button="CompAttachesSuffix"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swCompWordNoOrSomeAndOther">
+      <not/><whenRadio button="CompWordYes"/>
+      <and/>
+      <whenRadio button="CompYes"/>
+      <and/>
+      <whenCheckbox button="CompAttachesOther"/>
+   </showWhen>
+   <showWhen id="swCompWordYesOrSomeAndNoCheck">
+      <not/><whenRadio button="CompWordNo"/>
+      <and/>
+      <whenRadio button="CompYes"/>
+      <and/><not/>
+      <whenCheckbox button="CompWordPosBefore"/>
+      <and/><not/>
+      <whenCheckbox button="CompWordPosAfter"/>
+      <and/><not/>
+      <whenCheckbox button="CompWordPosBoth"/>
+      <and/><not/>
+      <whenCheckbox button="CompWordPosOther"/>
+   </showWhen>
+   <showWhen id="swCompWordBoth">
+      <not/><whenRadio button="CompWordNo"/>
+      <and/>
+      <whenRadio button="CompYes"/>
+      <and/>
+   <openParen/>
+      <whenCheckbox button="CompWordPosBefore"/>
+      <and/>
+      <whenCheckbox button="CompWordPosAfter"/>
+      <or/>
+      <whenCheckbox button="CompWordPosBoth"/>
+      <closeParen/>
+   </showWhen>
+   <showWhen id="swCompNonfniteYes">
+      <whenRadio button="CompNonfiniteYes"/>
+   </showWhen>
+    <showWhen id="swNotPractical">
+        <whenValue  element="paws" attr="outputGrammar" value="True"/>
+    </showWhen>
+</page>

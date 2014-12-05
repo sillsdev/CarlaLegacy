@@ -7,21 +7,22 @@
 	<title>Los nombres propios</title>
    <introduction> Los nombres propios son una clase especial de sustantivos o frases nominalesque sintácticamente funcionan igual que otros sustantivos o frases nominales. En español, algunos nombres propios pueden presentarse solos, como  <example>Susana</example> y <example>Oaxaca</example>.  Otros funcionan como sustantivos compuestos, como <example>George Washington</example>.  Los nombres propios también pueden contener los artículos y/o <technicalTermRef term="ttAdpositionalPhrases"/>, como en <example>los Estados Unidos de América</example>.  Muchas lenguas requieren un artículo antes de un nombre. Appositives, posiblemente incluyendo un posesivo, como en <example>mi hijo, David</example>, también ocurren, pero apositivos se tratan más adelante en <section number="15."> Las construcciones coordinadas</section>.  Además, los nombres propios se pueden modificar por los adjetivos y cláusulas relativas, como en <example>México fuerte y orgulloso</example> o <example>la Susana que conozco</example>.</introduction>
 	<form section="prop">
-		<prompt>Escriba sus ejemplos nombres propios simples y compuestos, o los que se presentan con artículos, demonstratives, adjetivos o los posesivos aquí :</prompt>
+		<prompt>Escriba sus ejemplos nombres propios simples y compuestos, o los que se presentan con artículos, demonstratives, adjetivos o los posesivos, si se permite, aquí :</prompt>
 		<textBox id="PNExample" dataItem="example"/>
 	   <br/><br/>
 	   <radioGroup id="PNClassifiersTable" show="swOTClassifierAgr">
 	      <groupName dataItem="pnClassifier" default="no">RPNClassifiers</groupName>
-	      <prompt>Usted dijo que su lengua tiene clasificadores que indican la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar los nombres propios también?</prompt>
-	      <radio id="PNClassifiersNo" dataValue="no">No, los nombres propios no se marcan con clasificadores</radio>
-	      <radio id="PNClassifiersYes" dataValue="yes">Sí, los nombres propios se marcan con clasificadores lo mismo que sustantivos</radio>
+	      <prompt>Usted dijo que su lengua tiene indicadores de clase para la concordancia en las frases nominales. ¿Utiliza los clasificadores para marcar los nombres propios también?</prompt>
+	      <radio id="PNClassifiersNo" dataValue="no">No, los nombres propios no se marcan la clase</radio>
+	      <radio id="PNClassifiersYes" dataValue="yes">Sí, los nombres propios se marcan la clase lo mismo que sustantivos</radio>
 	   </radioGroup>
 	   <radioGroup id="PNDeterminersTable" show="swNPArtAndDemNotNo">
 	      <groupName dataItem="pnDeterminer" default="no">RPNDeterminer</groupName>
 	      <prompt>¿Se requieren los nombres propios en su lengua contener <span id="PNArtOnlySpan" show="swNPArtAndDemArt">un artículo</span>
 	         <span id="PNDemOnlySpan" show="swNPArtAndDemDem">un demostrativo</span><span id="PNArtAndDemSpan" show="swNPArtAndDemBoth">un artículo o un demostrativo</span> o un posesivo?</prompt>
-	      <radio id="PNDeterminerNo" dataValue="no">No, pueden contener estos elementos pero no son requiridos</radio>
-	      <radio id="PNDeterminerYes" dataValue="yes">Sí, cada nombre propio debe contener al menos uno de estos elementos</radio>
+	   	<radio id="PNDeterminerNone" dataValue="none">No, no se permite ningún determinante en los nombres propios</radio>
+	   	<radio id="PNDeterminerNo" dataValue="no">No, pueden contener estos elementos pero no son requiridos</radio>
+	   	<radio id="PNDeterminerYes" dataValue="yes">Sí, cada nombre propio debe contener al menos uno de estos elementos</radio>
 	   </radioGroup>
 	   <br/>
 		<br/>

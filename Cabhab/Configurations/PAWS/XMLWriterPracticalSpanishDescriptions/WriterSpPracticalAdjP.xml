@@ -15,7 +15,7 @@
         <content>Los adjetivos calificativos expresan tamaño, color, edad, textura, forma o cualidad. En esta sección se tratan los adjetivos que modifican a sustantivos, en contraste con los adjetivos que actúan como predicados que se tratarán en la sección </content><sectionRef sec="sIPCop"/><content>.</content>
      </p>
      <p contentType="ctComparativeIntro">
-        <content>Los adjetivos calificativos expresan tamaño, color, edad, textura, forma o cualidad.  Una característica de adjetivos calificativos en muchas lenguas es que se permite más de una frase adjetival modificar a un sustantivo.  También, el orden de los adjetivos puede cambir en general (con un cambio pequeño  en el significado debido a los cambios en ámbito o alcance de cada adjetivo).  Por ejemplo, </content>
+        <content>Los adjetivos calificativos expresan tamaño, color, edad, textura, forma o cualidad.  Una característica de adjetivos calificativos en muchas lenguas es que se permite más de una frase adjetival modificar a un sustantivo.  También, el orden de los adjetivos puede cambir en general (con un cambio pequeño en el significado debido a los cambios en ámbito o alcance de cada adjetivo).  Por ejemplo, </content>
         <langData>hard dull brass rods</langData><gloss><content> ‘las barras de cobre amarillo pálido duras’</content></gloss>
         <content> contra </content>
         <langData>dull hard brass rods</langData><gloss><content> ‘las barras de cobre amarillo duras pálidas’</content></gloss>
@@ -333,6 +333,12 @@
                            </row>
                         </table>
                    </example>
+                   <p>
+                      <content>Algunos ejemplos de frases nominales que contienen diferentes números cardinales con un sustantivo son:</content>
+                   </p>
+                   <example>
+                      <interlinear exampleLoc="qp/cardinalExample"/>
+                   </example>
                    <p contentType="ctPracticalIntro">
                       <content>Los números cardinales más grandes pueden ser compuestos que se pueden escribir como palabras independientes. Algunos ejemplos de números compuestos en el </content>
                       <langName/>
@@ -497,7 +503,7 @@
                    <example>
                       <interlinear exampleLoc="qp/ordinalExample"/>
                    </example>
-                   <p>
+                   <p show="swQPOrdinalNumNotNowhere">
                       <content>Cuando un número ordinal o una de las palabras que significa </content><langData>el siguiente</langData><content> o </content><langData>el último</langData><content> modifica a un número cardinal, se presentan </content>
                       <text show="swQPOrdinalBefore"><content>antes</content></text>
                       <text show="swQPOrdinalAfter"><content>después</content></text>
@@ -510,11 +516,14 @@
                       <text show="swQPOrdinalNumOtherOnly"><content>___</content><contentCheckBoxOther contentLoc="qp/ordinalNumOther"/><content>.   Algunos ejemplos de frases nominales en que un número ordinal está modificando a un número cardinal y un sustantivo son:</content></text>
                       <text show="swQPOrdinalPosAndNumOther"><content> del número cardinal and may also occur  ___</content><contentCheckBoxOther contentLoc="qp/ordinalNumOther"/><content>.   Algunos ejemplos de frases nominales en que un número ordinal modifica a un número cardinal y a un sustantivo son:</content></text>
                    </p>
-                   <example>
+                   <example show="swQPOrdinalNumNotNowhere">
                       <interlinear exampleLoc="qp/ordinalCardinalExample"/>
                    </example>
-                   <p>
+                   <p show="swQPOrdinalNumNotNowhere">
                       <content>Algunos ejemplos del uso de los modificadores que significan </content><langData>el siguiente</langData><content> o </content><langData>el último</langData><content> dentro de una frase nominal son: </content>
+                   </p>
+                   <p show="swQPOrdinalNumNowhere"><content>Los números ordinales o las palabras que sigifican </content><langData>el siguiente</langData><content> o</content><langData>el último</langData><content> no modifican a un número cardinal en el </content><langName/><content>.  
+                      Algunos ejemplos de los modificadores que significan </content><langData>el siguiente</langData><content> o </content><langData>el último</langData><content>  dentro de una frase nominal son: </content>
                    </p>
                    <example>
                       <interlinear exampleLoc="qp/nextlastNPExample"/>
@@ -579,7 +588,7 @@
                <content>.  Las raíces se muestran en el cuadro; cada una puede presentarse con el clasificador apropiado.</content>
             </p>
             <p show="swQPNPDegreeClassifierNo">
-               <content>El cuadro siguiente presenta cómo los cuantifiacdores y palabras de grado de ámbito amplio que modifican a la frase nominal completa se expresan en el </content><langName/>
+               <content>El cuadro siguiente presenta cómo los cuantificadores y palabras de grado de ámbito amplio que modifican a la frase nominal completa se expresan en el </content><langName/>
                <content>:</content>
             </p>
             
@@ -698,7 +707,7 @@
                 <content>. </content>
                  </p>
               <p show="swQPDeterminerClassifierYes">
-                 <content>El cuadro siguiente presenta cómo los cuantificadores que funcionan igual que el único determinante de la frase nomina se expresan en </content><langName/>
+                 <content>El cuadro siguiente presenta cómo los cuantificadores que funcionan igual que el único determinante de la frase nomina se expresan en el </content><langName/>
                  <content>.  Las formas en el cuadro son las raíces; cada cuantificador puede presentarse con el clasificador apropiado.</content>
               </p>          
               <p show="swQPDeterminerClassifierNo">
@@ -830,7 +839,7 @@
                     <content> se encuentran los siguientes cuantificadores de este tipo.  Las formas en el cuadro son las raíces; cada cuantificador puede presentarse con el clasificador apropiado.</content>
                  </p>
                  <p show="swQPQuantifierClassifierNo">
-                    <content>En </content>
+                    <content>En el </content>
                     <langName/>
                     <content> se encuentran los siguientes cuantificadores de este tipo:</content>
                  </p>
@@ -962,7 +971,7 @@
                        <caseText value="both">adposicional </caseText>
                        <caseText value="unknown">adposicional </caseText>
                     </case>indica el grupo.</caseText>
-                    <caseText value="other">se utiliza ni una frase adposicional ni una claúsula relativa para indicar el significado partitivo.</caseText>
+                    <caseText value="other">se utiliza ni una frase adposicional ni una claúsula relativa para indicar el significado partitivo. </caseText>
                     <caseText value="yes">una frase <case element="pp" attr="pPos">
                        <caseText value="before">preposicional </caseText>
                        <caseText value="after">posposicional </caseText>
@@ -979,7 +988,12 @@
                        <caseText value="both">preposicion o posposicion </caseText>
                        <caseText value="unknown">adposición</caseText>
                     </case> especial usada en las frases partitivas es:</caseText>
-                 </case></p>      
+                 </case>
+                 <text show="swQPPartitiveOther"> 
+                    <content> Esta construcción es ___</content><contentCheckBoxOther contentLoc="qp/partitiveConstruction"/>
+                    <content>.   </content>
+                 </text>
+              </p>      
               <example show="swQPPartitiveYes">
                  <table border="1">
                     <headerRow>
@@ -1416,12 +1430,12 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col exampleLoc="np/articleGenExample"/>
+                 <col exampleLoc="np/articleErgGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col exampleLoc="np/articleIndefGenExample"/>
+                 <col exampleLoc="np/articleErgIndefGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1437,25 +1451,25 @@
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleGenExample"/>
+                 <col exampleLoc="np/articleErgGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articlePlGenExample"/>
+                 <col exampleLoc="np/articleErgPlGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleIndefGenExample"/>
+                 <col exampleLoc="np/articleErgIndefGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articleIndefPlGenExample"/>
+                 <col exampleLoc="np/articleErgIndefPlGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1471,12 +1485,12 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col exampleLoc="np/articleNomExample"/>
+                 <col exampleLoc="np/articleSplitNomExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col exampleLoc="np/articleIndefNomExample"/>
+                 <col exampleLoc="np/articleSplitIndefNomExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1492,25 +1506,25 @@
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleNomExample"/>
+                 <col exampleLoc="np/articleSplitNomExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articlePlNomExample"/>
+                 <col exampleLoc="np/articleSplitPlNomExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleIndefNomExample"/>
+                 <col exampleLoc="np/articleSplitIndefNomExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articleIndefPlNomExample"/>
+                 <col exampleLoc="np/articleSplitIndefPlNomExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1525,12 +1539,12 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col exampleLoc="np/articleAccExample"/>
+                 <col exampleLoc="np/articleSplitAccExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col exampleLoc="np/articleIndefAccExample"/>
+                 <col exampleLoc="np/articleSplitIndefAccExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1546,25 +1560,25 @@
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleAccExample"/>
+                 <col exampleLoc="np/articleSplitAccExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articlePlAccExample"/>
+                 <col exampleLoc="np/articleSplitPlAccExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleIndefAccExample"/>
+                 <col exampleLoc="np/articleSplitIndefAccExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articleIndefPlAccExample"/>
+                 <col exampleLoc="np/articleSplitIndefPlAccExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1579,12 +1593,12 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col exampleLoc="np/articleGenExample"/>
+                 <col exampleLoc="np/articleSplitGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col exampleLoc="np/articleIndefGenExample"/>
+                 <col exampleLoc="np/articleSplitIndefGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1600,25 +1614,25 @@
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleGenExample"/>
+                 <col exampleLoc="np/articleSplitGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articlePlGenExample"/>
+                 <col exampleLoc="np/articleSplitPlGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleIndefGenExample"/>
+                 <col exampleLoc="np/articleSplitIndefGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articleIndefPlGenExample"/>
+                 <col exampleLoc="np/articleSplitIndefPlGenExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1634,12 +1648,12 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col exampleLoc="np/articleErgExample"/>
+                 <col exampleLoc="np/articleSplitErgExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col exampleLoc="np/articleIndefErgExample"/>
+                 <col exampleLoc="np/articleSplitIndefErgExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1655,25 +1669,25 @@
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleErgExample"/>
+                 <col exampleLoc="np/articleSplitErgExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articlePlErgExample"/>
+                 <col exampleLoc="np/articleSplitPlErgExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleIndefErgExample"/>
+                 <col exampleLoc="np/articleSplitIndefErgExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articleIndefPlErgExample"/>
+                 <col exampleLoc="np/articleSplitIndefPlErgExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1688,12 +1702,12 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col exampleLoc="np/articleAbsExample"/>
+                 <col exampleLoc="np/articleSplitAbsExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col exampleLoc="np/articleIndefAbsExample"/>
+                 <col exampleLoc="np/articleSplitIndefAbsExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1709,25 +1723,25 @@
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleAbsExample"/>
+                 <col exampleLoc="np/articleSplitAbsExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articlePlAbsExample"/>
+                 <col exampleLoc="np/articleSplitPlAbsExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col exampleLoc="np/articleIndefAbsExample"/>
+                 <col exampleLoc="np/articleSplitIndefAbsExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
                  <col><content>Plural</content></col>
-                 <col exampleLoc="np/articleIndefPlAbsExample"/>
+                 <col exampleLoc="np/articleSplitIndefPlAbsExample"/>
                  <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
               </row>
            </table>
@@ -1801,17 +1815,17 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -1830,32 +1844,32 @@
               <row show="swArtDefOnlyNotIndef">
                  <col rowspan="2"><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -1872,17 +1886,17 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -1901,32 +1915,32 @@
               <row show="swArtDefOnlyNotIndef">
                  <col rowspan="2"><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
            </table>
         </example>	     
@@ -1946,21 +1960,21 @@
               </headerRow>			
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Definido</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Indefinido</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -1981,40 +1995,40 @@
               <row show="swArtDefOnlyNotIndef">
                  <col rowspan="2"><content>Definido</content></col>
                  <col><content>Singular</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotIndef">
                  <col><content>Plural</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col rowspan="2"><content>Indefinido</content></col>
                  <col><content>Singular</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
               <row show="swArtDefOnlyNotYes">
                  <col><content>Plural</content></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
-                 <col><langData>FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
+                 <col><langData lang="lVernacular">FORMA</langData></col>
               </row>
            </table>
         </example>	      
@@ -2474,17 +2488,17 @@
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col exampleLoc="np/demProximalGenExample"/>
+	               <col exampleLoc="np/demErgProximalGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col exampleLoc="np/demMedialGenExample"/>
+	               <col exampleLoc="np/demErgMedialGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col exampleLoc="np/demDistalGenExample"/>
+	               <col exampleLoc="np/demErgDistalGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2500,37 +2514,37 @@
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demProximalGenExample"/>
+	               <col exampleLoc="np/demErgProximalGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demProximalPlGenExample"/>
+	               <col exampleLoc="np/demErgProximalPlGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demMedialGenExample"/>
+	               <col exampleLoc="np/demErgMedialGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demMedialPlGenExample"/>
+	               <col exampleLoc="np/demErgMedialPlGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demDistalGenExample"/>
+	               <col exampleLoc="np/demErgDistalGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demDistalPlGenExample"/>
+	               <col exampleLoc="np/demErgDistalPlGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2547,17 +2561,17 @@
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col exampleLoc="np/demProximalNomExample"/>
+	               <col exampleLoc="np/demSplitProximalNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col exampleLoc="np/demMedialNomExample"/>
+	               <col exampleLoc="np/demSplitMedialNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col exampleLoc="np/demDistalNomExample"/>
+	               <col exampleLoc="np/demSplitDistalNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2573,37 +2587,37 @@
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demProximalNomExample"/>
+	               <col exampleLoc="np/demSplitProximalNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demProximalPlNomExample"/>
+	               <col exampleLoc="np/demSplitProximalPlNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demMedialNomExample"/>
+	               <col exampleLoc="np/demSplitMedialNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demMedialPlNomExample"/>
+	               <col exampleLoc="np/demSplitMedialPlNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demDistalNomExample"/>
+	               <col exampleLoc="np/demSplitDistalNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demDistalPlNomExample"/>
+	               <col exampleLoc="np/demSplitDistalPlNomExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2618,17 +2632,17 @@
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col exampleLoc="np/demProximalAccExample"/>
+	               <col exampleLoc="np/demSplitProximalAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col exampleLoc="np/demMedialAccExample"/>
+	               <col exampleLoc="np/demSplitMedialAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col exampleLoc="np/demDistalAccExample"/>
+	               <col exampleLoc="np/demSplitDistalAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2644,37 +2658,37 @@
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demProximalAccExample"/>
+	               <col exampleLoc="np/demSplitProximalAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demProximalPlAccExample"/>
+	               <col exampleLoc="np/demSplitProximalPlAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demMedialAccExample"/>
+	               <col exampleLoc="np/demSplitMedialAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demMedialPlAccExample"/>
+	               <col exampleLoc="np/demSplitMedialPlAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demDistalAccExample"/>
+	               <col exampleLoc="np/demSplitDistalAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demDistalPlAccExample"/>
+	               <col exampleLoc="np/demSplitDistalPlAccExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2690,17 +2704,17 @@
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col exampleLoc="np/demProximalGenExample"/>
+	               <col exampleLoc="np/demSplitProximalGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col exampleLoc="np/demMedialGenExample"/>
+	               <col exampleLoc="np/demSplitMedialGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col exampleLoc="np/demDistalGenExample"/>
+	               <col exampleLoc="np/demSplitDistalGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2716,37 +2730,37 @@
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demProximalGenExample"/>
+	               <col exampleLoc="np/demSplitProximalGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demProximalPlGenExample"/>
+	               <col exampleLoc="np/demSplitProximalPlGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demMedialGenExample"/>
+	               <col exampleLoc="np/demSplitMedialGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demMedialPlGenExample"/>
+	               <col exampleLoc="np/demSplitMedialPlGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demDistalGenExample"/>
+	               <col exampleLoc="np/demSplitDistalGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demDistalPlGenExample"/>
+	               <col exampleLoc="np/demSplitDistalPlGenExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2762,17 +2776,17 @@
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col exampleLoc="np/demProximalErgExample"/>
+	               <col exampleLoc="np/demSplitProximalErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col exampleLoc="np/demMedialErgExample"/>
+	               <col exampleLoc="np/demSplitMedialErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col exampleLoc="np/demDistalErgExample"/>
+	               <col exampleLoc="np/demSplitDistalErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2788,37 +2802,37 @@
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demProximalErgExample"/>
+	               <col exampleLoc="np/demSplitProximalErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demProximalPlErgExample"/>
+	               <col exampleLoc="np/demSplitProximalPlErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demMedialErgExample"/>
+	               <col exampleLoc="np/demSplitMedialErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demMedialPlErgExample"/>
+	               <col exampleLoc="np/demSplitMedialPlErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demDistalErgExample"/>
+	               <col exampleLoc="np/demSplitDistalErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demDistalPlErgExample"/>
+	               <col exampleLoc="np/demSplitDistalPlErgExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2833,17 +2847,17 @@
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col exampleLoc="np/demProximalAbsExample"/>
+	               <col exampleLoc="np/demSplitProximalAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col exampleLoc="np/demMedialAbsExample"/>
+	               <col exampleLoc="np/demSplitMedialAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col exampleLoc="np/demDistalAbsExample"/>
+	               <col exampleLoc="np/demSplitDistalAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2859,37 +2873,37 @@
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demProximalAbsExample"/>
+	               <col exampleLoc="np/demSplitProximalAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Próxima</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demProximalPlAbsExample"/>
+	               <col exampleLoc="np/demSplitProximalPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demMedialAbsExample"/>
+	               <col exampleLoc="np/demSplitMedialAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demMedialPlAbsExample"/>
+	               <col exampleLoc="np/demSplitMedialPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col exampleLoc="np/demDistalAbsExample"/>
+	               <col exampleLoc="np/demSplitDistalAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
 	               <col><content>Plural</content></col>
-	               <col exampleLoc="np/demDistalPlAbsExample"/>
+	               <col exampleLoc="np/demSplitDistalPlAbsExample"/>
 	               <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
 	            </row>
 	         </table>
@@ -2980,24 +2994,24 @@
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3016,47 +3030,47 @@
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3075,24 +3089,24 @@
 	            </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3111,47 +3125,47 @@
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col show="swNPPossCaseErgGen"><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col show="swNPPossCaseErgGen"><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	               </row>
 	         </table>
 	      </example>	     
@@ -3171,30 +3185,30 @@
 	               </headerRow>			
 	            <row>
 	               <col><content>Próxima</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Intermedia</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Distante</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -3215,59 +3229,59 @@
 	            <row>
 	               <col rowspan="2"><content>Próxima</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Intermedia</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col rowspan="2"><content>Distante</content></col>
 	               <col><content>Singular</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	            <row>
 	               <col><content>Plural</content></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
-	               <col><langData>FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
+	               <col><langData lang="lVernacular">FORMA</langData></col>
 	            </row>
 	         </table>
 	      </example>	      
@@ -4568,7 +4582,7 @@
       <whenValue element="np" attr="artDefOnly" value="indef" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNotNone">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
@@ -4581,7 +4595,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
@@ -4598,7 +4612,7 @@
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNotNoneAndArtPlNo">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
@@ -4615,7 +4629,7 @@
       <whenValue element="np" attr="artPl" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseErgAndArtCaseYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4628,7 +4642,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndArtPlNo">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4645,7 +4659,7 @@
       <whenValue element="np" attr="artPl" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndArtPlYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4662,7 +4676,7 @@
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="split"/>
       <and/>
@@ -4675,7 +4689,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYesAndArtPlNo">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="split"/>
       <and/>
@@ -4692,7 +4706,7 @@
       <whenValue element="np" attr="artPl" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseSplitAndArtCaseYesAndArtPlYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="split"/>
       <and/>
@@ -4714,11 +4728,11 @@
       <whenValue element="np" attr="artDemClassifier" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNoOrNone">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
 <or/>
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <or/>
@@ -4731,11 +4745,11 @@
       <whenValue element="np" attr="artCase" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNoOrNone">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <or/>
@@ -4748,7 +4762,7 @@
       <whenValue element="np" attr="artCase" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNomAndArtCaseYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
@@ -4761,7 +4775,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNomAndArtCaseYesAndArtPlNo">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
@@ -4778,7 +4792,7 @@
       <whenValue element="np" attr="artPl" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNomAndArtCaseYesAndArtPlYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
@@ -4795,7 +4809,7 @@
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNotNone">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <or/>
@@ -4804,7 +4818,7 @@
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlNo">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
@@ -4817,7 +4831,7 @@
       <whenValue element="np" attr="demPl" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNotNoneAndDemPlYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="none" negateValue="yes"/>
       <and/>
@@ -4836,7 +4850,7 @@
       <whenValue element="np" attr="possCaseErg" value="genitive" negateValue="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNoOrNoneAndPlNo">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -4848,7 +4862,7 @@
       <and/>
       <whenValue element="np" attr="artPl" value="no"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -4861,7 +4875,7 @@
       <whenValue element="np" attr="artPl" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndPossCaseErgGen">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4878,7 +4892,7 @@
       <whenValue element="np" attr="possCaseErg" value="genitive"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndPossCaseErgGenAndArtPlYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4899,7 +4913,7 @@
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseErgAndArtCaseYesAndPossCaseErgGenAndArtPlNo">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4920,7 +4934,7 @@
       <whenValue element="np" attr="artPl" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseErgAndArtCaseYesAndPossCaseErgGen">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4937,7 +4951,7 @@
       <whenValue element="np" attr="possCaseErg" value="genitive"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseErgAndArtCaseYesAndPossCaseErgGenAndDemPlYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4958,7 +4972,7 @@
       <whenValue element="np" attr="demPl" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseErgAndArtCaseYesAndPossCaseErgGenAndDemPlNo">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -4979,17 +4993,17 @@
       <whenValue element="np" attr="demPl" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBoth">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBoth">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <or/>
       <whenValue element="np" attr="artAndDem" value="both"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNoOrNoneAndClassifierNo">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5001,7 +5015,7 @@
       <and/>
       <whenValue element="np" attr="artDemClassifier" value="no"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -5014,7 +5028,7 @@
       <whenValue element="np" attr="artDemClassifier" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNoOrNoneAndClassifierYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5026,7 +5040,7 @@
       <and/>
       <whenValue element="np" attr="artDemClassifier" value="yes"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -5039,7 +5053,7 @@
       <whenValue element="np" attr="artDemClassifier" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNoOrNoneAndPlNoAndClassifierYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5055,7 +5069,7 @@
       <and/>
       <whenValue element="np" attr="artDemClassifier" value="yes"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -5072,7 +5086,7 @@
       <whenValue element="np" attr="artDemClassifier" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNoOrNoneAndPlNoAndClassifierNo">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5088,7 +5102,7 @@
       <and/>
       <whenValue element="np" attr="artDemClassifier" value="no"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -5109,7 +5123,7 @@
    </showWhen>
    
    <showWhen id="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYesAndDemPlYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="split"/>
       <and/>
@@ -5126,7 +5140,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
       </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNomAndArtCaseYesAndDemPlYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
@@ -5143,7 +5157,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseErgAndArtCaseYesAndDemPlYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -5160,7 +5174,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYesAndDemPlNo">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="split"/>
       <and/>
@@ -5177,7 +5191,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNomAndArtCaseYesAndDemPlNo">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
@@ -5194,7 +5208,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseErgAndArtCaseYesAndDemPlNo">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -5211,7 +5225,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseSplitAndArtCaseYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="split"/>
       <and/>
@@ -5224,7 +5238,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNomAndArtCaseYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="nominative"/>
       <and/>
@@ -5237,7 +5251,7 @@
       <whenValue element="np" attr="artCase" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseErgAndArtCaseYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="ergative"/>
       <and/>
@@ -5251,7 +5265,7 @@
    </showWhen>
    
    <showWhen id="swNPArtAndDemArtOrBothCaseNoOrNoneAndPlYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5263,7 +5277,7 @@
       <and/>
       <whenValue element="np" attr="artPl" value="yes"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -5276,7 +5290,7 @@
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNoOrNoneAndPlYesAndClassifierNo">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5292,7 +5306,7 @@
       <and/>
       <whenValue element="np" attr="artDemClassifier" value="no"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -5309,7 +5323,7 @@
       <whenValue element="np" attr="artDemClassifier" value="no"/>
    </showWhen>
    <showWhen id="swNPArtAndDemArtOrBothCaseNoOrNoneAndPlYesAndClassifierYes">
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5325,7 +5339,7 @@
       <and/>
       <whenValue element="np" attr="artDemClassifier" value="yes"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="art"/>
+      <whenValue element="np" attr="artAndDem" value="article"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -5342,7 +5356,7 @@
       <whenValue element="np" attr="artDemClassifier" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNoOrNoneAndPlYes">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5354,7 +5368,7 @@
       <and/>
       <whenValue element="np" attr="artPl" value="yes"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -5367,7 +5381,7 @@
       <whenValue element="np" attr="artPl" value="yes"/>
    </showWhen>
    <showWhen id="swNPArtAndDemDemOrBothCaseNoOrNoneAndPlNo">
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="typology" attr="case" value="none"/>
       <and/>
@@ -5379,7 +5393,7 @@
       <and/>
       <whenValue element="np" attr="artPl" value="no"/>
       <or/>
-      <whenValue element="np" attr="artAndDem" value="dem"/>
+      <whenValue element="np" attr="artAndDem" value="demonstrative"/>
       <and/>
       <whenValue element="np" attr="artCase" value="no"/>
       <and/>
@@ -6052,4 +6066,29 @@
       <and/>
       <whenValue element="qp" attr="npDegreeNeg" value="some"/>
    </showWhen>
+
+   <showWhen id="swQPOrdinalNumNotNowhere">
+      <whenValue element="qp/ordinalBefore" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp/ordinalAfter" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp/ordinalBoth" attr="checked" value="yes"/>
+      <or/>
+      <whenValue element="qp/ordinalNumOther" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPOrdinalNumNowhere">
+      <whenValue element="qp/ordinalBefore" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalAfter" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalBoth" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalNumOther" attr="checked" value="no"/>
+      <and/>
+      <whenValue element="qp/ordinalNumNowhere" attr="checked" value="yes"/>
+   </showWhen>
+   <showWhen id="swQPPartitiveOther">
+      <whenValue element="qp" attr="partitive" value="other"/>
+   </showWhen>
 </portion>
+

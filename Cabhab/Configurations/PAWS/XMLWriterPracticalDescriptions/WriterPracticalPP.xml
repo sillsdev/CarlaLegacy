@@ -67,7 +67,7 @@
               <content> are marked with classifiers in </content><langName/><content> as part of the concord agreement system.  Only the roots are shown in the tables here, but the phrases show the full forms marked with classifiers.</content> </text>
         </p>
        <p show="swPPPosPrep"><content>Examples of the </content><text show="swPPBodypartYes"><content>regular </content></text>
-          <content> prepositioins used in locative phrases are:</content></p>
+          <content>prepositioins used in locative phrases are:</content></p>
         <example show="swPPPosPrep">
            <table border="1">
               <headerRow>
@@ -81,7 +81,7 @@
            </table>
         </example>
        <p show="swPPPosPost"><content>Examples of the </content><text show="swPPBodypartYes"><content>regular </content></text>
-          <content> postpositions used in locative phrases are:</content></p>
+          <content>postpositions used in locative phrases are:</content></p>
        <example show="swPPPosPost">
           <table border="1">
              <headerRow>
@@ -95,7 +95,7 @@
           </table>
        </example>
        <p show="swPPPosBothOrUnknown"><content>Examples of the </content><text show="swPPBodypartYes"><content>regular </content></text>
-          <content> prepositions and postpositions used in locative phrases are:</content></p>
+          <content>prepositions and postpositions used in locative phrases are:</content></p>
        <example show="swPPPosBothOrUnknown">
           <table border="1">
              <headerRow>
@@ -508,7 +508,7 @@
                  <caseText value="both">Prepositional or postpositional</caseText>
                  <caseText value="unknown">Adpositional</caseText>
               </case>
-              <content> phrases may </content><text show="swPPModifiersYesDegreeOrOrdinalOrManner"><content>also </content></text><content>be modified by ocativeadverbs which occur </content>
+              <content> phrases may </content><text show="swPPModifiersYesDegreeOrOrdinalOrManner"><content>also </content></text><content>be modified by locative adverbs which occur </content>
               <text show="swPPLocativePosBefore"><content>before</content></text>
               <text show="swPPLocativePosAfter"><content>after</content></text>
               <text show="swPPLocativePosBoth"><content>on both sides of</content></text>

@@ -3,7 +3,9 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../Styles/PAWSStarterKitMaster.css">
 <title>Answer and Result File Information</title>
-	<script language="jscript" id="clientEventHandlersJS">
+<!-- we keep the script file here so we can make changes between
+     processing a new language and editing an existing one -->
+    <script language="jscript" id="clientEventHandlersJS">
 // PAWSFiles.js
 
 function Initialize() {
@@ -25,7 +27,7 @@ function Initialize() {
 		}
 	}
 
-	window.external.GetAnswerValue("//language/writerFile");
+/*	window.external.GetAnswerValue("//language/writerFile");
 	sTemp = FileLocWriter.value = window.external.OutValue;
 	if (sTemp == "") {
 		index = sAnswer.lastIndexOf(".paw");
@@ -35,7 +37,7 @@ function Initialize() {
 			FileLocWriter.value = sTemp;
 		}
 	}
-
+*/
 	window.external.GetAnswerValue("//language/writerPracticalFile");
 	sTemp = FileLocWriterPractical.value = window.external.OutValue;
 	if (sTemp == "") {
@@ -58,6 +60,17 @@ function Initialize() {
 		}
 	}
 
+	window.external.GetAnswerValue("//language/writerPracticalFrenchFile");
+	sTemp = FileLocWriterPracticalFrench.value = window.external.OutValue;
+	if (sTemp == "") {
+		index = sAnswer.lastIndexOf(".paw");
+		if (index > - 1) {
+			sTemp = sAnswer.substr(0, index) + "WriterPracticalFrench.xml";
+			window.external.SetAnswerValue("//language/writerPracticalFrenchFile", sTemp);
+			FileLocWriterPracticalFrench.value = sTemp;
+		}
+	}
+
 	window.external.GetAnswerValue("//language/exampleFilesPath");
 	sTemp = FileLocExampleFiles.value = window.external.OutValue;
 	if (sTemp == "") {
@@ -77,6 +90,7 @@ function Initialize() {
 	/*displayCheckBoxValue(OutputWriter, "/paws/@outputWriter");*/
 	displayCheckBoxValue(OutputWriterPractical, "/paws/@outputWriterPractical");
 	displayCheckBoxValue(OutputWriterPracticalSpanish, "/paws/@outputWriterPracticalSpanish");
+	displayCheckBoxValue(OutputWriterPracticalFrench, "/paws/@outputWriterPracticalFrench");
 
 	ShowBackNextButtons.style.display = "none";
 	Return.style.display = "";
@@ -95,11 +109,13 @@ function saveData() {
 
 	window.external.SetAnswerValue("//language/grammarFile", FileLocGrammar.value);
 
-	window.external.SetAnswerValue("//language/writerFile", FileLocWriter.value);
+/*	window.external.SetAnswerValue("//language/writerFile", FileLocWriter.value);*/
 
 	window.external.SetAnswerValue("//language/writerPracticalFile", FileLocWriterPractical.value);
 
 	window.external.SetAnswerValue("//language/writerPracticalSpanishFile", FileLocWriterPracticalSpanish.value);
+
+	window.external.SetAnswerValue("//language/writerPracticalFrenchFile", FileLocWriterPracticalFrench.value);
 
 	window.external.SetAnswerValue("//language/exampleFilesPath", FileLocExampleFiles.value);
 
@@ -113,8 +129,12 @@ function saveData() {
 
 	window.external.SetAnswerValue("/paws/@outputWriterPracticalSpanish", OutputWriterPracticalSpanish.value);
 
-	window.external.SaveData();
+	window.external.SetAnswerValue("/paws/@outputWriterPracticalFrench", OutputWriterPracticalFrench.value);
 
+	window.external.SaveData();
+}
+function processChanges() {
+    saveData();
 	window.external.InitAnswerTransforms()
 }
 function Refresh() {
@@ -123,7 +143,7 @@ function Refresh() {
 	/*if (! OutputWriter.checked && ! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
 		OutputWriter.checked = true;
 	}*/
-	if (! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked) {
+	if (! OutputWriterPractical.checked && ! OutputWriterPracticalSpanish.checked && ! OutputWriterPracticalFrench.checked) {
 	            OutputWriterPractical.checked = true;
 	}if (OutputGrammar.checked) {
 		BrowseForGrammar.style.display = "";
@@ -150,6 +170,12 @@ function Refresh() {
 	} else {
 		BrowseForWriterPracticalSpanish.style.display = "none";
 	}
+
+	if (OutputWriterPracticalFrench.checked) {
+		BrowseForWriterPracticalFrench.style.display = "";
+	} else {
+		BrowseForWriterPracticalFrench.style.display = "none";
+	}
 }
 function ButtonFileLocAnswer() {
 	var result;
@@ -169,7 +195,7 @@ function ButtonFileLocGrammar() {
 		saveData();
 	}
 }
-function ButtonFileLocWriter() {
+/*function ButtonFileLocWriter() {
 	var result;
 	window.external.FileBrowse(FileLocWriter.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
 	result = window.external.OutValue;
@@ -177,7 +203,7 @@ function ButtonFileLocWriter() {
 		FileLocWriter.value = result;
 		saveData();
 	}
-}
+}*/
 function ButtonFileLocWriterPractical() {
 	var result;
 	window.external.FileBrowse(FileLocWriterPractical.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
@@ -193,6 +219,15 @@ function ButtonFileLocWriterPracticalSpanish() {
 	result = window.external.OutValue;
 	if (result != "Cancel") {
 		FileLocWriterPracticalSpanish.value = result;
+		saveData();
+	}
+}
+function ButtonFileLocWriterPracticalFrench() {
+	var result;
+	window.external.FileBrowse(FileLocWriterPracticalFrench.value, "Writer File  (*.xml)|*.xml|" + "All Files (*.*)|*.*");
+	result = window.external.OutValue;
+	if (result != "Cancel") {
+		FileLocWriterPracticalFrench.value = result;
 		saveData();
 	}
 }
@@ -235,6 +270,13 @@ function SetOutputViaDescription(item) {
 			OutputWriterPracticalSpanish.checked = true;
 		}
 		break;
+		case "writerPracticalFrench":
+		if (OutputWriterPracticalFrench.checked) {
+			OutputWriterPracticalFrench.checked = false;
+		} else {
+			OutputWriterPracticalFrench.checked = true;
+		}
+		break;
 	}
 	SetOutput(item);
 }
@@ -268,6 +310,13 @@ function SetOutput(item) {
 			OutputWriterPracticalSpanish.value = "False";
 		}
 		break;
+		case "writerPracticalFrench":
+		if (OutputWriterPracticalFrench.checked) {
+			OutputWriterPracticalFrench.value = "True";
+		} else {
+			OutputWriterPracticalFrench.value = "False";
+		}
+		break;
 	}
 	saveData();
 	Refresh();
@@ -280,22 +329,22 @@ function ButtonNext() {
 	saveData();
 	window.navigate("Contents.htm");
 }
-  </script></head>
+</script></head>
 <body onload="Initialize()">
 <h2>Answer and Result File Information</h2>
 <div class="introduction">
 <p>The PAWS Starter Kit can create several files. <ol style="margin-top: .025in">
 <li>One stores the answers you have given to the questions.</li>
 <li>Another stores the automatically generated PC-PATR grammar file.</li>
-<li>A third stores an automatically generated comparative grammar write-up file.</li>
-<li>A fourth stores an automatically generated practical grammar write-up file.</li>
-<li style="display:none">A fifth stores an automatically generated practical grammar write-up in Spanish file.</li>
+<!--<li>A third stores an automatically generated comparative grammar write-up file.</li>-->
+<li>A third stores an automatically generated grammar write-up in English file.</li>
+<li>A fourth stores an automatically generated grammar write-up in Spanish file.</li>
 <li>Finally, there are many example files it creates so you can test the PC-PATR grammar.</li>
 </ol>You can set these files by answering the following questions.</p>
 </div>
 <br>
 <div class="form">
-<p>Select the outputs you want by checking the box before each one.  Please note that at least one writer output must be present.  The default writer is the comparative one.</p>
+<p>Select the outputs you want by checking the box before each one.  Please note that at least one writer output must be present.  The default writer is the English one.</p>
 <table>
 <tr>
 <td><input type="checkbox" name="OutputGrammar" id="OutputGrammar" onclick="SetOutput('grammar')" value="grammar"></td>
@@ -307,11 +356,15 @@ function ButtonNext() {
 </tr>-->
 <tr>
 <td><input type="checkbox" name="OutputWriterPractical" id="OutputWriterPractical" onclick="SetOutput('writerPractical')" value="writerPractical"></td>
-<td onclick="SetOutputViaDescription('writerPractical')">Output the practical grammar write-up file.</td>
+<td onclick="SetOutputViaDescription('writerPractical')">Output the English grammar write-up file.</td>
 </tr>
 <tr>
 <td><input type="checkbox" name="OutputWriterPracticalSpanish" id="OutputWriterPracticalSpanish" onclick="SetOutput('writerPracticalSpanish')" value="writerPracticalSpanish"></td>
-<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Output the Spanish practical grammar write-up file.</td>
+<td onclick="SetOutputViaDescription('writerPracticalSpanish')">Output the Spanish grammar write-up file.</td>
+</tr>
+	<tr>
+	<td><input type="checkbox" name="OutputWriterPracticalFrench" id="OutputWriterPracticalFrench" onclick="SetOutput('writerPracticalFrench')" value="writerPracticalFrench"></td>
+	<td onclick="SetOutputViaDescription('writerPracticalFrench')">Output the French grammar write-up file.</td>
 </tr>
 </table>
 </div>
@@ -329,23 +382,29 @@ function ButtonNext() {
 &nbsp;&nbsp;&nbsp;
 <input type="button" value=" Browse " name="BFileLocGrammar" id="BFileLocGrammar" onclick="ButtonFileLocGrammar()" style="width: 85px; height: 24px">
 </div>
-<div id="BrowseForWriter">
+<!--<div id="BrowseForWriter">
 <p style="margin-left: 0.125in">The name of the automatically generated comparative grammar write-up file is shown below.  Click on the 'Browse' button to change it.<br></p>
 <textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocWriter" name="FileLocWriter" contenteditable="false"></textarea>
 &nbsp;&nbsp;&nbsp;
 <input type="button" value=" Browse " name="BFileLocWriter" id="BFileLocWriter" onclick="ButtonFileLocWriter()" style="width: 85px; height: 24px">
-</div>
+</div>-->
 <div id="BrowseForWriterPractical">
-<p style="margin-left: 0.125in">The name of the automatically generated practical grammar write-up file is shown below.  Click on the 'Browse' button to change it.<br></p>
+<p style="margin-left: 0.125in">The name of the automatically generated English grammar write-up file is shown below.  Click on the 'Browse' button to change it.<br></p>
 <textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocWriterPractical" name="FileLocWriterPractical" contenteditable="false"></textarea>
 &nbsp;&nbsp;&nbsp;
 <input type="button" value=" Browse " name="BFileLocWriterPractical" id="BFileLocWriterPractical" onclick="ButtonFileLocWriterPractical()" style="width: 85px; height: 24px">
 </div>
 <div id="BrowseForWriterPracticalSpanish">
-<p style="margin-left: 0.125in">The name of the automatically generated practical grammar write-up in Spanish file is shown below.  Click on the 'Browse' button to change it.<br></p>
+<p style="margin-left: 0.125in">The name of the automatically generated Spanish grammar write-up file is shown below.  Click on the 'Browse' button to change it.<br></p>
 <textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocWriterPracticalSpanish" name="FileLocWriterPracticalSpanish" contenteditable="false"></textarea>
 &nbsp;&nbsp;&nbsp;
 <input type="button" value=" Browse " name="BFileLocWriterPracticalSpanish" id="BFileLocWriterPracticalSpanish" onclick="ButtonFileLocWriterPracticalSpanish()" style="width: 85px; height: 24px">
+</div>
+<div id="BrowseForWriterPracticalFrench">
+<p style="margin-left: 0.125in">The name of the automatically generated French grammar write-up file is shown below.  Click on the 'Browse' button to change it.<br></p>
+<textarea style="margin-left: 0.5in" wrap="off" rows="1" cols="60" id="FileLocWriterPracticalFrench" name="FileLocWriterPracticalFrench" contenteditable="false"></textarea>
+&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Browse " name="BFileLocWriterPracticalFrench" id="BFileLocWriterPracticalFrench" onclick="ButtonFileLocWriterPracticalFrench()" style="width: 85px; height: 24px">
 </div>
 <div id="BrowseForGrammarDir">
 <p style="margin-left: 0.125in">The directory where the example files are located is shown below.  Click on the 'Browse' button to change it.<br></p>
@@ -365,7 +424,7 @@ function ButtonNext() {
 </div>
 </div>
 <div align="center" id="Return" class="return">
-<a  href="LeftOffAt" onclick="saveData()">Return</a>
+    <a  href="LeftOffAt" onclick="processChanges()">Return</a>
 </div>
 </body>
 </html>

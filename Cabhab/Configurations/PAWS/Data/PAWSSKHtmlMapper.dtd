@@ -6,7 +6,7 @@
 						 featureChart | file | help | i | ol | p | section | span |
 			 technicalTermRef | template | templateName | tool | tree | u | ul">
 <!ENTITY % TechnicalTerms SYSTEM  "PAWSTechnicalTerms.dtd">
-%TechnicalTerms;
+%TechnicalTerms; 
 
 <!ELEMENT a (%embedded;)*>
 <!ATTLIST a
@@ -44,7 +44,11 @@
 >
 <!ELEMENT closeParen EMPTY>
 <!ELEMENT codeInfo (#PCDATA)>
-<!ELEMENT contents (#PCDATA)>
+<!ELEMENT contentCheckBoxOther EMPTY>
+<!ATTLIST contentCheckBoxOther
+   contentLoc CDATA #REQUIRED
+   id ID #IMPLIED
+><!ELEMENT contents (#PCDATA)>
 <!ELEMENT div (textBox | prompt | radioGroup | instruction | codeInfo | ruleInfo | introduction | EnglishExample | br | div | table)*>
 <!ATTLIST div
 	id ID #REQUIRED
@@ -62,8 +66,8 @@
 	types (yes | no) "yes"
 	explanations (yes | no) "yes"
 >
-<!ELEMENT featureExplanation (#PCDATA)>
-<!ELEMENT featureItem (#PCDATA)>
+<!ELEMENT featureExplanation (#PCDATA | technicalTermRef)*>
+<!ELEMENT featureItem (#PCDATA | technicalTermRef)*>
 <!ATTLIST featureItem
 	dataValue CDATA #REQUIRED
 	name CDATA #REQUIRED
@@ -163,7 +167,12 @@ transparent = 'yes' means do not show yellow background, let the grey background
 >
 <!ELEMENT sub (#PCDATA)>
 <!ELEMENT table (tr+) >
-<!ELEMENT td (#PCDATA) >
+<!ATTLIST table
+	id ID #IMPLIED
+	show IDREF #IMPLIED
+	class CDATA #IMPLIED
+>
+<!ELEMENT td (#PCDATA | contentCheckBoxOther)* >
 <!ATTLIST td
 	colspan CDATA #IMPLIED
 >
@@ -189,6 +198,10 @@ transparent = 'yes' means do not show yellow background, let the grey background
 <!ELEMENT templateName (#PCDATA)>
 <!ELEMENT tool (#PCDATA)>
 <!ELEMENT tr (th | td)+ >
+<!ATTLIST tr
+	id ID #IMPLIED
+	show IDREF #IMPLIED
+>
 <!ELEMENT tree (#PCDATA | br)*>
 <!ATTLIST tree
 	img CDATA #IMPLIED

@@ -8,7 +8,7 @@
    <introduction>This section considers the internal structure of <technicalTermRef term="ttAdpositionalPhrases"/> (PPs), which usually express location, accompaniment, goal, instrument, recipient, or agent in languages which do not mark case on nouns or noun  phrases.  Languages with case marking on nominals normally still have locative and temporal PPs.  These will be exemplified on the next page.<br/><br/>
        We will begin by determining whether your language has prepositions or postpositions and whether they are independent words or clitics.  
     <br/><br/>
-       Consider locative PPs in your language, as in <example>at [Bill’s house]</example> and <example>under [the giant Sycamore tree]</example>.  English has prepositions which are independent words and come before the nominal phrases complement.  In a language with postpositions, the nominal phrase complement comes first.</introduction>  
+       Consider locative PPs in your language, as in <example>at [Bill’s house]</example> and <example>under [the giant Sycamore tree]</example>.  English has prepositions which are independent words and come before the nominal phrase complement.  In a language with postpositions, the nominal phrase complement comes first.</introduction>  
    <form section="pp">
       <prompt><br/>Key some locative PP examples from your language here (without brackets but each on a separate line):</prompt>
       <textBox id="PPCompsNominalExample" dataItem="ppExample"/>
@@ -54,7 +54,7 @@
               <checkbox id="PPModifiersDegree" dataItem="ppModifierDegree">Degree words</checkbox>
               <checkbox id="PPModifiersOrdinal" dataItem="ppModifierOrdinal">Ordinals</checkbox>
               <checkbox id="PPModifiersManner" dataItem="ppModifierManner">Manner adverbials</checkbox>
-              <checkbox id="PPModifiersLocative" dataItem="ppModifierLocative">Locative Adverbials</checkbox>
+              <checkbox id="PPModifiersLocative" dataItem="ppModifierLocative">Locative adverbials</checkbox>
               <checkbox id="PPModifiersOther" dataItem="ppModifierOther">In my language, these other modifiers may be used: <textBox  id="PPModifiersOtherContent" dataItem="ppModifierOther" rows="2"/></checkbox>
            </checkboxGroup>
            </radioGroup>

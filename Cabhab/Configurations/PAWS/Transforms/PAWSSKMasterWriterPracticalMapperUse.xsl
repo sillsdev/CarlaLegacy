@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="C:/carlarepo/CarlaLegacy/Cabhab/Configurations/PAWSXLingPap.dtd" doctype-public="-//XMLmind//DTD XLingPap//EN"/>
+   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="C:/carlarepo/CarlaLegacy/Cabhab/Configurations/PAWS/Transforms/XLingPap.dtd" doctype-public="-//XMLmind//DTD XLingPap//EN"/>
 <!--   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" doctype-system="XLingPap.dtd"/>-->
    <!--
 ================================================================
@@ -23,7 +23,7 @@ Main template
 		<xsl:processing-instruction name="xml-stylesheet">
 			<xsl:text>type="text/xsl" href="XLingPap1.xsl"</xsl:text>
 		</xsl:processing-instruction>
-		<lingPaper automaticallywrapinterlinears="yes" sortRefsAbbrsByDocumentLanguage="yes">
+		<lingPaper automaticallywrapinterlinears="yes" sortRefsAbbrsByDocumentLanguage="yes" tablenumberedLabelAndCaptionLocation="after">
 			<frontMatter>
 				<title>A Practical Grammar of  <xsl:value-of select="//language/langNames/langName[@lang='en']"/>
 				</title>
@@ -47,6 +47,7 @@ Main template
 			<xsl:apply-templates select="/" mode="comp"/>
 			<xsl:apply-templates select="/" mode="advcl"/>
 			<xsl:apply-templates select="/" mode="relcl"/>
+			<xsl:call-template name="DoTextsSection"/>
 			<xsl:call-template name="OutputCommonBackmatterLanguagesAndTypes"/>
 		</lingPaper>
 	</xsl:template>
@@ -85,6 +86,2281 @@ Include other templates
 	<xsl:template name="DoInterlinearGlossLines">
 		<xsl:call-template name="DoWordGloss"/>
 		<xsl:call-template name="DoMorphemeGloss"/>
+	</xsl:template>
+	<!--
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		DoTextsSection
+		routine to create content of the section on texts
+		Parameters: none
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	-->
+	<xsl:template name="DoTextsSection">
+		<section1 id="sTexts">
+			<secTitle>Texts</secTitle>
+			<p><object type="tComment">Include several texts here to demonstrate how larger constructions such as paragraphs, conversations, and narrative stories are formed.  Include examples of various literary types.</object></p>
+			<p><object type="tComment">  A suggested format for presenting the texts is to present it in the vernacular language as a whole first, so the native speakers can appreciate it.  Then present the interlinear form, as in the examples throughout the grammar.  Finally, give a free translation as a whole, so the non-native speaker can appreciate more about the culture.</object></p>
+				<p>
+				<object type="tComment">Please, write your texts here (Open with the the + sign).   You need to prepare at least one native text - or you can import a text from FLEx, in which case you can delete the following unneeded lines.</object>
+			</p>
+			<interlinear-text>
+				<textInfo>
+					<textTitle>title - text 1</textTitle>
+					<shortTitle/>
+				</textInfo>
+				<p>
+					<langData lang="lVernacular">paragraphs for the entire text in the language</langData>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular">language</langData>
+						</line>
+						<line>
+							<gloss lang="lGloss">gloss</gloss>
+						</line>
+						<line>
+							<gloss lang="lGloss">morphemes</gloss>
+						</line>
+					</lineGroup>
+					<free>free translation</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<p>
+					<gloss lang="lGloss">paragraphs for the free translation of the entire text</gloss>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+			</interlinear-text>
+			<interlinear-text>
+				<textInfo>
+					<textTitle>title - text 2</textTitle>
+					<shortTitle/>
+				</textInfo>
+				<p>
+					<langData lang="lVernacular">paragraphs for the entire text in the language</langData>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular">language</langData>
+						</line>
+						<line>
+							<gloss lang="lGloss">gloss</gloss>
+						</line>
+						<line>
+							<gloss lang="lGloss">morphemes</gloss>
+						</line>
+					</lineGroup>
+					<free>free translation</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<p>
+					<gloss lang="lGloss">paragraphs for the free translation of the entire text</gloss>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+			</interlinear-text>
+			<interlinear-text>
+				<textInfo>
+					<textTitle>title - text 3</textTitle>
+					<shortTitle/>
+				</textInfo>
+				<p>
+					<langData lang="lVernacular">paragraphs for the entire text in the language</langData>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular">language</langData>
+						</line>
+						<line>
+							<gloss lang="lGloss">gloss</gloss>
+						</line>
+						<line>
+							<gloss lang="lGloss">morphemes</gloss>
+						</line>
+					</lineGroup>
+					<free>free translation</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<p>
+					<gloss lang="lGloss">paragraphs for the free translation of the entire text</gloss>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+			</interlinear-text>
+			<interlinear-text>
+				<textInfo>
+					<textTitle>title - text 4</textTitle>
+					<shortTitle/>
+				</textInfo>
+				<p>
+					<langData lang="lVernacular">paragraphs for the entire text in the language</langData>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<p>
+					<langData lang="lVernacular"/>
+				</p>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular">language</langData>
+						</line>
+						<line>
+							<gloss lang="lGloss">gloss</gloss>
+						</line>
+						<line>
+							<gloss lang="lGloss">morphemes</gloss>
+						</line>
+					</lineGroup>
+					<free>free translation</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<interlinear>
+					<lineGroup>
+						<line>
+							<langData lang="lVernacular"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+						<line>
+							<gloss lang="lGloss"/>
+						</line>
+					</lineGroup>
+					<free>
+						<gloss lang="lGloss"/>
+					</free>
+				</interlinear>
+				<p>
+					<gloss lang="lGloss">paragraphs for the free translation of the entire text</gloss>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+				<p>
+					<gloss lang="lGloss"/>
+				</p>
+			</interlinear-text>
+	</section1>
 	</xsl:template>
 	<!--
 		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

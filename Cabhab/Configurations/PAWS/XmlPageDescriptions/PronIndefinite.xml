@@ -8,20 +8,23 @@
    <introduction>A final type of pronouns is <technicalTermRef term="ttIndefinite">indefinites</technicalTermRef>.        
       There are two basic sets of indefinite pronouns, though not all languages merge them into a single word:
       <ul>
-         <li>those consisting of a quantifier and an indefinite generic noun, such as <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>anything</example>, <example>anyone</example>,  <example>somebody</example>, <example>something</example>, <example>someone</example>, and</li>
+         <li>those consisting of a quantifier and an indefinite generic noun, such as <example>one (person or thing)</example>, <example>everybody</example>, <example>everything</example>, <example>everyone</example>, <example>anybody</example>, <example>anything</example>, <example>anyone</example>,  <example>somebody</example>, <example>something</example>, <example>someone</example>, and</li>
          <li>those built from an <technicalTermRef term="ttInterrogative"/> word, such as <example>whoever</example> and <example>whatever</example>.   </li>
       </ul>
 </introduction>
     <form section="pron">
 
        <checkboxGroup>
-          <prompt><br/>Beginning with the first type above that includes a quantifier, such as ‘everybody’, ‘anything’ and ‘someone’,  how does your language express these indefinites?  Check all options that are correct for your language</prompt>
+          <prompt><br/>Beginning with the first type above that includes a quantifier, such as ‘everybody’, ‘anything’ and ‘someone’ (or the impersonal use of the number ‘one’),  how does your language express these indefinites?  Check all options that are correct for your language.  If your language does not have this type of indefinite, leave all these options unchecked and select the option for  ‘None’ below.</prompt>
           <checkbox id="PronIndefTypeQWord" dataItem="indefQWord"> A quantifier and a generic noun merge into a single word</checkbox>
           <checkbox id="PronIndefTypeQPhrase" dataItem="indefQPhrase">A quantifier occurs with a generic noun but they do not merge into a single word</checkbox>
           <checkbox id="PronIndefTypeQOther" dataItem="indefQOther">My language does the following to express these indefinite meanings:<textBox  id="PronIndefTypeQOtherContent" dataItem="indefQOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="PronIndefTypeQNoCheckPrompt" show="swPronIndefTypeQNoCheck">WARNING: You need to check at least one box to describe how your language expresses these indefinite meanings.</prompt>
-       
+       <prompt id="PronIndefTypeQNoCheckPrompt" show="swPronIndefTypeQNoCheck">WARNING: You need to check at least one box to describe how your language expresses these indefinite meanings, unless your language does not have this kind of indefinite.  In that case, select  ‘None’ below.</prompt>
+       <checkboxGroup id="PronIndefTypeQNoneTable" show="swPronIndefTypeQNoCheck">
+          <prompt>Check this box only if your language does not have any type of pronominal indefinites that include a quantifier</prompt>
+          <checkbox id="PronIndefTypeQNone" dataItem="pronIndefTypeQNone">None</checkbox>
+       </checkboxGroup>
        <prompt id="ProneIndefTypeQWordPrompt" show="swPronIndefTypeQWord">Key your examples of the indefinites formed from a quantifier and a generic noun merged into a single word here:</prompt>
        <textBox id="PronIndefTypeQWordExample" dataItem="indefTypeQWordExample" show="swPronIndefTypeQWord" rows="3"/>
        <instruction  id="PronIndefTypeQWordInstruction" show="swPronIndefTypeQWord">In the lexicon, you will need to make two entries for the generic nouns, one which remains a noun and one with the category <category>Pron</category>, or else the feature <feature>makePron</feature> to change the category for the syntax.</instruction>
@@ -36,6 +39,7 @@
           <checkbox id="PronIndefTypeQPQOther" checked="yes" dataItem="indefTypeQPQOther">In my language, these quantifiers may occur as follows with respect to the generic noun: <textBox  id="PronIndefTypeQPQOtherContent" dataItem="indefTypeQPQOther" rows="2"/></checkbox>
        </checkboxGroup>	
        <prompt id="PronIndefTypeQPPhraseNoCheckPrompt" show="swPronIndefTypeQPPhraseAndNoCheck">WARNING: You need to check at least one box to describe where these quantifiers and generic nouns occur in your language, or change the answer above to a different form.</prompt>
+       <instruction id="PronIndefTypeQPhraseInstruction" show="swPronIndefTypeQPhrase">In the lexicon, mark the generic noun with the feature <feature>generic</feature> and make sure it has the category <category>N</category>.</instruction>           
        <instruction id="PronIndefTypeQPQEitherRestrictedInstruction" show="swPronIndefTypeQPQEitherRestricted">In the lexicon, mark those quantifier words which can only occur before the generic noun with the feature <feature>DP-initial</feature> and those which can only occur after the generic noun with the feature <feature>DP-final</feature>.  Do not enter either feature on any quantifier words which can occur on either side.</instruction>           
        
        <prompt id="PronIndefTypeQOtherPrompt" show="swPronIndefTypeQOther">Key some examples of the other way that your language expresses these indefinites that include a quantifier here:</prompt>
@@ -43,29 +47,36 @@
        
        <br/><br/>
        <checkboxGroup>
-          <prompt><br/>Now consider the indefinites that are based on an interrogative word and an indefinite word, such as ‘whoever’ and ‘whatever’.  How does your language express these indefinites?  Check all options that are correct for your language</prompt>
-          <checkbox id="PronIndefTypeIntWord" dataItem="indefIntWord"> An interrogative word and an indefinite merge into a single word</checkbox>
-          <checkbox id="PronIndefTypeIntPhrase" dataItem="indefIntPhrase">An interrogative word occurs with an indefinite word but they do not merge into a single word</checkbox>
+          <prompt><br/>Now consider the indefinites that are based on an interrogative pronoun and an indefinite word, such as ‘whoever’ and ‘whatever’.  How does your language express these indefinites?  Check all options that are correct for your language.  If your language does not have this type of indefinite, leave all these options unchecked and select the option for  ‘None’ below.</prompt>
+          <checkbox id="PronIndefTypeIntWord" dataItem="indefIntWord"> An interrogative pronoun and an indefinite merge into a single word</checkbox>
+          <checkbox id="PronIndefTypeIntPhrase" dataItem="indefIntPhrase">An interrogative pronoun occurs with an indefinite word but they do not merge into a single word</checkbox>
           <checkbox id="PronIndefTypeIntOther" dataItem="indefIntOther">My language does the following to express this type of indefinite meaning:<textBox  id="PronIndefTypeIntOtherContent" dataItem="indefIntOther" rows="2"/></checkbox>
        </checkboxGroup>
-       <prompt id="PronIndefTypeIntNoCheckPrompt" show="swPronIndefTypeIntNoCheck">WARNING: You need to check at least one box to describe how your language expresses this type of indefinite meaning.</prompt>
-       <prompt id="PronIndefTypeIntWordPrompt" show="swPronIndefTypeIntWord">Key your examples of the indefinites formed from an interrogative word and an indefinite word merged into a single word here:</prompt>
-       <textBox id="PronIndefTypeIntWordExample" dataItem="indefTypeIntWordExample" show="swPronIndefTypeIntWord" rows="3"/>
-       <instruction  id="PronIndefTypeIntWordInstruction" show="swPronIndefTypeIntWord">In the lexicon, key the features <feature>makePron</feature> on the interrogative words if they do not already have the category <category>Pron</category>. </instruction>
+       <prompt id="PronIndefTypeIntNoCheckPrompt" show="swPronIndefTypeIntNoCheck">WARNING: You need to check at least one box to describe how your language expresses this type of indefinite meaning, unless your language does not have this kind of indefinite.  In that case, select  ‘None’ below.</prompt>
+       <checkboxGroup id="PronIndefTypeIntNoneTable" show="swPronIndefTypeIntNoCheck">
+          <prompt>Check this box only if your language does not have any type of pronominal indefinites that are based on an interrogative word</prompt>
+          <checkbox id="PronIndefTypeIntNone" dataItem="pronIndefTypeIntNone">None</checkbox>
+       </checkboxGroup>
+       <prompt id="PronIndefTypeQAndIntNonePrompt" show="swPronIndefTypeQAndIntNone">WARNING: You have checked  ‘None’ for both types of pronominal indefinites.  Please choose the type closest to the pronominal indefinite in your language and describe it using the  ‘My language...’ box.  Uncheck  ‘None’ for that option. </prompt>
        
-       <prompt id="PronIndefTypeIntPhrasePrompt" show="swPronIndefTypeIntPhrase">Key your examples of the indefinite phrases consisting of an interrogative word and an indefinite word here:</prompt>
+       <prompt id="PronIndefTypeIntWordPrompt" show="swPronIndefTypeIntWord">Key your examples of the indefinites formed from an interrogative pronoun and an indefinite word merged into a single word here:</prompt>
+       <textBox id="PronIndefTypeIntWordExample" dataItem="indefTypeIntWordExample" show="swPronIndefTypeIntWord" rows="3"/>
+       <instruction  id="PronIndefTypeIntWordInstruction" show="swPronIndefTypeIntWord">In the lexicon, key the feature <feature>makePron</feature> on the interrogative pronouns if they do not already have the category <category>Pron</category> and also add the feature <feature>wh</feature> to mark them as interrogative. </instruction>
+       
+       <prompt id="PronIndefTypeIntPhrasePrompt" show="swPronIndefTypeIntPhrase">Key your examples of the indefinite phrases consisting of an interrogative pronoun and an indefinite word here:</prompt>
        <textBox id="PronIndefTypeIntPhraseExample" dataItem="indefTypeIntPhraseExample" show="swPronIndefTypeIntPhrase" rows="3"/>
        <checkboxGroup id="PronIndefTypeIntPhraseTable" show="swPronIndefTypeIntPhrase">
-          <prompt><br/>Looking at the examples you keyed above, where does the interrogative word occur with respect to the indefinite word? Check all options that are correct for your language</prompt>
+          <prompt><br/>Looking at the examples you keyed above, where does the interrogative pronoun occur with respect to the indefinite word? Check all options that are correct for your language</prompt>
           <checkbox id="PronIndefTypeIntPhraseBefore" checked="yes" dataItem="indefTypeIntBefore">Before the indefinite</checkbox>
           <checkbox id="PronIndefTypeIntPhraseAfter" checked="yes" dataItem="indefTypeIntAfter">After the indefinite</checkbox>
           <checkbox id="PronIndefTypeIntPhraseBoth" checked="yes" dataItem="indefTypeIntBoth">On both sides at the same time</checkbox>
-          <checkbox id="PronIndefTypeIntPhraseOther" checked="yes" dataItem="indefTypeIntOther">In my language, these interrogative words may occur as follows with respect to the indefinite word: <textBox  id="PronIndefTypeIntPhraseOtherContent" dataItem="indefTypeIntOther" rows="2"/></checkbox>
+          <checkbox id="PronIndefTypeIntPhraseOther" checked="yes" dataItem="indefTypeIntOther">In my language, these interrogative pronouns may occur as follows with respect to the indefinite word: <textBox  id="PronIndefTypeIntPhraseOtherContent" dataItem="indefTypeIntOther" rows="2"/></checkbox>
        </checkboxGroup>	
-       <prompt id="PronIndefTypeIntPhraseNoCheckPrompt" show="swPronIndefTypeIntPhraseAndNoCheck">WARNING: You need to check at least one box to describe where these interrogative words and indefinite words occur in your language, or change the answer above to a different form.</prompt>
-       <instruction id="PronIndefTypeIntEitherRestrictedInstruction" show="swPronIndefTypeIntEitherRestricted">In the lexicon, mark those interrogative words which can only occur before the indefinite word with the feature <feature>DP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>DP-final</feature>.  Do not enter either feature on any interrogative words which can occur on either side.</instruction>           
+       <prompt id="PronIndefTypeIntPhraseNoCheckPrompt" show="swPronIndefTypeIntPhraseAndNoCheck">WARNING: You need to check at least one box to describe where these interrogative pronouns and indefinite words occur in your language, or change the answer above to a different form.</prompt>
+       <instruction id="PronIndefTypeIntPhraseInstruction" show="swPronIndefTypeIntPhrase">In the lexicon, key the feature <feature>makeIndef</feature> on the indefinite word to give it a special category. </instruction>
+       <instruction id="PronIndefTypeIntEitherRestrictedInstruction" show="swPronIndefTypeIntEitherRestricted">In the lexicon, mark those interrogative pronouns which can only occur before the indefinite word with the feature <feature>DP-initial</feature> and those which can only occur after the indefinite word with the feature <feature>DP-final</feature>.  Do not enter either feature on any interrogative pronouns which can occur on either side.</instruction>           
        
-       <prompt id="PronIndefTypeIntOtherPrompt" show="swPronIndefTypeIntOther">Key some examples of the other way that your language expresses these indefinites that include an interrogative word here:</prompt>
+       <prompt id="PronIndefTypeIntOtherPrompt" show="swPronIndefTypeIntOther">Key some examples of the other way that your language expresses these indefinites that include an interrogative pronoun here:</prompt>
        <textBox id="PronIndefTypeIntOtherExample" dataItem="indefTypeIntOtherExample" show="swPronIndefTypeIntOther"/>
 <br/>
 <br/>
@@ -151,6 +162,11 @@
       <whenCheckbox button="PronIndefTypeIntPhraseBefore"/>
       <and/>
       <whenCheckbox button="PronIndefTypeIntPhraseAfter"/>
+   </showWhen>
+   <showWhen id="swPronIndefTypeQAndIntNone">
+      <whenCheckbox button="PronIndefTypeQNone"/>
+      <and/>
+      <whenCheckbox button="PronIndefTypeIntNone"/>
    </showWhen>
    
      &TechnicalTerms; 
