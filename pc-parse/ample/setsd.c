@@ -885,6 +885,7 @@ AmpleData *		pAmple_in;
 AmpleAllomorphList * alp;
 char * pszFullRedup;
 char * pszPartialRedup;
+char * pszPartialRedup2;
 char                 szTokenBuffer[BUFSIZE];
 int iTokenLen;
 int                  bIsCaps = FALSE;
@@ -955,7 +956,8 @@ if (pszFullRedup != NULL)
   pAmple_in->pFullRedupAllos = pFullRedupAllo;
 }
 pszPartialRedup = strstr(pszAllo_in, "[");
-if (pszPartialRedup != NULL)
+ pszPartialRedup2 = strstr(pszAllo_in, "^"); // look for index, too
+if (pszPartialRedup != NULL && pszPartialRedup2 != NULL)
   {
 	char * pszPartialPostfix;
 	pPartialRedupAllo = (PartialReduplication *)allocMemory(sizeof(PartialReduplication));

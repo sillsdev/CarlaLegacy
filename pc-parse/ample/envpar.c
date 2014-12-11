@@ -2236,6 +2236,78 @@ for ( q = pszOutput_in, p = pszCDATA_in ; *p ; ++p )
 
 /*************************************************************************
  * NAME
+ *    copyPartialRedupIndexedClass
+ * DESCRIPTION
+ *    make a copy of an copyPartialRedupIndexedClass struct
+ * RETURN VALUE
+ *    new copy
+ */
+PartialRedupIndexedClass * copyPartialRedupIndexedClass( PartialRedupIndexedClass *ic )
+{
+PartialRedupIndexedClass * icp;
+PartialRedupIndexedClass * icp0;
+  if ( ic == NULL)
+    return NULL;
+
+icp0 = icp = (PartialRedupIndexedClass *)allocMemory(sizeof(PartialRedupIndexedClass));
+while ( ic )
+  {
+    icp->pStringClass = ic->pStringClass;
+    icp->pszMember = duplicateString(ic->pszMember);
+    icp->iIndex = ic->iIndex;
+    icp->pszCharacters = duplicateString(ic->pszCharacters);
+    if (ic->pNext != NULL)
+      {
+	icp->pNext = (PartialRedupIndexedClass *)allocMemory(sizeof(PartialRedupIndexedClass));
+	icp = icp->pNext;
+      }
+    else
+      icp->pNext = NULL;
+    ic = ic->pNext;
+  }
+return (icp0);
+
+}
+
+/*************************************************************************
+ * NAME
+ *    copy_env_item
+ * DESCRIPTION
+ *    make a copy of an AmpleEnvItem struct
+ * RETURN VALUE
+ *    new copy
+ */
+AmpleEnvItem * copy_env_item( AmpleEnvItem *ei )
+{
+AmpleEnvItem * eip;
+AmpleEnvItem * eip0;
+  if ( ei == NULL)
+    return NULL;
+
+eip0 = eip = (AmpleEnvItem *)allocMemory(sizeof(AmpleEnvItem));
+while ( ei )
+  {
+    eip->iFlags = ei->iFlags;
+    if (eip->iFlags & E_REDUPCLASS)
+      {
+	eip->u.pClass = (PartialRedupIndexedClass *)copyPartialRedupIndexedClass((PartialRedupIndexedClass *)ei->u.pClass);
+      }
+    else
+      eip->u = ei->u;
+    if (ei->pNext != NULL)
+      {
+	eip->pNext = (AmpleEnvItem *)allocMemory(sizeof(AmpleEnvItem));
+	eip = eip->pNext;
+      }
+    else
+      eip->pNext = NULL;
+    ei = ei->pNext;
+  }
+return (eip0);
+}
+
+/*************************************************************************
+ * NAME
  *    free_env_item
  * DESCRIPTION
  *    free the memory used by a list of AmpleEnvItem struct
@@ -2253,6 +2325,42 @@ while (ei)
 	ei = ei->pNext;
 	freeMemory( (char *)eip );
 	}
+}
+
+/*************************************************************************
+ * NAME
+ *    copyAmpleEnvConstraint
+ * DESCRIPTION
+ *    make a copy of an AmpleEnvConstraint struct
+ * RETURN VALUE
+ *    new copy
+ */
+AmpleEnvConstraint * copyAmpleEnvConstraint( AmpleEnvConstraint *ec )
+{
+AmpleEnvConstraint * ecp;
+AmpleEnvConstraint * ecp0;
+if ( ec == NULL)
+    return NULL;
+
+ecp0 = ecp = (AmpleEnvConstraint *)allocMemory(sizeof(AmpleEnvConstraint));
+while ( ec )
+  {
+    ecp->bNot = ec->bNot;
+    ecp->eType = ec->eType;
+    ecp->bUsesPrevWord = ec->bUsesPrevWord;
+    ecp->bUsesNextWord = ec->bUsesNextWord;
+    ecp->pLeftEnv = copy_env_item(ec->pLeftEnv);
+    ecp->pRightEnv = copy_env_item(ec->pRightEnv);
+    if (ec->pNext != NULL)
+      {
+	ecp->pNext = (AmpleEnvConstraint *)allocMemory(sizeof(AmpleEnvConstraint));
+	ecp = ecp->pNext;
+      }
+    else
+      ecp->pNext = NULL;
+    ec = ec->pNext;
+  }
+return (ecp0);
 }
 
 /*************************************************************************

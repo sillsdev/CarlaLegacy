@@ -1,15 +1,18 @@
 /* VERSION.H - version number and date information for AMPLE
  ***************************************************************************
- * Copyright 1996 - 2006 by SIL International.  All rights reserved.
+ * Copyright 1996 - 2014 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 16		/* bug fix or other minor change */
-#define DATE "September 17, 2012"	/* date of release version */
-#define YEAR "2012"		/* used for copyright notice in banner */
+#define PATCHLEVEL 17		/* bug fix or other minor change */
+#define DATE "December 11, 2014"	/* date of release version */
+#define YEAR "2014"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 11-Dec-2014  hab  - Fix bug: partial reduplication could use wrong
+ * [3.12.17]             environment when the same allomorph was found in
+  *                      an earlier path.
  * 17-Sep-2012  hab  - Fix bug: when using allomorph IDs and a record had
  * [3.12.16]             two or more morph types, the allomorph ID was lost.
  * 23-Mar-2012  hab  - Fix bug: when a partial reduplication allomorph was an

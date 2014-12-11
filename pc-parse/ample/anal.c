@@ -63,6 +63,7 @@ static AmpleAllomorph *	copy_am		P((int              etype,
 					   AmpleData *      pAmple_in));
 static AmpleAmlist *	get_entries	P((char *      key,
 					   int         etype,
+					   AmpleEnvConstraintList **partialRedupOriginalEnvs,
 					   AmpleData * pAmple_in));
 static int		get_prefix	P((AmpleHeadList * head,
 					   char *          tail,
@@ -1086,6 +1087,7 @@ char                 *pszMorphName;
 AmpleAllomorph *      pAllo;
 AmpleAlloEnv * pEnv;
 int bFound;
+int bFoundAMatch = FALSE;
 int size;
 
 if (pIndexedClass == NULL)
@@ -1157,7 +1159,7 @@ for ( sp = pIndexedClass->pStringClass->pMembers;
 		  *amset = createPartialRedupAmlist(*amset, etype, pPartialRedup,
 						   *pszMatchBeg - key, pAmple_in);
 
-		/* adjust the classes in the environment to be the same as what matched*/
+		/* adjust the classes in the environment to be the same as what matched */
 		for (pEnv = pAllo->pEnvironment;
 		 pEnv != NULL;
 		 pEnv = pEnv->pLink)
@@ -1182,12 +1184,32 @@ for ( sp = pIndexedClass->pStringClass->pMembers;
 			  }
 		  }
 		  }
+		bFoundAMatch = TRUE;
 	  }
 	  }
   }
-return(FALSE);
+return(bFoundAMatch);
 }
 
+
+/*****************************************************************************
+ * NAME
+ *    createAmpleEnvConstraintList
+ * DESCRIPTION
+ *    get copies of surface values of a partial redup allomorph that matches
+ * RETURN VALUE
+ *    list of partial reduplication surface values which match
+ */
+static AmpleEnvConstraintList * createAmpleEnvConstraintList(AmpleEnvConstraintList *partialRedupEnvs,
+							     AmpleEnvConstraint * pStringCond)
+
+{
+AmpleEnvConstraintList * pNew;
+pNew = (AmpleEnvConstraintList *)allocMemory(sizeof(AmpleEnvConstraintList));
+pNew->pEnvs = copyAmpleEnvConstraint(pStringCond);
+pNew->pNext = partialRedupEnvs;
+return(pNew);
+}
 
 /*****************************************************************************
  * NAME
@@ -1199,7 +1221,8 @@ return(FALSE);
  *    list of partial reduplication dictionary entries which match
  */
 static AmpleAmlist * get_partial_redup(char *key, int etype, AmpleAmlist *amset,
-					   AmpleData *pAmple_in)
+				       AmpleEnvConstraintList **partialRedupOriginalEnvs, AmpleData *pAmple_in)
+
 {
 PartialReduplication *pPartialRedup;
 
@@ -1208,31 +1231,37 @@ for (pPartialRedup = pAmple_in->pPartialRedupAllos;
 	 pPartialRedup != NULL;
 	 pPartialRedup = pPartialRedup->pNext)
   {
-	int iPreLen = 0;
-	char *pszPre;
-	char *pszMatchBeg;
-	PartialRedupIndexedClass * pIndexedClass;
-	int bFound;
-	if ((etype != (pPartialRedup->iDicType & ATYPE)) &&
+    int iPreLen = 0;
+    char *pszPre;
+    char *pszMatchBeg;
+    PartialRedupIndexedClass * pIndexedClass;
+    int bFound;
+    AmpleAllomorph *pAllo;
+    AmpleAlloEnv *pEnv;
+    if ((etype != (pPartialRedup->iDicType & ATYPE)) &&
 	(etype != (pPartialRedup->iDicType & AMPLE_NFX)))	/* interfix is subtyped */
-	  continue;
-	pszPre = pPartialRedup->pszPrefix;
-	pszMatchBeg = key;
-	if (pszPre != NULL)
-	  {
+      continue;
+    pszPre = pPartialRedup->pszPrefix;
+    pszMatchBeg = key;
+    if (pszPre != NULL)
+      {
 	iPreLen = strlen(pszPre);
 	if (strncmp(key, pszPre, iPreLen) != 0)
 	  continue; /* does not match prefix */
 	pszMatchBeg += iPreLen;
-	  }
-	pIndexedClass = pPartialRedup->pIndexedStringClasses;
-	if (pIndexedClass == NULL)
-	  continue;  /* nothing to match; quit */
-	bFound = findPartialRedupMatches(pIndexedClass, key, &pszMatchBeg,
-					 pPartialRedup, etype, &amset, pAmple_in);
-	if (!bFound)
-	  continue; /* did not match */
-
+      }
+    pIndexedClass = pPartialRedup->pIndexedStringClasses;
+    if (pIndexedClass == NULL)
+      continue;  /* nothing to match; quit */
+    bFound = findPartialRedupMatches(pIndexedClass, key, &pszMatchBeg,
+				     pPartialRedup, etype, &amset, pAmple_in);
+    if (!bFound)
+      continue; /* did not match */
+    /* create list of original environments */
+    pAllo = amset->amp;
+    pEnv = pAllo->pEnvironment;
+    if (pEnv)
+      *partialRedupOriginalEnvs = createAmpleEnvConstraintList(*partialRedupOriginalEnvs, pEnv->pStringCond);
   }
 return amset;
 }
@@ -1351,6 +1380,135 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX) ||
 return amset;
 }
 
+/*****************************************************************************
+ * NAME
+ *    freePartialRedupSidedEnv
+ * DESCRIPTION
+ *    free memory used by partial reduplicaton original environment
+ *    indexed class
+ * RETURN VALUE
+ *    NONE
+ */
+static void freePartialRedupIndexedClass(PartialRedupIndexedClass * pricp)
+{
+PartialRedupIndexedClass * icp;
+PartialRedupIndexedClass * icp1;
+
+for (icp = pricp; icp; icp = icp1)
+  {
+    icp1 = icp->pNext;
+    freeMemory(icp->pszMember);
+    freeMemory(icp->pszCharacters);
+    freeMemory(icp);
+  }
+}
+
+/*****************************************************************************
+ * NAME
+ *    freePartialRedupSidedEnv
+ * DESCRIPTION
+ *    free memory used by partial reduplicaton original environment item
+ * RETURN VALUE
+ *    NONE
+ */
+static void freePartialRedupSidedEnv(AmpleEnvItem * aeip)
+{
+AmpleEnvItem * eip;
+AmpleEnvItem * eip1;
+
+for (eip = aeip; eip; eip = eip1)
+  {
+    eip1 = eip->pNext;
+    if (eip->iFlags & E_REDUPCLASS)
+      {
+	freePartialRedupIndexedClass(eip->u.pClass);
+      }
+    freeMemory(eip);
+  }
+}
+
+/*****************************************************************************
+ * NAME
+ *    freePartialRedupOriginalEnvs
+ * DESCRIPTION
+ *    free memory used by partial reduplicaton original environments
+ * RETURN VALUE
+ *    NONE
+ */
+static void freePartialRedupOriginalEnvs(AmpleEnvConstraintList * partialRedupOriginalEnvs)
+{
+AmpleEnvConstraintList * eclp;
+AmpleEnvConstraintList * eclp1;
+AmpleEnvConstraint * ecp;
+AmpleEnvConstraint * ecp1;
+
+for ( eclp = partialRedupOriginalEnvs; eclp; eclp = eclp1)
+  {
+    eclp1 = eclp->pNext;
+    for (ecp = eclp->pEnvs; ecp; ecp = ecp1)
+      {
+	ecp1 = ecp->pNext;
+	freePartialRedupSidedEnv(ecp->pLeftEnv);
+	freePartialRedupSidedEnv(ecp->pRightEnv);
+	freeMemory(ecp);
+      }
+    freeMemory(eclp);
+  }
+}
+
+/*****************************************************************************
+ * NAME
+ *    resetPartialRedupEnv
+ * DESCRIPTION
+ *    reset the environments for a partial reuplication allomorph
+ * RETURN VALUE
+ *    NONE
+ */
+static void resetPartialRedupEnv(AmpleEnvItem * pAlloEnv,
+					AmpleEnvItem * pSavedEnv)
+{
+if ((pAlloEnv->iFlags & E_REDUPCLASS) && (pSavedEnv->iFlags & E_REDUPCLASS))
+  {
+    PartialRedupIndexedClass * pAlloRedup = (PartialRedupIndexedClass *)pAlloEnv->u.pClass;
+    PartialRedupIndexedClass * pSavedRedup = (PartialRedupIndexedClass *)pSavedEnv->u.pClass;
+    freeMemory(pAlloRedup->pszMember);
+    pAlloRedup->pszMember = duplicateString(pSavedRedup->pszMember);
+  }
+}
+
+/*****************************************************************************
+ * NAME
+ *    resetPartialRedupStringEnvs
+ * DESCRIPTION
+ *    reset the environments for a partial reuplication allomorph
+ * RETURN VALUE
+ *    NONE
+ */
+static void resetPartialRedupStringEnvs(AmpleEnvConstraint * pAlloEnvs,
+					AmpleEnvConstraint * pSavedEnvs)
+{
+AmpleEnvConstraint * pAlloSEC;
+AmpleEnvConstraint * pSavedSEC;
+for (pAlloSEC = pAlloEnvs, pSavedSEC = pSavedEnvs;
+     pAlloSEC != NULL && pSavedSEC != NULL;
+     pAlloSEC = pAlloSEC->pNext, pSavedSEC = pSavedSEC->pNext)
+  {
+    AmpleEnvItem * pAlloItem;
+    AmpleEnvItem * pSavedItem;
+    for (pAlloItem = pAlloSEC->pLeftEnv, pSavedItem = pSavedSEC->pLeftEnv;
+	 pAlloItem != NULL && pSavedItem != NULL;
+	 pAlloItem = pAlloItem->pNext, pSavedItem = pSavedItem->pNext)
+      {
+	resetPartialRedupEnv(pAlloItem, pSavedItem);
+      }
+    for (pAlloItem = pAlloSEC->pRightEnv, pSavedItem = pSavedSEC->pRightEnv;
+	 pAlloItem != NULL && pSavedItem != NULL;
+	 pAlloItem = pAlloItem->pNext, pSavedItem = pSavedItem->pNext)
+      {
+	resetPartialRedupEnv(pAlloItem, pSavedItem);
+      }
+  }
+}
 
 /*****************************************************************************
  * NAME
@@ -1361,9 +1519,10 @@ return amset;
  * RETURN VALUE
  *    list of dictionary entries
  */
-static AmpleAmlist * get_entries( key, etype, pAmple_in)
+static AmpleAmlist * get_entries( key, etype, partialRedupOriginalEnvs, pAmple_in)
 char *		key;
 int		etype;
+AmpleEnvConstraintList **partialRedupOriginalEnvs;
 AmpleData *	pAmple_in;
 {
 AmpleAllomorph *	pAllomorphs = NULL;
@@ -1440,7 +1599,7 @@ amset = get_full_redup(key, etype, amset, pAmple_in);
 	 * check another morpheme in get_prefix(), etc., then the environment strings
 	 * can get changed.  If, however, we ensure that the partial redup allomorph
 	 * is first in the list, then we do not encounter this problem. */
-amset = get_partial_redup(key, etype, amset, pAmple_in);
+amset = get_partial_redup(key, etype, amset, partialRedupOriginalEnvs, pAmple_in);
 return(amset);
 } /* end get_entries() */
 
@@ -1473,6 +1632,8 @@ AmpleAllomorph *ap;
 AmpleAmlist *	pfxp;
 AmpleAmlist *	pfxlist;
 AmpleAmlist *	np;
+AmpleEnvConstraintList * pPartialRedupOriginalEnvs = NULL;
+AmpleEnvConstraintList * pPartialRedupOriginalEnv;
 int		nulls_next;	/* number of nulls we will have in the next
 				 * recursive pass */
 int		bAllomorphsTried = FALSE;
@@ -1527,15 +1688,22 @@ else
 	/*
 	 *	create list of all prefixes whose string matches
 	 */
-	pfxlist = get_entries( tail, AMPLE_PFX, pAmple_in);
+	pfxlist = get_entries( tail, AMPLE_PFX, &pPartialRedupOriginalEnvs, pAmple_in);
 	if (pfxlist != NULL)
 	bAllomorphsTried = TRUE;
+	pPartialRedupOriginalEnv = pPartialRedupOriginalEnvs;
 	/*
 	 *	for each allomorph in pfxlist
 	 */
 	for (pfxp = pfxlist ; pfxp != (AmpleAmlist *)NULL ; pfxp = pfxp->amlink)
 	{
 	ap = pfxp->amp;
+	if (pPartialRedupOriginalEnv)
+	  { /* is a partial redup;
+	       the string contents of the environment may have changed, so reset them */
+	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
+					pPartialRedupOriginalEnv->pEnvs);
+	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
 	/*
@@ -1674,6 +1842,8 @@ else
 		sgml_trace(pAmple_in, "</parseNode>\n", TRUE);
 
 		} /* end of each category pair loop */
+	if (pPartialRedupOriginalEnv != NULL)
+	  pPartialRedupOriginalEnv  = pPartialRedupOriginalEnv->pNext;
 	} /* end of each allomorph loop */
 	/*
 	 *	prefix list exhausted, so release any allocated space
@@ -1683,6 +1853,7 @@ else
 	np = pfxp->amlink;
 	freeMemory( (char *)pfxp );
 	}
+	freePartialRedupOriginalEnvs(pPartialRedupOriginalEnvs);
 	iTracingDepth_m--;
 
 	if (    (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON) &&
@@ -1832,6 +2003,8 @@ int		bAllomorphsTried = FALSE;
 int		bContinuation;
 int		bOldUsesPrev;
 int		bOldUsesNext;
+AmpleEnvConstraintList * pPartialRedupOriginalEnvs = NULL;
+AmpleEnvConstraintList * pPartialRedupOriginalEnv;
 #ifdef EXPERIMENTAL
 if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
 	(pAmple_in->iMaxAnalysesToReturn <= (int)uiAmbigCount_m))
@@ -1888,9 +2061,10 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 	 *	loop for each allomorph found
 	 */
 	ifxlist = get_entries( ifxtail, (what == AMPLE_NFX) ? AMPLE_NFXIFX : AMPLE_IFX,
-			   pAmple_in);
+			   &pPartialRedupOriginalEnvs, pAmple_in);
 	if (ifxlist != NULL)
 	bAllomorphsTried = TRUE;
+	pPartialRedupOriginalEnv = pPartialRedupOriginalEnvs;
 	for (ifxp = ifxlist ; ifxp != (AmpleAmlist *)NULL ; ifxp = ifxp->amlink)
 	{
 	/*
@@ -1899,6 +2073,12 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 	if (!ifx_loc(ifxp,tail,ifxtail,what, pAmple_in))
 		continue;			/* altogether invalid */
 	ap = ifxp->amp;
+	if (pPartialRedupOriginalEnv)
+	  { /* is a partial redup;
+	       the string contents of the environment may have changed, so reset them */
+	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
+					pPartialRedupOriginalEnv->pEnvs);
+	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
 	/*
@@ -2084,7 +2264,8 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 		sgml_trace(pAmple_in, "</parseNode>\n", TRUE);
 
 		} /* end of each category pair loop */
-
+	if (pPartialRedupOriginalEnv != NULL)
+	  pPartialRedupOriginalEnv  = pPartialRedupOriginalEnv->pNext;
 	} /* end of each allomorph loop */
 	/*
 	 *	infix list exhausted, so release allocated space
@@ -2094,8 +2275,8 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 	np = ifxp->amlink;
 	freeMemory( (char *)ifxp );
 	}
-
 	} /* end of loop generating all possible conceivable infixes */
+	freePartialRedupOriginalEnvs(pPartialRedupOriginalEnvs);
 
 iTracingDepth_m--;
 
@@ -2141,6 +2322,8 @@ int		bAllomorphsTried = FALSE;
 int		bContinuation;
 int		bOldUsesPrev;
 int		bOldUsesNext;
+AmpleEnvConstraintList * pPartialRedupOriginalEnvs = NULL;
+AmpleEnvConstraintList * pPartialRedupOriginalEnv;
 #ifdef EXPERIMENTAL
 if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
 	(pAmple_in->iMaxAnalysesToReturn <= (int)uiAmbigCount_m))
@@ -2187,9 +2370,10 @@ else
 	/*
 	 * create a list of all roots whose string matches
 	 */
-	rootlist = get_entries( tail, AMPLE_ROOT, pAmple_in);
+	rootlist = get_entries( tail, AMPLE_ROOT, &pPartialRedupOriginalEnvs, pAmple_in);
 	if (rootlist != NULL)
 	bAllomorphsTried = TRUE;
+	pPartialRedupOriginalEnv = pPartialRedupOriginalEnvs;
 	iTracingDepth_m++;
 	/*
 	 *	for each allomorph in rootlist
@@ -2197,6 +2381,12 @@ else
 	for (rootp=rootlist ; rootp!=(AmpleAmlist *)NULL ; rootp=rootp->amlink)
 	{
 	ap = rootp->amp;
+	if (pPartialRedupOriginalEnv)
+	  { /* is a partial redup;
+	       the string contents of the environment may have changed, so reset them */
+	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
+					pPartialRedupOriginalEnv->pEnvs);
+	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
 	/*
@@ -2315,7 +2505,8 @@ else
 		sgml_trace(pAmple_in, "</parseNode>\n", TRUE);
 
 		} /* end of root category loop */
-
+	if (pPartialRedupOriginalEnv != NULL)
+	  pPartialRedupOriginalEnv  = pPartialRedupOriginalEnv->pNext;
 	} /* end of each allomorph loop */
 	/*
 	 *	root list exhausted, so release any allocated space
@@ -2328,6 +2519,7 @@ else
 	freeMemory( (char *)rootp->amp );
 	freeMemory( (char *)rootp );
 	}
+	freePartialRedupOriginalEnvs(pPartialRedupOriginalEnvs);
 	iTracingDepth_m--;
 	if (rootlist != (AmpleAmlist *)NULL)
 	bRootFound_m = TRUE;	  /* have found a root form, even if invalid */
@@ -2406,6 +2598,8 @@ int		bAllomorphsTried = FALSE;
 int		bContinuation;
 int		bOldUsesPrev;
 int		bOldUsesNext;
+AmpleEnvConstraintList * pPartialRedupOriginalEnvs = NULL;
+AmpleEnvConstraintList * pPartialRedupOriginalEnv;
 #ifdef EXPERIMENTAL
 if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
 	(pAmple_in->iMaxAnalysesToReturn <= (int)uiAmbigCount_m))
@@ -2454,15 +2648,22 @@ else
 	/*
 	 *	create list of all interfixes whose string matches
 	 */
-	nfxlist = get_entries( tail, AMPLE_NFX, pAmple_in);
+	nfxlist = get_entries( tail, AMPLE_NFX, &pPartialRedupOriginalEnvs, pAmple_in);
 	if (nfxlist != NULL)
 	bAllomorphsTried = TRUE;
+	pPartialRedupOriginalEnv = pPartialRedupOriginalEnvs;
 	/*
 	 *	for each allomorph in nfxlist
 	 */
 	for (nfxp = nfxlist ; nfxp != (AmpleAmlist *)NULL ; nfxp = nfxp->amlink)
 	{
 	ap = nfxp->amp;
+	if (pPartialRedupOriginalEnv)
+	  { /* is a partial redup;
+	       the string contents of the environment may have changed, so reset them */
+	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
+					pPartialRedupOriginalEnv->pEnvs);
+	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
 	/*
@@ -2599,6 +2800,8 @@ else
 		sgml_trace(pAmple_in, "</parseNode>\n", TRUE);
 
 		} /* end of each category pair loop */
+	if (pPartialRedupOriginalEnv != NULL)
+	  pPartialRedupOriginalEnv  = pPartialRedupOriginalEnv->pNext;
 	} /* end of each allomorph loop */
 	/*
 	 *	interfix list exhausted, so release any allocated space
@@ -2608,6 +2811,7 @@ else
 	np = nfxp->amlink;
 	freeMemory( (char *)nfxp );
 	}
+	freePartialRedupOriginalEnvs(pPartialRedupOriginalEnvs);
 	iTracingDepth_m--;
 
 	if (    (pAmple_in->eTraceAnalysis == AMPLE_TRACE_ON) &&
@@ -2782,6 +2986,8 @@ AmpleParseList *	pNewParse;
 int		bOldUsesPrev;
 int		bOldUsesNext;
 int             bAllAllosAreNull = FALSE;
+AmpleEnvConstraintList * pPartialRedupOriginalEnvs = NULL;
+AmpleEnvConstraintList * pPartialRedupOriginalEnv;
 
 #ifdef EXPERIMENTAL
 if ((pAmple_in->iMaxAnalysesToReturn != MAX_ANALYSES_TO_RETURN_NO_LIMIT) &&
@@ -2825,9 +3031,10 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 	/*
 	 *	create list of all suffixes whose string matches
 	 */
-	sfxlist = get_entries( tail, AMPLE_SFX, pAmple_in);
+	sfxlist = get_entries( tail, AMPLE_SFX, &pPartialRedupOriginalEnvs, pAmple_in);
 	if (sfxlist != NULL)
 	bAllomorphsTried = TRUE;
+	pPartialRedupOriginalEnv = pPartialRedupOriginalEnvs;
 	iTracingDepth_m++;
 	/*
 	 *	for each allomorph in sfxlist
@@ -2835,6 +3042,12 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 	for (sfxp = sfxlist ; sfxp != (AmpleAmlist *)NULL ; sfxp = sfxp->amlink)
 	{
 	ap = sfxp->amp;
+	if (pPartialRedupOriginalEnv)
+	  { /* is a partial redup;
+	       the string contents of the environment may have changed, so reset them */
+	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
+					pPartialRedupOriginalEnv->pEnvs);
+	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
 	/*
@@ -2964,7 +3177,8 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 		sgml_trace(pAmple_in, "</parseNode>\n", TRUE);
 
 		} /* end of each category pair loop */
-
+	if (pPartialRedupOriginalEnv != NULL)
+	  pPartialRedupOriginalEnv  = pPartialRedupOriginalEnv->pNext;
 	} /* end of each allomorph loop */
 	/*
 	 *	suffix list exhausted, so release any allocated space
@@ -2978,6 +3192,7 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 	np = sfxp->amlink;
 	freeMemory( (char *)sfxp );
 	}
+	freePartialRedupOriginalEnvs(pPartialRedupOriginalEnvs);
 	iTracingDepth_m--;
 
 	if (    (sfxlist == NULL) &&
@@ -7568,7 +7783,7 @@ for ( pszInfixTail = pszRestOfWord_in; *pszInfixTail != NUL ; ++pszInfixTail )
 	  if ((iState_in == AMPLE_STATE_INTERFIX) ||
 	  (iState_in == AMPLE_STATE_ROOT))
 	iType = AMPLE_NFXIFX;
-	  pAlloList = get_entries( pszInfixTail, iType, pAmple_in);
+	  pAlloList = get_entries( pszInfixTail, iType, NULL, pAmple_in);
 				/* merge/sort by infix so the result has */
 				/* similar infixes together */
 	pResultList = mergeAmpleAmlists( pResultList, pAlloList);
@@ -7597,33 +7812,33 @@ switch(iState_in)
   {
   case AMPLE_STATE_BOW:		/* Begin-of-Word and Prefix are the same */
   case AMPLE_STATE_PREFIX:
-	pResultList = get_entries( pszRestOfWord_in, AMPLE_PFX, pAmple_in);
+        pResultList = get_entries( pszRestOfWord_in, AMPLE_PFX, NULL, pAmple_in);
 	pAlloList   = getInfixEntries( pszRestOfWord_in, iState_in, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
-	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_ROOT, pAmple_in);
+	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_ROOT, NULL, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	break;
   case AMPLE_STATE_ROOT:
-	pResultList = get_entries( pszRestOfWord_in, AMPLE_ROOT, pAmple_in);
-	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_SFX, pAmple_in);
+        pResultList = get_entries( pszRestOfWord_in, AMPLE_ROOT, NULL, pAmple_in);
+	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_SFX, NULL, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	pAlloList   = getInfixEntries( pszRestOfWord_in, iState_in, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	if (pAmple_in->iMaxInterfixCount > 0)
 	  {
-	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_NFX, pAmple_in);
+	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_NFX, NULL, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	  }
 	break;
   case AMPLE_STATE_INTERFIX:
-	pResultList = get_entries( pszRestOfWord_in, AMPLE_NFX, pAmple_in);
-	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_ROOT, pAmple_in);
+	pResultList = get_entries( pszRestOfWord_in, AMPLE_NFX, NULL, pAmple_in);
+	pAlloList   = get_entries( pszRestOfWord_in, AMPLE_ROOT, NULL, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	pAlloList   = getInfixEntries( pszRestOfWord_in, iState_in, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	break;
   case AMPLE_STATE_SUFFIX:
-	pResultList = get_entries( pszRestOfWord_in, AMPLE_SFX, pAmple_in);
+	pResultList = get_entries( pszRestOfWord_in, AMPLE_SFX, NULL, pAmple_in);
 	pAlloList   = getInfixEntries( pszRestOfWord_in, iState_in, pAmple_in);
 	pResultList = concatAmpleAmlists( pResultList, pAlloList);
 	break;
