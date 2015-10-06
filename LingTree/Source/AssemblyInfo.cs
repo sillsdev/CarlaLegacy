@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SIL International")]
 [assembly: AssemblyProduct("LingTree")]
-[assembly: AssemblyCopyright("Copyright © SIL International 2002-2011")]
+[assembly: AssemblyCopyright("Copyright © SIL International 2002-2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -26,7 +26,7 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("0.7.3.*")]
+[assembly: AssemblyVersion("0.7.4.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the

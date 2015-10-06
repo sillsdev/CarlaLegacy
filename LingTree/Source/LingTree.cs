@@ -1128,6 +1128,7 @@ namespace LingTree
 				tree.LexGlossGapAdjustment = GetIntFromNodeContent("/LingTreeTree/LexGlossGapAdjustment", doc);
 				tree.TrySmoothing = GetBoolFromNodeContent("/LingTreeTree/TrySmoothing", doc);
 				tree.TryPixelOffset = GetBoolFromNodeContent("/LingTreeTree/TryPixelOffset", doc);
+                tree.ShowFlatView = GetBoolFromNodeContent("/LingTreeTree/ShowFlatView", doc);
 				tree.GlossFontFace = GetNodeContent("/LingTreeTree/GlossFontFace", doc);
 				tree.GlossFontSize = GetIntFromNodeContent("/LingTreeTree/GlossFontSize", doc);
 				tree.GlossFontStyle = GetFontStyleFromNodeContent("/LingTreeTree/GlossFontStyle", doc);
