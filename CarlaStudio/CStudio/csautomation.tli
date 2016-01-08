@@ -1,0 +1,201 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (726c810e).
+//
+// csautomation.tli
+//
+// Wrapper implementations for Win32 type library ..\..\csautomation\csautomation.tlb
+// compiler-generated file created 01/05/16 at 09:32:16 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface ITask wrapper method implementations
+//
+
+inline HRESULT ITask::Perform ( ) {
+    HRESULT _hr = raw_Perform();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ITask::Save ( _bstr_t bstrPath ) {
+    HRESULT _hr = raw_Save(bstrPath);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ITask::Load ( _bstr_t bstrPath ) {
+    HRESULT _hr = raw_Load(bstrPath);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t ITask::GetInputPath ( ) {
+    BSTR _result;
+    HRESULT _hr = get_InputPath(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ITask::PutInputPath ( _bstr_t pVal ) {
+    HRESULT _hr = put_InputPath(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ITask::GetDesiredOutputPath ( ) {
+    BSTR _result;
+    HRESULT _hr = get_DesiredOutputPath(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ITask::PutDesiredOutputPath ( _bstr_t pVal ) {
+    HRESULT _hr = put_DesiredOutputPath(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ITask::GetSourceLangCode ( ) {
+    BSTR _result;
+    HRESULT _hr = get_SourceLangCode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ITask::PutSourceLangCode ( _bstr_t pVal ) {
+    HRESULT _hr = put_SourceLangCode(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ITask::GetTargetLangCode ( ) {
+    BSTR _result;
+    HRESULT _hr = get_TargetLangCode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ITask::PutTargetLangCode ( _bstr_t pVal ) {
+    HRESULT _hr = put_TargetLangCode(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ITask::GetAnalysisMarkers ( ) {
+    BSTR _result;
+    HRESULT _hr = get_AnalysisMarkers(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ITask::PutAnalysisMarkers ( _bstr_t pVal ) {
+    HRESULT _hr = put_AnalysisMarkers(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline enum CSGOAL ITask::GetGoal ( ) {
+    enum CSGOAL _result;
+    HRESULT _hr = get_Goal(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ITask::PutGoal ( enum CSGOAL pVal ) {
+    HRESULT _hr = put_Goal(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ITask::GetInputIsInterlinear ( ) {
+    long _result;
+    HRESULT _hr = get_InputIsInterlinear(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ITask::PutInputIsInterlinear ( long pVal ) {
+    HRESULT _hr = put_InputIsInterlinear(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ITask::GetActualOutputPath ( ) {
+    BSTR _result;
+    HRESULT _hr = get_ActualOutputPath(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ITask::PutActualOutputPath ( _bstr_t pVal ) {
+    HRESULT _hr = put_ActualOutputPath(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ITask::GetIncludeLinesWithSpecifiedMarkers ( ) {
+    long _result;
+    HRESULT _hr = get_IncludeLinesWithSpecifiedMarkers(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ITask::PutIncludeLinesWithSpecifiedMarkers ( long pVal ) {
+    HRESULT _hr = put_IncludeLinesWithSpecifiedMarkers(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ITask::GetMarkersToIncludeOrExclude ( ) {
+    BSTR _result;
+    HRESULT _hr = get_MarkersToIncludeOrExclude(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ITask::PutMarkersToIncludeOrExclude ( _bstr_t pVal ) {
+    HRESULT _hr = put_MarkersToIncludeOrExclude(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t ITask::GetLangCodes ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_LangCodes(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _bstr_t ITask::GetLangCodesString ( ) {
+    BSTR _result;
+    HRESULT _hr = get_LangCodesString(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum CSOUTPUTLOCATION ITask::GetOutputLocation ( ) {
+    enum CSOUTPUTLOCATION _result;
+    HRESULT _hr = get_OutputLocation(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ITask::PutOutputLocation ( enum CSOUTPUTLOCATION pVal ) {
+    HRESULT _hr = put_OutputLocation(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ITask::GetInterlinearWordMarker ( ) {
+    BSTR _result;
+    HRESULT _hr = get_InterlinearWordMarker(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ITask::PutInterlinearWordMarker ( _bstr_t pVal ) {
+    HRESULT _hr = put_InterlinearWordMarker(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT ITask::RetrieveIntergenSettings ( ) {
+    HRESULT _hr = raw_RetrieveIntergenSettings();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ITask::RetrieveTextInSettings ( ) {
+    HRESULT _hr = raw_RetrieveTextInSettings();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}

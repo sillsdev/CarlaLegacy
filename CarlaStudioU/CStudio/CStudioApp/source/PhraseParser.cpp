@@ -341,8 +341,8 @@ BOOL CPhraseParser::preprocessDicts(CProcessStatus* pStatus)
 	// note: if this was invoked by a call from CSRemote, then the send will hang us forever
 	// thus, we have this bRemoteCall flag to prevent that.  If we are called from
 	// Shoebox, it will have saved everything anyways as part of its batch file command
-
-	::SendMessage(HWND_BROADCAST, wm_RemoteSaveAll, NULL, NULL);
+	/*  Windows 10 hangs on this; never worked anyway, so commenting it off
+	::SendMessage(HWND_BROADCAST, wm_RemoteSaveAll, NULL, NULL); */
 
 	m_pSourceLang->prepareMFSForProcessors();
 

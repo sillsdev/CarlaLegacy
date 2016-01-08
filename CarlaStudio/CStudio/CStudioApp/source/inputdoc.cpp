@@ -313,8 +313,9 @@ BOOL CInputDoc::doRunProcessors(CRemoteCommand* pRemoteCmd/*=NULL*/)
 	// note: if this was invoked by a call from CSRemote, then the send will hang us forever
 	// thus, we have this bRemoteCall flag to prevent that.  If we are called from
 	// Shoebox, it will have saved everything anyways as part of its batch file command
+	/*  Windows 10 hangs on this; never worked anyway, so commenting it off
 	if(!pRemoteCmd)
-		SendMessage(HWND_BROADCAST, wm_RemoteSaveAll, NULL, NULL);
+		SendMessage(HWND_BROADCAST, wm_RemoteSaveAll, NULL, NULL); */
 
 	//------ SETUP THE TEMP DIRECTORY ----------------------
 
@@ -545,12 +546,13 @@ BOOL CInputDoc::doRunProcessors(CRemoteCommand* pRemoteCmd/*=NULL*/)
 
 #ifndef rde265
 	//----- ask Shoebox, to refresh all (if this isn't a remote command)
-	if(!pRemoteCmd)
+//	if(!pRemoteCmd)
 #else
 	//----- ask Shoebox, if it is running, to do a save all
 #endif  // rde265
+	/*  Windows 10 hangs on this; never worked anyway, so commenting it off
 	PostMessage(HWND_BROADCAST, wm_RemoteRefreshAll, NULL, NULL);	// don't wait for it to finish that
-
+*/
 	return bOK;
 }
 

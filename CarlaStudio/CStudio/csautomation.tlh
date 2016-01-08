@@ -1,0 +1,208 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.9782.0 (726c810e).
+//
+// csautomation.tlh
+//
+// C++ source equivalent of Win32 type library ..\..\csautomation\csautomation.tlb
+// compiler-generated file created 01/05/16 at 09:32:16 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ TaskImpl;
+struct __declspec(uuid("61fe777c-09df-11d3-8664-e0570bc14908"))
+/* dual interface */ ITask;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ITask, __uuidof(ITask));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("61fe777d-09df-11d3-8664-e0570bc14908"))
+TaskImpl;
+    // [ default ] interface ITask
+
+struct __declspec(uuid("61fe777c-09df-11d3-8664-e0570bc14908"))
+ITask : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetInputPath,put=PutInputPath))
+    _bstr_t InputPath;
+    __declspec(property(get=GetDesiredOutputPath,put=PutDesiredOutputPath))
+    _bstr_t DesiredOutputPath;
+    __declspec(property(get=GetSourceLangCode,put=PutSourceLangCode))
+    _bstr_t SourceLangCode;
+    __declspec(property(get=GetTargetLangCode,put=PutTargetLangCode))
+    _bstr_t TargetLangCode;
+    __declspec(property(get=GetAnalysisMarkers,put=PutAnalysisMarkers))
+    _bstr_t AnalysisMarkers;
+    __declspec(property(get=GetGoal,put=PutGoal))
+    enum CSGOAL Goal;
+    __declspec(property(get=GetInputIsInterlinear,put=PutInputIsInterlinear))
+    long InputIsInterlinear;
+    __declspec(property(get=GetActualOutputPath,put=PutActualOutputPath))
+    _bstr_t ActualOutputPath;
+    __declspec(property(get=GetIncludeLinesWithSpecifiedMarkers,put=PutIncludeLinesWithSpecifiedMarkers))
+    long IncludeLinesWithSpecifiedMarkers;
+    __declspec(property(get=GetMarkersToIncludeOrExclude,put=PutMarkersToIncludeOrExclude))
+    _bstr_t MarkersToIncludeOrExclude;
+    __declspec(property(get=GetLangCodes))
+    _variant_t LangCodes;
+    __declspec(property(get=GetLangCodesString))
+    _bstr_t LangCodesString;
+    __declspec(property(get=GetOutputLocation,put=PutOutputLocation))
+    enum CSOUTPUTLOCATION OutputLocation;
+    __declspec(property(get=GetInterlinearWordMarker,put=PutInterlinearWordMarker))
+    _bstr_t InterlinearWordMarker;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Perform ( );
+    HRESULT Save (
+        _bstr_t bstrPath );
+    HRESULT Load (
+        _bstr_t bstrPath );
+    _bstr_t GetInputPath ( );
+    void PutInputPath (
+        _bstr_t pVal );
+    _bstr_t GetDesiredOutputPath ( );
+    void PutDesiredOutputPath (
+        _bstr_t pVal );
+    _bstr_t GetSourceLangCode ( );
+    void PutSourceLangCode (
+        _bstr_t pVal );
+    _bstr_t GetTargetLangCode ( );
+    void PutTargetLangCode (
+        _bstr_t pVal );
+    _bstr_t GetAnalysisMarkers ( );
+    void PutAnalysisMarkers (
+        _bstr_t pVal );
+    enum CSGOAL GetGoal ( );
+    void PutGoal (
+        enum CSGOAL pVal );
+    long GetInputIsInterlinear ( );
+    void PutInputIsInterlinear (
+        long pVal );
+    _bstr_t GetActualOutputPath ( );
+    void PutActualOutputPath (
+        _bstr_t pVal );
+    long GetIncludeLinesWithSpecifiedMarkers ( );
+    void PutIncludeLinesWithSpecifiedMarkers (
+        long pVal );
+    _bstr_t GetMarkersToIncludeOrExclude ( );
+    void PutMarkersToIncludeOrExclude (
+        _bstr_t pVal );
+    _variant_t GetLangCodes ( );
+    _bstr_t GetLangCodesString ( );
+    enum CSOUTPUTLOCATION GetOutputLocation ( );
+    void PutOutputLocation (
+        enum CSOUTPUTLOCATION pVal );
+    _bstr_t GetInterlinearWordMarker ( );
+    void PutInterlinearWordMarker (
+        _bstr_t pVal );
+    HRESULT RetrieveIntergenSettings ( );
+    HRESULT RetrieveTextInSettings ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Perform ( ) = 0;
+    virtual HRESULT __stdcall raw_Save (
+        BSTR bstrPath ) = 0;
+    virtual HRESULT __stdcall raw_Load (
+        BSTR bstrPath ) = 0;
+    virtual HRESULT __stdcall get_InputPath (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_InputPath (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_DesiredOutputPath (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_DesiredOutputPath (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_SourceLangCode (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_SourceLangCode (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_TargetLangCode (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_TargetLangCode (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_AnalysisMarkers (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_AnalysisMarkers (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Goal (
+        enum CSGOAL * pVal ) = 0;
+    virtual HRESULT __stdcall put_Goal (
+        enum CSGOAL pVal ) = 0;
+    virtual HRESULT __stdcall get_InputIsInterlinear (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_InputIsInterlinear (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_ActualOutputPath (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_ActualOutputPath (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_IncludeLinesWithSpecifiedMarkers (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_IncludeLinesWithSpecifiedMarkers (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get_MarkersToIncludeOrExclude (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_MarkersToIncludeOrExclude (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_LangCodes (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_LangCodesString (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OutputLocation (
+        enum CSOUTPUTLOCATION * pVal ) = 0;
+    virtual HRESULT __stdcall put_OutputLocation (
+        enum CSOUTPUTLOCATION pVal ) = 0;
+    virtual HRESULT __stdcall get_InterlinearWordMarker (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_InterlinearWordMarker (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall raw_RetrieveIntergenSettings ( ) = 0;
+    virtual HRESULT __stdcall raw_RetrieveTextInSettings ( ) = 0;
+};
+
+enum CSGOAL
+{
+    csSourceAna = 0,
+    csGlossedInterlinear = 1,
+    csAutoSynthCheck = 2,
+    csTargetANA = 3,
+    csTargetText = 4
+};
+
+enum CSOUTPUTLOCATION
+{
+    csReplaceInput = 0,
+    csSameFolderAsInput = 1,
+    csSpecifiedPath = 2
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "csautomation.tli"
+
+#pragma pack(pop)

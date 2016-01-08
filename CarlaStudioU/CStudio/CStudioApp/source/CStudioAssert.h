@@ -17,3 +17,4 @@ void handleFailedAssert(LPCSTR lpszFileName, int iLine, LPCSTR lpszDate);
 	if (!(f) ) \
 			handleFailedAssert(__FILE__, __LINE__, __DATE__); \
 	} while (0) \
+

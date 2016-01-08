@@ -755,7 +755,8 @@ BOOL CQuickParseView::preprocessDicts(CProcessStatus* pStatus)
 	// thus, we have this bRemoteCall flag to prevent that.  If we are called from
 	// Shoebox, it will have saved everything anyways as part of its batch file command
 
-	::SendMessage(HWND_BROADCAST, wm_RemoteSaveAll, NULL, NULL);
+		/*  Windows 10 hangs on this; never worked anyway, so commenting it off
+	::SendMessage(HWND_BROADCAST, wm_RemoteSaveAll, NULL, NULL); */
 
 
 	// done by our caller if (!pStatus->setupTempDir(pSourceLang->getName()))
