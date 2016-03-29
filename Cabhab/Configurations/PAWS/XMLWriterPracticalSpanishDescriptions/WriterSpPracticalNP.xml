@@ -470,14 +470,22 @@
 		   </p>
 		   	   
 			<p>
-				<content>Algunos ejemplos de frases nominales poseídas por posesivos simples y subordinados en el </content>
+				<content>Algunos ejemplos de frases nominales poseídas por posesivos simples en el </content>
+				<langName/>
+				<content> son:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="np/possessorExample"/>
+			</example>
+			<p>
+				<content>Algunos ejemplos de frases nominales poseídas por posesivos subordinados en el </content>
 				<langName/>
 				<content> son:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/embeddedExample"/>
 			</example>
-		   <p show="swNPPossNPNotYesOnly">
+			<p show="swNPPossNPNotYesOnly">
 				<content>Algunos ejemplos de frases </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">preposicionales</caseText>

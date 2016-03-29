@@ -64,10 +64,10 @@
 			<xsl:value-of select="$prmSDateTime"/>
 		</date>
 		<version>Ébauche générée par le programme de PAWS <xsl:value-of select="$prmSVersionNumber"/></version>
-		<contents showLevel="3" label="Contenido"/>
+		<contents showLevel="3" label="Contenu"/>
 	</xsl:template>
 	<xsl:template name="OutputContentsElement">
-		<contents showLevel="3" label="Contenido"/>
+		<contents showLevel="3" label="Contenu"/>
 	</xsl:template>
 
 </xsl:stylesheet>

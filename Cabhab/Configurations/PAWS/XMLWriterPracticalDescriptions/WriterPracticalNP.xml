@@ -465,14 +465,22 @@
 		   </p>
 		   
 			<p>
-				<content>Examples of possessed nominal phrases with simple and embedded possessors in </content>
+				<content>Examples of simple possessed nominal phrases in </content>
+				<langName/>
+				<content> include:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="np/possessorExample"/>
+			</example>
+			<p>
+				<content>Examples of possessed nominal phrases with embedded possessors in </content>
 				<langName/>
 				<content> include:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/embeddedExample"/>
 			</example>
-		   <p show="swNPPossNPNotYesOnly">
+			<p show="swNPPossNPNotYesOnly">
 				<content>Examples with </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">prepositional</caseText>

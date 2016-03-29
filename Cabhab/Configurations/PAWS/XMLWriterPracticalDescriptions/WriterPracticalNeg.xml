@@ -546,210 +546,189 @@
         
         </section2>
        <section2 id="sNegType">
-          <secTitle>Type de Système de Négation</secTitle>
+          <secTitle>Type of Negation System</secTitle>
           <p contentType="ctComparativeIntro">
-             <content>Quant à la négation les langues se groupent selon deux classifications majeures: les langues qui changent de polarité, et les langues à concordance négative, une différence exemplifiée par l’anglais contre le français.</content>
+             <content>Languages fall into two major classifications with respect to negation: Polarity Changing languages versus Negative Concord languages, exemplified by standard English versus Spanish or Black English, respectively.</content>
           </p>
           <p contentType="ctComparativeIntro">
-             <content>Les langues qui changent de polarité permettent normalement un seul élément négatif dans la phrase pour exprimer la négativité ( sur le plan technique n’importe quel nombre impair peut exprimer la polarité négative) parce que la présence de deux éléments négatifs (voire n’importe quel nombre pair) change la polarité en positive. Par exemple en anglais, </content>
-             <langData>John saw nothing</langData><gloss><content>  « Jean n’a rien vu »</content></gloss>
-             <content> est négatif, mais </content>
-             <langData>John didn’t see nothing</langData><gloss><content> (Jean n’a rien vu)</content></gloss>
-             <content> est positif parce la phrase veut dire la même chose que </content>
-             <langData>John saw something</langData><gloss><content>  « Jean a vu quelque chose »</content></gloss>
-             <content>.  La version à auxiliaire négatif s’exprime </content>
-             <langData>John didn’t see anything</langData><gloss><content>  « Jean n’a vu n’importe qui »</content></gloss>
-             <content>, celle-ci utilise dans la position de l’objet ce qu’on appelle un « élément de polarité negative ».  Ces éléments de polarité peuvent être des sujets dans certains contextes sans autre négation (exemple: </content>
-             <langData>Anyone may come</langData><gloss><content> « N’importe qui peut venir »</content></gloss>
-             <content>), pourtant, ils doivent se mettre dans la position de l’objet lorsqu’un élément qui précède est au négatif. Par exemple, on peut dire </content>
-             <langData>Nobody saw anyone</langData><gloss><content>  « Personne n'a vu personne »</content></gloss>
-             <content> et </content>
-             <langData>Nowhere will they find anyone</langData><gloss><content>  « Ils ne trouveront personne nulle part »</content></gloss>
-             <content>.  Cependant, en l’absence du sujet négatif ou d’un adverbe négatif en tête de phrase on doit utiliser l’auxiliaire négatif, par exemple: </content>
-             <langData>We did not see anyone</langData><gloss><content>  « Nous n'avons vu personne »</content></gloss>
-             <content> et </content>
-             <langData>They will not find anyone anywhere</langData><gloss><content>  « Ils ne trouveront personne n’importe où »</content></gloss>
+             <content>Polarity Changing languages normally allow only a single negative element in the sentence for negation to be expressed (though technically any odd number of negatives expresses negative polarity) because the presence of two (or any even number of) negative elements changes the polarity back to positive.  For example, </content>
+             <langData>John saw nothing</langData>
+             <content> is negative, but </content>
+             <langData>John didn’t see nothing</langData>
+             <content> is positive because it means the same as </content>
+             <langData>John saw something</langData>
+             <content>.  The version with a negative auxiliary is expressed as </content>
+             <langData>John didn’t see anything</langData>
+             <content>, using what is known as a ‘negative polarity item’ in object position.  Such negative polarity items may occur as subjects in some contexts without any other negation present, such as </content>
+             <langData>Anyone may come</langData>
+             <content>, but they may only occur in object position when some earlier element in the sentence is negative.  For example, one can say </content>
+             <langData>Nobody saw anyone</langData>
+             <content> and </content>
+             <langData>Nowhere will they find anyone</langData>
+             <content> but without the negative subject or fronted negative adverb the negative auxiliary must be used, as in </content>
+             <langData>We did not see anyone</langData>
+             <content> and </content>
+             <langData>They will not find anyone anywhere</langData>
              <content>.</content>
           </p>
           <p contentType="ctComparativeIntro">
-             <content>Dans les langues à concordance négative n’importe quel nombre d’éléments négatifs exprime la polarité négative; ce qui veut dire qu’en français - une langue à concordance negative - </content>
-             <langData>Jean n’a rien vu</langData>
-             <content> est la façon correcte d’exprimer une phrase négative à objet négatif. Dans ces langues, tout comme la restriction sur les éléments de polarité négative, un élément négatif se met d’habitude dans la position du sujet, ou bien une position en tête de phrase sans qu’il y ait un autre élément; mais un objet au négatif doit exister seulement quand un autre élément qui précède est au négatif. 
-                Dans certaines langues à concordance négative on exige que l’argument négatif coexiste avec la négation du verbe; dans d’autres c’est l’argument au négatif qui précède, tout comme les mots ou syntagmes interrogatifs doivent être à la tête dans les questions de contenu.</content>
+             <content>In Negative Concord languages, any number of negative elements expresses negative polarity, so in a Negative Concord version of English (such as Black English) </content>
+             <langData>John didn’t see nothing</langData>
+             <content> is the correct way to express a negative sentence with a negative object.  In these languages, a negative element may normally occur in subject position or a fronted position without any other negative element present, but a negative object may only occur when some earlier element in the sentence is negative.  Some Negative Concord languages have the stronger restriction that any negative word or phrase must co-occur with verbal negation and still others require fronting of the negative word or phrase, similarly to the fronting of question words or phrases in content questions.</content>
           </p>
           <p contentType="ctPracticalIntro">
-             <content>Quant à la négation, les deux classements majeurs sont les langues qui changent de polarité contre les langues à concordance négative. Celles-là permettent généralement un seul élément négatif dans une phrase où se trouvent des éléments spéciaux de polarité négative au lieu d’un deuxième élément négatif. Par contre, dans les langues à concordance négative n’importe quel nombre d’éléments expriment la polarité négative, puisque les éléments négatifs visent un accord de polarité.</content>
+             <content>The two major classifications with respect to negation are Polarity Changing languages versus Negative Concord languages.  Polarity Changing languages normally allow only a single negative element in the sentence with special negative polarity items which appear in place of a second negative element.  In contrast, any number of negative elements expresses negative polarity in Negative Concord languages, since the negative elements concord or agree in polarity.</content>
           </p>
           <p>
              <langName/>
-             <content> est une langue </content>
+             <content> is a </content>
              <case element="neg" attr="type">
-                <caseText value="changing">qui change de polarité</caseText>
-                <caseText value="concord">à concordance négative</caseText>
+                <caseText value="changing">Polarity Changing</caseText>
+                <caseText value="concord">Negative Concord</caseText>
              </case>
-             <content>, puisque </content>
+             <content> language, since </content>
              <case element="neg" attr="type">
-                <caseText value="changing">la polarité change entre positive et  négative avec chaque exemple de négation.  </caseText>
-                <caseText value="concord">n’importe quel nombre d’éléments négatifs visent à rendre la polarité négative. </caseText>
+                <caseText value="changing">the polarity changes between positive and negative with each instance of negation.  </caseText>
+                <caseText value="concord">any number of negative elements simply agree in making the polarity negative. </caseText>
              </case>
              <content/>
           </p>
           <p show="swNegTypeChanging">
-             <content>En </content><langName/>
+             <langName/>
              <content/>
              <case element="neg" attr="polarityItems">
-                <caseText value="yes"> il y a </caseText>
-                <caseText value="no"> il n’a pas </caseText>
+                <caseText value="yes"> has </caseText>
+                <caseText value="no"> does not have any </caseText>
              </case>
-             <content>d’éléments de polarité négatifs. </content>
+             <content>negative polarity items. </content>
              <case element="neg" attr="polarityItems">
-                <caseText value="yes">Les pronoms, déterminateurs et adverbes suivants  prennent la position de l’objet ou bien la position normale de l’adverbe au lieu de l’élément négatif équivalent lorsqu’un autre élément négatif est présent dans la phrase. </caseText>
-                <caseText value="no">Les pronoms, déterminateurs et adverbes (tous au négatif) prennent la position de l’objet ou la position adverbiale normale, même quand il y a un autre élément dans la phrase.</caseText>
+                <caseText value="yes">The following pronouns, determiners, and adverbs occur in object position or the normal adverb position instead of the equivalent negative element when another negative element is present in the sentence. </caseText>
+                <caseText value="no">The negative pronouns, determiners, and adverbs may occur in object position or the normal adverb position even when there is another negative element in the sentence.</caseText>
              </case>
           </p>
           <example show="swPolarityItemsYes">
              <table border="1">
                 <headerRow>
                    <headerCol>Type</headerCol>
-                   <headerCol>Eléments de polarité négatifs</headerCol>
-                   <headerCol>Glose</headerCol>
+                   <headerCol>Negative Polarity Items</headerCol>
+                   <headerCol>Gloss</headerCol>
                 </headerRow>
                 <row>
                    <col rowspan="1">
-                      <content>Pronoms</content>
+                      <content>Pronouns</content>
                    </col>
                    <col exampleLoc="neg/npiPronounExample"/>
-                   <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
                 </row>
                 <row>
                    <col rowspan="1">
-                      <content>Determinateurs</content>
+                      <content>Determiners</content>
                    </col>
                    <col exampleLoc="neg/npiDeterminerExample"/>
-                   <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
                 </row>
                 <row>
                    <col rowspan="">
-                      <content>Adverbes temporels</content>
+                      <content>Temporal Adverbs</content>
                    </col>
                    <col exampleLoc="neg/npiTemporalExample"/>
-                   <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
                 </row>
                 <row>
                    <col rowspan="">
-                      <content>Adverbes  locatifs</content>
+                      <content>Locative Adverbs</content>
                    </col>
                    <col exampleLoc="neg/npiLocativeExample"/>
-                   <col ><gloss><content>ENTRER GLOSE</content></gloss></col>
+                   <col ><gloss><content>ENTER GLOSS</content></gloss></col>
                 </row>
              </table>
           </example>
           
           <p>
-             <content>Parmi les exemples ayant un sujet positif et un </content>
+             <content>Examples with a positive subject and a negative </content>
              <text show="swPolarityItemsYes">
-                <content>élément de polarité négatif dans le syntagme nominal de l’objet</content>
+                <content>polarity item in the </content>
              </text>
-             <text show="swPolarityItemsNo">
-                <content>syntagme nominal négatif comme objet</content>
-             </text>
-             <content> on cite:</content>
+             <content>object nominal phrase include:</content>
           </p>
           <example>
              <interlinear exampleLoc="neg/objectExample"/>
           </example>
           <p>
-             <content>Parmi les exemples ayant un sujet positif et un </content>
+             <content>Examples with a positive subject and a negative </content>
              <text show="swPolarityItemsYes">
-                <content>élément de polarité négatif dans le syntagme nominal de l’objet indirect</content>
+                <content>polarity item in the </content>
              </text>
-             <text show="swPolarityItemsNo">
-                <content>syntagme nominal négatif comme objet indirect</content>
-             </text>
-             <content> on cite:</content>
+             <content>indirect object nominal phrase include:</content>
           </p>
           <example>
              <interlinear exampleLoc="neg/indirectObjectExample"/>
           </example>
           <p show="swPolarityItemsYes">
-             <content>Ces exemples montrent qu’un élément de polarité négatif </content>
+             <content>As these examples show, a negative polarity item is </content>
              <text show="swObjectVerbRequiredNotNo">
-                <content>ne peut pas</content>
+                <content>not</content>
              </text>
-             <text show="swObjectVerbRequiredNo">
-                <content>peut</content>
-             </text>
-             <content> exister dans la position de l’objet ou de l’objet indirect </content>
+             <content> allowed to occur in object or indirect object position </content>
              <case element="neg" attr="objVerbRequired">
-                <caseText value="yes">sauf si le verbe ou l’auxiliaire est négatif.</caseText>
-                <caseText value="other">sauf si le verbe ou l’auxiliaire ou un autre élément est négatif.</caseText>
-                <caseText value="no">sans restriction d’autres éléments négatifs dans la phrase.</caseText>
+                <caseText value="yes">unless the verb or auxiliary is negative.</caseText>
+                <caseText value="other">unless either the verb or auxiliary or some other element in the sentence is negative.</caseText>
+                <caseText value="no">without any restriction about other negative elements in the sentence.</caseText>
              </case>
           </p>
           <p show="swPolarityItemsNo">
-             <content>Ces exemples montrent qu’un syntagme nominal négatif </content>
+             <content>As these examples show, a negative nominal phrase is </content>
              <text show="swObjectVerbRequiredNotNo">
-                <content>ne peut pas</content>
+                <content>not</content>
              </text>
-             <text show="swObjectVerbRequiredNo">
-                <content>peut</content>
-             </text>
-             <content> exister dans la position de l’objet ou de l’objet indirect </content>
+             <content> allowed to occur in object or indirect object position </content>
              <case element="neg" attr="objVerbRequired">
-                <caseText value="yes">sauf si le verbe ou l’auxiliaire est négatif.</caseText>
-                <caseText value="other">sauf si le verbe ou l’auxiliaire ou un autre élément est négatif.</caseText>
-                <caseText value="no">sans restriction d’autres éléments négatifs dans la phrase.</caseText>
+                <caseText value="yes">unless the verb or auxiliary is negative. </caseText>
+                <caseText value="other">unless either the verb or auxiliary or some other element in the sentence is negative.</caseText>
+                <caseText value="no">without any restriction about other negative elements in the sentence. </caseText>
              </case>
           </p>
           
           <p show="swNegTypeConcord">
-             <content>Ces exemples montrent qu’un syntagme nominal négatif </content>
+             <content>As these examples show, a negative nominal phrase is </content>
              <text show="swObjectVerbRequiredNotNo">
-                <content>ne peut pas</content>
+                <content>not</content>
              </text>
-             <text show="swObjectVerbRequiredNo">
-                <content>peut</content>
-             </text>
-             <content> exister dans la position de l’objet ou de l’objet indirect </content>
+             <content> allowed to occur in object or indirect object position </content>
              <case element="neg" attr="objVerbRequired">
-                <caseText value="yes">sauf si le verbe ou l’auxiliaire est négatif.</caseText>
-                <caseText value="other">sauf si le verbe ou l’auxiliaire ou un autre élément est négatif.</caseText>
-                <caseText value="no">sans restriction d’autres éléments négatifs dans la phrase.</caseText>
+                <caseText value="yes">unless the verb or auxiliary is negative. </caseText>
+                <caseText value="other">unless either the verb or auxiliary or some other element in the sentence is negative.</caseText>
+                <caseText value="no">without any restriction about other negative elements in the sentence. </caseText>
              </case>
              <case element="neg" attr="negFront">
-                <caseText value="yes"> Un objet négatif doit se mettre en tête de la phrase, tout comme les syntagmes interrogatifs. </caseText>
-                <caseText value="optional"> Un objet négatif peut se mettre en position initiale, ou il peut garder sa position habituelle. </caseText>
-                <caseText value="beforeVerb"> Un objet négatif peut se mettre immédiatement avant le verbe, ou il peut garder sa position habituelle. </caseText>
-                <caseText value="no"> Un objet negative paraît simplement dans sa position habituelle, sans aucun mouvement. </caseText>
+                <caseText value="yes"> A negative object must appear initially in the sentence, similarly to the fronting of interrogative phrases. </caseText>
+                <caseText value="optional"> A negative object may appear initially in the sentence, or it may remain in its normal position. </caseText>
+                <caseText value="beforeVerb"> A negative object may appear in the position directly before the verb, or it may remain in its normal position. </caseText>
+                <caseText value="no"> A negative object simply appears in its normal position in the sentence, without any movement. </caseText>
              </case>
           </p>
           
           
           <p show="swNegTypeChangingAndNegTwoYes">
-             <content>Finalement, parmi les exemples où se trouvent un sujet négatif et un </content>
+             <content>Finally, examples with both a negative subject and a negative </content>
              <text show="swPolarityItemsYes">
-                <content>élément de polarité négatif dans le syntagme nominal de l’objet</content>
+                <content>polarity item in the </content>
              </text>
-             <text show="swPolarityItemsNo">
-                <content>syntagme nominal négatif comme objet</content>
-             </text>
-             <content> on cite:</content>
+             <content>object nominal phrase include:</content>
           </p>
           <p show="swNegTypeChangingAndNegTwoOneOnly">
-             <content>En </content><langName/><content>on ne permet pas d’exemples où figurent un sujet négatif et un </content>
+             <content>Examples with both a negative subject and a negative </content>
              <text show="swPolarityItemsYes">
-                <content>élément de polarité négatif dans le syntagme nominal de l’objet</content>
+                <content>polarity item in the </content>
              </text>
-             <text show="swPolarityItemsNo">
-                <content>syntagme nominal négatif comme objet</content>
-             </text>
-             <content>.  On cite ci-dessous quelques exemples qui montrent comment ces messages se transmettent en utilisant un indéfini ou en séparant la phrase en deux: </content>
+             <content>object nominal phrase are not allowed in </content><langName/><content>.  Examples showing how these meanings are expressed using an indefinite or split into two sentences include:</content>
           </p>
           <p show="swNegTypeConcordAndNotNegFrontTwoOneOnly">
-             <content>Finalement, parmi les exemples où se trouvent un sujet négatif et un syntagme nominal négatif comme objet on cite: </content>
+             <content>Finally, examples with both a negative subject and a negative object nominal phrase include:</content>
+             
           </p>
           <p show="swNegTypeConcordAndNegFrontTwoOneOnlyOrFrontNoAndNegTwoOneOnly">
-             <content>En </content><langName/><content> on ne permet pas d’exemples où figurent un sujet négatif et un syntagme nominal négatif comme objet. On cite ci-dessous quelques exemples qui montrent comment ces messages se transmettent en utilisant un indéfini ou en séparant la phrase en deux:</content>
+             <content>Examples with both a negative subject and a negative object nominal phrase are not allowed in </content><langName/><content>.  Examples showing how these meanings are expressed using an indefinite or split into two sentences include:</content>
           </p>
           <example>
              <interlinear exampleLoc="neg/subjectObjectExample"/>
@@ -758,12 +737,12 @@
              
           <p show="swNegTypeConcord">
              <text show="swNegFrontNotNoAndNotOneOnly">
-                <content>Si le sujet et l’objet sont tous deux au négatif, </content>
+                <content> If both the subject and object are negative, </content>
                    <case element="neg" attr="negFrontTwo">
-                      <caseText value="yes">les deux éléments négatifs doivent être en tête de phrase.</caseText>
-                      <caseText value="optional">les deux éléments peuvent être en tête, ou bien l’objet négatif peut retenir sa position habituelle.</caseText>
-                      <caseText value="beforeVerb">les deux éléments peuvent se mettre immédiatement avant le verbe, ou bien l’objet négatif peut retenir sa position habituelle.</caseText>
-                      <caseText value="no">seul le sujet négatif vient en tête, l’objet négatif paraît simplement dans sa position habituelle dans la phrase.</caseText>
+                      <caseText value="yes">both negative elements must appear initially in the sentence.</caseText>
+                      <caseText value="optional">both negative elements may appear initially in the sentence, or the negative object may remain in its normal position.</caseText>
+                      <caseText value="beforeVerb">both negative elements may appear in the position directly before the verb, or the negative object may remain in its normal position.</caseText>
+                      <caseText value="no">only the negative subject is fronted, and the negative object simply appears in its normal position in the sentence.</caseText>
                    </case>
                 </text>
           </p>

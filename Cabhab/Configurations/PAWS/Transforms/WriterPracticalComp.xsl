@@ -111,7 +111,7 @@
                 <th>Gloss</th>
              </tr>
              <xsl:variable name="sExampleValue0.0">
-<xsl:value-of select="translate(string(//comp/cliticExample),'.','')" />
+<xsl:value-of select="translate(string(//comp/compCliticExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
@@ -174,7 +174,7 @@
                 <th>Gloss</th>
              </tr>
              <xsl:variable name="sExampleValue0.0">
-<xsl:value-of select="translate(string(//comp/affixExample),'.','')" />
+<xsl:value-of select="translate(string(//comp/compAffixExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
@@ -242,11 +242,11 @@
 <example num="xComp.20">
 <table border="1">
              <tr>
-                <th>Other Complementizers That attach</th>
+                <th>Other Complementizers that attach</th>
                 <th>Gloss</th>
              </tr>
              <xsl:variable name="sExampleValue0.0">
-<xsl:value-of select="translate(string(//comp/attachesOtherExample),'.','')" />
+<xsl:value-of select="translate(string(//comp/comp/AttachesOtherExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>

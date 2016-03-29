@@ -64,7 +64,7 @@
                 <headerCol>Glosa</headerCol>
              </headerRow>
              <row>
-                <col exampleLoc="comp/cliticExample"/>
+                <col exampleLoc="comp/compCliticExample"/>
                 <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
              </row>
           </table>
@@ -77,7 +77,7 @@
                 <headerCol>Glosa</headerCol>
              </headerRow>
              <row>
-                <col exampleLoc="comp/affixExample"/>
+                <col exampleLoc="comp/compAffixExample"/>
                 <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
              </row>
           </table>
@@ -90,7 +90,7 @@
                 <headerCol>Glosa</headerCol>
              </headerRow>
              <row>
-                <col exampleLoc="comp/attachesOtherExample"/>
+                <col exampleLoc="comp/compAttachesOtherExample"/>
                 <col ><gloss><content>ESCRIBA LA GLOSA</content></gloss></col>
              </row>
           </table>

@@ -63,8 +63,8 @@
 			<xsl:apply-templates select="/" mode="relcl"/>
 			<xsl:call-template name="DoTextsSection"/>
 			<xsl:call-template name="OutputCommonBackmatterLanguagesAndTypes">
-				<xsl:with-param name="sEndnoteLabel" select="'Notas'"/>
-				<xsl:with-param name="sReferencesLabel" select="'Referencias'"/>
+				<xsl:with-param name="sEndnoteLabel" select="'Notes'"/>
+				<xsl:with-param name="sReferencesLabel" select="'Références'"/>
 			</xsl:call-template>
 		</lingPaper>
 	</xsl:template>

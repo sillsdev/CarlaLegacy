@@ -1234,7 +1234,7 @@
 </p>
 		   
 			<p>
-<xsl:text>Des exemples de syntagmes nominaux possessédés avec des possesseurs simples et incorporés en </xsl:text>
+<xsl:text>Des exemples de syntagmes nominaux possessédés simples en </xsl:text>
 <xsl:choose>
 <xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='fr'])) &gt; 0">
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='fr'])" />
@@ -1247,17 +1247,17 @@
 </p>
 			<example num="xNP.NPPoss.14">
 <xsl:variable name="sExampleValue">
-<xsl:value-of select="//np/embeddedExample" />
+<xsl:value-of select="//np/possessorExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/embeddedExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/possessorExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//np/embeddedExample" />
+<xsl:value-of select="//np/possessorExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//np/embeddedExample))" />
+<xsl:value-of select="string-length(normalize-space(//np/possessorExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNP.NPPoss.14</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1283,32 +1283,31 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
-		   <xsl:if test="normalize-space(//np/@possNP)!='yesOnly'">
-<p>
-<xsl:text>Des exemples avec des syntagmes </xsl:text>
+			<p>
+<xsl:text>Des exemples de syntagmes nominaux possessédés avec des possesseurs incorporés en </xsl:text>
 <xsl:choose>
-					<xsl:when test="//pp/@pPos='before'">prepositionnels</xsl:when>
-					<xsl:when test="//pp/@pPos='after'">postpositionnels</xsl:when>
-					<xsl:when test="//pp/@pPos='both'">adpositionnels</xsl:when>
-					<xsl:when test="//pp/@pPos='unknown'">adpositionnels</xsl:when>
-				</xsl:choose>
-<xsl:text> comme possesseur incluent:</xsl:text>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='fr'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='fr'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> incluent:</xsl:text>
 </p>
-</xsl:if>
-		   <xsl:if test="normalize-space(//np/@possNP)!='yesOnly'">
-<example num="xNP.NPPoss.18">
+			<example num="xNP.NPPoss.18">
 <xsl:variable name="sExampleValue">
-<xsl:value-of select="//np/ppExample" />
+<xsl:value-of select="//np/embeddedExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/ppExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/embeddedExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//np/ppExample" />
+<xsl:value-of select="//np/embeddedExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//np/ppExample))" />
+<xsl:value-of select="string-length(normalize-space(//np/embeddedExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNP.NPPoss.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -1334,11 +1333,62 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
+			<xsl:if test="normalize-space(//np/@possNP)!='yesOnly'">
+<p>
+<xsl:text>Des exemples avec des syntagmes </xsl:text>
+<xsl:choose>
+					<xsl:when test="//pp/@pPos='before'">prepositionnels</xsl:when>
+					<xsl:when test="//pp/@pPos='after'">postpositionnels</xsl:when>
+					<xsl:when test="//pp/@pPos='both'">adpositionnels</xsl:when>
+					<xsl:when test="//pp/@pPos='unknown'">adpositionnels</xsl:when>
+				</xsl:choose>
+<xsl:text> comme possesseur incluent:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//np/@possNP)!='yesOnly'">
+<example num="xNP.NPPoss.22">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//np/ppExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/ppExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//np/ppExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//np/ppExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPPoss.22</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xNP.NPPoss.22.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTRER UN EXEMPLE ICI</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
 </xsl:if>
 			<p>
 <xsl:text>Des exemples avec des propositions relatives dans le possesseur, incluses dans des phrases complètes et simples sont:</xsl:text>
 </p>
-			<example num="xNP.NPPoss.22">
+			<example num="xNP.NPPoss.26">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//np/relClExample" />
 </xsl:variable>
@@ -1352,7 +1402,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//np/relClExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xNP.NPPoss.22</xsl:with-param>
+<xsl:with-param name="sExNumber">xNP.NPPoss.26</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -1361,7 +1411,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xNP.NPPoss.22.1</xsl:text>
+<xsl:text>xNP.NPPoss.26.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -1435,7 +1485,7 @@
 </p>
 </xsl:if>
 	<xsl:if test="normalize-space(//np/@possMarked)='yesAffix'">
-<example num="xNP.NPPoss.26">
+<example num="xNP.NPPoss.30">
 <table border="1">
 	      <tr>
 	      	<th>Affixe de marque possesseure</th>
@@ -1479,7 +1529,7 @@
 </example>
 </xsl:if>
 		   <xsl:if test="normalize-space(//np/@possMarked)='yesProclitic' or normalize-space(//np/@possMarked)='yesEnclitic'">
-<example num="xNP.NPPoss.28">
+<example num="xNP.NPPoss.32">
 <table border="1">
 		         <tr>
 		         	<th>Clitique de marque possesseure</th>
@@ -1523,7 +1573,7 @@
 </example>
 </xsl:if>
 		   <xsl:if test="normalize-space(//np/@possMarked)='yesWord'">
-<example num="xNP.NPPoss.30">
+<example num="xNP.NPPoss.34">
 <table border="1">
 		         <tr>
 		         	<th>Mot de marque possesseure</th>

@@ -119,7 +119,7 @@
                 <th>Glose</th>
              </tr>
              <xsl:variable name="sExampleValue0.0">
-<xsl:value-of select="translate(string(//comp/cliticExample),'.','')" />
+<xsl:value-of select="translate(string(//comp/compCliticExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
@@ -182,7 +182,7 @@
                 <th>Glose</th>
              </tr>
              <xsl:variable name="sExampleValue0.0">
-<xsl:value-of select="translate(string(//comp/affixExample),'.','')" />
+<xsl:value-of select="translate(string(//comp/compAffixExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>
@@ -254,7 +254,7 @@
                 <th>Glose</th>
              </tr>
              <xsl:variable name="sExampleValue0.0">
-<xsl:value-of select="translate(string(//comp/attachesOtherExample),'.','')" />
+<xsl:value-of select="translate(string(//comp/compAttachesOtherExample),'.','')" />
 </xsl:variable>
 <xsl:variable name="iExampleLength0.0" select="string-length(normalize-space($sExampleValue0.0))" />
 <xsl:choose>

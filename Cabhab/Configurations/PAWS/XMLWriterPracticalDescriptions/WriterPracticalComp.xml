@@ -62,7 +62,7 @@
                 <headerCol>Gloss</headerCol>
              </headerRow>
              <row>
-                <col exampleLoc="comp/cliticExample"/>
+                <col exampleLoc="comp/compCliticExample"/>
                 <col ><gloss><content>ENTER GLOSS</content></gloss></col>
              </row>
           </table>
@@ -75,7 +75,7 @@
                 <headerCol>Gloss</headerCol>
              </headerRow>
              <row>
-                <col exampleLoc="comp/affixExample"/>
+                <col exampleLoc="comp/compAffixExample"/>
                 <col ><gloss><content>ENTER GLOSS</content></gloss></col>
              </row>
           </table>
@@ -84,11 +84,11 @@
        <example show="swCompWordNoOrSomeAndOther">
           <table border="1">
              <headerRow>
-                <headerCol>Other Complementizers That attach</headerCol>
+                <headerCol>Other Complementizers that attach</headerCol>
                 <headerCol>Gloss</headerCol>
              </headerRow>
              <row>
-                <col exampleLoc="comp/attachesOtherExample"/>
+                <col exampleLoc="comp/comp/AttachesOtherExample"/>
                 <col ><gloss><content>ENTER GLOSS</content></gloss></col>
              </row>
           </table>

@@ -467,14 +467,22 @@
 		   </p>
 		   
 			<p>
-				<content>Des exemples de syntagmes nominaux possessédés avec des possesseurs simples et incorporés en </content>
+				<content>Des exemples de syntagmes nominaux possessédés simples en </content>
+				<langName/>
+				<content> incluent:</content>
+			</p>
+			<example>
+				<interlinear exampleLoc="np/possessorExample"/>
+			</example>
+			<p>
+				<content>Des exemples de syntagmes nominaux possessédés avec des possesseurs incorporés en </content>
 				<langName/>
 				<content> incluent:</content>
 			</p>
 			<example>
 				<interlinear exampleLoc="np/embeddedExample"/>
 			</example>
-		   <p show="swNPPossNPNotYesOnly">
+			<p show="swNPPossNPNotYesOnly">
 		   	<content>Des exemples avec des syntagmes </content>
 				<case element="pp" attr="pPos">
 					<caseText value="before">prepositionnels</caseText>
