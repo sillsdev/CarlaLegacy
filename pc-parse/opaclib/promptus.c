@@ -338,7 +338,11 @@ fprintf(stderr, "%s", pszPrompt_in);
 fflush(stderr);
 
 p = readLineFromFile(stdin, NULL, NUL);
+#ifdef _MSC_VER
+if (p && !_isatty(_fileno(stdin)))
+#else
 if (p && !isatty(fileno(stdin)))
+#endif
 	fprintf(stderr, "%s\n", p);
 return p;
 #endif /*USE_STDIN*/

@@ -86,7 +86,11 @@ FILE *fp;
 if ((fp = fopen(name,"r")) == NULL)
 	return( 1 );		/* okay if file doesn't exist */
 
+#ifdef _MSC_VER
+if (_isatty(_fileno(fp)))
+#else
 if (isatty(fileno(fp)))
+#endif
 	{
 	fclose(fp);
 	return( 1 );		/* okay if file is TTY device */
@@ -147,7 +151,11 @@ if ((fname == (char *)NULL) || (*fname == '\0'))
 	fprintf(stderr, "\n\t%s file: ", (*mode=='r') ? "Input" : "Output");
 	fgets(szFileName, FILENAME_MAX, stdin);
 	trimTrailingWhitespace(szFileName);
+#ifdef _MSC_VER
+	if (!_isatty(_fileno(stdin)))
+#else
 	if (!isatty(fileno(stdin)))
+#endif
 	fprintf(stderr, "%s\n", szFileName);
 	}
 else

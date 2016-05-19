@@ -27,8 +27,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,12,17,0
- PRODUCTVERSION 3,12,17,0
+ FILEVERSION 3,12,18,0
+ PRODUCTVERSION 3,12,18,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -43,15 +43,15 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "Comments", "XAmple 3.12.17"
+            VALUE "Comments", "XAmple 3.12.18"
             VALUE "CompanyName", "SIL International"
             VALUE "FileDescription", "xample"
-            VALUE "FileVersion", "3, 12, 17, 0"
+            VALUE "FileVersion", "3, 12, 18, 0"
             VALUE "InternalName", "xample"
-            VALUE "LegalCopyright", "Copyright © 2001-2014"
+            VALUE "LegalCopyright", "Copyright © 2001-2016"
             VALUE "OriginalFilename", "xample32"
             VALUE "ProductName", "SIL XAmple"
-            VALUE "ProductVersion", "3, 12, 17, 0"
+            VALUE "ProductVersion", "3, 12, 18, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -67,18 +67,18 @@ END
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE
+2 TEXTINCLUDE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE
+3 TEXTINCLUDE 
 BEGIN
     "\r\n"
     "\0"
@@ -100,3 +100,4 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
+

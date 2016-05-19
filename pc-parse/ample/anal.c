@@ -1063,6 +1063,48 @@ szTempMorphname[sizeof(szTempMorphname) - 1] = NUL;
 return szTempMorphname;
 }
 
+
+/*****************************************************************************
+ * NAME
+ *    previousStringClassWithSameIndexHasSameValue
+ * DESCRIPTION
+ *     See if any preceding string class in the pattern had the same index;
+	   if so, it must match this character
+ * RETURN VALUE
+ *    TRUE if no previous string classes have same index or if they all match;
+ *    FALSE otherwise
+ */
+static int previousStringClassWithSameIndexHasSameValue(char *pszValue_in,
+				   PartialRedupIndexedClass *pIndexedClass_in,
+				   PartialReduplication *pPartialRedup_in)
+{
+PartialRedupIndexedClass *pClass;
+int iIndex;
+StringClass *pStringClass;
+
+if (pPartialRedup_in == NULL || pIndexedClass_in == NULL)
+  return(TRUE);
+
+pStringClass = pIndexedClass_in->pStringClass;
+iIndex = pIndexedClass_in->iIndex;
+
+for (pClass = pPartialRedup_in->pIndexedStringClasses;
+      pClass != NULL;
+      pClass = pClass->pNext)
+  {
+    if (pClass == pIndexedClass_in)
+      { /* this is the same string class we are checking; quit */
+	return(TRUE);
+      }
+    if (pStringClass == pClass->pStringClass && iIndex == pClass->iIndex)
+      {
+	if (!same_string(pszValue_in, pClass->pszMember, TRUE))
+	  return(FALSE);
+      }
+  }
+return(FALSE);
+}
+
 /*****************************************************************************
  * NAME
  *    findPartialRedupMatches
@@ -1093,7 +1135,7 @@ int size;
 if (pIndexedClass == NULL)
   return(TRUE);
 if (pIndexedClass->pStringClass == NULL)
-  {
+  {  /* no string class; there should be one or more fixed characters to match */
 	if (pIndexedClass->pszCharacters == NULL)
 	  return(TRUE);  /* something is wrong, but let's go on... */
 	if (matchBeginning(pszToMatch, pIndexedClass->pszCharacters))
@@ -1114,8 +1156,16 @@ for ( sp = pIndexedClass->pStringClass->pMembers;
 	  sp != (StringList *)NULL ;
 	  sp = sp->pNext )
   {
-	if (matchBeginning(pszToMatch, sp->pszString))
+    if (matchBeginning(pszToMatch, sp->pszString))
+      {
+	/* See if any preceding string class in the pattern had the same index;
+	   if so, it must match this character. */
+	if (!previousStringClassWithSameIndexHasSameValue(sp->pszString,
+							  pIndexedClass,
+							  pPartialRedup))
 	  {
+	    continue;
+	  }
 	size = strlen(sp->pszString);
 	freeMemory(pIndexedClass->pszMember);
 	memset(szTokenBuffer, 0, BUFSIZE);

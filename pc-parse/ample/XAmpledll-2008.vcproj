@@ -76,7 +76,7 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="..\lib\Release"
 				IgnoreAllDefaultLibraries="true"
-				GenerateDebugInformation="true"
+				GenerateDebugInformation="false"
 				ProgramDatabaseFile=".\Release-xdll/xample.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"

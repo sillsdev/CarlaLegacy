@@ -4,15 +4,20 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 17		/* bug fix or other minor change */
-#define DATE "December 11, 2014"	/* date of release version */
-#define YEAR "2014"		/* used for copyright notice in banner */
+#define PATCHLEVEL 18		/* bug fix or other minor change */
+#define DATE "May 18, 2016"	/* date of release version */
+#define YEAR "2016"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 18-May-2016  hab  - Fix bug: when a partial reduplication match pattern has
+ * [3.12.18]             two instances of the same indexed class (e.g.,
+ *                       [C^1][V^1][V^1]) the second one would match any member
+ *                       of the class instead of the same member as the first
+ *                       instance.
  * 11-Dec-2014  hab  - Fix bug: partial reduplication could use wrong
  * [3.12.17]             environment when the same allomorph was found in
-  *                      an earlier path.
+ *                       an earlier path.
  * 17-Sep-2012  hab  - Fix bug: when using allomorph IDs and a record had
  * [3.12.16]             two or more morph types, the allomorph ID was lost.
  * 23-Mar-2012  hab  - Fix bug: when a partial reduplication allomorph was an

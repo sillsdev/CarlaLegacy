@@ -55,7 +55,11 @@ pszFormat_in    = va_arg( marker, char * );
 
 #ifdef HAVE_VPRINTF
 vfprintf(stderr, pszFormat_in, marker);
+#ifdef _MSC_VER
+if (!_isatty(_fileno(stdout)))
+#else
 if (!isatty(fileno(stdout)))
+#endif
 	vfprintf(stdout, pszFormat_in, marker);
 #else
 #ifdef HAVE_DOPRNT
@@ -64,7 +68,11 @@ if (!isatty(fileno(stdout)))
 	_doprnt(pszFormat_in, marker, stdout);
 #endif
 #endif
+#ifdef _MSC_VER
+if (!_isatty(_fileno(stdout)))
+#else
 if (!isatty(fileno(stdout)))
+#endif
 	fflush(stdout);
 
 va_end( marker );
