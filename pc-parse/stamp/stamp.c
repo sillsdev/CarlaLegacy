@@ -66,10 +66,11 @@ static StampData	sStamp_m = {
 	FALSE,		/* bDoAllSyntheses                */
 	FALSE,		/* bTrace                         */
 	FALSE,		/* bReportNoEntries               */
-	0,			/* iDebugLevel                    */
+	0,		/* iDebugLevel                    */
 	'|',		/* cComment                       */
+	0,		/* bEnableAllomorphIDs            */
 	FALSE,		/* bQuiet                         */
-	2,			/* iMaxTrieLevel                  */
+	2,		/* iMaxTrieLevel                  */
 	'<',		/* cBeginRoot                     */
 	'>',		/* cEndRoot                       */
 	0,			/* eRuleType                      */
@@ -308,6 +309,10 @@ while ((k = getopt(argc, argv, "ac:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
 		case 'a':                       /* generate all possible syntheses */
 			sStamp_m.bDoAllSyntheses = TRUE;    /* (we want them all!!) */
 			break;
+
+		case 'b':			/* enable allomorph ID strings */
+		  sStamp_m.bEnableAllomorphIDs = TRUE;
+		  break;
 
 		case 'c':                       /* record comment character */
 			sStamp_m.cComment = *optarg; /* used by record.c */

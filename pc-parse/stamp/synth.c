@@ -623,6 +623,36 @@ return( TRUE );
 
 /*************************************************************************
  * NAME
+ *    is_final_root_or_suffix
+ * ARGUMENTS
+ *    head    - pointer to a morpheme
+ * DESCRIPTION
+ *    determine if the morpheme is the final root or a suffix
+ * RETURN VALUE
+ *    TRUE  if the morpheme is the final root or is a suffix
+ *    FALSE otherwise
+ */
+static int is_final_root_or_suffix(psa)
+     StampAnalysis * psa;
+{
+int bResult = FALSE;
+switch (psa->m.iMorphType & MORPHTYPE_MASK)
+  {
+  case ROOT:
+    if ((psa->pRightLink == NULL) ||
+	(psa->pRightLink->m.iMorphType & MORPHTYPE_MASK) == SFX)
+      bResult = TRUE;
+    break;
+  case SFX:
+    bResult = TRUE;
+    break;
+  }
+
+return bResult;
+}
+
+/*************************************************************************
+ * NAME
  *    apply_all_tests
  * ARGUMENTS
  *    head    - pointer to the beginning of a list of morphemes
@@ -647,6 +677,107 @@ StampAnalysis *ap;
 #endif /* hab220 */
 StampAllomorph *am;
 int            iLen;		/* 2.1b1 hab */
+/////////////////////////// NEW //////////////////////////////
+#define FULLREDUP "<...>"
+#define FULLREDUPLEN 5
+StampAnalysis * psa;
+/* look for and fill in any full reduplication allomorphs */
+for (psa = head; psa != NULL; psa = psa->pRightLink)
+  {
+    char * pszFullRedup;
+    if (psa->pCurrentAllo == NULL || psa->pCurrentAllo->pszAllomorph == NULL)
+      continue;
+    pszFullRedup = strstr(psa->pCurrentAllo->pszAllomorph, FULLREDUP);
+    if (pszFullRedup != NULL)
+      { /* NB: we assume that there is only one full reduplication
+	   morpheme per word; we also assume that infixation does not
+	   get inserted into the full redup allomorph */
+    int iFixedAfterLen = 0;
+    int iShift = 0;
+	int iFollowingLen = strlen(psa->pszAlloEnd);
+	pszFullRedup = strstr(synword, FULLREDUP);
+	iFixedAfterLen = (pszFullRedup + FULLREDUPLEN) -  psa->pszAlloEnd;
+	/* since we manipulate the synwrd buffer, we need to make sure
+	 * has been cleared. */
+	memset(synword + strlen(synword), 0, BUFSIZE - strlen(synword));
+	if (is_final_root_or_suffix(psa))
+	  {  /* replace the allomorph with all preceding string
+		material in the word */
+	    int iPrecedingLen = psa->pszAlloStart - synword;
+	    if (iPrecedingLen > 0)
+	      {
+		iShift = iPrecedingLen - FULLREDUPLEN;
+		if (iShift < 0)
+		  {
+		    memmove(pszFullRedup, synword, iPrecedingLen);
+		    strcpy(pszFullRedup + iPrecedingLen, 
+			   psa->pszAlloEnd + iFixedAfterLen);
+		  }
+		else if (iShift > 0)
+		  {
+		    memmove(psa->pszAlloEnd + iShift + iFixedAfterLen, 
+			    psa->pszAlloEnd + iFixedAfterLen, 
+			    iFollowingLen - iFixedAfterLen);
+		    memmove(pszFullRedup, synword, iPrecedingLen);
+		  }
+		if (iShift == 0)
+		  {
+		    memmove(pszFullRedup, synword, iPrecedingLen);
+		  }
+		else {
+		  /* update allo pointers in this and all following morphemes */
+		  psa->pszAlloEnd = psa->pszAlloEnd + iShift;
+		  for (psa = psa->pRightLink; psa != NULL; psa = psa->pRightLink)
+		    {
+		      psa->pszAlloStart = psa->pszAlloStart + iShift;
+		      psa->pszAlloEnd = psa->pszAlloEnd + iShift;
+		    }
+		}
+	      }
+	  }
+	else
+	  { 
+	    /* replace the allomorph with all following string
+	       material in the word */
+	    if (psa->pszAlloEnd != NULL && *psa->pszAlloEnd != NUL)
+	      {
+		iShift = iFollowingLen - FULLREDUPLEN;
+		if (iShift < 0)
+		  {
+		    memmove(pszFullRedup, psa->pszAlloEnd, iFollowingLen);	
+		    strcpy(pszFullRedup + iFollowingLen, 
+			   psa->pszAlloEnd + iFixedAfterLen);
+		  }
+		else if (iShift > 0)
+		  {
+		    memmove(psa->pszAlloEnd + iShift + iFixedAfterLen, 
+			    psa->pszAlloEnd + iFixedAfterLen, 
+			    iFollowingLen - iFixedAfterLen);
+		    memmove(pszFullRedup, psa->pszAlloEnd + iShift,
+			    iFollowingLen);
+		  }
+		if (iShift == 0)
+		  {
+		    memmove(pszFullRedup, psa->pszAlloEnd, iFollowingLen);
+		  }
+		else {
+		  /* update allo pointers in this and all following morphemes */
+		  psa->pszAlloEnd = psa->pszAlloEnd + iShift;
+		  for (psa = psa->pRightLink; psa != NULL; psa = psa->pRightLink)
+		    {
+		      psa->pszAlloStart = psa->pszAlloStart + iShift;
+		      psa->pszAlloEnd = psa->pszAlloEnd + iShift;
+		    }
+		}
+	      }
+	  }
+	break; /* assume only one exists */
+      }
+  }
+
+
+
+/////////////////////////// NEW //////////////////////////////
 
 if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 #ifndef hab217

@@ -115,6 +115,7 @@ typedef struct {
 	 *  comment marker for input records
 	 */
 	char			cComment;
+	unsigned char	   bEnableAllomorphIDs;		/* -b */
 	/*
 	 *  work quietly without output to stderr
 	 */
@@ -364,6 +365,7 @@ typedef struct {
  */
 typedef struct {
 	char *		pszAllomorph;		/* the allomorph string */
+	char *		pszAllomorphID;	        /* the allomorph ID string */
 	PropertySet_t	uAlloPropertySet;	/* allomorph properties */
 	AmpleAlloEnv *	pAlloEnvironment;	/* the allomorph environment */
 	} StampAllomorph;
@@ -376,6 +378,7 @@ typedef struct {
  */
 typedef struct stamp_allomorph_list {
 	StampAllomorph		  a;	/* embedded allomorph structure */
+	char			bMallocString;
 	struct stamp_allomorph_list * pNext;	/* singly linked list */
 	} StampAllomorphList;
 
@@ -736,6 +739,37 @@ typedef struct stamp_morpheme_list
 	StampMorpheme			m;	/* embedded morpheme struct */
 	struct stamp_morpheme_list *	mlink;	/* singly linked list */
 	} StampMorphemeList;
+
+/*****************************************************************************
+ * NAME
+ *    AmpleRedupClass (struct ample_redup_class)
+ * DESCRIPTION
+ *    structure for reduplication string classes used in reduplication
+ *    allomorph string environment constraints
+ */
+typedef struct ample_redup_class {
+	char *			pszIndexedName;	/* name of the class */
+	char *			pszMember;	/* current string from class */
+	struct ample_redup_class *	pNext;		/* pointer to next node */
+	} AmpleRedupClass;
+
+/*****************************************************************************
+ * NAME
+ *    ExpandedAllo
+ * DESCRIPTION
+ *    expansion of an allomorph string, as needed by reduplication
+ */
+typedef struct {
+	char *			pszAllo;
+	AmpleRedupClass *		pRedupClasses;
+} ExpandedAllo;
+
+typedef struct redup_allo_piece {
+	char *			pszLiteral;
+	StringClass *		pClass;
+	struct redup_allo_piece *	pNext;
+} RedupAlloPiece;
+
 
 /*****************************************************************************
  *  FUNCTION PROTOTYPES

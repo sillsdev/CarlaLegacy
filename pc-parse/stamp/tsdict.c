@@ -92,53 +92,45 @@ static const char szEmptyCodeTable_m[] =
  *  dictionary error message header
  */
 static char *	pszDictErrorHead_m;
+static const char	szBadRedupClass_m[] =
+		"%sInvalid string class in allomorph string, in entry: %s\n\
+\t%s is not defined\n";
+static const char	szNoRedupClassIndex_m[] =
+		"%sInvalid string class in allomorph string, in entry: %s\n\
+\t%s lacks the trailing index indicator (^1, ^2, ...)\n";
 /*
  *  used for debug output from inside trie
  */
 StampData *	pStamp_m = NULL;
 
+/*****************************************************************************
+ * NAME
+ *    is_number
+ * DESCRIPTION
+ *    Check whether the character string is a number.
+ * RETURN VALUE
+ *    TRUE if the string consists only of digit characters ('0'-'9')
+ */
+static int is_number(pszString_in)
+char *	pszString_in;
+{
+char *	p;
+
+if ((pszString_in == NULL) || (*pszString_in == NUL))
+	return FALSE;
+for ( p = pszString_in ; *p ; ++p )
+	{
+	if (!isdigit(*p))
+	return FALSE;
+	}
+return TRUE;
+}
+
 #define FULLREDUP "<...>"
 #define FULLREDUPLEN 5
 /*****************************************************************************
  * NAME
- *    AmpleRedupClass (struct ample_redup_class)
- * DESCRIPTION
- *    structure for reduplication string classes used in reduplication
- *    allomorph string environment constraints
- */
-typedef struct ample_redup_class {
-	char *			pszIndexedName;	/* name of the class */
-	char *			pszMember;	/* current string from class */
-	struct ample_redup_class *	pNext;		/* pointer to next node */
-	} AmpleRedupClass;
-
-/*****************************************************************************
- * NAME
- *    ExpandedAllo
- * DESCRIPTION
- *    expansion of an allomorph string, as needed by reduplication
- */
-typedef struct {
-	char *			pszAllo;
-	AmpleRedupClass *		pRedupClasses;
-} ExpandedAllo;
-
-/*****************************************************************************
- * NAME
- *    RedupAlloPiece
- * DESCRIPTION
- *    portions of a partial reduplication allomorph (possible mix of string
- *    classes and literal strings)
- */
-typedef struct redup_allo_piece {
-	char *			pszLiteral;
-	StringClass *		pClass;
-	struct redup_allo_piece *	pNext;
-} RedupAlloPiece;
-
-/*****************************************************************************
- * NAME
- *    AmpleFullReduplication (struct ample_full_redup)
+ *    StampFullReduplication (struct stamp_full_redup)
  * DESCRIPTION
  *    structure for full reduplication allomorphs
  *
@@ -146,13 +138,13 @@ typedef struct redup_allo_piece {
  *    Each node of this list has a pointer to any "hyphen" character and a
  *    pointer to the allomorph struct.
  */
-typedef struct ample_full_redup {
+typedef struct stamp_full_redup {
 	char *			pszPrefix;  /* any preceding string (e.g. -) */
 	char *			pszPostfix; /* any trailing string (e.g. -) */
-	int                         iDicType ;  /* dictionary type (prefix or suffix) */
-	struct ample_allomorph *	pAllo;	    /* allomorph */
-	struct ample_full_redup *	pNext;	    /* pointer to next item in list */
-	} AmpleFullReduplication;
+	int                     iDicType ;  /* dictionary type (prefix or suffix) */
+	struct StampAllomorph   *	pAllo;	    /* allomorph */
+	struct stamp_full_redup *	pNext;	    /* pointer to next item in list */
+	} StampFullReduplication;
 
 /*************************************************************************
  * NAME
@@ -364,6 +356,29 @@ if (env == NULL)
 return( env );
 }
 
+/*****************************************************************************
+ * NAME
+ *    get_allomorph_id
+ * DESCRIPTION
+ *    isolate the allomorph ID string and make a copy of it
+ * RETURN VALUE
+ *    pointer to dynamically allocated allomorph ID string
+ */
+static char * get_allomorph_id(pszID_in)
+char *	pszID_in;
+{
+char *	p;
+
+if (pszID_in == NULL)
+	return NULL;
+if (*pszID_in == '{')
+	++pszID_in;
+p = strchr(pszID_in, '}');
+if (p != NULL)
+	*p = NUL;
+return duplicateString( pszID_in );
+}
+
 /***************************************************************************
  * NAME
  *    setaffixcats
@@ -499,7 +514,6 @@ if (x > 0)
 	}
 }
 
-/////////////////////// NEW  /////////////////////////
 /*****************************************************************************
  * NAME
  *    build_redup_allos
@@ -518,7 +532,7 @@ StampAllomorphList *	pHead_io;
 int *			pbBad_io;
 RedupAlloPiece *	pAlloPieces_in;
 ExpandedAllo *		pPartialExpansion_in;
-AmpleData *		pStamp_in;
+StampData *		pStamp_in;
 {
 StringList *         sp;
 StampAllomorphList * alp;
@@ -534,10 +548,13 @@ char *		     rp;
 int		     bAlloc;
 char *		     pszEnv;
 char *		     p;
-AmpleFullReduplication * pRedupAllo;
+#ifdef PROCESS_FULL_REDUP
+StampFullReduplication * pRedupAllo;
 char *               pszFullRedup;
 int                  iTokenLen;
 char                 szTokenBuffer[BUFSIZE];
+#endif /* PROCESS_FULL_REDUP */
+PropertySet_t	aprops;
 
 if ((pPartialExpansion_in == NULL) || (pPartialExpansion_in->pszAllo == NULL))
 	return NULL;
@@ -550,20 +567,19 @@ if (pAlloPieces_in == NULL)
 		(pPartialExpansion_in->pRedupClasses == NULL) )
 	{
 	bAlloc  = FALSE;
-	pszAllo = "";
+	pszAllo = duplicateString("");
 	}
 	else
 	{
 	bAlloc  = TRUE;
-	pszAllo = fix_allomorph(pPartialExpansion_in->pszAllo,
-				pStamp_in,
-				&bIsCaps);
+	pszAllo = applyChanges(pPartialExpansion_in->pszAllo, 
+				pStamp_in->pDictOrthoChanges);
 	validateAmpleString(pszAllo,
 				"allomorph",
 				getAmpleRecordIDTag(szRecordKey_g,
-						pStamp_in->uiRecordCount),
+						uiRecordNumber_m),
 				pszAllo,
-				pStamp_in->pszValidChars,
+				pStamp_in->pszValidCharacters,
 				pStamp_in->pLogFP);
 	}
 #ifdef HAVE_ALLOCA
@@ -573,20 +589,23 @@ if (pAlloPieces_in == NULL)
 #endif
 	pszEnd  = pszCopy;
 	/*
-	 * make alist & allomorph structures
+	 * make allo list & allomorph structures
 	 */
-	apLast = pHead_io;
-	pHead_io->pNext = ap = (StampAllomorphList *)allocMemory(
+	 if (pHead_io->a.pszAllomorph == NULL && pHead_io->pNext == NULL)
+	   /* is first case where it has already been allocated */
+	     alp = pHead_io;
+	 else
+	 {
+	   pHead_io->pNext = alp = (StampAllomorphList *)allocMemory(
 						 sizeof(StampAllomorphList) );
 	pHead_io = pHead_io->pNext;
-	// something's missing...  need to copy in props and envs
-	ap->a.uAlloPropertySet = apLast->a.uAlloPropertySet;
-	/* copy in all envs */
+	 }
+#ifdef PROCESS_FULL_REDUP
 	pszFullRedup = strstr(pPartialExpansion_in->pszAllo, FULLREDUP);
 	if (pszFullRedup != NULL)
 	  {
-	pRedupAllo = (AmpleFullReduplication *)allocMemory(sizeof(AmpleFullReduplication));
-	pRedupAllo->pAllo = alp->pAllomorph;
+	pRedupAllo = (StampFullReduplication *)allocMemory(sizeof(StampFullReduplication));
+	pRedupAllo->pAllo = alp->a;
 	iTokenLen = pszFullRedup - pPartialExpansion_in->pszAllo;
 	if (iTokenLen > 0)
 	  {
@@ -605,40 +624,37 @@ if (pAlloPieces_in == NULL)
 	  }
 	else
 		pRedupAllo->pszPostfix = NULL;
-	pRedupAllo->pNext = pStamp_in->pFullRedupAllos;
-	pStamp_in->pFullRedupAllos = pRedupAllo;
 	  }
-	if (bAlloc && bIsCaps)
-	alp->pAllomorph->iMORPHTYPE |= ISCAPS;
+#endif /* PROCESS_FULL_REDUP */
 	/*
 	 *  set allo string pointer
 	 */
 	alp->bMallocString = bAlloc;
-	alp->pszAllomorph  = pszAllo;
+	alp->a.pszAllomorph  = pszAllo;
 	/*
 	 *  set the allomorph ID
 	 */
-	alp->pAllomorph->pszAllomorphID = NULL;
+	alp->a.pszAllomorphID = NULL;
 	if (*pszEnd == '{')
 	{
 	rp     = pszEnd;
 	pszEnd = isolateWord(rp);
 	if (pStamp_in->bEnableAllomorphIDs)
-		alp->pAllomorph->pszAllomorphID = get_allomorph_id(rp);
+		alp->a.pszAllomorphID = get_allomorph_id(rp);
 	}
 	/*
-	 *  set any allomorph properties
+	 *  next is the optional set of allomorph properties
 	 */
-	alp->pAllomorph->sPropertySet.pProperties = NULL;
+	aprops.pProperties = NULL;
 	rp = parseAmplePropertySet(pszEnd,
-				   &(alp->pAllomorph->sPropertySet),
+				   &aprops,
 				   AMPLE_ALLO_PROP,
-				   pStamp_in->uiRecordCount,
-				   szRecordKey_g,
-				   pStamp_in->pszAmpleDictErrorHeader,
+				   uiRecordNumber_m, szRecordKey_g,
+				   pszDictErrorHead_m,
 				   &pStamp_in->sProperties,
-				   &pStamp_in->pPropertySets,
+				   &pStamp_in->pPropertyList,
 				   pStamp_in->pLogFP);
+	alp->a.uAlloPropertySet = aprops;
 	/*
 	 *  create any allomorph condition structures needed for this
 	 *  allomorph
@@ -708,23 +724,23 @@ if (pAlloPieces_in == NULL)
 		}
 		}
 	}
-	alp->pAllomorph->pEnvironment = parseAmpleAlloEnvConstraint(
+	alp->a.pAlloEnvironment = parseAmpleAlloEnvConstraint(
 						  pszEnv,
 						  pbBad_io,
-						  pStamp_in->uiRecordCount,
+						  uiRecordNumber_m,
 						  szRecordKey_g,
 						  pStamp_in->pDictOrthoChanges,
 						  pStamp_in->pCategories,
 						  &pStamp_in->sProperties,
-						  pStamp_in->pCategoryClasses,
+						  pStamp_in->pCategClasses,
 						  pStamp_in->pMorphClasses,
 						  pStamp_in->pStringClasses,
 											  /* 3.3.0 hab */
 						  pStamp_in->pPunctClasses,
-						  pStamp_in->pszValidChars,
+						  pStamp_in->pszValidCharacters,
 						  pStamp_in->pLogFP,
-						  &pStamp_in->pEnvStrings,
-						  NULL);
+						  &pStamp_in->pStringList,
+						  &pStamp_in->pAlloEnvList);
 	/*
 	 *  free temporarily allocated memory
 	 */
@@ -810,7 +826,7 @@ char *			pszRecord_in;
 StampAllomorphList *	pHead_io;
 int *			pbBad_io;
 RedupAlloPiece *	pAlloPiece_in;
-AmpleData *		pStamp_in;
+StampData *		pStamp_in;
 {
 StampAllomorphList *	pExpansions;
 RedupAlloPiece		sAlloPiece;
@@ -938,9 +954,9 @@ if (	(*pszAllo_in == '[') &&
 	{
 	if (pStamp_in->pLogFP != NULL)
 		fprintf(pStamp_in->pLogFP, szNoRedupClassIndex_m,
-			pStamp_in->pszAmpleDictErrorHeader, pszAllo_in+1,
+			pszDictErrorHead_m, pszAllo_in+1,
 			getAmpleRecordIDTag(szRecordKey_g,
-					pStamp_in->uiRecordCount));
+					uiRecordNumber_m));
 	return pHead_io;
 	}
 	*q = NUL;			/* strip off index to look up class */
@@ -955,9 +971,9 @@ if (	(*pszAllo_in == '[') &&
 	*p = NUL;
 	if (pStamp_in->pLogFP != NULL)
 		fprintf(pStamp_in->pLogFP, szBadRedupClass_m,
-			pStamp_in->pszAmpleDictErrorHeader, pszAllo_in+1,
+			pszDictErrorHead_m, pszAllo_in+1,
 			getAmpleRecordIDTag(szRecordKey_g,
-					pStamp_in->uiRecordCount));
+					uiRecordNumber_m));
 	*p = cSave;
 	return pHead_io;
 	}
@@ -1005,7 +1021,6 @@ return build_allomorphs(p,
 			&sAlloPiece,
 			pStamp_in);
 }
-/////////////////////// NEW  /////////////////////////
 
 /*****************************************************************************
  * NAME
@@ -1021,68 +1036,9 @@ StampAllomorphList *	ap;		/* current allomorph being built */
 StampData *		pStamp_in;
 {
 int	allo_bad = FALSE;
-char *	nextp;
-PropertySet_t	aprops;
-/*
- *  the first item in the field is the allomorph string
- */
-nextp = isolateWord(rp);          /* isolate the allomorph string */
-if (strcmp(rp,"0") == 0)
-	{
-	*rp = NUL;              /* have a zero (null) allomorph */
-	ap->a.pszAllomorph = duplicateString( rp );
-	}
-else
-	{
-	ap->a.pszAllomorph = applyChanges(rp, pStamp_in->pDictOrthoChanges);
-	validateAmpleString(ap->a.pszAllomorph,
-			"allomorph",
-			getAmpleRecordIDTag(szRecordKey_g, uiRecordNumber_m),
-			ap->a.pszAllomorph,
-			pStamp_in->pszValidCharacters,
-			pStamp_in->pLogFP);
-	}
-/*
- *  next is the optional set of allomorph properties
- */
-aprops.pProperties = NULL;
-rp = parseAmplePropertySet(nextp,
-			   &aprops,
-			   AMPLE_ALLO_PROP,
-			   uiRecordNumber_m, szRecordKey_g,
-			   pszDictErrorHead_m,
-			   &pStamp_in->sProperties,
-			   &pStamp_in->pPropertyList,
-			   pStamp_in->pLogFP);
-ap->a.uAlloPropertySet = aprops;
-/*
- *  finally, there may an allomorph environment constraint
- */
-ap->a.pAlloEnvironment = parseAmpleAlloEnvConstraint(
-						rp,
-						&allo_bad,
-						uiRecordNumber_m,
-						szRecordKey_g,
-						pStamp_in->pDictOrthoChanges,
-						pStamp_in->pCategories,
-						&pStamp_in->sProperties,
-						pStamp_in->pCategClasses,
-						pStamp_in->pMorphClasses,
-						pStamp_in->pStringClasses,
-												/* 2.1b1 hab */
-						pStamp_in->pPunctClasses,
-						pStamp_in->pszValidCharacters,
-						pStamp_in->pLogFP,
-						&pStamp_in->pStringList,
-						&pStamp_in->pAlloEnvList);
-/* build any reduplication allomorphs based on ap
-   look in ap->a.pszAllomorph for any partial or full redup
-   if so, generate or whatever, adding them to the ap list, if needed
- */
 
-ap = build_allomorphs(ap->a.pszAllomorph, szRecordKey_g, ap &allo_bad,
-		      pAlloPiece_in, pStamp_in);
-
+ap = build_allomorphs(rp, isolateWord(rp), ap, &allo_bad,
+		      NULL, pStamp_in);
 return allo_bad;
 }
 
@@ -1186,34 +1142,36 @@ for ( rp = recp ; *rp != NUL ; rp = endp )
 								/* needs to fall through to the 'A' case */
 
 		case 'A':               /* allomorph */
-		/*
-			 *  allocate an allomorph_list node and link it into
-			 *    the morpheme's list (keep dictionary order)
-			 */
-			if (morpheme.pAllomorphs == NULL)
-				morpheme.pAllomorphs = ap = (StampAllomorphList *)allocMemory(
-						   sizeof(StampAllomorphList) );
-			else
-				{
-				ap->pNext = (StampAllomorphList *)allocMemory(
-						   sizeof(StampAllomorphList) );
-										/* if we are processing an elsewhere */
-										/* allomorph, remember preceding */
-				if (is_elsewhere_allo)  /* allomorph */
-					elsewhere_prec = ap;
-				ap = ap->pNext;
-				}
-		nextp    = rp + strlen(rp);
-		allo_bad = process_allomorph(rp, ap, pStamp_in);
-		rp       = nextp;
-			bad_allo |= allo_bad;               /* one failure ruins all */
-
-			if (is_elsewhere_allo)      /* if are processing elsewhere */
-				{                       /* allomorph, remember it */
-				elsewhere_allo = ap;
-				is_elsewhere_allo = FALSE;
-				}
-			break;
+		  /*
+		   *  allocate an allomorph_list node and link it into
+		   *    the morpheme's list (keep dictionary order)
+		   */
+		  if (morpheme.pAllomorphs == NULL)
+		    morpheme.pAllomorphs = ap = (StampAllomorphList *)allocMemory(
+										  sizeof(StampAllomorphList) );
+		  else
+		    {
+		      for (ap; ap->pNext != NULL; ap = ap->pNext)
+			;
+		      ap->pNext = (StampAllomorphList *)allocMemory(
+								    sizeof(StampAllomorphList) );
+		      /* if we are processing an elsewhere */
+		      /* allomorph, remember preceding */
+		      if (is_elsewhere_allo)  /* allomorph */
+			elsewhere_prec = ap;
+		      ap = ap->pNext;
+		    }
+		  nextp    = rp + strlen(rp);
+		  allo_bad = process_allomorph(rp, ap, pStamp_in);
+		  rp       = nextp;
+		  bad_allo |= allo_bad;               /* one failure ruins all */
+		  
+		  if (is_elsewhere_allo)      /* if are processing elsewhere */
+		    {                       /* allomorph, remember it */
+		      elsewhere_allo = ap;
+		      is_elsewhere_allo = FALSE;
+		    }
+		  break;
 
 		case 'L':                       /* infix location */
 			if (morpheme.iMorphType & IFX)

@@ -10,10 +10,10 @@
 
 @set TITLE STAMP Reference Manual
 @set SUBTITLE Synthesizing after Transferring AMPLE Analyses
-@set VERSION version 2.2.0
-@set DATE January 2004
+@set VERSION version 2.3.0
+@set DATE June 2016
 @set AUTHOR by Stephen McConnel (and H. Andrew Black for v. 2.1b1 and above)
-@set COPYRIGHT Copyright @copyright{} 2000-2004 SIL International
+@set COPYRIGHT Copyright @copyright{} 2000-2016 SIL International
 
 @include front.txi
 
@@ -3021,7 +3021,13 @@ constraints (MEC_FT's, Weber, Black, and McConnel 1988:74,
 
 Like AMPLE, SYNTHESIS allows the user to define tests in terms of
 information associated with a morpheme or allomorph.  The test
-definitions must conform to the syntax detailed in XXXXXXXXXXXXX.
+definitions must conform to the syntax detailed in 
+@ifset txt
+`Test Syntax' below.
+@end ifset
+@ifclear txt
+@ref{Test syntax}.
+@end ifclear
 User-defined tests can be employed to constrain the selection of
 allomorphs in cases that are too complex for string or morpheme
 environment constraints.  Whenever a morpheme has two or more

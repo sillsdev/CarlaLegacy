@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for STAMP
  ***************************************************************************
- * Copyright 1997-2003 by SIL International.  All rights reserved.
+ * Copyright 1997-2016 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
-#define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 1		/* bug fix or other minor change */
-#define DATE "December 3, 2004"	/* date of release version */
-#define YEAR "2004"		/* used for copyright notice in banner */
+#define REVISION 3		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0		/* bug fix or other minor change */
+#define DATE "June 2, 2016"	/* date of release version */
+#define YEAR "2016"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 02-Jun-2016  hab  - Allow for partial and full reduplication.
+ * [2.3.0]
  * 03-Dec-2004  hab  - Ignore interfix entry type in unified dictionaries
  * [2.2.1]
  * 07-Jan-2004  hab  - Enhancement: add negative SECs (~/)
