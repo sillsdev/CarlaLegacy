@@ -139,8 +139,10 @@ separate lines.
  7f.                     <position> tocategory is member <identifier>
  7g.                     <position> fromcategory is <identifier>
  7h.                     <position> tocategory is <identifier>
+@ifset ample
  7i.                     outputcategory is <identifier>
  7j.                     outputcategory is member <identifier>
+@end ifset
 @end group
 
 @group
@@ -204,10 +206,12 @@ separate lines.
 @group
 15.  <type>          ::= prefix
 						 infix
+@ifset ample
 						 interfix
 						 interfixinfix
 						 interfixprefix
 						 interfixsuffix
+@end ifset
 						 root
 						 suffix
 						 initial
@@ -349,11 +353,21 @@ used to prune analyses based on adjacent words.)
 The type must be a keyword indicating whether the morpheme referred to
 is a prefix, an infix, a root, and so on
 
+@ifset ample
 @item 7efj.
+@end ifset
+@ifset stamp
+@item 7ef.
+@end ifset
 The identifier must be the name of a class of categories defined with
 @code{\ccl} in the analysis data file.
 
+@ifset ample
 @item 7ghi.
+@end ifset
+@ifset stamp
+@item 7gh.
+@end ifset
 The identifier must be a category defined with @code{\ca} in the
 analysis data file.
 
@@ -380,12 +394,14 @@ a @code{<neighbor>} value of @code{next} refers to
 immediately after the current word.
 
 @c Added by hab 06-Dec-2004
+@ifset ample
 @item 15.
 A note on interfixes: these are affixes which can also appear between
 roots.  A given interfix is both a prefix and interfix or both a
 suffix and an interfix or both an infix and interfix.  Therefore in a
 test, one may specify the particular subtype of interfix (i.e. it is
 also a prefix/infix/suffix).
+@end ifset
 
 @item 18a-d.
 The quoted forms of an identifier are needed only if the identifier is

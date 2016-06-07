@@ -97,6 +97,8 @@ permission from the coauthors.
 
 @item 3. Version 2.2.0 (January 2004) added negative string environment constraints.
 
+@item 4. Version 2.3.0 (June 2016) added partial and full reduplication allomorphs.
+
 @end table
 
 @c ----------------------------------------------------------------------------

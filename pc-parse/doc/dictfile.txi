@@ -556,14 +556,21 @@ The special sequence @code{<...>} indicates full reduplication.  This
 may be preceded and/or followed by any literal (e.g. hyphen).  This
 sequence is recognized as indicating full reduplication only when it
 is either a prefix or a suffix.  When it is a prefix, then it will
+@ifset ample
 match when a sequence of one or more characters repeats itself in the
 rest of the word being considered.  When it is a suffix, it will match
 when the entire string before it is repeated.  These matches are
 modulo any literal elements before or after.  For example, if it is a
 prefix, it can match the first @code{hati} in a form like
 @code{kohatihati}.  If it is a suffix, it could match the second
-@code{hati} in a form like @code{hatihatimo}.  @emph{Note: this has
-been implemented only for AMPLE at this point.}
+@code{hati} in a form like @code{hatihatimo}.
+@end ifset
+@ifset stamp
+repeat whatever string has been generated after it.
+When it is a suffix, it will repeat whatever string has been
+generated before it.  These repeated strings are
+modulo any literal elements before or after.
+@end ifset
 
 @end table
 
@@ -980,13 +987,18 @@ prefix, infix, suffix, and root.
 
 In a unified dictionary, the type of an entry is determined by the
 first letter following the morpheme type field code: @code{p} or
-@code{P} for prefixes, @code{i} or @code{I} for infixes, @code{n} or
-@code{N} for interfixes, @code{s} or @code{S} for suffixes, and
+@code{P} for prefixes, @code{i} or @code{I} for infixes, 
+@ifset ample
+@code{n} or @code{N} for interfixes, 
+@end ifset
+@code{s} or @code{S} for suffixes, and
 @code{r} or @code{R} for roots.  The morpheme type field is not needed
 for root entries because the entry type defaults to root.
 
 The morpheme type field is used only in unified dictionary files,
-since the morpheme type is otherwise implicit.  The only exception to
+since the morpheme type is otherwise implicit.  
+@ifset ample
+The only exception to
 this is for interfixes.
 
 Special notes for interfixes:
@@ -1002,6 +1014,7 @@ code.  Separate it by a space.
 If one is using the non-unified dictionary approach, one can add a
 morpheme type field to an affix entry to indicate that it is also an
 interfix.
+@end ifset
 
 @ifset ample
 @c ----------------------------------------------------------------------------
