@@ -548,12 +548,6 @@ char *		     rp;
 int		     bAlloc;
 char *		     pszEnv;
 char *		     p;
-#ifdef PROCESS_FULL_REDUP
-StampFullReduplication * pRedupAllo;
-char *               pszFullRedup;
-int                  iTokenLen;
-char                 szTokenBuffer[BUFSIZE];
-#endif /* PROCESS_FULL_REDUP */
 PropertySet_t	aprops;
 
 if ((pPartialExpansion_in == NULL) || (pPartialExpansion_in->pszAllo == NULL))
@@ -600,32 +594,6 @@ if (pAlloPieces_in == NULL)
 						 sizeof(StampAllomorphList) );
 	pHead_io = pHead_io->pNext;
 	 }
-#ifdef PROCESS_FULL_REDUP
-	pszFullRedup = strstr(pPartialExpansion_in->pszAllo, FULLREDUP);
-	if (pszFullRedup != NULL)
-	  {
-	pRedupAllo = (StampFullReduplication *)allocMemory(sizeof(StampFullReduplication));
-	pRedupAllo->pAllo = alp->a;
-	iTokenLen = pszFullRedup - pPartialExpansion_in->pszAllo;
-	if (iTokenLen > 0)
-	  {
-		memset(szTokenBuffer, 0, BUFSIZE);
-		strncpy(szTokenBuffer, pPartialExpansion_in->pszAllo, iTokenLen);
-		pRedupAllo->pszPrefix = duplicateString(szTokenBuffer);
-	  }
-	else
-		pRedupAllo->pszPrefix = NULL;
-	iTokenLen = strlen(pszFullRedup) - FULLREDUPLEN;
-	if (iTokenLen > 0)
-	  {
-		memset(szTokenBuffer, 0, BUFSIZE);
-		strcpy(szTokenBuffer, pszFullRedup + FULLREDUPLEN);
-		pRedupAllo->pszPostfix = duplicateString(szTokenBuffer);
-	  }
-	else
-		pRedupAllo->pszPostfix = NULL;
-	  }
-#endif /* PROCESS_FULL_REDUP */
 	/*
 	 *  set allo string pointer
 	 */

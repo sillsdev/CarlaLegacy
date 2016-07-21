@@ -677,7 +677,6 @@ StampAnalysis *ap;
 #endif /* hab220 */
 StampAllomorph *am;
 int            iLen;		/* 2.1b1 hab */
-/////////////////////////// NEW //////////////////////////////
 #define FULLREDUP "<...>"
 #define FULLREDUPLEN 5
 StampAnalysis * psa;
@@ -774,10 +773,6 @@ for (psa = head; psa != NULL; psa = psa->pRightLink)
 	break; /* assume only one exists */
       }
   }
-
-
-
-/////////////////////////// NEW //////////////////////////////
 
 if (pStamp_in->bTrace && (pStamp_in->pLogFP != NULL))
 #ifndef hab217
