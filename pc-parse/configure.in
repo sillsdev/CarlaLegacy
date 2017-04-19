@@ -10,7 +10,7 @@ AC_ARG_WITH([readline],
   [with_readline=yes])
 
 dnl Checks for programs.
-AC_PROG_CC
+AC_PROG_CC([c99 gcc cc])
 AC_PROG_LEX
 opAC_PROG_YACC
 AC_PROG_INSTALL
@@ -47,7 +47,6 @@ AC_HEADER_TIME
 AC_STRUCT_TM
 opAC_C_VOID
 opAC_C_PROTOTYPES
-AC_SUBST(ANSIFLAGS)
 opAC_C_WARNINGS
 opAC_STRUCT_TIMEZONE
 

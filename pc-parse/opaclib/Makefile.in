@@ -13,14 +13,13 @@ srcdir    = @srcdir@
 VPATH     = @srcdir@
 CC        = @CC@
 CFLAGS    = @CFLAGS@ @DEFS@ $(MORECFLAGS) -I. -I.. -I../include
-ANSIFLAGS = @ANSIFLAGS@
 RANLIB    = @RANLIB@
 INSTALL   = @INSTALL@
 COPY      = @COPYPROG@
 
 .SUFFIXES: .op
 .c.op:
-	$(CC) $(ANSIFLAGS) $(CFLAGS) -pg -c -o $@ $<
+	$(CC) $(CFLAGS) -pg -c -o $@ $<
 
 @make_shell@ = /bin/sh
 

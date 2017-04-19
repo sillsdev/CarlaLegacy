@@ -30,7 +30,9 @@ static char *convert_features( index, ppszFeatures_in )
 unsigned short *	index;
 char **			ppszFeatures_in;
 {
-int resultsize = 0, featsize, i;
+size_t resultsize = 0;
+size_t	featsize;
+int i;
 char *featresult = NULL, *feat;
 
 if (index[0] == 0)

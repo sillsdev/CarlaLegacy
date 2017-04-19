@@ -408,7 +408,7 @@ char *		rp;
 AmpleMorpheme *	mde;
 AmpleData *	pAmple_in;
 {
-int len;
+size_t len;
 char *s;
 				/* Change nl's to spaces in input string */
 for ( s = rp; *s; s++ )
@@ -612,8 +612,8 @@ int *		bIsCaps_out;
 char *  		pszLowered = NULL;
 char *			pszFixed;
 char *			p;
-int			iLength;
-int			iLowerLength;
+size_t			iLength;
+size_t			iLowerLength;
 size_t			uiSize;
 size_t			uiOffset;
 const unsigned char *	pszLow;
@@ -887,9 +887,9 @@ char * pszFullRedup;
 char * pszPartialRedup;
 char * pszPartialRedup2;
 char                 szTokenBuffer[BUFSIZE];
-int iTokenLen;
-int                  bIsCaps = FALSE;
-int		     bAlloc;
+size_t	iTokenLen;
+int		bIsCaps = FALSE;
+int		bAlloc;
 char *		     pszAllo;
 char *		     pszCopy;
 char *		     pszEnd;
@@ -1158,7 +1158,7 @@ while (*rp != NUL)
 		end = isolateWord(rp);
 
 		/* check for too large a morphname (warning only) */
-		pAmple_in->iMorphnameSize = strlen(rp);
+		pAmple_in->iMorphnameSize = (int)strlen(rp);
 		if (    (pAmple_in->iMorphnameSize >
 			 pAmple_in->iMaxMorphnameLength) &&
 			(pAmple_in->iMorphnameSize <= MAXMORPH) )
@@ -1741,7 +1741,7 @@ while (*rp != NUL)
 		end = isolateWord(rp);	/* use first word only */
 
 		/* check for too large a morphname (warning only) */
-		pAmple_in->iMorphnameSize = strlen(rp);
+		pAmple_in->iMorphnameSize = (int)strlen(rp);
 		if (    (pAmple_in->iMorphnameSize >
 			 pAmple_in->iMaxMorphnameLength) &&
 			(pAmple_in->iMorphnameSize <= MAXMORPH) )
@@ -2462,7 +2462,7 @@ if (head)
 	 *
 	 *  check for too large a morphname (warning only)
 	 */
-	pAmple_in->iMorphnameSize = strlen(pszMorphName) +
+	pAmple_in->iMorphnameSize = (int)strlen(pszMorphName) +
 		(bRegularSoundChange ? 1 : 0);
 	if (	(pAmple_in->iMorphnameSize > pAmple_in->iMaxMorphnameLength) &&
 		(pAmple_in->iMorphnameSize <= MAXMORPH) )
@@ -3085,7 +3085,7 @@ AmpleData *	pAmple_in;
 {
 register char *p;
 int cat = 0;
-int x;
+size_t x;
 unsigned char xcats[BUFSIZE+1];
 
 if (*line == NUL)
@@ -3160,7 +3160,7 @@ int		count;
 AmpleData *	pAmple_in;
 {
 register char *p, *q;
-int x;
+size_t x;
 int wantfrom;
 int cat = 0;
 unsigned char fromcat[BUFSIZE+1];

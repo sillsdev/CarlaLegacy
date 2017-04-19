@@ -63,7 +63,7 @@ static char szWhiteSpace_m[7] = " \t\r\n\f\v";
  *  globally accessible data
  */
 char *		pRecordBuffer_g      = NULL;
-unsigned	uiRecordBufferSize_g = 0;
+size_t		uiRecordBufferSize_g = 0;
 char		szRecordKey_g[MAX_RECKEY_SIZE];	/* for error messages */
 
 #ifdef RISC

@@ -60,7 +60,20 @@ if (!_isatty(_fileno(stdout)))
 #else
 if (!isatty(fileno(stdout)))
 #endif
+    {
+    /* the newer versions of the gcc library don't let you reuse the va_list
+     * marker, so we have to reinitialize it.  [April 2017, gcc 5.4)
+     */
+	va_end( marker );
+#if HAVE_STDARG_H
+	va_start( marker, pszFormat_in );
+#else
+	va_start( marker );
+	eMessageType_in = va_arg( marker, int );
+	pszFormat_in    = va_arg( marker, char * );
+#endif
 	vfprintf(stdout, pszFormat_in, marker);
+    }
 #else
 #ifdef HAVE_DOPRNT
 _doprnt(pszFormat_in, marker, stderr);
@@ -74,6 +87,5 @@ if (!_isatty(_fileno(stdout)))
 if (!isatty(fileno(stdout)))
 #endif
 	fflush(stdout);
-
 va_end( marker );
 }

@@ -161,7 +161,7 @@ long		flag;
 long		bitfield;
 long		bitmask;
 long		firstalpha;
-int		iLength;
+size_t		iLength;
 unsigned char *	p;
 /*
  *  Capitalization information is stored in a bit field, where the number 4
@@ -256,7 +256,7 @@ else
 	size_t	uiSpan;
 	size_t	uiWordLength;
 	size_t	uiOrigLength;
-	int		iLowerLength;
+	size_t	iLowerLength;
 	size_t	i;
 	size_t	j;
 	size_t	k;
@@ -834,7 +834,7 @@ const TextControl *	pTextCtl_in;
 {
 int			nextc;
 static WordTemplate	this_word;
-int			iCharSize;
+size_t		iCharSize;
 unsigned char *		pc;
 unsigned char *		pszChunk;
 

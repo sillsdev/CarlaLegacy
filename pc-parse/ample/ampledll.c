@@ -1137,9 +1137,9 @@ static char * addAResultToBuffer(
  *    none
  */
 static void fwConCat(char * pszString_in, int iAnalysesCount_in,
-			 int *iRoom_io, char *pszAResult_io)
+			 size_t *iRoom_io, char *pszAResult_io)
 {
-  int  iSize;
+  size_t  iSize;
   char szCountBuffer[11];
 
 #define  NOMOREROOM -65000
@@ -1151,16 +1151,16 @@ static void fwConCat(char * pszString_in, int iAnalysesCount_in,
   if (*iRoom_io < (iSize + 300)) /* use 300 to ensure plenty of room */
 	{
 	  strncat(pszAResult_io, szExceptionBufSizeBegin_m, *iRoom_io);
-	  *iRoom_io -= strlen(szExceptionBufSizeBegin_m);
+	  *iRoom_io -= (int)strlen(szExceptionBufSizeBegin_m);
 #ifdef WIN32
 	  _itoa(iAnalysesCount_in, szCountBuffer, 10);
 #else
 	  sprintf(szCountBuffer, "%d", iAnalysesCount_in);
 #endif
 	  strncat(pszAResult_io, szCountBuffer, *iRoom_io);
-	  *iRoom_io -= strlen(szCountBuffer);
+	  *iRoom_io -= (int)strlen(szCountBuffer);
 	  strncat(pszAResult_io, szExceptionEnd_m, *iRoom_io);
-	  *iRoom_io -= strlen(szExceptionEnd_m);
+	  *iRoom_io -= (int)strlen(szExceptionEnd_m);
 	  strncat(pszAResult_io, szWordFormClose_m, *iRoom_io);
 	  *iRoom_io = NOMOREROOM; 	/* force bad value so no more gets added to
 								   pszAResult_io*/
@@ -1169,7 +1169,7 @@ static void fwConCat(char * pszString_in, int iAnalysesCount_in,
 	{
 	  strncat(pszAResult_io, pszString_in, *iRoom_io);
 	  pszAResult_io += iSize;
-	  *iRoom_io -= iSize;
+	  *iRoom_io -= (int)iSize;
 	}
 }
 
@@ -1196,16 +1196,16 @@ static char * addFWParseToBuffer(
   AmpleAllomorph *	        pAllo;
   char *			pszAResult;
   int			        iSize;
-  int 			        iRoom;
+  size_t		        iRoom;
   int                           iAnalCount;
   int                           iMaxAnalyses;
 
   /*
    *  adjust pointers and counters for less redundant skipping
    */
-  iSize     = strlen(pszBuffer_out);
+  iSize     = (int)strlen(pszBuffer_out);
   pszAResult = pszBuffer_out + iSize;
-  iRoom     = uiBufferSize_in - iSize;
+  iRoom     = (int)uiBufferSize_in - iSize;
 
   if (pSetup_in)
 	iMaxAnalyses = pSetup_in->sData.iMaxAnalysesToReturn;

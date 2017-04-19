@@ -459,7 +459,7 @@ unsigned char **cats;
 StampData *	pStamp_in;
 {
 register char *p;
-int x;
+size_t x;
 unsigned char cat = 0;
 unsigned char xcats[BUFSIZE+1];
 
@@ -537,7 +537,7 @@ StampData *		pStamp_in;
 StringList *         sp;
 StampAllomorphList * alp;
 int                  bIsCaps = FALSE;
-unsigned             uiPrevEnd;
+size_t               uiPrevEnd;
 AmpleRedupClass      sRedupClass;
 AmpleRedupClass *    pPrevRedupClasses;
 AmpleRedupClass *    pRC;
@@ -806,11 +806,11 @@ char *			p;
 char *			q;
 char			cSave = NUL;
 ExpandedAllo		sExpandedAllo;
-unsigned		k;
-unsigned		uiSegSize;
-unsigned		uiAlloSize;
+size_t		k;
+size_t		uiSegSize;
+size_t		uiAlloSize;
 StringList *		sp;
-unsigned		uiTotalAllos;
+size_t		uiTotalAllos;
 
 if (pszAllo_in == NULL)
 	return pHead_io;
@@ -876,7 +876,7 @@ if (*pszAllo_in == NUL)
 			  uiTotalAllos, uiAlloSize);
 	if (pStamp_in->pLogFP)
 		fprintf(pStamp_in->pLogFP,
-			"NOTE: \"%s\" produces %u allomorph entries\n",
+			"NOTE: \"%s\" produces %zu allomorph entries\n",
 			pszRecord_in, uiTotalAllos);
 	}
 	pExpansions = build_redup_allos(pszRecord_in,
@@ -979,7 +979,7 @@ sAlloPiece.pClass     = NULL;
 sAlloPiece.pNext      = pAlloPiece_in;
 if (p != NULL)
   *p = cSave; /* if is literal followed by a class */
-  //    *p++ = cSave;
+/*    *p++ = cSave; */
 else
 	p = pszAllo_in + strlen(pszAllo_in);
 return build_allomorphs(p,

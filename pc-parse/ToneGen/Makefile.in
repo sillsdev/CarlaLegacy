@@ -5,7 +5,7 @@
 srcdir      = @srcdir@
 VPATH       = @srcdir@
 CC          = @CC@
-CFLAGS      = @ANSIFLAGS@ @CFLAGS@ @DEFS@ -I. -I.. -I../include -I../TonePGLib\
+CFLAGS      = @CFLAGS@ @DEFS@ -I. -I.. -I../include -I../TonePGLib\
  -DTONEPARS -DTONEGEN
 RANLIB      = @RANLIB@
 INSTALL     = @INSTALL@

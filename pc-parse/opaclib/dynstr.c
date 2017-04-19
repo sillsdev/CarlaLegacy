@@ -1,7 +1,7 @@
 /* DYNSTR.C - functions for dealing with dynamic strings
  ******************************************************************************
  *
- * int appendToDynString(DynString * pdstr, const char * prgch, unsigned cch)
+ * int appendToDynString(DynString * pdstr, const char * prgch, size_t cch)
  * int appendCharToDynString(DynString * pdstr, int ch)
  * void resetDynString(DynString * pdstr)
  *
@@ -40,9 +40,9 @@ extern VOIDP  memcpy  P((VOIDP d, const VOIDP s, size_t n));
 int assignToDynString(pdstr, prgch, cch)
 DynString * pdstr;
 const char * prgch;
-unsigned cch;
+size_t cch;
 {
-unsigned cbNewAlloc;
+size_t cbNewAlloc;
 
 if (pdstr == NULL)
 	return -1;
@@ -112,9 +112,9 @@ return 0;
 int appendToDynString(pdstr, prgch, cch)
 DynString * pdstr;
 const char * prgch;
-unsigned cch;
+size_t cch;
 {
-unsigned cbNewAlloc;
+size_t cbNewAlloc;
 
 if (pdstr == NULL)
 	return -1;
@@ -175,7 +175,7 @@ int appendCharToDynString(pdstr, ch)
 DynString * pdstr;
 int ch;
 {
-unsigned cbNewAlloc;
+size_t cbNewAlloc;
 
 if ((pdstr == NULL) || (ch == 0))
 	return -1;
@@ -223,7 +223,7 @@ return 0;
  */
 int initDynString(pdstr, cch)
 DynString * pdstr;
-int cch;
+size_t cch;
 {
 if (pdstr == NULL)
 	return -1;
@@ -236,7 +236,7 @@ if (pdstr->pszBuffer)
 	}
 	else
 	{
-	if (pdstr->cbAlloc != (unsigned)cch)
+	if (pdstr->cbAlloc != cch)
 		{
 		char * psz = reallocMemory(pdstr->pszBuffer, cch);
 		if (psz == NULL)

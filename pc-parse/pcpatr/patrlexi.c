@@ -735,7 +735,8 @@ PATRData *	pPATR_io;
 {
 FILE *fp;
 char *rp, *recp, *nextrp;
-int k, num_feats;
+size_t k;
+int num_feats;
 unsigned char *word, *category, *features, *gloss;
 #ifndef hab130
 unsigned char *rootgloss;
@@ -1528,7 +1529,7 @@ int k;
 int errors;
 StringList *headsp, *tailsp, *wordsp, *sp;
 char *wordbuffer, *word;
-unsigned		length;
+size_t			length;
 char *			pszCatFeatName;
 char *			pszLexFeatName;
 char *			pszGlossFeatName;
@@ -1898,7 +1899,7 @@ if (!errors && (sentm != NULL))
 		fprintf(stdout, "    cat = \"%s\", feature = ",
 			pCat->pszCategory);
 		writePATRFeature(pCat->pFeature, stdout,
-				 strlen(pCat->pszCategory) + 26, pPATR_in);
+					(int)strlen(pCat->pszCategory) + 26, pPATR_in);
 		fprintf(stdout, "\n");
 		}
 		fprintf(stdout, "\n");
@@ -2000,7 +2001,7 @@ PATRData *      pPATR_in;
 {
 PATRComplexFeature *flp;
 StringList path_node, *sp, *tailsp;
-int len;
+size_t len;
 int count_written = 0;
 char *	pszCatFeatName;
 char *	pszLexFeatName;
@@ -2046,7 +2047,7 @@ switch (featp->eType)
 		return( 0 );
 		}
 	len = strlen(pPATR_m->pszFeatureMarker) + 1;
-	while (indent++ < len)
+	while ((unsigned int)indent++ < len)
 		putc(' ', outfp);
 	putc('<', outfp);
 	for ( sp = headsp ; sp ; sp = sp->pNext)
@@ -2123,9 +2124,10 @@ static void write_patr_lex_item(list)
 VOIDP	list;		/* pointer to list of patr_lex_item structures */
 {
 PATRLexItem *lip;
-int len;
+size_t len;
 PATRFeature *fnp;
-int i, j, k;
+int i, j;
+unsigned int k;
 char *	pszCatFeatName;
 char *	pszGlossFeatName;
 #ifndef hab130
@@ -2220,7 +2222,7 @@ for ( lip = (PATRLexItem *)list ; lip ; lip = lip->pNext )
 		if ((i != 0) && (lip->piFeatureIndexes[i-1] < 0))
 		{
 		putc('\n', pLexOutputFP_m);
-		for ( k = 0 ; k < len ; ++k)
+		for ( k = 0 ; (unsigned int)k < len ; ++k)
 			putc(' ', pLexOutputFP_m);
 		}
 		fprintf(pLexOutputFP_m, " %s",
@@ -2249,14 +2251,14 @@ for ( lip = (PATRLexItem *)list ; lip ; lip = lip->pNext )
 	{
 	fnp = followPATRForwardPointers(lip->pFeature);
 	if (fnp->eType == PATR_COMPLEX)
-		write_feature_paths(pLexOutputFP_m, fnp, len, pPATR_m);
+		write_feature_paths(pLexOutputFP_m, fnp, (int)len, pPATR_m);
 	else
 		{
 		PATRGrammar * pGram = pPATR_m->pGrammar;
 		putc(' ', pLexOutputFP_m);
 		++len;
 		pPATR_m->pGrammar = NULL;
-		writePATRFeature(fnp, pLexOutputFP_m, len, pPATR_m);
+		writePATRFeature(fnp, pLexOutputFP_m, (int)len, pPATR_m);
 		pPATR_m->pGrammar = pGram;
 		putc('\n', pLexOutputFP_m);
 		}
