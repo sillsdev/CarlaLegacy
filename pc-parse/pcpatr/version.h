@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for PC-PATR
 *******************************************************************************
- * Copyright 1994, 2005 by SIL International.  All rights reserved.
+ * Copyright 1994, 2017 by SIL International.  All rights reserved.
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 4		/* enhancement requiring adding to book */
-#define PATCHLEVEL 4		/* bug fix or other minor change */
-#define DATE "January 29, 2010"	/* date of release version */
-#define YEAR "2010"		/* used for copyright notice in banner */
+#define PATCHLEVEL 5		/* bug fix or other minor change */
+#define DATE "April 25, 2017"	/* date of release version */
+#define YEAR "2017"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 25-Apr-2017	SRMc - Fix for 64-bit Windows build; also remove as many
+ * [1.4.5]             compiler warnings as possible
  * 29-Jan-2010	hab  - increase size of Let template name from 80 to 300.
  * [1.4.4]		Some FLEx users need more than 80 characters.
  *  9-Nov-2006	SRMc - fixed bug in constraint processing: yet another final

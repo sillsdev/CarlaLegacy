@@ -7,6 +7,7 @@ stamp-h
 *.ox
 *.a
 *.so
+*~
 Makefile
 /ToneGen/tonegen
 /TonePars/tonepars
@@ -20,3 +21,12 @@ Makefile
 /pckimmo/pckimmo
 /pcpatr/pcpatr
 /stamp/stamp
+Debug*/
+Release*/
+Pcparse*.VC.*db
+*.vcxproj.user
+pcpatr/dlldata.c
+pcpatr/patr100.h
+pcpatr/patr100.tlb
+pcpatr/patr100_i.c
+pcpatr/patr100_p.c

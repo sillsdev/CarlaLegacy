@@ -352,7 +352,8 @@ KimmoData *lang;
 {
 unsigned i, j;
 register KimmoFSAColumn *cp, *xp;
-unsigned ck, cl, cnum, xk, xnum;
+unsigned ck, cl, xk;
+size_t	cnum, xnum;
 
 for ( cp = rulep->pColumns, i = 0 ; i < rulep->iColumnCount ; ++i, ++cp )
 	{
@@ -756,7 +757,7 @@ for ( rp = lang->pAutomata, i = 0 ; i < lang->uiAutomataSize ; ++i, ++rp )
 		cp->pLexChars[1] = '\0';
 		cp->pSurfChars[1] = '\0';
 		}
-	cp->uiPrecedence = strlen((char *)cp->pLexChars);
+	cp->uiPrecedence = (unsigned short)strlen((char *)cp->pLexChars);
 	if (cp->uiPrecedence < num_pairs)
 		{
 		cp->pLexChars = (unsigned char *)
@@ -870,7 +871,7 @@ static int compare_size(vap,vbp)
 const VOIDP vap;
 const VOIDP vbp;
 {
-int ax,bx;
+size_t ax,bx;
 const char **a, **b;
 
 a = (const char **)vap;
@@ -879,7 +880,7 @@ ax = strlen(*a);
 bx = strlen(*b);
 if (ax == bx)
 	return( strcmp(*a,*b) );
-return( bx - ax );
+return (ax > bx) ? -1 : 1;
 }
 #ifndef __STDC__
 #undef const
@@ -1394,7 +1395,8 @@ unsigned char *tok;
 unsigned char *q;
 KimmoRule *rp;
 KimmoFSAColumn *cp;
-unsigned i, j, x;
+unsigned i, j;
+size_t x;
 /*
  *  make sure we have space to store this rule
  */
@@ -1729,7 +1731,7 @@ for ( i = 0 ; i < rp->iRowCount ; ++i )
 				   tok);
 		return( -1 );
 		}
-	rp->pColumns[j].puiTransitions[i] = x;
+	rp->pColumns[j].puiTransitions[i] = (unsigned short)x;
 	}
 	}
 return( 0 );
@@ -1776,7 +1778,8 @@ KimmoData *lang;
 {
 KimmoRule *rp;
 KimmoFSAColumn *cp;
-unsigned i, j, k, x;
+unsigned i, j, k;
+size_t x;
 unsigned char *tok;
 unsigned char *lexp, *surfp;
 unsigned char *this_row;
@@ -2872,11 +2875,11 @@ void writeKimmoFeasiblePairs(pOutputFP_in, pKimmo_in)
 FILE *		pOutputFP_in;
 KimmoData *	pKimmo_in;
 {
-int	i;
-int	num;
-int	left;
-int	j;
-int	max;
+size_t	i;
+size_t	num;
+size_t	left;
+size_t	j;
+size_t	max;
 char	fmt[8];
 
 if (	(pOutputFP_in == NULL) ||
@@ -2890,7 +2893,7 @@ j    = 0;
 left = pKimmo_in->uiFeasiblePairsCount;
 					/* (alphabet stored longest first) */
 i    = strlen((char *)pKimmo_in->ppszAlphabet[0]);
-sprintf(fmt, " %%%ds", i);
+sprintf(fmt, " %%%zus", i);
 max  = 79 / (i + 1);
 
 while ( left > 0 )

@@ -36,7 +36,7 @@ TextControl *		pTextCtl_in;
 {
 char *	p;
 int	c = NUL;
-int	iLength;
+size_t	iLength;
 
 if (bIsCap_in)
 	{

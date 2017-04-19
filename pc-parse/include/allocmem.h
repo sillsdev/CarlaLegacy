@@ -41,7 +41,7 @@ extern void		freeMemory P((VOIDP pBlock_io));
 extern void		setAllocMemoryTracing P((const char * pszFilename_in));
 extern void		setAllocMemoryTrap P((const VOIDP pAddress_in,
 						  int iCount_in));
-extern unsigned long	getAndClearAllocMemorySum P((void));
+extern size_t	getAndClearAllocMemorySum P((void));
 extern void		writeAllocMemoryDebugMsg P((
 					const char * pszFormat_in, ...));
 

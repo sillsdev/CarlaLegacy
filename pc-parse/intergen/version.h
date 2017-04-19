@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for INTERGEN
  ***************************************************************************
- * Copyright 1998, 2002 by SIL International.  All rights reserved.
+ * Copyright 1998, 2017 by SIL International.  All rights reserved.
  */
 #define VERSION 2		/* major rewrite or expansion */
 #define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 0		/* bug fix or other minor change */
-#define DATE "December 3, 2004"	/* date of release version */
-#define YEAR "2004"		/* used for copyright notice in banner */
+#define PATCHLEVEL 1		/* bug fix or other minor change */
+#define DATE "April 25, 2017"	/* date of release version */
+#define YEAR "2017"		/* used for copyright notice in banner */
 
 /****************************************************************************
  * EDIT HISTORY
+ * 25-Apr-2017	SRMc - Fix for 64-bit Windows build; also remove as many
+ * [2.2.1]             compiler warnings as possible
  * 03-Dec-2004	hab  - Allow for interfixes
  * [2.2.0]
  * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library

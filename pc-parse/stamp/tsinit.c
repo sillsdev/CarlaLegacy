@@ -1017,8 +1017,8 @@ CodeTable *	pTable_io;
 {
 unsigned	i;
 char *		p;
-unsigned	uiOldSize;
-unsigned	uiNewSize;
+size_t	uiOldSize;
+size_t	uiNewSize;
 
 if (pTable_io == NULL)
 	return;
@@ -1079,8 +1079,8 @@ int		code;		/* Field code for current entry */
 char *		pszMatch;
 char *		pszReplace;
 int		cQuote;
-unsigned	uiTableLength = 0;
-unsigned	uiOldLength;
+size_t	uiTableLength = 0;
+size_t	uiOldLength;
 CodeTable **	ppTable = NULL;
 FILE *		infp;
 static const char	szErrorHead_s[] = "\nDICTIONARY CODE TABLE: ";

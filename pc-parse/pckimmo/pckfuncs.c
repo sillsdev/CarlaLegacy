@@ -49,7 +49,7 @@ static NumberedMessage sBadRule_m		= { ERROR_MSG,   801,
 /*
  *  local function prototypes
  */
-static int	maxlength P((int size1, int size2, int size3));
+static size_t	maxlength P((size_t size1, size_t size2, size_t size3));
 static void	writeKimmoMorphemes P((KimmoMorpheme * pMorphemes_in,
 					   FILE *	       pOutputFP_in,
 					   KimmoData *     pKimmo_in));
@@ -525,7 +525,8 @@ char *string;
 KimmoData *pKimmo_in;
 {
 register char *p, *q;
-int i, k;
+int i;
+size_t k;
 
 if ((string == (char *)NULL) || (*string == NUL))
 	return(string);
@@ -562,12 +563,12 @@ return(string);
  * RETURN VALUE
  *    Maximum length
  */
-static int maxlength(size1, size2, size3)
-int size1;
-int size2;
-int size3;
+static size_t maxlength(size1, size2, size3)
+size_t size1;
+size_t size2;
+size_t size3;
 {
-int ml;
+size_t ml;
 
 if (size1 > size2)
 	{
@@ -604,7 +605,7 @@ FILE *outfp;
 KimmoData *	pKimmo_in;
 {
 KimmoMorpheme *mp;
-int strsize, featsize, lexsize, i;
+size_t strsize, featsize, lexsize, i;
 
 for ( mp = morphs ; mp != (KimmoMorpheme *)NULL ; mp = mp->pNext )
 	{
@@ -817,7 +818,7 @@ unsigned short *	pIndexes;
 KimmoData *		pKimmo_in;
 {
 int i;
-unsigned	uiTotalLength;
+size_t	uiTotalLength;
 char *		pszFeatures;
 
 if ((pIndexes == NULL) || (pIndexes[0] == 0))

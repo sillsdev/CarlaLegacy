@@ -5,7 +5,7 @@
 srcdir      = @srcdir@
 VPATH       = @srcdir@
 CC          = @CC@
-CFLAGS      = @ANSIFLAGS@ @CFLAGS@ @DEFS@ -I. -I.. -I../include
+CFLAGS      = @CFLAGS@ @DEFS@ -I. -I.. -I../include
 RANLIB      = @RANLIB@
 INSTALL     = @INSTALL@
 COPY        = @COPYPROG@

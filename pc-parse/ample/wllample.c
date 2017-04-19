@@ -388,9 +388,9 @@ int	iRow;
  *  Try to load the LinguaLinks AMPLE DLL
  */
 hAmpleLib_g = LoadLibrary(szAmpleLib_m);
-if ((unsigned long)hAmpleLib_g < 32)
+if ((size_t)hAmpleLib_g < 32)
 	{
-	switch ((unsigned long)hAmpleLib_g)
+	switch ((size_t)hAmpleLib_g)
 	{
 	case 0:
 		pszError = "System was out of memory, executable file was corrupt, or relocations were invalid.";
@@ -445,8 +445,8 @@ if ((unsigned long)hAmpleLib_g < 32)
 		break;
 	}
 	if (pszError == NULL)
-	wsprintf(szMessageBuffer_g, "Error loading %s: unknown error [%lu]",
-		 (LPSTR)szAmpleLib_m, (unsigned long)hAmpleLib_g);
+	wsprintf(szMessageBuffer_g, "Error loading %s: unknown error [%zu]",
+		 (LPSTR)szAmpleLib_m, (size_t)hAmpleLib_g);
 	else
 	wsprintf(szMessageBuffer_g, "Error loading %s: %s",
 		 (LPSTR)szAmpleLib_m, pszError);
@@ -745,7 +745,7 @@ pfAmpleSetParameter_g     = NULL;
  * RETURN VALUE
  *    NULL (?)
  */
-long FAR PASCAL AmpleWndProc(
+LRESULT FAR PASCAL AmpleWndProc(
 	HWND	hWindow_in,
 	UINT	uiMessage_in,
 	WPARAM	wParam_in,
@@ -762,7 +762,7 @@ switch (uiMessage_in)
 	case WM_PAINT:
 	hDC = BeginPaint(hWindow_in, &ps);
 	TextOut(hDC, iX_g, iY_g,
-		szMessageBuffer_g, strlen(szMessageBuffer_g));
+		szMessageBuffer_g, (int)strlen(szMessageBuffer_g));
 	EndPaint(hWindow_in, &ps);
 	break;
 
@@ -949,7 +949,7 @@ while (GetMessage(&msg, 0, 0, 0))
 	TranslateMessage(&msg);
 	DispatchMessage(&msg);
 	}
-return (msg.wParam);
+return (int)(msg.wParam);
 }
 /*
   File settings for GNU Emacs (Please leave for Steve McConnel's sake!)

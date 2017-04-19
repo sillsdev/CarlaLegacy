@@ -223,7 +223,7 @@ STDMETHODIMP PatrParser::ParseString(BSTR bstrSentence, BSTR * pbstrParse)
 		return S_OK;
 	}
 
-	char * psz = strdup(pszSentence + strspn(pszSentence, szWhitespace_g));
+	char * psz = _strdup(pszSentence + strspn(pszSentence, szWhitespace_g));
 	if (psz == NULL)
 	{
 		free(pszSentence);
@@ -2061,7 +2061,7 @@ HRESULT PatrParser::LoadLexicon(BSTR bstrFile, BOOL fAdd, bool bAna)
 		// Check whether this lexicon file has already been loaded.
 		for ( i = 0 ; i < m_uiLexFileCount ; ++i )
 		{
-			if (stricmp(pszFile, m_ppszLexFiles[i]) == 0)
+			if (_stricmp(pszFile, m_ppszLexFiles[i]) == 0)
 				return E_INVALIDARG;
 		}
 	}

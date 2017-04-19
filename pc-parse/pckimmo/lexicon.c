@@ -786,7 +786,7 @@ unsigned *	puiSynSizeLexSections;
 unsigned	i;
 unsigned char *	tok;
 KimmoLexicon *	lxp;
-int		iLexIndex;
+size_t		iLexIndex;
 KimmoAlternation *	pAlt = NULL;
 unsigned	uiSizeAltLex = 0;	/* size of array in *pAlt */
 unsigned	uiNumAltLex = 0;	/* number of entries used *pAlt */
@@ -944,7 +944,7 @@ for (;;)
 		pAlt->piLexicons = (short *)reallocMemory(pAlt->piLexicons,
 						uiSizeAltLex * sizeof(short) );
 		}
-	pAlt->piLexicons[uiNumAltLex] = iLexIndex;
+	pAlt->piLexicons[uiNumAltLex] = (short)iLexIndex;
 	++uiNumAltLex;
 	}
 	if (pSynLang_in != NULL)
@@ -979,7 +979,7 @@ for (;;)
 						 pSynAlt->piLexicons,
 						 uiSynSizeAltLex * sizeof(short) );
 		}
-	pSynAlt->piLexicons[uiSynNumAltLex] = iLexIndex;
+	pSynAlt->piLexicons[uiSynNumAltLex] = (short)iLexIndex;
 	++uiSynNumAltLex;
 	}
 	}
@@ -1271,8 +1271,8 @@ unsigned char *		p;
 unsigned char *		q;
 KimmoAlternation *	ap = NULL;
 unsigned		counter;
-unsigned		counter1;
-unsigned		counter2;
+size_t		counter1;
+size_t		counter2;
 char *			temp;
 char *			rp;
 char *			recp;
@@ -1702,7 +1702,7 @@ while (strcmp((char *)tok, "INCLUDE") == 0)
 		if (ap == (KimmoAlternation *)NULL)
 			lp->uiContinuation = MAX_USHORT;	/* signal end (#) */
 		else
-			lp->uiContinuation = ap - pLanguage->pAlternations;
+			lp->uiContinuation = (unsigned short)(ap - pLanguage->pAlternations);
 		lp->pszGloss  = new_lex_item_string( tok3 );
 		lp->puiFeatureIndexes = new_lex_item_indexes( help_index );
 
@@ -1721,7 +1721,7 @@ while (strcmp((char *)tok, "INCLUDE") == 0)
 		if (ap == (KimmoAlternation *)NULL)
 			lp->uiContinuation = MAX_USHORT;	/* signal end (#) */
 		else
-			lp->uiContinuation = ap - pLanguage->pAlternations;
+			lp->uiContinuation = (unsigned short)(ap - pLanguage->pAlternations);
 		lp->pszGloss  = new_lex_item_string( tok3 );
 		lp->puiFeatureIndexes = new_lex_item_indexes( help_index );
 

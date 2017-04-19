@@ -125,9 +125,9 @@ const TextControl *	pTextCtl_in;
 const StringList *	pSkipOver_in;
 {
 char *			p;
-int			iLength;
-int			iUpperLength;
-int			iOffset;
+size_t			iLength;
+size_t			iUpperLength;
+size_t			iOffset;
 const unsigned char *	pszUpper;
 long			bitmask;
 

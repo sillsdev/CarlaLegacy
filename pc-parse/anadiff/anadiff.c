@@ -311,7 +311,7 @@ FILE *		pFileFP_in;
 Record *	pRecord_out;
 {
 char *		pszLine;
-unsigned	len;
+size_t		len;
 
 if ((pFileFP_in == NULL) || (pRecord_out == NULL))
 	return 0;
