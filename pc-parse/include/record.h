@@ -54,7 +54,7 @@ extern void writeCodeTable P((FILE * pLogFP_in,
  */
 #define MAX_RECKEY_SIZE	64
 extern char *	pRecordBuffer_g;
-extern unsigned	uiRecordBufferSize_g;
+extern size_t	uiRecordBufferSize_g;
 extern char	szRecordKey_g[MAX_RECKEY_SIZE];
 
 /***************************************************************************

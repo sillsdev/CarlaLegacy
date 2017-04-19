@@ -77,13 +77,13 @@ extern int loadOutxCtlFile P((const char *   pszFilename_in,
 extern void resetTextControl P((TextControl * pTextCtl_io));
 
 /* myctype.c */
-extern int    matchAlphaChar          P((const unsigned char * pszString_in,
+extern size_t matchAlphaChar          P((const unsigned char * pszString_in,
 					 const TextControl *   pTextCtl_in));
-extern int    matchLowercaseChar      P((const unsigned char * pszString_in,
+extern size_t matchLowercaseChar      P((const unsigned char * pszString_in,
 					 const TextControl *   pTextCtl_in));
-extern int    matchUppercaseChar      P((const unsigned char * pszString_in,
+extern size_t matchUppercaseChar      P((const unsigned char * pszString_in,
 					 const TextControl *   pTextCtl_in));
-extern int    matchCaselessChar       P((const unsigned char * pszString_in,
+extern size_t matchCaselessChar       P((const unsigned char * pszString_in,
 					 const TextControl *   pTextCtl_in));
 extern const unsigned char * convLowerToUpper P((
 					   const unsigned char * pszString_in,

@@ -215,14 +215,14 @@ char		szBuffer1[BUFSIZE];
 char		szBuffer2[BUFSIZE];
 char *		pszOldBuffer;
 char *		pszNewBuffer;
-unsigned	uiOldSize;
-unsigned	uiNewSize;
+size_t		uiOldSize;
+size_t		uiNewSize;
 char *		pszOld;
 char *		pszNew;
 char *		pszPosition;
-unsigned	uiLength;
-unsigned	uiMatchLength;
-unsigned	uiReplaceLength;
+size_t		uiLength;
+size_t		uiMatchLength;
+size_t		uiReplaceLength;
 const Change *	pChange;
 
 if (pszString_in == NULL)
@@ -277,7 +277,7 @@ for (	pszOld=pszOldBuffer, pszNew=pszNewBuffer, pChange = pChangeList_in ;
 		*pszNew++ = *pszOld++;
 		++uiLength;
 		}
-		if (check_change_environment(pszNewBuffer, uiLength, pszOld,
+		if (check_change_environment(pszNewBuffer, (int)uiLength, pszOld,
 					 pChange->pEnvironment))
 		{
 		if (uiLength + uiReplaceLength >= uiNewSize)
@@ -322,7 +322,7 @@ for (	pszOld=pszOldBuffer, pszNew=pszNewBuffer, pChange = pChangeList_in ;
 		*pszNew++ = *pszOld++;
 		++uiLength;
 		}
-	if (check_change_environment(pszNewBuffer, uiLength, pszOld,
+	if (check_change_environment(pszNewBuffer, (int)uiLength, pszOld,
 					 pChange->pEnvironment))
 		{
 		if (uiLength + uiReplaceLength >= uiNewSize)
@@ -357,7 +357,7 @@ for (	pszOld=pszOldBuffer, pszNew=pszNewBuffer, pChange = pChangeList_in ;
 		*pszNew++ = *pszOld++;
 		++uiLength;
 		}
-		if (check_change_environment( pszNewBuffer, uiLength,
+		if (check_change_environment( pszNewBuffer, (int)uiLength,
 					  pszOld + uiMatchLength,
 					  pChange->pEnvironment))
 		{
@@ -1348,7 +1348,7 @@ static char *shorten(string,size)
 char *string;
 int size;
 {
-int len;
+size_t len;
 
 if ((string == (char *)NULL) || (size <= 0))
 	return(string);		/* check for reasonable arguments */
@@ -1457,7 +1457,7 @@ static int senv_left(left,env)
 char *left;
 ChgEnvItem *env;
 {
-int size;
+size_t size;
 char *myleft;
 StringList *sp;
 StringClass *scl;
@@ -1518,7 +1518,7 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	   if (matchEnd(left, sp->pszString))
 		  {
 		  size = strlen(sp->pszString);
-		  if (chk_senv_left(size, left, env, sp->pszString) )
+		  if (chk_senv_left((int)size, left, env, sp->pszString) )
 		  goto goodleft;
 		  }
 		}
@@ -1531,7 +1531,7 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	size = (matchEnd(left,env->u.pszString)) ?
 				strlen(env->u.pszString) : 0;
 					/* check for validity */
-	if (chk_senv_left(size, left, env, "") ) goto goodleft;
+	if (chk_senv_left((int)size, left, env, "") ) goto goodleft;
 	}
 	else
 	{				/* check word initial condition */
@@ -1575,7 +1575,7 @@ static int senv_right(right,env)
 char *right;
 ChgEnvItem *env;
 {
-int size;
+size_t size;
 StringList *sp;
 StringClass *scl;
 
@@ -1625,7 +1625,7 @@ for (;; ++right )
 	   if (matchBeginning(right, sp->pszString))
 		  {
 		  size = strlen(sp->pszString);
-		  if (chk_senv_right(size, right, env))
+		  if (chk_senv_right((int)size, right, env))
 		  return( TRUE );
 		  }
 	   }
@@ -1639,7 +1639,7 @@ for (;; ++right )
 	size = (matchBeginning(right,env->u.pszString)) ?
 				strlen(env->u.pszString) : 0;
 					/* check for validity */
-	if (chk_senv_right(size, right, env) ) return( TRUE );
+	if (chk_senv_right((int)size, right, env) ) return( TRUE );
 	}
 	else
 	{				/* check word final condition */

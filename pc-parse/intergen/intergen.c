@@ -150,7 +150,7 @@ static void   nl_needed P((char *	cp,
 			   char *	wp,
 			   char *	pszFormat_in));
 static void   outlines	P((void));
-static void   padLine   P((char * pszLine_in, int iMax_in));
+static void   padLine   P((char * pszLine_in, size_t iMax_in));
 static void   process	P((void));
 char *        getFieldCode P((char ** pszCode_io));
 static void   setBufOfAmbiguousField P((char         * pszTempBuf_in,
@@ -168,7 +168,7 @@ static int	bLinesHaveContent_m = FALSE;	/* output lines have content */
 static int	bMonitorProgress_m = FALSE;     /* monitor progress */
 static int	bUsingDefaultFields_m = TRUE;	/* if no -s in command line */
 static char	cCommentChar_m = '|';		/* comment marker */
-static int	iMaxLineLength_m = 77;	/* max length of output lines */
+static size_t iMaxLineLength_m = 77;	/* max length of output lines */
 static int	bAlign_m      = FALSE;	/* switch for align option */
 static int	bEveryDec_m   = FALSE;	/* show every decomp ambiguity */
 static int      bUseFieldCodeInOutput_m = FALSE;/* -f option */
@@ -373,7 +373,7 @@ while ((k = getopt(argc,argv,"ac:d:efg:i:nmo:qs:t:w:/z:Z:")) != EOF)
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &p, 0);
+		trap_address = (VOIDP)strtoull(optarg, &p, 0);
 		if (trap_address != (VOIDP)NULL)
 		{
 		if (*p == ',')
@@ -830,7 +830,7 @@ static char * zap_spc(cp)
 char *	cp;		/* pointer to string to check */
 {
 register char *p;
-int cch;
+size_t cch;
 
 if (cp == (char *)NULL)
 	return((char *)NULL);
@@ -917,7 +917,7 @@ MultibyteLetter *pPrevious;
 
 pNewLet = allocMemory(sizeof(MultibyteLetter));
 pNewLet->pszLetter = (unsigned char *)duplicateString((char *)pszLet_in);
-pNewLet->iLength = strlen((const char *)pszLet_in);
+pNewLet->iLength = (unsigned int)strlen((const char *)pszLet_in);
 				/* add it to the list and keep the list
 				   sorted by longest length first */
 for (pMultibyte = pMultibyteLetters_m,
@@ -957,7 +957,7 @@ if (pMultibyte == NULL)
  */
 static void initMultiByteStrlen()
 {
-int i;
+size_t i;
 LowerLetter    *pLower;
 UpperLetter    *pUpper;
 CaselessLetter *pCaseless;
@@ -1004,7 +1004,7 @@ static size_t mb_strlen(pszString_in)
 char * pszString_in;
 {
 int               iAdjust;
-int               iLength;
+size_t            iLength;
 MultibyteLetter * pMultibyte;
 char            * pszCurrent;
 char            * pszLeftMost;
@@ -1053,7 +1053,7 @@ return (iLength);
  */
 static void align_lines()
 {
-int max_line;
+size_t max_line;
 /*
  * Find longest line
  */
@@ -1242,10 +1242,10 @@ char *	pszFormat_in;
 char *	fp;
 char *	np;
 char *	xp;
-int	k;
-int     iDecSize;
-int     iUnlSize;
-int     iWrdSize;
+size_t	k;
+size_t  iDecSize;
+size_t  iUnlSize;
+size_t  iWrdSize;
 
 np = pszFormat_in;
 if ((np != (char *)NULL) && (*np != NUL))
@@ -1296,9 +1296,9 @@ if ((np != (char *)NULL) && (*np != NUL))
 pszInitPunc_m = np;                 /* point to any leading punctuation */
 								/* check for line length */
 k = (pszInitPunc_m != (char *)NULL) ? strlen(pszInitPunc_m) : 0;
-iDecSize = (int) (mb_strlen(szDecLine_m)+mb_strlen(dp));
-iUnlSize = (int) (mb_strlen(szUnlLine_m)+mb_strlen(up));
-iWrdSize = (int) (mb_strlen(szWrdLine_m)+mb_strlen(wp));
+iDecSize = mb_strlen(szDecLine_m)+mb_strlen(dp);
+iUnlSize = mb_strlen(szUnlLine_m)+mb_strlen(up);
+iWrdSize = mb_strlen(szWrdLine_m)+mb_strlen(wp);
 switch (iTextualField_m) /* find textual field and add k to it */
 	{
 		case 'd':			/* decomposition */
@@ -1311,13 +1311,13 @@ switch (iTextualField_m) /* find textual field and add k to it */
 		iWrdSize += k;
 		break;
 	}
-if (    ((int)  (mb_strlen(szCatLine_m)+mb_strlen(cp))  > iMaxLineLength_m) ||
-		(        iDecSize                               > iMaxLineLength_m) ||
-		((int)  (mb_strlen(szFdsLine_m)+mb_strlen(fdp)) > iMaxLineLength_m) ||
-		((int)  (mb_strlen(szGlsLine_m)+mb_strlen(gp))  > iMaxLineLength_m) ||
-		((int)  (mb_strlen(szProLine_m)+mb_strlen(pp))  > iMaxLineLength_m) ||
-		(        iUnlSize                               > iMaxLineLength_m) ||
-		(        iWrdSize                               > iMaxLineLength_m) )
+if (    ((mb_strlen(szCatLine_m)+mb_strlen(cp))  > iMaxLineLength_m) ||
+		(iDecSize                                > iMaxLineLength_m) ||
+		((mb_strlen(szFdsLine_m)+mb_strlen(fdp)) > iMaxLineLength_m) ||
+		((mb_strlen(szGlsLine_m)+mb_strlen(gp))  > iMaxLineLength_m) ||
+		((mb_strlen(szProLine_m)+mb_strlen(pp))  > iMaxLineLength_m) ||
+		(iUnlSize                                > iMaxLineLength_m) ||
+		(iWrdSize                                > iMaxLineLength_m) )
 	{
 	/*
 	 * either the new material plus the old is too long or
@@ -1631,9 +1631,9 @@ strncat(pszLine_in, " ", LINESIZE - strlen(pszLine_in));
  */
 static void padLine(pszLine_in, iMax_in)
 char * pszLine_in;
-int    iMax_in;
+size_t    iMax_in;
 {
-int diff;
+size_t diff;
 
 diff = iMax_in - mb_strlen( pszLine_in );
 while (diff--)

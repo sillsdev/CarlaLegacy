@@ -263,7 +263,7 @@ typedef struct
 	/*
 	 *  values used for internal processing
 	 */
-	int			iCurrentIndex;	/* index number of current edge */
+	size_t			iCurrentIndex;	/* index number of current edge */
 	int			iParseCount;	/* number of parses found */
 	PATRMemory *        pMem;		/* can be shared by multple PATRData */
 	unsigned long	uiEdgesAdded;

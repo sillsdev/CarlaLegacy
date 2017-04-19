@@ -73,7 +73,7 @@ static int		trap_count = 0;
 static unsigned		trace_flag = 0;
 static void		trap_found P((VOIDP ptr));
 static char		debug_buffer[BUFSIZ];
-static unsigned long	mem_used = 0;
+static size_t	mem_used = 0;
 static VOIDP		pLowBound_m  = NULL;
 static VOIDP		pHighBound_m = NULL;
 
@@ -125,8 +125,7 @@ register VOIDP p;
 p = (VOIDP)malloc(size);
 if (pAllocMemoryDebugFP_m != NULL)
 #ifndef hab3318
-	fprintf(pAllocMemoryDebugFP_m, "m %lu %lx\n",
-		(unsigned long)size, (unsigned long)p);
+	fprintf(pAllocMemoryDebugFP_m, "m %zu %p\n", size, p);
 #else
 	fprintf(pAllocMemoryDebugFP_m, "m %lu %lu\n",
 		(unsigned long)size, (unsigned long)p);
@@ -201,7 +200,7 @@ else
 	{
 	if (pAllocMemoryDebugFP_m != NULL)
 #ifndef hab3318
-	fprintf(pAllocMemoryDebugFP_m, "f %lx r\n", (unsigned long)s);
+	fprintf(pAllocMemoryDebugFP_m, "f %p r\n", s);
 #else
 	fprintf(pAllocMemoryDebugFP_m, "f %lu r\n", (unsigned long)s);
 #endif /* hab3318 */
@@ -209,8 +208,7 @@ else
 	}
 if (pAllocMemoryDebugFP_m != NULL)
 #ifndef hab3318
-	fprintf(pAllocMemoryDebugFP_m, "m %lu %lx r\n",
-		(unsigned long)size, (unsigned long)p);
+	fprintf(pAllocMemoryDebugFP_m, "m %zu %p r\n", size, p);
 #else
 	fprintf(pAllocMemoryDebugFP_m, "m %lu %lu r\n",
 		(unsigned long)size, (unsigned long)p);
@@ -251,7 +249,7 @@ if (p == NULL)
 if (pAllocMemoryDebugFP_m != NULL)
 	{
 #ifndef hab3318
-	fprintf(pAllocMemoryDebugFP_m, "f %lx\n", (unsigned long)p);
+	fprintf(pAllocMemoryDebugFP_m, "f %p\n", p);
 #else
 	fprintf(pAllocMemoryDebugFP_m, "f %lu\n", (unsigned long)p);
 #endif /* hab3318 */
@@ -380,10 +378,9 @@ else
 MessageBox(0, szMessageBuffer_s, "trap_found()", MB_OK | MB_ICONINFORMATION);
 #else
 if (ptr == trap_address)
-	fprintf(stderr, "allocMemory: trapping on address %lx\n",
-		(unsigned long)ptr);
+	fprintf(stderr, "allocMemory: trapping on address %p\n", ptr);
 else
-	fprintf(stderr, "freeMemory: invalid address %lx\n", (unsigned long)ptr);
+	fprintf(stderr, "freeMemory: invalid address %p\n", ptr);
 #endif
 #endif
 abort();
@@ -397,9 +394,9 @@ abort();
  * RETURN VALUE
  *    Amount of memory used by allocMemory calls since last call.
  */
-unsigned long getAndClearAllocMemorySum()
+size_t getAndClearAllocMemorySum()
 {
-unsigned long prev;
+size_t prev;
 
 prev     = mem_used;	/* Remember how much used */
 mem_used = 0;		/* Clear it */

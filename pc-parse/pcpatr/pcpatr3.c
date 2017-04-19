@@ -90,7 +90,7 @@ fprintf(stderr, "    Gloss display is %s\n",
 	(sPCPATRData_g.bGloss)?"ON":"OFF");
 if (sPCPATRData_g.iMaxProcTime != 0)
 	fprintf(stderr, "    Parse time limit is %lu seconds\n",
-		sPCPATRData_g.iMaxProcTime);
+		(unsigned long)sPCPATRData_g.iMaxProcTime);
 else
 	fprintf(stderr, "    Parse time is unlimited\n");
 fprintf(stderr, "    Record marker is   %s\n",
@@ -268,7 +268,7 @@ fprintf(fp, "set features %s\n",
 fprintf(fp, "set features %s\n",
 	(sPCPATRData_g.iFeatureDisplay & PATR_FEATURE_ON) ? "ON" : "OFF");
 fprintf(fp, "set gloss %s\n", (sPCPATRData_g.bGloss) ? "ON":"OFF");
-fprintf(fp, "set limit %lu\n", sPCPATRData_g.iMaxProcTime);
+fprintf(fp, "set limit %lu\n", (unsigned long)sPCPATRData_g.iMaxProcTime);
 fprintf(fp, "set marker record %s\n",   sPCPATRData_g.pszRecordMarker);
 fprintf(fp, "set marker word %s\n",     sPCPATRData_g.pszWordMarker);
 fprintf(fp, "set marker category %s\n", sPCPATRData_g.pszCategoryMarker);

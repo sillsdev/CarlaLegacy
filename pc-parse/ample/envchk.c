@@ -93,16 +93,16 @@ static char *shorten(string,size)
 char *string;
 int size;
 {
-int len;
+size_t len;
 
 if ((string == (char *)NULL) || (size <= 0))
 	return(string);		/* check for reasonable arguments */
 
-len = strlen(string) - size;	/* find out where to chop */
-if (len <= 0)
+len = strlen(string);	/* find out where to chop */
+if (len <= (unsigned int)size)
 	*string = NUL;		/* nothing left of the string... */
 else
-	*(string + len) = NUL;
+	*(string + len - size) = NUL;
 return(string);
 }
 
@@ -201,7 +201,7 @@ static int senv_left(left,env)
 char *left;
 AmpleEnvItem *env;
 {
-int size;
+size_t size;
 char *myleft;
 StringList *sp;
 char *temp_word;
@@ -334,7 +334,7 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	   if (matchEnd(left,sp->pszString))
 		  {
 		  size = strlen(sp->pszString);
-		  if (chk_senv_left (size, left, env, sp->pszString) ) goto goodleft;
+		  if (chk_senv_left ((int)size, left, env, sp->pszString) ) goto goodleft;
 		  }
 #ifdef BAD_COMPILER_CODE_GENERATION
 	   strcpy("","");
@@ -358,7 +358,7 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	  size = (matchEnd(left,pStringToMatch)) ?
 				strlen(pStringToMatch) : 0;
 					/* check for validity */
-	  if (chk_senv_left(size, left, env, "") ) goto goodleft;
+	  if (chk_senv_left((int)size, left, env, "") ) goto goodleft;
 	}
 	  }
 	else if (env->u.pszString != (char *)NULL)
@@ -366,7 +366,7 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	size = (matchEnd(left,env->u.pszString)) ?
 				strlen(env->u.pszString) : 0;
 					/* check for validity */
-	if (chk_senv_left(size, left, env, "") ) goto goodleft;
+	if (chk_senv_left((int)size, left, env, "") ) goto goodleft;
 	}
 	else
 	{				/* check word initial condition */
@@ -411,7 +411,7 @@ char *		right;
 AmpleEnvItem *	env;
 AmpleData *	pAmpleData_in;
 {
-int size;
+size_t size;
 StringList *sp;
 char *temp_word;
 
@@ -532,7 +532,7 @@ for (;; ++right )
 	   if (matchBeginning(right,sp->pszString))
 		  {
 		  size = strlen(sp->pszString);
-		  if (chk_senv_right(size, right, env, pAmpleData_in) )
+		  if (chk_senv_right((int)size, right, env, pAmpleData_in) )
 		  return( TRUE );
 		  }
 	   }
@@ -555,7 +555,7 @@ for (;; ++right )
 	size = (matchBeginning(right,pStringToMatch)) ?
 						strlen(pStringToMatch) : 0;
 					/* check for validity */
-	if (chk_senv_right(size, right, env, pAmpleData_in) )
+	if (chk_senv_right((int)size, right, env, pAmpleData_in) )
 		return( TRUE );
 	}
 	  }
@@ -564,7 +564,7 @@ for (;; ++right )
 	size = (matchBeginning(right,env->u.pszString)) ?
 						strlen(env->u.pszString) : 0;
 					/* check for validity */
-	if (chk_senv_right(size, right, env, pAmpleData_in) )
+	if (chk_senv_right((int)size, right, env, pAmpleData_in) )
 		return( TRUE );
 	}
 	else
@@ -751,7 +751,7 @@ static int penv_left(left,env)
 char *left;
 AmpleEnvItem *env;
 {
-int size;
+size_t size;
 char *myleft;
 StringList *sp;
 
@@ -824,7 +824,7 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	   if (matchEnd(left,sp->pszString))
 		  {
 		  size = strlen(sp->pszString);
-		  if (chk_penv_left (size, left, env, sp->pszString) ) goto goodleft;
+		  if (chk_penv_left ((int)size, left, env, sp->pszString) ) goto goodleft;
 		  }
 #ifdef BAD_COMPILER_CODE_GENERATION
 	   strcpy("","");
@@ -839,7 +839,7 @@ for (;; strcpy(left,shorten(myleft,1)) )
 	size = (matchEnd(left,env->u.pszString)) ?
 				strlen(env->u.pszString) : 0;
 					/* check for validity */
-	if (chk_penv_left(size, left, env, "") ) goto goodleft;
+	if (chk_penv_left((int)size, left, env, "") ) goto goodleft;
 	}
 	else
 	{				/* check word initial condition */
@@ -878,7 +878,7 @@ static int penv_right(right,env)
 char *		right;
 AmpleEnvItem *	env;
 {
-int size;
+size_t size;
 StringList *sp;
 
 if (env == (AmpleEnvItem *)NULL)
@@ -941,7 +941,7 @@ for (;; ++right )
 	   if (matchBeginning(right,sp->pszString))
 		  {
 		  size = strlen(sp->pszString);
-		  if (chk_penv_right(size, right, env) )
+		  if (chk_penv_right((int)size, right, env) )
 		  return( TRUE );
 		  }
 	   }
@@ -955,7 +955,7 @@ for (;; ++right )
 	size = (matchBeginning(right,env->u.pszString)) ?
 						strlen(env->u.pszString) : 0;
 					/* check for validity */
-	if (chk_penv_right(size, right, env) )
+	if (chk_penv_right((int)size, right, env) )
 		return( TRUE );
 	}
 	else

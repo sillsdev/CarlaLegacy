@@ -45,9 +45,9 @@ PATRData *              pPATR_in;
 {
 PATRFeature *		pFeature;
 char *			pszFeatures;
-unsigned		uiFeaturesLength;
-unsigned		uiTotalLength;
-unsigned		uiLength;
+size_t		uiFeaturesLength;
+size_t		uiTotalLength;
+size_t		uiLength;
 PATRLabeledFeature *	pFdDef;
 char *			psz0;
 

@@ -99,7 +99,7 @@ int *states;
 unsigned ruleNum;
 int tracetype;
 {
-unsigned i;
+size_t i;
 unsigned char lc, sc;
 char char_fmt[40];
 
@@ -114,7 +114,7 @@ if (lch == -1)
 	}
 else
 	{
-	sprintf(char_fmt, "%%%ds:%%-%ds ", i, i);
+	sprintf(char_fmt, "%%%zus:%%-%zus ", i, i);
 	fprintf(outfp, char_fmt, convertKimmoIndexToCharacter(lc, &sKimmoData_m),
 		convertKimmoIndexToCharacter(sc, &sKimmoData_m) );
 	}
@@ -185,7 +185,7 @@ unsigned nullc;
 int trace;
 FILE *logfp;
 {
-int i;
+size_t i;
 KimmoResult *newresp;
 KimmoResult *tailp;
 static char t_fmt[] = "\n    RESULT =  ";
@@ -422,7 +422,7 @@ unsigned char *alph;
 unsigned char *p;
 unsigned k;
 static char buf[2] = { 0, 0 };
-unsigned len;
+size_t len;
 
 for ( gp = headp ; gp != (KimmoResult *)NULL ; gp = gp->pNext )
 	{

@@ -1479,8 +1479,7 @@ for ( psr = psrs ; psr ; psr = psr->pNext )
 	}
 if (pData->pPATR->iDebugLevel >= 5)
 	{
-	fprintf(stdout,  "\nSimplePSRs for %s: 0x%lx\n",
-			firstelm->pszName, (long)psrs );
+	fprintf(stdout,  "\nSimplePSRs for %s: %p\n", firstelm->pszName, (void *)psrs );
 	show_psrs( psrs );
 	}
 /*
@@ -2401,7 +2400,8 @@ for ( net = net->pNext ; net ; net = net->pNext )
  *
  *  Return NULL if delim not found
  */
-return( (ComplexPSR *)nomatch(net, delim, pData) );
+nomatch(net, delim, pData);
+return( (ComplexPSR *)0 );
 }
 
 /*****************************************************************************
@@ -4797,8 +4797,7 @@ for (	pRuleList = pGrammar_in->pRuleTable ;
 	fprintf(stdout, "%s ->", pRule->pszLHS);
 	for ( pNonterm = pRule->pRHS ; pNonterm ; pNonterm = pNonterm->pNext )
 	fprintf(stdout, "  %s(%s)", pNonterm->pszName, pNonterm->pszLhsName);
-	fprintf(stdout, "\nUnifications feature:   (0x%lx)\n",
-	   (unsigned long)pRule->pUniFeature);
+	fprintf(stdout, "\nUnifications feature:   (%p)\n", (void *)pRule->pUniFeature);
 	writePATRFeatureToLog(pRule->pUniFeature, 0, FALSE, pPATR_in);
 	fprintf(stdout, "\n");
 	fprintf(stdout, "Priority union operations:\n");
@@ -5734,7 +5733,7 @@ static void grammar_too_big(uiRequest_in)
 size_t	uiRequest_in;
 {
 /* REVIEW: how much memory leakage might this allow? */
-longjmp(sOutOfMemory_m, uiRequest_in ? uiRequest_in : 1);
+longjmp(sOutOfMemory_m, uiRequest_in ? (int)uiRequest_in : 1);
 }
 
 /*****************************************************************************

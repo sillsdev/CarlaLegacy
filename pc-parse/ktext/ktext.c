@@ -656,7 +656,7 @@ while ((k = getopt(argc, argv, "c:i:o:l:x:hqsv/z:Z:")) != EOF)
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &s, 0);
+		trap_address = (VOIDP)strtoull(optarg, &s, 0);
 		if (trap_address != (VOIDP)NULL)
 		{
 		if (*s == ',')
@@ -744,7 +744,7 @@ char *field;
 {
 StringList *path, *lastp, *slp;
 char *p, *q;
-unsigned length;
+size_t length;
 int begun = 0, done = 0;
 
 path = (StringList *)NULL;
@@ -1325,7 +1325,7 @@ FILE *			outfp;
 WordTemplate *		wtp;
 WordAnalysis *		pAnal;
 KimmoResult *		resp;
-int			k;
+size_t			k;
 char *			buffer;
 unsigned long		uiDotsCount = 0;
 unsigned		uiAmbiguityCount;

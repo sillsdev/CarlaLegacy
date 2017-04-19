@@ -16,8 +16,8 @@ extern "C" {
  */
 typedef struct {
 	char * pszBuffer;
-	unsigned cbLen;
-	unsigned cbAlloc;
+	size_t cbLen;
+	size_t cbAlloc;
 	int bError;
 } DynString;
 
@@ -25,11 +25,11 @@ typedef struct {
  * dynstr.c
  */
 extern int assignToDynString P((DynString * pdstr, const char * prgch,
-				unsigned cch));
+				size_t cch));
 extern int appendToDynString P((DynString * pdstr, const char * prgch,
-				unsigned cch));
+				size_t cch));
 extern int appendCharToDynString P((DynString * pdstr, int ch));
-extern int initDynString P((DynString * pdstr, int cch));
+extern int initDynString P((DynString * pdstr, size_t cch));
 extern void resetDynString P((DynString * pdstr));
 extern void eraseDynString P((DynString * pdstr));
 

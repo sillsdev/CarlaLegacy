@@ -532,11 +532,11 @@ rhead->iOrderClassMax = 0;
 #endif
 rhead->eType	   = AMPLE_ROOT;
 rhead->uiAllomorphLength = 0;
-rhead->uiMorphnamesLength = strlen(pAmple_in->bRootGlosses ?
+rhead->uiMorphnamesLength = (unsigned int)(strlen(pAmple_in->bRootGlosses ?
 					ap->pROOT_GLOSS :
 					ap->pMORPHNAME) +
 		   strlen(findAmpleCategoryName((int)(rhead->iROOTCATEG),
-						  pAmple_in->pCategories)) + 1;
+						  pAmple_in->pCategories)) + 1);
 rhead->pLeft   = (AmpleHeadList *)NULL;
 rhead->pRight	= (AmpleHeadList *)NULL;
 return(rhead);
@@ -557,12 +557,12 @@ AmpleData *	pAmple_in;
 {
 char *		anal;		/* points to beginning of analysis string */
 char *		cp;
-int		len	 = 0;	/* total size of analysis string */
-int		dcsize	 = 0;	/* total size of decomposition */
-int		pcsize	 = 0;	/* total size of category output */
-int		propsize = 0;	/* total size of properties */
-int		fdsize	 = 0;	/* total size of feature descriptors */
-int		ufsize	 = 0;	/* total size of underlying forms */
+size_t		len	 = 0;	/* total size of analysis string */
+size_t		dcsize	 = 0;	/* total size of decomposition */
+size_t		pcsize	 = 0;	/* total size of category output */
+size_t		propsize = 0;	/* total size of properties */
+size_t		fdsize	 = 0;	/* total size of feature descriptors */
+size_t		ufsize	 = 0;	/* total size of underlying forms */
 AmpleHeadList *	hp;
 char *		dp  = NULL;
 char *		nwp = NULL;
@@ -830,7 +830,7 @@ for ( cp = anal, hp = head ; hp ; hp = hp->pRight )
 	{
 #ifdef PROP_DEBUG
 	reportError(DEBUG_MSG,
-			"Building property string, propsize: %d\n", propsize);
+			"Building property string, propsize: %zu\n", propsize);
 #endif
 	/*
 	 *  For each property
@@ -1124,13 +1124,13 @@ static int findPartialRedupMatches(PartialRedupIndexedClass *pIndexedClass,
 StringList *sp;
 char szTokenBuffer[BUFSIZE];
 char * pszToMatch = *pszMatchBeg;
-int iPostLen = 0;
+size_t iPostLen = 0;
 char                 *pszMorphName;
 AmpleAllomorph *      pAllo;
 AmpleAlloEnv * pEnv;
 int bFound;
 int bFoundAMatch = FALSE;
-int size;
+size_t size;
 
 if (pIndexedClass == NULL)
   return(TRUE);
@@ -1207,7 +1207,7 @@ for ( sp = pIndexedClass->pStringClass->pMembers;
 		/* create the amset if appropriate */
 		if (isAmpleAllomorphSelected(pszMorphName, pAllo->pszAllomorph, pAmple_in))
 		  *amset = createPartialRedupAmlist(*amset, etype, pPartialRedup,
-						   *pszMatchBeg - key, pAmple_in);
+						(int)(*pszMatchBeg - key), pAmple_in);
 		else
 			return(FALSE); /* what was found is not in selected morphs */
 
@@ -1283,7 +1283,7 @@ for (pPartialRedup = pAmple_in->pPartialRedupAllos;
 	 pPartialRedup != NULL;
 	 pPartialRedup = pPartialRedup->pNext)
   {
-    int iPreLen = 0;
+    size_t iPreLen = 0;
     char *pszPre;
     char *pszMatchBeg;
     PartialRedupIndexedClass * pIndexedClass;
@@ -1349,7 +1349,7 @@ static AmpleAmlist * createFullRedupAmlist(AmpleAmlist *pList_in,
  */
 static AmpleAmlist * get_full_redup(char *key, int etype, AmpleAmlist *amset, AmpleData *pAmple_in)
 {
-int                     iRedupLen = 0;
+size_t             iRedupLen = 0;
 FullReduplication *pFullRedup;
 if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX) ||
 	(etype == AMPLE_NFXPFX) || (etype == AMPLE_NFXSFX))
@@ -1358,8 +1358,8 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX) ||
 	pFullRedup != NULL;
 	pFullRedup = pFullRedup->pNext)
 	   {
-	   int iPreLen = 0;
-	   int iPostLen = 0;
+	   size_t iPreLen = 0;
+	   size_t iPostLen = 0;
 	   char *pszPre;
 	   char *pszPost;
 	   char *pszMatchBeg;
@@ -1390,7 +1390,7 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX) ||
 		   }
 	   else
 		   {
-		   int iLen = strlen(pszMatchBeg);
+		   size_t iLen = strlen(pszMatchBeg);
 		   if ((iLen % 2) != 0)
 		   continue; 	/* remaining length must be even */
 		   iRedupLen = iLen/2; /* half of rest must repeat */
@@ -1398,7 +1398,7 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX) ||
 		   }
 	   if (strstr(pszMatchBeg, key + iRedupLen) == pszMatchBeg)
 		   { /* first occurence of second half occurs at the front */
-		   amset = createFullRedupAmlist(amset, pFullRedup, iRedupLen);
+		   amset = createFullRedupAmlist(amset, pFullRedup, (int)iRedupLen);
 		   }
 	   }
 	   else
@@ -1419,11 +1419,11 @@ if ((etype == AMPLE_PFX) || (etype == AMPLE_SFX) ||
 	   if (iRedupLen > 0)
 		   { /* a copy of key could fit in what came before;
 			see if it matches */
-		   int iMatchLen = iRedupLen - iPreLen - iPostLen;
+		   size_t iMatchLen = iRedupLen - iPreLen - iPostLen;
 		   if ( (iMatchLen > 0) &&
 			(strncmp(pszMatchBeg, pszSurfaceForm_m, iMatchLen) == 0))
 		   {
-		   amset = createFullRedupAmlist(amset, pFullRedup, iRedupLen);
+		   amset = createFullRedupAmlist(amset, pFullRedup, (int)iRedupLen);
 		   }
 		   }
 	   }
@@ -1581,8 +1581,8 @@ AmpleAllomorph *	pAllomorphs = NULL;
 AmpleAllomorph *	pAllo;
 AmpleAmlist *		amset = NULL;	/* list of allomorphs collected */
 AmpleAmlist *		pNew;
-int			i;
-int			len;
+unsigned int		i;
+size_t		len;
 int			cSave;
  char                    *pszMorphName;
 
@@ -1598,7 +1598,7 @@ for ( i = 0 ; i <= len ; ++i )
 	cSave = key[i];
 	key[i] = NUL;
 	/* don't repeat Trie search needlessly */
-	if (i <= pAmple_in->iMaxTrieDepth)
+	if (i <= (unsigned int)pAmple_in->iMaxTrieDepth)
 	pAllomorphs = findDataInTrie(pAmple_in->pDictionary, key);
 	for ( pAllo = pAllomorphs ; pAllo != NULL ; pAllo = pAllo->pNext )
 	{
@@ -1614,7 +1614,7 @@ for ( i = 0 ; i <= len ; ++i )
 		pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
 		pNew->amp = (etype == AMPLE_ROOT) ?
 				  copy_am(etype, pAllo, pAmple_in) : pAllo;
-		pNew->alen = strlen(key);
+		pNew->alen = (int)strlen(key);
 		pNew->amlink = amset;
 		amset = pNew;
 		  }
@@ -1634,7 +1634,7 @@ for ( i = 0 ; i <= len ; ++i )
 			pNew = (AmpleAmlist *)allocMemory(sizeof(AmpleAmlist));
 			pNew->amp = (etype == AMPLE_ROOT) ?
 			  copy_am(etype, pAllo, pAmple_in) : pAllo;
-			pNew->alen = strlen(key);
+			pNew->alen = (int)strlen(key);
 			pNew->amlink = amset;
 			amset = pNew;
 		  }
@@ -1828,12 +1828,12 @@ else
 		if (!head)
 			{
 			pAmpleLeftHead_m = &newhead;
-			newhead.uiMorphnamesLength = strlen(ap->pMORPHNAME) + 1;
+			newhead.uiMorphnamesLength = (unsigned int)strlen(ap->pMORPHNAME) + 1;
 			}
 		else
 			{
 			head->pRight = &newhead;
-			newhead.uiMorphnamesLength = strlen(ap->pMORPHNAME) +
+			newhead.uiMorphnamesLength = (unsigned int)strlen(ap->pMORPHNAME) +
 						  head->uiMorphnamesLength + 1;
 			}
 		newtail = tail + pfxp->alen;
@@ -2201,12 +2201,12 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 		if (!head)
 			{
 			pAmpleLeftHead_m = &newhead;
-			newhead.uiMorphnamesLength = strlen(ap->pMORPHNAME) + 1;
+			newhead.uiMorphnamesLength = (unsigned int)strlen(ap->pMORPHNAME) + 1;
 			}
 		else
 			{
 			head->pRight = &newhead;
-			newhead.uiMorphnamesLength = strlen(ap->pMORPHNAME) +
+			newhead.uiMorphnamesLength = (unsigned int)strlen(ap->pMORPHNAME) +
 						  head->uiMorphnamesLength + 1;
 			}
 		newtail = tail + ifxp->alen;
@@ -2786,12 +2786,12 @@ else
 		if (!head)
 			{
 			pAmpleLeftHead_m = &newhead;
-			newhead.uiMorphnamesLength = strlen(ap->pMORPHNAME) + 1;
+			newhead.uiMorphnamesLength = (unsigned int)strlen(ap->pMORPHNAME) + 1;
 			}
 		else
 			{
 			head->pRight = &newhead;
-			newhead.uiMorphnamesLength = strlen(ap->pMORPHNAME) +
+			newhead.uiMorphnamesLength = (unsigned int)strlen(ap->pMORPHNAME) +
 						  head->uiMorphnamesLength + 1;
 			}
 		newtail = tail + nfxp->alen;
@@ -4063,7 +4063,7 @@ AmpleData *	pAmple_in;
 {
 int	bPassed;
 int	cSave;
-int     iLen;
+size_t iLen;
 
 if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 	{
@@ -4091,7 +4091,7 @@ if (current->pAllomorph->pEnvironment != (AmpleAlloEnv *)NULL)
 	iLen = (pCurrentWord_m->pTemplate->pszFormat == (char *)NULL) ? 0 :
 			strlen(pCurrentWord_m->pTemplate->pszFormat);
 	bPassed = checkAmplePunctEnviron(pCurrentWord_m->pTemplate->pszFormat,
-				iLen,
+				(int)iLen,
 				pCurrentWord_m->pTemplate->pszNonAlpha,
 				current->pAllomorph->pEnvironment->pPunctCond,
 				pAmple_in);
@@ -5750,7 +5750,7 @@ AmpleHeadList *morph;
 char *p;
 int k;
 AmpleHeadList *hp;
-int uiSurfaceSize = 0;
+size_t uiSurfaceSize = 0;
 
 pszTempSurface_m = (char *)NULL;
 /*
@@ -6068,13 +6068,11 @@ switch (tree->iOpCode & OP_MASK)
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
 		{					/* match end */
-		val = matchEndWithStringClass(pszAllo,
-						  right.pStringClass);
+		val = matchEndWithStringClass(pszAllo, right.pStringClass) != 0;
 		}
 		else
 		{					/* match beginning */
-		val = matchBeginWithStringClass(pszAllo,
-						right.pStringClass);
+		val = matchBeginWithStringClass(pszAllo, right.pStringClass) != 0;
 		}
 		freeMemory(pszAllo);
 		}
@@ -6166,11 +6164,11 @@ switch (tree->iOpCode & OP_MASK)
 			(left.iPosition == FORLEFT) ||
 			(left.iPosition == INITIALM) )
 		{					/* match end */
-		val = matchEndWithStringClass( p, right.pStringClass );
+		val = matchEndWithStringClass( p, right.pStringClass ) != 0;
 		}
 		else
 		{					/* match beginning */
-		val = matchBeginWithStringClass( p, right.pStringClass );
+		val = matchBeginWithStringClass( p, right.pStringClass ) != 0;
 		}
 		if (p == pszTempSurface_m)
 		{
@@ -7316,7 +7314,7 @@ char *		pszTo_in;
 char *		pszProperties_in;
 {
 char *		pszSlash;
-unsigned	uiLength;
+size_t		uiLength;
 
 if (pszFeat_in == NULL)
 	pszFeat_in = "";

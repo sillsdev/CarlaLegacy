@@ -1,17 +1,19 @@
 /* VERSION.H - version number and date information for AMPLE
  ***************************************************************************
- * Copyright 1996 - 2014 by SIL International.  All rights reserved.
+ * Copyright 1996 - 2017 by SIL International.  All rights reserved.
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 19		/* bug fix or other minor change */
-#define DATE "April 24, 2017"	/* date of release version */
+#define PATCHLEVEL 20		/* bug fix or other minor change */
+#define DATE "April 25, 2017"	/* date of release version */
 #define YEAR "2017"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 25-Apr-2017	SRMc - Fix for 64-bit Windows build; also remove as many
+ * [3.12.20]             compiler warnings as possible
  * 24-Apr-2017  hab  - Fix bug: when a partial reduplication match pattern
- * [3.12.18]             succeeded, if the morph was not in the list of
+ * [3.12.19]             succeeded, if the morph was not in the list of
  *                       selected morphs, a crash occured.
  * 18-May-2016  hab  - Fix bug: when a partial reduplication match pattern has
  * [3.12.18]             two instances of the same indexed class (e.g.,

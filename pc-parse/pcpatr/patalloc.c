@@ -759,7 +759,7 @@ return( &(f->node) );
  *    pointer to new character string.
  */
 char * allocPATRStringBuffer(length, pThis)
-int length;
+size_t length;
 PATRData * pThis;
 {
 PATRAllocString *f;
@@ -799,7 +799,7 @@ char * allocPATRStringCopy(str, pThis)
 char * str;
 PATRData * pThis;
 {
-int length;
+size_t length;
 char *p;
 
 length = strlen(str) + 1;

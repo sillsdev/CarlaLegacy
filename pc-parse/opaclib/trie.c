@@ -603,8 +603,8 @@ for ( tap = pHeadTrieBlocks_m ; tap ; tap = tap->link )
 		(tp->cLetter != NUL) )
 		++block_used;
 	}
-	reportError(DEBUG_MSG, "block %lu / %lu has %u trie nodes in use\n",
-		 (unsigned long)tap, (unsigned long)tap->array, block_used);
+	reportError(DEBUG_MSG, "block %p / %p has %u trie nodes in use\n",
+		 (void *)tap, (void *)tap->array, block_used);
 	}
 }
 
