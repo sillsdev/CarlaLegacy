@@ -4,12 +4,15 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 18		/* bug fix or other minor change */
-#define DATE "May 18, 2016"	/* date of release version */
-#define YEAR "2016"		/* used for copyright notice in banner */
+#define PATCHLEVEL 19		/* bug fix or other minor change */
+#define DATE "April 24, 2017"	/* date of release version */
+#define YEAR "2017"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 24-Apr-2017  hab  - Fix bug: when a partial reduplication match pattern
+ * [3.12.18]             succeeded, if the morph was not in the list of
+ *                       selected morphs, a crash occured.
  * 18-May-2016  hab  - Fix bug: when a partial reduplication match pattern has
  * [3.12.18]             two instances of the same indexed class (e.g.,
  *                       [C^1][V^1][V^1]) the second one would match any member

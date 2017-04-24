@@ -1208,6 +1208,8 @@ for ( sp = pIndexedClass->pStringClass->pMembers;
 		if (isAmpleAllomorphSelected(pszMorphName, pAllo->pszAllomorph, pAmple_in))
 		  *amset = createPartialRedupAmlist(*amset, etype, pPartialRedup,
 						   *pszMatchBeg - key, pAmple_in);
+		else
+			return(FALSE); /* what was found is not in selected morphs */
 
 		/* adjust the classes in the environment to be the same as what matched */
 		for (pEnv = pAllo->pEnvironment;
