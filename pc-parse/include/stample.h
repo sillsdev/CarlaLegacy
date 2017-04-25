@@ -376,8 +376,8 @@ typedef struct ample_env_item {
 	int			iFlags;
 	union { char *	pszString;	/* pointer to literal string */
 		void *	pClass;		/* pointer to class structure */
-		int		iPlain;		/* integer value */
-	  }			u;
+		int	iPlain;		/* integer value */
+	  }		u;
 	struct ample_env_item *	pNext;	/* pointer to next item */
 	} AmpleEnvItem;
 /*
@@ -436,6 +436,18 @@ typedef struct ample_env_cond {
 #define AMPLE_ALLOID_ENVIR 4
 #endif /* hab350 */
 #endif /* EXPERIMENTAL */
+
+/*****************************************************************************
+ * NAME
+ *    AmpleEnvConstraintList (struct ample_env_cond_list)
+ * DESCRIPTION
+ *    structure for a list of environment constraint conditions
+ *
+ */
+typedef struct ample_env_cond_list {
+	AmpleEnvConstraint *	pEnvs;	/* constraint conditions */
+	struct ample_env_cond_list *	pNext;	/* link to next set of constraints */
+	} AmpleEnvConstraintList;
 
 /*****************************************************************************
  * NAME
@@ -646,6 +658,7 @@ extern size_t	lengthAmpleCDATA P((const char * pszCDATA_in,
 extern void	storeAmpleCDATA P((char *       pszOutput_in,
 				   const char * pszCDATA_in,
 				   int          b7Bit_in));
+extern AmpleEnvConstraint * copyAmpleEnvConstraint P((AmpleEnvConstraint *ec));
 extern void	freeAmpleEnvConstraint P((AmpleEnvConstraint * pEnv_io));
 extern void	freeAmpleAlloEnvConstraint P((AmpleAlloEnv * pAlloEnv_io));
 extern AmpleAlloEnv *		parseAmpleAlloEnvConstraint P((
