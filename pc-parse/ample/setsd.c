@@ -956,7 +956,7 @@ if (pszFullRedup != NULL)
   pAmple_in->pFullRedupAllos = pFullRedupAllo;
 }
 pszPartialRedup = strstr(pszAllo_in, "[");
- pszPartialRedup2 = strstr(pszAllo_in, "^"); // look for index, too
+pszPartialRedup2 = strstr(pszAllo_in, "^"); /* look for index, too */
 if (pszPartialRedup != NULL && pszPartialRedup2 != NULL)
   {
 	char * pszPartialPostfix;
