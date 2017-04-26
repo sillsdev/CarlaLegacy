@@ -77,6 +77,7 @@ if (_fstat( _fileno(fp), &fstatus ) == -1)
 	return( -1L );
 if (!(fstatus.st_mode & _S_IFREG))
 	return( -1L );
+#if _MSC_VER < 1400
 if ((fp->_flag & _IOREAD) && !(fp->_flag & _IORW))
 	size = (long)fstatus.st_size;		/* input file */
 else
@@ -92,6 +93,9 @@ else
 	size *= outr.x.bx;	/* available clusters on current drive */
 #endif
 	}
+#else
+/* There doesn't seem to be any way to easily get this information once we hit MSVC 14.0 */
+#endif
 #endif
 
 #ifdef __DJGPP__
