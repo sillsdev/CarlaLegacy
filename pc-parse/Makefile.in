@@ -14,15 +14,15 @@ SHELL = /bin/sh
 
 # subdirectories for making selected libraries
 LIBDIRS = cportlib opaclib cmdlib ample stamp pckimmo pcpatr \
-		  TonePGLib
+		#  TonePGLib
 
 # subdirectories for making selected programs (which may use libraries)
 PROGS = ample stamp anadiff intergen pckimmo pcpatr ktagger ktext \
-		ToneGen TonePars
+		#ToneGen TonePars
 
 # combined list of program and library subdirectories
 SUBDIRS = $(LIBDIRS) anadiff intergen ktext ktagger \
-		  ToneGen TonePars
+		#  ToneGen TonePars
 
 # directory and archive basename for distribution
 distbase = pc-parse

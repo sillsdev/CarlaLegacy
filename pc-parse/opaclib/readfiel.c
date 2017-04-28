@@ -63,7 +63,8 @@ int sizefield;
 int numlines;
 char *line;
 long fileloc;
-int i, k;
+int i;
+size_t k;
 
 while ( (line = readLineFromFile(fp, NULL, comment)) != (char *)NULL)
 	{

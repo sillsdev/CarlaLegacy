@@ -378,7 +378,7 @@ while ((k = getopt(argc, argv, "ac:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &p, 0);
+		trap_address = (VOIDP)strtoull(optarg, &p, 0);
 		if (trap_address != (VOIDP)NULL)
 		{
 		if (*p == ',')
@@ -635,7 +635,7 @@ if (bUnifiedDictionary_m)
 	 */
 	if (bVerify_m && (sStamp_m.pLogFP != NULL))
 	fprintf(sStamp_m.pLogFP,
-		"Memory used for unified dictionaries: %5ld\n",
+		"Memory used for unified dictionaries: %5zu\n",
 		getAndClearAllocMemorySum() );
 	}
 else
@@ -664,7 +664,7 @@ else
 	 */
 	if (bVerify_m && (sStamp_m.pLogFP != NULL))
 		fprintf(sStamp_m.pLogFP,
-			"Memory used for prefix dictionary: %5ld\n",
+			"Memory used for prefix dictionary: %5zu\n",
 			getAndClearAllocMemorySum() );
 	}
 	if (sStamp_m.pInfixTable != NULL)
@@ -690,7 +690,7 @@ else
 	 */
 	if (bVerify_m && (sStamp_m.pLogFP != NULL))
 		fprintf(sStamp_m.pLogFP,
-			"Memory used for infix dictionary: %5ld\n",
+			"Memory used for infix dictionary: %5zu\n",
 			getAndClearAllocMemorySum() );
 	}
 	if (sStamp_m.pSuffixTable != NULL)
@@ -716,7 +716,7 @@ else
 	 */
 	if (bVerify_m && (sStamp_m.pLogFP != NULL))
 		fprintf(sStamp_m.pLogFP,
-			"Memory used for suffix dictionary: %5ld\n",
+			"Memory used for suffix dictionary: %5zu\n",
 			getAndClearAllocMemorySum() );
 	}
 	/*
@@ -752,7 +752,7 @@ else
 	 */
 	if (bVerify_m && (sStamp_m.pLogFP != NULL))
 		fprintf(sStamp_m.pLogFP,
-			"Memory used for root dictionaries: %5ld\n",
+			"Memory used for root dictionaries: %5zu\n",
 			getAndClearAllocMemorySum() );
 	}
 	}

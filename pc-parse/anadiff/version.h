@@ -1,15 +1,17 @@
 /* VERSION.H - version number and date information for ANADIFF
  ***************************************************************************
- * Copyright 1997, 2002 by SIL International.  All rights reserved.
+ * Copyright 1997, 2017 by SIL International.  All rights reserved.
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 0		/* enhancement requiring adding to book */
-#define PATCHLEVEL 6		/* bug fix or other minor change */
-#define DATE "October 16, 2002"	/* date of release version */
-#define YEAR "2002"		/* used for copyright notice in banner */
+#define PATCHLEVEL 7		/* bug fix or other minor change */
+#define DATE "April 25, 2017"	/* date of release version */
+#define YEAR "2017"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 25-Apr-2017	SRMc - Fix for 64-bit Windows build; also remove as many
+ * [1.0.7]             compiler warnings as possible
  * 16-Oct-2002	SRMc - fix for code generation problem in OPAC library
  * [1.0.6]
  * 11-May-2000	SRMc - fix portability to antique C compilers

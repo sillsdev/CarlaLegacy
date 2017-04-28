@@ -1525,7 +1525,7 @@ static void parse_too_big(uiRequest_in)
 size_t	uiRequest_in;
 {
 /* REVIEW: how much memory leakage might this allow? */
-longjmp(sOutOfMemory_m, uiRequest_in ? uiRequest_in : 1);
+longjmp(sOutOfMemory_m, uiRequest_in ? (int)uiRequest_in : 1);
 }
 
 /****************************************************************************
@@ -1627,8 +1627,7 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 		sFeat.u.pComplex = &sComplex;
 		if (pPATR_in->iDebugLevel >= 2)
 			{
-			fprintf(stdout, "DEBUG: triplecheck_constraints(...): edge index = %ld\n",
-			pEdge_in->iIndex);
+			fprintf(stdout, "DEBUG: triplecheck_constraints(...): edge index = %zu\n", pEdge_in->iIndex);
 			fprintf(stdout, "pEdge->pszLabel = \"%s\" (rule = \"%s\")\n",
 				pEdge_in->pszLabel ? pEdge_in->pszLabel : "{NULL}",
 				pEdge_in->u.r.pRule->pszID ? pEdge_in->u.r.pRule->pszID : "{NULL}");
@@ -2407,7 +2406,7 @@ if (pPATR_io->iMaxProcTime != 0)
 		{
 		fprintf(pPATR_io->pLogFP,
 			"Out of time after %lu seconds and %lu edges\n",
-			pPATR_io->iMaxProcTime + 1, pPATR_io->uiEdgesAdded);
+			(unsigned long)pPATR_io->iMaxProcTime + 1, pPATR_io->uiEdgesAdded);
 		}
 	writeAllocMemoryDebugMsg("Out of time after %lu seconds and %lu edges\n",
 		pPATR_io->iMaxProcTime + 1, pPATR_io->uiEdgesAdded);
@@ -2474,8 +2473,8 @@ for (pWord = pSentence_in; pWord; pWord = pWord->pNext)
 	}
 	writeAllocMemoryDebugMsg(")");
 	}
-writeAllocMemoryDebugMsg("  --  parse = 0x%08lx, iStage = %d\n",
-	(unsigned long)parse, *piStage_out);
+writeAllocMemoryDebugMsg("  --  parse = %p, iStage = %d\n",
+	parse, *piStage_out);
 
 return parse;
 }

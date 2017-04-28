@@ -124,7 +124,7 @@ unsigned rNr;
 unsigned char *rem;
 int tracetype;
 {
-unsigned i;
+size_t i;
 unsigned char dir, lc, sc;
 char char_fmt[40];
 
@@ -153,7 +153,7 @@ if (	(tracetype == BACKING_T) ||
 	}
 else
 	{
-	sprintf(char_fmt, "%%%ds:%%-%ds ", i, i);
+	sprintf(char_fmt, "%%%zus:%%-%zus ", i, i);
 	fprintf(outfp, char_fmt,
 		convertKimmoIndexToCharacter(lc, &sLang_m),
 		convertKimmoIndexToCharacter(sc, &sLang_m) );
@@ -411,7 +411,7 @@ KimmoLexItem *	lip;
 int		fprX;
 int		fprSize;
 unsigned	j;
-unsigned	new_feat_size;
+size_t		new_feat_size;
 int *		newConfig;
 int *		old;
 int *		new;
@@ -517,7 +517,7 @@ for (	lip = (KimmoLexItem *)lexiconTP->pTrieInfo ;
 		 *    continuation lexicon
 		 */
 		rec = recog(remainder, level, newConfig, newlexiconp,
-			new_feat_size, &newmorph);
+			(int)new_feat_size, &newmorph);
 
 		pszFeature_m[feat_size] = NUL;		/* backtrack */
 		if (already)
@@ -816,8 +816,8 @@ static void fixRecognizerResult(pKimmo_in)
 KimmoData *	pKimmo_in;
 {
 KimmoResult *	pResult;
-unsigned	rlength;
-unsigned	flength;
+size_t	rlength;
+size_t	flength;
 KimmoMorpheme *	pMorph;
 
 for ( pResult = pResultList_m ; pResult ; pResult = pResult->pNext )

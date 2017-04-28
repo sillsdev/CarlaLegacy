@@ -856,12 +856,12 @@ switch (tp->iOpCode & OP_MASK)
 					(tp->uLeft.iPosition == INITIALM) )
 				{					/* match end */
 				val = matchEndWithStringClass(hp->pCurrentAllo->pszAllomorph,
-						  tp->uRight.pStringClass);
+						  tp->uRight.pStringClass) != 0;
 				}
 			else
 				{					/* match beginning */
 				val = matchBeginWithStringClass(hp->pCurrentAllo->pszAllomorph,
-						tp->uRight.pStringClass);
+						tp->uRight.pStringClass) != 0;
 				}
 			}
 		break;
@@ -940,11 +940,11 @@ switch (tp->iOpCode & OP_MASK)
 					(tp->uLeft.iPosition == FORLEFT) ||
 					(tp->uLeft.iPosition == INITIALM) )
 				{					/* match end */
-				val = matchEndWithStringClass( p, tp->uRight.pStringClass );
+				val = matchEndWithStringClass( p, tp->uRight.pStringClass ) != 0;
 				}
 			else
 				{					/* match beginning */
-				val = matchBeginWithStringClass( p, tp->uRight.pStringClass );
+				val = matchBeginWithStringClass( p, tp->uRight.pStringClass ) != 0;
 				}
 			}
 #if 1
@@ -1205,7 +1205,7 @@ static char * get_surf(pos)
 int pos;
 {
 static char *	pszAllo_s = NULL;
-static int	iAlloSize_s = 0;
+static size_t	iAlloSize_s = 0;
 StampAnalysis *	mp;
 
 if ((pszAllo_s != NULL) && (iAlloSize_s != 0))
@@ -1289,7 +1289,7 @@ StampData *	pStamp_in;
 {
 StampAnalysis *anal;      /* Temp analysis pointer */
 StampAnalysis *fanal;     /* Following analyses */
-int ins_len;                /* Length of string to insert */
+size_t ins_len;                /* Length of string to insert */
 char *beg;                    /* Beginning of allo */
 int type;                   /* Temp for action type */
 

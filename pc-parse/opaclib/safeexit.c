@@ -36,7 +36,7 @@ int exitSafely(iCode_in)
 int	iCode_in;	/* error code to return from program */
 {
 exit(iCode_in);
-return(0);		/* never reached, but keeps compilers happy */
+return(iCode_in);		/* never reached, but keeps compilers happy */
 }
 
 /***************************************************************************

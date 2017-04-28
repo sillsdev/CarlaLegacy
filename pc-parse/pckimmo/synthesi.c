@@ -136,7 +136,7 @@ KimmoMorpheme *	pLexItems_in;
 KimmoMorpheme *	pItem;
 KimmoMorpheme *	pMorpheme;
 char *		pszUnderlyingForm;
-unsigned	uiFormLength;
+size_t		uiFormLength;
 char		szBuffer[64];
 PATREdgeList *	pEdges;
 /*
