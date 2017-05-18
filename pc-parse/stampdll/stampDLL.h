@@ -4,7 +4,6 @@
  * All rights reserved. Roy Eberhardt 2009
  */
 
-#define _CRT_SECURE_NO_WARNINGS
 #ifndef STAMP_DLL_INCLUDED
 #define STAMP_DLL_INCLUDED
 #ifdef __cplusplus
@@ -40,41 +39,40 @@ extern "C" {
 #include <setjmp.h>
 
 
-
 typedef struct stamp_setup StampSetup;
 
 typedef const char * (/*CALLBACK*/ * STAMPFUNC7)(StampSetup *,
+					     const char *,
+					     const char *,
+					     const char *,
 						 const char *,
 						 const char *,
-						 const char *,
-						 const char *,
-						 const char *,
-						 const char *);
+					     const char *);
 
 typedef const char * (/*CALLBACK*/ * STAMPFUNC6)(StampSetup *,
+					     const char *,
+					     const char *,
+					     const char *,
 						 const char *,
-						 const char *,
-						 const char *,
-						 const char *,
-						 const char *);
+					     const char *);
 
 typedef const char * (/*CALLBACK*/ * STAMPFUNC5)(StampSetup *,
-						 const char *,
-						 const char *,
-						 const char *,
-						 const char *);
+					     const char *,
+					     const char *,
+					     const char *,
+					     const char *);
 
 typedef const char * (/*CALLBACK*/ * STAMPFUNC4)(StampSetup *,
-						 const char *,
-						 const char *,
-						 const char *);
+					     const char *,
+					     const char *,
+					     const char *);
 
 typedef const char * (/*CALLBACK*/ * STAMPFUNC3)(StampSetup *,
-						 const char *,
-						 const char *);
+					     const char *,
+					     const char *);
 
 typedef const char * (/*CALLBACK*/ * STAMPFUNC2)(StampSetup *,
-						 const char *);
+					     const char *);
 
 typedef const char * (/*CALLBACK*/ * STAMPFUNC1)(StampSetup *);
 
@@ -104,6 +102,7 @@ struct stamp_setup
 	short        bAppendLogFile;
 	short        bShowPercentages;
 	short		 bVerifyLoading;
+	short        bNewTextBuffer;
 
 	// This one should still be needed.
 	// It is whether or not the tool checks to see if, say, an MEC makes reference to a morphname,
@@ -118,9 +117,9 @@ struct stamp_setup
 
 	// We'd better keep this for transfer output to ANA
 	short        bOutputDecomposition; /* hab 1999.03.11 */
-
+	
 	// We will definitely need this.
-	enum output_style    eOutputStyle;
+	enum output_style    eOutputStyle;         
 
 		// --Andy
 
@@ -154,9 +153,7 @@ struct stamp_setup
 	 */
 	short			bCheckAlloc_m;
 
-
 	StampSetup		*pNext;
-
 };
 
 
@@ -183,7 +180,6 @@ static const char *setStoreErrorString(const char *pszValue_in, StampSetup *pSet
 static const char *setErrorMessages(const char *pszValue_in,StampSetup *pSetup_io);
 static const char *setShowPercentages(const char *pszValue_in,StampSetup *pSetup_io); //?? maybe not
 static const char *setVerifyLoading(const char *pszValue_in, StampSetup *pSetup_io);
-// static const char *setEnableAllomorphIDs(const char *pszValue_in,StampSetup *pSetup_io);
 static const char *setCheckMorphReferences(const char *pszValue_in, StampSetup *pSetup_io);
 static const char *setOutputProperties(const char *pszValue_in,StampSetup *	pSetup_io);
 static const char *setOutputOriginalWord(const char *pszValue_in, StampSetup *pSetup_io);
@@ -197,8 +193,9 @@ static const char *setReportNoEntries(const char *pszValue_in, StampSetup *pSetu
 static const char *setUnifiedDictionary(const char *pszValue_in, StampSetup *pSetup_io);
 static const char *setVerifyTests(const char *pszValue_in, StampSetup *pSetup_io);
 static const char *setOnlyTransfer(const char *pszValue_in, StampSetup *pSetup_io);
-int updateStampDictEntry(const char *pszEntry_in, StampData *pStamp_io);
-static char *convertRecord(const char *pszEntry_in, StampData *pStamp_io);
+int updateStampDictEntry(const char *pszEntry_in, StampData *pStamp_io, StampSetup *pSetup_io);
+static char *convertRecord(const char *pszEntry_in, StampData *pStamp_io, StampSetup *pSetup_io);
+static VOIDP removeStampMorpheme(VOIDP pOld_in, VOIDP pList_io);
 
 static const char *getCommentChar(StampSetup *pSetup_io);
 static const char *getMaxTrieDepth(StampSetup *pSetup_io);
@@ -223,18 +220,30 @@ static const char *getReportNoEntries(StampSetup *pSetup_io);
 static const char *getUnifiedDictionary(StampSetup *pSetup_io);
 static const char *getVerifyTests(StampSetup *pSetup_io);
 static const char *getOnlyTransfer(StampSetup *pSetup_io);
-static char *convertRecord(const char *pszEntry_in, StampData *pStamp_io);
+static const char *setEnableAllomorphIDs(const char *pszValue_in, StampSetup *pSetup_io);
+static const char *getEnableAllomorphIDs(StampSetup *pSetup_io);
+static char *get_allomorph_id(char *pszID_in);
+static char *build_allomorph_id(char *pszMorph_in, int iIndex_in);
+int loadStampDictionaryDLL(const char *pszFilename_in, int eDicType_in, StampData *pStamp_io);
 
 void reportError(int eMessageType_in, const char *pszFormat_in, ...);
-
 static const char *tsprocdll(StampSetup *pSetup_io, const char *pszInputFile_m, const char *pszOutputFile_m);
+static const char *tsprocdllstring(StampSetup *pSetup_io, const char *pszInputText_in);
 static void outstats(StampSetup *pSetup_io);
 
 extern void add_affixwrap(char *recp, int iType, StampData *pStamp_in);
 extern void add_rootwrap(char *recp, StampData *pStamp_in);
+extern StampWord *readStampWordString(const char *pszInputString_in, TextControl *pTextCtl_in, StampSetup *pSetup_io);
 extern void addStampDictEntrywrap(char *pRecord_in, StampData *pStamp_in);
+extern const char *addFWParseToBuffer(StampSetup *pSetup_in, const StampWord *pWord_in, TextControl *pTextCtl_in,
+	 char *pszBuffer_out, size_t uiBufferSize_in, int iAnalysesCount_in);
+extern int countAmbiguities(const WordTemplate *pTemplate_in);
+
 void writeStampDictionaryDLL(FILE *pOutputFP_in, StampData *pStamp_in);
 extern StampData *pStamp_m;
+// modified for DLL usage
+void freeStampAllomorphListDLL(StampAllomorphList *ap);
+
 /*
  *  default code table for updateStampDictEntry()
  *  copied from AmpleDLL
@@ -357,6 +366,8 @@ static char	szOutputBuffer_g[65000];
 /*
  *  error return message strings
  */
+static const char   szStampBadString_m[] = "\
+<error code=missingInputString>Missing input text string</error>";
 static const char	szStampSuccess_m[] = "\
 <error code=none>Success</error>";
 static const char	szStampDLLCrash_m[] = "\
@@ -404,30 +415,30 @@ in dict code table</error>";
 
 
 
-#define NUMBER_OF_PARAMETERS	29
+#define NUMBER_OF_PARAMETERS	30
 
 static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
-	"DebugAllomorphConds",
-	"BeginComment",
-	"MaxTrieDepth",
-	"RootGlosses",
-	"MaxMorphnameLength",
-	"SelectiveAnalysisFile",
-	"TraceAnalysis",
-	"DebugLevel",
-	"LogFile",
-	"AppendLogFile",
-	"OutputStyle",
-	"StoreErrorString",
-	"ErrorMessages",
-	"ShowPercentages",		/* hab 1999.03.11 */
-	"CheckMorphReferences",	/* hab 1999.03.11 */
-	"VerifyLoading",		/* hab 1999.03.11 */
-	"OutputProperties",		/* hab 1999.03.11 */
-	"OutputOriginalWord",	/* hab 1999.03.11 */
-	"OutputDecomposition",	/* hab 1999.03.11 */
-	"AllomorphIds",			/* jdh 2002.01.15 */
-	"MaxAnalysesToReturn",	/* hab 2002.10.17 */
+    "DebugAllomorphConds",
+    "BeginComment",
+    "MaxTrieDepth",
+    "RootGlosses",
+    "MaxMorphnameLength",
+    "SelectiveAnalysisFile",
+    "TraceAnalysis",
+    "DebugLevel",
+    "LogFile",
+    "AppendLogFile",
+    "OutputStyle",
+    "StoreErrorString",
+    "ErrorMessages",
+    "ShowPercentages",		/* hab 1999.03.11 */
+    "CheckMorphReferences",	/* hab 1999.03.11 */
+    "VerifyLoading",		/* hab 1999.03.11 */
+    "OutputProperties",		/* hab 1999.03.11 */
+    "OutputOriginalWord",	/* hab 1999.03.11 */
+    "OutputDecomposition",	/* hab 1999.03.11 */
+    "AllomorphIds",			/* jdh 2002.01.15 */
+    "MaxAnalysesToReturn",	/* hab 2002.10.17 */
 	"DoAllSyntheses",		/* rke 2009.06.23 */
 	"MonitorProgress",		/* rke 2009.06.23 */
 	"MatchCategories",		/* rke 2009.06.23 */
@@ -436,7 +447,7 @@ static const char *	aszParameterNames_m[NUMBER_OF_PARAMETERS] = {
 	"UnifiedDictionary",	/* rke 2009.06.23 */
 	"VerifyTests",			/* rke 2009.06.23 */
 	"OnlyTransfer"			/* rke 2009.06.23 */
-	};
+    };
 
 
 #endif /*STAMP_DLL_INCLUDED*/

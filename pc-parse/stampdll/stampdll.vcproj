@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="stampdll"
+	Name="stampdll-2008"
 	ProjectGUID="{C1A340CF-59B9-4315-BC86-B52C5732770A}"
 	RootNamespace="stampdll"
 	Keyword="Win32Proj"
@@ -40,10 +40,10 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="/D HAVE_CONFIG_H&#x0D;&#x0A;&#x0D;&#x0A;"
+				AdditionalOptions="/D HAVE_CONFIG_H&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Program Files\Microsoft SDKs\Windows\v5.0\Include&quot;;&quot;C:\Program Files\Microsoft SDKs\Windows\v5.0\Lib\IA64&quot;;C:\StampDLLProject\ample;C:\StampDLLProject\opaclib;C:\StampDLLProject\cportlib"
-				PreprocessorDefinitions="/DWINVER=0x0502;WIN32;_DEBUG;_WINDOWS;_USRDLL;STAMPDLL_EXPORTS"
+				AdditionalIncludeDirectories="C:\StampDLLProject\stamp;&quot;C:\Program Files\Microsoft SDKs\Windows\v5.0\Include&quot;;&quot;C:\Program Files\Microsoft SDKs\Windows\v5.0\Lib\IA64&quot;;C:\StampDLLProject\ample;C:\StampDLLProject\opaclib;C:\StampDLLProject\cportlib;C:\StampDLLProject\pcpatr;C:\StampDLLProject\pckimmo"
+				PreprocessorDefinitions="/DWINVER=0x0502;WIN32;_DEBUG;_WINDOWS;_USRDLL;EXPERIMENTAL;STAMPDLL_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -66,9 +66,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkLibraryDependencies="true"
+				AdditionalDependencies="amplelib.lib cmdlib.lib cportlib.lib opaclib.lib stamplib.lib"
 				ShowProgress="2"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="C:\StampDLLProject\lib"
+				AdditionalLibraryDirectories="C:\StampDLLProject\opaclib;&quot;C:\StampDLLProject\ample\Debug-lib&quot;;C:\StampDLLProject\lib\debug"
 				IgnoreDefaultLibraryNames="LIBCMTD.LIB"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -182,17 +183,44 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\stampdll.c"
+				RelativePath=".\dtbstringin.c"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
-						MinimalRebuild="false"
-						Detect64BitPortabilityProblems="false"
+						PreprocessorDefinitions="_CRT_SECURE_NO_WARNINGS"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\dtbstringio.c"
+				>
+			</File>
+			<File
+				RelativePath=".\stampdll.c"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						PreprocessorDefinitions="_CRT_SECURE_NO_WARNINGS"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\textoutdll.c"
+				>
+			</File>
+			<File
+				RelativePath=".\tsdictDLL.c"
+				>
+			</File>
+			<File
+				RelativePath=".\version.c"
+				>
 			</File>
 		</Filter>
 		<Filter
@@ -201,25 +229,21 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\stampdll.h"
+				RelativePath=".\config.h"
 				>
 			</File>
 			<File
-				RelativePath="..\version.h"
+				RelativePath=".\stampdll.h"
 				>
 			</File>
-			<Filter
-				Name="Header Files"
+			<File
+				RelativePath=".\templatestringfunctions.h"
 				>
-				<File
-					RelativePath="..\stampdllexe\stdafx.h"
-					>
-				</File>
-				<File
-					RelativePath="..\stampdllexe\targetver.h"
-					>
-				</File>
-			</Filter>
+			</File>
+			<File
+				RelativePath=".\version.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"

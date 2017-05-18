@@ -1,16 +1,21 @@
-// toy program for testing the STAMP DLL (stampdll.c)
+// testdll.cpp
+// program for testing the STAMP DLL (stampdll.c)
 // Copyright 2009 by The Summer Institue of Linguistics all rights reserved.
-// Roy Eberhardt June 2009 Last Edit Jan 2010 (RE)
+// Roy Eberhardt June 2009 Last Edit Jan 2014 (RE)
 // Built from Steve McConnel's ampledll.c
 // and stamp.c.
-// This mimics stamp.c on the command line
+// This mimics stamp.c on the command line 
 // but uses the stampdll.dll
 // For actual processing.
 
 #define WINVER 0x0502
 
-#include <stdio.h>
+#define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
+#include <crtdbg.h>
+
+#include <stdio.h>
+//#include <stdlib.h>
 //#include <windows.h>
 #include <afxwin.h>
 #include <assert.h>
@@ -58,21 +63,29 @@ short			bTrace = FALSE;
 short			bUnifiedDictionary_m = FALSE;
 short			bVerify_m = FALSE;
 short			bOnlyTransfer = FALSE;
+short			bAllomorphIds = FALSE;
 
 //void testTheDLL(void);
 void loadControlFiles(
-	StampSetup * pSetup_io,
-	const char * apszControlFiles_in[],
-	const char * pszLogFile_in);
+    StampSetup * pSetup_io,
+    const char * apszControlFiles_in[],
+    const char * pszLogFile_in);
 void loadDictionaries(
-	StampSetup * pSetup_io,
-	const char * apszDictFiles_in[]);
-void ProcessFile(
-	StampSetup * pSetup_io,
-	const char * pszInputFile_in,
-	const char * pszOutputFile_in);
+    StampSetup * pSetup_io,
+    const char * apszDictFiles_in[]);
+void processFile(
+    StampSetup * pSetup_io,
+    const char * pszInputFile_in,
+    const char * pszOutputFile_in);
+void processString(
+    StampSetup * pSetup_io,
+    const char * pszWord_in,
+	const char * pszInputText_in);
 void removeSetup(
-	StampSetup * pSetup_io);
+    StampSetup * pSetup_io);
+
+void testDictInsertion(StampSetup *pSetup_io);
+void testStringProcessing(StampSetup *pSetup_io);
 
 static void tsproc();
 static void tsinit();
@@ -92,9 +105,10 @@ STAMPFUNC1  pfStampReportVersion_g    = 0;
 STAMPFUNC7  pfStampLoadControlFiles_g = 0;
 STAMPFUNC3  pfStampLoadDictionary_g   = 0;
 STAMPFUNC3  pfStampProcessFile_g      = 0;
+STAMPFUNC3  pfStampProcessString_g    = 0;
 STAMPFUNC3  pfStampSetParameter_g     = 0;
 STAMPFUNC2  pfStampWriteDictionary_g  = 0;
-STAMPFUNC3  pfStampUpdateEntry_g      = 0;
+STAMPFUNC2  pfStampUpdateEntry_g      = 0;
 
 HINSTANCE   hStampLib_g = 0;
 
@@ -111,7 +125,7 @@ StampSetup *	pHgStamp_g = NULL;
 /*
 pnstamp.dec (zzSTAMP.DEC)	Declaration File
 hgpntr.chg	(xxzzTR.CHG)	Transfer Control File
-pnsynt.chg	(zzSYNT.CHG)	Synthesis Control File
+pnsynt.chg	(zzSYNT.CHG)	Synthesis Control File	
 pnsycd.tab	(xxSYCD.TAB)	dictionary code table
 pnordc.tab	(xxORDC.TAB)	Dictionary orthography change
 
@@ -124,7 +138,7 @@ pnoutx.ctl	(xxoutx.ctl)	text Output Control File
 First Input file: pntest.ana
 Output file: pntest.syn
 
-Next Input file (or RETURN if no more):
+Next Input file (or RETURN if no more): 
 */
 
 // Stamp Control Files  ... order, dictionaries and xxoutxt.ctl
@@ -140,14 +154,14 @@ const char *apszStampControlFiles_g[6]  = {
 // Target Dictionary Files
 
 const char *apszStampDictionaryFiles_g[8] = {
-	NULL,						/* prefix */
-	NULL,						/* infix */
-	NULL,						/* suffix */
-	NULL,						/* root */
-	NULL,						/* Bible names */
+    NULL,						/* prefix */
+    NULL,						/* infix */
+    NULL,						/* suffix */
+    NULL,						/* root */
+    NULL,						/* Bible names */
 	NULL,						/* Next Root Dic */
-	NULL,						/* Spanish Loans */
-	NULL
+    NULL,						/* Spanish Loans */
+    NULL
 };
 
 const char * pszResult_g;
@@ -181,7 +195,9 @@ tsproc();
 //That should be all.
 closeAmpleCmdFile();
 
-void closeUp(void);	/* free malloc memory and release dll */
+closeUp();		/* free malloc memory and release dll */
+
+_CrtDumpMemoryLeaks();
 
 exitSafely(0);		/* exit with error level 0 (no errors) */
 
@@ -211,7 +227,7 @@ for (int i = 0; i < 6; ++i)
 for (int i = 0; i < 8; ++i)
 	if (apszStampDictionaryFiles_g[i] != NULL)
 		free ((void *)apszStampDictionaryFiles_g[i]);
-
+return;
 }
 
 /***************************************************************************
@@ -226,7 +242,7 @@ static void parse_command(int argc, char **argv, char *pszTime_in)
 //int	argc;		/* number of command line arguments */
 //char **	argv;		/* pointer to array of command line arguments */
 //char *	pszTime_in;
-{
+  {
 int	k;
 int	bShowUsage = FALSE;
 VOIDP	trap_address = NULL;
@@ -238,42 +254,46 @@ int result = 0; char *pdest = NULL;
 /*
  *  parse command line for any options
  */
-while ((k = getopt(argc, argv, "ac:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
-	{
-	switch (k)
-		{
-		case 'a':                       /* generate all possible syntheses */
-			bDoAllSyntheses = TRUE;		/* (we want them all!!) */
+while ((k = getopt(argc, argv, "abc:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
+    {
+    switch (k)
+        {
+        case 'a':                       /* generate all possible syntheses */
+            bDoAllSyntheses = TRUE;		/* (we want them all!!) */
+            break;
+
+		case 'b':		/* AllomorphIds - Not part of the original options */
+			bAllomorphIds = TRUE;
 			break;
 
-		case 'c':						/* record comment character */
-			cComment = *optarg;			/* used by record.c */
-			break;
+        case 'c':						/* record comment character */
+            cComment = *optarg;			/* used by record.c */
+            break;
 
-		case 'd':                       /* maximum trie depth */
-			iMaxTrieLevel = atoi(optarg);
-			if (iMaxTrieLevel < 0)
-				iMaxTrieLevel = 0;		/* force a minimum */
-			break;
+        case 'd':                       /* maximum trie depth */
+            iMaxTrieLevel = atoi(optarg);
+            if (iMaxTrieLevel < 0)
+                iMaxTrieLevel = 0;		/* force a minimum */
+            break;
 
-		case 'f':                       /* file of declaration file names */
-			pszCommandFile_m = optarg;      /* pick up name */
-			break;
+        case 'f':                       /* file of declaration file names */
+            pszCommandFile_m = optarg;      /* pick up name */
+            break;
 
-		case 'i':		/* input file name */
-			pszInputFile_m = optarg;		/* pick up name */
-			break;
+        case 'i':		/* input file name */
+            pszInputFile_m = optarg;		/* pick up name */
+            break;
 
-		case 'm':		/* monitor progress option */
-			bMonitorProgress_m = TRUE;
-			break;
+        case 'm':		/* monitor progress option */
+            bMonitorProgress_m = TRUE;
+            break;
 
-		case 'n':		/* 1.5a BJY Don't check root categories */
-			bMatchCategories = FALSE;
-			break;
+        case 'n':		/* 1.5a BJY Don't check root categories */
+            bMatchCategories = FALSE;
+            break;
 
-		case 'o':		/* output file name */
-			pszOutputFile_m = optarg;		/* pick up name */
+        case 'o':		/* output file name */
+            pszOutputFile_m = optarg;		/* pick up name */
 			// tie this to the size of pszLogFile_g so we don't get overflow
 			strcpy(pszLogFile_g, optarg);
 			   // Search forward.
@@ -283,35 +303,35 @@ while ((k = getopt(argc, argv, "ac:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
 					pszLogFile_g[result - 1] = '\0';
 				strcat(pszLogFile_g, "log.log");
 
-			  break;
+	          break;
 
-	case 'q':
-		bQuiet = TRUE;
-		break;
-
-		case 'r':                       /* Unfound morphemes option WM */
-			bReportNoEntries = TRUE;
+		case 'q':
+			bQuiet = TRUE;
 			break;
 
-		case 't':                       /* trace option */
-			bTrace = TRUE;
+        case 'r':                       /* Unfound morphemes option WM */
+            bReportNoEntries = TRUE;
+            break;
+
+        case 't':                       /* trace option */
+            bTrace = TRUE;
+            break;
+
+		case 'u':			/* combined dictionaries option */
+			bUnifiedDictionary_m = TRUE;
 			break;
 
-	case 'u':			/* combined dictionaries option */
-		bUnifiedDictionary_m = TRUE;
-		break;
+        case 'v':                       /* verify tests option */
+            bVerify_m = TRUE;
+            break;
 
-		case 'v':                       /* verify tests option */
-			bVerify_m = TRUE;
-			break;
+        case 'x':                       /* transfer only option */
+            bOnlyTransfer = TRUE;
+            break;
 
-		case 'x':                       /* transfer only option */
-			bOnlyTransfer = TRUE;
-			break;
-
-		case '/':                       /* debugging option */
-			++iDebugLevel;				/* debug level counter */
-			break;
+        case '/':                       /* debugging option */
+            ++iDebugLevel;				/* debug level counter */
+            break;
 // Not implemented
 //	case 'z':		/* memory allocation trace filename */
 //	    setAllocMemoryTracing(optarg);
@@ -331,22 +351,22 @@ while ((k = getopt(argc, argv, "ac:d:f:i:mno:qrtuvx/z:Z:")) != EOF)
 //		}
 //	    break;
 
-		default:                        /* unrecognized option */
-		bShowUsage = TRUE;
-			break;
-			}
-	} /* end switch */
+        default:                        /* unrecognized option */
+	    bShowUsage = TRUE;
+            break;
+            }
+    } /* end switch */
 
 if ((optind < argc) && (strcmp(argv[optind],"?") == 0))
-	bShowUsage = TRUE;
+    bShowUsage = TRUE;
 
 if (	bShowUsage ||
 	((optind < argc) && (strcmp(argv[optind],"?") == 0)) )
-	{
-	usage();		/* tell the user what he can do */
-	void closeUp(void);	/* free malloc memory and release dll */
-	exitSafely(1);	/* exit with error status */
-	}
+    {
+    usage();		/* tell the user what he can do */
+	closeUp();		/* free malloc memory and release dll */
+    exitSafely(1);	/* exit with error status */
+    }
 }
 
 /***************************************************************************
@@ -372,6 +392,7 @@ Usage: stamp [options]\n\
 ", stderr); fputs("\
 -n       No checking of root categories during synthesis\n\
 -o file  name of the Output synthesis file\n\
+-p       use allomorphIDs\n\
 -q       work Quietly without any screen output\n\
 -r       Report morphemes not found in dictionaries\n\
 ", stderr); fputs("\
@@ -400,12 +421,12 @@ Root dictionary file (xxRTnn.DIC)";
 static const char	szDictPrompt_s[] = "\
 Dictionary file (xxYYYYnn.DIC)";
 static const char	szDictLoadMessage_s[] = "\
-		%s DICTIONARY: Loaded %d record%s\n";
+        %s DICTIONARY: Loaded %d record%s\n";
 static const char	szDictErrorMessage_s[] = "\
 Cannot open dictionary file %s\n";
 static const char	szMissingDictCodeRecord_s[] = "\
 DICTIONARY CODE TABLE: missing record in change table.\n\
-			   Expected a %s record, but did not find it\n";
+               Expected a %s record, but did not find it\n";
 
 /*
  *  open -f namefile if there is one
@@ -453,7 +474,7 @@ if (infname[0] != '\0') {
  *  load the dictionary orthography change table
  */
 getAmpleCmd("Dictionary orthography change table (zzORDC.TAB) [none]: ",
-		infname, BUFSIZE);
+	    infname, BUFSIZE);
 if (infname[0] != '\0') {
 	apszStampControlFiles_g[4] = (char *)malloc(strlen(infname)+1);
 	strcpy((char *)apszStampControlFiles_g[4],infname);
@@ -465,48 +486,48 @@ if (infname[0] != '\0') {
 //getAndClearAllocMemorySum();                 /* Clear memory used for report */
 	setDictTable(apszStampControlFiles_g[3]); //set bxxxxxTable binaries.
 if (bUnifiedDictionary_m || bUnifiedTable)
-	{
-	/*
-	 *  load Target Dialect unified dictionary: may be multiple files
-	 */
-	sprintf(szPrompt, "%s: ", szDictPrompt_s);
-	getAmpleCmd(szPrompt, infname, BUFSIZE);
-	sprintf(szPrompt, "Next %s [no more]: ", szDictPrompt_s);
+    {
+    /*
+     *  load Target Dialect unified dictionary: may be multiple files
+     */
+    sprintf(szPrompt, "%s: ", szDictPrompt_s);
+    getAmpleCmd(szPrompt, infname, BUFSIZE);
+    sprintf(szPrompt, "Next %s [no more]: ", szDictPrompt_s);
 	int k = 0;
-	do  {
+    do  {
 		apszStampDictionaryFiles_g[k] = (char *)malloc(strlen(infname)+1);
 			strcpy((char *)apszStampDictionaryFiles_g[k],infname);
 		getAmpleCmd(szPrompt, infname, BUFSIZE);
 		++k;
 		} while ( infname[0] );
-	}
+    }
 else
-	{
-	if (bPrefixTable == TRUE)
+    {
+    if (bPrefixTable == TRUE)
 	{                                   /* load TD prefix dictionary */
 	getAmpleCmd("Prefix dictionary file (zzPF01.DIC): ",
-			infname, BUFSIZE);
+		    infname, BUFSIZE);
 	apszStampDictionaryFiles_g[0] = (char *)malloc(strlen(infname)+1);
 			strcpy((char *)apszStampDictionaryFiles_g[0],infname);
 	}
-	if (bInfixTable == TRUE)
+    if (bInfixTable == TRUE)
 	{                                   /* load TD infix dictionary */
 	getAmpleCmd("Infix dictionary file (zzIF01.DIC): ", infname, BUFSIZE);
 	apszStampDictionaryFiles_g[1] = (char *)malloc(strlen(infname)+1);
 		strcpy((char *)apszStampDictionaryFiles_g[1],infname);
 	}
-	if (bSuffixTable == TRUE)
+    if (bSuffixTable == TRUE)
 	{                                   /* load TD suffix dictionary */
 	getAmpleCmd("Suffix dictionary file (zzSF01.DIC): ", infname, BUFSIZE);
 	apszStampDictionaryFiles_g[2] = (char *)malloc(strlen(infname)+1);
 		strcpy((char *)apszStampDictionaryFiles_g[2],infname);
 	}
-	/*
-	 *  the following is not needed if synthesis is not done.
-	 *
-	 *  load Target Dialect root dictionary: may be multiple files
-	 */
-	if (bRootTable == TRUE)
+    /*
+     *  the following is not needed if synthesis is not done.
+     *
+     *  load Target Dialect root dictionary: may be multiple files
+     */
+    if (bRootTable == TRUE)
 	{
 	sprintf(szPrompt, "%s: ", szRootDictPrompt_s);
 	getAmpleCmd(szPrompt, infname, BUFSIZE);
@@ -516,17 +537,17 @@ else
 		++k;
 		apszStampDictionaryFiles_g[k] = (char *)malloc(strlen(infname)+1);
 		strcpy((char *)apszStampDictionaryFiles_g[k],infname);
-		getAmpleCmd(szPrompt, infname, BUFSIZE);
-		} while ( infname[0] && k < 8);
+	    getAmpleCmd(szPrompt, infname, BUFSIZE);
+	    } while ( infname[0] && k < 8);
 	}
-	}
+    }
 /*
  *  load text output control file (orthography changes)
  */
 getAmpleCmd("Output text control file (zzOUTTX.CTL) [none]: ",
-		infname, BUFSIZE);
+	    infname, BUFSIZE);
 if ( infname[0] != '\0')
-	{
+    {
 	apszStampControlFiles_g[5] = (char *)malloc(strlen(infname)+1);
 		strcpy((char *)apszStampControlFiles_g[5],infname);
 	}
@@ -537,25 +558,27 @@ hStampLib_g = LoadLibrary( DLL_FILE );
 assert(hStampLib_g);
 
 pfStampCreateSetup_g      = (STAMPFUNC0)GetProcAddress(hStampLib_g,
-							  "StampCreateSetup");
+						      "StampCreateSetup");
 pfStampLoadControlFiles_g = (STAMPFUNC7)GetProcAddress(hStampLib_g,
-							  "StampLoadControlFiles");
+                              "StampLoadControlFiles");
 pfStampReset_g            = (STAMPFUNC1)GetProcAddress(hStampLib_g,
-							  "StampReset");
+						      "StampReset");
 pfStampLoadDictionary_g   = (STAMPFUNC3)GetProcAddress(hStampLib_g,
-							  "StampLoadDictionary");
+						      "StampLoadDictionary");
 pfStampProcessFile_g      = (STAMPFUNC3)GetProcAddress(hStampLib_g,
-							  "StampProcessFile");
+						      "StampProcessFile");
+pfStampProcessString_g    = (STAMPFUNC3)GetProcAddress(hStampLib_g,
+						      "StampProcessString");
 pfStampSetParameter_g     = (STAMPFUNC3)GetProcAddress(hStampLib_g,
-							  "StampSetParameter");
+						      "StampSetParameter");
 pfStampDeleteSetup_g      = (STAMPFUNC1)GetProcAddress(hStampLib_g,
-							  "StampDeleteSetup");
+						      "StampDeleteSetup");
 pfStampReportVersion_g	  = (STAMPFUNC1)GetProcAddress(hStampLib_g,
-							  "StampReportVersion");
+						      "StampReportVersion");
 pfStampWriteDictionary_g  = (STAMPFUNC2)GetProcAddress(hStampLib_g,
-							  "StampWriteDictionary");
-pfStampUpdateEntry_g      = (STAMPFUNC3)GetProcAddress(hStampLib_g,
-							  "StampUpdateEntry");
+						      "StampWriteDictionary");
+pfStampUpdateEntry_g      = (STAMPFUNC2)GetProcAddress(hStampLib_g,
+						      "StampUpdateEntry");
 
 assert(pfStampCreateSetup_g);
 assert(pfStampDeleteSetup_g);
@@ -563,13 +586,14 @@ assert(pfStampReset_g);
 assert(pfStampLoadControlFiles_g);
 assert(pfStampLoadDictionary_g);
 assert(pfStampProcessFile_g);
+assert(pfStampProcessString_g);
 assert(pfStampSetParameter_g);
 assert(pfStampReportVersion_g);
 assert(pfStampWriteDictionary_g);
 assert(pfStampUpdateEntry_g);
 
 pHgStamp_g = (*pfStampCreateSetup_g)();
-
+    
 // truncate the log file
 //FILE * pLogFP = fopen(pszLogFile_g, "w");
 //if (pLogFP != NULL)
@@ -605,44 +629,49 @@ char infilename[BUFSIZE];
  *  Get input file name from command line or user
  */
 if ( !pszInputFile_m )				/* If not on cmd line, ask */
-	{
-	getAmpleCmd("\nFirst Input file: ", infilename, 100);
-	}
+    {
+    getAmpleCmd("\nFirst Input file: ", infilename, 100);
+    }
 else
-	strcpy( infilename, pszInputFile_m);	/* Else copy from cmd line */
+    strcpy( infilename, pszInputFile_m);	/* Else copy from cmd line */
 /*
  *  process each input file to a separate output file
  */
 do  {
 
 	/*
-	 *  ask for the output file (if not in cmd line)
-	 */
-	if ( !pszOutputFile_m )			/* If not in command line */
-		{
-		getAmpleCmd("Output file: ", outfilename, 100);		/* Ask */
-		}
-	else					/* Else (in command line) */
-		{
-		strcpy( outfilename, pszOutputFile_m);	/* Pick up file name */
-		pszOutputFile_m = NULL;			/* Clear so only used once */
-		}
+     *  ask for the output file (if not in cmd line)
+     */
+    if ( !pszOutputFile_m )			/* If not in command line */
+        {
+        getAmpleCmd("Output file: ", outfilename, 100);		/* Ask */
+        }
+    else					/* Else (in command line) */
+        {
+        strcpy( outfilename, pszOutputFile_m);	/* Pick up file name */
+        pszOutputFile_m = NULL;			/* Clear so only used once */
+        }
 
 	//Call the DLL - process the file.
 
-	ProcessFile(pHgStamp_g,
+	processFile(pHgStamp_g,
 		infilename,				//Ana file
 		outfilename);			//Output file
 
-	if ( !pszInputFile_m || (pszLogFile_g[0] != '\0'))      /* If input file not from cmd line */
-		{                       /* Ask for another */
-		getAmpleCmd("Next Input file (or RETURN if no more): ",
-			infilename, 100);
-		}
-	else
-		infilename[0] = NUL;      /* Else (from cmd line) clear name */
+    if ( !pszInputFile_m || (pszLogFile_g[0] != '\0'))      /* If input file not from cmd line */
+        {                       /* Ask for another */
+        getAmpleCmd("Next Input file (or RETURN if no more): ",
+		    infilename, 100);
+        }
+    else
+        infilename[0] = NUL;      /* Else (from cmd line) clear name */
 
-	} while (infilename[0]);      /* until the user wants no more */
+    } while (infilename[0]);      /* until the user wants no more */
+
+	//Call the DLL - process the string.
+
+	testStringProcessing(pHgStamp_g);
+
 }
 
 
@@ -657,25 +686,25 @@ do  {
 FILE *openAFile(char *pszFilename_in)
 {
 if (pszFilename_in != NULL)			/* If command file given */
-	return fopenAlways(pszFilename_in, "r");	/* Open file */
+    return fopenAlways(pszFilename_in, "r");	/* Open file */
 else
-	return NULL;
+    return NULL;
 }
 
 /*************************************************************************
  * NAME
  *    closeAFile
  * DESCRIPTION
- *    Close a file
+ *    Close a file 
  * RETURN VALUE
  *    none
  */
 void closeAFile(FILE *fp)
 {
 if (fp != NULL)		    /* If there was a command file */
-	{
-	fclose( fp );		    /* Close file */
-	}
+    {
+    fclose( fp );		    /* Close file */
+    }
 }
 
 
@@ -690,7 +719,7 @@ FILE *fpDCT;
 if (!(fpDCT = openAFile((char *)pszFileName)))
 	{
 		fprintf(stderr, "Problem with dictionary code table file\n");
-		void closeUp(void);	/* free malloc memory and release dll */
+		closeUp();	/* free malloc memory and release dll */
 		exit(1);	// Cannot go on without this info.
 	}
 	char str[80];
@@ -724,13 +753,13 @@ if (!(fpDCT = openAFile((char *)pszFileName)))
 //			continue;
 		}
 	}
-
+	
 	closeAFile(fpDCT);
 	return;
 }
 
 
-// Comments from Steve's program
+// Modified Comments from Steve's program
 //  1. create the first STAMP setup
 //  2. load the control files for the first STAMP setup
 //  3. load the dictionaries for the first STAMP setup
@@ -758,27 +787,27 @@ if (!(fpDCT = openAFile((char *)pszFileName)))
 //    none
 //
 void loadControlFiles(
-	StampSetup *	pSetup_io,
+    StampSetup *	pSetup_io,
 	const char *	apszControlFiles_in[],
-	const char *	pszLogFile_in)
+    const char *	pszLogFile_in)
 {
 if (pfStampReset_g)
-	{
-	pszResult_g = (*pfStampReset_g)(pSetup_io);
-	printf("StampReset():\n\t%s\n", pszResult_g);
-	}
+    {
+    pszResult_g = (*pfStampReset_g)(pSetup_io);
+    printf("StampReset():\n\t%s\n", pszResult_g);
+    }
 else
-	printf("CANNOT CALL DLL/StampReset()\n");
+    printf("CANNOT CALL DLL/StampReset()\n");
 
 if (pfStampSetParameter_g != NULL)
-	{
+    {
 // -a  DoAllSyntheses
 
 if (bDoAllSyntheses == TRUE)
 	{
-	pszResult_g = (*pfStampSetParameter_g)(pSetup_io,
+    pszResult_g = (*pfStampSetParameter_g)(pSetup_io,
 					   "DoAllSynthesis", "TRUE");
-	printf("StampSetParameter(\"DoAllSynthesis\", \"TRUE\"):\n\t%s\n",
+    printf("StampSetParameter(\"DoAllSynthesis\", \"TRUE\"):\n\t%s\n",
 	   pszResult_g);
 	}
 
@@ -831,6 +860,15 @@ if (iMaxTrieLevel != 2)
 		pszResult_g = (*pfStampSetParameter_g)(pSetup_io,
 						   "MatchCategories", "FALSE");
 		printf("StampSetParameter(\"MatchCategories\", \"FALSE\"):\n\t%s\n",
+			pszResult_g);
+	}
+
+// -p AllomorphID
+	if (bAllomorphIds == TRUE)
+	{
+		pszResult_g = (*pfStampSetParameter_g)(pSetup_io,
+						   "AllomorphIds", "TRUE");
+		printf("StampSetParameter(\"AllomorphIds\", \"TRUE\"):\n\t%s\n",
 			pszResult_g);
 	}
 
@@ -891,41 +929,94 @@ if (iMaxTrieLevel != 2)
 // LogFile
 //    pszResult_g = (*pfStampSetParameter_g)(pSetup_io,
 //					   "AppendLogFile", "TRUE");
-	printf("StampSetParameter(\"AppendLogFile\", \"TRUE\"):\n\t%s\n",
+    printf("StampSetParameter(\"AppendLogFile\", \"TRUE\"):\n\t%s\n",
 	   pszResult_g);
 
-	pszResult_g = (*pfStampSetParameter_g)(pSetup_io,
+    pszResult_g = (*pfStampSetParameter_g)(pSetup_io,
 					   "LogFile", pszLogFile_in);
-	printf("StampSetParameter(\"LogFile\", \"%s\"):\n\t%s\n",
+    printf("StampSetParameter(\"LogFile\", \"%s\"):\n\t%s\n",
 	   pszLogFile_in ? pszLogFile_in : "{NULL}", pszResult_g);
 
 	//Header
 	pszResult_g = (*pfStampReportVersion_g)(pSetup_io);
 	printf("StampReportVersion(\"Header\", \"%s\"):\n\t%s\n",
 	   pszLogFile_in ? pszLogFile_in : "{NULL}", pszResult_g);
-	}
+    }
 else
-	printf("CANNOT CALL DLL/StampSetParameter()\n");
+    printf("CANNOT CALL DLL/StampSetParameter()\n");
 
 if (pfStampLoadControlFiles_g != 0)
-	{
-	pszResult_g = (*pfStampLoadControlFiles_g)(pSetup_io,
-						apszControlFiles_in[0],
-						apszControlFiles_in[1],
-						apszControlFiles_in[2],
-						apszControlFiles_in[3],
-						apszControlFiles_in[4],
+    {
+    pszResult_g = (*pfStampLoadControlFiles_g)(pSetup_io,
+					    apszControlFiles_in[0],
+                        apszControlFiles_in[1],
+                        apszControlFiles_in[2],
+                        apszControlFiles_in[3],
+                        apszControlFiles_in[4],
 						apszControlFiles_in[5]);
 
-	printf("StampLoadControlFiles():\n\t%s\n", pszResult_g);
-	}
+    printf("StampLoadControlFiles():\n\t%s\n", pszResult_g);
+    }
 else
-	printf("CANNOT CALL DLL/StampLoadControlFiles()\n");
+    printf("CANNOT CALL DLL/StampLoadControlFiles()\n");
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 // NAME
-//    testDictInsertion
+//    testStringProcessing 
+// DESCRIPTION
+//    test last string processing as opposed to file processing
+// RETURN VALUE
+//    none
+//
+void testStringProcessing(StampSetup *pSetup_io)
+{
+
+	// Ana Entry
+	const char *pszAnaEntry_in[12] = {
+							"\\a < R0 +fiyupa >",
+							"\\d fiyupa",
+							"\\cat R0",
+							"\\p ",
+							"\\w fiyupa",
+							" ",
+							"\\a < V1 *jaqaya: > CAUS RECIP 2 DIR",
+							"\\d jagaya:-tsi-nacu-nqui-mi",
+							"\\cat V0",
+							"\\p underlong=Mlowers=PMlowered=foreshortens=",
+							"\\w jagaytsinacunquimi",
+							"\\n .\\n"
+							};
+	char *pAnaEntry_in = (char *)malloc(256);
+	
+	memset(pAnaEntry_in, 0, 256);
+
+	int Length = 0;
+
+		for(int i = 0; i < 12; i++)
+		{
+			strcat(&pAnaEntry_in[Length], pszAnaEntry_in[i]);
+			pAnaEntry_in[Length + strlen(pszAnaEntry_in[i])] = '\0';
+
+			Length += strlen(pszAnaEntry_in[i]) + 1;
+		}
+
+		pAnaEntry_in[Length + 1] = '\0'; //End of record
+
+	// Process the string - can have multiple ana entries
+	processString(pSetup_io, pAnaEntry_in, "n");
+
+	free(pAnaEntry_in);
+
+	return;
+}
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// NAME
+//    testDictInsertion 
 // DESCRIPTION
 //    test last DLL routines imported to StampDLL from AmpleDLL
 // RETURN VALUE
@@ -934,8 +1025,10 @@ else
 void testDictInsertion(StampSetup *pSetup_io)
 {
 
-	const char *pszNewEntry_in[10] = {"\\e :",
-							"\\ge 5",
+	// First Insert
+	const char *pszNewEntry_in[11] = {"\\entryType suffix",
+							"\\e :",
+							"\\mn 5",
 							"\\gs 5",
 							"\\a :",
 							"\\g1 first person verbal",
@@ -946,12 +1039,12 @@ void testDictInsertion(StampSetup *pSetup_io)
 							"\\t PERSON"
 							};
 	char *pNewEntry_in = (char *)malloc(256);
-
+	
 	memset(pNewEntry_in, 0, 256);
 
 	int Length = 0;
 
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i < 11; i++)
 		{
 			strcat(&pNewEntry_in[Length], pszNewEntry_in[i]);
 			strcat(&pNewEntry_in[Length], "\n");
@@ -961,25 +1054,69 @@ void testDictInsertion(StampSetup *pSetup_io)
 
 		//pNewEntry_in[strlen(pNewEntry_in) + 1] = '\0';
 
+			// Second Insert
+			const char *pszNewEntry_in1[11] = {"\\entryType suffix",
+							"\\e :",
+							"\\mn 5",
+							"\\gs 5",
+							"\\a :",
+							"\\g1 first person verbal",
+							"\\g2 primera persona verbal",
+							"\\c V1/V2",
+							"\\mp foreshortens",
+							"\\o 130",
+							"\\t PERSON"
+							};
+	char *pNewEntry_in1 = (char *)malloc(256);
+	
+	memset(pNewEntry_in1, 0, 256);
+
+	Length = 0;
+
+		for(int i = 0; i < 11; i++)
+		{
+			strcat(&pNewEntry_in1[Length], pszNewEntry_in1[i]);
+			strcat(&pNewEntry_in1[Length], "\n");
+
+			Length += strlen(pszNewEntry_in1[i]);
+		}
+
+		//pNewEntry_in[strlen(pNewEntry_in) + 1] = '\0';
+
 
 	//Print Dictionaries
-
+	
 	char temp[2] = {'\0','\0'};
 	pszResult_g = (*pfStampWriteDictionary_g)(pSetup_io, NULL);
-	printf("StampWriteDictionary Before Insert (\"DebugLevel\", %s)):\n\t%s\n",
+	printf("StampWriteDictionary Before First Insert (\"DebugLevel\", %s)):\n\t%s\n",
 				_itoa(iDebugLevel,temp,10), pszResult_g);
 
-	//Insert Entry
+	//Insert First Entry
 
-	pszResult_g = (*pfStampUpdateEntry_g)(pSetup_io, pNewEntry_in, "SUFFIX");
-	printf("StampUpdateEntry():\n\t%s\n", pszResult_g);
+	pszResult_g = (*pfStampUpdateEntry_g)(pSetup_io, pNewEntry_in);
+	printf("Insert (\"DebugLevel\", %s)):\n\t%s\n",
+				_itoa(iDebugLevel,temp,10), pszResult_g);
 
 	free(pNewEntry_in);
 
 	//Print Dictionaries
 
 	pszResult_g = (*pfStampWriteDictionary_g)(pSetup_io, NULL);
-	printf("StampWriteDictionary After Insert (\"DebugLevel\", %s)):\n\t%s\n",
+	printf("StampWriteDictionary Before Second Insert (\"DebugLevel\", %s)):\n\t%s\n",
+				_itoa(iDebugLevel,temp,10), pszResult_g);
+
+	//Insert Second Entry - Delete the first
+
+	pszResult_g = (*pfStampUpdateEntry_g)(pSetup_io, pNewEntry_in1);
+	printf("Insert (\"DebugLevel\", %s)):\n\t%s\n",
+				_itoa(iDebugLevel,temp,10), pszResult_g);
+
+	free(pNewEntry_in1);
+
+	//Print Dictionaries
+
+ 	pszResult_g = (*pfStampWriteDictionary_g)(pSetup_io, NULL);
+	printf("StampWriteDictionary After Last Insert (\"DebugLevel\", %s)):\n\t%s\n",
 				_itoa(iDebugLevel,temp,10), pszResult_g);
 
 	return;
@@ -997,8 +1134,8 @@ void testDictInsertion(StampSetup *pSetup_io)
 //    none
 //
 void loadDictionaries(
-	StampSetup *	pSetup_io,
-	const char *	apszDictFiles_in[])
+    StampSetup *	pSetup_io,
+    const char *	apszDictFiles_in[])
 {
 int		i;
 
@@ -1010,8 +1147,8 @@ if (pfStampLoadDictionary_g != 0) {
 	for ( i = 0 ; apszDictFiles_in[i] ; ++i )
 		{
 		pszResult_g = (*pfStampLoadDictionary_g)(pSetup_io,
-							  apszDictFiles_in[i],
-							  "U");
+						      apszDictFiles_in[i],
+						      "U");
 		printf("StampLoadDictionary(\"%s\",\"U\"):\n\t%s\n",
 			   apszDictFiles_in[i], pszResult_g);
 		}
@@ -1022,32 +1159,32 @@ if (pfStampLoadDictionary_g != 0) {
 		if (apszDictFiles_in[0] != NULL)
 		{
 		pszResult_g = (*pfStampLoadDictionary_g)(pSetup_io,
-							  apszDictFiles_in[0],
-							  "P");
+						      apszDictFiles_in[0],
+						      "P");
 		printf("StampLoadDictionary(\"%s\",\"P\"):\n\t%s\n",
 			   apszDictFiles_in[0], pszResult_g);
 		}
 		if (apszDictFiles_in[1] != NULL)
 		{
 		pszResult_g = (*pfStampLoadDictionary_g)(pSetup_io,
-							  apszDictFiles_in[1],
-							  "I");
+						      apszDictFiles_in[1],
+						      "I");
 		printf("StampLoadDictionary(\"%s\",\"I\"):\n\t%s\n",
 			   apszDictFiles_in[1], pszResult_g);
 		}
 		if (apszDictFiles_in[2] != NULL)
 		{
 		pszResult_g = (*pfStampLoadDictionary_g)(pSetup_io,
-							  apszDictFiles_in[2],
-							  "S");
+						      apszDictFiles_in[2],
+						      "S");
 		printf("StampLoadDictionary(\"%s\",\"S\"):\n\t%s\n",
 			   apszDictFiles_in[2], pszResult_g);
 		}
 		for ( i = 3 ; apszDictFiles_in[i] ; ++i )
 		{
 		pszResult_g = (*pfStampLoadDictionary_g)(pSetup_io,
-							  apszDictFiles_in[i],
-							  "R");
+						      apszDictFiles_in[i],
+						      "R");
 		printf("StampLoadDictionary(\"%s\",\"R\"):\n\t%s\n",
 			   apszDictFiles_in[i], pszResult_g);
 		}
@@ -1063,9 +1200,9 @@ if (pfStampLoadDictionary_g != 0) {
 	}
 }
 else
-	printf("CANNOT CALL DLL/StampLoadDictionary()\n");
+    printf("CANNOT CALL DLL/StampLoadDictionary()\n");
 
-//testDictInsertion(pSetup_io);
+testDictInsertion(pSetup_io);
 
 }
 
@@ -1077,23 +1214,46 @@ else
 // RETURN VALUE
 //    none
 //
-void ProcessFile(
-	StampSetup *	pSetup_io,
+void processFile(
+    StampSetup *	pSetup_io,
 	const char *	pszInputFile_in,
-	const char *	pszOutputFile_in)
+    const char *	pszOutputFile_in)
 {
 if (pfStampProcessFile_g != NULL)
-	{
-	pszResult_g = (*pfStampProcessFile_g)(pSetup_io,
-					 pszInputFile_in,
-					 pszOutputFile_in);
-	printf("StampProcessFile(\"%s\",\"%s\"):\n\t%s\n",
+    {
+    pszResult_g = (*pfStampProcessFile_g)(pSetup_io,
+				     pszInputFile_in,
+				     pszOutputFile_in);
+    printf("StampProcessFile(\"%s\",\"%s\"):\n\t%s\n",
 	   pszInputFile_in, pszOutputFile_in, pszResult_g);
-	}
+    }
 else
-	printf("CANNOT CALL DLL/StampProcessFile()\n");
+    printf("CANNOT CALL DLL/StampProcessFile()\n");
 }
 
+///////////////////////////////////////////////////////////////////////////////
+// NAME
+//    processString
+// DESCRIPTION
+//    parse the given word or words using the given AMPLE setup
+// RETURN VALUE
+//    none
+//
+void processString(
+    StampSetup *	pSetup_io,
+    const char *	pszWord_in,
+	const char *    pszUseText_in)
+{
+if (pfStampProcessString_g != NULL)
+    {
+    pszResult_g = (*pfStampProcessString_g)(pSetup_io,
+				     pszWord_in, "n");
+    printf("StampParseString(\"%s\"):\n%s\n",
+	   pszWord_in, pszResult_g);
+    }
+else
+    printf("CANNOT CALL DLL/StampParseString()\n");
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // NAME
@@ -1104,24 +1264,17 @@ else
 //    none
 //
 void removeSetup(
-	StampSetup * pSetup_io)
+    StampSetup * pSetup_io)
 {
 if (pfStampReset_g != NULL)
-	{
-	pszResult_g = (*pfStampReset_g)(pSetup_io);
-	printf("StampReset():\n\t%s\n", pszResult_g);
-	}
+    {
+    pszResult_g = (*pfStampReset_g)(pSetup_io);
+    printf("StampReset():\n\t%s\n", pszResult_g);
+    }
 if (pfStampDeleteSetup_g != NULL)
-	{
-	pszResult_g = (*pfStampDeleteSetup_g)(pSetup_io);
-	printf("StampDeleteSetup():\n\t%s\n", pszResult_g);
-	}
+    {
+    pszResult_g = (*pfStampDeleteSetup_g)(pSetup_io);
+    printf("StampDeleteSetup():\n\t%s\n", pszResult_g);
+    }
 }
 
-/*
-  File settings for GNU Emacs (Please leave for Steve McConnel's sake!)
-  Local Variables:
-  mode:C++
-  compile-command:"nmake -f testdll.mak \"CFG=testdll - Win32 Debug\""
-  End:
- */
