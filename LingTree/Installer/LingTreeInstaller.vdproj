@@ -358,12 +358,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0CE9482F702D4F93AC74B5444C478ED7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_EE183D1B3218A21DED6056219A4384F1"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -371,6 +365,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_9C64DE05425F286F17BD0986C277A1ED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0CE9482F702D4F93AC74B5444C478ED7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1732,14 +1732,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LingTree"
-        "ProductCode" = "8:{53143D40-5E25-42FE-A83B-A44D0D70FE80}"
-        "PackageCode" = "8:{D5269F60-1769-4018-AAA9-5C24443A1A64}"
+        "ProductCode" = "8:{7262C035-2022-4217-A1A9-B7AC7DA6B406}"
+        "PackageCode" = "8:{146EEA2E-6556-402C-91B6-CA2CC0584894}"
         "UpgradeCode" = "8:{F41FB31D-91CC-4A20-8312-838DA4910746}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.7.0"
+        "ProductVersion" = "8:0.7.5"
         "Manufacturer" = "8:SIL International"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

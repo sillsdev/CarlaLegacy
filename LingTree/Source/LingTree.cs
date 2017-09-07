@@ -1130,13 +1130,13 @@ namespace LingTree
 				tree.TryPixelOffset = GetBoolFromNodeContent("/LingTreeTree/TryPixelOffset", doc);
                 tree.ShowFlatView = GetBoolFromNodeContent("/LingTreeTree/ShowFlatView", doc);
 				tree.GlossFontFace = GetNodeContent("/LingTreeTree/GlossFontFace", doc);
-				tree.GlossFontSize = GetIntFromNodeContent("/LingTreeTree/GlossFontSize", doc);
+				tree.GlossFontSize = GetFloatFromNodeContent("/LingTreeTree/GlossFontSize", doc);
 				tree.GlossFontStyle = GetFontStyleFromNodeContent("/LingTreeTree/GlossFontStyle", doc);
 				tree.LexFontFace = GetNodeContent("/LingTreeTree/LexFontFace", doc);
-				tree.LexFontSize = GetIntFromNodeContent("/LingTreeTree/LexFontSize", doc);
+				tree.LexFontSize = GetFloatFromNodeContent("/LingTreeTree/LexFontSize", doc);
 				tree.LexFontStyle = GetFontStyleFromNodeContent("/LingTreeTree/LexFontStyle", doc);
 				tree.NTFontFace = GetNodeContent("/LingTreeTree/NTFontFace", doc);
-				tree.NTFontSize = GetIntFromNodeContent("/LingTreeTree/NTFontSize", doc);
+				tree.NTFontSize = GetFloatFromNodeContent("/LingTreeTree/NTFontSize", doc);
 				tree.NTFontStyle = GetFontStyleFromNodeContent("/LingTreeTree/NTFontStyle", doc);
 				tree.GlossColorArgb = GetIntFromNodeContent("/LingTreeTree/GlossColorArgb", doc);
 				tree.LexColorArgb = GetIntFromNodeContent("/LingTreeTree/LexColorArgb", doc);
@@ -1203,7 +1203,15 @@ namespace LingTree
 				iResult = Convert.ToInt32(s);
 			return iResult;
 		}
-		private string GetNodeContent(string sXPath, XmlDocument doc)
+        private float GetFloatFromNodeContent(string sXPath, XmlDocument doc)
+        {
+            float fResult = 0;
+            string s = GetNodeContent(sXPath, doc);
+            if (s != null)
+                fResult = Convert.ToSingle(s);
+            return fResult;
+        }
+        private string GetNodeContent(string sXPath, XmlDocument doc)
 		{
 			string sResult = null;
 			XmlNode node = doc.SelectSingleNode(sXPath);

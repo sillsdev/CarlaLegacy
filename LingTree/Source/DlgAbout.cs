@@ -84,9 +84,9 @@ namespace LingTree
 			label3.Parent = this;
 			label3.Location = new Point(label1.Left, label2.Bottom + label3.Font.Height);
 			label3.Name = "label3";
-			label3.Size = new Size(iClientWidth, label3.Font.Height);
+			label3.Size = new Size(iClientWidth + 20, label3.Font.Height);
 			label3.TabIndex = 7;
-			label3.Text = "Copyright \x00A9 2002-2010 SIL International";
+			label3.Text = "Copyright \x00A9 2002-2017 SIL International";
 			label3.TextAlign = ContentAlignment.MiddleLeft;
 			//
 			// label4
@@ -108,7 +108,7 @@ namespace LingTree
 			label5.Name = "label5";
 			label5.Size = new Size(iClientWidth, label5.Font.Height);
 			label5.TabIndex = 7;
-			label5.Text = "    andy_black@sil.org";
+            label5.Text = "  Language_Software_Support@sil.org";
 			label5.TextAlign = ContentAlignment.MiddleLeft;
 			//
 			// button1
@@ -144,12 +144,14 @@ namespace LingTree
 
 		private void InitializeComponent()
 		{
-			//
-			// DlgAbout
-			//
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(416, 273);
-			this.Name = "DlgAbout";
+            this.SuspendLayout();
+            // 
+            // DlgAbout
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(440, 273);
+            this.Name = "DlgAbout";
+            this.ResumeLayout(false);
 
 		}
 
