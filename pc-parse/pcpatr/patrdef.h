@@ -94,7 +94,7 @@ struct patr_edge
 	/*  The following fields are only used during printing */
 	short	iCenterColumn;	/* column number of center of edge */
 	short	iCurrentRow;	/* row in text area for current edge */
-	long	iIndex;		/* unique index (1..n) of this edge */
+	size_t	iIndex;		/* unique index (1..n) of this edge */
 	int		iCount;		/* number of times this edge used in parse */
 	char	bFailed;	/* true if unification of this edge failed */
 	char	bPrinted;	/* true if printed already */
@@ -544,7 +544,7 @@ extern void			deallocatePATRFeaturePath P((
 extern PATRHashList *		allocPATRHashList P((PATRData * pPATR_io));
 extern PATREdge *		allocPATREdge P((PATRData * pPATR_io));
 extern PATREdgeList *		allocPATREdgeList P((PATRData * pPATR_io));
-extern char *			allocPATRStringBuffer P((int iLength_in,
+extern char *			allocPATRStringBuffer P((size_t iLength_in,
 							 PATRData * pPATR_io));
 extern PATRWord *		allocPATRWord P((PATRData * pPATR_io));
 extern PATRWordCategory *	allocPATRWordCategory P((PATRData * pPATR_io));

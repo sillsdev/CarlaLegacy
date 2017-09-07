@@ -184,7 +184,7 @@ PATRFeature *	x;
 int		length;
 PATRData *	pPATR_in;
 {
-int			n;
+size_t			n;
 int			iCoref;
 int			bRepeated;
 PATRComplexFeature *	flist;			/* Temp feature list */
@@ -202,7 +202,7 @@ if ( x->eType == PATR_FAILFS )		/* If failure, print fail string */
 	length = 10;
 	}
 	fprintf(fp,"FAIL %s", x->u.pszAtom);	/* This contains x/y */
-	length += n;
+	length += (int)n;
 	return( length );
 	}
 
@@ -215,7 +215,7 @@ if (x->eType == PATR_ATOM)
 	length = 10;
 	}
 	fprintf(fp,"%s ", x->u.pszAtom);		/* Print it */
-	length += n;
+	length += (int)n;
 	}
 else if (x->eType == PATR_DEFATOM)
 	{						/* If default atom */
@@ -226,7 +226,7 @@ else if (x->eType == PATR_DEFATOM)
 	length = 10;
 	}
 	fprintf(fp,"!%s ", x->u.pszAtom);		/* Print it */
-	length += n;
+	length += (int)n;
 	}
 else
 	{						/* x is complex or null */
@@ -241,7 +241,7 @@ else
 		length = 10;
 		}
 	fprintf(fp,"%s", buffer);		/* Print ref number with $ */
-	length += n;
+	length += (int)n;
 	bRepeated = repeatedPATRFeatureCoreference( x, pPATR_in );
 	}
 	else
@@ -282,10 +282,10 @@ else
 		if (	(pPATR_in->iFeatureDisplay & PATR_FEATURE_TRIM) &&
 			only_null(flist->pValue) )
 			continue;
-		if ((unsigned long)flist->pszLabel < 10000)
+		if ((size_t)flist->pszLabel < 10000)
 		{
 			char rgchTemp[20];
-			sprintf(rgchTemp, "#%ld", (unsigned long)flist->pszLabel);
+			sprintf(rgchTemp, "#%zu", (size_t)flist->pszLabel);
 			n = strlen(rgchTemp);
 			if (length + n >= 80)
 			{
@@ -304,7 +304,7 @@ else
 			}
 			fprintf(fp,"%s:", flist->pszLabel);	/* Print label */
 		}
-		length += n;
+		length += (int)n;
 						/* Print value */
 		length = show_feat_flat(flist->pValue, length, pPATR_in);
 		} /* for */
@@ -341,7 +341,7 @@ PATRData *	pPATR_in;
 int			n;
 int			iCoref;
 int			bRepeated;
-int			lablen;
+size_t			lablen;
 int			first;
 PATRComplexFeature *	flist;			/* Temp feature list */
 FILE * fp = pPATR_in->pMem->pPrintsFP ? pPATR_in->pMem->pPrintsFP : stdout;
@@ -411,7 +411,7 @@ else
 		lablen = strlen( flist->pszLabel ) + 3;	/* Align from label */
 		if ( lablen < 9 )
 			{
-			for ( n = 9 - lablen; n; n-- )
+			for ( n = (int)(9 - lablen); n; n-- )
 			fprintf(fp," ");
 			}
 						/* Print value */
@@ -553,7 +553,7 @@ if (bSetCoref)
  *               Tom              ran
  */
 
-#define FILL_TO(x, y)  for ( ; pPATR_in->pMem->iNextPosition <= x; \
+#define FILL_TO(x, y)  for ( ; pPATR_in->pMem->iNextPosition <= (int)x; \
 	++pPATR_in->pMem->iNextPosition) \
 		fprintf(fp, y)
 
@@ -574,7 +574,7 @@ int depth;
 PATRData * pPATR_in;
 {
 PATREdgeList * edge_listp;
-int len1, len2;
+size_t len1, len2;
 
 if ((edgep->eType == PATR_LEXICAL_EDGE) || (edgep->u.r.pChildren == NULL))
 	{
@@ -610,8 +610,8 @@ if ((edgep->eType == PATR_LEXICAL_EDGE) || (edgep->u.r.pChildren == NULL))
 	else
 	len2 = 0;
 
-	edgep->iCenterColumn = pPATR_in->pMem->iNextPosition + (len1)/2 - 1;
-	pPATR_in->pMem->iNextPosition += len1;
+	edgep->iCenterColumn = (short)(pPATR_in->pMem->iNextPosition + (len1)/2 - 1);
+	pPATR_in->pMem->iNextPosition += (int)len1;
 	}
 else
 	{
@@ -683,8 +683,8 @@ PATREdge * edgep;
 int depth;
 PATRData * pPATR_in;
 {
-int len;
-int left_pos;
+size_t len;
+size_t left_pos;
 #define MAX_NAME_SIZE 80
 char szName[MAX_NAME_SIZE+1];
 FILE * fp = pPATR_in->pMem->pPrintsFP ? pPATR_in->pMem->pPrintsFP : stdout;
@@ -698,7 +698,7 @@ if (pPATR_in->pMem->iPrintDepth == depth)
 	if (edgep->iIndex != 0)
 	{
 	char szIndex[20];
-	sprintf(szIndex, "_%ld", edgep->iIndex);
+	sprintf(szIndex, "_%zu", edgep->iIndex);
 		strncat(szName, szIndex, sizeof(szName) - strlen(szName) - 1);
 	}
 	if (    (pPATR_in->iParseCount > 1) &&
@@ -714,7 +714,7 @@ if (pPATR_in->pMem->iPrintDepth == depth)
 	FILL_TO(left_pos, " ");
 
 	fprintf(fp, "%s ", szName);
-	pPATR_in->pMem->iNextPosition += len + 1;
+	pPATR_in->pMem->iNextPosition += (int)(len + 1);
 	}
 else if (pPATR_in->pMem->iPrintDepth == depth+1)
 	{
@@ -729,7 +729,7 @@ else if (pPATR_in->pMem->iPrintDepth == depth+1)
 	left_pos = edgep->iCenterColumn - len/2;
 	FILL_TO(left_pos, " ");
 	fprintf(fp, "%s ", szName);
-	pPATR_in->pMem->iNextPosition += len + 1;
+	pPATR_in->pMem->iNextPosition += (int)(len + 1);
 	}
 	}
 }
@@ -750,8 +750,8 @@ PATREdge *edgep;
 int depth;
 PATRData * pPATR_in;
 {
-int len;
-int left_pos, center_pos, right_pos;
+size_t len;
+size_t left_pos, center_pos, right_pos;
 PATREdgeList *edge_listp;
 char *leaf;
 FILE * fp = pPATR_in->pMem->pPrintsFP ? pPATR_in->pMem->pPrintsFP : stdout;
@@ -778,7 +778,7 @@ if ((edgep->eType == PATR_LEXICAL_EDGE) || (edgep->u.r.pChildren == NULL))
 	FILL_TO(left_pos, " ");
 
 	fprintf(fp, "%s ", leaf);
-	pPATR_in->pMem->iNextPosition += len + 1;
+	pPATR_in->pMem->iNextPosition += (int)(len + 1);
 	}
 else
 	{
@@ -871,7 +871,7 @@ int depth;
 PATRData * pPATR_in;
 {
 char buffer[80];
-int k;
+size_t k;
 PATRFeature *	pFeat;
 FILE * fp = pPATR_in->pMem->pPrintsFP ? pPATR_in->pMem->pPrintsFP : stdout;
 
@@ -881,7 +881,7 @@ if (pPATR_in->iCurrentIndex >= edgep->iIndex)
 pPATR_in->iCurrentIndex = edgep->iIndex;   /* Bump largest printed edge */
 
 /*  Print edge name (with index) and features. */
-sprintf(buffer, "%s_%ld:", edgep->pszLabel, edgep->iIndex);
+sprintf(buffer, "%s_%zu:", edgep->pszLabel, edgep->iIndex);
 if (pPATR_in->iFeatureDisplay & PATR_FEATURE_FLAT)
 	{
 	fprintf(fp,"%s ", buffer);
@@ -901,10 +901,10 @@ else if (edgep->eType == PATR_RULE_EDGE)
 	pFeat = findPATRAttribute(edgep->pFeature, storedPATRString("0",
 								pPATR_in));
 	if (pFeat != NULL)
-	showPATRFeature( pFeat, k, pPATR_in );
+	showPATRFeature( pFeat, (int)k, pPATR_in );
 	}
 else
-	showPATRFeature( edgep->pFeature, k, pPATR_in );
+	showPATRFeature( edgep->pFeature, (int)k, pPATR_in );
 fprintf(fp,"\n");
 }
 
@@ -935,7 +935,7 @@ appendToDynString(&pPATR_in->pMem->dstrOutput, edgep->pszLabel,
 		  strlen(edgep->pszLabel));
 if (edgep->iIndex != 0)
 	{
-	sprintf(szBuf, "_%ld", edgep->iIndex);
+	sprintf(szBuf, "_%zu", edgep->iIndex);
 	appendToDynString(&pPATR_in->pMem->dstrOutput, szBuf, strlen(szBuf));
 	}
 if ((pPATR_in->iParseCount > 1) && (edgep->iCount == pPATR_in->iParseCount))
@@ -1129,6 +1129,7 @@ static void write_xml_char_data(pszString_in, pOutFP_in, bCDATA_in, bANA_in)
 const char * pszString_in;
 FILE * pOutFP_in;
 int bCDATA_in;
+int bANA_in;
 {
 const char * psz;
 
@@ -1359,7 +1360,7 @@ PATRDisplayedFeature * pSaveMultTop = NULL;
 
 if (pEdge_in == NULL)
 	return;
-sprintf(szNodeId, "_%ld", pEdge_in->iIndex);
+sprintf(szNodeId, "_%zu", pEdge_in->iIndex);
 if (pEdge_in->bPrinted)
 	{
 	fprintf(pOutputFP_in, "%*s<Shared id=\"s%u_%d.%s\"/>\n", /* hab125 */
@@ -1406,7 +1407,7 @@ if (pEdge_in->eType == PATR_RULE_EDGE)
 	fprintf(pOutputFP_in, "\" rule=\"");
 	write_CDATA(pEdge_in->u.r.pRule->pszID, pOutputFP_in);
 	}
-	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%ld\"%s%s>\n", /* hab125 */
+	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%zu\"%s%s>\n", /* hab125 */
 		uiSentCount_in, iParse_in, pEdge_in->iIndex, pszAll, pszFail);
 
 	if (pPATR_in->iFeatureDisplay & PATR_FEATURE_ON)
@@ -1472,7 +1473,7 @@ else if (pEdge_in->eType == PATR_LEXICAL_EDGE)
 	}
 	fprintf(pOutputFP_in, "%*s<Leaf cat=\"", iIndent_in, "");
 	write_CDATA(pEdge_in->pszLabel, pOutputFP_in);
-	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%ld\"%s%s%s", /* hab125 */
+	fprintf(pOutputFP_in, "\" id=\"s%u_%d._%zu\"%s%s%s", /* hab125 */
 		uiSentCount_in, iParse_in, pEdge_in->iIndex, pszAll, pszFail, pszPreGloss);
 	write_CDATA(pszGloss, pOutputFP_in);
 	fprintf(pOutputFP_in, "%s>\n", pszPostGloss);
@@ -1697,11 +1698,11 @@ if (pEdge_in->pFeature)
 			if (pPATR_in->iDebugLevel)
 			{
 			fprintf(stdout,
-				"DEBUG: change label from \"%s\" to #%ld\n",
+				"DEBUG: change label from \"%s\" to #%zu\n",
 				pComp->pszLabel, pEdge_in->iIndex);
 			if (pPATR_in->pLogFP)
 				fprintf(pPATR_in->pLogFP,
-					"DEBUG: change label from \"%s\" to #%ld\n",
+					"DEBUG: change label from \"%s\" to #%zu\n",
 					pComp->pszLabel, pEdge_in->iIndex);
 			}
 			pComp->pszLabel = (char *)pEdge_in->iIndex;
@@ -1738,10 +1739,10 @@ if (pEdge_in->pFeature)
 			{
 			if (pPATR_in->iDebugLevel)
 				{
-				fprintf(stdout, "#%ld\n",
+				fprintf(stdout, "#%zu\n",
 					pel->pEdge->iIndex);
 			if (pPATR_in->pLogFP)
-				fprintf(pPATR_in->pLogFP, "#%ld\n",
+				fprintf(pPATR_in->pLogFP, "#%zu\n",
 					pel->pEdge->iIndex);
 				}
 			pComp->pszLabel = (char *)pel->pEdge->iIndex;
@@ -1781,11 +1782,11 @@ if (pEdge_in->pFeature)
 		if (pPATR_in->iDebugLevel)
 		{
 		fprintf(stdout,
-			"DEBUG: add lexical feature labeled #%ld\n",
+			"DEBUG: add lexical feature labeled #%zu\n",
 			pEdge_in->iIndex);
 		if (pPATR_in->pLogFP)
 			fprintf(pPATR_in->pLogFP,
-				"DEBUG: add lexical feature labeled #%ld\n",
+				"DEBUG: add lexical feature labeled #%zu\n",
 				pEdge_in->iIndex);
 		}
 		pFeat = createPATRNullFeature(pPATR_in);
@@ -1856,7 +1857,7 @@ PATRData * pPATR_in;
 PATRFeature * pf;
 PATRComplexFeature * pcf;
 char szIndex[16];
-int k;
+size_t k;
 const char * pszExtra;
 int bFailed;
 int bCorefChecked;
@@ -1892,14 +1893,14 @@ if (!(pPATR_in->iFeatureDisplay & PATR_FEATURE_ALL))
 	pf = findPATRAttribute(pEdge_in->pFeature,
 			   storedPATRString("0", pPATR_in));
 	if (pf != NULL)
-	showPATRFeature( pf, k, pPATR_in );
+	showPATRFeature( pf, (int)k, pPATR_in );
 	putc('\n', pOutputFP_in);
 	collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
 	resetPATRFeatureCoreferenceCheck(pPATR_in);
 	return;
 	}
 
-sprintf(szIndex, "%ld", pEdge_in->iIndex);
+sprintf(szIndex, "%zu", pEdge_in->iIndex);
 bFailed = failedPATRParse(pEdge_in);
 if (!bFailed)
 	{
@@ -1950,7 +1951,7 @@ if (!bFailed)
 		putc('\n', pOutputFP_in);
 		k = 0;
 		}
-	showPATRFeature(pf, k, pPATR_in);
+	showPATRFeature(pf, (int)k, pPATR_in);
 	putc('\n', pOutputFP_in);
 	}
 	if (bCorefChecked)
@@ -2026,7 +2027,7 @@ if (	(bFailed || (pEdge_in->eType == PATR_LEXICAL_EDGE)) &&
 	resetPATRFeatureCoreferenceCheck(pPATR_in);
 	checkPATRFeatureCoreferences(pf, pPATR_in);
 
-	showPATRFeature(pf, k, pPATR_in);
+	showPATRFeature(pf, (int)k, pPATR_in);
 	putc('\n', pOutputFP_in);
 
 	collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
@@ -2131,7 +2132,7 @@ int count;
 PATREdgeList * pel;
 int iSaveFeatureDisplay;
 int iSaveParseCount;
-int iSaveCurrentIndex;
+size_t iSaveCurrentIndex;
 FILE * pSavePrintsFP;
 PATRFeature * pParseFeatures;
 int bUnifiedParseFeatures;
@@ -2441,6 +2442,7 @@ memset(&bufferUnderlyingForm, '\0', BUFSIZE);
    * correctly in the Patr100.DLL when invoked by CarlaStudio Unicode version.
    * If we leave it out, the content of the underlying form field is used.
    */
+#pragma warning (disable : 4474)
   fprintf(pOutputFP_in, "", bufferDecomp);
   if (pAnal->pszDecomposition != NULL)
 	pszDecomposition = strcpy(bufferDecomp, pAnal->pszDecomposition);
@@ -2454,6 +2456,7 @@ memset(&bufferUnderlyingForm, '\0', BUFSIZE);
   if (pAnal->pszFeatures != NULL)
 	pszFeatures = strcpy(bufferFeatures, pAnal->pszFeatures);
   fprintf(pOutputFP_in, "", bufferUnderlyingForm);
+#pragma warning (default : 4474)
   if (pAnal->pszUnderlyingForm != NULL)
 	pszUnderlyingForm = strcpy(bufferUnderlyingForm, pAnal->pszUnderlyingForm);
   /*

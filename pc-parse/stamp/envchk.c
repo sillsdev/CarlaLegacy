@@ -24,14 +24,14 @@
 #include <string.h>
 #include "stamp.h"
 
-static char  *shorten P((char  *string, int  size));
-static int  chk_senv_left P((int  size,
+static char  *shorten P((char  *string, size_t  size));
+static int  chk_senv_left P((size_t  size,
 				 char  *left,
 				 AmpleEnvItem *env,
 				 char  *match,
 				 StampUnit * pUnit_in,
 				 StampData * pStamp_in));
-static int  chk_senv_right P((int  size,
+static int  chk_senv_right P((size_t  size,
 				  char  *right,
 				  AmpleEnvItem *env,
 				  StampUnit * pUnit_in,
@@ -44,11 +44,11 @@ static int  senv_right P((char  *        right,
 			  AmpleEnvItem * env,
 			  StampUnit *    pUnit_in,
 			  StampData *    pStamp_in));
-static int  chk_penv_left P((int  size,
+static int  chk_penv_left P((size_t  size,
 				 char  *left,
 				 AmpleEnvItem *env,
 				 char  *match));
-static int  chk_penv_right P((int  size,
+static int  chk_penv_right P((size_t  size,
 				  char  *right,
 				  AmpleEnvItem *env));
 static int  penv_left P((char  *        left,
@@ -69,18 +69,18 @@ static int  penv_right P((char  *        right,
  */
 static char *shorten(string,size)
 char *string;
-int size;
+size_t size;
 {
-int len;
+size_t len;
 
 if ((string == (char *)NULL) || (size <= 0))
 	return(string);             /* check for reasonable arguments */
 
-len = strlen(string) - size;    /* find out where to chop */
-if (len <= 0)
+len = strlen(string);    /* find out where to chop */
+if (len <= size)
 	*string = NUL;              /* nothing left of the string... */
 else
-	*(string + len) = NUL;
+	*(string + len - size) = NUL;
 return(string);
 }
 
@@ -100,7 +100,7 @@ return(string);
  *    TRUE if successful, FALSE if unsuccessful
  */
 static int chk_senv_left(size,left,env,match, pUnit_in, pStamp_in)
-int size;
+size_t size;
 char *left;
 AmpleEnvItem *env;
 char *match;
@@ -144,7 +144,7 @@ return( FALSE );
  *    TRUE if successful, FALSE if unsuccessful
  */
 static int chk_senv_right(size,right,env, pUnit_in, pStamp_in)
-int size;
+size_t size;
 char *right;
 AmpleEnvItem *env;
 StampUnit *	pUnit_in;
@@ -187,9 +187,9 @@ AmpleEnvItem *env;
 StampUnit *	pUnit_in;
 StampData *	pStamp_in;
 {
-int size;
+size_t size;
 char *myleft;
-int mylength;
+size_t mylength;
 StringList *sp;
 
 if (env == (AmpleEnvItem *)NULL)
@@ -359,7 +359,7 @@ AmpleEnvItem *env;
 StampUnit *	pUnit_in;
 StampData *	pStamp_in;
 {
-int size;
+size_t size;
 StringList *sp;
 
 if (env == (AmpleEnvItem *)NULL)
@@ -566,7 +566,7 @@ return( val );
  *    TRUE if successful, FALSE if unsuccessful
  */
 static int chk_penv_left(size,left,env,match)
-int size;
+size_t size;
 char *left;
 AmpleEnvItem *env;
 char *match;
@@ -606,7 +606,7 @@ return( FALSE );
  *    TRUE if successful, FALSE if unsuccessful
  */
 static int chk_penv_right(size,right,env)
-int size;
+size_t size;
 char *right;
 AmpleEnvItem *env;
 {
@@ -644,9 +644,9 @@ static int penv_left(left, env)
 char *left;
 AmpleEnvItem *env;
 {
-int size;
+size_t size;
 char *myleft;
-int mylength;
+size_t mylength;
 StringList *sp;
 
 if (env == (AmpleEnvItem *)NULL)
@@ -663,7 +663,7 @@ if (left == (char *)NULL)
  *  space is released.
  */
 mylength = strlen(left)+1;
-myleft = strcpy(allocMemory((unsigned)mylength),left);
+myleft = strcpy(allocMemory(mylength),left);
 /*
  *  match the current environment against what's wanted
  */
@@ -781,7 +781,7 @@ static int penv_right(right, env)
 char *right;
 AmpleEnvItem *env;
 {
-int size;
+size_t size;
 StringList *sp;
 
 if (env == (AmpleEnvItem *)NULL)

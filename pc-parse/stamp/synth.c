@@ -676,7 +676,7 @@ register StampAnalysis *mp;
 StampAnalysis *ap;
 #endif /* hab220 */
 StampAllomorph *am;
-int            iLen;		/* 2.1b1 hab */
+size_t          iLen;		/* 2.1b1 hab */
 #define FULLREDUP "<...>"
 #define FULLREDUPLEN 5
 StampAnalysis * psa;
@@ -691,18 +691,18 @@ for (psa = head; psa != NULL; psa = psa->pRightLink)
       { /* NB: we assume that there is only one full reduplication
 	   morpheme per word; we also assume that infixation does not
 	   get inserted into the full redup allomorph */
-    int iFixedAfterLen = 0;
-    int iShift = 0;
-	int iFollowingLen = strlen(psa->pszAlloEnd);
+	int iFixedAfterLen = 0;		/* can be negative, will be small magnitude */
+	int iShift = 0;				/* can be negative, will be small magnitude */
+	size_t iFollowingLen = strlen(psa->pszAlloEnd);
 	pszFullRedup = strstr(synword, FULLREDUP);
-	iFixedAfterLen = (pszFullRedup + FULLREDUPLEN) -  psa->pszAlloEnd;
+	iFixedAfterLen = (int)((pszFullRedup + FULLREDUPLEN) -  psa->pszAlloEnd);
 	/* since we manipulate the synwrd buffer, we need to make sure
 	 * has been cleared. */
 	memset(synword + strlen(synword), 0, BUFSIZE - strlen(synword));
 	if (is_final_root_or_suffix(psa))
 	  {  /* replace the allomorph with all preceding string
 		material in the word */
-	    int iPrecedingLen = psa->pszAlloStart - synword;
+		int iPrecedingLen = (int)(psa->pszAlloStart - synword);		/* can be negative, will be small magnitude */
 	    if (iPrecedingLen > 0)
 	      {
 		iShift = iPrecedingLen - FULLREDUPLEN;
@@ -740,7 +740,7 @@ for (psa = head; psa != NULL; psa = psa->pRightLink)
 	       material in the word */
 	    if (psa->pszAlloEnd != NULL && *psa->pszAlloEnd != NUL)
 	      {
-		iShift = iFollowingLen - FULLREDUPLEN;
+		iShift = (int)(iFollowingLen - FULLREDUPLEN);
 		if (iShift < 0)
 		  {
 		    memmove(pszFullRedup, psa->pszAlloEnd, iFollowingLen);	
@@ -972,7 +972,7 @@ for ( mp = head ; mp ; mp = mp->pRightLink )
 				? 0 : strlen(pUnit_in->pCurrentWord->pTemplate->pszFormat);
 		if ( !checkStampPunctEnvironment(
 							  pUnit_in->pCurrentWord->pTemplate->pszFormat,
-				  iLen,
+				  (int)iLen,
 				  pUnit_in->pCurrentWord->pTemplate->pszNonAlpha,
 				  mp->pCurrentAllo->pAlloEnvironment->pPunctCond) )
 			{
@@ -1023,7 +1023,7 @@ register StampAnalysis *next;
 AmpleEnvConstraint *cnd;
 AmpleEnvConstraint cond_tmp;
 char *pos;
-int inf_len, front_len;
+size_t inf_len, front_len;
 #ifndef hab219
 int bConditionMatched = FALSE;
 #endif /* hab219 */
@@ -1083,7 +1083,7 @@ for ( cnd = inf->ptr->m.u.pInfixEnv ; cnd ; cnd = cnd->pNext)
 			/*
 			 * check for validity of this location environment here
 			 */
-		if ( checkStampStringEnvironment( next->pszAlloStart, front_len, pos,
+		if ( checkStampStringEnvironment( next->pszAlloStart, (int)front_len, pos,
 					  &cond_tmp, pUnit_in, pStamp_in ) )
 			{           /* is a valid environment */
 #ifndef hab219

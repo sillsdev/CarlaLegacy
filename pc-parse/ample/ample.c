@@ -419,10 +419,11 @@ fprintf(stderr, "\nUse the Quit command on the File menu (Command-Q)\n");
 fprintf(stderr, "\nUse the Exit command on the File menu (Control-C)\n");
 #endif
 
-exitSafely(iExitStatus_m);		/* Exit with errorlevel
+/*exitSafely(iExitStatus_m);*/		/* Exit with errorlevel
 					   0 is perfect, 2 is some failures
 					   1 (above) is command line error */
-return iExitStatus_m;			/* (not reached) */
+/* xample on linux64 doesn't seem to like exit at times */
+return iExitStatus_m;
 }
 
 /***************************************************************************
@@ -583,7 +584,12 @@ while ((k = getopt(argc, argv, "abc:d:e:f:gi:l:jmn:o:pqrs:tuvw:x:/z:Z:")) != EOF
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &p, 0);
+/*
+size_t len = 0;
+if (1 == sscanf(input, "%zu", &len))
+printf("len is %zu\n", len);
+*/
+		trap_address = (VOIDP)strtoull(optarg, &p, 0);
 		if (trap_address != (VOIDP)NULL)
 		{
 		if (*p == ',')
@@ -806,7 +812,7 @@ if (sAmpleData_m.pLogFP != NULL)
  *  If verify, display
  */
 if (bVerifyLoading_m && (sAmpleData_m.pLogFP != NULL))
-	fprintf(sAmpleData_m.pLogFP, "\nMemory used for classes and tests: %5ld\n",
+	fprintf(sAmpleData_m.pLogFP, "\nMemory used for classes and tests: %5zu\n",
 		getAndClearAllocMemorySum() );
 
 /* ================================================================
@@ -923,7 +929,7 @@ if (bUnifiedDictionary_m)
 	 */
 	if (bVerifyLoading_m && (sAmpleData_m.pLogFP != NULL))
 	fprintf(sAmpleData_m.pLogFP,
-		"\nMemory used for unified dictionaries: %5ld\n",
+		"\nMemory used for unified dictionaries: %5zu\n",
 		getAndClearAllocMemorySum());
 	}
 else
@@ -955,7 +961,7 @@ else
 	 */
 	if (bVerifyLoading_m && (sAmpleData_m.pLogFP != NULL))
 		fprintf(sAmpleData_m.pLogFP,
-			"Memory used for prefix dictionary: %5ld\n",
+			"Memory used for prefix dictionary: %5zu\n",
 			getAndClearAllocMemorySum());
 	}
 
@@ -986,7 +992,7 @@ else
 	 */
 	if (bVerifyLoading_m && (sAmpleData_m.pLogFP != NULL))
 		fprintf(sAmpleData_m.pLogFP,
-			"Memory used for infix dictionary: %5ld\n",
+			"Memory used for infix dictionary: %5zu\n",
 			getAndClearAllocMemorySum());
 	}
 
@@ -1017,7 +1023,7 @@ else
 	 */
 	if (bVerifyLoading_m && (sAmpleData_m.pLogFP != NULL))
 		fprintf(sAmpleData_m.pLogFP,
-			"Memory used for suffix dictionary: %5ld\n",
+			"Memory used for suffix dictionary: %5zu\n",
 			getAndClearAllocMemorySum());
 	}
 	/*
@@ -1058,7 +1064,7 @@ else
 	 */
 	if (bVerifyLoading_m && (sAmpleData_m.pLogFP != NULL))
 	fprintf(sAmpleData_m.pLogFP,
-		"\nMemory used for root dictionaries: %5ld\n",
+		"\nMemory used for root dictionaries: %5zu\n",
 		getAndClearAllocMemorySum());
 	}
 /*

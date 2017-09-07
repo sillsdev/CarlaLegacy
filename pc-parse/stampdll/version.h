@@ -1,16 +1,18 @@
 /* VERSION.H - version number and date information for STAMPDLL
  ***************************************************************************
- * Copyright 1997-2009 by SIL International.  All rights reserved.
+ * Copyright 1997-2017 by SIL International.  All rights reserved.
  */
 #define VERSION 2	/* major rewrite or expansion */
 #define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 1	/* bug fix or other minor change */
-#define DLLPATCHLEVEL 1  /* DLL trails after the exe */
-#define CHANGEDATE	"July 8th 2009"	/* date of release version */
-#define YEAR "2009"		/* used for copyright notice in banner */
+#define PATCHLEVEL 2	/* bug fix or other minor change */
+#define DLLPATCHLEVEL 2  /* DLL trails after the exe */
+#define CHANGEDATE	"April 25, 2017"	/* date of release version */
+#define YEAR "2017"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 25-Apr-2017	SRMc - Fix for 64-bit Windows build; also remove as many
+ * [2.2.2]             compiler warnings as possible
  * 29-Oct-2008  rke  - Begin integration changes from Stamp.c to Stampdll.c
  * [0.0.1?]
  * 03-Dec-2004  hab  - Ignore interfix entry type in unified dictionaries

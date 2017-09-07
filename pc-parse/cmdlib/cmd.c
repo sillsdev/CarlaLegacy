@@ -121,15 +121,15 @@ if (szHelpBuffer_m[0] != NUL)
 static void addhlp(s)
 register char *s;
 {
-int hx;
+size_t hx;
 
 if (iHelpColumn_m == 4)
-	dmphlp();
+	dmphlp();	/* resets iHelpColumn_m to 0 */
 strncat(szHelpBuffer_m, s,
 	sizeof(szHelpBuffer_m) - strlen(szHelpBuffer_m) - 1);
 szHelpBuffer_m[iHelpColumn_m * 20 + 20] = NUL;
 hx = strlen(szHelpBuffer_m);
-if (hx >= iHelpColumn_m * 20 + 20)
+if (hx >= (unsigned)iHelpColumn_m * 20 + 20)
 	{
 	if (iHelpColumn_m < 3)
 	{
@@ -144,7 +144,7 @@ if (hx >= iHelpColumn_m * 20 + 20)
 	}
 else if (iHelpColumn_m < 3)
 	{
-	while (hx < iHelpColumn_m * 20 + 20)
+	while (hx < (unsigned)iHelpColumn_m * 20 + 20)
 	szHelpBuffer_m[hx++] = ' ';
 	}
 ++iHelpColumn_m;

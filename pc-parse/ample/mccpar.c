@@ -205,9 +205,10 @@ while ((*pszToken != '/') && (strncmp(pszToken, "+/", 2) != 0))
 	}
 if (pMorphList == NULL)
 	{
+	szRecordKey_g[MAX_RECKEY_SIZE-1] = NUL;
 	if (szRecordKey_g[0])
 	reportError(ERROR_MSG, "%sEmpty list of morphnames (in entry %s)\n",
-			pszEnvErrHead, szRecordKey_g);
+			pszEnvErrHead, &szRecordKey_g);
 	else
 	reportError(ERROR_MSG, "%sEmpty list of morphnames\n", pszEnvErrHead);
 	return( (AmpleMorphConstraint *)NULL);

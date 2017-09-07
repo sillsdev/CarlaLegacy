@@ -213,7 +213,7 @@ char *str;
 int linenr;
 FILE *outfp;
 {
-register int k;
+size_t k;
 
 if (nodep == NULL)
 	{

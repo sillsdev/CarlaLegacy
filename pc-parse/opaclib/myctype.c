@@ -1,13 +1,13 @@
 /*  MYCTYPE.C - extend <ctype.h> functions to 8-bit alphabetic characters
  ***************************************************************************
  *
- * int matchAlphaChar(const unsigned char * pszString_in,
+ * size_t matchAlphaChar(const unsigned char * pszString_in,
  *                    const TextControl *   pTextCtl_in)
- * int matchLowercaseChar(const unsigned char * pszString_in,
+ * size_t matchLowercaseChar(const unsigned char * pszString_in,
  *                        const TextControl *   pTextCtl_in)
- * int matchUppercaseChar(const unsigned char * pszString_in,
+ * size_t matchUppercaseChar(const unsigned char * pszString_in,
  *                        const TextControl *   pTextCtl_in)
- * int matchCaselessChar(const unsigned char * pszString_in,
+ * size_t matchCaselessChar(const unsigned char * pszString_in,
  *                       const TextControl *   pTextCtl_in)
  * const unsigned char * convLowerToUpper(const unsigned char * pszString_in,
  *					  const TextControl *   pTextCtl_in)
@@ -84,12 +84,12 @@ static unsigned char szWhitespace_m[] = " \t\n\r\f\v";
  *    the number of bytes occupied by the first alphabetic character in the
  *    string (zero if the first character in the string is not alphabetic)
  */
-int matchAlphaChar(pszString_in, pTextCtl_in )
+size_t matchAlphaChar(pszString_in, pTextCtl_in )
 const unsigned char *	pszString_in;
 const TextControl *	pTextCtl_in;
 {
 char		c;
-int		iLetterLength;
+size_t		iLetterLength;
 
 if ((pszString_in == NULL) || (*pszString_in == NUL))
 	return 0;
@@ -131,7 +131,7 @@ return 0;
  *    in the string (zero if the first character in the string is not
  *    lowercase alphabetic)
  */
-int matchLowercaseChar(pszString_in, pTextCtl_in)
+size_t matchLowercaseChar(pszString_in, pTextCtl_in)
 const unsigned char *	pszString_in;
 const TextControl *	pTextCtl_in;
 {
@@ -172,7 +172,7 @@ return (isascii(c) && islower(c)) ? 1 : 0;
  *    in the string (zero if the first character in the string is not
  *    uppercase alphabetic)
  */
-int matchUppercaseChar(pszString_in, pTextCtl_in)
+size_t matchUppercaseChar(pszString_in, pTextCtl_in)
 const unsigned char *	pszString_in;
 const TextControl *	pTextCtl_in;
 {
@@ -213,7 +213,7 @@ return (isascii(c) && isupper(c)) ? 1 : 0;
  *    in the string (zero if the first character in the string is not
  *    caseless alphabetic)
  */
-int matchCaselessChar(pszString_in, pTextCtl_in)
+size_t matchCaselessChar(pszString_in, pTextCtl_in)
 const unsigned char *	pszString_in;
 const TextControl *	pTextCtl_in;
 {
@@ -978,7 +978,7 @@ FILE *		fp;
 {
 LowerLetter *	pLow;
 StringList *	pUp;
-unsigned	uiPadWidth;
+size_t		uiPadWidth;
 size_t		uiLowerSize;
 size_t		uiUpperSize;
 
@@ -997,7 +997,7 @@ for ( pLow = pLowStart_in ; pLow ; pLow = pLow->pNext )
 	fprintf(fp, " ");
 	write_8bit_string(pUp->pszString, fp);
 	if (uiPadWidth != 0)
-		fprintf(fp, "%*s", uiPadWidth, " ");
+		fprintf(fp, "%*s", (int)uiPadWidth, " ");
 	}
 	if (pLow == pLowEnd_in)
 	break;
@@ -1019,10 +1019,10 @@ const TextControl *	pTextCtl_in;
 CaselessLetter *	pLet;
 int			cLow;
 int			cUp;
-unsigned		uiLineWidth;
+size_t			uiLineWidth;
 size_t			uiLowerSize;
 size_t			uiUpperSize;
-unsigned		uiPadWidth;
+size_t			uiPadWidth;
 LowerLetter *		pLower;
 StringList *		pUpper;
 LowerLetter *		pLowStart;
@@ -1091,7 +1091,7 @@ else
 		fprintf(fp, " ");
 		write_8bit_string((char *)pLower->pszLower, fp);
 		if (uiPadWidth != 0)
-		fprintf(fp, "%*s", uiPadWidth, " ");
+		fprintf(fp, "%*s", (int)uiPadWidth, " ");
 		uiLineWidth += uiPadWidth + uiLowerSize + 1;
 		}
 	}

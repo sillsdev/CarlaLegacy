@@ -1638,7 +1638,7 @@ for ( pSL = (StringList *)vlist ; pSL ; pSL = pSL->pNext )
 	putc('\n', outfp);
 	for ( i = 0 ; i < indent ; ++i )
 	putc(' ', outfp);
-	fprintf(outfp, "%s\t\t%lx", pSL->pszString, (unsigned long)pSL->pszString);
+	fprintf(outfp, "%s\t\t%p", pSL->pszString, pSL->pszString);
 	}
 }
 
@@ -1888,8 +1888,7 @@ for ( m = pThis->pMem->pMultTop ; m ; m = m->pNext )
 	}
 	}
 reportMessage(TRUE,
-		  "PROGRAM BUG: %08lx not found in getPATRFeatureCoreference()\n",
-		  (unsigned long)x);
+		  "PROGRAM BUG: %p not found in getPATRFeatureCoreference()\n", x);
 return( 0 );				/* not found (SHOULD NEVER HAPPEN) */
 }
 
@@ -2086,14 +2085,14 @@ int second_idx;
 char * pszCatFeatName;
 char rgchFirst[20];
 char rgchSecond[20];
-if ((unsigned long)first < 10000)
+if ((size_t)first < 10000)
 	{
-	sprintf(rgchFirst, "#%ld", (unsigned long)first);
+	sprintf(rgchFirst, "#%zu", (size_t)first);
 	first = rgchFirst;
 	}
-if ((unsigned long)second < 10000)
+if ((size_t)second < 10000)
 	{
-	sprintf(rgchSecond, "#%ld", (unsigned long)second);
+	sprintf(rgchSecond, "#%zu", (size_t)second);
 	second = rgchSecond;
 	}
 

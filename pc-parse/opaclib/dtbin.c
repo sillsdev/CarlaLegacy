@@ -303,7 +303,7 @@ while ((pszLine = readLineFromFile(pInputFP_in, NULL, 0)) != NULL)
 							 strlen(pszLine)),
 					   pszLine+1);
 	*/
-	int cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
+	size_t cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
 	apszRecord[iIndex] = reallocMemory(apszRecord[iIndex], cch);
 	strcat(apszRecord[iIndex], pszLine + 1);
 	}
@@ -347,8 +347,8 @@ while ((pszLine = readLineFromFile(pInputFP_in, NULL, 0)) != NULL)
 								  strlen(pszLine)),
 					pszLine);
 		*/
-		int cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
-		if (cch >= (int)uiParserBufferSize)
+		size_t cch = strlen(apszRecord[iIndex]) + strlen(pszLine);
+		if (cch >= uiParserBufferSize)
 		  {
 		apszRecord[iIndex] = reallocMemory(apszRecord[iIndex], cch + SIZEOFPARSERBUFFER);
 		uiParserBufferSize += SIZEOFPARSERBUFFER;

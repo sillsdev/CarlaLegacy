@@ -51,7 +51,7 @@ if ((p = s) == NULL)
 	return( -1 );
 do  {
 	if (*p == c)
-	return( p - s );
+	return( (int)(p - s) );
 	} while (*p++ != NUL);
 return( -1 );
 }

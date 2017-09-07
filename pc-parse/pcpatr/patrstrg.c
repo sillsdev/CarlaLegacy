@@ -107,7 +107,7 @@ int		count;
 PATREdgeList *	pel;
 int		iSaveFeatureDisplay;
 int		iSaveParseCount;
-int		iSaveCurrentIndex;
+size_t	iSaveCurrentIndex;
 DynString	dstr;
 char		szBuffer[20];
 PATRFeature * pParseFeatures;
@@ -251,7 +251,7 @@ appendToDynString(pdstr_in, pEdge_in->pszLabel, strlen(pEdge_in->pszLabel));
 if (pEdge_in->iIndex != 0)
 	{
 	appendCharToDynString(pdstr_in, '_');
-	sprintf(szBuffer, "%ld", pEdge_in->iIndex);
+	sprintf(szBuffer, "%zu", pEdge_in->iIndex);
 	appendToDynString(pdstr_in, szBuffer, strlen(szBuffer));
 	}
 if (	(pPATR_in->iParseCount > 1) &&
@@ -380,7 +380,7 @@ memset(&pPATR_in->pMem->dstrOutput, 0, sizeof(pPATR_in->pMem->dstrOutput));
 
 
 #define FILL_TO(x, y) \
-for (; pPATR_in->pMem->iNextPosition <= (x); ++pPATR_in->pMem->iNextPosition) \
+for (; pPATR_in->pMem->iNextPosition <= ((int)x); ++pPATR_in->pMem->iNextPosition) \
 { \
 	appendCharToDynString(&dstr, (y)); \
 }
@@ -398,12 +398,12 @@ PATREdge * pEdge_in;
 int depth;
 PATRData * pPATR_in;
 {
-unsigned len;
-int left_pos;
+size_t len;
+size_t left_pos;
 DynString dstr;
 char szExtra[32];
-unsigned cbName;
-unsigned cbExtra;
+size_t cbName;
+size_t cbExtra;
 char * pszGloss;
 
 memcpy(&dstr, &pPATR_in->pMem->dstrOutput, sizeof(dstr));
@@ -417,7 +417,7 @@ if (pPATR_in->pMem->iPrintDepth == depth)
 	}
 	else
 	{
-	sprintf(szExtra, "_%ld", pEdge_in->iIndex);
+	sprintf(szExtra, "_%zu", pEdge_in->iIndex);
 	}
 	if (    (pPATR_in->iParseCount > 1) &&
 		(pEdge_in->iCount == pPATR_in->iParseCount) )
@@ -436,7 +436,7 @@ if (pPATR_in->pMem->iPrintDepth == depth)
 	if (cbExtra)
 	appendToDynString(&dstr, szExtra, cbExtra);
 	appendCharToDynString(&dstr, ' ');
-	pPATR_in->pMem->iNextPosition += len + 1;
+	pPATR_in->pMem->iNextPosition += (int)(len + 1);
 	}
 else if (pPATR_in->pMem->iPrintDepth == depth+1)
 	{
@@ -451,7 +451,7 @@ else if (pPATR_in->pMem->iPrintDepth == depth+1)
 	FILL_TO(left_pos, ' ');
 	appendToDynString(&dstr, pszGloss, len);
 	appendCharToDynString(&dstr, ' ');
-	pPATR_in->pMem->iNextPosition += len + 1;
+	pPATR_in->pMem->iNextPosition += (int)(len + 1);
 	}
 	}
 memcpy(&pPATR_in->pMem->dstrOutput, &dstr, sizeof(dstr));
@@ -470,8 +470,8 @@ PATREdge * pEdge_in;
 int depth;
 PATRData * pPATR_in;
 {
-int len;
-int left_pos, center_pos, right_pos;
+size_t len;
+size_t left_pos, center_pos, right_pos;
 PATREdgeList * pel;
 char * leaf;
 DynString dstr;
@@ -501,7 +501,7 @@ if (	(pEdge_in->eType == PATR_LEXICAL_EDGE) ||
 	if (len)
 	appendToDynString(&dstr, leaf, len);
 	appendCharToDynString(&dstr, ' ');
-	pPATR_in->pMem->iNextPosition += len + 1;
+	pPATR_in->pMem->iNextPosition += (int)(len + 1);
 	}
 else
 	{
@@ -558,7 +558,7 @@ appendToDynString(pdstr_in, pEdge_in->pszLabel, strlen(pEdge_in->pszLabel));
 if (pEdge_in->iIndex != 0)
 	{
 	appendCharToDynString(pdstr_in, '_');
-	sprintf(szBuffer, "%ld", pEdge_in->iIndex);
+	sprintf(szBuffer, "%zu", pEdge_in->iIndex);
 	appendToDynString(pdstr_in, szBuffer, strlen(szBuffer));
 	}
 if (	(pPATR_in->iParseCount > 1) &&
@@ -680,13 +680,13 @@ PATRData * pPATR_in;
 PATRFeature * pf;
 PATRComplexFeature * pcf;
 char szIndex[16];
-int k;
+size_t k;
 const char * pszExtra;
 int bFailed;
 int bCorefChecked;
 PATRDisplayedFeature * pSaveMultTop = pPATR_in->pMem->pMultTop;
 const char * psz;
-unsigned cb;
+size_t cb;
 
 if ((pEdge_in == NULL) || (pdstr_in == NULL) || (pPATR_in == NULL))
 	return;
@@ -710,7 +710,7 @@ if (!(pPATR_in->iFeatureDisplay & PATR_FEATURE_ALL))
 	cb += 2;
 	while (cb++ & 7)
 		appendCharToDynString(pdstr_in, ' ');
-	k = (int)cb;
+	k = cb;
 	}
 	else
 	{
@@ -720,7 +720,7 @@ if (!(pPATR_in->iFeatureDisplay & PATR_FEATURE_ALL))
 	pf = findPATRAttribute(pEdge_in->pFeature,
 			   storedPATRString("0", pPATR_in));
 	if (pf != NULL)
-	store_feature( pf, k, pPATR_in, pdstr_in );
+	store_feature( pf, (int)k, pPATR_in, pdstr_in );
 	appendCharToDynString(pdstr_in, '\n');
 	collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
 	resetPATRFeatureCoreferenceCheck(pPATR_in);
@@ -729,7 +729,7 @@ if (!(pPATR_in->iFeatureDisplay & PATR_FEATURE_ALL))
 /*
  *  all features requested.
  */
-sprintf(szIndex, "%ld", pEdge_in->iIndex);
+sprintf(szIndex, "%zu", pEdge_in->iIndex);
 bFailed = failedPATRParse(pEdge_in);
 if (!bFailed)
 	{
@@ -785,7 +785,7 @@ if (!bFailed)
 		appendCharToDynString(pdstr_in, '\n');
 		k = 0;
 		}
-	store_feature(pf, k, pPATR_in, pdstr_in);
+	store_feature(pf, (int)k, pPATR_in, pdstr_in);
 	appendCharToDynString(pdstr_in, '\n');
 	}
 	if (bCorefChecked)
@@ -874,7 +874,7 @@ if (	(bFailed || (pEdge_in->eType == PATR_LEXICAL_EDGE)) &&
 	resetPATRFeatureCoreferenceCheck(pPATR_in);
 	checkPATRFeatureCoreferences(pf, pPATR_in);
 
-	store_feature(pf, k, pPATR_in, pdstr_in);
+	store_feature(pf, (int)k, pPATR_in, pdstr_in);
 	appendCharToDynString(pdstr_in, '\n');
 
 	collectPATRGarbage(PATR_GARBAGE_DISPLAY, pPATR_in);
@@ -975,7 +975,7 @@ PATRData * pPATR_in;
 DynString * pdstr_in;
 {
 PATRFeature * x;
-unsigned n;
+size_t n;
 int iCoref;
 int bRepeated;
 PATRComplexFeature * flist;			/* Temp feature list */
@@ -1067,11 +1067,11 @@ DynString * pdstr_in;
 int n;
 int iCoref;
 int bRepeated;
-int lablen;
+size_t lablen;
 int first;
 PATRComplexFeature * pcf;
 char szBuffer[20];
-unsigned cb;
+size_t cb;
 PATRFeature * x;
 
 x = followPATRForwardPointers(pf);		/* Follow pointers */
@@ -1141,7 +1141,7 @@ else
 		lablen = cb + 3;	/* Align from label */
 		if ( lablen < 9 )
 			{
-			for ( n = 9 - lablen; n; n-- )
+			for ( n = (int)(9 - lablen); n; n-- )
 			appendCharToDynString(pdstr_in, ' ');
 			}
 						/* Print value */
@@ -1589,7 +1589,7 @@ int bFail;
 if (pEdge_in == NULL)
 	return 0;
 
-sprintf(szNodeId, "_%ld", pEdge_in->iIndex);
+sprintf(szNodeId, "_%zu", pEdge_in->iIndex);
 #ifndef hab125
 sprintf(szIndex, "_%d.%s\"", iParse_in, szNodeId);
 #else /* hab125 */
@@ -1874,7 +1874,7 @@ char **        ppszBuffer_out;
 {
 int iSaveFeatureDisplay;
 int iSaveParseCount;
-int iSaveCurrentIndex;
+size_t iSaveCurrentIndex;
 char szOpenTag[80];
 PATREdgeList * pel;
 int count;

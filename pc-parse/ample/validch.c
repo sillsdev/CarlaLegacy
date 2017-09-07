@@ -86,7 +86,7 @@ const char *	item;
 const char *	pszValidChars_in;
 FILE *		pLogFP_in;
 {
-int index;
+size_t index;
 /*
  *  check whether \sec_check loaded from control file yet
  */

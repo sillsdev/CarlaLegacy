@@ -487,7 +487,7 @@ while ((k = getopt(argc, argv, "HhI:i:L:l:O:o:QqX:x:/Z:z:")) != EOF)
 		break;
 
 	case 'Z':		/* memory allocation trap address,count */
-		trap_address = (VOIDP)strtoul(optarg, &s, 0);
+		trap_address = (VOIDP)strtoull(optarg, &s, 0);
 		if (trap_address != (VOIDP)NULL)
 		{
 		if (*s == ',')
@@ -547,7 +547,7 @@ char *extract_string(field)
 char **field;
 {
 char *p, *q, *string;
-unsigned length;
+size_t length;
 int i;
 int begun;
 
@@ -609,7 +609,7 @@ char **field;
 StringList *path, *lastp, *slp;
 char *p, *q;
 int i;
-unsigned length;
+size_t length;
 int begun = 0, done = 0;
 
 path = (StringList *)NULL;
