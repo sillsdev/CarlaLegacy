@@ -1572,7 +1572,7 @@ for ( pg = pThis->pMem->pGarbage ; pg ; pg = pg->pNext )
 	}
 if (bFound)
 	{
-	for ( pg = pThis->pMem->pGarbage ; pg != pGarbage_in ; pg = pg->pNext )
+	for ( pg = pThis->pMem->pGarbage ; pg && pg != pGarbage_in ; pg = pg->pNext )
 	{
 	collectPATRGarbage(pg->which, pThis);
 	}

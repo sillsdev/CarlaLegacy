@@ -4,12 +4,14 @@
  */
 #define VERSION 1		/* major rewrite or expansion */
 #define REVISION 4		/* enhancement requiring adding to book */
-#define PATCHLEVEL 5		/* bug fix or other minor change */
-#define DATE "April 25, 2017"	/* date of release version */
+#define PATCHLEVEL 6		/* bug fix or other minor change */
+#define DATE "September 14, 2017"	/* date of release version */
 #define YEAR "2017"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
+ * 14-Sep-2017	hab  - Fix bug: cleaing up PATR garbage could access a
+ * [1.4.6 ]             null pointer
  * 25-Apr-2017	SRMc - Fix for 64-bit Windows build; also remove as many
  * [1.4.5]             compiler warnings as possible
  * 29-Jan-2010	hab  - increase size of Let template name from 80 to 300.
