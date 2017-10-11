@@ -1,29 +1,34 @@
 /* VERSION.H - version number and date information for STAMPDLL
  ***************************************************************************
- * Copyright 1997-2017 by SIL International.  All rights reserved.
+ * Copyright 1997-2009 by SIL International.  All rights reserved.
  */
 #define VERSION 2	/* major rewrite or expansion */
-#define REVISION 2		/* enhancement requiring adding to book */
-#define PATCHLEVEL 2	/* bug fix or other minor change */
-#define DLLPATCHLEVEL 2  /* DLL trails after the exe */
-#define CHANGEDATE	"April 25, 2017"	/* date of release version */
-#define YEAR "2017"		/* used for copyright notice in banner */
+#define REVISION 3		/* enhancement requiring adding to book */
+#define PATCHLEVEL 0	/* bug fix or other minor change */
+#define DLLPATCHLEVEL 0  /* DLL trails after the exe */
+#define CHANGEDATE	"July 8th 2009"	/* date of release version */
+#define YEAR "2016"		/* used for copyright notice in banner */
 
 /******************************************************************************
  * EDIT HISTORY
- * 25-Apr-2017	SRMc - Fix for 64-bit Windows build; also remove as many
- * [2.2.2]             compiler warnings as possible
+ *
+ * 22-Nov-2016  rke  - Integrated Andy's changes for full reduplication into the DLL
+ * [0.0.3]
+ * 02-Jun-2016  hab  - Allow for partial and full reduplication.
+ * [2.3.0]
+ * 29-Mar-2003  rke  - Added FWParse for Fieldworks / AllomorphID and dictionary entry insertion.
+ * [0.0.2]
  * 29-Oct-2008  rke  - Begin integration changes from Stamp.c to Stampdll.c
- * [0.0.1?]
+ * [0.0.1]
  * 03-Dec-2004  hab  - Ignore interfix entry type in unified dictionaries
- * [2.2.1]
+ * [2.2.1]               
  * 07-Jan-2004  hab  - Enhancement: add negative SECs (~/)
- * [2.2.0]
+ * [2.2.0]               
  * 04-Nov-2003  hab  - Fix bug: multiple allomorphs with differing PECs could
  * [2.1.18]             end up using only the first.
  * 20-May-2003  hab  - When matching category and morphname of a root from the
  * [2.1.17]             ANA file (tsdict.c), did not necessarily set the
- *                      category of the returned dictionary entry to the
+ *                      category of the returned dictionary entry to the 
  *                      category in the ANA file.  This gave some odd results
  *                      for tools like TonePars which are an ANA filter and
  *                      also use the dictionary entry (Note: STAMP does not
@@ -150,7 +155,7 @@
  * 1.4t  3-Nov-94 ALB - Put better label on synthesis trace output
  *			Remove a section of debug printout
  * 1.4s 18-Oct-94 ALB - Fix bug of uninit fail of property check in \sr envir
- * 1.4r  6-Oct-94 CLR - Convert STAMP to MSC version 8
+ * 1.4r  6-Oct-94 CLR - Convert STAMP to MSC version 8  
  * 1.4q 16-Sep-94 CLR - Make STAMP acceptable to the DJG compiler
  * 1.4p  2-Sep-94 CLR - Have STAMP pass \fd information through
  * 1.4n 30-Aug-94 CLR - Correct misalignment among analyses, decomps, and cats
@@ -162,7 +167,7 @@
  *		      - made mystrdup check for null pointer
  * 1.4j  9-Mar-94 WM  Correct failure to use ... in SEC with [].
  * 1.4i 22-Feb-94 CLR - Compile changes made since 1.4h to remove warning
- *			messages
+ *			messages 
  * 1.4h  7-Feb-94 CLR - Have show_word_template print "capital =", rather than
  *                      "non_alpha =", when introducing capital.
  * 1.4g 26-Jan-94 CLR Have STAMP pass \cat information through

@@ -2,8 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="testdll"
+	Name="testdll-2008"
 	ProjectGUID="{E876EE0E-AC17-4903-BDC9-497838AD2591}"
+	RootNamespace="testdll-2008"
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -162,7 +163,7 @@
 				OutputFile=".\Debug-tst/Testdll.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="..\lib\Debug"
+				AdditionalLibraryDirectories="&quot;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Lib&quot;;..\lib\Debug"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug-tst/Testdll.pdb"
 				SubSystem="1"
@@ -198,6 +199,14 @@
 		<File
 			RelativePath=".\testdll.cpp"
 			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					AdditionalIncludeDirectories="C:\StampDLLProject\stamp"
+				/>
+			</FileConfiguration>
 		</File>
 	</Files>
 	<Globals>
