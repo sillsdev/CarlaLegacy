@@ -334,6 +334,9 @@ static int		bUseSurroundingWords_m = FALSE;
 static char *		pszAmpleTestErrorHeader_m = "";
 static const char	szTraceTab_m[16] = "               ";
 
+#define MAX_PARTIAL_REDUP_ALLOMOPRH_MATCHES 5
+static AmpleAllomorph * aPartialRedupExtraAllomorphMatches[MAX_PARTIAL_REDUP_ALLOMOPRH_MATCHES];
+
 /********************* APREDS.C LOCAL VARIABLES *********************/
 
 static AmplePairList *	pAdhocList_m;	/* working pairlist pointer */
@@ -1131,6 +1134,7 @@ AmpleAlloEnv * pEnv;
 int bFound;
 int bFoundAMatch = FALSE;
 size_t size;
+int matchesFound = 0;
 
 if (pIndexedClass == NULL)
   return(TRUE);
@@ -1193,7 +1197,6 @@ for ( sp = pIndexedClass->pStringClass->pMembers;
 		  continue; /* does not match postfix */
 		*pszMatchBeg += iPostLen;
 		  }
-
 		/* it matches; adjust morphname if needed */
 		pAllo = pPartialRedup->pAllo;
 		if (etype == AMPLE_ROOT)
@@ -1204,6 +1207,21 @@ for ( sp = pIndexedClass->pStringClass->pMembers;
 		  }
 		else
 		  pszMorphName = pAllo->pMORPHNAME;
+		matchesFound++;
+		if (matchesFound > 1 && (matchesFound - 1) < MAX_PARTIAL_REDUP_ALLOMOPRH_MATCHES)
+		{
+			int index = matchesFound - 2;
+			if (aPartialRedupExtraAllomorphMatches[index] != NULL)
+			{
+				/* free up old stuff */
+				matchesFound--;
+				matchesFound++;
+			}
+			AmpleAllomorph * amp = aPartialRedupExtraAllomorphMatches[index] = copy_am(etype, pAllo, pAmple_in);
+			if (etype != AMPLE_ROOT)
+				amp->pMORPHNAME = duplicateString(pAllo->pMORPHNAME);
+			pAllo = amp;
+		}
 		/* create the amset if appropriate */
 		if (isAmpleAllomorphSelected(pszMorphName, pAllo->pszAllomorph, pAmple_in))
 		  *amset = createPartialRedupAmlist(*amset, etype, pPartialRedup,
@@ -1253,12 +1271,13 @@ return(bFoundAMatch);
  *    list of partial reduplication surface values which match
  */
 static AmpleEnvConstraintList * createAmpleEnvConstraintList(AmpleEnvConstraintList *partialRedupEnvs,
-							     AmpleEnvConstraint * pStringCond)
+							     AmpleEnvConstraint * pStringCond, AmpleAllomorph *amp)
 
 {
 AmpleEnvConstraintList * pNew;
 pNew = (AmpleEnvConstraintList *)allocMemory(sizeof(AmpleEnvConstraintList));
 pNew->pEnvs = copyAmpleEnvConstraint(pStringCond);
+pNew->amp = amp;
 pNew->pNext = partialRedupEnvs;
 return(pNew);
 }
@@ -1313,7 +1332,7 @@ for (pPartialRedup = pAmple_in->pPartialRedupAllos;
     pAllo = amset->amp;
     pEnv = pAllo->pEnvironment;
     if (pEnv)
-      *partialRedupOriginalEnvs = createAmpleEnvConstraintList(*partialRedupOriginalEnvs, pEnv->pStringCond);
+      *partialRedupOriginalEnvs = createAmpleEnvConstraintList(*partialRedupOriginalEnvs, pEnv->pStringCond, pAllo);
   }
 return amset;
 }
@@ -1536,28 +1555,39 @@ if ((pAlloEnv->iFlags & E_REDUPCLASS) && (pSavedEnv->iFlags & E_REDUPCLASS))
  * RETURN VALUE
  *    NONE
  */
-static void resetPartialRedupStringEnvs(AmpleEnvConstraint * pAlloEnvs,
-					AmpleEnvConstraint * pSavedEnvs)
+static void resetPartialRedupStringEnvs(AmpleAllomorph * pAllo,
+					AmpleEnvConstraintList * pPartialRedup)
 {
+AmpleEnvConstraint * pAlloEnvs = pAllo->pEnvironment->pStringCond;
+AmpleEnvConstraint * pSavedEnvs = pPartialRedup->pEnvs;
 AmpleEnvConstraint * pAlloSEC;
 AmpleEnvConstraint * pSavedSEC;
-for (pAlloSEC = pAlloEnvs, pSavedSEC = pSavedEnvs;
-     pAlloSEC != NULL && pSavedSEC != NULL;
-     pAlloSEC = pAlloSEC->pNext, pSavedSEC = pSavedSEC->pNext)
+for (pAlloSEC = pAlloEnvs;
+     pAlloSEC != NULL;
+     pAlloSEC = pAlloSEC->pNext)
   {
-    AmpleEnvItem * pAlloItem;
-    AmpleEnvItem * pSavedItem;
-    for (pAlloItem = pAlloSEC->pLeftEnv, pSavedItem = pSavedSEC->pLeftEnv;
-	 pAlloItem != NULL && pSavedItem != NULL;
-	 pAlloItem = pAlloItem->pNext, pSavedItem = pSavedItem->pNext)
+    for (pSavedSEC = pSavedEnvs;
+	 pSavedSEC != NULL;
+	 pSavedSEC = pSavedSEC->pNext)
       {
-	resetPartialRedupEnv(pAlloItem, pSavedItem);
-      }
-    for (pAlloItem = pAlloSEC->pRightEnv, pSavedItem = pSavedSEC->pRightEnv;
-	 pAlloItem != NULL && pSavedItem != NULL;
-	 pAlloItem = pAlloItem->pNext, pSavedItem = pSavedItem->pNext)
-      {
-	resetPartialRedupEnv(pAlloItem, pSavedItem);
+	if (pAllo == pPartialRedup->amp)
+	  {
+	    AmpleEnvItem * pAlloItem;
+	    AmpleEnvItem * pSavedItem;
+	    for (pAlloItem = pAlloSEC->pLeftEnv, pSavedItem = pSavedSEC->pLeftEnv;
+		 pAlloItem != NULL && pSavedItem != NULL;
+		 pAlloItem = pAlloItem->pNext, pSavedItem = pSavedItem->pNext)
+	      {
+		resetPartialRedupEnv(pAlloItem, pSavedItem);
+	      }
+	    for (pAlloItem = pAlloSEC->pRightEnv, pSavedItem = pSavedSEC->pRightEnv;
+		 pAlloItem != NULL && pSavedItem != NULL;
+		 pAlloItem = pAlloItem->pNext, pSavedItem = pSavedItem->pNext)
+	      {
+		resetPartialRedupEnv(pAlloItem, pSavedItem);
+	      }
+	    break;
+	  }
       }
   }
 }
@@ -1753,8 +1783,7 @@ else
 	if (pPartialRedupOriginalEnv)
 	  { /* is a partial redup;
 	       the string contents of the environment may have changed, so reset them */
-	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
-					pPartialRedupOriginalEnv->pEnvs);
+	    resetPartialRedupStringEnvs(ap, pPartialRedupOriginalEnv);
 	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
@@ -2128,8 +2157,7 @@ for ( ifxtail = tail; *ifxtail != NUL ; ++ifxtail )
 	if (pPartialRedupOriginalEnv)
 	  { /* is a partial redup;
 	       the string contents of the environment may have changed, so reset them */
-	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
-					pPartialRedupOriginalEnv->pEnvs);
+	    resetPartialRedupStringEnvs(ap, pPartialRedupOriginalEnv);
 	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
@@ -2436,8 +2464,7 @@ else
 	if (pPartialRedupOriginalEnv)
 	  { /* is a partial redup;
 	       the string contents of the environment may have changed, so reset them */
-	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
-					pPartialRedupOriginalEnv->pEnvs);
+	    resetPartialRedupStringEnvs(ap, pPartialRedupOriginalEnv);
 	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
@@ -2713,8 +2740,7 @@ else
 	if (pPartialRedupOriginalEnv)
 	  { /* is a partial redup;
 	       the string contents of the environment may have changed, so reset them */
-	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
-					pPartialRedupOriginalEnv->pEnvs);
+	    resetPartialRedupStringEnvs(ap, pPartialRedupOriginalEnv);
 	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;
@@ -3097,8 +3123,8 @@ if (sfxs_found < pAmple_in->iMaxSuffixCount)
 	if (pPartialRedupOriginalEnv)
 	  { /* is a partial redup;
 	       the string contents of the environment may have changed, so reset them */
-	    resetPartialRedupStringEnvs(ap->pEnvironment->pStringCond,
-					pPartialRedupOriginalEnv->pEnvs);
+		if (ap->pEnvironment != NULL)
+	      resetPartialRedupStringEnvs(ap, pPartialRedupOriginalEnv);
 	  }
 	/* pass along incoming information */
 	nulls_next = nulls_have;

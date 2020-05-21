@@ -446,7 +446,8 @@ typedef struct ample_env_cond {
  */
 typedef struct ample_env_cond_list {
 	AmpleEnvConstraint *	pEnvs;	/* constraint conditions */
-	struct ample_env_cond_list *	pNext;	/* link to next set of constraints */
+	struct ample_allomorph *amp;    /* allomorph the conditions are for */
+	struct ample_env_cond_list *pNext;	/* link to next set of constraints */
 	} AmpleEnvConstraintList;
 
 /*****************************************************************************
