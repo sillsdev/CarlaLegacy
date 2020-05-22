@@ -1,0 +1,51 @@
+Notes on how Ample/XAmple handle partial reduplication
+
+H. Andrew Black
+22 May 2020
+
+GENERAL IDEA
+
+We keep a list of the allomorphs containing a partial reduplicaiton
+pattern and its set of SECs.
+
+When processing a word (get_entries()), we look for matches based on
+the patterns.  When there is a match, we set the SECs in the in-memory
+allomorph to use the actual characters used in the pattern.  Then when
+testing, we can use the normal SEC mechanism.  This is all in anal.c.
+
+SPECIAL CASES
+
+1. When a given partial reduplication allomorph matches at one point
+in the parse and another form also matches and we pursue that other
+form, it is possible that that same partial reduplication allomorph
+will match later on in the word.  This second (or third, etc.) match
+will change the SECs in the allomorph to be whatever the latest match
+was.  So we keep a copy of the original environments before actually
+pursuing any matches that pass.  When we come back from that path, we
+reset the SECs to their original values.
+
+2. More than one partial reduplication allomorph in an entry may match
+at a given point.  When restoring potentially changed allomorphs, we
+make sure that the original environments are for the same allomorph.
+If we do not, we run the risk of having the wrong SEC set in the
+allomorph.  As an example, in one case there were two allomorphs:
+[C^1][V^1][C^2][V^2] and [V^1][C^1][V^2].  The preceding material was
+"mase" so the first one matched (and used /m a s e_) and the second
+one also matched (and used / a s e_).  When restoring the original
+match, if we did not make sure we had the same allomorph, then if the
+second was used to restore for the first, the resulting SEC was /m m a
+s_ (because it had three instead of four items and the first one
+remained what it was) and so it failed.
+
+3. A given partial reduplication allomorph may match its environment
+more than once.  For example, suppose the pattern is [C^1][V^1] and
+that the C class includes t, r, and tr as members.  If the proceeding
+material is "tra", say, then there will be two matches: "tra" and
+"ra".  We must try both options because the t could be the last
+segment in a preceding morpheme or it could be the beginning of this
+partial reduplication.  (See the code involving
+MAX_PARTIAL_REDUP_ALLOMOPRH_MATCHES.)
+
+4. A user may have forgotten to include the SEC for a partial
+reduplication allomorph.  We skip the restoring of the original
+environment in this case (instead of crashing).
