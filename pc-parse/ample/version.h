@@ -4,12 +4,14 @@
  */
 #define VERSION 3		/* major rewrite or expansion */
 #define REVISION 12		/* enhancement requiring adding to book */
-#define PATCHLEVEL 21		/* bug fix or other minor change */
-#define DATE "September 14, 2017"	/* date of release version */
+#define PATCHLEVEL 22		/* bug fix or other minor change */
+#define DATE "December 1, 2017"	/* date of release version */
 #define YEAR "2017"		/* used for copyright notice in banner */
 
 /*****************************************************************************
  * EDIT HISTORY
+ * 01-Dec-2017	hab  - Fix bug: a partial reduplication allomorph without any
+ * [3.12.22]             string environments could access a null pointer
  * 14-Sep-2017	hab  - Fix bug in pc-patr part of XAmple: cleaing up PATR
  * [3.12.21]             garbage could access a null pointer
  * 25-Apr-2017	SRMc - Fix for 64-bit Windows build; also remove as many
