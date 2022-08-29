@@ -3392,7 +3392,10 @@ Some languages are not really pro-drop languages, but at least some of the prono
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> include:</xsl:text>
+<xsl:choose>
+			   <xsl:when test="//ip/@compareAdj='yes'"> uses the following comparative conjunction meaning ‘as’ before the second nominal phrase in sentences involving comparison of equal qualitative adjectives:</xsl:when>
+			   <xsl:when test="//ip/@compareAdj='no'"> does not have any comparative conjunction meaning ‘as’ before the second nominal phrase in sentences involving comparison of equal qualitative adjectives.</xsl:when>
+			</xsl:choose>
 </p>
 	        <example num="xIP.IPCop.IPComparatives.34">
 <xsl:variable name="sExampleValue">

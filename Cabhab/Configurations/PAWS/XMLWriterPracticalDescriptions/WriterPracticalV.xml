@@ -221,7 +221,18 @@
 						</col>
 						<col exampleLoc="ip/otherAspect"/>			
 					</row>
-					<row show="swIPInflFeatDeclarative">
+				   <row show="swIPInflFeatUnreal">
+					  <col>
+						 <content>aspect</content>
+					  </col>
+					  <col>
+						 <content>unreal</content>
+					  </col>
+					  <col>
+						 <langData>ENTER_POSSIBLE_FORMS</langData>
+					  </col>
+				   </row>
+				   <row show="swIPInflFeatDeclarative">
 						<col>
 							<content>mood</content>
 						</col>
@@ -1064,6 +1075,297 @@
 						</col>
 					   <col exampleLoc="ip/nonhumanAbsolutiveAnimacy"></col>
 					</row>
+				   <row show="swIPAgrFeatClassClassTypeAnimalSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type animal subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeInsectSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type insect subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeLiquidSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type liquid subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeRoundSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type round subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeCylinderSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type cylinder subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeSphericalSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type spherical subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeTreeSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type tree subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeWoodSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type wooden subject</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeOtherSubject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type other subject</content>
+					  </col>
+				   </row>
+
+				   <row show="swIPAgrFeatClassClassTypeAnimalObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type animal object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeInsectObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type insect object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeLiquidObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type liquid object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeRoundObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type round object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeCylinderObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type cylinder object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeSphericalObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type spherical object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeTreeObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type tree object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeWoodObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type wooden object</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeOtherObject">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type other object</content>
+					  </col>
+				   </row>
+
+				   <row show="swIPAgrFeatClassClassTypeAnimalErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type animal ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeInsectErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type insect ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeLiquidErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type liquid ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeRoundErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type round ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeCylinderErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type cylinder ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeSphericalErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type spherical ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeTreeErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type tree ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeWoodErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type wooden ergative argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeOtherErgative">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type other ergative argument</content>
+					  </col>
+				   </row>
+
+				   <row show="swIPAgrFeatClassClassTypeAnimalAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type animal absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeInsectAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type insect absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeLiquidAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type liquid absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeRoundAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type round absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeCylinderAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type cylinder absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeSphericalAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type spherical absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeTreeAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type tree absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeWoodAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type wooden absolutive argument</content>
+					  </col>
+				   </row>
+				   <row show="swIPAgrFeatClassClassTypeOtherAbsolutive">
+					  <col>
+						 <content>class</content>
+					  </col>
+					  <col>
+						 <content>class type other absolutive argument</content>
+					  </col>
+				   </row>
 				</table>
 			</example>
 		</section2>

@@ -2290,6 +2290,16 @@ lang="es"
 ></abbrInLang
 ></abbreviation
 ><abbreviation
+id="vTOP"
+><abbrInLang
+lang="es"
+><abbrTerm
+>top</abbrTerm
+><abbrDefinition
+>tópico</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
 id="vTR"
 ><abbrInLang
 lang="es"
@@ -2297,6 +2307,66 @@ lang="es"
 >tr</abbrTerm
 ><abbrDefinition
 >transitivo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVACT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vact</abbrTerm
+><abbrDefinition
+>voz de actor o activo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVDAT"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vdat</abbrTerm
+><abbrDefinition
+>voz dativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVINS"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vins</abbrTerm
+><abbrDefinition
+>voz de instrumento</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVLOC"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vloc</abbrTerm
+><abbrDefinition
+>voz locativo</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVGL"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vmet</abbrTerm
+><abbrDefinition
+>voz de meta</abbrDefinition
+></abbrInLang
+></abbreviation
+><abbreviation
+id="vVOBJ"
+><abbrInLang
+lang="es"
+><abbrTerm
+>vobj</abbrTerm
+><abbrDefinition
+>voz de objeto, paciente o tema</abbrDefinition
 ></abbrInLang
 ></abbreviation
 ><abbreviation

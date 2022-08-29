@@ -45822,6 +45822,54 @@
 </tr>
 </xsl:otherwise>
 </xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <p>
+<xsl:text>Examples of positive indefinite nominal phrases </xsl:text>
+<xsl:if test="normalize-space(//pron/@indef)='yes'">
+				 <xsl:text>(if any) </xsl:text>
+			  </xsl:if>
+<xsl:text>include:</xsl:text>
+</p>
+		   <example num="xPron.PronIndef.12">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//pron/indefNPExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//pron/indefNPExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//pron/indefNPExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//pron/indefNPExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xPron.PronIndef.12</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xPron.PronIndef.12.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
 		      </table>
 </example>
 </xsl:if>

@@ -10266,8 +10266,11 @@ VP = PP V
 	&lt;V head infl valence&gt; = passive
 	&lt;PP head infl valence&gt; = active
 	&lt;PP head type sentential&gt; = -
+	&lt;PP_1 head type sentential&gt; = -
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
+	&lt;PP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP_1 head type prefix poss&gt; = -
 	&lt;PP head type comma&gt; = -
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be 
@@ -13037,12 +13040,12 @@ VP = V PP_1 PP
 	&lt;PP head infl valence&gt; = passive
 	&lt;PP_1 head infl valence&gt; = active
 	&lt;PP head type sentential&gt; = -
-	&lt;PP_1 head type sentential&gt; = -
+	&lt;PP_2 head type sentential&gt; = -
 	&lt;V head subject&gt; = &lt;PP head object&gt;
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
-	&lt;PP_1 head type suffix poss&gt; = -         | only in possessor position
-	&lt;PP_1 head type prefix poss&gt; = -
+	&lt;PP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP_2 head type prefix poss&gt; = -
 	&lt;VP head type auxiliary&gt; = +
 	&lt;V head type comma&gt; = -
 	&lt;PP_1 head type comma&gt; = -
@@ -13127,12 +13130,12 @@ VP = V PP_1 PP
 	&lt;PP head infl valence&gt; = passive
 	&lt;PP_1 head infl valence&gt; = active
 	&lt;PP head type sentential&gt; = -
-	&lt;PP_1 head type sentential&gt; = -
+	&lt;PP_2 head type sentential&gt; = -
 	&lt;V head subject&gt; = &lt;PP head object&gt;
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
-	&lt;PP_1 head type suffix poss&gt; = -         | only in possessor position
-	&lt;PP_1 head type prefix poss&gt; = -
+	&lt;PP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP_2 head type prefix poss&gt; = -
 	&lt;VP head type auxiliary&gt; = +
 	&lt;V head type comma&gt; = -
 	&lt;PP_1 head type comma&gt; = -
@@ -15466,6 +15469,7 @@ VP = DP DP_1 V
 	&lt;DP_1 head type prefix poss&gt; = -
 	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
 	&lt;DP head type comma&gt; = -
 	&lt;DP_1 head type comma&gt; = -
 	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
@@ -15554,9 +15558,10 @@ VP = DP DP_1 V
 	&lt;DP_1 head type prefix poss&gt; = -
 	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
 	&lt;DP head type comma&gt; = -
-	&lt;DP_1 head type comma&gt; = -
-	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
 	&lt;VP head fronted&gt; == ~[cat:FocusP]
 	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be 
                      [infl:[polarity:negative]]
@@ -16367,7 +16372,6 @@ VP = V DP DP_1
 	&lt;DP_1 head type prefix poss&gt; = -
 	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 	&lt;DP_1 head type suffix copular&gt; = -
-	&lt;V head type comma&gt; = -
 	&lt;DP head type comma&gt; = -
 	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
 	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
@@ -16459,10 +16463,9 @@ VP = V DP DP_1
 	&lt;DP_1 head type prefix poss&gt; = -
 	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 	&lt;DP_1 head type suffix copular&gt; = -
-	&lt;V head type comma&gt; = -
 	&lt;DP head type comma&gt; = -
-	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
-	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP head fronted&gt; == ~[cat:FocusP]
 	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirect object negative, VP must be 
                      [infl:[polarity:negative]]
@@ -16551,10 +16554,9 @@ VP = V DP DP_1
 	&lt;DP_1 head type prefix poss&gt; = -
 	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
 	&lt;DP_1 head type suffix copular&gt; = -
-	&lt;V head type comma&gt; = -
 	&lt;DP head type comma&gt; = -
-	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
-	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
 	&lt;VP head fronted&gt; == ~[cat:FocusP]
 	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be 
                      [infl:[polarity:negative]]

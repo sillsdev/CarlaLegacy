@@ -86,7 +86,7 @@ To handle animacy agreement:
                 <li>Do not add any animacy agreement feature to those which can go with either animate or inanimate nouns.</li>
             </ul>
         </instruction>
-        <instruction id="NPQPAgreementGenderInstruction" show="swNPAgreementGenderYes">
+		<instruction id="NPQPAgreementGenderInstruction" show="swNPAgreementGenderYes">
 Add the gender features <feature>masculine</feature>, <feature>feminine</feature>, <feature>neuter</feature> to any numbers or quantifiers (or the appropriate affixes) that can only go with that type of noun.  Do not add any gender agreement feature to those which can go with either masculine or feminine nouns.      </instruction>
         <instruction id="NPQPAgreementClassInstruction" show="swNPAgreementClassYes">
            To handle class marking and agreement:

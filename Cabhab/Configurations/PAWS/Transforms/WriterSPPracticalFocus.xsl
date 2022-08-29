@@ -103,7 +103,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//focus/topicExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xFocus.FocusTopics.12</xsl:with-param>
+<xsl:with-param name="sExNumber">xFocus.FocusTopics.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -112,7 +112,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xFocus.FocusTopics.12.1</xsl:text>
+<xsl:text>xFocus.FocusTopics.10.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -438,7 +438,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//focus/focusExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xFocus.FocusFocus.12</xsl:with-param>
+<xsl:with-param name="sExNumber">xFocus.FocusFocus.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -447,7 +447,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xFocus.FocusFocus.12.1</xsl:text>
+<xsl:text>xFocus.FocusFocus.10.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>

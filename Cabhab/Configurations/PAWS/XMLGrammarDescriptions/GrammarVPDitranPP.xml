@@ -28314,7 +28314,7 @@ VP = PP DP_1 V
 	&lt;DP_1 head type comma&gt; = -
 	&lt;VP head type prefix&gt; &lt;= &lt;PP head type prefix&gt;
 	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
-                     [subject:[head:[agr:[number:plural]]]]
+					 [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
                      [subject:[head:[agr:[number:plural]]]]
 	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be 
@@ -40081,6 +40081,160 @@ VP = DP_1 V
 		<whenValue element="q" attr="contFront" value="before"/>
 		<and/>
 		<whenValue element="ip/proDropClitic" attr="checked" value="yes"/>
+		<and/>
+		<whenValue element="ip" attr="diCat" value="both"/>
+		<and/>
+		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="yes"/>
+<and/>
+<whenValue element="ip" attr="voice" value="no"/>
+	</showWhen>
+
+	<!-- |***new set for Case change for voice***************************************************** -->
+	<rule show="VPoption6aVNom">
+rule {VP option 6aVNom - V initial, ditransitive with PP}
+VP = V DP PP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;PP head object&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP head case&gt; = genitive
+	/&lt;V head infl voice&gt; = {object dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;PP head type sentential&gt; = -
+	&lt;PP head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;PP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 6aVNom
+</rule>
+	<showWhen id="VPoption6aVNom">
+		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+		<and/>
+		<whenValue element="ip" attr="diCat" value="pp"/>
+		<and/>
+		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="no"/>
+<and/>
+<whenValue element="ip" attr="voiceCase" value="yesNom" negateValue="no"/>
+	   <and/>
+	   <whenValue element="ip" attr="voice" value="yes"/>
+<or/>
+		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+		<and/>
+		<whenValue element="ip" attr="diCat" value="both"/>
+		<and/>
+		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="no"/>
+<and/>
+<whenValue element="ip" attr="voiceCase" value="yesNom" negateValue="no"/>
+	   <and/>
+	   <whenValue element="ip" attr="voice" value="yes"/>
+<or/>
+		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+		<and/>
+		<whenValue element="ip" attr="diCat" value="pp"/>
+		<and/>
+		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="no"/>
+<and/>
+<whenValue element="ip" attr="voiceCase" value="yesNom" negateValue="no"/>
+	   <and/>
+	   <whenValue element="ip" attr="voice" value="yes"/>
+<or/>
+		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+		<and/>
+		<whenValue element="ip" attr="diCat" value="both"/>
+		<and/>
+		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="no"/>
+<and/>
+<whenValue element="ip" attr="voiceCase" value="yesNom" negateValue="no"/>
+	   <and/>
+	   <whenValue element="ip" attr="voice" value="yes"/>
+	</showWhen>
+	<rule show="VPoption6aNegObjVerbRequiredVNom">
+rule {VP option 6aNegObjVerbRequiredVNom - V initial, ditransitive with PP}
+VP = V DP PP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;PP head object&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP head case&gt; = genitive
+	/&lt;V head infl voice&gt; = {object dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;PP head type sentential&gt; = -
+	&lt;PP head type suffix poss&gt; = -         | only in possessor position
+	&lt;PP head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;PP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;PP head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 6aNegObjVerbRequiredVNom
+</rule>
+	<showWhen id="VPoption6aNegObjVerbRequiredVNom">
+		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+		<and/>
+		<whenValue element="ip" attr="diCat" value="pp"/>
+		<and/>
+		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="yes"/>
+<and/>
+<whenValue element="ip" attr="voiceCase" value="yesNom" negateValue="no"/>
+	   <and/>
+	   <whenValue element="ip" attr="voice" value="yes"/>
+<or/>
+		<whenValue element="typology" attr="wordOrder" value="SVO" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
+		<and/>
+		<whenValue element="ip" attr="diCat" value="both"/>
+		<and/>
+		<whenValue element="neg" attr="objVerbRequired" value="no" negateValue="yes"/>
+<and/>
+<whenValue element="ip" attr="voiceCase" value="yesNom" negateValue="no"/>
+	   <and/>
+	   <whenValue element="ip" attr="voice" value="yes"/>
+<or/>
+		<whenValue element="typology" attr="wordOrder" value="VOS" negateValue="no"/>
+		<and/>
+		<whenValue element="typology" attr="case" value="ergative" negateValue="yes"/>
 		<and/>
 		<whenValue element="ip" attr="diCat" value="pp"/>
 		<and/>

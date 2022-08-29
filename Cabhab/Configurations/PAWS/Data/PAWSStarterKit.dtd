@@ -18,7 +18,7 @@
 <!-- Language has the language name, abbreviation and font information.  It
      also has the SFM field code to use for examples (textSFM).  -->
 <!ELEMENT language (langNames, langAbbr, font, textSFM, answerFile, grammarFile, writerFile, writerPracticalFile, writerPracticalSpanishFile, exampleFilesPath)>
-<!ELEMENT langNames (langName) >
+<!ELEMENT langNames (langName+) >
 <!ELEMENT langName (#PCDATA)>
 <!ATTLIST langName
     lang CDATA #REQUIRED
@@ -2532,6 +2532,10 @@ ipInflFeatActorVoice, ipInflFeatDativeVoice, ipInflFeatGoalVoice, ipInflFeatInst
 <!ATTLIST ipContents10
     checkedOff (yes | no) "no"
 >
+<!ELEMENT ipContents10 EMPTY>
+<!ATTLIST ipContents10
+	checkedOff (yes | no) "no"
+>
 <!ELEMENT ipAgrFeatFirstSubject EMPTY>
 <!ATTLIST ipAgrFeatFirstSubject
     checked (yes | no) "no"
@@ -2772,6 +2776,150 @@ ipInflFeatActorVoice, ipInflFeatDativeVoice, ipInflFeatGoalVoice, ipInflFeatInst
 <!ATTLIST ipAgrFeatMinusHumanAbsolutive
     checked (yes | no) "no"
 >
+<!ELEMENT ipAgrFeatClassClassTypeAnimalSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeAnimalSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeInsectSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeInsectSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeLiquidSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeLiquidSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeRoundSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeRoundSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeCylinderSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeCylinderSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeSphericalSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeSphericalSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeTreeSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeTreeSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeWoodSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeWoodSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeOtherSubject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeOtherSubject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeAnimalObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeAnimalObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeInsectObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeInsectObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeLiquidObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeLiquidObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeRoundObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeRoundObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeCylinderObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeCylinderObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeSphericalObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeSphericalObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeTreeObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeTreeObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeWoodObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeWoodObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeOtherObject EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeOtherObject
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeAnimalErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeAnimalErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeInsectErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeInsectErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeLiquidErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeLiquidErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeRoundErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeRoundErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeCylinderErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeCylinderErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeSphericalErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeSphericalErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeTreeErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeTreeErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeWoodErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeWoodErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeOtherErgative EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeOtherErgative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeAnimalAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeAnimalAbsolutive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeInsectAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeInsectAbsolutive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeLiquidAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeLiquidAbsolutive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeRoundAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeRoundAbsolutive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeCylinderAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeCylinderAbsolutive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeSphericalAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeSphericalAbsolutive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeTreeAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeTreeAbsolutive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeWoodAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeWoodAbsolutive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipAgrFeatClassClassTypeOtherAbsolutive EMPTY>
+<!ATTLIST ipAgrFeatClassClassTypeOtherAbsolutive
+	checked (yes | no) "no"
+>
 <!ELEMENT ipInflFeatPresent EMPTY>
 <!ATTLIST ipInflFeatPresent
     checked (yes | no) "no"
@@ -2795,6 +2943,14 @@ ipInflFeatActorVoice, ipInflFeatDativeVoice, ipInflFeatGoalVoice, ipInflFeatInst
 <!ELEMENT ipInflFeatOtherTense EMPTY>
 <!ATTLIST ipInflFeatOtherTense
     checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatContemplative EMPTY>
+<!ATTLIST ipInflFeatContemplative
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatContrafactual EMPTY>
+<!ATTLIST ipInflFeatContrafactual
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatCompletive EMPTY>
 <!ATTLIST ipInflFeatCompletive
@@ -2832,6 +2988,10 @@ ipInflFeatActorVoice, ipInflFeatDativeVoice, ipInflFeatGoalVoice, ipInflFeatInst
 <!ATTLIST ipInflFeatPerfect
     checked (yes | no) "no"
 >
+<!ELEMENT ipInflFeatPerfect EMPTY>
+<!ATTLIST ipInflFeatPerfect
+	checked (yes | no) "no"
+>
 <!ELEMENT ipInflFeatPerfective EMPTY>
 <!ATTLIST ipInflFeatPerfective
     checked (yes | no) "no"
@@ -2859,6 +3019,10 @@ ipInflFeatActorVoice, ipInflFeatDativeVoice, ipInflFeatGoalVoice, ipInflFeatInst
 <!ELEMENT ipInflFeatOtherAspect EMPTY>
 <!ATTLIST ipInflFeatOtherAspect
     checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatUnreal EMPTY>
+<!ATTLIST ipInflFeatUnreal
+	checked (yes | no) "no"
 >
 <!ELEMENT ipInflFeatDeclarative EMPTY>
 <!ATTLIST ipInflFeatDeclarative
@@ -3011,6 +3175,42 @@ ipInflFeatActorVoice, ipInflFeatDativeVoice, ipInflFeatGoalVoice, ipInflFeatInst
 <!ELEMENT ipInflFeatOtherVoice EMPTY>
 <!ATTLIST ipInflFeatOtherVoice
     checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatGerund EMPTY>
+<!ATTLIST ipInflFeatGerund
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatPassive EMPTY>
+<!ATTLIST ipInflFeatPassive
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatParticiple EMPTY>
+<!ATTLIST ipInflFeatParticiple
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatActorVoice EMPTY>
+<!ATTLIST ipInflFeatActorVoice
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatDativeVoice EMPTY>
+<!ATTLIST ipInflFeatDativeVoice
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatGoalVoice EMPTY>
+<!ATTLIST ipInflFeatGoalVoice
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatInstrumentalVoice EMPTY>
+<!ATTLIST ipInflFeatInstrumentalVoice
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatLocativeVoice EMPTY>
+<!ATTLIST ipInflFeatLocativeVoice
+	checked (yes | no) "no"
+>
+<!ELEMENT ipInflFeatObjectVoice EMPTY>
+<!ATTLIST ipInflFeatObjectVoice
+	checked (yes | no) "no"
 >
 <!-- Complement clauses have various type of examples of the
      types of complement clauses they can take.

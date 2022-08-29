@@ -1,13 +1,12 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ana2Xml32", "Ana2Xml32\Ana2Xml32.vcproj", "{1F78DEF0-3437-4519-B420-AD94A61EB621}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BA60D563-B3CE-4E87-A392-D0C41A3FB116} = {BA60D563-B3CE-4E87-A392-D0C41A3FB116}
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ana2Xml32", "Ana2Xml32\Ana2Xml32.vcxproj", "{1F78DEF0-3437-4519-B420-AD94A61EB621}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ana2XmlCOM", "Ana2XmlCOM\Ana2XmlCOM.vcproj", "{77342A1A-C9AD-474F-BEF1-33C9965A6B12}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ana2XmlCOM", "Ana2XmlCOM\Ana2XmlCOM.vcxproj", "{77342A1A-C9AD-474F-BEF1-33C9965A6B12}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ana2Xmllib", "Ana2Xmllib\Ana2Xmllib.vcproj", "{BA60D563-B3CE-4E87-A392-D0C41A3FB116}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ana2Xmllib", "Ana2Xmllib\Ana2Xmllib.vcxproj", "{BA60D563-B3CE-4E87-A392-D0C41A3FB116}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,5 +64,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D29FF1F8-7A32-4630-811C-3A7465908BD5}
 	EndGlobalSection
 EndGlobal

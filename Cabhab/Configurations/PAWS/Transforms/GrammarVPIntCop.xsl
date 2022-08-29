@@ -492,6 +492,114 @@ VP = V DP
 	
 	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//neg/@subjVerbRequired)='yes'">
 <xsl:text>
+	  rule {VP option 1eFnom - case-marked DP final, adjoined to VP}
+	  VP = VP_1 DP
+	  &lt;VP head&gt; = &lt;VP_1 head&gt;
+	  &lt;DP head type no_N&gt; = -
+	  &lt;VP_1 head type verbheaded&gt; = +
+	  &lt;DP head type case-marked&gt; = -
+	  &lt;VP_1 head type comma&gt; = -
+	  &lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	  &lt;VP head adjoined&gt; = &lt;DP&gt;
+	  &lt;DP head&gt; == ~[case:nominative]
+	  &lt;DP head&gt; == ~[case:accusative]
+	  &lt;DP head&gt; == ~[case:genitive]
+	  &lt;VP head&gt; == [type:[motion:+]] -&gt; ~[adjoined:[head:[case:locative]]]
+	  &lt;VP head&gt; == [type:[motion:+]] -&gt; ~[adjoined:[head:[case:dative]]]
+	  &lt;VP option&gt; = 1eFnom
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//typology/@caseN)='yes' and normalize-space(//typology/@case)='nominative' or normalize-space(//typology/@caseN)='yes' and normalize-space(//typology/@case)='split'">
+<xsl:text>
+	  rule {VP option 1eFerg - case-marked DP final, adjoined to VP}
+	  VP = VP_1 DP
+	  &lt;VP head&gt; = &lt;VP_1 head&gt;
+	  &lt;DP head type no_N&gt; = -
+	  &lt;VP_1 head type verbheaded&gt; = +
+	  &lt;DP head type case-marked&gt; = -
+	  &lt;VP_1 head type comma&gt; = -
+	  &lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	  &lt;VP head adjoined&gt; = &lt;DP&gt;
+	  &lt;DP head&gt; == ~[case:ergative]
+	  &lt;DP head&gt; == ~[case:absolutive]
+	  &lt;DP head&gt; == ~[case:genitive]
+	  &lt;VP head&gt; == [type:[motion:+]] -&gt; ~[adjoined:[head:[case:locative]]]
+	  &lt;VP head&gt; == [type:[motion:+]] -&gt; ~[adjoined:[head:[case:dative]]]
+	  &lt;VP option&gt; = 1eFerg
+   </xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+   <xsl:if test="normalize-space(//typology/@wordOrder)!='VSO' and normalize-space(//typology/@wordOrder)!='OSV'">
+<xsl:text>
+rule {VP option 2a - V initial/final, intransitive}
+VP = V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head type transitive&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; = active
+	&lt;VP option&gt; = 2a
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//neg/@subjVerbRequired)='no'">
+<xsl:text>
+rule {VP option 2b - VSO order, intransitive}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head type transitive&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head infl valence&gt; = active
+	&lt;DP head type locative&gt; = -  	|can't be locative for motion verb
+	&lt;DP head type possessive&gt; = -  	|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -	|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;DP head&gt; == ~[case:accusative]
+	&lt;DP head&gt; == ~[case:ergative]
+	&lt;DP head&gt; == ~[case:dative]
+	&lt;VP option&gt; = 2b
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//neg/@subjVerbRequired)='yes'">
+<xsl:text>
 rule {VP option 2bNeg - VSO order, intransitive, neg subj requires neg verb}
 VP = V DP
 	&lt;VP head&gt; = &lt;V head&gt;
@@ -2816,7 +2924,7 @@ VP = {PP / AdjP / DP}
         }
         {&lt;DP head type prefix copular&gt; = +
         /&lt;DP head type suffix copular&gt; = +
-        }
+		}
 	&lt;PP head type sentential&gt; = -
 	&lt;VP head type copular&gt; = +
 	&lt;VP head type verbheaded&gt; = -             | to restrict recursion
@@ -4784,7 +4892,7 @@ VP = {PP / AdjP / DP}
 	
 	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//ip/proDropImp/@checked)='yes' and normalize-space(//ip/@copular)!='yes' and normalize-space(//ip/@copluarAffix)!='no' and normalize-space(//ip/@auxRequired)='no'">
 <xsl:text>
-rule {VP option 4hiaff - OSV order, copular sentence, no verb, imperative, no Aux required, copular affix}
+rule {VP option 4jaffFoc - VSO/OSV order, copular sentence, no verb, subject focused, copular afffix}
 VP = {PP / AdjP / DP}
 	&lt;VP head&gt; = &lt;PP head&gt;
 	&lt;VP head&gt; = &lt;AdjP head&gt;
@@ -4822,7 +4930,7 @@ VP = {PP / AdjP / DP}
 	
 	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//ip/proDropYes/@checked)='yes' and normalize-space(//ip/@copular)!='yes' and normalize-space(//ip/@aux)='yes' and normalize-space(//ip/@auxRequired)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//ip/proDropClitic/@checked)='yes' and normalize-space(//ip/@copular)!='yes' and normalize-space(//ip/@aux)='yes' and normalize-space(//ip/@auxRequired)='yes'">
 <xsl:text>
-rule {VP option 4hai - OSV order, copular sentence, no verb, imperative, Aux required}
+rule {VP option 4ja - VSO/OSV order, copular sentence, no verb, subj/AdvP questioned, Aux required}
 VP = {PP / AdjP / DP}
 	&lt;VP head&gt; = &lt;PP head&gt;
 	&lt;VP head&gt; = &lt;AdjP head&gt;
@@ -4874,6 +4982,7 @@ VP = {PP / AdjP / DP}
 	&lt;VP head&gt; = &lt;PP head&gt;
 	&lt;VP head&gt; = &lt;AdjP head&gt;
 	&lt;VP head&gt; = &lt;DP head&gt;
+	&lt;VP head type auxiliary&gt; = +
 	&lt;VP head type transitive&gt; = -
 	&lt;VP head type pro-drop&gt; = +
 	&lt;VP head infl mood&gt; = declarative
@@ -4931,12 +5040,14 @@ VP = {PP / AdjP / DP}
 	&lt;VP head infl mood&gt; = declarative
 	&lt;VP head infl valence&gt; = active
 	&lt;VP head type motion&gt; = -
-	&lt;DP head type pronoun&gt; = -		 | to restrict pronouns
-	&lt;DP head type quantifier&gt; = -		 | to restrict quantifiers
-	&lt;DP head type suffix poss&gt; = -         | only in possessor position
-	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;AdjP head type suffix copular&gt; = -
 	&lt;PP head type sentential&gt; = -
 	&lt;VP head type verbheaded&gt; &lt;= -
 	&lt;VP head type copular&gt; &lt;= +
@@ -4979,12 +5090,14 @@ VP = {PP / AdjP / DP}
 	&lt;VP head infl mood&gt; = declarative
 	&lt;VP head infl valence&gt; = active
 	&lt;VP head type motion&gt; = -
-	&lt;DP head type pronoun&gt; = -		 | to restrict pronouns
-	&lt;DP head type quantifier&gt; = -		 | to restrict quantifiers
-	&lt;DP head type suffix poss&gt; = -         | only in possessor position
-	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
 	&lt;PP head type suffix poss&gt; = -         | only in possessor position
 	&lt;PP head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;AdjP head type prefix copular&gt; = -      | only in no V/Aux copulars
+	&lt;AdjP head type suffix copular&gt; = -
 	&lt;PP head type sentential&gt; = -
 	&lt;VP head type verbheaded&gt; &lt;= -      
 	&lt;VP head type copular&gt; &lt;= +

@@ -85,7 +85,7 @@ void performMapping(AnaData * pAnaData_in)
   WordTemplate *	pWord;
 
 				/* output header information */
-  fprintf(pAnaData_in->pOutputFP, "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n\
+  fprintf(pAnaData_in->pOutputFP, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
 <!DOCTYPE XAmpleANA SYSTEM \"xample.dtd\">\n\
 <XAmpleANA>\n");
 

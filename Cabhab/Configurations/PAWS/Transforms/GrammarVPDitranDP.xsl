@@ -64713,5 +64713,27736 @@ VP = DP_1 V
 	   	
 	
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7aVNom - V initial, ditransitive with DP, DO,IO order}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP option&gt; = 7aVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7aNegObjVerbRequiredVNom - V initial, ditransitive with DP, DO,IO order}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7aNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7aIOVNom - V initial, ditransitive with DP, IO,DO order}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7aIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7aIONegObjVerbRequiredVNom - V initial, ditransitive with DP, IO,DO order}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7aIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7bVAbs - V initial, ditransitive with DP (absolutive object), DO,IO order}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7bVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7bNegObjVerbRequiredVAbs - V initial, ditransitive with DP (absolutive object), DO,IO order}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7bNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7bIOVAbs - V initial, ditransitive with DP (absolutive object), IO,DO order}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7bIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7bIONegObjVerbRequiredVAbs - V initial, ditransitive with DP (absolutive object), IO,DO order}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7bIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cVNom - V final, ditransitive with DP, DO next to V}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7cVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cNegObjVerbRequiredVNom - V final, ditransitive with DP, DO next to V}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7cNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cQSubjVNom - V final, ditransitive with DP, DO next to V, subject questioned}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP_1 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_1 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_1 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP_2 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_2 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_2 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+	&lt;VP option&gt; = 7cQSubjVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cQSubjNegObjVerbRequiredVNom - V final, ditransitive with DP, DO next to V, subject questioned}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP_1 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_1 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_1 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP_2 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_2 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_2 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7cQSubjNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cQAdvPVNom - V final, ditransitive with DP, DO next to V, AdvP questioned}
+VP = DP_2 DP_1 AdvP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP option&gt; = 7cQAdvPVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cQAdvPNegObjVerbRequiredVNom - V final, ditransitive with DP, DO next to V, AdvP questioned}
+VP = DP_2 DP_1 AdvP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7cQAdvPNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cIOVNom - V final, ditransitive with DP, IO next to V}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7cIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cIONegObjVerbRequiredVNom - V final, ditransitive with DP, IO next to V}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7cIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cIOQSubjVNom - V final, ditransitive with DP, IO next to V, subject questioned}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP_1 head agr&gt; = &lt;DP head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP_2 head agr&gt; = &lt;DP head agr&gt;
+	}
+	&lt;VP option&gt; = 7cIOQSubjVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cIOQSubjNegObjVerbRequiredVNom - V final, ditransitive with DP, IO next to V, subject questioned}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP_1 head agr&gt; = &lt;DP head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP_2 head agr&gt; = &lt;DP head agr&gt;
+	}
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7cIOQSubjNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cIOQAdvPVNom - V final, ditransitive with DP, IO next to V, AdvP questioned}
+VP = DP_2 DP_1 AdvP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP option&gt; = 7cIOQAdvPVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cIOQAdvPNegObjVerbRequiredVNom - V final, ditransitive with DP, IO next to V, AdvP questioned}
+VP = DP_2 DP_1 AdvP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7cIOQAdvPNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dVAbs - V final, ditransitive with DP (absolutive object), DO next to V}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7dVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dNegObjVerbRequiredVAbs - V final, ditransitive with DP (absolutive object), DO next to V}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7dNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dQSubjVAbs - V final, ditransitive with DP (absolutive object), DO next to V, subject questioned}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP_1 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_1 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_1 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP_2 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_2 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_2 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+	&lt;VP option&gt; = 7dQSubjVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dQSubjNegObjVerbRequiredVAbs - V final, ditransitive with DP (absolutive object), DO next to V, subject questioned}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP_1 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_1 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_1 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP_2 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_2 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_2 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7dQSubjNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dQAdvPVAbs - V final, ditransitive with DP (absolutive object), DO next to V, AdvP questioned}
+VP = DP_2 DP_1 AdvP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP option&gt; = 7dQAdvPVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dQAdvPNegObjVerbRequiredVAbs - V final, ditransitive with DP (absolutive object), DO next to V, AdvP questioned}
+VP = DP_2 DP_1 AdvP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7dQAdvPNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dIOVAbs - V final, ditransitive with DP (absolutive object), IO next to V}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7dIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dIONegObjVerbRequiredVAbs - V final, ditransitive with DP (absolutive object), IO next to V}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7dIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dIOQSubjVAbs - V final, ditransitive with DP (absolutive object), IO next to V, subject questioned}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP_1 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_1 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_1 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP_2 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_2 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_2 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+	&lt;VP option&gt; = 7dIOQSubjVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dIOQSubjNegObjVerbRequiredVAbs - V final, ditransitive with DP (absolutive object), IO next to V, subject questioned}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;DP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP_1 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_1 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_1 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP_2 head agr gender&gt; = &lt;DP head agr gender&gt;
+	&lt;DP_2 head agr animacy&gt; = &lt;DP head agr animacy&gt;
+	&lt;DP_2 head agr class&gt; = &lt;DP head agr class&gt;
+	}
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7dIOQSubjNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dIOQAdvPVAbs - V final, ditransitive with DP (absolutive object), IO next to V, AdvP questioned}
+VP = DP_2 DP_1 AdvP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP option&gt; = 7dIOQAdvPVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='after' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dIOQAdvPNegObjVerbRequiredVAbs - V final, ditransitive with DP (absolutive object), IO next to V, AdvP questioned}
+VP = DP_2 DP_1 AdvP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;AdvP head type wh&gt; = +
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+		&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;AdvP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7dIOQAdvPNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7aqVNom - V initial, ditransitive with DP (object questioned)}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP option&gt; = 7aqVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7aqFocVNom - V initial, ditransitive with DP (object focused)}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP option&gt; = 7aqFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7aqNegObjVerbRequiredVNom - V initial, ditransitive with DP (object questioned)}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7aqNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7aqNegObjVerbRequiredFocVNom - V initial, ditransitive with DP (object focused)}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7aqNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7bqVAbs - V initial, ditransitive with DP (absolutive object questioned)}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP option&gt; = 7bqVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7bqFocVAbs - V initial, ditransitive with DP (absolutive object focused)}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP option&gt; = 7bqFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7bqNegObjVerbRequiredVAbs - V initial, ditransitive with DP (absolutive object questioned)}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7bqNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SVO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VOS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7bqNegObjVerbRequiredFocVAbs - V initial, ditransitive with DP (absolutive object focused)}
+VP = V DP
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7bqNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cqVNom - V final, ditransitive with DP (object questioned)}
+VP = DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;VP option&gt; = 7cqVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cqFocVNom - V final, ditransitive with DP (object focused)}
+VP = DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;VP option&gt; = 7cqFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cqNegObjVerbRequiredVNom - V final, ditransitive with DP (object questioned)}
+VP = DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7cqNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7cqNegObjVerbRequiredFocVNom - V final, ditransitive with DP (object focused)}
+VP = DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7cqNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dqVAbs - V final, ditransitive with DP (absolutive object questioned)}
+VP = DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;VP option&gt; = 7dqVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dqFocVAbs - V final, ditransitive with DP (absolutive object focused)}
+VP = DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;VP option&gt; = 7dqFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dqNegObjVerbRequiredVAbs - V final, ditransitive with DP (absolutive object questioned)}
+VP = DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = +
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7dqNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='SOV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OVS' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7dqNegObjVerbRequiredFocVAbs - V final, ditransitive with DP (absolutive object focused)}
+VP = DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head subject head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head subject head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	}
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7dqNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eVNom - VSO order, ditransitive with DP, DO,IO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+		{&lt;DP_1 head type reflexive&gt; = -
+		/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+		{&lt;DP_2 head type reflexive&gt; = -
+		/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eNegSubjVerbRequiredVNom - VSO order, ditransitive with DP, DO,IO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+		{&lt;DP_1 head type reflexive&gt; = -
+		/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+		{&lt;DP_2 head type reflexive&gt; = -
+		/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+						   [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eNegSubjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eNegObjVerbRequiredVNom - VSO order, ditransitive with DP, DO,IO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+		{&lt;DP_1 head type reflexive&gt; = -
+		/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+		{&lt;DP_2 head type reflexive&gt; = -
+		/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+						   [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+						   [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eNegSubjorObjVerbRequiredVNom - VSO order, ditransitive with DP, DO,IO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+		{&lt;DP_1 head type reflexive&gt; = -
+		/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+		{&lt;DP_2 head type reflexive&gt; = -
+		/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+						   [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+						   [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+						   [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eNegSubjorObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eIOVNom - VSO order, ditransitive with DP, IO,DO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+		{&lt;DP_1 head type reflexive&gt; = -
+		/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+		{&lt;DP_2 head type reflexive&gt; = -
+		/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eIONegSubjVerbRequiredVNom - VSO order, ditransitive with DP, IO,DO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+		{&lt;DP_1 head type reflexive&gt; = -
+		/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+		{&lt;DP_2 head type reflexive&gt; = -
+		/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eIONegSubjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eIONegObjVerbRequiredVNom - VSO order, ditransitive with DP, IO,DO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eIONegSubjorObjVerbRequiredVNom - VSO order, ditransitive with DP, IO,DO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eIONegSubjorObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eiVNom - VSO order, ditransitive with DP, DO,IO order, imperative}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type copular&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eiVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eiNegObjVerbRequiredVNom - VSO order, ditransitive with DP, DO,IO order, imperative}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type copular&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	 &lt;VP head fronted&gt; == ~[cat:DP]
+	 &lt;VP option&gt; = 7eiNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eiIOVNom - VSO order, ditransitive with DP, IO,DO order, imperative}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type copular&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eiIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7eiIONegObjVerbRequiredVNom - VSO order, ditransitive with DP, IO,DO order, imperative}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type copular&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7eiIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7epVNom - VSO order, ditransitive with DP, DO,IO order pro-drop}
+VP = V  DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+		{&lt;DP_1 head type reflexive&gt; = -
+		/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+		{&lt;DP_2 head type reflexive&gt; = -
+		/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+						   [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7epVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7epNegObjVerbRequiredVNom - VSO order, ditransitive with DP, DO,IO order pro-drop}
+VP = V  DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7epNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7epIOVNom - VSO order, ditransitive with DP, IO,DO order, pro-drop}
+VP = V  DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+	 /&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7epIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7epIONegObjVerbRequiredVNom - VSO order, ditransitive with DP, IO,DO order, pro-drop}
+VP = V  DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7epIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fVAbs - VSO order, ditransitive with DP (absolutive object), DO,IO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+		{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fNegSubjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive object), DO,IO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fNegSubjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fNegObjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive object), DO,IO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+					 &lt;VP head fronted&gt; == ~[cat:FocusP]
+					 &lt;VP head fronted&gt; == ~[cat:DP]
+					 &lt;VP option&gt; = 7fNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fNegSubjorObjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive object), DO,IO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fNegSubjorObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fIOVAbs - VSO order, ditransitive with DP (absolutive object), IO,DO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fIONegSubjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive object), IO,DO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fIONegSubjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fIONegObjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive object), IO,DO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	 &lt;VP head fronted&gt; == ~[cat:DP]
+	 &lt;VP option&gt; = 7fIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fIONegSubjorObjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive object), IO,DO order}
+VP = V DP DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fIONegSubjorObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fiVAbs - VSO order, ditransitive with DP (absolutive case object), DO,IO order, imperative}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7fiVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fiNegObjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive case object), DO,IO order, imperative}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7fiNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fiIOVAbs - VSO order, ditransitive with DP (absolutive case object), IO,DO order, imperative}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7fiIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fiIONegObjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive case object), IO,DO order, imperative}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7fiIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fpVAbs - VSO order, ditransitive with DP (absolutive object), DO,IO order, pro-drop}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fpVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fpNegObjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive object), DO,IO order, pro-drop}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fpNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fpIOVAbs - VSO order, ditransitive with DP (absolutive object), IO,DO order, pro-drop}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fpIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7fpIONegObjVerbRequiredVAbs - VSO order, ditransitive with DP (absolutive object), IO,DO order, pro-drop}
+VP = V DP_1 DP_2
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_2 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_2 head type suffix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7fpIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gVNom - OSV order, ditransitive with DP, IO,DO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gNegSubjVerbRequiredVNom - OSV order, ditransitive with DP, IO,DO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gNegSubjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gNegObjVerbRequiredVNom - OSV order, ditransitive with DP, IO,DO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gNegSubjorObjVerbRequiredVNom - OSV order, ditransitive with DP, IO,DO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gNegSubjorObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gIOVNom - OSV order, ditransitive with DP, DO,IO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gIONegSubjVerbRequiredVNom - OSV order, ditransitive with DP, DO,IO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	 &lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gIONegSubjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gIONegObjVerbRequiredVNom - OSV order, ditransitive with DP, DO,IO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gIONegSubjorObjVerbRequiredVNom - OSV order, ditransitive with DP, DO,IO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gIONegSubjorObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7giVNom - OSV order, ditransitive with DP, IO,DO order imperative}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7giVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7giNegObjVerbRequiredVNom - OSV order, ditransitive with DP, IO,DO order imperative}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7giNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7giIOVNom - OSV order, ditransitive with DP, DO,IO order, imperative}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7giIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7giIONegObjVerbRequired VNom- OSV order, ditransitive with DP, DO,IO order, imperative}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7giIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gpVNom - OSV order, ditransitive with DP, IO,DO order, pro-drop}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gpVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gpNegObjVerbRequiredVNom - OSV order, ditransitive with DP, IO,DO order, pro-drop}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = genitive
+	&lt;DP_2 head case&gt; = nominative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gpNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gpIOVNom - OSV order, ditransitive with DP, DO,IO order, pro-drop}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gpIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7gpIONegObjVerbRequiredVNom - OSV order, ditransitive with DP, DO,IO order, pro-drop}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {genitive dative}
+	&lt;DP_2 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = nominative
+	&lt;DP_2 head case&gt; = genitive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7gpIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hVAbs - OSV order, ditransitive with DP (absolutive object), IO,DO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hNegSubjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive object), IO,DO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hNegSubjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hNegObjVerbRequiredVABs - OSV order, ditransitive with DP (absolutive object), IO,DO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hNegSubjorObjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive object), IO,DO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hNegSubjorObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hIOVAbs - OSV order, ditransitive with DP (absolutive object), DO,IO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hIONegSubjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive object), DO,IO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hIONegSubjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hIONegObjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive object), DO,IO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hIONegSubjorObjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive object), DO,IO order}
+VP = DP_2 DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hIONegSubjorObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hiVAbs - OSV order, ditransitive with DP (absolutive case object), IO,DO order, imperative}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7hiVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hiNegObjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive case object), IO,DO order, imperative}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7hiNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hiIOVAbs - OSV order, ditransitive with DP (absolutive case object), DO,IO order, imperative}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7hiIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)!='no' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hiIONegObjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive case object), DO,IO order, imperative}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head infl mood&gt; = imperative
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;VP head type question&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	 &lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP option&gt; = 7hiIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hpVAbs - OSV order, ditransitive with DP (absolutive object), IO,DO order, pro-drop}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hpVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hpNegObjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive object), IO,DO order, pro-drop}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_2&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = ergative
+	&lt;DP_2 head case&gt; = absolutive
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hpNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hpIOVAbs - OSV order, ditransitive with DP (absolutive object), DO,IO order, pro-drop}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hpIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7hpIONegObjVerbRequiredVAbs - OSV order, ditransitive with DP (absolutive object), DO,IO order, pro-drop}
+VP = DP_2 DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_2&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+			{&lt;DP_1 head type reflexive&gt; = -
+			/&lt;DP_1 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_1 head agr&gt;
+	}
+			{&lt;DP_2 head type reflexive&gt; = -
+			/&lt;DP_2 head type reflexive&gt; = +
+	&lt;V head subject head agr&gt; = &lt;DP_2 head agr&gt;
+	}
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;DP_1 head case&gt; = {dative oblique}
+	&lt;DP_2 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP_1 head case&gt; = absolutive
+	&lt;DP_2 head case&gt; = ergative
+	}
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_2 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_2 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_2 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_2 head type suffix copular&gt; = -
+	&lt;VP head infl valence&gt; =active
+	&lt;VP head type motion&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;DP_2 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_2 head type prefix&gt;
+	&lt;VP head&gt; == [type:[reciprocal:+]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[type:[reciprocal:+]]]] -&gt;
+					 [subject:[head:[agr:[number:plural]]]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head fronted&gt; == ~[cat:FocusP]
+	&lt;VP head fronted&gt; == ~[cat:DP]
+	&lt;VP option&gt; = 7hpIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7iVNom - VSO order, ditransitive with DP, DO,IO order, subj questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+		/&lt;DP head type reflexive&gt; = -
+		}
+		{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7iVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7iFocVNom - VSO order, ditransitive with DP, DO,IO order, subj focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+		/&lt;DP head type reflexive&gt; = -
+		}
+		{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7iFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7iNegObjVerbRequiredVNom - VSO order, ditransitive with DP, DO,IO order, subj questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7iNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7iNegObjVerbRequiredFocVNom - VSO order, ditransitive with DP, DO,IO order, subj focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7iNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7iIOVNom - VSO order, ditransitive with DP, IO,DO order, subj questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7iIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7iIOFocVNom - VSO order, ditransitive with DP, IO,DO order, subj focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7iIOFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7iIONegObjVerbRequiredVNom - VSO order, ditransitive with DP, IO,DO order, subj questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7iIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7iIONegObjVerbRequiredFocVNom - VSO order, ditransitive with DP, IO,DO order, subj focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7iIONegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7jVAbs - VSO order, ditransitive with DP (abs object), DO,IO order,  subj questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7jVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7jFocVAbs - VSO order, ditransitive with DP (abs object), DO,IO order,  subj focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7jFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7jNegObjVerbRequiredVAbs - VSO order, ditransitive with DP (abs object), DO,IO order,  subj questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7jNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7jNegObjVerbRequiredFocVAbs - VSO order, ditransitive with DP (abs object), DO,IO order,  subj focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7jNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7jIOVAbs - VSO order, ditransitive with DP (abs object), IO,DO order,  subj questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7jIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7jIOFocVAbs - VSO order, ditransitive with DP (abs object), IO,DO order,  subj focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7jIOFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7jIONegObjVerbRequiredVAbs - VSO order, ditransitive with DP (abs object), IO,DO order,  subj questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7jIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7jIONegObjVerbRequiredFocVAbs - VSO order, ditransitive with DP (abs object), IO,DO order,  subj focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7jIONegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7kVNom - OSV order, ditransitive with DP, IO,DO order , subj questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7kVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7kFocVNom - OSV order, ditransitive with DP, IO,DO order , subj focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7kFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7kNegObjVerbRequiredVNom - OSV order, ditransitive with DP, IO,DO order , subj questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7kNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7kNegObjVerbRequiredFocVNom - OSV order, ditransitive with DP, IO,DO order , subj focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7kNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7kIOVNom - OSV order, ditransitive with DP, DO,IO order , subj questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7kIOVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7kIOFocVNom - OSV order, ditransitive with DP, DO,IO order , subj focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7kIOFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7kIONegObjVerbRequiredVNom - OSV order, ditransitive with DP, DO,IO order , subj questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7kIONegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7kIONegObjVerbRequiredFocVNom - OSV order, ditransitive with DP, DO,IO order , subj focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = nominative
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = genitive
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = {genitive dative}
+	&lt;DP_1 head case&gt; = nominative
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = genitive
+	&lt;DP head case&gt; = nominative
+	&lt;DP_1 head case&gt; = genitive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7kIONegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7lVAbs - OSV order, ditransitive with DP (abs object), IO,DO order, subj questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7lVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7lFocVAbs - OSV order, ditransitive with DP (abs object), IO,DO order, subj focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7lFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7lNegObjVerbRequiredVAbs - OSV order, ditransitive with DP (abs object), IO,DO order, subj questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+	}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7lNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='direct' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7lNegObjVerbRequiredFocVAbs - OSV order, ditransitive with DP (abs object), IO,DO order, subj focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7lNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7lIOVAbs - OSV order, ditransitive with DP (abs object), DO,IO order, subj questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+		&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7lIOVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7lIOFocVAbs - OSV order, ditransitive with DP (abs object), DO,IO order, subj focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+		&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7lIOFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7lIONegObjVerbRequiredVAbs - OSV order, ditransitive with DP (abs object), DO,IO order, subj questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+		&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7lIONegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//ip/@diOrder)='indirect' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7lIONegObjVerbRequiredFocVAbs - OSV order, ditransitive with DP (abs object), DO,IO order, subj focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;VP head fronted&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;DP&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;VP head fronted head case&gt; = absolutive
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = ergative
+	/&lt;V head infl voice&gt; = object
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = {dative oblique}
+	&lt;DP_1 head case&gt; = absolutive
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;VP head fronted head case&gt; = ergative
+	&lt;DP head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = ergative
+	}
+	{&lt;DP head type reflexive&gt; = +
+	&lt;DP head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP head type reflexive&gt; = -
+			}
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head object head agr&gt; = &lt;VP head fronted head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+		&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7lIONegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mVNom - VSO order, ditransitive with DP (object questioned)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7mVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mFocVNom - VSO order, ditransitive with DP (object focused)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7mFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mNegSubjVerbRequiredVNom - VSO order, ditransitive with DP (object questioned)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7mNegSubjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mNegSubjVerbRequiredFocVNom - VSO order, ditransitive with DP (object focused)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7mNegSubjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mNegObjVerbRequiredVNom - VSO order, ditransitive with DP (object questioned)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7mNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mNegObjVerbRequiredFocVNom - VSO order, ditransitive with DP (object focused)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7mNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mNegSubjorObjVerbRequiredVNom - VSO order, ditransitive with DP (object questioned)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7mNegSubjorObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mNegSubjorObjVerbRequiredFocVNom - VSO order, ditransitive with DP (object focused)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7mNegSubjorObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mpVNom - VSO order, ditransitive with DP (object questioned), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7mpVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mpFocVNom - VSO order, ditransitive with DP (object focused), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7mpFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mpNegObjVerbRequiredVNom - VSO order, ditransitive with DP (object questioned), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7mpNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7mpNegObjVerbRequiredFocVNom - VSO order, ditransitive with DP (object focused), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7mpNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7nVAb - VSO order, ditransitive with DP (abs object questioned)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7nVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7nFocVAbs - VSO order, ditransitive with DP (abs object focused)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7nFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7nNegSubjVerbRequiredVAbs - VSO order, ditransitive with DP (abs object questioned)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7nNegSubjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7nNegSubjVerbRequiredFocVAbs - VSO order, ditransitive with DP (abs object focused)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7nNegSubjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7nNegObjVerbRequiredVAbs - VSO order, ditransitive with DP (abs object questioned)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7nNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7nNegObjVerbRequiredFocVAbs - VSO order, ditransitive with DP (abs object focused)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7nNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7nNegSubjorObjVerbRequiredVAbs - VSO order, ditransitive with DP (abs object questioned)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7nNegSubjorObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7nNegSubjorObjVerbRequiredFocVAbs - VSO order, ditransitive with DP (abs object focused)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7nNegSubjorObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7npVAbs - VSO order, ditransitive with DP (abs object questioned), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7npVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7npFocVAbs - VSO order, ditransitive with DP (abs object focused), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7npFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7npNegObjVerbRequiredVAbs - VSO order, ditransitive with DP (abs object questioned), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7npNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7npNegObjVerbRequiredFocVAbs - VSO order, ditransitive with DP (abs object focused), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7npNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7oVNom - OSV order, ditransitive with DP (object questioned)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7oVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7oFocVNom - OSV order, ditransitive with DP (object focused)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7oFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7oNegSubjVerbRequiredVNom - OSV order, ditransitive with DP (object questioned)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7oNegSubjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7oNegSubjVerbRequiredFocVNom - OSV order, ditransitive with DP (object focused)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7oNegSubjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7oNegObjVerbRequiredVNom - OSV order, ditransitive with DP (object questioned)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7oNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7oNegObjVerbRequiredFocVNom - OSV order, ditransitive with DP (object focused)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7oNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7oNegSubjorObjVerbRequiredVNom - OSV order, ditransitive with DP (object questioned)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7oNegSubjorObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7oNegSubjorObjVerbRequiredFocVNom - OSV order, ditransitive with DP (object focused)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = nominative
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = genitive
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7oNegSubjorObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7opVNom - OSV order, ditransitive with DP (object questioned), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7opVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7opFocVNom - OSV order, ditransitive with DP (object focused), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7opFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7opNegObjVerbRequiredVNom - OSV order, ditransitive with DP (object questioned), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7opNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7opNegObjVerbRequiredFocVNom - OSV order, ditransitive with DP (object focused), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = nominative
+	&lt;DP_1 head case&gt; = {genitive dative}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = genitive
+	&lt;DP_1 head case&gt; = nominative
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7opNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7pVAbs - OSV order, ditransitive with DP (abs object questioned)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7pVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7pFocVAbs - OSV order, ditransitive with DP (abs object focused)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7pFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7pNegSubjVerbRequiredVAbs - OSV order, ditransitive with DP (abs object questioned)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7pNegSubjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7pNegSubjVerbRequiredFocVAbs - OSV order, ditransitive with DP (abs object focused)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7pNegSubjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7pNegObjVerbRequiredVAbs - OSV order, ditransitive with DP (abs object questioned)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7pNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7pNegObjVerbRequiredFocVAbs - OSV order, ditransitive with DP (abs object focused)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7pNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7pNegSubjorObjVerbRequiredVAbs - OSV order, ditransitive with DP (abs object questioned)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7pNegSubjorObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7pNegSubjorObjVerbRequiredFocVAbs - OSV order, ditransitive with DP (abs object focused)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;DP head case&gt; = absolutive
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;DP head case&gt; = ergative
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7pNegSubjorObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7ppVAbs - OSV order, ditransitive with DP (abs object questioned), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7ppVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7ppFocVAbs - OSV order, ditransitive with DP (abs object focused), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7ppFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7ppNegObjVerbRequiredVAbs - OSV order, ditransitive with DP (abs object questioned), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7ppNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7ppNegObjVerbRequiredFocVAbs - OSV order, ditransitive with DP (abs object focused), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;VP head fronted&gt;
+	&lt;V head indirectobject&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+	{&lt;V head infl voice&gt; = actor
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = object
+	&lt;V head fronted head case&gt; = absolutive
+	&lt;DP_1 head case&gt; = {dative oblique}
+	/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+	&lt;V head fronted head case&gt; = ergative
+	&lt;DP_1 head case&gt; = absolutive
+	}
+	{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+	&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [indirectobject:[head:[infl:[polarity:negative]]]] -&gt;  | if indirectobject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7ppNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qVNom - VSO order, ditransitive with DP IO questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+		{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+		{&lt;V head infl voice&gt; = actor
+		&lt;DP head case&gt; = nominative
+		&lt;DP_1 head case&gt; = genitive
+		&lt;VP head fronted head case&gt; = {genitive dative}
+		/&lt;V head infl voice&gt; = object
+		&lt;DP head case&gt; = genitive
+		&lt;DP_1 head case&gt; = nominative
+		&lt;VP head fronted head case&gt; = {genitive dative}
+		/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+		&lt;DP head case&gt; = genitive
+		&lt;DP_1 head case&gt; = genitive
+		&lt;VP head fronted head case&gt; = nominative
+		}
+		&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7qVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qFocVNom - VSO order, ditransitive with DP IO focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+		{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+		{&lt;V head infl voice&gt; = actor
+		&lt;DP head case&gt; = nominative
+		&lt;DP_1 head case&gt; = genitive
+		&lt;VP head fronted head case&gt; = {genitive dative}
+		/&lt;V head infl voice&gt; = object
+		&lt;DP head case&gt; = genitive
+		&lt;DP_1 head case&gt; = nominative
+		&lt;VP head fronted head case&gt; = {genitive dative}
+		/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+		&lt;DP head case&gt; = genitive
+		&lt;DP_1 head case&gt; = genitive
+		&lt;VP head fronted head case&gt; = nominative
+		}
+		&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7qFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qNegSubjVerbRequiredVNom - VSO order, ditransitive with DP IO questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7qNegSubjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qNegSubjVerbRequiredFocVNom - VSO order, ditransitive with DP IO focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7qNegSubjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qNegObjVerbRequiredVNom - VSO order, ditransitive with DP IO questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7qNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qNegObjVerbRequiredFocVNom - VSO order, ditransitive with DP IO focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7qNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qNegSubjorObjVerbRequiredVNom - VSO order, ditransitive with DP IO questioned}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7qNegSubjorObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qNegSubjorObjVerbRequiredFocVNom - VSO order, ditransitive with DP IO focused}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7qNegSubjorObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qpVNom - VSO order, ditransitive with DP IO questioned, pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = DP
+		{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+		{&lt;V head infl voice&gt; = actor
+		&lt;DP_1 head case&gt; = genitive
+		&lt;VP head fronted head case&gt; = {genitive dative}
+		/&lt;V head infl voice&gt; = object
+		&lt;DP_1 head case&gt; = nominative
+		&lt;VP head fronted head case&gt; = {genitive dative}
+		/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+		&lt;DP_1 head case&gt; = genitive
+		&lt;VP head fronted head case&gt; = nominative
+		}
+		&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7qpVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qpFocVNom - VSO order, ditransitive with DP IO focused, pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;V head indirectobject&gt; = &lt;VP head fronted&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+		{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+		/&lt;DP_1 head type reflexive&gt; = -
+		}
+		{&lt;V head infl voice&gt; = actor
+		&lt;DP_1 head case&gt; = genitive
+		&lt;VP head fronted head case&gt; = {genitive dative}
+		/&lt;V head infl voice&gt; = object
+		&lt;DP_1 head case&gt; = nominative
+		&lt;VP head fronted head case&gt; = {genitive dative}
+		/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+		&lt;DP_1 head case&gt; = genitive
+		&lt;VP head fronted head case&gt; = nominative
+		}
+		&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7qpFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qpNegObjVerbRequiredVNom - VSO order, ditransitive with DP IO questioned, pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7qpNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7qpNegObjVerbRequiredFocVNom - VSO order, ditransitive with DP IO focused, pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7qpNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rVAbs - VSO order, ditransitive with DP IO questioned (abs object)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7rVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rFocVAbs - VSO order, ditransitive with DP focused (abs object)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7rFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rNegSubjVerbRequiredVAbvs - VSO order, ditransitive with DP questioned (abs object)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7rNegSubjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rNegSubjVerbRequiredFocVAbs - VSO order, ditransitive with DP focused (abs object)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7rNegSubjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rNegObjVerbRequiredVAbs - VSO order, ditransitive with DP questioned (abs object)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7rNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rNegObjVerbRequiredFocVAbs - VSO order, ditransitive with DP focused (abs object)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7rNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rNegSubjorObjVerbRequiredVAbs - VSO order, ditransitive with DP questioned (abs object)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7rNegSubjorObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rNegSubjorObjVerbRequiredFocVAbs - VSO order, ditransitive with DP focused (abs object)}
+VP = V DP DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7rNegSubjorObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rpVAbs - VSO order, ditransitive with DP questioned (abs object), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7rpVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rpFocVAbs - VSO order, ditransitive with DP focused (abs object), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP option&gt; = 7rpFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rpNegObjVerbRequiredVAbs - VSO order, ditransitive with DP questioned (abs object), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7rpNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='VSO' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7rpNegObjVerbRequiredFocVAbs - VSO order, ditransitive with DP focused (abs object), pro-drop}
+VP = V DP_1
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;V head type comma&gt; = -
+	&lt;VP head type comma&gt; &lt;= &lt;DP_1 head type comma&gt;
+	&lt;VP head type suffix&gt; &lt;= &lt;DP_1 head type suffix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7rpNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7sVNom - OSV order, ditransitive with DP IO questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7sVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7sFocVNom - OSV order, ditransitive with DP IO focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7sFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7sNegSubjVerbRequiredVNom - OSV order, ditransitive with DP IO questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7sNegSubjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7sNegSubjVerbRequiredFocVNom - OSV order, ditransitive with DP IO focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7sNegSubjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7sNegObjVerbRequiredVNom - OSV order, ditransitive with DP IO questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7sNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7sNegObjVerbRequiredFocVNom - OSV order, ditransitive with DP IO focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7sNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7sNegSubjorObjVerbRequiredVNom - OSV order, ditransitive with DP IO questioned}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7sNegSubjorObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7sNegSubjorObjVerbRequiredFocVNom - OSV order, ditransitive with DP IO focused}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = nominative
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = genitive
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7sNegSubjorObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7spVNom - OSV order, ditransitive with DP IO questioned, pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7spVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7spFocVNom - OSV order, ditransitive with DP IO focused, pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7spFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7spNegObjVerbRequiredVNom - OSV order, ditransitive with DP IO questioned, pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7spNegObjVerbRequiredVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)!='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesNom' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7spNegObjVerbRequiredFocVNom - OSV order, ditransitive with DP IO focused, pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = nominative
+			&lt;VP head fronted head case&gt; = {genitive dative}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = genitive
+			&lt;VP head fronted head case&gt; = nominative
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7spNegObjVerbRequiredFocVNom
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tVAbs - OSV order, ditransitive with DP IO questioned (abs object)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7tVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tFocVAbs - OSV order, ditransitive with DP focused (abs object)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7tFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tNegSubjVerbRequiredVAbs - OSV order, ditransitive with DP questioned (abs object)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7tNegSubjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tNegSubjVerbRequiredFocVAbs - OSV order, ditransitive with DP focused (abs object)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7tNegSubjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tNegObjVerbRequiredVAbs - OSV order, ditransitive with DP questioned (abs object)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7tNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='no' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tNegObjVerbRequiredFocVAbs - OSV order, ditransitive with DP focused (abs object)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7tNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tNegSubjorObjVerbRequiredVAbs - OSV order, ditransitive with DP questioned (abs object)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7tNegSubjorObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@subjVerbRequired)='yes' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tNegSubjorObjVerbRequiredFocVAbs - OSV order, ditransitive with DP focused (abs object)}
+VP = DP_1 DP V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;V head subject&gt; = &lt;DP&gt;
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP head case&gt; = absolutive
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP head case&gt; = ergative
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;VP head type pro-drop&gt; = -
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP head type possessive&gt; = -  		|subject not possessive
+	&lt;DP head type reflexive&gt; = -		|subject not reflexive
+	&lt;DP head type reciprocal&gt; = -		|subject not reciprocal
+	&lt;DP head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP head type prefix poss&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP head type suffix copular&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP head type comma&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [subject:[head:[infl:[polarity:negative]]]] -&gt;  | if subject negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7tNegSubjorObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tpVAbs - OSV order, ditransitive with DP questioned (abs object), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7tpVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tpFocVAbs - OSV order, ditransitive with DP focused (abs object), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP option&gt; = 7tpFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tpNegObjVerbRequiredVAbs - OSV order, ditransitive with DP questioned (abs object), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = DP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = +
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7tpNegObjVerbRequiredVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<xsl:if test="normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yes' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='ergative' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='dp' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes' or normalize-space(//typology/@wordOrder)='OSV' and normalize-space(//typology/@case)='split' and normalize-space(//q/@contFront)='before' and normalize-space(//ip/@proDrop)='yesClitic' and normalize-space(//ip/@diCat)='both' and normalize-space(//neg/@objVerbRequired)!='no' and normalize-space(//focus/@focus)='yes' and normalize-space(//ip/@voiceCase)='yesAbs' and normalize-space(//ip/@voice)='yes'">
+<xsl:text>
+rule {VP option 7tpNegObjVerbRequiredFocVAbs - OSV order, ditransitive with DP focused (abs object), pro-drop}
+VP = DP_1 V
+	&lt;VP head&gt; = &lt;V head&gt;
+	&lt;VP head type pro-drop&gt; = +
+	&lt;V head object&gt; = &lt;DP_1&gt;
+	&lt;VP head fronted cat&gt; = FocusP
+			{&lt;DP_1 head type reflexive&gt; = +
+	&lt;VP head subject head agr&gt; = &lt;DP_1 head agr&gt;
+			/&lt;DP_1 head type reflexive&gt; = -
+			}
+			{&lt;V head infl voice&gt; = actor
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = object
+			&lt;DP_1 head case&gt; = absolutive
+			&lt;VP head fronted head case&gt; = {dative oblique}
+			/&lt;V head infl voice&gt; = {dative locative instrumental goal}
+			&lt;DP_1 head case&gt; = ergative
+			&lt;VP head fronted head case&gt; = absolutive
+			}
+			&lt;VP head type question&gt; = -
+	&lt;V head type ditransitive&gt; = +
+	&lt;V head type transitive&gt; = +
+	&lt;V head type copular&gt; = -
+	&lt;V head infl valence&gt; =active
+	&lt;V head type motion&gt; = -
+	&lt;DP_1 head type suffix poss&gt; = -         | only in possessor position
+	&lt;DP_1 head type prefix poss&gt; = -
+	&lt;DP_1 head type prefix copular&gt; = -    | only in no V/Aux copulars
+	&lt;DP_1 head type suffix copular&gt; = -
+	&lt;DP_1 head type comma&gt; = -
+	&lt;VP head type prefix&gt; &lt;= &lt;DP_1 head type prefix&gt;
+	&lt;VP head&gt; == [object:[head:[infl:[polarity:negative]]]] -&gt;  | if object negative, VP must be
+					 [infl:[polarity:negative]]
+	&lt;VP option&gt; = 7tpNegObjVerbRequiredFocVAbs
+</xsl:text>
+</xsl:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </xsl:template>
 </xsl:stylesheet>

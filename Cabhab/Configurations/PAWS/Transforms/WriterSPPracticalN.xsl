@@ -300,8 +300,9 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/agreeOtherExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
+<xsl:when test="$iExampleLength14 != 0 and $sExampleValue14 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//np/agreeOtherExample" />
 </xsl:with-param>
@@ -312,6 +313,8 @@
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
 </xsl:call-template>
 </xsl:when>
 <xsl:otherwise>
@@ -323,14 +326,17 @@
 <line>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
+</td>
+<td align="left">
+					  <xsl:text>otro</xsl:text>
+				   </td>
+<td align="left">
+					  <xsl:text>cualquier otro indicador específico</xsl:text>
+				   </td>
+</tr>
 </xsl:otherwise>
 </xsl:choose>
+			 </table>
 </example>
 </xsl:if>
 	   </section2>

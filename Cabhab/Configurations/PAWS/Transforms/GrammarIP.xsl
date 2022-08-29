@@ -1291,7 +1291,7 @@ I' = Aux VP
 	
 	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='no' and normalize-space(//typology/@wordOrder)='VSO'">
 <xsl:text>
-rule {IBar option 2NegAuxVerbRequired - negative Aux initial, either word or affix, but no other aux required}
+rule {IBar option 2Neg - negative Aux initial, either word or affix, but no other aux required}
 I' = Aux VP
 	&lt;I' head&gt; = &lt;VP head&gt;
 	&lt;I' head type auxiliary&gt; = +
@@ -1451,7 +1451,7 @@ I' = Aux_1 Aux VP
 	
 	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SVO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VOS' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO' or normalize-space(//neg/@auxVerbRequired)='yes' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='VSO'">
 <xsl:text>
-rule {IBar option 2NegPlusAuxVerbRequired - Aux_1 positive then negative Aux, initial}
+rule {IBar option 2NegPlusAux - Aux_1 positive then negative Aux, initial}
 I' = Aux_1 Aux VP
 	&lt;I' head&gt; = &lt;VP head&gt;
 	&lt;I' head type auxiliary&gt; = +
@@ -1723,8 +1723,8 @@ I' = VP Aux
 	
 	<xsl:if test="normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='SOV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OSV' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxWord/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS' or normalize-space(//neg/@auxVerbRequired)='no' and normalize-space(//neg/@negVerbal)='yes' and normalize-space(//neg/negAuxAffix/@checked)='yes' and normalize-space(//neg/@negAuxRequiresAux)='yes' and normalize-space(//typology/@wordOrder)='OVS'">
 <xsl:text>
-rule {IBar option 3NegPlusAux - negative Aux then Aux_1 positive, final}
-I' = VP Aux Aux_1
+rule {IBar option 3NegAuxVerbRequired - negative Aux final, either word or affix, but no other aux required}
+I' = VP Aux
 	&lt;I' head&gt; = &lt;VP head&gt;
 	&lt;I' head type auxiliary&gt; = +
 	&lt;Aux_1 head infl polarity&gt; = positive

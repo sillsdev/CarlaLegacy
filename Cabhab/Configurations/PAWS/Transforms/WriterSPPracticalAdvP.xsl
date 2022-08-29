@@ -274,8 +274,15 @@
 </xsl:variable>
 <xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/temporalPhraseExample))" />
 <xsl:choose>
-<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
-<xsl:call-template name="OutputInterlinearExamples">
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="//advp/temporalPhraseExample" />
 </xsl:with-param>
@@ -286,6 +293,8 @@
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
 </xsl:call-template>
 </xsl:when>
 <xsl:otherwise>
@@ -297,14 +306,17 @@
 <line>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
 </xsl:otherwise>
 </xsl:choose>
+			  </table>
 </example>
 </xsl:if>            
            <xsl:if test="normalize-space(//advp/@temporalDegree)='yes' and normalize-space(//advp/temporalDegreeAttaches/@checked)='yes'">
@@ -461,7 +473,18 @@
 <xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
 </xsl:when>
 <xsl:otherwise>
-<xsl:text>Vernacular</xsl:text>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
 </xsl:otherwise>
 </xsl:choose>
 <xsl:text>, utiliza reduplicación para intensificar el significado del adverbio de tiempo.</xsl:text>
@@ -1423,6 +1446,797 @@
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>hasta San José</langData>
 <xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>a través del río</langData>
+<xsl:text>.  Muchas lenguas permiten sólo una frase nominal, la cual consiste en un nombre propio o una descripción del lugar. Las expresiones del lugar normalmente pueden presentarse al inicio o al final en una cláusula, o como complementos para verbos de movimiento. Véase la sección </xsl:text>
+<sectionRef sec="sIPMotion" />
+<xsl:text> para considerar otros ejemplos con verbos del movimiento.
+</xsl:text>
+</p>
+		</section2>
+
+		<section2 id="sAdvPManner">
+			<secTitle>Adverbios de modo</secTitle>
+			<p>
+<xsl:text>Los adverbios de modo directamente modifican el verbo y generalmente terminan con el sufijo </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>-mente</langData>
+<xsl:text> en español.  En algunas lenguas, los adverbios de modo son todos escritos como afijos en el verbo, en lugar de como palabras independientes.</xsl:text>
+</p>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word'">
+<p>
+<xsl:text>Los adverbios de modo en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son escritos como palabras independientes.</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word'">
+<p>
+<xsl:text>Algunos ejemplos de adverbios de modo en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word'">
+<example num="xAdvP.AdvPManner.10">
+<table border="1">
+				 <tr>
+					<th>Alverbios de modo</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix'">
+<p>
+<xsl:text>Los adverbios de modo en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son todos escritos como afijos en el verbo.</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix'">
+<p>
+<xsl:text>Algunos ejemplos de afijos adverbiales de modo en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix'">
+<example num="xAdvP.AdvPManner.16">
+<table border="1">
+				 <tr>
+					<th>Afijos adverbiales de modo</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <p>
+<xsl:text>Los adverbios de modo normalmente se pueden modificar con palabras de grado.  En español, los adverbios de modo se pueden modificar con </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>muy</langData>
+<xsl:text>
+				 y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>tan</langData>
+<xsl:text>, como en: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>muy rápidamente</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>tan lentamente</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>muy bien</langData>
+<xsl:text>.</xsl:text>
+</p>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word'">
+<p>
+<xsl:text>En </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, </xsl:text>
+<xsl:choose>
+				 <xsl:when test="//advp/@mannerDegree='yesBefore'">una palabra de grado puede presentarse antes de un adverbio de modo.</xsl:when>
+				 <xsl:when test="//advp/@mannerDegree='yesAfter'">una palabra de grado puede presentarse después de un adverbio de modo.</xsl:when>
+				 <xsl:when test="//advp/@mannerDegree='attaches'">hay un afijo o clítico que se une al adverbio de modo para intensificarlo.</xsl:when>
+				 <xsl:when test="//advp/@mannerDegree='noRedup'">no hay palabras de grado independientes, pero utiliza reduplicación para intensificar el significado del adverbio de modo.</xsl:when>
+				 <xsl:when test="//advp/@mannerDegree='no'">los adverbios de modo no se modifican ni intensifican.</xsl:when>
+			  </xsl:choose>
+</p>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='yesBefore' or normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='yesAfter'">
+<p>
+<xsl:text>Las palabras de grado que puede modificar los adverbios de modo en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='yesBefore' or normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='yesAfter'">
+<example num="xAdvP.AdvPManner.24">
+<table border="1">
+				 <tr>
+					<th>Palabras de grado</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerDegreeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='attaches'">
+<p>
+<xsl:text>Los afijos o clíticos que pueden modificar los adverbios de modo en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='attaches'">
+<example num="xAdvP.AdvPManner.28">
+<table border="1">
+				 <tr>
+					<th>Afijos o clíticos de grado</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerDegreeAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='noRedup'">
+<p>
+<xsl:text>Algunos ejemplos de los adverbios de modo con reduplicación son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='noRedup'">
+<example num="xAdvP.AdvPManner.32">
+<table border="1">
+				 <tr>
+					<th>Adverbios de modo con reduplicación</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerDegreeRedupExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='attaches'">
+<p>
+<xsl:text>Algunos ejemplos de los afijos o clíticos de grado unidos a un adverbio de modo son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='attaches'">
+<example num="xAdvP.AdvPManner.36">
+<table border="1">
+				 <tr>
+					<th>Adverbios de modo con afijos o clíticos de grado</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerPhraseAffixExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='yesBefore' or normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='yesAfter'">
+<p>
+<xsl:text>Algunos ejemplos de los adverbios de modo con una palabra de grado modificándolos son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='yesBefore' or normalize-space(//advp/@mannerType)='word' and normalize-space(//advp/@mannerDegree)='yesAfter'">
+<example num="xAdvP.AdvPManner.40">
+<xsl:variable name="sExampleValue">
+<xsl:value-of select="//advp/mannerDegreePhraseExample" />
+</xsl:variable>
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//advp/mannerDegreePhraseExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="//advp/mannerDegreePhraseExample" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="string-length(normalize-space(//advp/mannerDegreePhraseExample))" />
+</xsl:with-param>
+<xsl:with-param name="sExNumber">xAdvP.AdvPManner.40</xsl:with-param>
+<xsl:with-param name="sLetterList">
+<xsl:value-of select="$sMasterLetterList" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<listInterlinear>
+<xsl:attribute name="letter">
+<xsl:text>xAdvP.AdvPManner.40.1</xsl:text>
+</xsl:attribute>
+<lineGroup>
+<line>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
+</xsl:otherwise>
+</xsl:choose>
+</example>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix'">
+<p>
+<xsl:text>En </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text>, </xsl:text>
+<xsl:choose>
+				 <xsl:when test="//advp/@mannerAffixDegree='yesBefore'">un afijo de grado puede presentarse antes de un afijo adverbial de modo.</xsl:when>
+				 <xsl:when test="//advp/@mannerAffixDegree='yesAfter'">un afijo de grado puede presentarse después de un afijo adverbial de modo.</xsl:when>
+				 <xsl:when test="//advp/@mannerAffixDegree='noRedup'">utiliza reduplicación para intensificar el significado del afijo adverbial de modo.</xsl:when>
+				 <xsl:when test="//advp/@mannerAffixDegree='no'">los afijos adverbiales de modo no se modifican ni intensifican.</xsl:when>
+			  </xsl:choose>
+</p>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='yesBefore' or normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='yesAfter'">
+<p>
+<xsl:text>Los afijos o clíticos de grado que pueden modificar los afijos adverbiales de modo en </xsl:text>
+<xsl:choose>
+<xsl:when test="string-length(normalize-space(//language/langNames/langName[@lang='es'])) &gt; 0">
+<xsl:value-of select="normalize-space(//language/langNames/langName[@lang='es'])" />
+</xsl:when>
+<xsl:otherwise>
+<xsl:text>Vernacular</xsl:text>
+</xsl:otherwise>
+</xsl:choose>
+<xsl:text> son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='yesBefore' or normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='yesAfter'">
+<example num="xAdvP.AdvPManner.46">
+<table border="1">
+				 <tr>
+					<th>Afijos o clíticos de grado</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerAffixDegreeExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='noRedup'">
+<p>
+<xsl:text>Algunos ejemplos de los afijos adverbiales de modo con reduplicación unidos a los verbos son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='noRedup'">
+<example num="xAdvP.AdvPManner.50">
+<table border="1">
+				 <tr>
+					<th>Afijos adverbiales de modo con reduplicación</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerAffixDegreeRedupExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='yesBefore' or normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='yesAfter'">
+<p>
+<xsl:text>Algunos ejemplos de los afijos adverbiales de modo con afijos de grado unidos a los verbos son:</xsl:text>
+</p>
+</xsl:if>
+		   <xsl:if test="normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='yesBefore' or normalize-space(//advp/@mannerType)='affix' and normalize-space(//advp/@mannerAffixDegree)='yesAfter'">
+<example num="xAdvP.AdvPManner.54">
+<table border="1">
+				 <tr>
+					<th>Afijos adverbiales de modo con afijos de grado</th>
+					<th>Glosa</th>
+				 </tr>
+				 <xsl:variable name="sExampleValue0">
+<xsl:value-of select="translate(string(//advp/mannerAffixPhraseExample),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength0" select="string-length(normalize-space($sExampleValue0))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength0 != 0 and $sExampleValue0 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue0" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength0" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text>ESCRIBA LA GLOSA</xsl:text>
+</gloss>
+</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+			  </table>
+</example>
+</xsl:if>
+		   <p>
+<xsl:text>Los adverbios de modo no parece tener el  mismo significado que otros tipos de frases, con la excepción de oraciones comparativas como </xsl:text>
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>

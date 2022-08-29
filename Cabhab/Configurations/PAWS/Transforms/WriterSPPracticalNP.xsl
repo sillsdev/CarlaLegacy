@@ -383,12 +383,96 @@
 <line>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
-</line>
-<xsl:call-template name="DoWordGloss" />
-<xsl:call-template name="DoMorphemeGloss" />
-</lineGroup>
-<xsl:call-template name="DoFree" />
-</listInterlinear>
+</td>
+<td align="left">
+					   <xsl:text>casi</xsl:text>
+					</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+				 <xsl:variable name="sExampleValue2">
+<xsl:value-of select="translate(string(//qp/only),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength2" select="string-length(normalize-space($sExampleValue2))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength2 != 0 and $sExampleValue2 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue2" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength2" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+					   <xsl:text>solamente o apenas</xsl:text>
+					</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+					   <xsl:text>solamente o apenas</xsl:text>
+					</td>
+</tr>
+</xsl:otherwise>
+</xsl:choose>
+				 <xsl:if test="normalize-space(//qp/@npDegreeNeg)!='none'">
+<xsl:variable name="sExampleValue3">
+<xsl:value-of select="translate(string(//qp/not),'.','')" />
+</xsl:variable>
+<xsl:variable name="iExampleLength3" select="string-length(normalize-space($sExampleValue3))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength3 != 0 and $sExampleValue3 != ' '">
+<xsl:variable name="sCalculatedRows">
+<xsl:call-template name="CalculateRows">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3" />
+</xsl:with-param>
+</xsl:call-template>
+</xsl:variable>
+<xsl:call-template name="OutputColExamples">
+<xsl:with-param name="sExamples">
+<xsl:value-of select="$sExampleValue3" />
+</xsl:with-param>
+<xsl:with-param name="iLength">
+<xsl:value-of select="$iExampleLength3" />
+</xsl:with-param>
+<xsl:with-param name="columnsBefore" />
+<xsl:with-param name="columnsAfter">
+<td align="left">
+					   <xsl:text>no</xsl:text>
+					</td>
+</xsl:with-param>
+<xsl:with-param name="bHandleRowSpans" select="'Y'" />
+<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
+</xsl:call-template>
+</xsl:when>
+<xsl:otherwise>
+<tr>
+<td>
+<langData>
+<xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
+</td>
+<td align="left">
+					   <xsl:text>no</xsl:text>
+					</td>
+</tr>
 </xsl:otherwise>
 </xsl:choose>
 </example>
@@ -2352,7 +2436,7 @@
 <langData>
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
-</xsl:attribute>your following</langData>
+</xsl:attribute>the books [loved by millions]</langData>
 <gloss>
 <xsl:attribute name="lang">lGloss</xsl:attribute>
 <xsl:text> ‘su siguiente’</xsl:text>
@@ -2373,17 +2457,17 @@
 </p>
 			<example num="xNP.NPParticiple.18">
 <xsl:variable name="sExampleValue">
-<xsl:value-of select="//np/partHeadExample" />
+<xsl:value-of select="//np/partExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/partHeadExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/partExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//np/partHeadExample" />
+<xsl:value-of select="//np/partExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//np/partHeadExample))" />
+<xsl:value-of select="string-length(normalize-space(//np/partExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNP.NPParticiple.18</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -2409,22 +2493,71 @@
 </xsl:otherwise>
 </xsl:choose>
 </example>
+   <p>
+<xsl:text>Otro caso que se puede parecer al igual que un sustantivo y un complemento puede ser realmente una frase del gerundio. Esta frase completa se presenta en una posición normal de una frase nominal, tal como sujeto, objeto, objeto indirecto o el objeto de una preposición o posposición. Algunos ejemplos en oraciones completas en inglés con la frase del gerundio entre corchetes son: </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>[Studying grammar] is difficult</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘[Estudiando gramática] es dificil’</xsl:text>
+</gloss>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>He likes [reading Latin poetry]</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘Él tiene gusto [leyendo la poesía latina]’</xsl:text>
+</gloss>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>The receiver showed his worth by [making the catch]</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘El receptor mostró su valor cerca [haciendo el retén]’</xsl:text>
+</gloss>
+<xsl:text>.  Tales frases se pueden poseer o modificar también, y a veces se presenta solamente el gerundio como el elemento principal de una frase nominal, como en </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>el gravemente herido</langData>
+<xsl:text>, </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>el agonizante</langData>
+<xsl:text> y </xsl:text>
+<langData>
+<xsl:attribute name="lang">
+<xsl:text>lPAWSSKEnglish</xsl:text>
+</xsl:attribute>your following</langData>
+<gloss>
+<xsl:attribute name="lang">lGloss</xsl:attribute>
+<xsl:text> ‘su siguiente’</xsl:text>
+</gloss>
+<xsl:text>.</xsl:text>
+</p>
 			<p>
 <xsl:text>Estas frases de gerundio pueden presentarse en oraciones completas como se muestra a continuación: </xsl:text>
 </p>
 			<example num="xNP.NPParticiple.22">
 <xsl:variable name="sExampleValue">
-<xsl:value-of select="//np/partHeadSentExample" />
+<xsl:value-of select="//np/partHeadExample" />
 </xsl:variable>
-<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/partHeadSentExample))" />
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//np/partHeadExample))" />
 <xsl:choose>
 <xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
 <xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
-<xsl:value-of select="//np/partHeadSentExample" />
+<xsl:value-of select="//np/partHeadExample" />
 </xsl:with-param>
 <xsl:with-param name="iLength">
-<xsl:value-of select="string-length(normalize-space(//np/partHeadSentExample))" />
+<xsl:value-of select="string-length(normalize-space(//np/partHeadExample))" />
 </xsl:with-param>
 <xsl:with-param name="sExNumber">xNP.NPParticiple.22</xsl:with-param>
 <xsl:with-param name="sLetterList">
@@ -5892,6 +6025,107 @@
 		
 		
 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </xsl:template>

@@ -375,7 +375,7 @@
        
         <instruction id="NPArtCaseNomAccInstruction2" show="swNPCaseNom">Since your language has a nominative-accusative case system, in the lexicon:
 <ul>
-                <li>Mark the <span id="NPArtOnlyCaseNomSpan" show="swNPArtAndDemArt">articles</span>
+				<li>Mark the <span id="NPArtOnlyCaseNomSpan" show="swNPArtAndDemArt">articles</span>
                     <span id="NPDemOnlyCaseNomSpan" show="swNPArtAndDemDem">demonstratives</span>
                     <span id="NPArtAndDemCaseNomSpan" show="swNPArtAndDemBoth">articles and demonstratives</span> that  go with subjects with the feature <feature>nominative</feature> and those that go with direct objects with the feature <feature>accusative</feature>.</li>
                 <li>If you have a set for possessors, add the feature <feature>genitive</feature> to those entries.</li>

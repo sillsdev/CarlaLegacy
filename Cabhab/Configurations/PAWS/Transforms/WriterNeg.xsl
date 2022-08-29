@@ -1471,18 +1471,7 @@
 </xsl:call-template>
 </xsl:when>
 <xsl:otherwise>
-<tr>
-<td>
-<langData>
-<xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
-</td>
-<td align="left">
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS</xsl:text>
-</gloss>
-</td>
-</tr>
+<xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
 				  </table>
@@ -1924,8 +1913,6 @@
 </gloss>
 </td>
 </xsl:with-param>
-<xsl:with-param name="bHandleRowSpans" select="'Y'" />
-<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
 </xsl:call-template>
 </xsl:when>
 <xsl:otherwise>
@@ -1933,14 +1920,12 @@
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
-</td>
-<td align="left">
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ENTER GLOSS</xsl:text>
-</gloss>
-</td>
-</tr>
+</line>
+<xsl:call-template name="DoMorphemeGloss" />
+<xsl:call-template name="DoWordGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
 </xsl:otherwise>
 </xsl:choose>
 				  </table>

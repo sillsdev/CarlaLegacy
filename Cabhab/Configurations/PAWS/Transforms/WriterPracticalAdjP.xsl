@@ -953,7 +953,10 @@
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
-<xsl:call-template name="OutputColExamples">
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/cardinalCompoundExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="$sExampleValue3.1" />
 </xsl:with-param>

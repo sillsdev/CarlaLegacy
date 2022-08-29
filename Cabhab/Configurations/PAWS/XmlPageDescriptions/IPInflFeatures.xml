@@ -170,6 +170,11 @@
 				<featureExplanation/>
 				<textBox id="TBMoodOther" dataItem="otherMood" rows="1"/>
 			</featureRow>
+		   <featureRow>
+			  <featureType rowspan="4">other</featureType>
+			  <featureItem dataValue="ipInflFeatFinite" name="IPInflFeatFinite">finite</featureItem>
+				<featureExplanation/>
+			</featureRow>
 			<featureRow>
 				<featureType rowspan="14">evidentiality</featureType>
 				<featureItem dataValue="ipInflFeatWitness" name="IPInflFeatWitness">witness</featureItem>

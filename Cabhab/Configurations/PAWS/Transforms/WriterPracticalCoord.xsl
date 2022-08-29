@@ -76,7 +76,7 @@
 </xsl:choose>
 <xsl:text> uses the following conjunctions between two conjuncts:</xsl:text>
 </p>
-			<example num="xCoord.12">
+			<example num="xCoord.10">
 <table border="1">
 					<tr>
 						<th>Morphemes</th>
@@ -231,7 +231,7 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>and/or</xsl:text>
+							<xsl:text>but</xsl:text>
 						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -245,7 +245,7 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 <td align="left">
-							<xsl:text>and/or</xsl:text>
+							<xsl:text>but</xsl:text>
 						</td>
 </tr>
 </xsl:otherwise>
@@ -273,7 +273,7 @@
 <xsl:with-param name="columnsBefore" />
 <xsl:with-param name="columnsAfter">
 <td align="left">
-							<xsl:text>but</xsl:text>
+							<xsl:text>with</xsl:text>
 						</td>
 </xsl:with-param>
 <xsl:with-param name="bHandleRowSpans" select="'Y'" />
@@ -287,7 +287,7 @@
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ENTER AN EXAMPLE HERE</langData>
 </td>
 <td align="left">
-							<xsl:text>but</xsl:text>
+							<xsl:text>with</xsl:text>
 						</td>
 </tr>
 </xsl:otherwise>
@@ -400,7 +400,7 @@
 </xsl:attribute>neither...nor</langData>
 <xsl:text> type construction:</xsl:text>
 </p>
-			<example num="xCoord.16">
+			<example num="xCoord.14">
 <table border="1">
 					<tr>
 						<th>Morphemes</th>

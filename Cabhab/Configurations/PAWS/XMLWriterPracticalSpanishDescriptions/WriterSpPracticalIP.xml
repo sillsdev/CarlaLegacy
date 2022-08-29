@@ -2066,17 +2066,17 @@
 		<or/>
 		<whenValue element="typology" attr="wordOrder" value="SOV"/>
 	</showWhen>
-	<showWhen id="swIPCopVerbNoNeitherOrOptional">
-		<whenValue element="ip" attr="copular" value="noNeither"/>
-		<or/>
-		<whenValue element="ip" attr="copular" value="yesOptional"/>
-	</showWhen>
-	<showWhen id="swIPCopVerbNoNeither">
-		<whenValue element="ip" attr="copular" value="noNeither"/>
-	</showWhen>
-	<showWhen id="swIPCopVerbYesOptional">
-		<whenValue element="ip" attr="copular" value="yesOptional"/>
-	</showWhen>
+   <showWhen id="swIPCopVerbNoNeitherOrOptional">
+	  <whenValue element="ip" attr="copular" value="noNeither"/>
+	  <or/>
+	  <whenValue element="ip" attr="copular" value="yesOptional"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbNoNeither">
+	  <whenValue element="ip" attr="copular" value="noNeither"/>
+   </showWhen>
+   <showWhen id="swIPCopVerbYesOptional">
+	  <whenValue element="ip" attr="copular" value="yesOptional"/>
+   </showWhen>
 	<showWhen id="swIPDiCatNotPP">
 		<whenValue element="ip" attr="diCat" value="pp" negateValue="yes"/>
 	</showWhen>

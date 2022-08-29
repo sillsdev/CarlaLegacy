@@ -165,7 +165,7 @@
 <xsl:attribute name="lang">
 <xsl:text>lPAWSSKEnglish</xsl:text>
 </xsl:attribute>olvidado muy fácilmente</langData>
-<xsl:text>.  No pueden proporcionarse todas las combinaciones de palabras debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios de manera o frases adverbiales pueden modificar a los adjetivos. </xsl:text>
+<xsl:text>.  No pueden proporcionarse todas las combinaciones de palabras debido a la semántica y a otras consideraciones, pero en general parece que ciertas palabras de grado y adverbios de manera o frases adverbiales pueden modificar a os adjetivos. </xsl:text>
 </p>
       <xsl:if test="normalize-space(//adjp/@modifiers)='no'">
 <p>
@@ -552,8 +552,6 @@
 </gloss>
 </td>
 </xsl:with-param>
-<xsl:with-param name="bHandleRowSpans" select="'Y'" />
-<xsl:with-param name="iRowsToSpan" select="string-length($sCalculatedRows)" />
 </xsl:call-template>
 </xsl:when>
 <xsl:otherwise>
@@ -561,14 +559,12 @@
 <td>
 <langData>
 <xsl:attribute name="lang">lVernacular</xsl:attribute>ESCRIBA UN EJEMPLO AQUÍ</langData>
-</td>
-<td align="left">
-<gloss>
-<xsl:attribute name="lang">lGloss</xsl:attribute>
-<xsl:text>ESCRIBA LA GLOSA</xsl:text>
-</gloss>
-</td>
-</tr>
+</line>
+<xsl:call-template name="DoWordGloss" />
+<xsl:call-template name="DoMorphemeGloss" />
+</lineGroup>
+<xsl:call-template name="DoFree" />
+</listInterlinear>
 </xsl:otherwise>
 </xsl:choose>
         </table>
@@ -983,7 +979,10 @@
 </xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
-<xsl:call-template name="OutputColExamples">
+<xsl:variable name="iExampleLength" select="string-length(normalize-space(//qp/cardinalCompoundExample))" />
+<xsl:choose>
+<xsl:when test="$iExampleLength != 0 and normalize-space($sExampleValue) != ''">
+<xsl:call-template name="OutputInterlinearExamples">
 <xsl:with-param name="sExamples">
 <xsl:value-of select="$sExampleValue4.1" />
 </xsl:with-param>
@@ -2054,7 +2053,7 @@
 <xsl:text>Vernacular</xsl:text>
 </xsl:otherwise>
 </xsl:choose>
-<xsl:text> son:</xsl:text>
+<xsl:text> son: </xsl:text>
 </p>
                     <example num="xAdjP.AdjNumbers.QPNumbersCardinal.18">
 <xsl:variable name="sExampleValue">

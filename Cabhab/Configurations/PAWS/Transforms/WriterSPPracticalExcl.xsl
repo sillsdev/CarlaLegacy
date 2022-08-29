@@ -81,7 +81,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//excl/greetExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xExcl.ExclGreet.12</xsl:with-param>
+<xsl:with-param name="sExNumber">xExcl.ExclGreet.10</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -90,7 +90,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xExcl.ExclGreet.12.1</xsl:text>
+<xsl:text>xExcl.ExclGreet.10.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>

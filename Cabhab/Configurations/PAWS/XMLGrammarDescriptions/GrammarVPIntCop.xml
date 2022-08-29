@@ -2661,7 +2661,7 @@ VP = {PP / AdjP / DP}
         }
         {&lt;DP head type prefix copular&gt; = +
         /&lt;DP head type suffix copular&gt; = +
-        }
+		}
 	&lt;PP head type sentential&gt; = -
 	&lt;VP head type copular&gt; = +
 	&lt;VP head type verbheaded&gt; = -             | to restrict recursion

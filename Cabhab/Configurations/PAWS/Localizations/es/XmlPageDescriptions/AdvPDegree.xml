@@ -67,7 +67,7 @@
 					<li>
 						<feature>makeDeg modifies_reason</feature> for reason or purpose modifiers</li>
 				</ul>
- If you have overlapping in the sets, just add more than one <feature>modifies...</feature> feature after a space.    (Similarly, if any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional <feature>modifies...</feature> feature(s) to the same lexical entry.)  If there are no degree words which modify reason or purpose adverbs, just don't mark any words with this feature.</span>
+ If you have overlapping in the sets, just add more than one <feature>modifies...</feature> feature after a space.    (Similarly, if any of these degree words are the same as those which can modify an entire nominal phrase or a quantifier, you can simply add the additional <feature>modifies...</feature> feature(s) to the same lexical entry.)  If there are no degree words which modify reason or purpose adverbs, just don’t mark any words with this feature.</span>
 			<br/>
 			<br/>
 			<span id="AdvPDegreeEitherRestrictedInstruction" show="swAdvPDegreeEitherRestricted">

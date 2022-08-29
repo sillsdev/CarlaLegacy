@@ -150,7 +150,7 @@
 </xsl:choose>
 <xsl:text> include:</xsl:text>
 </p>
-			<example num="xExcl.ExclIntj.10">
+			<example num="xExcl.ExclIntj.8">
 <xsl:variable name="sExampleValue">
 <xsl:value-of select="//excl/intjExample" />
 </xsl:variable>
@@ -164,7 +164,7 @@
 <xsl:with-param name="iLength">
 <xsl:value-of select="string-length(normalize-space(//excl/intjExample))" />
 </xsl:with-param>
-<xsl:with-param name="sExNumber">xExcl.ExclIntj.10</xsl:with-param>
+<xsl:with-param name="sExNumber">xExcl.ExclIntj.8</xsl:with-param>
 <xsl:with-param name="sLetterList">
 <xsl:value-of select="$sMasterLetterList" />
 </xsl:with-param>
@@ -173,7 +173,7 @@
 <xsl:otherwise>
 <listInterlinear>
 <xsl:attribute name="letter">
-<xsl:text>xExcl.ExclIntj.10.1</xsl:text>
+<xsl:text>xExcl.ExclIntj.8.1</xsl:text>
 </xsl:attribute>
 <lineGroup>
 <line>
@@ -210,7 +210,7 @@
 </xsl:choose>
 <xsl:text> uses the following words to express these answers:</xsl:text>
 </p>
-<example num="xExcl.ExclIntj.14">
+<example num="xExcl.ExclIntj.12">
 <table border="1">
 					<tr>
 						<th>Morphemes</th>

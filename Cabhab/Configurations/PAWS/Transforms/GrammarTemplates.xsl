@@ -881,6 +881,7 @@ Let Art                           be     &lt;cat&gt; = !Art
                                           &lt;head type cooccur&gt;            = !-
    </xsl:text>
 </xsl:if>
+<xsl:if test="normalize-space(//np/@possCooccur)='some'">
 <xsl:text>
 
 Let Aux	                          be     &lt;cat&gt; = !Aux

@@ -81,7 +81,8 @@ var SpecPosUnknown = 4;
 {
 <xsl:apply-templates select="//textBox | //groupName | //catMap | //featureItem | //checkbox | //contentCheckBoxOther" mode="load"/>
 window.external.SetLeftOffAt("<xsl:value-of select="$prmWorkingPath"/>
-			<xsl:value-of select="//page/@id"/>.htm");
+			<xsl:value-of select="//page/@id"
+				/>.htm");
 Refresh()
 }
 function GetSpecifierPos()
@@ -148,7 +149,9 @@ function GetPositionBasedOnHead(sAttr, bSame)
 	else
 		return sAttr;
 }
-<xsl:apply-templates select="//groupName" mode="checked"/>
+<xsl:apply-templates
+				select="//groupName" mode="checked"
+				/>
 function saveData()
 {
 var sTemp;
@@ -160,7 +163,9 @@ function ButtonNext()
 	window.external.GetAnswerValue("/paws/@outputGrammar");
 	attr = window.external.OutValue;
 	if (attr == "False")
-	window.navigate ("<xsl:variable name="sGoToNoGrammar" select="normalize-space(//button[@value='Next']/@gotoNoGrammar)"/>
+	window.navigate ("<xsl:variable
+				name="sGoToNoGrammar"
+				select="normalize-space(//button[@value='Next']/@gotoNoGrammar)"/>
 			<xsl:variable name="sGoTo" select="normalize-space(//button[@value='Next']/@goto)"/>
 			<xsl:choose>
 				<xsl:when test="string-length($sGoToNoGrammar) &gt; 0">
@@ -171,7 +176,8 @@ function ButtonNext()
 				</xsl:otherwise>
 			</xsl:choose>");
 	 else
-		window.navigate ("<xsl:value-of select="$sGoTo"/>");
+		window.navigate ("<xsl:value-of select="$sGoTo"
+				/>");
 }
 function ButtonBack()
 {
@@ -179,7 +185,9 @@ function ButtonBack()
 	window.external.GetAnswerValue("/paws/@outputGrammar");
 	attr = window.external.OutValue;
 	if (attr == "False")
-	window.navigate ("<xsl:variable name="sBackGoToNoGrammar" select="normalize-space(//button[@value='Back']/@gotoNoGrammar)"/>
+	window.navigate ("<xsl:variable
+				name="sBackGoToNoGrammar"
+				select="normalize-space(//button[@value='Back']/@gotoNoGrammar)"/>
 			<xsl:variable name="sBackGoTo" select="normalize-space(//button[@value='Back']/@goto)"/><xsl:choose>
 				<xsl:when test="string-length($sBackGoToNoGrammar) &gt; 0">
 					<xsl:value-of select="$sBackGoToNoGrammar"/>
@@ -189,37 +197,48 @@ function ButtonBack()
 				</xsl:otherwise>
 			</xsl:choose>");
 			else
-			window.navigate ("<xsl:value-of select="$sBackGoTo"/>");
+			window.navigate ("<xsl:value-of
+				select="$sBackGoTo"
+				/>");
 }
 function ReturnContents()
 {
 	saveData();
-	window.navigate ("<xsl:value-of select="$prmInstallPath"/>HTMs/Contents.htm");
+	window.navigate ("<xsl:value-of
+				select="$prmInstallPath"
+				/>HTMs/Contents.htm");
 }
 function Refresh()
 {
 var valArray = new Array();
-<xsl:for-each select="//showWhen">
+<xsl:for-each
+				select="//showWhen">
 				<xsl:variable name="showID" select="@id"/>
 				<xsl:variable name="showable" select="//*[@show=$showID]"/>
 				<xsl:for-each select="./*">
 					<xsl:if test="name()='whenValue'">
 						<xsl:choose>
-							<xsl:when test="@attr">
-	window.external.GetAnswerValue("//<xsl:value-of select="@element"/>/@<xsl:value-of select="@attr"/>");
+							<xsl:when test="@attr"
+									>
+	window.external.GetAnswerValue("//<xsl:value-of
+									select="@element"/>/@<xsl:value-of select="@attr"
+								/>");
 											  </xsl:when>
 							<xsl:otherwise>
-	window.external.GetAnswerValue("//<xsl:value-of select="@element"/>");
+	window.external.GetAnswerValue("//<xsl:value-of
+									select="@element"/>");
 	  </xsl:otherwise>
 						</xsl:choose>
-		valArray[<xsl:value-of select="position()"/>] = window.external.OutValue;
+		valArray[<xsl:value-of select="position()"
+						/>] = window.external.OutValue;
 					</xsl:if>
 				</xsl:for-each>
 if (<xsl:for-each select="./*">
 					<xsl:choose>
 						<xsl:when test="name(.)='whenRadio' or name()='whenCheckbox'">
 							<xsl:value-of select="@button"/>.checked</xsl:when>
-						<xsl:when test="name()='whenValue'">(valArray[<xsl:value-of select="position()"/>] == "<xsl:value-of select="@value"/>")</xsl:when>
+						<xsl:when test="name()='whenValue'">(valArray[<xsl:value-of
+								select="position()"/>] == "<xsl:value-of select="@value"/>")</xsl:when>
 						<xsl:when test="name()='and'"> &amp;&amp; </xsl:when>
 						<xsl:when test="name()='or'"> || </xsl:when>
 						<xsl:when test="name()='not'"> !</xsl:when>
@@ -255,7 +274,8 @@ window.external.GetAnswerValue("/paws/@outputGrammar");
 attr = window.external.OutValue;
 if (attr == "False")
 {
-			<xsl:for-each select="//instruction[ancestor::form and string-length(normalize-space(@id)) &gt; 0]">
+			<xsl:for-each
+				select="//instruction[ancestor::form and string-length(normalize-space(@id)) &gt; 0]">
 				<xsl:value-of select="@id"/>
 				<xsl:text>.style.display = "none";
 </xsl:text>
@@ -300,7 +320,8 @@ window.external.ShowTermDefinition(msg);
 		</xsl:choose>
 		<xsl:text>/</xsl:text>
 		<xsl:value-of select="./@dataItem"/>");
-<xsl:value-of select="@id"/>.value = window.external.OutValue;
+<xsl:value-of select="@id"
+		/>.value = window.external.OutValue;
 </xsl:template>
 	<!--
   - - - - - - - -
@@ -325,41 +346,54 @@ window.external.ShowTermDefinition(msg);
   featureItem load
    - - - - - - - -
   -->
-	<xsl:template match="//featureItem" mode="load">
-	window.external.GetAnswerValue("//<xsl:value-of select="$Section"/>/<xsl:value-of select="@dataValue"/>/@checked");
+	<xsl:template match="//featureItem" mode="load"
+			>
+	window.external.GetAnswerValue("//<xsl:value-of select="$Section"/>/<xsl:value-of
+			select="@dataValue"
+			/>/@checked");
 	attr = window.external.OutValue;
 	if (attr == "yes")
-		  <xsl:value-of select="@name"/>.checked = true;
+		  <xsl:value-of
+			select="@name"/>.checked = true;
 	else
-			  <xsl:value-of select="@name"/>.checked = false;
+			  <xsl:value-of select="@name"
+		/>.checked = false;
   </xsl:template>
 	<!--
   - - - - - - - -
   featureItem save
    - - - - - - - -
   -->
-	<xsl:template match="//featureItem" mode="save">
+	<xsl:template match="//featureItem" mode="save"
+			>
 	//TODO: figure what to do if any of these are missing!
 	sTemp = "no" // use default if all else fails...
-	if (<xsl:value-of select="@name"/>.checked)
+	if (<xsl:value-of
+			select="@name"
+			/>.checked)
 	  sTemp = "yes";
-	window.external.SetAnswerValue("//<xsl:value-of select="$Section"/>/<xsl:value-of select="./@dataValue"/>/@checked", sTemp);
+	window.external.SetAnswerValue("//<xsl:value-of
+			select="$Section"/>/<xsl:value-of select="./@dataValue"/>/@checked", sTemp);
 </xsl:template>
 	<!--
   - - - - - - - -
   groupName load
    - - - - - - - -
   -->
-	<xsl:template match="//groupName" mode="load">
-	window.external.GetAnswerValue("//<xsl:value-of select="$Section"/>/@<xsl:value-of select="./@dataItem"/>");
+	<xsl:template match="//groupName" mode="load"
+			>
+	window.external.GetAnswerValue("//<xsl:value-of select="$Section"/>/@<xsl:value-of
+			select="./@dataItem"/>");
 	attr = window.external.OutValue;
 <xsl:choose>
 			<xsl:when test="@position='no'">
 				<xsl:for-each select="../radio | ../checkbox">
 					<xsl:choose>
-						<xsl:when test="position()=1">if (attr == "<xsl:value-of select="@dataValue"/>")
+						<xsl:when test="position()=1">if (attr == "<xsl:value-of select="@dataValue"
+							/>")
 		</xsl:when>
-						<xsl:when test="position()>1 and position() != last()">else if (attr == "<xsl:value-of select="@dataValue"/>")
+						<xsl:when test="position()>1 and position() != last()"
+								>else if (attr == "<xsl:value-of select="@dataValue"/>")
 </xsl:when>
 						<xsl:otherwise>else
 			</xsl:otherwise>
@@ -369,18 +403,22 @@ window.external.ShowTermDefinition(msg);
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:choose>
-					<xsl:when test="@position='yesHead'">sPos = GetPositionBasedOnHead(attr, true);
+					<xsl:when test="@position='yesHead'"
+						>sPos = GetPositionBasedOnHead(attr, true);
 	</xsl:when>
-					<xsl:when test="@position='yesHeadDiff'">sPos = GetPositionBasedOnHead(attr, false);
+					<xsl:when test="@position='yesHeadDiff'"
+						>sPos = GetPositionBasedOnHead(attr, false);
 	</xsl:when>
 					<xsl:otherwise>sPos = GetPositionBasedOnSpecifier(attr);
 </xsl:otherwise>
 				</xsl:choose>
 				<xsl:for-each select="../radio | ../checkbox">
 					<xsl:choose>
-						<xsl:when test="position()=1">if (sPos == "<xsl:value-of select="@dataValue"/>")
+						<xsl:when test="position()=1">if (sPos == "<xsl:value-of select="@dataValue"
+							/>")
 		</xsl:when>
-						<xsl:when test="position()>1 and position() != last()">else if (sPos=="<xsl:value-of select="@dataValue"/>")
+						<xsl:when test="position()>1 and position() != last()"
+								>else if (sPos=="<xsl:value-of select="@dataValue"/>")
 </xsl:when>
 						<xsl:otherwise>else
 </xsl:otherwise>
@@ -395,13 +433,15 @@ window.external.ShowTermDefinition(msg);
   groupName save
    - - - - - - - -
   -->
-	<xsl:template match="//groupName" mode="save">
+	<xsl:template match="//groupName" mode="save"
+			>
 	//TODO: figure what to do if any of these are missing!
 	sTemp = "<xsl:value-of select="@default"/>" // use default if all else fails...
 	<xsl:for-each select="../radio | ../checkbox">if (<xsl:value-of select="@id"/>.checked)
 	sTemp = "<xsl:value-of select="@dataValue"/>";
 	</xsl:for-each>
-	window.external.SetAnswerValue("//<xsl:value-of select="$Section"/>/@<xsl:value-of select="./@dataItem"/>", sTemp);
+	window.external.SetAnswerValue("//<xsl:value-of
+			select="$Section"/>/@<xsl:value-of select="./@dataItem"/>", sTemp);
 </xsl:template>
 	<!--
   - - - - - - - -
@@ -409,7 +449,8 @@ window.external.ShowTermDefinition(msg);
    - - - - - - - -
   -->
 	<xsl:template match="//groupName" mode="checked">
-function <xsl:value-of select="."/>(radio)
+function <xsl:value-of select="."
+		/>(radio)
 {
 radio.checked = true;
 Refresh();

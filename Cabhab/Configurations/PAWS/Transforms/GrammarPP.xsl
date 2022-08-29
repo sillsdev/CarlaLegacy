@@ -74,14 +74,14 @@ PP = P'
 </xsl:text>
     <xsl:if test="normalize-space(//pp/@modifiers)='yes' and normalize-space(//pp/ppModifierDegree/@checked)='yes' and normalize-space(//pp/ppDegreePosBefore/@checked)='yes'">
 <xsl:text>
-rule {PP option 1a - degree word before}
-PP = Deg P'
-	&lt;PP head&gt; = &lt;P' head&gt;
-	&lt;Deg head type modifies_PP&gt; = +
-	&lt;Deg head type PP-initial&gt; = +
-	&lt;Deg head type comma&gt; = -
-	&lt;PP option&gt; = 1a
-</xsl:text>
+	  rule {PP option conjPrefix - conjoined PPs}
+	  PP = PP_1  PP_2
+	  &lt;PP head&gt; = &lt;PP_2 head&gt;
+	  &lt;PP conjoined&gt; = +
+	  &lt;PP_1 conjoined&gt; = -	|limit recursion
+	  &lt;PP_2 head type prefix conj&gt; = +
+	  &lt;PP option&gt; = conjPrefix
+   </xsl:text>
 </xsl:if>
     
         
@@ -698,8 +698,8 @@ P' = DP P
     
     <xsl:if test="normalize-space(//typology/@case)='nominative' and normalize-space(//pp/@pPos)='after' and normalize-space(//pp/@pType)!='clitic' or normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//pp/@pPos)='after' and normalize-space(//pp/@pType)!='clitic' or normalize-space(//typology/@case)='nominative' and normalize-space(//pp/@pPos)='both' and normalize-space(//pp/@pType)!='clitic' or normalize-space(//np/@possCaseErg)='genitive' and normalize-space(//pp/@pPos)='both' and normalize-space(//pp/@pType)!='clitic'">
 <xsl:text>
-        rule {PBar option 1bG - postpositions, genitive DP complement}
-        P' = DP P
+		rule {PBar option 1bG - postpositions, genitive DP complement}
+		P' = DP P
         &lt;P' head&gt; = &lt;P head&gt;
         &lt;P' head object&gt; = &lt;DP&gt;
         &lt;P head type PP-final&gt; = +
@@ -1098,6 +1098,7 @@ P' = VP
         
         
     
+
 
 </xsl:template>
 </xsl:stylesheet>
