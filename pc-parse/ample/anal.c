@@ -1780,7 +1780,7 @@ else
 	for (pfxp = pfxlist ; pfxp != (AmpleAmlist *)NULL ; pfxp = pfxp->amlink)
 	{
 	ap = pfxp->amp;
-	if (pPartialRedupOriginalEnv)
+	if (pPartialRedupOriginalEnv && ap->pEnvironment && ap->pEnvironment->pStringCond)
 	  { /* is a partial redup;
 	       the string contents of the environment may have changed, so reset them */
 	    resetPartialRedupStringEnvs(ap, pPartialRedupOriginalEnv);
