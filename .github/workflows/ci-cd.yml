@@ -34,14 +34,11 @@ jobs:
       # run: sudo apt-get install mono-devel
       # if: matrix.os == 'ubuntu-latest'
 
-    - name: cd
-      run: cd pc-parse
-
     - name: configure
-      run: ./configure
+      run: cd pc-parse & ./configure
 
     - name: Make
-      run: make
+      run: cd pc-parse & make
 
     # - name: Test
       # run: dotnet test --no-restore --no-build -p:ParallelizeAssembly=false src/StructureMap.Testing
