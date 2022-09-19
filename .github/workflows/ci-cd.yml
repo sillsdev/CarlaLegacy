@@ -37,6 +37,9 @@ jobs:
     - name: cd
       run: cd pc-parse
 
+    - name: configure
+      run: ./configure
+
     - name: Make
       run: make
 
