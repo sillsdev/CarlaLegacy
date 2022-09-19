@@ -1,0 +1,58 @@
+
+name: pc-parse CI and CD
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    strategy:
+      fail-fast: false
+      #matrix:
+      #  os: [windows-latest, ubuntu-latest]
+    runs-on: ubuntu-latest # ${{ matrix.os }}
+    env:
+      DOTNET_NOLOGO: true
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    # # Install the .NET Core workload
+    # - name: Install .NET Core
+      # uses: actions/setup-dotnet@v1
+      # with:
+        # dotnet-version: 2.0.x
+
+    # - name: Install mono-devel package
+      # run: sudo apt-get install mono-devel
+      # if: matrix.os == 'ubuntu-latest'
+
+    - name: cd
+      run: cd pc-parse
+
+    - name: Make
+      run: make all
+
+    # - name: Test
+      # run: dotnet test --no-restore --no-build -p:ParallelizeAssembly=false src/StructureMap.Testing
+
+    # - name: Package
+      # run: dotnet pack --include-symbols --no-restore --no-build -p:SymbolPackageFormat=snupkg
+
+    # - name: Publish to Nuget
+      # run: dotnet nuget push artifacts/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.SILLSDEV_PUBLISH_NUGET_ORG}} --skip-duplicate
+      # if: github.event_name == 'push' && matrix.os == 'ubuntu-latest'
+
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: soFiles
+        path: pc-parse/**/*.so
+      # if: github.event_name == 'pull_request'
