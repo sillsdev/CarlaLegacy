@@ -34,11 +34,19 @@ jobs:
       # run: sudo apt-get install mono-devel
       # if: matrix.os == 'ubuntu-latest'
 
-    - name: configure
-      run: cd pc-parse & ./configure
+    - name: diagnost
+      run: |
+        pwd
+        echo ${{ github.workspace }}
 
-    - name: Make
-      run: cd pc-parse & make
+    - name: configure and Make
+      run: |
+        cd pc-parse
+        ./configure
+        make
+
+    # - name: Make
+      # run: cd pc-parse & make
 
     # - name: Test
       # run: dotnet test --no-restore --no-build -p:ParallelizeAssembly=false src/StructureMap.Testing
@@ -54,5 +62,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: soFiles
-        path: pc-parse/**/*.so
+        path: ${{ github.workspace }}/**/*.so
       # if: github.event_name == 'pull_request'
