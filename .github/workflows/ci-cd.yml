@@ -34,22 +34,13 @@ jobs:
       # run: sudo apt-get install mono-devel
       # if: matrix.os == 'ubuntu-latest'
 
-    - name: diagnost
-      run: |
-        pwd
-        echo ${{ github.workspace }}
+    - name: Configure
+      working-directory: pc-parse
+      run: ./configure
 
-    - name: configure and Make
-      run: |
-        cd pc-parse
-        ./configure
-        make
-
-    # - name: Make
-      # run: cd pc-parse & make
-
-    # - name: Test
-      # run: dotnet test --no-restore --no-build -p:ParallelizeAssembly=false src/StructureMap.Testing
+    - name: Make
+      working-directory: pc-parse
+      run: make all
 
     # - name: Package
       # run: dotnet pack --include-symbols --no-restore --no-build -p:SymbolPackageFormat=snupkg
