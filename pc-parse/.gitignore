@@ -9,6 +9,7 @@ stamp-h
 *.so
 *~
 Makefile
+/.vs
 /ToneGen/tonegen
 /TonePars/tonepars
 /ample/ample
