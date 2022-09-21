@@ -1,0 +1,46 @@
+name: pc-parse CI and CD
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+
+jobs:
+
+  pc-parse_XAmple:
+    strategy:
+      fail-fast: false
+      #matrix:
+      #  os: [windows-latest, ubuntu-latest]
+    runs-on: ubuntu-latest # ${{ matrix.os }}
+    env:
+      DOTNET_NOLOGO: true
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Configure
+      working-directory: pc-parse
+      run: ./configure
+
+    - name: Make
+      working-directory: pc-parse
+      run: make all
+
+    # - name: Package
+      # run: dotnet pack --include-symbols --no-restore --no-build -p:SymbolPackageFormat=snupkg
+
+    # - name: Publish to Nuget
+      # run: dotnet nuget push artifacts/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.SILLSDEV_PUBLISH_NUGET_ORG}} --skip-duplicate
+      # if: github.event_name == 'push' && matrix.os == 'ubuntu-latest'
+
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: soFiles
+        path: pc-parse/lib/*.so
+      # if: github.event_name == 'pull_request'
