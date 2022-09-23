@@ -11,9 +11,9 @@ jobs:
   pc-parse_XAmple:
     strategy:
       fail-fast: false
-      #matrix:
-      #  os: [windows-latest, ubuntu-latest]
-    runs-on: ubuntu-latest # ${{ matrix.os }}
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     env:
       DOTNET_NOLOGO: true
 
