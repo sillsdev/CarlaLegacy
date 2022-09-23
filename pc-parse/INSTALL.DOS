@@ -15,12 +15,7 @@ got the sources.
 
 These are the steps for compiling the pc-parse programs for MS-DOS:
 
-  1. Unzip the sources.  (You probably had to do this to look at this
-	 file.)  Go to the directory containing the sources.  This will be
-	 one of the following commands, depending on whether you have
-	 ``long file name'' support (introduced by Windows 95):
-
-	C:\>cd pc-parse
+  1. C:\>cd pc-parse
 	 or
 	C:\>cd pc-parse-20021025
 
@@ -38,16 +33,14 @@ These are the steps for compiling the pc-parse programs for MS-DOS:
 	 This configures the files for the DJGPP port of the GNU C compiler
 	 and make utility.  This also sets up the configuration for the
 	 Microsoft Visual Studio (C/C++ compiler) development environment.
-	 (This step is not needed for Microsoft Visual Studio .NET.)
+	 (This step is not needed to build from the Microsoft Visual Studio GUI)
 
   3. If you are using the DJGPP compiler, type the following command:
 
 	C:\pc-parse>make
 
-	 For Microsoft Visual C/C++, start up Visual Studio and open the
-	 workspace file Pcparse.dsw (version 6) or the solution file
-	 Pcparse.sln (Visual Studio .NET).  Then build everything however
-	 that GUI IDE does things.
+	 For Microsoft Visual Studio, open the solution file Pcparse.sln.
+	 Then build everything however that GUI IDE does things.
 
 	 This step takes several minutes on a 150MHz Pentium system.
 
