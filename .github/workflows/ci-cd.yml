@@ -11,9 +11,9 @@ jobs:
   pc-parse_XAmple:
     strategy:
       fail-fast: false
-      #matrix:
-      #  os: [windows-latest, ubuntu-latest]
-    runs-on: ubuntu-latest # ${{ matrix.os }}
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     env:
       DOTNET_NOLOGO: true
 
@@ -23,13 +23,47 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Set up MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+      if: matrix.os == 'windows-latest'
+
+    - name: Build
+      working-directory: pc-parse
+      run: msbuild Pcparse.sln /p:Configuration=Release /p:Platform=x64
+      if: matrix.os == 'windows-latest'
+
+    - name: Build32
+      working-directory: pc-parse
+      run: msbuild Pcparse.sln /p:Configuration=Release /p:Platform=Win32
+      continue-on-error: true
+      if: matrix.os == 'windows-latest'
+
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: dllFiles
+        path: |
+          pc-parse/ample/x64/Release-xdll/xample64.dll
+          pc-parse/ample/x64/Release-xdll/xample64.pdb
+          pc-parse/ample/Release-xdll/xample32.dll
+          pc-parse/ample/Release-xdll/xample32.pdb
+      if: matrix.os == 'windows-latest'
+      # if: github.event_name == 'pull_request'
+
     - name: Configure
       working-directory: pc-parse
       run: ./configure
+      if: matrix.os == 'ubuntu-latest'
 
-    - name: Make
+    - name: Unzip Test Data
       working-directory: pc-parse
-      run: make all
+      run: unzip pc-parse-tests.zip
+      if: matrix.os == 'ubuntu-latest'
+
+    - name: Make and Check
+      working-directory: pc-parse
+      run: sudo make check
+      if: matrix.os == 'ubuntu-latest'
 
     # - name: Package
       # run: dotnet pack --include-symbols --no-restore --no-build -p:SymbolPackageFormat=snupkg
