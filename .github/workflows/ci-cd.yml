@@ -35,6 +35,7 @@ jobs:
     - name: Build32
       working-directory: pc-parse
       run: msbuild Pcparse.sln /p:Configuration=Release /p:Platform=Win32
+      continue-on-error: true
       if: matrix.os == 'windows-latest'
 
     - name: Publish Artifacts
@@ -50,15 +51,14 @@ jobs:
       # if: github.event_name == 'pull_request'
 
     - name: Configure
-      shell: bash
       working-directory: pc-parse
       run: ./configure
-      # if: matrix.os == 'ubuntu-latest'
+      if: matrix.os == 'ubuntu-latest'
 
     - name: Make
-      shell: bash
       working-directory: pc-parse
       run: make all
+      if: matrix.os == 'ubuntu-latest'
 
     # - name: Package
       # run: dotnet pack --include-symbols --no-restore --no-build -p:SymbolPackageFormat=snupkg
