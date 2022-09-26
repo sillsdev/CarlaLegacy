@@ -23,8 +23,9 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Set up MSBuild
-      uses: microsoft/setup-msbuild@v1.1
+    - name: Configure
+      working-directory: pc-parse
+      run: configure.bat
       if: matrix.os == 'windows-latest'
 
     - name: Build
@@ -50,7 +51,7 @@ jobs:
       if: matrix.os == 'windows-latest'
       # if: github.event_name == 'pull_request'
 
-    - name: Configure
+    - name: Configure 🐧
       working-directory: pc-parse
       run: ./configure
       if: matrix.os == 'ubuntu-latest'
