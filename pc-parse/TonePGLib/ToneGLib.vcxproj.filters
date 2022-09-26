@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5141cdf8-d1ca-444f-b269-1f0b6249332e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c2f279a0-5a8f-40a3-b683-11d885a3da8a}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Domain.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\dtbio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\envchk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\lexchg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loadseg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\menvck.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Moras.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pword.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Segparse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Syllable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\synrsc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\synth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\syntst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\sytest_l.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\sytest_y.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tbu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\tmatch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tone.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="toneanal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\transfer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\treplace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trule_ls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trule_yg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\trules.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\tsdict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\tsinit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stamp\tsutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Domain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stamp\stamp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stamp\sytest_y.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sytest_y.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tonepars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="trule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trule_ls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trule_yg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

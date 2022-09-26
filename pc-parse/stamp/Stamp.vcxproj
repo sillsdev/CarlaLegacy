@@ -383,7 +383,15 @@
       <Project>{dd41b157-98ed-4e30-9ffd-4348450e936e}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\ample\Amplelib.vcxproj">
+      <Project>{dd41b157-98ed-4e30-9ffd-4348450e936e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="..\cportlib\Cportlib-2015.vcxproj">
+      <Project>{d27abe31-3ebc-4686-963d-5afe7a10efdb}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\cportlib\Cportlib.vcxproj">
       <Project>{d27abe31-3ebc-4686-963d-5afe7a10efdb}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
@@ -391,7 +399,15 @@
       <Project>{28c233ed-85da-4782-a9a1-396573867ba5}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\opaclib\Opaclib.vcxproj">
+      <Project>{28c233ed-85da-4782-a9a1-396573867ba5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="Stamplib-2015.vcxproj">
+      <Project>{a70346ed-80b3-433c-a856-08c44d6854c8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Stamplib.vcxproj">
       <Project>{a70346ed-80b3-433c-a856-08c44d6854c8}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

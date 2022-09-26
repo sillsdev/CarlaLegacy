@@ -253,8 +253,20 @@
       <Project>{d27abe31-3ebc-4686-963d-5afe7a10efdb}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\cportlib\Cportlib.vcxproj">
+      <Project>{d27abe31-3ebc-4686-963d-5afe7a10efdb}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="..\opaclib\Opaclib-2015.vcxproj">
       <Project>{28c233ed-85da-4782-a9a1-396573867ba5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\opaclib\Opaclib.vcxproj">
+      <Project>{28c233ed-85da-4782-a9a1-396573867ba5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="XAmpledll.vcxproj">
+      <Project>{38bb3d8c-3497-4cea-af3d-8cd80a472ebd}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
