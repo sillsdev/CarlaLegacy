@@ -332,7 +332,7 @@
     <ClCompile Include="writests.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\pcpatr\Patrlib-2015.vcxproj">
+    <ProjectReference Include="..\pcpatr\Patrlib.vcxproj">
       <Project>{5cb8dba1-f070-4fd9-83c3-47248d3317cf}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

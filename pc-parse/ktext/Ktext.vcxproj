@@ -379,23 +379,23 @@
     <ClCompile Include="ktext.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cmdlib\Cmdlib-2015.vcxproj">
+    <ProjectReference Include="..\cmdlib\Cmdlib.vcxproj">
       <Project>{a3619e23-0deb-42b2-a011-22f18f5f4435}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\cportlib\Cportlib-2015.vcxproj">
+    <ProjectReference Include="..\cportlib\Cportlib.vcxproj">
       <Project>{d27abe31-3ebc-4686-963d-5afe7a10efdb}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\opaclib\Opaclib-2015.vcxproj">
+    <ProjectReference Include="..\opaclib\Opaclib.vcxproj">
       <Project>{28c233ed-85da-4782-a9a1-396573867ba5}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\pckimmo\Kimmolib-2015.vcxproj">
+    <ProjectReference Include="..\pckimmo\Kimmolib.vcxproj">
       <Project>{9b3d3488-8612-432e-9a7a-8e729ac07eaf}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\pcpatr\Patrlib-2015.vcxproj">
+    <ProjectReference Include="..\pcpatr\Patrlib.vcxproj">
       <Project>{5cb8dba1-f070-4fd9-83c3-47248d3317cf}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
