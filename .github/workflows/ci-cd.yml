@@ -55,9 +55,14 @@ jobs:
       run: ./configure
       if: matrix.os == 'ubuntu-latest'
 
-    - name: Make
+    - name: Unzip Test Data
       working-directory: pc-parse
-      run: make all
+      run: unzip pc-parse-tests.zip
+      if: matrix.os == 'ubuntu-latest'
+
+    - name: Make and Check
+      working-directory: pc-parse
+      run: sudo make check
       if: matrix.os == 'ubuntu-latest'
 
     # - name: Package
