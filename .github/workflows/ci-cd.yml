@@ -55,9 +55,9 @@ jobs:
       run: ./configure
       if: matrix.os == 'ubuntu-latest'
 
-    - name: Make
+    - name: Make and Check
       working-directory: pc-parse
-      run: make all
+      run: make check
       if: matrix.os == 'ubuntu-latest'
 
     # - name: Package
