@@ -1,4 +1,5 @@
-pc-parse-src-20051207				December 7, 2005
+2022-09-23
+pc-parse-src-20051207
 pc-parse-doc-20051207
 pc-parse-tst-20051207
 
@@ -30,8 +31,9 @@ a Unix (or Unix-like) system.  Minimally, you need to enter only two commands:
 The build process has been tested on the following systems:
 
   1. Debian GNU/Linux Sarge (kernel 2.4.18) / gcc 3.3.5, glibc 2.3.2
-  2. Microsoft Visual Studio .NET 2003 (built through the GUI, not the same
-	 as the Unix style build process)
+  2. Microsoft Visual Studio Community 2019 with MSVC v142, Windows Universal CRT SDK,
+	 C++ ATL with Spectre mitigations, and C++ MFC with Spectre mitigations
+	 (built through the GUI, not the same as the Unix style build process)
 
 The file INSTALL.DOS describes how to compile and install the pc-parse
 programs on MS-DOS or MS Windows using either the DJGPP port of the GNU C
@@ -166,7 +168,7 @@ word lexicon using the "Save Lexicon" command.
 Please send programming questions and feedback to:
 
 	Steve McConnel                   |  e-mail: Stephen_McConnel@sil.org
-	Language Software Development    |  phone:  972-708-7361
+	Language Software Development
 	SIL International
 	7500 W. Camp Wisdom Road
 	Dallas, TX 75236
