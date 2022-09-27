@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAmpleTestDll", "ample\XAmpleTestDll.vcxproj", "{A8DB4A0D-7642-4DAC-9DD6-A0746E5EB281}"
 EndProject
@@ -234,9 +234,7 @@ Global
 		{2E9517F1-8862-4FB2-A315-83BD68A51BB6}.Profile|x64.ActiveCfg = Release|x64
 		{2E9517F1-8862-4FB2-A315-83BD68A51BB6}.Profile|x64.Build.0 = Release|x64
 		{2E9517F1-8862-4FB2-A315-83BD68A51BB6}.Release|Win32.ActiveCfg = Release|Win32
-		{2E9517F1-8862-4FB2-A315-83BD68A51BB6}.Release|Win32.Build.0 = Release|Win32
 		{2E9517F1-8862-4FB2-A315-83BD68A51BB6}.Release|x64.ActiveCfg = Release|x64
-		{2E9517F1-8862-4FB2-A315-83BD68A51BB6}.Release|x64.Build.0 = Release|x64
 		{5CB8DBA1-F070-4FD9-83C3-47248D3317CF}.Debug|Win32.ActiveCfg = Debug|Win32
 		{5CB8DBA1-F070-4FD9-83C3-47248D3317CF}.Debug|Win32.Build.0 = Debug|Win32
 		{5CB8DBA1-F070-4FD9-83C3-47248D3317CF}.Debug|x64.ActiveCfg = Debug|x64
@@ -360,5 +358,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {424E2498-761D-4E1E-9433-A195899AC825}
 	EndGlobalSection
 EndGlobal
