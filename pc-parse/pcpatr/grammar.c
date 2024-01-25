@@ -297,7 +297,7 @@ static SimplePSR *	form_to_psrs P((ComplexPSR *, GrammarData * pData));
 static void		show_psrs P((SimplePSR *psrs));
 static void		showPATRRule P((PATRRule * rulep));
 static void		install_rule P((char *, char *,
-					PATRNonterminal *,
+					SimplePSR *,
 					PATRFeature *,
 					PATRPriorityUnion * pPriorityUnions_in,
 					PATRConstraint *    pConstraints_in,
@@ -1777,7 +1777,7 @@ for ( psr = psrs ; psr ; psr = psr->pNext )
 	{
 	for ( pDisj = psr->pFeatures[0] ; pDisj ; pDisj = pNextDisj )
 	{
-	install_rule(szRuleID, firstelm->pszName, psr->pHead, pDisj->pFeature,
+	install_rule(szRuleID, firstelm->pszName, psr, pDisj->pFeature,
 			 pPriorityUnions, pConstraints,
 			 pData);
 	pNextDisj = pDisj->pNext;
@@ -1864,7 +1864,11 @@ for ( psr = psrs; psr; psr = psr->pNext )
 	/*
 	 *  For each nonterm, output cat name */
 	 for ( nterm = psr->pHead ; nterm ; nterm = nterm->pNext )
-	 fprintf(stdout,  "%s/%s ", nterm->pszName, nterm->pszLhsName );
+	 if (nterm->bOptional) {
+		 fprintf(stdout,  "(%s/%s) ", nterm->pszName, nterm->pszLhsName );
+	 } else {
+		 fprintf(stdout,  "%s/%s ", nterm->pszName, nterm->pszLhsName );
+	 }
 	}
 fprintf(stdout,  "\n" );
 }
@@ -1881,12 +1885,17 @@ static void showPATRRule(rulep)
 PATRRule *	rulep;
 {
 int i;
+PATRNonterminal *non_terminal = rulep->pRHS;
 
-for ( i = 0 ; i <= rulep->iNontermCount ; i++ )
+fprintf(stdout, "%s -> ", rulep, rulep->apszNonterms[0]);
+for ( i = 1 ; i <= rulep->iNontermCount ; i++ )
 	{
-	fprintf(stdout, "%s ", rulep->apszNonterms[i]);
-	if (i == 0)
-	fprintf(stdout, "-> ");
+	if (non_terminal->bOptional) {
+		fprintf(stdout, "(%s) ", rulep->apszNonterms[i]);
+	} else {
+		fprintf(stdout, "%s ", rulep->apszNonterms[i]);
+	}
+	non_terminal = non_terminal->pNext;
 	}
 fprintf(stdout, "\n");
 }
@@ -1905,20 +1914,39 @@ fprintf(stdout, "\n");
  * RETURN VALUE
  *    none
  */
-static void install_rule(id, lhs, rhs, dag,
+static void install_rule(id, lhs, psr, dag,
 			 pPriorityUnions_in, pConstraints_in, pData)
 char *			id;
 char *			lhs;
-PATRNonterminal *	rhs;
+SimplePSR *         psr;
 PATRFeature *		dag;
 PATRPriorityUnion *	pPriorityUnions_in;
 PATRConstraint *	pConstraints_in;
 GrammarData *		pData;
 {
+PATRNonterminal *	rhs;
 PATRRule *		rulep;
 PATRRuleList *		listp;
 PATRNonterminal *	nterm;
 int			nonterm_count;
+
+rhs = psr->pHead;
+/* The first element cannot be optional. */
+if (rhs && rhs->bOptional) {
+	/* Create a new rule with the first element missing. */
+	SimplePSR *psr2 = copy_psr(psr, pData);
+	psr2->pHead = psr2->pHead->pNext;
+	if (psr->pHead == psr->pTail) {
+		psr2->pTail = NULL;
+	}
+	install_rule(id, lhs, psr2, dag, pPriorityUnions_in, pConstraints_in, pData);
+	/* Make the first element of the old rule obligatory. */
+	/* Avoid cross-talk with other rules. */
+	PATRNonterminal *rhs2 = copy_nonterm(rhs, pData);
+	rhs2->bOptional = FALSE;
+	rhs2->pNext = rhs->pNext;
+	psr->pHead = rhs2;
+}
 
 /* Make space for the rule */
 rulep = allocPATRRule(pData->pPATR);
@@ -2365,6 +2393,16 @@ for ( net = net->pNext ; net ; net = net->pNext )
 			 * psrs = optional elements are not used;
 			 * append_psrs(psrs,net->psrs) = optional elements are used;
 			 */
+			if (!net->pPsrs->pNext && net->pPsrs->pHead == net->pPsrs->pTail)
+			{
+			/* A single optional element is treated as a special case
+			 * to avoid exponential explosions in morpheme rules.
+			 */
+			SimplePSR *optional_psr = copy_psr(net->pPsrs, pData);
+			optional_psr->pHead->bOptional = TRUE;
+			psrs = append_psrs(psrs, optional_psr, pData);
+			break;
+			}
 			psrs = union_psrs( psrs, append_psrs(psrs, net->pPsrs, pData) );
 			break;
 		case '{':                           /* For open brace */
@@ -2660,6 +2698,7 @@ PATRNonterminal *copy;
 
 copy = new_nonterm( nonterm->pszName, pData);
 copy->pszLhsName = nonterm->pszLhsName;
+copy->bOptional = nonterm->bOptional;
 copy->pNext      = NULL;
 return( copy );
 }
@@ -4796,7 +4835,11 @@ for (	pRuleList = pGrammar_in->pRuleTable ;
 	fprintf(stdout, "\n");
 	fprintf(stdout, "%s ->", pRule->pszLHS);
 	for ( pNonterm = pRule->pRHS ; pNonterm ; pNonterm = pNonterm->pNext )
-	fprintf(stdout, "  %s(%s)", pNonterm->pszName, pNonterm->pszLhsName);
+	if (pNonterm->bOptional) {
+		fprintf(stdout, "  (%s(%s))", pNonterm->pszName, pNonterm->pszLhsName);
+	} else {
+		fprintf(stdout, "  %s(%s)", pNonterm->pszName, pNonterm->pszLhsName);
+	}
 	fprintf(stdout, "\nUnifications feature:   (%p)\n", (void *)pRule->pUniFeature);
 	writePATRFeatureToLog(pRule->pUniFeature, 0, FALSE, pPATR_in);
 	fprintf(stdout, "\n");

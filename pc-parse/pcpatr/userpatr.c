@@ -1727,10 +1727,21 @@ if (pEdge_in->pFeature)
 				{
 				int iRev = pEdge_in->u.r.pRule->iNontermCount - i;
 				for ( pel = pEdge_in->u.r.pChildren ;
-				  pel && iRev ;
-				  pel = pel->pNext, --iRev )
+				  pel;
+				  pel = pel->pNext )
 				{
 				/* step to desired child */
+				/* Ignore optional rule elements that got skipped. */
+				iRev += -pel->iSkips;
+				if (iRev < 0) {
+					/* The element was skipped and should be ignored. */
+					pel = NULL;
+					break;
+				}
+				if (iRev == 0) {
+					break;
+				}
+				--iRev;
 				}
 				break;
 				}
@@ -1751,10 +1762,9 @@ if (pEdge_in->pFeature)
 			{
 			if (pPATR_in->iDebugLevel)
 				{
-				/* i hope this doesn't happen */
-				fprintf(stdout, " !!UGH!!\n");
+				fprintf(stdout, " Rule element skipped.\n");
 				if (pPATR_in->pLogFP)
-				fprintf(pPATR_in->pLogFP, " !!UGH!!\n");
+				fprintf(pPATR_in->pLogFP, " Rule element skipped.\n");
 				}
 			}
 			}

@@ -111,6 +111,7 @@ typedef struct patr_nonterminal
 	char *			pszName;	/* element name with index */
 	char *			pszLhsName;	/* left hand side name with
 						   index */
+	int             bOptional;   /* is this non-terminal optional? */
 	struct patr_nonterminal *	pNext;		/* link to next element */
 	} PATRNonterminal;
 

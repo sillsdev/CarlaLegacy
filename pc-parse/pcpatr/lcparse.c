@@ -62,7 +62,7 @@ static PATREdge *	make_rule_edge P((PATRRule * rulep,
 					  PATRParseData * pData));
 static void		add_child P((PATREdge * old_parent,
 					 PATREdge * new_parent,
-					 PATREdge * child, PATRParseData * pData));
+					 PATREdge * child, PATRParseData * pData, int));
 static PATREdge *	hypothesize_lc P((PATRRule * rulep,
 					  int vertex,
 					  PATRParseData * pData));
@@ -72,6 +72,8 @@ static void		extend_lc_edge P((PATREdge *    act_edge,
 					  int           end,
 					  PATRGrammar * pGrammar_in,
 					  PATRParseData * pData));
+static int		optional_next_element_p P((
+						PATREdge *    edgep));
 static void		lc_vertex_add_active_edge P((
 						PATREdge *    edgep,
 						PATRGrammar * pGrammar_in,
@@ -829,10 +831,11 @@ return(edgep);
  * RETURN VALUE
  *    none
  */
-static void add_child(old_parent, new_parent, child, pData)
+static void add_child(old_parent, new_parent, child, pData, skips)
 PATREdge * old_parent;
 PATREdge * new_parent;
 PATREdge * child;
+int skips;
 PATRParseData * pData;
 {
 PATREdgeList *elp;
@@ -840,6 +843,7 @@ PATREdgeList *elp;
 /* Allocate space for the pointer to the edge */
 elp = allocPATREdgeList(pData->pPATR);
 elp->pEdge = child;
+elp->iSkips = skips;
 
 /* Link edge into this new_parent child edge list */
 elp->pNext = old_parent->u.r.pChildren;
@@ -1225,14 +1229,64 @@ if (! ok)
 /*
  *  Link the new edge into its parent
  */
-add_child(act_edge,edgep,pass_edge, pData);
+add_child(act_edge,edgep,pass_edge, pData, 0);
 /*
  * Now add it either as an active or passive edge, depending on the need index
  */
 if ( complete_edge_p(edgep) )
 	lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
-else
+else {
 	lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
+	/*
+	 * Skip the next rule elements if they are optional.
+	 */
+	int skips = 0;
+	while (optional_next_element_p(edgep))
+	{
+		pDag  = copyPATRFeature(pDag, pData->pPATR); /* Avoid cross-talk. */
+		edgep =  make_rule_edge(edgep->u.r.pRule,
+					label,
+					edgep->u.r.iNext+1,
+					edgep->iStart,
+					iEnd_in,
+					pDag, pData);
+		skips++;
+		/* The following code is copied from above. */
+		if (! ok)
+			edgep->bFailed = TRUE;
+		add_child(act_edge,edgep,pass_edge, pData, skips);
+		if (complete_edge_p(edgep)) {
+			lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
+			break;
+		} else {
+			lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
+		}
+	}
+}
+}
+
+/*****************************************************************************
+ * NAME
+ *    optional_next_element_p
+ * ARGUMENTS
+ *    edgep -
+ * DESCRIPTION
+ *    Determines whether the next element in edgep's rule is optional.
+ * RETURN VALUE
+ *    boolean
+ */
+static int optional_next_element_p(edgep)
+PATREdge *	edgep;
+{
+/* Get the ith non-terminal. */
+int iNext = edgep->u.r.iNext;
+PATRNonterminal *non_terminal = edgep->u.r.pRule->pRHS;
+while (iNext > 1)
+{
+	non_terminal = non_terminal->pNext;
+	iNext += -1;
+}
+return non_terminal->bOptional;
 }
 
 /*****************************************************************************

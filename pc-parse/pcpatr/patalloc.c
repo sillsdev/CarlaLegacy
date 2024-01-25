@@ -437,6 +437,7 @@ else
 f->node.pszName    = NULL;
 f->node.pszLhsName = NULL;
 f->node.pNext      = NULL;
+f->node.bOptional  = FALSE;
 f->link = pGarbage->pNontermHead;
 pGarbage->pNontermHead = f;
 if (pGarbage->pNontermTail == NULL)
@@ -627,6 +628,7 @@ else
 	}
 f->node.pNext = NULL;
 f->node.pEdge = NULL;
+f->node.iSkips = 0;
 f->link = pGarbage->pEdgeListHead;
 pGarbage->pEdgeListHead = f;
 if (pGarbage->pEdgeListTail == NULL)
