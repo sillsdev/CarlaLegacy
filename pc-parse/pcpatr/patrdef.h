@@ -376,6 +376,7 @@ struct patr_feature
 	PATRFeatureDisjunction * pDisjunction;	/* PATR_DISJUNCT */
 	PATRFeature *		 pForward;	/* PATR_FORWARD */
 	}	u;
+	int bVisited;	/* Has this feature been visited? */
 	};
 
 /*****************************************************************************

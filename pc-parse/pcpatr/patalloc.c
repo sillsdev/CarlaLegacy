@@ -247,6 +247,7 @@ else
 	}
 f->node.eType     = 0;
 f->node.u.pszAtom = NULL;
+f->node.bVisited  = 0;
 f->link                = pGarbage->pFeatureHead;
 pGarbage->pFeatureHead = f;
 if (pGarbage->pFeatureTail == NULL)

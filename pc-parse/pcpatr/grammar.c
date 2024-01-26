@@ -2368,6 +2368,7 @@ GrammarData * pData;
 {
 SimplePSR *psrs, *psr;
 PATRNonterminal *nttemp;
+int allow_optional_rule_elements = TRUE;
 
 if (!delim)
 	{
@@ -2393,7 +2394,8 @@ for ( net = net->pNext ; net ; net = net->pNext )
 			 * psrs = optional elements are not used;
 			 * append_psrs(psrs,net->psrs) = optional elements are used;
 			 */
-			if (!net->pPsrs->pNext && net->pPsrs->pHead == net->pPsrs->pTail)
+			if (allow_optional_rule_elements &&
+					!net->pPsrs->pNext && net->pPsrs->pHead == net->pPsrs->pTail)
 			{
 			/* A single optional element is treated as a special case
 			 * to avoid exponential explosions in morpheme rules.

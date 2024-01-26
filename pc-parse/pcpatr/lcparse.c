@@ -74,6 +74,20 @@ static void		extend_lc_edge P((PATREdge *    act_edge,
 					  PATRParseData * pData));
 static int		optional_next_element_p P((
 						PATREdge *    edgep));
+static char 	*get_next_element_attr P((
+						PATREdge *	edgep));
+static void 	remove_optional_attr P((
+						PATRFeature *	pDag,
+						char * attr,
+						PATRParseData * pData));
+static PATRFeature *remove_optional_value P((
+						PATRFeature *	pDag,
+						PATRFeature * pValue));
+static int			count_references P((
+						PATRFeature * pValue,
+						PATRFeature *	pDag));
+static void clear_visited_flags P((
+						PATRFeature *	pDag));
 static void		lc_vertex_add_active_edge P((
 						PATREdge *    edgep,
 						PATRGrammar * pGrammar_in,
@@ -1244,6 +1258,8 @@ else {
 	while (optional_next_element_p(edgep))
 	{
 		pDag  = copyPATRFeature(pDag, pData->pPATR); /* Avoid cross-talk. */
+		char *attr = get_next_element_attr(edgep);
+		remove_optional_attr(pDag, attr, pData);
 		edgep =  make_rule_edge(edgep->u.r.pRule,
 					label,
 					edgep->u.r.iNext+1,
@@ -1287,6 +1303,224 @@ while (iNext > 1)
 	iNext += -1;
 }
 return non_terminal->bOptional;
+}
+
+/*****************************************************************************
+ * NAME
+ *    get_next_element_attr
+ * ARGUMENTS
+ *    edgep -
+ * DESCRIPTION
+ *    Get the attribute of the next element for edge.
+ * RETURN VALUE
+ *    char *
+ */
+static char *get_next_element_attr(edgep)
+PATREdge *	edgep;
+{
+/* Get the ith non-terminal. */
+int iNext = edgep->u.r.iNext;
+PATRNonterminal *non_terminal = edgep->u.r.pRule->pRHS;
+while (iNext > 1)
+{
+	non_terminal = non_terminal->pNext;
+	iNext += -1;
+}
+/* Return its name. */
+return non_terminal->pszName;
+}
+
+/*****************************************************************************
+ * NAME
+ *    remove_optional_attr
+ * ARGUMENTS
+ *    pDag - feature structure
+ *    attr - attribute
+ *    pThis - PATR data
+ * DESCRIPTION
+ *    Remove an optional attribute from the feature structure.
+ * RETURN VALUE
+ *    void
+ */
+static void remove_optional_attr(pDag, attr, pData)
+PATRFeature *	pDag;
+char * attr;
+PATRParseData * pData;
+{
+PATRComplexFeature *flist;
+PATRComplexFeature *prior = NULL;
+PATRFeature *pValue;
+int references;
+
+/* Remove attr from pDag. */
+for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
+{
+	if (strcmp(flist->pszLabel, attr) == 0)
+		{
+		if (prior == NULL)
+			pDag->u.pComplex = flist->pNext;
+		else
+			prior->pNext = flist->pNext;
+		break;
+		}
+	prior = flist;
+}
+if (!flist) {
+	/* Attribute does not exists. */
+	/* (There were no constraints for the element in the rule.) */
+	return;
+}
+/* Remove attr's value from pDag if it doesn't occur anywhere else. */
+pValue = flist->pValue;
+pValue = followPATRForwardPointers( pValue );
+while (TRUE)
+{
+references = count_references(pValue, pDag);
+clear_visited_flags(pDag);
+if (references != 1) {
+	/* The value is shared.  Don't remove it. */
+	break;
+}
+/* Remove value and get its container. */
+pValue = remove_optional_value(pDag, pValue);
+clear_visited_flags(pDag);
+/* See if we should remove the container, too.
+ * For example, if the constraint was <cat1 attr1 attr2> = <cat2>
+ * and <cat2> was skipped, we should delete both attr1 and attr2.
+ */
+if (pValue == pDag) {
+	/* Don't remove root. */
+	break;
+}
+if (pValue->u.pComplex != NULL) {
+	/* Don't remove the container because it has other attributes. */
+	break;
+}
+}
+}
+
+/*****************************************************************************
+ * NAME
+ *    count_references
+ * ARGUMENTS
+ *    value - value
+ *    pDag - feature structure
+ * DESCRIPTION
+ *    Count references to value in pDag.
+ * RETURN VALUE
+ *    int
+ */
+static int count_references(pValue, pDag)
+PATRFeature * pValue;
+PATRFeature *	pDag;
+{
+PATRComplexFeature *flist;
+PATRFeature * pValue2;
+int references = 0;
+
+if (pDag->eType != PATR_COMPLEX) {
+	return 0;
+}
+if (pDag->bVisited) {
+	return 0;
+}
+pDag->bVisited = TRUE;
+
+if (pDag == pValue) {
+	references++;
+}
+
+/* Recursively count references to pValue. */
+for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
+{
+	pValue2 = followPATRForwardPointers( flist->pValue );
+	if (pValue2 == pValue) {
+		references++;
+	}
+	references += count_references(pValue, flist->pValue);
+}
+return references;
+}
+
+/*****************************************************************************
+ * NAME
+ *    clear_visited_flags
+ * ARGUMENTS
+ *    pDag - feature structure
+ * DESCRIPTION
+ *    Clear reference flags pDag.
+ * RETURN VALUE
+ *    void
+ */
+static void clear_visited_flags(pDag)
+PATRFeature *	pDag;
+{
+PATRComplexFeature *flist;
+
+if (pDag->eType != PATR_COMPLEX) {
+	return;
+}
+if (!pDag->bVisited) {
+	return;
+}
+pDag->bVisited = FALSE;
+
+/* Recursively clear visited flags. */
+for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
+{
+	clear_visited_flags(flist->pValue);
+}
+}
+
+/*****************************************************************************
+ * NAME
+ *    remove_optional_value
+ * ARGUMENTS
+ *    pDag - feature structure
+ *    value - value
+ * DESCRIPTION
+ *    Remove an optional value from the feature structure.
+ * RETURN VALUE
+ *    PATRFeature *
+ */
+static PATRFeature *remove_optional_value(pDag, pValue)
+PATRFeature *	pDag;
+PATRFeature * pValue;
+{
+PATRComplexFeature *flist;
+PATRComplexFeature *prior = NULL;
+PATRFeature *result;
+PATRFeature * pValue2;
+
+if (pDag->eType != PATR_COMPLEX) {
+	return NULL;
+}
+/* Avoid potential cycles like <a b c> = <a>. */
+if (pDag->bVisited) {
+	return NULL;
+}
+pDag->bVisited = TRUE;
+
+/* Remove value from pDag. */
+for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
+{
+	/* Check for pValue. */
+	pValue2 = followPATRForwardPointers( flist->pValue );
+	if (pValue2 == pValue)
+		{
+		if (prior == NULL)
+			pDag->u.pComplex = flist->pNext;
+		else
+			prior->pNext = flist->pNext;
+		return pDag;
+		}
+	/* Check for pValue recursively. */
+	result = remove_optional_value(flist->pValue, pValue);
+	if (result)
+		return result;
+	prior = flist;
+}
+return NULL;
 }
 
 /*****************************************************************************
