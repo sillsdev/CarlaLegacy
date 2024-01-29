@@ -514,6 +514,10 @@ extern void	buildPATRFirst	   P((char * pLHS_in,
 					  PATRParseData * pData));
 extern void	showPATREdge	   P((PATREdge *    edgep,
 					  PATRData *    pPATR_in));
+extern void remove_optional_attr P((
+					  PATRFeature *	pDag,
+					  char * attr,
+					  PATRParseData * pData));
 /*
  *  patalloc.c
  */

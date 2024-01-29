@@ -76,16 +76,9 @@ static int		optional_next_element_p P((
 						PATREdge *    edgep));
 static char 	*get_next_element_attr P((
 						PATREdge *	edgep));
-static void 	remove_optional_attr P((
-						PATRFeature *	pDag,
-						char * attr,
-						PATRParseData * pData));
-static PATRFeature *remove_optional_value P((
-						PATRFeature *	pDag,
-						PATRFeature * pValue));
-static int			count_references P((
-						PATRFeature * pValue,
-						PATRFeature *	pDag));
+static int		remove_optional_value P((
+						PATRFeature *	pValue,
+						PATRFeature * pDag));
 static void clear_visited_flags P((
 						PATRFeature *	pDag));
 static void		lc_vertex_add_active_edge P((
@@ -1342,7 +1335,7 @@ return non_terminal->pszName;
  * RETURN VALUE
  *    void
  */
-static void remove_optional_attr(pDag, attr, pData)
+void remove_optional_attr(pDag, attr, pData)
 PATRFeature *	pDag;
 char * attr;
 PATRParseData * pData;
@@ -1350,7 +1343,7 @@ PATRParseData * pData;
 PATRComplexFeature *flist;
 PATRComplexFeature *prior = NULL;
 PATRFeature *pValue;
-int references;
+int removed;
 
 /* Remove attr from pDag. */
 for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
@@ -1375,25 +1368,11 @@ pValue = flist->pValue;
 pValue = followPATRForwardPointers( pValue );
 while (TRUE)
 {
-references = count_references(pValue, pDag);
-clear_visited_flags(pDag);
-if (references != 1) {
-	/* The value is shared.  Don't remove it. */
-	break;
-}
 /* Remove value and get its container. */
-pValue = remove_optional_value(pDag, pValue);
+removed = remove_optional_value(pValue, pDag);
 clear_visited_flags(pDag);
-/* See if we should remove the container, too.
- * For example, if the constraint was <cat1 attr1 attr2> = <cat2>
- * and <cat2> was skipped, we should delete both attr1 and attr2.
- */
-if (pValue == pDag) {
-	/* Don't remove root. */
-	break;
-}
-if (pValue->u.pComplex != NULL) {
-	/* Don't remove the container because it has other attributes. */
+if (!removed) {
+	/* Nothing left to remove. */
 	break;
 }
 }
@@ -1401,45 +1380,53 @@ if (pValue->u.pComplex != NULL) {
 
 /*****************************************************************************
  * NAME
- *    count_references
+ *    remove_optional_value
  * ARGUMENTS
- *    value - value
+ *    pValue - value to remove
  *    pDag - feature structure
  * DESCRIPTION
- *    Count references to value in pDag.
+ *    Remove an optional value from the feature structure.
  * RETURN VALUE
- *    int
+ *    int - whether a value was removed.
  */
-static int count_references(pValue, pDag)
-PATRFeature * pValue;
+static int remove_optional_value(pValue, pDag)
 PATRFeature *	pDag;
+PATRFeature * pValue;
 {
 PATRComplexFeature *flist;
+PATRComplexFeature *prior = NULL;
 PATRFeature * pValue2;
-int references = 0;
 
+pValue = followPATRForwardPointers( pValue );
 if (pDag->eType != PATR_COMPLEX) {
-	return 0;
+	return FALSE;
 }
+/* Avoid potential cycles like <a b c> = <a>. */
 if (pDag->bVisited) {
-	return 0;
+	return FALSE;
 }
 pDag->bVisited = TRUE;
 
-if (pDag == pValue) {
-	references++;
-}
-
-/* Recursively count references to pValue. */
+/* Remove value from pDag. */
 for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
 {
+	/* Check for pValue. */
 	pValue2 = followPATRForwardPointers( flist->pValue );
-	if (pValue2 == pValue) {
-		references++;
+	if (pValue2 == pValue)
+		{
+		if (prior == NULL)
+			pDag->u.pComplex = flist->pNext;
+		else
+			prior->pNext = flist->pNext;
+		return TRUE;
+		}
+	/* Check for pValue recursively. */
+	if (remove_optional_value(pValue, pValue2)) {
+		return TRUE;
 	}
-	references += count_references(pValue, flist->pValue);
+	prior = flist;
 }
-return references;
+return FALSE;
 }
 
 /*****************************************************************************
@@ -1457,6 +1444,7 @@ PATRFeature *	pDag;
 {
 PATRComplexFeature *flist;
 
+pDag = followPATRForwardPointers( pDag );
 if (pDag->eType != PATR_COMPLEX) {
 	return;
 }
@@ -1470,57 +1458,6 @@ for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
 {
 	clear_visited_flags(flist->pValue);
 }
-}
-
-/*****************************************************************************
- * NAME
- *    remove_optional_value
- * ARGUMENTS
- *    pDag - feature structure
- *    value - value
- * DESCRIPTION
- *    Remove an optional value from the feature structure.
- * RETURN VALUE
- *    PATRFeature *
- */
-static PATRFeature *remove_optional_value(pDag, pValue)
-PATRFeature *	pDag;
-PATRFeature * pValue;
-{
-PATRComplexFeature *flist;
-PATRComplexFeature *prior = NULL;
-PATRFeature *result;
-PATRFeature * pValue2;
-
-if (pDag->eType != PATR_COMPLEX) {
-	return NULL;
-}
-/* Avoid potential cycles like <a b c> = <a>. */
-if (pDag->bVisited) {
-	return NULL;
-}
-pDag->bVisited = TRUE;
-
-/* Remove value from pDag. */
-for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
-{
-	/* Check for pValue. */
-	pValue2 = followPATRForwardPointers( flist->pValue );
-	if (pValue2 == pValue)
-		{
-		if (prior == NULL)
-			pDag->u.pComplex = flist->pNext;
-		else
-			prior->pNext = flist->pNext;
-		return pDag;
-		}
-	/* Check for pValue recursively. */
-	result = remove_optional_value(flist->pValue, pValue);
-	if (result)
-		return result;
-	prior = flist;
-}
-return NULL;
 }
 
 /*****************************************************************************

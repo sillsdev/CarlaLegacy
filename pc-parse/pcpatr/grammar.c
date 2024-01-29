@@ -1935,11 +1935,13 @@ rhs = psr->pHead;
 if (rhs && rhs->bOptional) {
 	/* Create a new rule with the first element missing. */
 	SimplePSR *psr2 = copy_psr(psr, pData);
+	PATRFeature * dag2 = copyPATRFeature(dag, pData->pPATR); /* Avoid cross-talk. */;
 	psr2->pHead = psr2->pHead->pNext;
 	if (psr->pHead == psr->pTail) {
 		psr2->pTail = NULL;
 	}
-	install_rule(id, lhs, psr2, dag, pPriorityUnions_in, pConstraints_in, pData);
+	remove_optional_attr(dag2, rhs->pszName, pData);
+	install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
 	/* Make the first element of the old rule obligatory. */
 	/* Avoid cross-talk with other rules. */
 	PATRNonterminal *rhs2 = copy_nonterm(rhs, pData);
