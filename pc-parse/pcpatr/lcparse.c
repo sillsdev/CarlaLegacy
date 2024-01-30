@@ -79,6 +79,10 @@ static char 	*get_next_element_attr P((
 static int		remove_optional_value P((
 						PATRFeature *	pValue,
 						PATRFeature * pDag));
+static void remove_optional_attr P((
+						PATRFeature * pDag,
+						char * attr,
+						PATRParseData * pData));
 static void clear_visited_flags P((
 						PATRFeature *	pDag));
 static void		lc_vertex_add_active_edge P((
@@ -1335,7 +1339,7 @@ return non_terminal->pszName;
  * RETURN VALUE
  *    void
  */
-void remove_optional_attr(pDag, attr, pData)
+static void remove_optional_attr(pDag, attr, pData)
 PATRFeature *	pDag;
 char * attr;
 PATRParseData * pData;

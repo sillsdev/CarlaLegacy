@@ -377,6 +377,8 @@ struct patr_feature
 	PATRFeature *		 pForward;	/* PATR_FORWARD */
 	}	u;
 	int bVisited;	/* Has this feature been visited? */
+	PATRFeature * pFirstFeat;
+	PATRFeature * pSecondFeat;
 	};
 
 /*****************************************************************************
@@ -514,10 +516,6 @@ extern void	buildPATRFirst	   P((char * pLHS_in,
 					  PATRParseData * pData));
 extern void	showPATREdge	   P((PATREdge *    edgep,
 					  PATRData *    pPATR_in));
-extern void remove_optional_attr P((
-					  PATRFeature *	pDag,
-					  char * attr,
-					  PATRParseData * pData));
 /*
  *  patalloc.c
  */

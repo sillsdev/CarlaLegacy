@@ -302,6 +302,10 @@ static void		install_rule P((char *, char *,
 					PATRPriorityUnion * pPriorityUnions_in,
 					PATRConstraint *    pConstraints_in,
 					GrammarData * pData));
+static PATRFeature *skip_optional_attr P((
+					PATRFeature *	pDag,
+					char * attr,
+					PATRParseData * pData));
 static void		install_category P((PATRRule *, int, char *,
 						GrammarData * pData));
 static void		free_symlist P((GrammarData * pData));
@@ -1931,23 +1935,45 @@ PATRNonterminal *	nterm;
 int			nonterm_count;
 
 rhs = psr->pHead;
-/* The first element cannot be optional. */
-if (rhs && rhs->bOptional) {
-	/* Create a new rule with the first element missing. */
-	SimplePSR *psr2 = copy_psr(psr, pData);
-	PATRFeature * dag2 = copyPATRFeature(dag, pData->pPATR); /* Avoid cross-talk. */;
-	psr2->pHead = psr2->pHead->pNext;
-	if (psr->pHead == psr->pTail) {
-		psr2->pTail = NULL;
+/* Expand optional non-terminals. */
+for( nterm = rhs ; nterm ; nterm = nterm->pNext )
+{
+if (nterm->bOptional) {
+	SimplePSR *psr2;
+	PATRFeature * dag2;
+	PATRNonterminal * nterm2;
+	/* Make a rule without nterm. */
+	psr2 = copy_psr(psr, pData);
+	if (psr2->pHead->pszName == nterm->pszName) {
+		/* Remove the non-terminal at the beginning. */
+		psr2->pHead = psr2->pHead->pNext;
+		if (psr->pHead == psr->pTail) {
+			/* Update end of list pointer. */
+			psr2->pTail = NULL;
+		}
+	} else {
+		/* Remove an embedded non-terminal. */
+		for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
+		if (nterm2->pNext->pszName == nterm->pszName) {
+			nterm2->pNext = nterm2->pNext->pNext;
+			break;
+		}
+		}
 	}
-	remove_optional_attr(dag2, rhs->pszName, pData);
+	dag2 = skip_optional_attr(dag, nterm->pszName, pData);
 	install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
-	/* Make the first element of the old rule obligatory. */
-	/* Avoid cross-talk with other rules. */
-	PATRNonterminal *rhs2 = copy_nonterm(rhs, pData);
-	rhs2->bOptional = FALSE;
-	rhs2->pNext = rhs->pNext;
-	psr->pHead = rhs2;
+	/* Make a rule with nterm obligatory. */
+	psr2 = copy_psr(psr, pData);
+	for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
+	if (nterm2->pszName == nterm->pszName) {
+		nterm2->bOptional = FALSE;
+		break;
+	}
+	}
+	install_rule(id, lhs, psr2, dag, pPriorityUnions_in, pConstraints_in, pData);
+	return;
+}
+break;
 }
 
 /* Make space for the rule */
@@ -2001,6 +2027,56 @@ listp             = allocPATRRuleList(pData->pPATR);
 listp->pRule      = rulep;
 listp->pNext      = pData->pGrammar->pRuleTable;
 pData->pGrammar->pRuleTable = listp;
+}
+
+/*****************************************************************************
+ * NAME
+ *    skip_optional_attr
+ * ARGUMENTS
+ *    pDag - feature structure
+ *    attr - attribute
+ *    pThis - PATR data
+ * DESCRIPTION
+ *    Remove an optional attribute from the feature structure.
+ * RETURN VALUE
+ *    PATRFeature *
+ */
+PATRFeature *skip_optional_attr(pDag, attr, pData)
+PATRFeature *	pDag;
+char * attr;
+PATRParseData * pData;
+{
+PATRFeature *pFirstFeat;
+PATRFeature *pSecondFeat;
+PATRFeature *pDag2;
+/* See if pDag has attr. */
+int has_attr = FALSE;
+PATRComplexFeature *flist;
+for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext) {
+	if (strcmp(flist->pszLabel, attr) == 0) {
+		has_attr = TRUE;
+		break;
+	}
+}
+if (!has_attr) {
+	/* Nothing to remove. */
+	return pDag;
+}
+if (!pDag->pFirstFeat && !pDag->pSecondFeat) {
+	/* Skip constraints with attr in them. */
+	return NULL;
+}
+/* Unify pDag again. */
+pFirstFeat = skip_optional_attr(pDag->pFirstFeat, attr, pData);
+pSecondFeat = skip_optional_attr(pDag->pSecondFeat, attr, pData);
+if (!pFirstFeat) {
+	return pSecondFeat;
+}
+if (!pSecondFeat) {
+	return pFirstFeat;
+}
+pDag2 = unifyPATRFeatures(pFirstFeat, pSecondFeat, TRUE, pData->pPATR);
+return pDag2;
 }
 
 /*****************************************************************************
@@ -2370,7 +2446,7 @@ GrammarData * pData;
 {
 SimplePSR *psrs, *psr;
 PATRNonterminal *nttemp;
-int allow_optional_rule_elements = TRUE;
+int preserve_optional_non_terminals = TRUE;
 
 if (!delim)
 	{
@@ -2396,7 +2472,7 @@ for ( net = net->pNext ; net ; net = net->pNext )
 			 * psrs = optional elements are not used;
 			 * append_psrs(psrs,net->psrs) = optional elements are used;
 			 */
-			if (allow_optional_rule_elements &&
+			if (preserve_optional_non_terminals &&
 					!net->pPsrs->pNext && net->pPsrs->pHead == net->pPsrs->pTail)
 			{
 			/* A single optional element is treated as a special case

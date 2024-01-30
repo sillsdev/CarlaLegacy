@@ -258,6 +258,8 @@ else                                    /* Else (complex) copy it */
 							/* Copy the flist */
 	xcopy->u.pComplex = copy_flist(x->u.pComplex, pThis);
 	}
+xcopy->pFirstFeat = x->pFirstFeat;
+xcopy->pSecondFeat = x->pSecondFeat;
 
 return( xcopy );                    /* Return pointer to copy of node */
 }
