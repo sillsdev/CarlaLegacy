@@ -2081,7 +2081,7 @@ if (psr2->pHead->pszName == nterm->pszName) {
 	}
 	}
 }
-dag2 = skip_optional_attr(dag, nterm->pszName, pData);
+dag2 = remove_optional_attr(dag, nterm->pszName, pData);
 install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
 /* Make a rule with nterm obligatory. */
 psr2 = copy_psr(psr, pData);

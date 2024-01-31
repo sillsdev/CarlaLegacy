@@ -76,13 +76,12 @@ static int		optional_next_element_p P((
 						PATREdge *    edgep));
 static char 	*get_next_element_attr P((
 						PATREdge *	edgep));
+static int		count_references P((
+						PATRFeature * pValue,
+						PATRFeature *	pDag));
 static int		remove_optional_value P((
 						PATRFeature *	pValue,
 						PATRFeature * pDag));
-static void remove_optional_attr P((
-						PATRFeature * pDag,
-						char * attr,
-						PATRParseData * pData));
 static void clear_visited_flags P((
 						PATRFeature *	pDag));
 static void		lc_vertex_add_active_edge P((
@@ -1254,9 +1253,8 @@ else {
 	int skips = 0;
 	while (optional_next_element_p(edgep))
 	{
-		pDag  = copyPATRFeature(pDag, pData->pPATR); /* Avoid cross-talk. */
 		char *attr = get_next_element_attr(edgep);
-		remove_optional_attr(pDag, attr, pData);
+		pDag = remove_optional_attr(pDag, attr, pData);
 		edgep =  make_rule_edge(edgep->u.r.pRule,
 					label,
 					edgep->u.r.iNext+1,
@@ -1337,9 +1335,9 @@ return non_terminal->pszName;
  * DESCRIPTION
  *    Remove an optional attribute from the feature structure.
  * RETURN VALUE
- *    void
+ *    PATRFeature *
  */
-static void remove_optional_attr(pDag, attr, pData)
+PATRFeature *remove_optional_attr(pDag, attr, pData)
 PATRFeature *	pDag;
 char * attr;
 PATRParseData * pData;
@@ -1347,8 +1345,9 @@ PATRParseData * pData;
 PATRComplexFeature *flist;
 PATRComplexFeature *prior = NULL;
 PATRFeature *pValue;
-int removed;
+int references;
 
+pDag  = copyPATRFeature(pDag, pData->pPATR); /* Avoid cross-talk. */
 /* Remove attr from pDag. */
 for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
 {
@@ -1365,7 +1364,48 @@ for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
 if (!flist) {
 	/* Attribute does not exists. */
 	/* (There were no constraints for the element in the rule.) */
-	return;
+	return pDag;
+}
+/* Remove attr's value from pDag if it doesn't occur anywhere else. */
+pValue = flist->pValue;
+pValue = followPATRForwardPointers( pValue );
+references = count_references(pValue, pDag);
+clear_visited_flags(pDag);
+if (references == 1) {
+	remove_optional_value(pValue, pDag);
+	clear_visited_flags(pDag);
+}
+return pDag;
+}
+
+PATRFeature *remove_optional_attr2(pDag, attr, pData)
+PATRFeature *	pDag;
+char * attr;
+PATRParseData * pData;
+{
+PATRComplexFeature *flist;
+PATRComplexFeature *prior = NULL;
+PATRFeature *pValue;
+int removed;
+
+pDag  = copyPATRFeature(pDag, pData->pPATR); /* Avoid cross-talk. */
+/* Remove attr from pDag. */
+for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
+{
+	if (strcmp(flist->pszLabel, attr) == 0)
+		{
+		if (prior == NULL)
+			pDag->u.pComplex = flist->pNext;
+		else
+			prior->pNext = flist->pNext;
+		break;
+		}
+	prior = flist;
+}
+if (!flist) {
+	/* Attribute does not exists. */
+	/* (There were no constraints for the element in the rule.) */
+	return pDag;
 }
 /* Remove attr's value from pDag if it doesn't occur anywhere else. */
 pValue = flist->pValue;
@@ -1380,8 +1420,51 @@ if (!removed) {
 	break;
 }
 }
+return pDag;
 }
 
+/*****************************************************************************
+ * NAME
+ *    count_references
+ * ARGUMENTS
+ *    value - value
+ *    pDag - feature structure
+ * DESCRIPTION
+ *    Count references to value in pDag.
+ * RETURN VALUE
+ *    int
+ */
+static int count_references(pValue, pDag)
+PATRFeature * pValue;
+PATRFeature *	pDag;
+{
+PATRComplexFeature *flist;
+PATRFeature * pValue2;
+int references = 0;
+
+if (pDag->eType != PATR_COMPLEX) {
+	return 0;
+}
+if (pDag->bVisited) {
+	return 0;
+}
+pDag->bVisited = TRUE;
+
+if (pDag == pValue) {
+	references++;
+}
+
+/* Recursively count references to pValue. */
+for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
+{
+	pValue2 = followPATRForwardPointers( flist->pValue );
+	if (pValue2 == pValue) {
+		references++;
+	}
+	references += count_references(pValue, flist->pValue);
+}
+return references;
+}
 /*****************************************************************************
  * NAME
  *    remove_optional_value
