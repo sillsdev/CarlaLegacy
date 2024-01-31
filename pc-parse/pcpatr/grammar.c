@@ -164,6 +164,7 @@ typedef struct grammar_data
 	 *  variable to control grammar input tokenizing
 	 */
 	const char *       pszReservedChars;
+	int				   iNextPartialId;
 } GrammarData;
 
 /*
@@ -302,10 +303,35 @@ static void		install_rule P((char *, char *,
 					PATRPriorityUnion * pPriorityUnions_in,
 					PATRConstraint *    pConstraints_in,
 					GrammarData * pData));
+static void expand_optional_non_terminal P((
+					PATRNonterminal * nterm,
+					char * id,
+					char * lhs,
+					SimplePSR * psr,
+					PATRFeature * dag,
+					PATRPriorityUnion * pPriorityUnions_in,
+					PATRConstraint * pConstraints_in,
+					GrammarData * pData));
+static void create_partial_rule P((
+					PATRNonterminal * nterm,
+					char * id,
+					char * lhs,
+					SimplePSR * psr,
+					PATRFeature * dag,
+					PATRPriorityUnion * pPriorityUnions_in,
+					PATRConstraint * pConstraints_in,
+					GrammarData * pData));
+static PATRFeature *select_non_terminals P((
+					PATRFeature *	pDag,
+					PATRNonterminal *non_terminals,
+					char * lhs,
+					GrammarData * pData));
+static int partial_cat_p P((char *cat));
+static char *new_partial_cat P((GrammarData * pData));
 static PATRFeature *skip_optional_attr P((
 					PATRFeature *	pDag,
 					char * attr,
-					PATRParseData * pData));
+					GrammarData * pData));
 static void		install_category P((PATRRule *, int, char *,
 						GrammarData * pData));
 static void		free_symlist P((GrammarData * pData));
@@ -492,6 +518,7 @@ sData.psz0               = NULL;
 sData.bStoredPeriod      = FALSE;
 sData.eTokenizeMode      = kNormalToken;
 sData.pszReservedChars   = szReservedChars_m;
+sData.iNextPartialId     = 0;
 
 if (getNextToken(szToken, MAX_TOKEN_SIZE, &sData) == EOF)
 	{
@@ -1891,7 +1918,7 @@ PATRRule *	rulep;
 int i;
 PATRNonterminal *non_terminal = rulep->pRHS;
 
-fprintf(stdout, "%s -> ", rulep, rulep->apszNonterms[0]);
+fprintf(stdout, "%s -> ", rulep->apszNonterms[0]);
 for ( i = 1 ; i <= rulep->iNontermCount ; i++ )
 	{
 	if (non_terminal->bOptional) {
@@ -1935,45 +1962,21 @@ PATRNonterminal *	nterm;
 int			nonterm_count;
 
 rhs = psr->pHead;
-/* Expand optional non-terminals. */
-for( nterm = rhs ; nterm ; nterm = nterm->pNext )
-{
-if (nterm->bOptional) {
-	SimplePSR *psr2;
-	PATRFeature * dag2;
-	PATRNonterminal * nterm2;
-	/* Make a rule without nterm. */
-	psr2 = copy_psr(psr, pData);
-	if (psr2->pHead->pszName == nterm->pszName) {
-		/* Remove the non-terminal at the beginning. */
-		psr2->pHead = psr2->pHead->pNext;
-		if (psr->pHead == psr->pTail) {
-			/* Update end of list pointer. */
-			psr2->pTail = NULL;
-		}
-	} else {
-		/* Remove an embedded non-terminal. */
-		for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
-		if (nterm2->pNext->pszName == nterm->pszName) {
-			nterm2->pNext = nterm2->pNext->pNext;
-			break;
-		}
-		}
-	}
-	dag2 = skip_optional_attr(dag, nterm->pszName, pData);
-	install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
-	/* Make a rule with nterm obligatory. */
-	psr2 = copy_psr(psr, pData);
-	for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
-	if (nterm2->pszName == nterm->pszName) {
-		nterm2->bOptional = FALSE;
-		break;
-	}
-	}
-	install_rule(id, lhs, psr2, dag, pPriorityUnions_in, pConstraints_in, pData);
+/* Expand optional non-terminals at beginning of rule. */
+if (rhs && rhs->bOptional) {
+	expand_optional_non_terminal(rhs, id, lhs, psr, dag,
+			pPriorityUnions_in, pConstraints_in, pData);
 	return;
 }
-break;
+/* Convert to Chomsky Normal Form. */
+if (FALSE && !partial_cat_p(lhs) && rhs->pNext) {
+	for( nterm = rhs ; nterm ; nterm = nterm->pNext ) {
+	if (!partial_cat_p(nterm->pszName)) {
+		create_partial_rule(nterm, id, lhs, psr, dag,
+				pPriorityUnions_in, pConstraints_in, pData);
+		return;
+	}
+	}
 }
 
 /* Make space for the rule */
@@ -2031,6 +2034,237 @@ pData->pGrammar->pRuleTable = listp;
 
 /*****************************************************************************
  * NAME
+ *    expand_optional_non_terminal
+ * ARGUMENTS
+ *    nterm   - non-terminal to expand
+ *    id      - unique identifying string
+ *    lhs     - LHS nonterminal
+ *    rhs     - List of RHS nonterminals from expanded formula
+ *    dag     - feature structure representing constraints on rule
+ *    pPriorityUnions_in
+ *    pConstraints_in
+ *    pData   - grammar data
+ * DESCRIPTION
+ *    Install two rules, one with nterm and one without.
+ * RETURN VALUE
+ *    void
+ */
+static void expand_optional_non_terminal(nterm, id, lhs, psr, dag,
+	pPriorityUnions_in, pConstraints_in, pData)
+PATRNonterminal * nterm;
+char *			id;
+char *			lhs;
+SimplePSR *         psr;
+PATRFeature *		dag;
+PATRPriorityUnion *	pPriorityUnions_in;
+PATRConstraint *	pConstraints_in;
+GrammarData *		pData;
+{
+SimplePSR *psr2;
+PATRFeature * dag2;
+PATRNonterminal * nterm2;
+/* Make a rule without nterm. */
+psr2 = copy_psr(psr, pData);
+if (psr2->pHead->pszName == nterm->pszName) {
+	/* Remove the non-terminal at the beginning. */
+	psr2->pHead = psr2->pHead->pNext;
+	if (psr->pHead == psr->pTail) {
+		/* Update end of list pointer. */
+		psr2->pTail = NULL;
+	}
+} else {
+	/* Remove an embedded non-terminal. */
+	for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
+	if (nterm2->pNext->pszName == nterm->pszName) {
+		nterm2->pNext = nterm2->pNext->pNext;
+		break;
+	}
+	}
+}
+dag2 = skip_optional_attr(dag, nterm->pszName, pData);
+install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
+/* Make a rule with nterm obligatory. */
+psr2 = copy_psr(psr, pData);
+for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
+if (nterm2->pszName == nterm->pszName) {
+	nterm2->bOptional = FALSE;
+	break;
+}
+}
+install_rule(id, lhs, psr2, dag, pPriorityUnions_in, pConstraints_in, pData);
+}
+
+/*****************************************************************************
+ * NAME
+ *    create_partial_rule
+ * ARGUMENTS
+ *    nterm   - non-terminal to expand
+ *    id      - unique identifying string
+ *    lhs     - LHS nonterminal
+ *    rhs     - List of RHS nonterminals from expanded formula
+ *    dag     - feature structure representing constraints on rule
+ *    pPriorityUnions_in
+ *    pConstraints_in
+ *    pData   - grammar data
+ * DESCRIPTION
+ *    Create a partial rule from psr stopping at nterm.
+ * RETURN VALUE
+ *    void
+ */
+static void create_partial_rule(nterm, id, lhs, psr, dag,
+		pPriorityUnions_in, pConstraints_in, pData)
+PATRNonterminal *nterm;
+char *			id;
+char *			lhs;
+SimplePSR *         psr;
+PATRFeature *		dag;
+PATRPriorityUnion *	pPriorityUnions_in;
+PATRConstraint *	pConstraints_in;
+GrammarData *		pData;
+{
+SimplePSR *psr2;
+PATRFeature *dag2;
+PATRNonterminal *nterm2;
+PATRNonterminal *nterm3;
+char *lhs2;
+char *lhs3 = NULL;
+psr2 = copy_psr(psr, pData);
+for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
+if (nterm2->pszName != nterm->pszName) {
+	continue;
+}
+}
+/* Create a partial category. */
+nterm2->pNext = NULL;
+psr2->pTail = nterm2;
+if (!partial_cat_p(psr->pHead->pszName)) {
+	/* Include lhs-only constraints. */
+	lhs3 = lhs;
+}
+dag2 = select_non_terminals(dag, psr2->pHead, lhs3, pData);
+lhs2 = new_partial_cat(pData);
+install_rule(id, lhs2, psr2, dag2,
+			 pPriorityUnions_in, pConstraints_in, pData);
+/* Replace the prefix with the partial category. */
+psr2 = copy_psr(psr, pData);
+for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
+if (nterm2->pszName != nterm->pszName) {
+	continue;
+}
+}
+nterm3 = allocPATRNonterminal(pData->pPATR);
+nterm3->pszName = lhs2;
+nterm3->pszLhsName = lhs;
+nterm3->pNext = nterm2->pNext;
+psr2->pHead = nterm3;
+dag2 = select_non_terminals(dag, psr2->pHead, NULL, pData);
+install_rule(id, lhs, psr2, dag2,
+			 pPriorityUnions_in, pConstraints_in, pData);
+}
+
+/*****************************************************************************
+ * NAME
+ *    partial_cat_p
+ * ARGUMENTS
+ *    cat - string
+ * DESCRIPTION
+ *    Is cat a partial category.
+ * RETURN VALUE
+ *    int
+ */
+static int partial_cat_p(cat)
+char *cat;
+{
+return cat[0] == '/';
+}
+
+/*****************************************************************************
+ * NAME
+ *    new_partial_cat
+ * ARGUMENTS
+ * 	  cat - category
+ *    pData - grammar data
+ * DESCRIPTION
+ *    Create a new partial category name.
+ * RETURN VALUE
+ *    int
+ */
+static char *new_partial_cat(cat, pData)
+char *cat;
+GrammarData *pData;
+{
+char partial_cat[1024];
+pData->iNextPartialId++;
+sprintf(partial_cat, "/%s/%d", cat, pData->iNextPartialId);
+return storedPATRString(partial_cat, pData->pPATR);
+}
+
+/*****************************************************************************
+ * NAME
+ *    select_non_terminals
+ * ARGUMENTS
+ *    pDag - feature structure
+ *    non_terminals - non-terminals to select
+ *    lhs - rule name
+ *    pThis - PATR data
+ * DESCRIPTION
+ *    Select non-terminal and lhs-only constraints in the feature structure.
+ * RETURN VALUE
+ *    PATRFeature *
+ */
+static PATRFeature *select_non_terminals(pDag, non_terminals, lhs, pData)
+PATRFeature *	pDag;
+PATRNonterminal *non_terminals;
+char * lhs;
+GrammarData * pData;
+{
+PATRFeature *pFirstFeat;
+PATRFeature *pSecondFeat;
+PATRFeature *pDag2;
+PATRNonterminal *nterm;
+PATRComplexFeature *flist;
+if (!pDag->pFirstFeat && !pDag->pSecondFeat) {
+	/* Does pDag contain something for non_terminals? */
+	for ( nterm=non_terminals; nterm; nterm = nterm->pNext ) {
+	for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext) {
+		if (strcmp(flist->pszLabel, nterm->pszName) == 0) {
+			return pDag;
+		}
+	}
+	}
+	if (lhs) {
+		/* Does pDag just contain lhs? */
+		int has_lhs = FALSE;
+		int has_non_lhs = FALSE;
+		for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext) {
+			if (strcmp(flist->pszLabel, lhs) == 0) {
+				has_lhs = TRUE;
+			} else {
+				has_non_lhs = FALSE;
+			}
+		}
+		if (has_lhs && !has_non_lhs) {
+			return pDag;
+		}
+	}
+	/* Don't select pDag. */
+	return NULL;
+}
+/* Unify pDag again. */
+pFirstFeat = select_non_terminals(pDag->pFirstFeat, non_terminals, lhs, pData);
+pSecondFeat = select_non_terminals(pDag->pSecondFeat, non_terminals, lhs, pData);
+if (!pFirstFeat) {
+	return pSecondFeat;
+}
+if (!pSecondFeat) {
+	return pFirstFeat;
+}
+pDag2 = unifyPATRFeatures(pFirstFeat, pSecondFeat, TRUE, pData->pPATR);
+return pDag2;
+}
+
+/*****************************************************************************
+ * NAME
  *    skip_optional_attr
  * ARGUMENTS
  *    pDag - feature structure
@@ -2041,10 +2275,10 @@ pData->pGrammar->pRuleTable = listp;
  * RETURN VALUE
  *    PATRFeature *
  */
-PATRFeature *skip_optional_attr(pDag, attr, pData)
+static PATRFeature *skip_optional_attr(pDag, attr, pData)
 PATRFeature *	pDag;
 char * attr;
-PATRParseData * pData;
+GrammarData * pData;
 {
 PATRFeature *pFirstFeat;
 PATRFeature *pSecondFeat;
