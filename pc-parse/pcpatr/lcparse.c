@@ -1127,11 +1127,8 @@ if (!act_edge->bFailed)
 		 *  nodes in the graph  (we know this always succeeds, since it
 		 *  already has unified!)
 		 */
-		unifyPATRFeatures(findOrAddPATRAttribute(pDag, nterm->pszName,
-							 pData->pPATR),
-				  pUniDag,
-				  FALSE,
-				  pData->pPATR);
+		pDag1 = findOrAddPATRAttribute(pDag, nterm->pszName, pData->pPATR);
+		unifyPATRFeatures(pDag1, pUniDag, FALSE, pData->pPATR);
 		/*
 		 *  unify lhs features corresponding to nterm with 0 path
 		 */
@@ -1254,7 +1251,7 @@ else {
 	while (optional_next_element_p(edgep))
 	{
 		char *attr = get_next_element_attr(edgep);
-		pDag = remove_optional_attr(pDag, attr, pData);
+		pDag = remove_optional_attr(pDag, attr, pData->pPATR);
 		edgep =  make_rule_edge(edgep->u.r.pRule,
 					label,
 					edgep->u.r.iNext+1,
@@ -1340,14 +1337,14 @@ return non_terminal->pszName;
 PATRFeature *remove_optional_attr(pDag, attr, pData)
 PATRFeature *	pDag;
 char * attr;
-PATRParseData * pData;
+PATRData * pData;
 {
 PATRComplexFeature *flist;
 PATRComplexFeature *prior = NULL;
 PATRFeature *pValue;
 int references;
 
-pDag  = copyPATRFeature(pDag, pData->pPATR); /* Avoid cross-talk. */
+pDag  = copyPATRFeature(pDag, pData); /* Avoid cross-talk. */
 /* Remove attr from pDag. */
 for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
 {
@@ -1381,14 +1378,14 @@ return pDag;
 PATRFeature *remove_optional_attr2(pDag, attr, pData)
 PATRFeature *	pDag;
 char * attr;
-PATRParseData * pData;
+PATRData * pData;
 {
 PATRComplexFeature *flist;
 PATRComplexFeature *prior = NULL;
 PATRFeature *pValue;
 int removed;
 
-pDag  = copyPATRFeature(pDag, pData->pPATR); /* Avoid cross-talk. */
+pDag  = copyPATRFeature(pDag, pData); /* Avoid cross-talk. */
 /* Remove attr from pDag. */
 for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
 {

@@ -503,6 +503,7 @@ typedef struct patr_parse_data
 extern PATRFeature * parsePATRFeaturePath P((char *        pszFeaturePath_in,
 						 PATRGrammar * pGrammar_in,
 						 PATRData *    pPATR_in));
+extern int partial_cat_p P((char *cat));
 /*
  *  lcparse.c
  */
@@ -519,7 +520,7 @@ extern void	showPATREdge	   P((PATREdge *    edgep,
 extern PATRFeature * remove_optional_attr P((
 						PATRFeature * pDag,
 						char * attr,
-						PATRParseData * pData));
+						PATRData * pData));
 /*
  *  patalloc.c
  */

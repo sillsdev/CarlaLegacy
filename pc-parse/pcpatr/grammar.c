@@ -303,6 +303,19 @@ static void		install_rule P((char *, char *,
 					PATRPriorityUnion * pPriorityUnions_in,
 					PATRConstraint *    pConstraints_in,
 					GrammarData * pData));
+static int preservable_optional_constraints_p P((
+					char *cat,
+					PATRFeature *pDag1,
+					PATRFeature *pDag2,
+					PATRData *pPATR));
+static int designator_has_value_p P((PATRComplexFeature *prefix));
+static int count_constraint_prefixes P((
+					PATRComplexFeature *prefix,
+					PATRFeature *pDag,
+					PATRData *pPATR));
+static int constraint_prefix_p P((
+					PATRComplexFeature *prefix,
+					PATRComplexFeature *designator));
 static void expand_optional_non_terminal P((
 					PATRNonterminal * nterm,
 					char * id,
@@ -326,8 +339,7 @@ static PATRFeature *select_non_terminals P((
 					PATRNonterminal *non_terminals,
 					char * lhs,
 					GrammarData * pData));
-static int partial_cat_p P((char *cat));
-static char *new_partial_cat P((GrammarData * pData));
+static char *new_partial_cat P((char * cat, GrammarData * pData));
 static PATRFeature *skip_optional_attr P((
 					PATRFeature *	pDag,
 					char * attr,
@@ -1969,14 +1981,23 @@ if (rhs && rhs->bOptional) {
 	return;
 }
 /* Convert to Chomsky Normal Form. */
-if (FALSE && !partial_cat_p(lhs) && rhs->pNext) {
+if (FALSE && !partial_cat_p(lhs)) {
 	for( nterm = rhs ; nterm ; nterm = nterm->pNext ) {
-	if (!partial_cat_p(nterm->pszName)) {
+	if (!partial_cat_p(nterm->pszName) && nterm->pNext) {
 		create_partial_rule(nterm, id, lhs, psr, dag,
 				pPriorityUnions_in, pConstraints_in, pData);
 		return;
 	}
 	}
+}
+/* Expand remaining optional non-terminals. */
+for( nterm = rhs ; nterm ; nterm = nterm->pNext ) {
+if (nterm->bOptional &&
+	 !preservable_optional_constraints_p(nterm->pszName, dag, dag, pData->pPATR)) {
+	expand_optional_non_terminal(nterm, id, lhs, psr, dag,
+			pPriorityUnions_in, pConstraints_in, pData);
+	return;
+}
 }
 
 /* Make space for the rule */
@@ -2034,6 +2055,158 @@ pData->pGrammar->pRuleTable = listp;
 
 /*****************************************************************************
  * NAME
+ *    preservable_optional_constraints_p
+ * ARGUMENTS
+ *    cat     - name of optional category
+ *    pDag1    - constraints to iterate
+ *    pDag2    - constraints to check against
+ * DESCRIPTION
+ *    Are all cat constraints preservable in dag1?
+ * RETURN VALUE
+ *    int
+ */
+static int preservable_optional_constraints_p(cat, pDag1, pDag2, pPATR)
+char *cat;
+PATRFeature *pDag1;
+PATRFeature *pDag2;
+PATRData *pPATR;
+{
+PATRComplexFeature *flist;
+int count = 0;
+if (!pDag1->pFirstFeat && !pDag1->pSecondFeat) {
+	for ( flist=pDag1->u.pComplex; flist; flist = flist->pNext )
+	{
+	if (strcmp(flist->pszLabel, cat) == 0) {
+		/* Is pDag1 preservable? */
+		if (designator_has_value_p(flist)) {
+			/* pDag1 has a constant value like <cat foo> = +. */
+			return FALSE;
+		}
+		count = count_constraint_prefixes(flist, pDag2, pPATR);
+		if (count > 1) {
+			/* pDag2 refers to flist multiple times. */
+			/* Example: <root a> = <cat> and <root b> = <cat>. */
+			count = count_constraint_prefixes(flist, pDag2, pPATR);
+			return FALSE;
+		}
+	}
+	}
+	return TRUE;
+}
+/* Recurse down pDag1. */
+if (!preservable_optional_constraints_p(cat, pDag1->pFirstFeat, pDag2, pPATR)) {
+	return FALSE;
+}
+if (!preservable_optional_constraints_p(cat, pDag1->pSecondFeat, pDag2, pPATR)) {
+	return FALSE;
+}
+return TRUE;
+}
+
+/*****************************************************************************
+ * NAME
+ *    designator_has_value_p
+ * ARGUMENTS
+ *    designator
+ * DESCRIPTION
+ *    Is designator equated to a value?
+ * RETURN VALUE
+ *    int
+ */
+static int designator_has_value_p(prefix)
+PATRComplexFeature *prefix;
+{
+PATRFeature *value = prefix->pValue;
+value = followPATRForwardPointers(value);
+if (value->eType == PATR_ATOM) {
+	return TRUE;
+}
+if (value->eType == PATR_COMPLEX) {
+	PATRComplexFeature *flist;
+	for (flist = value->u.pComplex; flist; flist = flist->pNext) {
+	if (designator_has_value_p(flist)) {
+		return TRUE;
+	}
+	}
+}
+return FALSE;
+}
+
+/*****************************************************************************
+ * NAME
+ *    count_constraint_prefixes
+ * ARGUMENTS
+ *    prefix   - constraint prefix
+ *    pDag    - constraints to check
+ * DESCRIPTION
+ *    Count how often prefix occurs in pDag.
+ * RETURN VALUE
+ *    int
+ */
+static int count_constraint_prefixes(prefix, pDag, pPATR)
+PATRComplexFeature *prefix;
+PATRFeature *pDag;
+PATRData *pPATR;
+{
+PATRComplexFeature *flist;
+if (!pDag->pFirstFeat && !pDag->pSecondFeat) {
+	for ( flist=pDag->u.pComplex; flist; flist = flist->pNext )
+	{
+	if (flist->pszLabel == prefix->pszLabel) {
+		if (constraint_prefix_p(prefix, flist)) {
+			return 1;
+		}
+	}
+	}
+	return 0;
+}
+return count_constraint_prefixes(prefix, pDag->pFirstFeat, pPATR) +
+		count_constraint_prefixes(prefix, pDag->pSecondFeat, pPATR);
+}
+
+/*****************************************************************************
+ * NAME
+ *    constraint_prefix_p
+ * ARGUMENTS
+ *    prefix       - prefix of a designator
+ *    designator   - constraint designator
+ * DESCRIPTION
+ *    Is prefix a prefix of a constraint designator?
+ * RETURN VALUE
+ *    int
+ */
+static int constraint_prefix_p(prefix, designator)
+PATRComplexFeature *prefix;
+PATRComplexFeature *designator;
+{
+PATRFeature *p_value;
+PATRFeature *d_value;
+while (TRUE)
+{
+if (prefix->pszLabel != designator->pszLabel) {
+	/* The labels don't match, so prefix is not a prefix of designator. */
+	return FALSE;
+}
+p_value = followPATRForwardPointers(prefix->pValue);
+d_value = followPATRForwardPointers(designator->pValue);
+if (p_value->eType != PATR_COMPLEX) {
+	/* We completely matched prefix. */
+	return TRUE;
+}
+if (d_value->eType != PATR_COMPLEX) {
+	/* We are at the end of designator, but there is still some prefix left. */
+	return FALSE;
+}
+/* Go to the next feature. */
+prefix = p_value->u.pComplex;
+designator = d_value->u.pComplex;
+}
+/* We should never get here. */
+return TRUE;
+}
+
+/*****************************************************************************
+ * NAME
  *    expand_optional_non_terminal
  * ARGUMENTS
  *    nterm   - non-terminal to expand
@@ -2081,7 +2254,7 @@ if (psr2->pHead->pszName == nterm->pszName) {
 	}
 	}
 }
-dag2 = remove_optional_attr(dag, nterm->pszName, pData);
+dag2 = remove_optional_attr(dag, nterm->pszName, pData->pPATR);
 install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
 /* Make a rule with nterm obligatory. */
 psr2 = copy_psr(psr, pData);
@@ -2130,8 +2303,8 @@ char *lhs2;
 char *lhs3 = NULL;
 psr2 = copy_psr(psr, pData);
 for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
-if (nterm2->pszName != nterm->pszName) {
-	continue;
+if (nterm2->pszName == nterm->pszName) {
+	break;
 }
 }
 /* Create a partial category. */
@@ -2142,14 +2315,14 @@ if (!partial_cat_p(psr->pHead->pszName)) {
 	lhs3 = lhs;
 }
 dag2 = select_non_terminals(dag, psr2->pHead, lhs3, pData);
-lhs2 = new_partial_cat(pData);
+lhs2 = new_partial_cat(lhs, pData);
 install_rule(id, lhs2, psr2, dag2,
 			 pPriorityUnions_in, pConstraints_in, pData);
 /* Replace the prefix with the partial category. */
 psr2 = copy_psr(psr, pData);
 for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
-if (nterm2->pszName != nterm->pszName) {
-	continue;
+if (nterm2->pszName == nterm->pszName) {
+	break;
 }
 }
 nterm3 = allocPATRNonterminal(pData->pPATR);
@@ -2172,7 +2345,7 @@ install_rule(id, lhs, psr2, dag2,
  * RETURN VALUE
  *    int
  */
-static int partial_cat_p(cat)
+int partial_cat_p(cat)
 char *cat;
 {
 return cat[0] == '/';
