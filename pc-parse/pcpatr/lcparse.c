@@ -72,6 +72,10 @@ static void		extend_lc_edge P((PATREdge *    act_edge,
 					  int           end,
 					  PATRGrammar * pGrammar_in,
 					  PATRParseData * pData));
+static int complete_constraints P((
+					PATRFeature *pDag,
+					PATREdge *pEdge,
+					PATRData *pPATR));
 static int		optional_next_element_p P((
 						PATREdge *    edgep));
 static char 	*get_next_element_attr P((
@@ -1144,27 +1148,7 @@ if (!act_edge->bFailed)
 		  (act_edge->eType == PATR_RULE_EDGE) &&
 		  (act_edge->u.r.pRule->iNontermCount == act_edge->u.r.iNext) )
 		{
-		PATRPriorityUnion * pUnion;
-		PATRConstraint *    pConstraint;
-		/*
-		 *  apply each priority union in turn
-		 */
-		for (	pUnion = act_edge->u.r.pRule->pPriorityUnions ;
-			ok && pUnion ;
-			pUnion = pUnion->pNext )
-			{
-			applyPATRPriorityUnion(pDag, pUnion, pData->pPATR);
-			ok = verifyAcyclicPATRFeature(pDag);
-			}
-		/*
-		 *  if any constraint fails, ok = FALSE
-		 */
-		for (   pConstraint = act_edge->u.r.pRule->pConstraints ;
-			ok && pConstraint ;
-			pConstraint = pConstraint->pNext )
-			{
-			ok = applyPATRConstraint(pDag, pConstraint, pData->pPATR);
-			}
+			ok = complete_constraints(pDag, act_edge, pData->pPATR);
 		}
 		}
 	/*
@@ -1264,6 +1248,9 @@ else {
 			edgep->bFailed = TRUE;
 		add_child(act_edge,edgep,pass_edge, pData, skips);
 		if (complete_edge_p(edgep)) {
+			ok = complete_constraints(pDag, act_edge, pData->pPATR);
+			if (! ok)
+				edgep->bFailed = TRUE;
 			lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
 			break;
 		} else {
@@ -1271,6 +1258,46 @@ else {
 		}
 	}
 }
+}
+
+/*****************************************************************************
+ * NAME
+ *    complete_constraints
+ * ARGUMENTS
+ *    edgep -
+ * DESCRIPTION
+ *    Apply priority unions and constraints to complete edge.
+ * RETURN VALUE
+ *    boolean
+ */
+static int complete_constraints(pDag, pEdge, pPATR)
+PATRFeature *pDag;
+PATREdge *pEdge;
+PATRData *pPATR;
+{
+PATRPriorityUnion * pUnion;
+PATRConstraint *    pConstraint;
+int ok = TRUE;
+/*
+ *  apply each priority union in turn
+ */
+for (	pUnion = pEdge->u.r.pRule->pPriorityUnions ;
+	ok && pUnion ;
+	pUnion = pUnion->pNext )
+	{
+	applyPATRPriorityUnion(pDag, pUnion, pPATR);
+	ok = verifyAcyclicPATRFeature(pDag);
+	}
+/*
+ *  if any constraint fails, ok = FALSE
+ */
+for (   pConstraint = pEdge->u.r.pRule->pConstraints ;
+	ok && pConstraint ;
+	pConstraint = pConstraint->pNext )
+	{
+	ok = applyPATRConstraint(pDag, pConstraint, pPATR);
+	}
+return ok;
 }
 
 /*****************************************************************************
