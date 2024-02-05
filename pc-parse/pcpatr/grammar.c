@@ -2022,7 +2022,7 @@ rulep->iNontermCount = nonterm_count;
 /*
  *  BK: check and report if A-over-A rule
  */
-if (strcmp( lhs, rulep->apszNonterms[1] ) == 0)
+if (nonterm_count > 0 && strcmp( lhs, rulep->apszNonterms[1] ) == 0)
 	{
 	int obligatory = 0;
 	PATRNonterminal *nonterm;
