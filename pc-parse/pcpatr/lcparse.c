@@ -74,12 +74,12 @@ static void		extend_lc_edge P((PATREdge *    act_edge,
 					  PATRParseData * pData));
 static int complete_constraints P((
 					PATRFeature *pDag,
-					PATREdge *pEdge,
+					PATRRule *pRule,
 					PATRData *pPATR));
-static int		optional_next_element_p P((
-						PATREdge *    edgep));
-static char 	*get_next_element_attr P((
-						PATREdge *	edgep));
+static PATRFeature * remove_optional_attr P((
+						PATRFeature * pDag,
+						char * attr,
+						PATRData * pData));
 static int		count_references P((
 						PATRFeature * pValue,
 						PATRFeature *	pDag));
@@ -614,7 +614,6 @@ PATREdgeList *	pList_in;
 int		iDepth;
 PATRParseData *	pData;
 {
-int		i;
 PATREdgeList *	elp;
 
 if (pEdge_in->eType != PATR_RULE_EDGE)
@@ -632,19 +631,9 @@ for ( elp = pList_in ; elp ; elp = elp->pNext )
 	{
 	if (pData->pPATR->iDebugLevel >= 2)
 		{
-		fprintf(stdout, "Warning: cycle was ignored for edge: %d ",
-		   pEdge_in->iStart);
-		for (   i = 0 ;
-			i <= pEdge_in->u.r.pRule->iNontermCount ;
-			++i )
-		{
-		fprintf(stdout, "%s ", pEdge_in->u.r.pRule->apszNonterms[i]);
-		if (i == 0)
-			fprintf(stdout, "-> ");
-		if (pEdge_in->u.r.iNext == i+1)
-			fprintf(stdout, ". ");
-		}
-		fprintf(stdout, "%d\n",pEdge_in->iEnd);
+		fprintf(stdout, "Warning: cycle was ignored for edge: %d %d ",
+		   pEdge_in->iStart, pEdge_in->iEnd);
+		showPATRRule(pEdge_in->u.r.pRule);
 		}
 	return( -1 );
 	}
@@ -1148,7 +1137,7 @@ if (!act_edge->bFailed)
 		  (act_edge->eType == PATR_RULE_EDGE) &&
 		  (act_edge->u.r.pRule->iNontermCount == act_edge->u.r.iNext) )
 		{
-			ok = complete_constraints(pDag, act_edge, pData->pPATR);
+			ok = complete_constraints(pDag, act_edge->u.r.pRule, pData->pPATR);
 		}
 		}
 	/*
@@ -1229,12 +1218,12 @@ if ( complete_edge_p(edgep) )
 else {
 	lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
 	/*
-	 * Skip the next rule elements if they are optional.
+	 * Skip the next non-terminals if they are optional.
 	 */
 	int skips = 0;
-	while (optional_next_element_p(edgep))
+	while (need_nonterm(edgep)->bOptional)
 	{
-		char *attr = get_next_element_attr(edgep);
+		char *attr = need_nonterm(edgep)->pszName;
 		pDag = remove_optional_attr(pDag, attr, pData->pPATR);
 		edgep =  make_rule_edge(edgep->u.r.pRule,
 					label,
@@ -1248,7 +1237,7 @@ else {
 			edgep->bFailed = TRUE;
 		add_child(act_edge,edgep,pass_edge, pData, skips);
 		if (complete_edge_p(edgep)) {
-			ok = complete_constraints(pDag, act_edge, pData->pPATR);
+			ok = complete_constraints(pDag, edgep->u.r.pRule, pData->pPATR);
 			if (! ok)
 				edgep->bFailed = TRUE;
 			lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
@@ -1266,13 +1255,13 @@ else {
  * ARGUMENTS
  *    edgep -
  * DESCRIPTION
- *    Apply priority unions and constraints to complete edge.
+ *    Apply priority unions and constraints from rule to complete constraints.
  * RETURN VALUE
  *    boolean
  */
-static int complete_constraints(pDag, pEdge, pPATR)
+static int complete_constraints(pDag, pRule, pPATR)
 PATRFeature *pDag;
-PATREdge *pEdge;
+PATRRule *pRule;
 PATRData *pPATR;
 {
 PATRPriorityUnion * pUnion;
@@ -1281,7 +1270,7 @@ int ok = TRUE;
 /*
  *  apply each priority union in turn
  */
-for (	pUnion = pEdge->u.r.pRule->pPriorityUnions ;
+for (	pUnion = pRule->pPriorityUnions ;
 	ok && pUnion ;
 	pUnion = pUnion->pNext )
 	{
@@ -1291,62 +1280,13 @@ for (	pUnion = pEdge->u.r.pRule->pPriorityUnions ;
 /*
  *  if any constraint fails, ok = FALSE
  */
-for (   pConstraint = pEdge->u.r.pRule->pConstraints ;
+for (   pConstraint = pRule->pConstraints ;
 	ok && pConstraint ;
 	pConstraint = pConstraint->pNext )
 	{
 	ok = applyPATRConstraint(pDag, pConstraint, pPATR);
 	}
 return ok;
-}
-
-/*****************************************************************************
- * NAME
- *    optional_next_element_p
- * ARGUMENTS
- *    edgep -
- * DESCRIPTION
- *    Determines whether the next element in edgep's rule is optional.
- * RETURN VALUE
- *    boolean
- */
-static int optional_next_element_p(edgep)
-PATREdge *	edgep;
-{
-/* Get the ith non-terminal. */
-int iNext = edgep->u.r.iNext;
-PATRNonterminal *non_terminal = edgep->u.r.pRule->pRHS;
-while (iNext > 1)
-{
-	non_terminal = non_terminal->pNext;
-	iNext += -1;
-}
-return non_terminal->bOptional;
-}
-
-/*****************************************************************************
- * NAME
- *    get_next_element_attr
- * ARGUMENTS
- *    edgep -
- * DESCRIPTION
- *    Get the attribute of the next element for edge.
- * RETURN VALUE
- *    char *
- */
-static char *get_next_element_attr(edgep)
-PATREdge *	edgep;
-{
-/* Get the ith non-terminal. */
-int iNext = edgep->u.r.iNext;
-PATRNonterminal *non_terminal = edgep->u.r.pRule->pRHS;
-while (iNext > 1)
-{
-	non_terminal = non_terminal->pNext;
-	iNext += -1;
-}
-/* Return its name. */
-return non_terminal->pszName;
 }
 
 /*****************************************************************************
@@ -1387,7 +1327,7 @@ for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
 }
 if (!flist) {
 	/* Attribute does not exists. */
-	/* (There were no constraints for the element in the rule.) */
+	/* (There were no constraints for the non-terminal in the rule.) */
 	return pDag;
 }
 /* Remove attr's value from pDag if it doesn't occur anywhere else. */
@@ -1398,51 +1338,6 @@ clear_visited_flags(pDag);
 if (references == 1) {
 	remove_optional_value(pValue, pDag);
 	clear_visited_flags(pDag);
-}
-return pDag;
-}
-
-PATRFeature *remove_optional_attr2(pDag, attr, pData)
-PATRFeature *	pDag;
-char * attr;
-PATRData * pData;
-{
-PATRComplexFeature *flist;
-PATRComplexFeature *prior = NULL;
-PATRFeature *pValue;
-int removed;
-
-pDag  = copyPATRFeature(pDag, pData); /* Avoid cross-talk. */
-/* Remove attr from pDag. */
-for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
-{
-	if (strcmp(flist->pszLabel, attr) == 0)
-		{
-		if (prior == NULL)
-			pDag->u.pComplex = flist->pNext;
-		else
-			prior->pNext = flist->pNext;
-		break;
-		}
-	prior = flist;
-}
-if (!flist) {
-	/* Attribute does not exists. */
-	/* (There were no constraints for the element in the rule.) */
-	return pDag;
-}
-/* Remove attr's value from pDag if it doesn't occur anywhere else. */
-pValue = flist->pValue;
-pValue = followPATRForwardPointers( pValue );
-while (TRUE)
-{
-/* Remove value and get its container. */
-removed = remove_optional_value(pValue, pDag);
-clear_visited_flags(pDag);
-if (!removed) {
-	/* Nothing left to remove. */
-	break;
-}
 }
 return pDag;
 }
@@ -1489,6 +1384,7 @@ for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
 }
 return references;
 }
+
 /*****************************************************************************
  * NAME
  *    remove_optional_value
@@ -2621,24 +2517,14 @@ void showPATREdge(edgep, pPATR_in)
 PATREdge *	edgep;
 PATRData *	pPATR_in;
 {
-int i;
-
 fprintf(stdout, "%d %d ", edgep->iStart, edgep->iEnd);
 if (edgep->eType == PATR_RULE_EDGE)
 	{
-	for ( i = 0 ; i <= edgep->u.r.pRule->iNontermCount ; i++ )
-	{
-	fprintf(stdout, "%s ", edgep->u.r.pRule->apszNonterms[i]);
-	if (i == 0)
-		fprintf(stdout, "-> ");
-	if (edgep->u.r.iNext == i+1)
-		fprintf(stdout, ". ");
-	}
+	showPATRRule(edgep->u.r.pRule);
 	}
 else
-	fprintf(stdout, "%s (%s) ", edgep->pszLabel, edgep->u.l.pszTerminal);
+	fprintf(stdout, "%s (%s) \n", edgep->pszLabel, edgep->u.l.pszTerminal);
 
-fprintf(stdout, "\n");
 if (pPATR_in->iDebugLevel >= 2)
 	{
 	FILE * fp = pPATR_in->pLogFP;

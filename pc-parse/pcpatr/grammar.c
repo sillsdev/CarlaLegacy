@@ -296,7 +296,6 @@ static int		loadLexicalRule P((GrammarData * pData));
 static int		loadRule P((GrammarData * pData));
 static SimplePSR *	form_to_psrs P((ComplexPSR *, GrammarData * pData));
 static void		show_psrs P((SimplePSR *psrs));
-static void		showPATRRule P((PATRRule * rulep));
 static void		install_rule P((char *, char *,
 					SimplePSR *,
 					PATRFeature *,
@@ -343,7 +342,7 @@ static char *new_partial_cat P((char * cat, GrammarData * pData));
 static PATRFeature *skip_optional_attr P((
 					PATRFeature *	pDag,
 					char * attr,
-					GrammarData * pData));
+					PATRData * pPATR));
 static void		install_category P((PATRRule *, int, char *,
 						GrammarData * pData));
 static void		free_symlist P((GrammarData * pData));
@@ -1924,7 +1923,7 @@ fprintf(stdout,  "\n" );
  * RETURN VALUE
  *    none
  */
-static void showPATRRule(rulep)
+void showPATRRule(rulep)
 PATRRule *	rulep;
 {
 int i;
@@ -2023,13 +2022,19 @@ rulep->iNontermCount = nonterm_count;
 /*
  *  BK: check and report if A-over-A rule
  */
-if ((nonterm_count == 1) && (strcmp( lhs, rulep->apszNonterms[1] ) == 0))
+if (strcmp( lhs, rulep->apszNonterms[1] ) == 0)
 	{
-	displayNumberedMessage(&sSameLeftRightCategories_m,
-			   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
-			   pData->pszGrammarFilename, pData->uiLineNumber,
-			   lhs);
-	++pData->iGrammarErrorCount;
+	int obligatory = 0;
+	PATRNonterminal *nonterm;
+	for (nonterm = rhs; nonterm; nonterm = nonterm->pNext)
+		if (!nonterm->bOptional) obligatory++;
+	if (obligatory == 1) {
+		displayNumberedMessage(&sSameLeftRightCategories_m,
+				   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
+				   pData->pszGrammarFilename, pData->uiLineNumber,
+				   lhs);
+		++pData->iGrammarErrorCount;
+	}
 	}
 
 /* Compute left corner indices */
@@ -2254,7 +2259,7 @@ if (psr2->pHead->pszName == nterm->pszName) {
 	}
 	}
 }
-dag2 = remove_optional_attr(dag, nterm->pszName, pData->pPATR);
+dag2 = skip_optional_attr(dag, nterm->pszName, pData->pPATR);
 install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
 /* Make a rule with nterm obligatory. */
 psr2 = copy_psr(psr, pData);
@@ -2442,16 +2447,16 @@ return pDag2;
  * ARGUMENTS
  *    pDag - feature structure
  *    attr - attribute
- *    pThis - PATR data
+ *    pPATR - PATR data
  * DESCRIPTION
- *    Remove an optional attribute from the feature structure.
+ *    Reunify pDag from constraints skipping attr.
  * RETURN VALUE
  *    PATRFeature *
  */
-static PATRFeature *skip_optional_attr(pDag, attr, pData)
+static PATRFeature *skip_optional_attr(pDag, attr, pPATR)
 PATRFeature *	pDag;
 char * attr;
-GrammarData * pData;
+PATRData * pPATR;
 {
 PATRFeature *pFirstFeat;
 PATRFeature *pSecondFeat;
@@ -2474,15 +2479,15 @@ if (!pDag->pFirstFeat && !pDag->pSecondFeat) {
 	return NULL;
 }
 /* Unify pDag again. */
-pFirstFeat = skip_optional_attr(pDag->pFirstFeat, attr, pData);
-pSecondFeat = skip_optional_attr(pDag->pSecondFeat, attr, pData);
+pFirstFeat = skip_optional_attr(pDag->pFirstFeat, attr, pPATR);
+pSecondFeat = skip_optional_attr(pDag->pSecondFeat, attr, pPATR);
 if (!pFirstFeat) {
 	return pSecondFeat;
 }
 if (!pSecondFeat) {
 	return pFirstFeat;
 }
-pDag2 = unifyPATRFeatures(pFirstFeat, pSecondFeat, TRUE, pData->pPATR);
+pDag2 = unifyPATRFeatures(pFirstFeat, pSecondFeat, TRUE, pPATR);
 return pDag2;
 }
 
@@ -5304,7 +5309,6 @@ PATRData *	pPATR_in;
 PATRRuleList *	pRuleList;
 PATRRule *		pRule;
 PATRNonterminal *	pNonterm;
-int i;
 PATRPriorityUnion *	pPri;
 PATRConstraint *	pCon;
 
@@ -5317,9 +5321,7 @@ for (	pRuleList = pGrammar_in->pRuleTable ;
 	fprintf(stdout, "Rule {%s} (line %d) has %d nonterms\n",
 	   pRule->pszID ? pRule->pszID : "",
 	   pRule->iLineNumber, pRule->iNontermCount);
-	for ( i = 0 ; i <= pRule->iNontermCount ; ++i )
-	fprintf(stdout, "  %s", pRule->apszNonterms[i]);
-	fprintf(stdout, "\n");
+	showPATRRule(pRule);
 	fprintf(stdout, "%s ->", pRule->pszLHS);
 	for ( pNonterm = pRule->pRHS ; pNonterm ; pNonterm = pNonterm->pNext )
 	if (pNonterm->bOptional) {
@@ -5374,7 +5376,11 @@ for ( i = 0 ; i < PATR_HASH_SIZE ; ++i )
 		fprintf(stdout, "\n\t\t\tRule {%s} (line %d):  %s  ->",
 			   pR->pszID ? pR->pszID:"", pR->iLineNumber, pR->pszLHS);
 		for ( pN = pR->pRHS ; pN ; pN = pN->pNext )
-			fprintf(stdout, "  %s", pN->pszName);
+			if (pN->bOptional) {
+				fprintf(stdout, "  (%s)", pN->pszName);
+			} else {
+				fprintf(stdout, "  %s", pN->pszName);
+			}
 		}
 		fprintf(stdout, "\n");
 		}
