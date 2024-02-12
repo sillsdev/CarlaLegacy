@@ -76,6 +76,16 @@ static int complete_constraints P((
 					PATRFeature *pDag,
 					PATRRule *pRule,
 					PATRData *pPATR));
+static void skip_optional_non_terminals P((
+					PATREdge* edgep,
+					PATREdge* act_edge,
+					PATREdge* pass_edge,
+					PATRFeature* pDag,
+					char* label,
+					int iEnd_in,
+					int ok,
+					int skips,
+					PATRParseData* pData));
 static PATRFeature * remove_optional_attr P((
 						PATRFeature * pDag,
 						char * attr,
@@ -907,6 +917,8 @@ while (edgep->u.r.pChildren != NULL)
 return(edgep);
 }
 
+int edge_count = 0;
+
 /*****************************************************************************
  * NAME
  *    extend_lc_edge
@@ -1215,41 +1227,87 @@ add_child(act_edge,edgep,pass_edge, pData, 0);
  * Now add it either as an active or passive edge, depending on the need index
  */
 if ( complete_edge_p(edgep) )
+{
 	lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
-else {
+} 
+else
+{
+	skip_optional_non_terminals(edgep, act_edge, pass_edge, pDag, label, iEnd_in, ok, 0, pData);
 	lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
+}
+}
+
+/*****************************************************************************
+ * NAME
+ *    skip_optional_non_terminals
+ * ARGUMENTS
+ *    edgep - the source of optional edges
+ *    act_edge - the active edge
+ *    pass_edge - the passive edge
+ *    pDag - the feature structure
+ *    label -
+ *    iEnd_in - the end point
+ *    ok - whether unification succeeded
+ *    skips - how many skips so far
+ *    pData - parse data
+ * DESCRIPTION
+ *    Skips optional non-terminals in edgep.
+ * RETURN VALUE
+ *    none
+ */
+static void skip_optional_non_terminals(edgep, act_edge, pass_edge, pDag, label, iEnd_in, ok, skips, pData)
+PATREdge* edgep;
+PATREdge* act_edge;
+PATREdge* pass_edge;
+PATRFeature* pDag;
+char* label;
+int iEnd_in;
+int ok;
+int skips;
+PATRParseData* pData;
+{
+	PATRNonterminal* nonterm;
 	/*
 	 * Skip the next non-terminals if they are optional.
 	 */
-	int skips = 0;
-	while (need_nonterm(edgep)->bOptional)
+	nonterm = need_nonterm(edgep);
+	if (nonterm && nonterm->bOptional)
 	{
-		char *attr = need_nonterm(edgep)->pszName;
+		char* attr = need_nonterm(edgep)->pszName;
 		pDag = remove_optional_attr(pDag, attr, pData->pPATR);
-		edgep =  make_rule_edge(edgep->u.r.pRule,
-					label,
-					edgep->u.r.iNext+1,
-					edgep->iStart,
-					iEnd_in,
-					pDag, pData);
+		edgep = make_rule_edge(edgep->u.r.pRule,
+			label,
+			edgep->u.r.iNext + 1,
+			edgep->iStart,
+			iEnd_in,
+			pDag, pData);
 		skips++;
-		/* The following code is copied from above. */
-		if (! ok)
+		/* Recurse first so that shortest rules are processed first. */
+		skip_optional_non_terminals(edgep, act_edge, pass_edge, pDag, label, iEnd_in, ok, skips, pData);
+		/* The following code is copied from extend_lc_edge. */
+		if (!ok)
 			edgep->bFailed = TRUE;
-		add_child(act_edge,edgep,pass_edge, pData, skips);
-		if (complete_edge_p(edgep)) {
+		add_child(act_edge, edgep, pass_edge, pData, skips);
+		if (complete_edge_p(edgep))
+		{
 			ok = complete_constraints(pDag, edgep->u.r.pRule, pData->pPATR);
-			if (! ok)
+			if (!ok)
+			{
+				if (pData->pPATR->bUnification)
+				{
+					// collectPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
+					return;
+				}
 				edgep->bFailed = TRUE;
+			}
 			lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
-			break;
-		} else {
+		}
+		else
+		{
 			lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
 		}
 	}
 }
-}
-
 /*****************************************************************************
  * NAME
  *    complete_constraints
