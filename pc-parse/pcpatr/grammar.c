@@ -1957,14 +1957,32 @@ PATRRuleList *		listp;
 PATRNonterminal *	nterm;
 int			nonterm_count;
 
+/*
+ * We try to preserve optional non-terminals in the rule
+ * to avoid exponential explosions when a rule has a lot of them.
+ * For instance, rule cat -> head (nt1) (nt2) ... (ntN).
+ * would expand to 2^N rules if we eliminated optional non-terminals
+ * by creating rules with the non-terminal and rules without it.
+ * The parser optionally skips optional non-terminals in the rules.
+ */
 rhs = psr->pHead;
-/* Expand optional non-terminals at beginning of rule. */
+/*
+ * Expand optional non-terminals at beginning of rule
+ * so that the parser can index the first non-terminal.
+ * This still avoids an exponential explosion since
+ * rule cat -> (nt1) (nt2) (nt3) (nt4) head. becomes
+ * rule cat -> nt1 (nt2) (nt3) (nt4) head.
+ * rule cat -> nt2 (nt3) (nt4) head.
+ * rule cat -> nt3 (nt4) head.
+ * rule cat -> nt4 head.
+ * rule cat -> head.
+ */
 if (rhs && rhs->bOptional) {
 	expand_optional_non_terminal(rhs, id, lhs, psr, dag,
 			pPriorityUnions_in, pConstraints_in, pData);
 	return;
 }
-/* Expand remaining optional non-terminals. */
+/* Expand optional non-terminals that whose constraints can't be preserved. */
 for( nterm = rhs ; nterm ; nterm = nterm->pNext ) {
 if (nterm->bOptional &&
 	 !preservable_optional_constraints_p(nterm->pszName, dag, dag, pData->pPATR)) {
@@ -2051,6 +2069,15 @@ PATRFeature *pDag1;
 PATRFeature *pDag2;
 PATRData *pPATR;
 {
+/*
+ * We can only preserve cat's optional constraints if they can't
+ * change the outcome of the unification if cat is skipped by the parser.
+ * The parser doesn't have access to the original constraints, just
+ * a DAG that is the result of a number of unifications.  So it
+ * can't remove the constraints if it decides to skip a non-terminal.
+ * The best that it can do is to remove vacuous features under cat
+ * to make the output look better.
+ */
 PATRComplexFeature *flist;
 int count = 0;
 if (!pDag1->pFirstFeat && !pDag1->pSecondFeat) {
@@ -2060,12 +2087,15 @@ if (!pDag1->pFirstFeat && !pDag1->pSecondFeat) {
 		/* Is pDag1 preservable? */
 		if (designator_has_value_p(flist)) {
 			/* pDag1 has a constant value like <cat foo> = +. */
+			/* This could cause a unification failure. */
 			return FALSE;
 		}
 		count = count_constraint_prefixes(flist, pDag2, pPATR);
 		if (count > 1) {
 			/* pDag2 refers to flist multiple times. */
 			/* Example: <root a> = <cat> and <root b> = <cat>. */
+			/* This could cause a unification failure if */
+			/* <root a f> = + and <root b f> = -. */
 			count = count_constraint_prefixes(flist, pDag2, pPATR);
 			return FALSE;
 		}
@@ -2255,7 +2285,7 @@ install_rule(id, lhs, psr2, dag, pPriorityUnions_in, pConstraints_in, pData);
  *    attr - attribute
  *    pPATR - PATR data
  * DESCRIPTION
- *    Reunify pDag from constraints skipping attr.
+ *    Reunify pDag from constraints skipping constraints that mention attr.
  * RETURN VALUE
  *    PATRFeature *
  */
@@ -2264,6 +2294,13 @@ PATRFeature *	pDag;
 char * attr;
 PATRData * pPATR;
 {
+/*
+ * We can retroactively skip constraints that mention attr
+ * because the unifier preserved the sources of each unification.
+ * This is too complicated for the parser to do since its DAG
+ * is created by unifying active and passive edges on top
+ * of the rule constraints.
+ */
 PATRFeature *pFirstFeat;
 PATRFeature *pSecondFeat;
 PATRFeature *pDag2;
