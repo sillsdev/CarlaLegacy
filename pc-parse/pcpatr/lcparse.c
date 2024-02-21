@@ -959,6 +959,45 @@ StringList *		pPath;
 StringList *		pNextPath;
 char *			psz1;
 char *			psz2;
+if (partial_cat_p(pass_edge->pszLabel))
+{	/*
+	 * Unify the partial edge's dag directly with the active edge's dag.
+	 */
+	pDag = unifyPATRFeatures(act_edge->pFeature, pass_edge->pFeature, TRUE, pData->pPATR);
+	label = act_edge->pszLabel;
+	edgep = make_rule_edge(act_edge->u.r.pRule,
+		label,
+		act_edge->u.r.iNext + 1,
+		act_edge->iStart,
+		iEnd_in,
+		pDag, pData);
+	/*
+	 *  Link the new edge into its parent.
+	 */
+	add_child(act_edge, edgep, pass_edge, pData, 0);
+	/*
+	 * Now add it either as an active or passive edge, depending on the need index.
+	 */
+	if (complete_edge_p(edgep))
+	{
+		ok = complete_constraints(edgep->pFeature, edgep->u.r.pRule, pData->pPATR);
+		if (!ok)
+		{
+			if (pData->pPATR->bUnification)
+			{
+				return;
+			}
+			edgep->bFailed = TRUE;
+		}
+		lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
+	}
+	else
+	{
+		skip_optional_non_terminals(edgep, act_edge, pass_edge, pDag, label, iEnd_in, ok, 0, pData);
+		lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
+	}
+	return;
+}
 /*
  * First check if these edges successfully unify,
  * continue only if they do
