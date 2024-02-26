@@ -811,7 +811,7 @@ PATREdge *edgep;
 int depth;
 PATRData * pThis;
 {
-if (edgep->iIndex == 0)    /* if index not yet assigned */
+if (edgep->iIndex == 0 && !partial_cat_p(edgep->pszLabel))    /* if index not yet assigned */
 	edgep->iIndex = ++pThis->pMem->iCurrent;   /* assign next value */
 }
 

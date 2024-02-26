@@ -14,6 +14,7 @@
  ******************************************************************************
  * Copyright 1990, 2001 by SIL International.  All rights reserved.
  */
+#include "assert.h"
 #include "patr.h"
 #include "patrdef.h"
 #include "allocmem.h"
@@ -62,7 +63,7 @@ static PATREdge *	make_rule_edge P((PATRRule * rulep,
 					  PATRParseData * pData));
 static void		add_child P((PATREdge * old_parent,
 					 PATREdge * new_parent,
-					 PATREdge * child, PATRParseData * pData, int));
+					 PATREdge * child, char *child_name, PATRParseData * pData, int));
 static PATREdge *	hypothesize_lc P((PATRRule * rulep,
 					  int vertex,
 					  PATRParseData * pData));
@@ -80,6 +81,7 @@ static void skip_optional_non_terminals P((
 					PATREdge* edgep,
 					PATREdge* act_edge,
 					PATREdge* pass_edge,
+					char* pass_name,
 					PATRFeature* pDag,
 					char* label,
 					int iEnd_in,
@@ -845,18 +847,27 @@ return(edgep);
  * RETURN VALUE
  *    none
  */
-static void add_child(old_parent, new_parent, child, pData, skips)
+static void add_child(old_parent, new_parent, child, child_name, pData, skips)
 PATREdge * old_parent;
 PATREdge * new_parent;
 PATREdge * child;
-int skips;
+char* child_name;
 PATRParseData * pData;
+int skips;
 {
 PATREdgeList *elp;
+
+if (partial_cat_p(child_name))
+{
+	assert(!new_parent->u.r.pChildren);
+	new_parent->u.r.pChildren = child->u.r.pChildren;
+	return;
+}
 
 /* Allocate space for the pointer to the edge */
 elp = allocPATREdgeList(pData->pPATR);
 elp->pEdge = child;
+elp->pszName = child_name;
 elp->iSkips = skips;
 
 /* Link edge into this new_parent child edge list */
@@ -959,11 +970,23 @@ StringList *		pPath;
 StringList *		pNextPath;
 char *			psz1;
 char *			psz2;
+nterm = need_nonterm(act_edge);
+psz0 = storedPATRString("0", pData->pPATR);
 if (partial_cat_p(pass_edge->pszLabel))
 {	/*
 	 * Unify the partial edge's dag directly with the active edge's dag.
 	 */
+	ok = TRUE;
 	pDag = unifyPATRFeatures(act_edge->pFeature, pass_edge->pFeature, TRUE, pData->pPATR);
+	if (!partial_cat_p(act_edge->pszLabel))
+	{
+		if (unifyPATRFeatures(findOrAddPATRAttribute(pDag, act_edge->pszLabel, pData->pPATR),
+			findOrAddPATRAttribute(pDag, psz0, pData->pPATR),
+			FALSE, pData->pPATR) == NULL)
+		{
+			ok = FALSE;
+		}
+	}
 	label = act_edge->pszLabel;
 	edgep = make_rule_edge(act_edge->u.r.pRule,
 		label,
@@ -974,7 +997,7 @@ if (partial_cat_p(pass_edge->pszLabel))
 	/*
 	 *  Link the new edge into its parent.
 	 */
-	add_child(act_edge, edgep, pass_edge, pData, 0);
+	add_child(act_edge, edgep, pass_edge, nterm->pszName, pData, 0);
 	/*
 	 * Now add it either as an active or passive edge, depending on the need index.
 	 */
@@ -993,7 +1016,7 @@ if (partial_cat_p(pass_edge->pszLabel))
 	}
 	else
 	{
-		skip_optional_non_terminals(edgep, act_edge, pass_edge, pDag, label, iEnd_in, ok, 0, pData);
+		skip_optional_non_terminals(edgep, act_edge, pass_edge, nterm->pszName, pDag, label, iEnd_in, ok, 0, pData);
 		lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
 	}
 	return;
@@ -1002,7 +1025,6 @@ if (partial_cat_p(pass_edge->pszLabel))
  * First check if these edges successfully unify,
  * continue only if they do
  */
-nterm = need_nonterm( act_edge );
 if (nterm == NULL)
 	{
 	displayNumberedMessage(&sFailed_need_nonterm_m,
@@ -1017,7 +1039,6 @@ if (nterm == NULL)
  *  Otherwise, just pass on the previously generated (and failed)
  *  unification.
  */
-psz0 = storedPATRString( "0", pData->pPATR);
 if (!act_edge->bFailed)
 	{
 	if (!pData->pPATR->bUnification && !pData->pPATR->bFailure)
@@ -1177,14 +1198,16 @@ if (!act_edge->bFailed)
 		/*
 		 *  unify lhs features corresponding to nterm with 0 path
 		 */
-		if (unifyPATRFeatures(findOrAddPATRAttribute(pDag,
-				  nterm->pszLhsName,
-				  pData->pPATR),
-				  findOrAddPATRAttribute(pDag, psz0, pData->pPATR),
-				  FALSE, pData->pPATR) == NULL)
-		ok = FALSE;
-		else
 		ok = TRUE;
+		if (!partial_cat_p(nterm->pszLhsName))
+		{
+			if (unifyPATRFeatures(findOrAddPATRAttribute(pDag, nterm->pszLhsName, pData->pPATR),
+				findOrAddPATRAttribute(pDag, psz0, pData->pPATR),
+				FALSE, pData->pPATR) == NULL)
+			{
+				ok = FALSE;
+			}
+		}
 		if (  ok &&
 		  (act_edge->eType == PATR_RULE_EDGE) &&
 		  (act_edge->u.r.pRule->iNontermCount == act_edge->u.r.iNext) )
@@ -1261,7 +1284,7 @@ if (! ok)
 /*
  *  Link the new edge into its parent
  */
-add_child(act_edge,edgep,pass_edge, pData, 0);
+add_child(act_edge,edgep,pass_edge, nterm->pszName, pData, 0);
 /*
  * Now add it either as an active or passive edge, depending on the need index
  */
@@ -1271,7 +1294,7 @@ if ( complete_edge_p(edgep) )
 } 
 else
 {
-	skip_optional_non_terminals(edgep, act_edge, pass_edge, pDag, label, iEnd_in, ok, 0, pData);
+	skip_optional_non_terminals(edgep, act_edge, pass_edge, nterm->pszName, pDag, label, iEnd_in, ok, 0, pData);
 	lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
 }
 }
@@ -1294,10 +1317,11 @@ else
  * RETURN VALUE
  *    none
  */
-static void skip_optional_non_terminals(edgep, act_edge, pass_edge, pDag, label, iEnd_in, ok, skips, pData)
+static void skip_optional_non_terminals(edgep, act_edge, pass_edge, pass_name, pDag, label, iEnd_in, ok, skips, pData)
 PATREdge* edgep;
 PATREdge* act_edge;
 PATREdge* pass_edge;
+char * pass_name;
 PATRFeature* pDag;
 char* label;
 int iEnd_in;
@@ -1322,11 +1346,11 @@ PATRParseData* pData;
 			pDag, pData);
 		skips++;
 		/* Recurse first so that shortest rules are processed first. */
-		skip_optional_non_terminals(edgep, act_edge, pass_edge, pDag, label, iEnd_in, ok, skips, pData);
+		skip_optional_non_terminals(edgep, act_edge, pass_edge, pass_name, pDag, label, iEnd_in, ok, skips, pData);
 		/* The following code is copied from extend_lc_edge. */
 		if (!ok)
 			edgep->bFailed = TRUE;
-		add_child(act_edge, edgep, pass_edge, pData, skips);
+		add_child(act_edge, edgep, pass_edge, pass_name, pData, skips);
 		if (complete_edge_p(edgep))
 		{
 			ok = complete_constraints(pDag, edgep->u.r.pRule, pData->pPATR);
@@ -2215,7 +2239,7 @@ PATREdge *edgep;
 int depth;
 PATRData * pThis;
 {
-if (edgep->iIndex == 0)    /* if index not yet assigned */
+if (edgep->iIndex == 0 && !partial_cat_p(edgep->pszLabel))    /* if index not yet assigned */
 	edgep->iIndex = ++pThis->pMem->iCurrent;   /* assign next value */
 }
 

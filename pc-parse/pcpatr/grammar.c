@@ -2000,11 +2000,10 @@ if (rhs && rhs->bOptional) {
 	return;
 }
 /* Convert to Chomsky Normal Form. */
-if (FALSE && !partial_cat_p(lhs)) {
+if (FALSE && !partial_cat_p(lhs) && lhs[0] != 'X') {
 	for (nterm = rhs; nterm; nterm = nterm->pNext) {
 		if (!partial_cat_p(nterm->pszName) && nterm->pNext) {
-			create_partial_rule(nterm, id, lhs, psr, dag,
-				pPriorityUnions_in, pConstraints_in, pData);
+			create_partial_rule(nterm, id, lhs, psr, dag, pPriorityUnions_in, pConstraints_in, pData);
 			return;
 		}
 	}
@@ -2012,7 +2011,7 @@ if (FALSE && !partial_cat_p(lhs)) {
 /* Expand optional non-terminals that whose constraints can't be preserved. */
 for( nterm = rhs ; nterm ; nterm = nterm->pNext ) {
 if (nterm->bOptional &&
-	 !preservable_optional_constraints_p(nterm->pszName, dag, dag, pData->pPATR)) {
+	!preservable_optional_constraints_p(nterm->pszName, dag, dag, pData->pPATR)) {
 	expand_optional_non_terminal(nterm, id, lhs, psr, dag,
 			pPriorityUnions_in, pConstraints_in, pData);
 	return;
@@ -2426,7 +2425,8 @@ char* nterm_name;
 GrammarData* pData;
 {
 	char partial_cat[1024];
-	sprintf(partial_cat, "/%s/%s/%d", cat, nterm_name, (int)pData->uiLineNumber);
+	pData->iNextPartialId++;
+	sprintf(partial_cat, "/%s/%d", cat, pData->iNextPartialId);
 	return storedPATRString(partial_cat, pData->pPATR);
 }
 

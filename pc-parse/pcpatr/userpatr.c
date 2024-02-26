@@ -1634,11 +1634,9 @@ PATRComplexFeature * pComp;
 PATRComplexFeature * pPrev;
 char * psz0;
 char * pszLHS;
-int i;
-PATRNonterminal * pnt;
-PATREdgeList * pel;
+PATREdgeList* pel;
 
-if (pEdge_in->pFeature)
+if (pEdge_in->pFeature && !partial_cat_p(pEdge_in))
 	{
 	pFeat = followPATRForwardPointers( pEdge_in->pFeature );
 	if ((pFeat != NULL) && (pFeat->eType == PATR_COMPLEX))
@@ -1719,32 +1717,11 @@ if (pEdge_in->pFeature)
 					"DEBUG: change label from \"%s\" to ",
 					pComp->pszLabel );
 			}
-			for ( pnt = pEdge_in->u.r.pRule->pRHS, i = 1, pel = NULL ;
-			  pnt ;
-			  pnt = pnt->pNext, ++i )
+			/* Find the child edge corrresponding to pComp. */
+			for (pel = pEdge_in->u.r.pChildren; pel; pel = pel->pNext)
 			{
-			if (pComp->pszLabel == pnt->pszName)
-				{
-				int iRev = pEdge_in->u.r.pRule->iNontermCount - i;
-				for ( pel = pEdge_in->u.r.pChildren ;
-				  pel;
-				  pel = pel->pNext )
-				{
-				/* step to desired child */
-				/* Ignore optional rule elements that got skipped. */
-				iRev += -pel->iSkips;
-				if (iRev < 0) {
-					/* The element was skipped and should be ignored. */
-					pel = NULL;
-					break;
-				}
-				if (iRev == 0) {
-					break;
-				}
-				--iRev;
-				}
+			if (pel->pszName == pComp->pszLabel)
 				break;
-				}
 			}
 			if ((pel != NULL) && (pel->pEdge != NULL))
 			{
