@@ -340,11 +340,7 @@ static PATRFeature* select_constraints P((
 	PATRNonterminal* non_terminals2,
 	int prefer_first,
 	GrammarData* pData));
-static char* new_partial_cat P((char* cat, char* nterm_name, GrammarData* pData));
-static PATRFeature *skip_optional_attr P((
-	PATRFeature *	pDag,
-	char * attr,
-	PATRData * pPATR));
+static char*	new_partial_cat P((char* cat, char* nterm_name, GrammarData* pData));
 static void		install_category P((PATRRule *, int, char *,
 						GrammarData * pData));
 static void		free_symlist P((GrammarData * pData));
@@ -2002,7 +1998,7 @@ if (rhs && rhs->bOptional) {
 /* Convert to Chomsky Normal Form. */
 if (FALSE && !partial_cat_p(lhs) && lhs[0] != 'X') {
 	for (nterm = rhs; nterm; nterm = nterm->pNext) {
-		if (!partial_cat_p(nterm->pszName) && nterm->pNext) {
+		if (nterm->bOptional && !partial_cat_p(nterm->pszName) && nterm->pNext) {
 			create_partial_rule(nterm, id, lhs, psr, dag, pPriorityUnions_in, pConstraints_in, pData);
 			return;
 		}
@@ -2010,8 +2006,7 @@ if (FALSE && !partial_cat_p(lhs) && lhs[0] != 'X') {
 }
 /* Expand optional non-terminals that whose constraints can't be preserved. */
 for( nterm = rhs ; nterm ; nterm = nterm->pNext ) {
-if (nterm->bOptional &&
-	!preservable_optional_constraints_p(nterm->pszName, dag, dag, pData->pPATR)) {
+if (FALSE && nterm->bOptional) {
 	expand_optional_non_terminal(nterm, id, lhs, psr, dag,
 			pPriorityUnions_in, pConstraints_in, pData);
 	return;
@@ -2539,7 +2534,7 @@ GrammarData* pData;
  * RETURN VALUE
  *    PATRFeature *
  */
-static PATRFeature *skip_optional_attr(pDag, attr, pPATR)
+PATRFeature *skip_optional_attr(pDag, attr, pPATR)
 PATRFeature *	pDag;
 char * attr;
 PATRData * pPATR;

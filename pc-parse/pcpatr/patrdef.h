@@ -504,6 +504,10 @@ extern PATRFeature * parsePATRFeaturePath P((char *        pszFeaturePath_in,
 						 PATRData *    pPATR_in));
 extern void showPATRRule P((PATRRule * rulep));
 extern int partial_cat_p P((char* cat));
+extern PATRFeature* skip_optional_attr P((
+	PATRFeature* pDag,
+	char* attr,
+	PATRData* pPATR));
 
 /*
  *  lcparse.c
