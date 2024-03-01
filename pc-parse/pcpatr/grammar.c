@@ -325,6 +325,10 @@ static void expand_optional_non_terminal P((
 	PATRPriorityUnion * pPriorityUnions_in,
 	PATRConstraint * pConstraints_in,
 	GrammarData * pData));
+static int has_double_optional_constraint P((
+	PATRFeature* pDag,
+	char* pszName,
+	PATRNonterminal* pNonterminals));
 static void create_partial_rule P((
 	PATRNonterminal* nterm,
 	char* id,
@@ -2004,9 +2008,21 @@ if (FALSE && !partial_cat_p(lhs) && lhs[0] != 'X') {
 		}
 	}
 }
-/* Move optional constraints to non-terminal. */
+/* Process optional non-terminals. */
 for (nterm = rhs; nterm; nterm = nterm->pNext) {
 	if (nterm->bOptional) {
+		if (has_double_optional_constraint(dag, nterm->pszName, nterm->pNext))
+		{
+			/*
+			 * There is a constraint like <cat1 ...> = <cat2 ...>
+			 * where cat1 and cat2 are both optional.
+			 * We need to expand the constraints to get this case right.
+			 */
+			expand_optional_non_terminal(nterm, id, lhs, psr, dag,
+				pPriorityUnions_in, pConstraints_in, pData);
+			return;
+		}
+		/* Move the optional constraints to the non-terminal. */
 		nterm->pFeature = skip_optional_attr(dag, nterm->pszName, FALSE, pData->pPATR);
 		dag = skip_optional_attr(dag, nterm->pszName, TRUE, pData->pPATR);
 	}
@@ -2243,6 +2259,60 @@ designator = d_value->u.pComplex;
 return TRUE;
 }
 
+/*****************************************************************************
+ * NAME
+ *    has_double_optional_constraint
+ * ARGUMENTS
+ *    pDag    - rule constriants
+ *    pszName - name of optional non-terminal
+ * DESCRIPTION
+ *    Does pDag have a constraint with pszName that mentions another optional
+ *    non-terminal?
+ * RETURN VALUE
+ *    int
+ */
+static int has_double_optional_constraint(pDag, pszName, pNonterminals)
+PATRFeature* pDag;
+char* pszName;
+PATRNonterminal* pNonterminals;
+{
+PATRComplexFeature* flist;
+PATRComplexFeature* flist2;
+PATRNonterminal* nterm;
+if (pDag == NULL)
+{
+	return FALSE;
+}
+if (pDag->pFirstFeat || pDag->pSecondFeat)
+{
+	return has_double_optional_constraint(pDag->pFirstFeat,
+			pszName, pNonterminals) ||
+		has_double_optional_constraint(pDag->pSecondFeat,
+			pszName, pNonterminals);
+}
+assert(pDag->eType == PATR_COMPLEX);
+for (flist = pDag->u.pComplex; flist; flist = flist->pNext)
+{
+if (flist->pszLabel == pszName)
+{
+	for (flist2 = pDag->u.pComplex; flist2; flist2 = flist2->pNext)
+	{
+	if (flist2 != flist)
+	{
+		for (nterm = pNonterminals; nterm; nterm = nterm->pNext)
+		{
+		if (nterm->pszName == flist2->pszLabel && nterm->bOptional)
+		{
+			/* flist2 is optional. */
+			return TRUE;
+		}
+		}
+	}
+	}
+}
+}
+return FALSE;
+}
 /*****************************************************************************
  * NAME
  *    expand_optional_non_terminal
