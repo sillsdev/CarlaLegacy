@@ -78,6 +78,7 @@ static PATRFeature* unify_edges P((
 					PATREdge* pass_edge,
 					PATREdgeList* act_children,
 					PATRFeature* act_dag,
+					PATRNonterminal* nterm,
 					char* pszLhsName,
 					char* pszName,
 					int* ok_out,
@@ -1048,7 +1049,7 @@ if (nterm == NULL)
  */
 if (!act_edge->bFailed)
 	{
-	pDag = unify_edges(act_edge, pass_edge, act_edge->u.r.pChildren, act_edge->pFeature,
+	pDag = unify_edges(act_edge, pass_edge, act_edge->u.r.pChildren, act_edge->pFeature, nterm,
 		nterm->pszLhsName, nterm->pszName, &ok, &abort, pData);
 	if (abort)
 	{
@@ -1126,6 +1127,9 @@ else
  *    pass_edge - passive edge
  *    act_children - same as act_edge->u.r.pChildren
  *    act_dag - same as act_edge->pFeatures
+ *    nterm - non-terminal
+ *    pszLhsName - lhs name of non-terminal
+ *    pszName - name of non-terminal
  *    ok_out - return value for ok
  *	  abort_out - return value for abort
  *    pData - parse data
@@ -1135,11 +1139,13 @@ else
  * RETURN VALUE
  *    PATRFeature*
  */
-PATRFeature* unify_edges(act_edge, pass_edge, act_children, act_dag, pszLhsName, pszName, ok_out, abort_out, pData)
+PATRFeature* unify_edges(act_edge, pass_edge, act_children, act_dag,
+	nterm, pszLhsName, pszName, ok_out, abort_out, pData)
 PATREdge* act_edge;
 PATREdge* pass_edge;
 PATREdgeList* act_children;
 PATRFeature* act_dag;
+PATRNonterminal* nterm;
 char* pszLhsName;
 char* pszName;
 int* ok_out;
@@ -1167,11 +1173,15 @@ PATRParseData* pData;
 		return act_dag;
 	}
 	markPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
+	if (nterm && nterm->pFeature)
+	{
+		/* Add optional constraints. */
+		act_dag = unifyPATRFeatures(act_dag, nterm->pFeature, TRUE, pData->pPATR);
+	}
 	psz0 = storedPATRString("0", pData->pPATR);
 	pDag1 = findPATRAttribute(act_dag, pszName);
 	if (pass_edge->eType == PATR_RULE_EDGE)
-		pDag2 = findOrAddPATRAttribute(pass_edge->pFeature, psz0,
-			pData->pPATR);
+		pDag2 = findOrAddPATRAttribute(pass_edge->pFeature, psz0, pData->pPATR);
 	else
 		pDag2 = pass_edge->pFeature;
 
@@ -1516,6 +1526,8 @@ PATRParseData* pData;
 	if (nonterm && nonterm->bOptional)
 	{
 		char* attr = need_nonterm(edgep)->pszName;
+		if (FALSE)
+		{
 		PATRFeature* pRuleDag = pDag->pFirstFeat;
 		if (optional_link_complexity(pRuleDag, attr) < 2)
 		{
@@ -1528,6 +1540,7 @@ PATRParseData* pData;
 			int ok2;
 			pDag = reunify_edges(pRuleDag, edgep->u.r.pChildren, edgep->pszLabel, attr, &ok2, pData);
 			assert(ok2 == ok);
+		}
 		}
 		edgep = make_rule_edge(edgep->u.r.pRule,
 			label,
@@ -1593,14 +1606,15 @@ int abort;
 if (!pChildren)
 {
 	*ok_out = TRUE;
-	return skip_optional_attr(pRuleDag, skip_attr, pData->pPATR);
+	return skip_optional_attr(pRuleDag, skip_attr, TRUE, pData->pPATR);
 }
 pActiveDag = reunify_edges(pRuleDag, pChildren->pNext, lhs, skip_attr, ok_out, pData);
 if (*ok_out == FALSE)
 {
 	return pActiveDag;
 }
-pDag = unify_edges(NULL, pChildren->pEdge, pChildren->pNext, pActiveDag, lhs, pChildren->pszName, ok_out, &abort, pData);
+pDag = unify_edges(NULL, pChildren->pEdge, pChildren->pNext, pActiveDag,
+	NULL, lhs, pChildren->pszName, ok_out, &abort, pData);
 assert(!abort);
 return pDag;
 }

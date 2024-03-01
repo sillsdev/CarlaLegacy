@@ -2004,6 +2004,13 @@ if (FALSE && !partial_cat_p(lhs) && lhs[0] != 'X') {
 		}
 	}
 }
+/* Move optional constraints to non-terminal. */
+for (nterm = rhs; nterm; nterm = nterm->pNext) {
+	if (nterm->bOptional) {
+		nterm->pFeature = skip_optional_attr(dag, nterm->pszName, FALSE, pData->pPATR);
+		dag = skip_optional_attr(dag, nterm->pszName, TRUE, pData->pPATR);
+	}
+}
 /* Expand optional non-terminals that whose constraints can't be preserved. */
 for( nterm = rhs ; nterm ; nterm = nterm->pNext ) {
 if (FALSE && nterm->bOptional) {
@@ -2285,7 +2292,7 @@ if (psr2->pHead->pszName == nterm->pszName) {
 	}
 	}
 }
-dag2 = skip_optional_attr(dag, nterm->pszName, pData->pPATR);
+dag2 = skip_optional_attr(dag, nterm->pszName, TRUE, pData->pPATR);
 install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
 /* Make a rule with nterm obligatory. */
 psr2 = copy_psr(psr, pData);
@@ -2528,15 +2535,17 @@ GrammarData* pData;
  * ARGUMENTS
  *    pDag - feature structure
  *    attr - attribute
+ *    exclude - whether to exclude or include optional constraints
  *    pPATR - PATR data
  * DESCRIPTION
  *    Reunify pDag from constraints skipping constraints that mention attr.
  * RETURN VALUE
  *    PATRFeature *
  */
-PATRFeature *skip_optional_attr(pDag, attr, pPATR)
+PATRFeature *skip_optional_attr(pDag, attr, exclude, pPATR)
 PATRFeature *	pDag;
 char * attr;
+int exclude;
 PATRData * pPATR;
 {
 /*
@@ -2552,31 +2561,30 @@ PATRFeature *pDag2;
 /* See if pDag has attr. */
 int has_attr = FALSE;
 PATRComplexFeature *flist;
+if (pDag->pFirstFeat || pDag->pSecondFeat) {
+	/* Unify pDag again. */
+	pFirstFeat = skip_optional_attr(pDag->pFirstFeat, attr, exclude, pPATR);
+	pSecondFeat = skip_optional_attr(pDag->pSecondFeat, attr, exclude, pPATR);
+	if (!pFirstFeat) {
+		return pSecondFeat;
+	}
+	if (!pSecondFeat) {
+		return pFirstFeat;
+	}
+	pDag2 = unifyPATRFeatures(pFirstFeat, pSecondFeat, TRUE, pPATR);
+	return pDag2;
+}
 for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext) {
 	if (strcmp(flist->pszLabel, attr) == 0) {
 		has_attr = TRUE;
 		break;
 	}
 }
-if (!has_attr) {
-	/* Nothing to remove. */
-	return pDag;
-}
-if (!pDag->pFirstFeat && !pDag->pSecondFeat) {
-	/* Skip constraints with attr in them. */
+if (has_attr == exclude)
+{
 	return NULL;
 }
-/* Unify pDag again. */
-pFirstFeat = skip_optional_attr(pDag->pFirstFeat, attr, pPATR);
-pSecondFeat = skip_optional_attr(pDag->pSecondFeat, attr, pPATR);
-if (!pFirstFeat) {
-	return pSecondFeat;
-}
-if (!pSecondFeat) {
-	return pFirstFeat;
-}
-pDag2 = unifyPATRFeatures(pFirstFeat, pSecondFeat, TRUE, pPATR);
-return pDag2;
+return pDag;
 }
 
 /*****************************************************************************
@@ -3279,6 +3287,7 @@ PATRNonterminal *copy;
 copy = new_nonterm( nonterm->pszName, pData);
 copy->pszLhsName = nonterm->pszLhsName;
 copy->bOptional = nonterm->bOptional;
+copy->pFeature = nonterm->pFeature;
 copy->pNext      = NULL;
 return( copy );
 }

@@ -440,6 +440,7 @@ f->node.pszName    = NULL;
 f->node.pszLhsName = NULL;
 f->node.pNext      = NULL;
 f->node.bOptional  = FALSE;
+f->node.pFeature   = NULL;
 f->link = pGarbage->pNontermHead;
 pGarbage->pNontermHead = f;
 if (pGarbage->pNontermTail == NULL)

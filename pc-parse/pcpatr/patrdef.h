@@ -112,6 +112,7 @@ typedef struct patr_nonterminal
 	char *			pszLhsName;	/* left hand side name with
 						   index */
 	int             bOptional;   /* is this non-terminal optional? */
+	PATRFeature*	pFeature;    /* constraints for optional non-terminal */
 	struct patr_nonterminal *	pNext;		/* link to next element */
 	} PATRNonterminal;
 
@@ -507,6 +508,7 @@ extern int partial_cat_p P((char* cat));
 extern PATRFeature* skip_optional_attr P((
 	PATRFeature* pDag,
 	char* attr,
+	int exclude,
 	PATRData* pPATR));
 
 /*
