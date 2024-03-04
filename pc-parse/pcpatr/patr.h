@@ -285,7 +285,6 @@ typedef struct patr_edge_list {
 	PATREdge *			pEdge;
 	struct patr_edge_list *	pNext;
 	char * pszName; /* name of pEdge as non-terminal in consuming rule. */
-	int iSkips;  /* Number of optional rule elements skipped after pEdge. */
 	} PATREdgeList;
 
 /*

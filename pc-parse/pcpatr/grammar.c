@@ -165,7 +165,6 @@ typedef struct grammar_data
 	 *  variable to control grammar input tokenizing
 	 */
 	const char *       pszReservedChars;
-	int				   iNextPartialId;
 } GrammarData;
 
 /*
@@ -303,19 +302,6 @@ static void		install_rule P((char *, char *,
 					PATRPriorityUnion * pPriorityUnions_in,
 					PATRConstraint *    pConstraints_in,
 					GrammarData * pData));
-static int preservable_optional_constraints_p P((
-					char *cat,
-					PATRFeature *pDag1,
-					PATRFeature *pDag2,
-					PATRData *pPATR));
-static int designator_has_value_p P((PATRComplexFeature *prefix));
-static int count_constraint_prefixes P((
-					PATRComplexFeature *prefix,
-					PATRFeature *pDag,
-					PATRData *pPATR));
-static int constraint_prefix_p P((
-					PATRComplexFeature *prefix,
-					PATRComplexFeature *designator));
 static void expand_optional_non_terminal P((
 	PATRNonterminal * nterm,
 	char * id,
@@ -325,6 +311,11 @@ static void expand_optional_non_terminal P((
 	PATRPriorityUnion * pPriorityUnions_in,
 	PATRConstraint * pConstraints_in,
 	GrammarData * pData));
+static PATRFeature* skip_optional_attr P((
+	PATRFeature* pDag,
+	char* attr,
+	int exclude,
+	PATRData* pPATR));
 static int has_double_optional_constraint P((
 	PATRFeature* pDag,
 	char* pszName,
@@ -515,7 +506,6 @@ sData.psz0               = NULL;
 sData.bStoredPeriod      = FALSE;
 sData.eTokenizeMode      = kNormalToken;
 sData.pszReservedChars   = szReservedChars_m;
-sData.iNextPartialId     = 0;
 
 if (getNextToken(szToken, MAX_TOKEN_SIZE, &sData) == EOF)
 	{
@@ -2072,170 +2062,6 @@ pData->pGrammar->pRuleTable = listp;
 
 /*****************************************************************************
  * NAME
- *    preservable_optional_constraints_p
- * ARGUMENTS
- *    cat     - name of optional category
- *    pDag1    - constraints to iterate
- *    pDag2    - constraints to check against
- * DESCRIPTION
- *    Are all cat constraints preservable in dag1?
- * RETURN VALUE
- *    int
- */
-static int preservable_optional_constraints_p(cat, pDag1, pDag2, pPATR)
-char *cat;
-PATRFeature *pDag1;
-PATRFeature *pDag2;
-PATRData *pPATR;
-{
-/*
- * We can only preserve cat's optional constraints if they can't
- * change the outcome of the unification if cat is skipped by the parser.
- * The parser doesn't have access to the original constraints, just
- * a DAG that is the result of a number of unifications.  So it
- * can't remove the constraints if it decides to skip a non-terminal.
- * The best that it can do is to remove vacuous features under cat
- * to make the output look better.
- */
-PATRComplexFeature *flist;
-int count = 0;
-if (!pDag1->pFirstFeat && !pDag1->pSecondFeat) {
-	for ( flist=pDag1->u.pComplex; flist; flist = flist->pNext )
-	{
-	if (strcmp(flist->pszLabel, cat) == 0) {
-		/* Is pDag1 preservable? */
-		if (designator_has_value_p(flist)) {
-			/* pDag1 has a constant value like <cat foo> = +. */
-			/* This could cause a unification failure. */
-			return FALSE;
-		}
-		count = count_constraint_prefixes(flist, pDag2, pPATR);
-		if (count > 1) {
-			/* pDag2 refers to flist multiple times. */
-			/* Example: <root a> = <cat> and <root b> = <cat>. */
-			/* This could cause a unification failure if */
-			/* <root a f> = + and <root b f> = -. */
-			count = count_constraint_prefixes(flist, pDag2, pPATR);
-			return FALSE;
-		}
-	}
-	}
-	return TRUE;
-}
-/* Recurse down pDag1. */
-if (!preservable_optional_constraints_p(cat, pDag1->pFirstFeat, pDag2, pPATR)) {
-	return FALSE;
-}
-if (!preservable_optional_constraints_p(cat, pDag1->pSecondFeat, pDag2, pPATR)) {
-	return FALSE;
-}
-return TRUE;
-}
-
-/*****************************************************************************
- * NAME
- *    designator_has_value_p
- * ARGUMENTS
- *    designator
- * DESCRIPTION
- *    Is designator equated to a value?
- * RETURN VALUE
- *    int
- */
-static int designator_has_value_p(prefix)
-PATRComplexFeature *prefix;
-{
-PATRFeature *value = prefix->pValue;
-value = followPATRForwardPointers(value);
-if (value->eType == PATR_ATOM) {
-	return TRUE;
-}
-if (value->eType == PATR_COMPLEX) {
-	PATRComplexFeature *flist;
-	for (flist = value->u.pComplex; flist; flist = flist->pNext) {
-	if (designator_has_value_p(flist)) {
-		return TRUE;
-	}
-	}
-}
-return FALSE;
-}
-
-/*****************************************************************************
- * NAME
- *    count_constraint_prefixes
- * ARGUMENTS
- *    prefix   - constraint prefix
- *    pDag    - constraints to check
- * DESCRIPTION
- *    Count how often prefix occurs in pDag.
- * RETURN VALUE
- *    int
- */
-static int count_constraint_prefixes(prefix, pDag, pPATR)
-PATRComplexFeature *prefix;
-PATRFeature *pDag;
-PATRData *pPATR;
-{
-PATRComplexFeature *flist;
-if (!pDag->pFirstFeat && !pDag->pSecondFeat) {
-	for ( flist=pDag->u.pComplex; flist; flist = flist->pNext )
-	{
-	if (flist->pszLabel == prefix->pszLabel) {
-		if (constraint_prefix_p(prefix, flist)) {
-			return 1;
-		}
-	}
-	}
-	return 0;
-}
-return count_constraint_prefixes(prefix, pDag->pFirstFeat, pPATR) +
-		count_constraint_prefixes(prefix, pDag->pSecondFeat, pPATR);
-}
-
-/*****************************************************************************
- * NAME
- *    constraint_prefix_p
- * ARGUMENTS
- *    prefix       - prefix of a designator
- *    designator   - constraint designator
- * DESCRIPTION
- *    Is prefix a prefix of a constraint designator?
- * RETURN VALUE
- *    int
- */
-static int constraint_prefix_p(prefix, designator)
-PATRComplexFeature *prefix;
-PATRComplexFeature *designator;
-{
-PATRFeature *p_value;
-PATRFeature *d_value;
-while (TRUE)
-{
-if (prefix->pszLabel != designator->pszLabel) {
-	/* The labels don't match, so prefix is not a prefix of designator. */
-	return FALSE;
-}
-p_value = followPATRForwardPointers(prefix->pValue);
-d_value = followPATRForwardPointers(designator->pValue);
-if (p_value->eType != PATR_COMPLEX) {
-	/* We completely matched prefix. */
-	return TRUE;
-}
-if (d_value->eType != PATR_COMPLEX) {
-	/* We are at the end of designator, but there is still some prefix left. */
-	return FALSE;
-}
-/* Go to the next feature. */
-prefix = p_value->u.pComplex;
-designator = d_value->u.pComplex;
-}
-/* We should never get here. */
-return TRUE;
-}
-
-/*****************************************************************************
- * NAME
  *    has_double_optional_constraint
  * ARGUMENTS
  *    pDag    - rule constriants
@@ -2805,7 +2631,7 @@ for ( net = net->pNext ; net ; net = net->pNext )
 					!net->pPsrs->pNext && net->pPsrs->pHead == net->pPsrs->pTail)
 			{
 			/* A single optional element is treated as a special case
-			 * to avoid exponential explosions in morpheme rules.
+			 * to avoid exponential explosions when rules have a lot of them.
 			 */
 			SimplePSR *optional_psr = copy_psr(net->pPsrs, pData);
 			optional_psr->pHead->bOptional = TRUE;

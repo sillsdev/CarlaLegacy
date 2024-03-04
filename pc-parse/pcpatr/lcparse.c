@@ -63,7 +63,7 @@ static PATREdge *	make_rule_edge P((PATRRule * rulep,
 					  PATRParseData * pData));
 static void		add_child P((PATREdge * old_parent,
 					 PATREdge * new_parent,
-					 PATREdge * child, char *child_name, PATRParseData * pData, int));
+					 PATREdge * child, char *child_name, PATRParseData * pData));
 static PATREdge *	hypothesize_lc P((PATRRule * rulep,
 					  int vertex,
 					  PATRParseData * pData));
@@ -76,11 +76,7 @@ static void		extend_lc_edge P((PATREdge *    act_edge,
 static PATRFeature* unify_edges P((
 					PATREdge* act_edge,
 					PATREdge* pass_edge,
-					PATREdgeList* act_children,
-					PATRFeature* act_dag,
 					PATRNonterminal* nterm,
-					char* pszLhsName,
-					char* pszName,
 					int* ok_out,
 					int* abort_out,
 					PATRParseData* pData));
@@ -97,28 +93,7 @@ static void skip_optional_non_terminals P((
 					char* label,
 					int iEnd_in,
 					int ok,
-					int skips,
 					PATRParseData* pData));
-static PATRFeature* reunify_edges P((
-					PATRFeature* pRuleDag,
-					PATREdgeList* pChildren,
-					char* lhs,
-					char* skip_attr,
-					int* ok_out,
-					PATRParseData* pData));
-static PATRFeature * remove_optional_attr P((
-						PATRFeature * pDag,
-						char * attr,
-						PATRData * pData));
-static PATRFeature * remove_optional_values P((
-						PATRFeature *	pValue,
-						PATRFeature * pDag));
-static int		count_references P((
-						PATRFeature * pValue,
-						PATRFeature *	pDag));
-static PATRFeature * remove_optional_value P((
-						PATRFeature *	pValue,
-						PATRFeature * pDag));
 static void		lc_vertex_add_active_edge P((
 						PATREdge *    edgep,
 						PATRGrammar * pGrammar_in,
@@ -865,13 +840,12 @@ return(edgep);
  * RETURN VALUE
  *    none
  */
-static void add_child(old_parent, new_parent, child, child_name, pData, skips)
+static void add_child(old_parent, new_parent, child, child_name, pData)
 PATREdge * old_parent;
 PATREdge * new_parent;
 PATREdge * child;
 char* child_name;
 PATRParseData * pData;
-int skips;
 {
 PATREdgeList *elp;
 
@@ -879,7 +853,6 @@ PATREdgeList *elp;
 elp = allocPATREdgeList(pData->pPATR);
 elp->pEdge = child;
 elp->pszName = child_name;
-elp->iSkips = skips;
 
 /* Link edge into this new_parent child edge list */
 elp->pNext = old_parent->u.r.pChildren;
@@ -939,8 +912,6 @@ while (edgep->u.r.pChildren != NULL)
 return(edgep);
 }
 
-int edge_count = 0;
-
 /*****************************************************************************
  * NAME
  *    extend_lc_edge
@@ -971,12 +942,11 @@ int			abort;
 PATRNonterminal *	nterm;
 char *			label;
 char *			psz0;
-nterm = need_nonterm(act_edge);
-psz0 = storedPATRString("0", pData->pPATR);
 /*
  * First check if these edges successfully unify,
  * continue only if they do
  */
+nterm = need_nonterm( act_edge );
 if (nterm == NULL)
 	{
 	displayNumberedMessage(&sFailed_need_nonterm_m,
@@ -991,10 +961,10 @@ if (nterm == NULL)
  *  Otherwise, just pass on the previously generated (and failed)
  *  unification.
  */
+psz0 = storedPATRString( "0", pData->pPATR);
 if (!act_edge->bFailed)
 	{
-	pDag = unify_edges(act_edge, pass_edge, act_edge->u.r.pChildren, act_edge->pFeature, nterm,
-		nterm->pszLhsName, nterm->pszName, &ok, &abort, pData);
+	pDag = unify_edges(act_edge, pass_edge, nterm, &ok, &abort, pData);
 	if (abort)
 	{
 		return;
@@ -1048,17 +1018,17 @@ if (! ok)
 /*
  *  Link the new edge into its parent
  */
-add_child(act_edge,edgep,pass_edge, nterm->pszName, pData, 0);
+add_child(act_edge,edgep,pass_edge, nterm->pszName, pData);
 /*
  * Now add it either as an active or passive edge, depending on the need index
  */
 if ( complete_edge_p(edgep) )
 {
 	lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
-} 
+}
 else
 {
-	skip_optional_non_terminals(edgep, act_edge, pass_edge, nterm->pszName, pDag, label, iEnd_in, ok, 0, pData);
+	skip_optional_non_terminals(edgep, act_edge, pass_edge, nterm->pszName, pDag, label, iEnd_in, ok, pData);
 	lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
 }
 }
@@ -1069,11 +1039,7 @@ else
  * ARGUMENTS
  *    act_edge - active edge (if NULL, uses act_dag)
  *    pass_edge - passive edge
- *    act_children - same as act_edge->u.r.pChildren
- *    act_dag - same as act_edge->pFeatures
  *    nterm - non-terminal
- *    pszLhsName - lhs name of non-terminal
- *    pszName - name of non-terminal
  *    ok_out - return value for ok
  *	  abort_out - return value for abort
  *    pData - parse data
@@ -1083,19 +1049,15 @@ else
  * RETURN VALUE
  *    PATRFeature*
  */
-PATRFeature* unify_edges(act_edge, pass_edge, act_children, act_dag,
-	nterm, pszLhsName, pszName, ok_out, abort_out, pData)
+PATRFeature* unify_edges(act_edge, pass_edge, nterm, ok_out, abort_out, pData)
 PATREdge* act_edge;
 PATREdge* pass_edge;
-PATREdgeList* act_children;
-PATRFeature* act_dag;
 PATRNonterminal* nterm;
-char* pszLhsName;
-char* pszName;
 int* ok_out;
 int* abort_out;
 PATRParseData* pData;
 {
+	PATRFeature* act_dag;
 	PATRFeature* pDag;
 	PATRFeature* pDag1;
 	PATRFeature* pDag2;
@@ -1110,6 +1072,7 @@ PATRParseData* pData;
 	StringList* pNextPath = NULL;
 	char* psz1;
 	char* psz2;
+	act_dag = act_edge->pFeature;
 	if (!pData->pPATR->bUnification && !pData->pPATR->bFailure)
 	{
 		*ok_out = ok;
@@ -1117,13 +1080,13 @@ PATRParseData* pData;
 		return act_dag;
 	}
 	markPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
-	if (nterm && nterm->pFeature)
+	if (nterm->pFeature)
 	{
 		/* Add optional constraints. */
 		act_dag = unifyPATRFeatures(act_dag, nterm->pFeature, TRUE, pData->pPATR);
 	}
 	psz0 = storedPATRString("0", pData->pPATR);
-	pDag1 = findPATRAttribute(act_dag, pszName);
+	pDag1 = findPATRAttribute(act_dag, nterm->pszName);
 	if (pass_edge->eType == PATR_RULE_EDGE)
 		pDag2 = findOrAddPATRAttribute(pass_edge->pFeature, psz0, pData->pPATR);
 	else
@@ -1132,7 +1095,7 @@ PATRParseData* pData;
 	if (pDag2 == NULL)
 		pUniDag = NULL;
 	else if (pDag1 == NULL)
-		pUniDag = copyPATRFeature(pDag2, pData->pPATR);
+		pUniDag = copyPATRFeature( pDag2, pData->pPATR );
 	else
 		pUniDag = unifyPATRFeatures(pDag1, pDag2, TRUE, pData->pPATR);
 
@@ -1161,7 +1124,7 @@ PATRParseData* pData;
 				 */
 				pDag = copyPATRFeature(act_dag, pData->pPATR);
 				unifyPATRFeatures(findOrAddPATRAttribute(pDag,
-					pszLhsName,
+					nterm->pszLhsName,
 					pData->pPATR),
 					findOrAddPATRAttribute(pDag, psz0,
 						pData->pPATR),
@@ -1170,7 +1133,7 @@ PATRParseData* pData;
 				/*
 				 *  find the bad feature in the copied structure
 				 */
-				pDag1 = findPATRAttribute(pDag, pszName);
+				pDag1 = findPATRAttribute(pDag, nterm->pszName);
 				for (pPath = pPath1; pPath; pPath = pPath->pNext)
 					pDag1 = findPATRAttribute(pDag1, pPath->pszString);
 				if (pDag1 != NULL)
@@ -1266,19 +1229,19 @@ PATRParseData* pData;
 		 *  nodes in the graph  (we know this always succeeds, since it
 		 *  already has unified!)
 		 */
-		pDag1 = findOrAddPATRAttribute(pDag, pszName, pData->pPATR);
+		pDag1 = findOrAddPATRAttribute(pDag, nterm->pszName, pData->pPATR);
 		unifyPATRFeatures(pDag1, pUniDag, FALSE, pData->pPATR);
 		/*
 		 *  unify lhs features with 0 path
 		 */
 		ok = TRUE;
-		if (unifyPATRFeatures(findOrAddPATRAttribute(pDag, pszLhsName, pData->pPATR),
+		if (unifyPATRFeatures(findOrAddPATRAttribute(pDag, nterm->pszLhsName, pData->pPATR),
 			findOrAddPATRAttribute(pDag, psz0, pData->pPATR),
 			FALSE, pData->pPATR) == NULL)
 		{
 			ok = FALSE;
 		}
-		if (ok && act_edge &&
+		if (ok &&
 			(act_edge->eType == PATR_RULE_EDGE) &&
 			(act_edge->u.r.pRule->iNontermCount == act_edge->u.r.iNext))
 		{
@@ -1311,7 +1274,7 @@ PATRParseData* pData;
 	 */
 	if (pDag)
 	{
-		if (act_children)
+		if (act_edge->u.r.pChildren)
 		{
 			pDag->pFirstFeat = act_dag->pFirstFeat;
 		}
@@ -1319,114 +1282,10 @@ PATRParseData* pData;
 		{
 			pDag->pFirstFeat = act_dag;
 		}
-		
 	}
 	*ok_out = ok;
 	*abort_out = FALSE;
 	return pDag;
-}
-
-static int equal_dags(PATRFeature* pDag1, PATRFeature* pDag2)
-{
-	if (pDag1 == pDag2)
-	{
-		return TRUE;
-	}
-	if (!pDag1 || !pDag2)
-	{
-		return FALSE;
-	}
-	pDag1 = followPATRForwardPointers(pDag1);
-	pDag2 = followPATRForwardPointers(pDag2);
-	if (pDag1->eType != pDag2->eType)
-	{
-		return FALSE;
-	}
-	if (pDag1->eType == PATR_ATOM || pDag1->eType == PATR_DEFATOM)
-	{
-		if (pDag1->u.pszAtom != pDag2->u.pszAtom)
-		{
-			return FALSE;
-		}
-		return TRUE;
-	}
-	if (pDag1->eType == PATR_COMPLEX)
-	{
-		PATRComplexFeature* flist1;
-		PATRComplexFeature* flist2;
-		int count1 = 0;
-		int count2 = 0;
-		for (flist1 = pDag1->u.pComplex; flist1; flist1 = flist1->pNext) count1++;
-		for (flist2 = pDag2->u.pComplex; flist2; flist2 = flist2->pNext) count2++;
-		if (count1 != count2)
-		{
-			return FALSE;
-		}
-		for (flist1 = pDag1->u.pComplex; flist1; flist1 = flist1->pNext)
-		{
-			int found = FALSE;
-			for (flist2 = pDag2->u.pComplex; flist2; flist2 = flist2->pNext)
-			{
-				if (flist1->pszLabel == flist2->pszLabel)
-				{
-					if (!equal_dags(flist1->pValue, flist2->pValue))
-					{
-						return FALSE;
-					}
-					found = TRUE;
-					break;
-				}
-			}
-			if (!found)
-			{
-				return FALSE;
-			}
-		}
-		return TRUE;
-	}
-	if (pDag1->eType == PATR_NULLFS || pDag1->eType == PATR_FAILFS)
-	{
-		return TRUE;
-	}
-	return FALSE;
-}
-
-/*****************************************************************************
- * NAME
- *    optional_link_complexity
- * ARGUMENTS
- *    pRuleDag - the DAG from the rule
- *    optional_attr
- * DESCRIPTION
- *    Determine the complexity of the optional links in pRuleDag.
- * RETURN VALUE
- *    int
- */
-int optional_link_complexity(PATRFeature* pRuleDag, char *optional_attr)
-{
-	if (!pRuleDag) return 0;
-	if (!pRuleDag->pFirstFeat && !pRuleDag->pSecondFeat)
-	{
-		assert(pRuleDag->eType == PATR_COMPLEX);
-		PATRComplexFeature* flist;
-		for (flist = pRuleDag->u.pComplex->pNext; flist; flist = flist->pNext)
-		{
-			if (flist->pszLabel == optional_attr)
-			{
-				if (pRuleDag->u.pComplex->pNext)
-				{
-					// <optional_attr ...> = <...>
-					return 1;
-				}
-				// <optional_attr ...> = constant
-				return 0;
-			}
-		}
-		return 0;
-	}
-	return optional_link_complexity(pRuleDag->pFirstFeat, optional_attr) +
-		optional_link_complexity(pRuleDag->pSecondFeat, optional_attr);
-
 }
 
 /*****************************************************************************
@@ -1447,7 +1306,7 @@ int optional_link_complexity(PATRFeature* pRuleDag, char *optional_attr)
  * RETURN VALUE
  *    none
  */
-static void skip_optional_non_terminals(edgep, act_edge, pass_edge, pass_name, pDag, label, iEnd_in, ok, skips, pData)
+static void skip_optional_non_terminals(edgep, act_edge, pass_edge, pass_name, pDag, label, iEnd_in, ok, pData)
 PATREdge* edgep;
 PATREdge* act_edge;
 PATREdge* pass_edge;
@@ -1456,7 +1315,6 @@ PATRFeature* pDag;
 char* label;
 int iEnd_in;
 int ok;
-int skips;
 PATRParseData* pData;
 {
 	PATRNonterminal* nonterm;
@@ -1467,22 +1325,6 @@ PATRParseData* pData;
 	if (nonterm && nonterm->bOptional)
 	{
 		char* attr = need_nonterm(edgep)->pszName;
-		if (FALSE)
-		{
-		PATRFeature* pRuleDag = pDag->pFirstFeat;
-		if (optional_link_complexity(pRuleDag, attr) < 2)
-		{
-			/* This is quicker, but only works for simple constraints. */
-			pDag = remove_optional_attr(pDag, attr, pData->pPATR);
-		}
-		else
-		{
-			/* Redo the unification to get the right results. */
-			int ok2;
-			pDag = reunify_edges(pRuleDag, edgep->u.r.pChildren, edgep->pszLabel, attr, &ok2, pData);
-			assert(ok2 == ok);
-		}
-		}
 		edgep = make_rule_edge(edgep->u.r.pRule,
 			label,
 			edgep->u.r.iNext + 1,
@@ -1491,10 +1333,9 @@ PATRParseData* pData;
 			pDag, pData);
 		if (!ok)
 			edgep->bFailed = TRUE;
-		add_child(act_edge, edgep, pass_edge, pass_name, pData, skips);
-		skips++;
+		add_child(act_edge, edgep, pass_edge, pass_name, pData);
 		/* Recurse first so that shortest rules are processed first. */
-		skip_optional_non_terminals(edgep, act_edge, pass_edge, pass_name, pDag, label, iEnd_in, ok, skips, pData);
+		skip_optional_non_terminals(edgep, act_edge, pass_edge, pass_name, pDag, label, iEnd_in, ok, pData);
 		/* The following code is copied from extend_lc_edge. */
 		if (complete_edge_p(edgep))
 		{
@@ -1515,49 +1356,6 @@ PATRParseData* pData;
 			lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
 		}
 	}
-}
-
-/*****************************************************************************
- * NAME
- *    reunify_edges
- * ARGUMENTS
- *    pRuleDag - rule features to reunify
- *    pChildren - children to reunify
- *    lhs - left-hand side of rule
- *    skip_attr - attr to skip
- *    ok_out - whether the unification was OK
- *    pData - parse data
- *    
- * DESCRIPTION
- *    Reunify active_edges starting with edgep and skipping skip_attr.
- * RETURN VALUE
- *    PATRFeature*
- */
-static PATRFeature* reunify_edges(pRuleDag, pChildren, lhs, skip_attr, ok_out, pData)
-PATRFeature* pRuleDag;
-PATREdgeList* pChildren;
-char* lhs;
-char* skip_attr;
-int* ok_out;
-PATRParseData* pData;
-{
-PATRFeature* pActiveDag;
-PATRFeature* pDag;
-int abort;
-if (!pChildren)
-{
-	*ok_out = TRUE;
-	return skip_optional_attr(pRuleDag, skip_attr, TRUE, pData->pPATR);
-}
-pActiveDag = reunify_edges(pRuleDag, pChildren->pNext, lhs, skip_attr, ok_out, pData);
-if (*ok_out == FALSE)
-{
-	return pActiveDag;
-}
-pDag = unify_edges(NULL, pChildren->pEdge, pChildren->pNext, pActiveDag,
-	NULL, lhs, pChildren->pszName, ok_out, &abort, pData);
-assert(!abort);
-return pDag;
 }
 
 /*****************************************************************************
@@ -1598,172 +1396,6 @@ for (   pConstraint = pRule->pConstraints ;
 	ok = applyPATRConstraint(pDag, pConstraint, pPATR);
 	}
 return ok;
-}
-
-/*****************************************************************************
- * NAME
- *    remove_optional_attr
- * ARGUMENTS
- *    pDag - feature structure
- *    attr - attribute
- *    pThis - PATR data
- * DESCRIPTION
- *    Remove an optional attribute from the feature structure.
- * RETURN VALUE
- *    PATRFeature *
- */
-PATRFeature *remove_optional_attr(pDag, attr, pData)
-PATRFeature *	pDag;
-char * attr;
-PATRData * pData;
-{
-PATRComplexFeature *flist;
-PATRComplexFeature *prior = NULL;
-int references;
-
-pDag  = copyPATRFeature(pDag, pData); /* Avoid cross-talk. */
-/* Remove attr from pDag. */
-for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
-{
-	if (strcmp(flist->pszLabel, attr) == 0)
-		{
-		if (prior == NULL)
-			pDag->u.pComplex = flist->pNext;
-		else
-			prior->pNext = flist->pNext;
-		break;
-		}
-	prior = flist;
-}
-if (!flist) {
-	/* Attribute does not exists. */
-	/* (There were no constraints for the non-terminal in the rule.) */
-	return pDag;
-}
-/* Remove attr's values from pDag if they doesn't occur anywhere else. */
-references = count_references(flist->pValue, pDag);
-if (references == 1) {
-	remove_optional_value(flist->pValue, pDag);
-}
-return pDag;
-}
-
-/*****************************************************************************
- * NAME
- *    remove_optional_values
- * ARGUMENTS
- *    pValue - value to remove from
- *    pDag - feature structure
- * DESCRIPTION
- *    Remove optional values within value from the feature structure.
- * RETURN VALUE
- *    PATRFeature - the container of pValue if it was removed
- */
-static PATRFeature * remove_optional_values(pValue, pDag)
-PATRFeature *	pDag;
-PATRFeature * pValue;
-{
-PATRComplexFeature *flist;
-pValue = followPATRForwardPointers( pValue );
-if (pValue->eType == PATR_COMPLEX) {
-	for (flist = pValue->u.pComplex ; flist ; flist = flist->pNext)
-	{
-	remove_optional_values(flist->pValue, pDag);
-	}
-	if (!pValue->u.pComplex) {
-		pValue->eType = PATR_NULLFS;
-	}
-}
-if (pValue->eType == PATR_NULLFS)
-{
-	int references = count_references(pValue, pDag);
-	if (references == 1)
-	{
-		return remove_optional_value(pValue, pDag);
-	}
-}
-return NULL;
-}
-
-/*****************************************************************************
- * NAME
- *    count_references
- * ARGUMENTS
- *    value - value
- *    pDag - feature structure
- * DESCRIPTION
- *    Count references to value in pDag.
- * RETURN VALUE
- *    int
- */
-static int count_references(pValue, pDag)
-PATRFeature * pValue;
-PATRFeature *	pDag;
-{
-pValue = followPATRForwardPointers( pDag );
-if (pDag == pValue) {
-	return 1;
-}
-
-if (pDag->eType == PATR_COMPLEX) {
-	PATRComplexFeature *flist;
-	int references = 0;
-	/* Recursively count references to pValue. */
-	for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
-	{
-	references += count_references(pValue, flist->pValue);
-	}
-	return references;
-}
-
-return 0;
-}
-
-/*****************************************************************************
- * NAME
- *    remove_optional_value
- * ARGUMENTS
- *    pValue - value to remove
- *    pDag - feature structure
- * DESCRIPTION
- *    Remove an optional value from the feature structure.
- * RETURN VALUE
- *    PATRFeature - the container of the value removed.
- */
-static PATRFeature *remove_optional_value(pValue, pDag)
-PATRFeature *	pDag;
-PATRFeature * pValue;
-{
-PATRComplexFeature *flist;
-PATRComplexFeature *prior = NULL;
-PATRFeature * pValue2;
-PATRFeature * pContainer;
-
-pValue = followPATRForwardPointers( pValue );
-if (pDag->eType != PATR_COMPLEX) {
-	return NULL;
-}
-
-/* Remove value from pDag. */
-for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext)
-{
-	/* Check for pValue. */
-	pValue2 = followPATRForwardPointers( flist->pValue );
-	if (pValue2 == pValue)
-		{
-		if (prior == NULL)
-			pDag->u.pComplex = flist->pNext;
-		else
-			prior->pNext = flist->pNext;
-		return pDag;
-		}
-	/* Check for pValue recursively. */
-	pContainer = remove_optional_value(pValue, pValue2);
-	if (pContainer)
-		return pContainer;
-	prior = flist;
-}
-return NULL;
 }
 
 /*****************************************************************************

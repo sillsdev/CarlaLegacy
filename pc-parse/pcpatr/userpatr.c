@@ -1634,7 +1634,7 @@ PATRComplexFeature * pComp;
 PATRComplexFeature * pPrev;
 char * psz0;
 char * pszLHS;
-PATREdgeList* pel;
+PATREdgeList * pel;
 
 if (pEdge_in->pFeature)
 	{
@@ -1739,9 +1739,10 @@ if (pEdge_in->pFeature)
 			{
 			if (pPATR_in->iDebugLevel)
 				{
-				fprintf(stdout, " Rule element skipped.\n");
+				/* i hope this doesn't happen */
+				fprintf(stdout, " !!UGH!!\n");
 				if (pPATR_in->pLogFP)
-				fprintf(pPATR_in->pLogFP, " Rule element skipped.\n");
+				fprintf(pPATR_in->pLogFP, " !!UGH!!\n");
 				}
 			}
 			}

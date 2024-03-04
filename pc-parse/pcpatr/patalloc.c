@@ -632,7 +632,6 @@ else
 f->node.pNext = NULL;
 f->node.pEdge = NULL;
 f->node.pszName = NULL;
-f->node.iSkips = 0;
 f->link = pGarbage->pEdgeListHead;
 pGarbage->pEdgeListHead = f;
 if (pGarbage->pEdgeListTail == NULL)

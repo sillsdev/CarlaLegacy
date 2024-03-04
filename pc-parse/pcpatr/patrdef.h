@@ -377,8 +377,8 @@ struct patr_feature
 	PATRFeatureDisjunction * pDisjunction;	/* PATR_DISJUNCT */
 	PATRFeature *		 pForward;	/* PATR_FORWARD */
 	}	u;
-	PATRFeature * pFirstFeat;
-	PATRFeature * pSecondFeat;
+	PATRFeature * pFirstFeat;  /* first argument to unification */
+	PATRFeature * pSecondFeat; /* second argument to unification */
 	};
 
 /*****************************************************************************
@@ -504,11 +504,6 @@ extern PATRFeature * parsePATRFeaturePath P((char *        pszFeaturePath_in,
 						 PATRGrammar * pGrammar_in,
 						 PATRData *    pPATR_in));
 extern void showPATRRule P((PATRRule * rulep));
-extern PATRFeature* skip_optional_attr P((
-	PATRFeature* pDag,
-	char* attr,
-	int exclude,
-	PATRData* pPATR));
 
 /*
  *  lcparse.c
