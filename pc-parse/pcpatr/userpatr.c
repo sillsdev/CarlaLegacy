@@ -1636,7 +1636,7 @@ char * psz0;
 char * pszLHS;
 PATREdgeList* pel;
 
-if (pEdge_in->pFeature && !partial_cat_p(pEdge_in))
+if (pEdge_in->pFeature)
 	{
 	pFeat = followPATRForwardPointers( pEdge_in->pFeature );
 	if ((pFeat != NULL) && (pFeat->eType == PATR_COMPLEX))
