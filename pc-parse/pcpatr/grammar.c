@@ -1992,14 +1992,6 @@ for (nterm = rhs; nterm; nterm = nterm->pNext) {
 		dag = skip_optional_attr(dag, nterm->pszName, TRUE, pData->pPATR);
 	}
 }
-/* Expand optional non-terminals that whose constraints can't be preserved. */
-for( nterm = rhs ; nterm ; nterm = nterm->pNext ) {
-if (FALSE && nterm->bOptional) {
-	expand_optional_non_terminal(nterm, id, lhs, psr, dag,
-			pPriorityUnions_in, pConstraints_in, pData);
-	return;
-}
-}
 
 /* Make space for the rule */
 rulep = allocPATRRule(pData->pPATR);
