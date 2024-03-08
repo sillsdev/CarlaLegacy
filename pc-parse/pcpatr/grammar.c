@@ -8,7 +8,6 @@
  ******************************************************************************
  * Copyright 1987, 2002 by SIL International.  All rights reserved.
  */
-#include "assert.h"
 #include "patr.h"
 #include "patrdef.h"
 #include "allocmem.h"
@@ -2016,13 +2015,25 @@ rulep->iNontermCount = nonterm_count;
 /*
  *  BK: check and report if A-over-A rule
  */
-if (nonterm_count > 0 && strcmp( lhs, rulep->apszNonterms[1] ) == 0)
+if (nonterm_count > 0)
 	{
-	int obligatory = 0;
+	int i = 0;
+	char* singleton_cat = NULL;
 	PATRNonterminal *nonterm;
+	/* Look for an obligatory singleton non-terminal. */
 	for (nonterm = rhs; nonterm; nonterm = nonterm->pNext)
-		if (!nonterm->bOptional) obligatory++;
-	if (obligatory == 1) {
+	{
+		i++;
+		if (nonterm->bOptional) continue;
+		if (singleton_cat)
+		{
+			/* There is more than one obligatory non-terminal. */
+			singleton_cat = NULL;
+			break;
+		}
+		singleton_cat = rulep->apszNonterms[i];
+	}
+	if (singleton_cat && strcmp(singleton_cat, lhs) == 0) {
 		displayNumberedMessage(&sSameLeftRightCategories_m,
 				   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
 				   pData->pszGrammarFilename, pData->uiLineNumber,
@@ -2083,7 +2094,6 @@ if (pDag->pFirstFeat || pDag->pSecondFeat)
 		has_double_optional_constraint(pDag->pSecondFeat,
 			pszName, pNonterminals);
 }
-assert(pDag->eType == PATR_COMPLEX);
 for (flist = pDag->u.pComplex; flist; flist = flist->pNext)
 {
 if (flist->pszLabel == pszName)
@@ -2213,10 +2223,12 @@ if (pDag->pFirstFeat || pDag->pSecondFeat) {
 	pDag2 = unifyPATRFeatures(pFirstFeat, pSecondFeat, TRUE, pPATR);
 	return pDag2;
 }
-for (flist = pDag->u.pComplex ; flist ; flist = flist->pNext) {
-	if (strcmp(flist->pszLabel, attr) == 0) {
-		has_attr = TRUE;
-		break;
+if (pDag->eType == PATR_COMPLEX) {
+	for (flist = pDag->u.pComplex; flist; flist = flist->pNext) {
+		if (strcmp(flist->pszLabel, attr) == 0) {
+			has_attr = TRUE;
+			break;
+		}
 	}
 }
 if (has_attr == exclude)

@@ -14,7 +14,6 @@
  ******************************************************************************
  * Copyright 1990, 2001 by SIL International.  All rights reserved.
  */
-#include "assert.h"
 #include "patr.h"
 #include "patrdef.h"
 #include "allocmem.h"
@@ -1269,20 +1268,6 @@ PATRParseData* pData;
 		return NULL;
 	}
 	unmarkPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
-	/*
-	 * Preserve rule dag for reunification.
-	 */
-	if (pDag)
-	{
-		if (act_edge->u.r.pChildren)
-		{
-			pDag->pFirstFeat = act_dag->pFirstFeat;
-		}
-		else
-		{
-			pDag->pFirstFeat = act_dag;
-		}
-	}
 	*ok_out = ok;
 	*abort_out = FALSE;
 	return pDag;
