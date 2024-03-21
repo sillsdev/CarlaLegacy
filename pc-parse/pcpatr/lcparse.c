@@ -62,7 +62,7 @@ static PATREdge *	make_rule_edge P((PATRRule * rulep,
 					  PATRParseData * pData));
 static void		add_child P((PATREdge * old_parent,
 					 PATREdge * new_parent,
-					 PATREdge * child, PATRParseData * pData));
+					 PATREdge * child, char *child_name, PATRParseData * pData));
 static PATREdge *	hypothesize_lc P((PATRRule * rulep,
 					  int vertex,
 					  PATRParseData * pData));
@@ -72,6 +72,27 @@ static void		extend_lc_edge P((PATREdge *    act_edge,
 					  int           end,
 					  PATRGrammar * pGrammar_in,
 					  PATRParseData * pData));
+static PATRFeature* unify_edges P((
+					PATREdge* act_edge,
+					PATREdge* pass_edge,
+					PATRNonterminal* nterm,
+					int* ok_out,
+					int* abort_out,
+					PATRParseData* pData));
+static int complete_constraints P((
+					PATRFeature *pDag,
+					PATRRule *pRule,
+					PATRData *pPATR));
+static void skip_optional_non_terminals P((
+					PATREdge* edgep,
+					PATREdge* act_edge,
+					PATREdge* pass_edge,
+					char* pass_name,
+					PATRFeature* pDag,
+					char* label,
+					int iEnd_in,
+					int ok,
+					PATRParseData* pData));
 static void		lc_vertex_add_active_edge P((
 						PATREdge *    edgep,
 						PATRGrammar * pGrammar_in,
@@ -598,7 +619,6 @@ PATREdgeList *	pList_in;
 int		iDepth;
 PATRParseData *	pData;
 {
-int		i;
 PATREdgeList *	elp;
 
 if (pEdge_in->eType != PATR_RULE_EDGE)
@@ -616,19 +636,9 @@ for ( elp = pList_in ; elp ; elp = elp->pNext )
 	{
 	if (pData->pPATR->iDebugLevel >= 2)
 		{
-		fprintf(stdout, "Warning: cycle was ignored for edge: %d ",
-		   pEdge_in->iStart);
-		for (   i = 0 ;
-			i <= pEdge_in->u.r.pRule->iNontermCount ;
-			++i )
-		{
-		fprintf(stdout, "%s ", pEdge_in->u.r.pRule->apszNonterms[i]);
-		if (i == 0)
-			fprintf(stdout, "-> ");
-		if (pEdge_in->u.r.iNext == i+1)
-			fprintf(stdout, ". ");
-		}
-		fprintf(stdout, "%d\n",pEdge_in->iEnd);
+		fprintf(stdout, "Warning: cycle was ignored for edge: %d %d ",
+		   pEdge_in->iStart, pEdge_in->iEnd);
+		showPATRRule(pEdge_in->u.r.pRule);
 		}
 	return( -1 );
 	}
@@ -829,10 +839,11 @@ return(edgep);
  * RETURN VALUE
  *    none
  */
-static void add_child(old_parent, new_parent, child, pData)
+static void add_child(old_parent, new_parent, child, child_name, pData)
 PATREdge * old_parent;
 PATREdge * new_parent;
 PATREdge * child;
+char* child_name;
 PATRParseData * pData;
 {
 PATREdgeList *elp;
@@ -840,6 +851,7 @@ PATREdgeList *elp;
 /* Allocate space for the pointer to the edge */
 elp = allocPATREdgeList(pData->pPATR);
 elp->pEdge = child;
+elp->pszName = child_name;
 
 /* Link edge into this new_parent child edge list */
 elp->pNext = old_parent->u.r.pChildren;
@@ -924,21 +936,11 @@ PATRParseData *	pData;
 {
 PATREdge *		edgep;
 PATRFeature *		pDag;
-PATRFeature *		pDag1;
-PATRFeature *		pDag2;
-PATRFeature *		pUniDag;
 int			ok;
+int			abort;
 PATRNonterminal *	nterm;
 char *			label;
 char *			psz0;
-PATRFeature *		pFeat1;
-PATRFeature *		pFeat2;
-StringList *		pPath1;
-StringList *		pPath2;
-StringList *		pPath;
-StringList *		pNextPath;
-char *			psz1;
-char *			psz2;
 /*
  * First check if these edges successfully unify,
  * continue only if they do
@@ -961,220 +963,10 @@ if (nterm == NULL)
 psz0 = storedPATRString( "0", pData->pPATR);
 if (!act_edge->bFailed)
 	{
-	if (!pData->pPATR->bUnification && !pData->pPATR->bFailure)
+	pDag = unify_edges(act_edge, pass_edge, nterm, &ok, &abort, pData);
+	if (abort)
 	{
-	ok = TRUE;
-	pDag = act_edge->pFeature;
-	}
-	else
-	{
-	markPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
-	pDag1 = findPATRAttribute( act_edge->pFeature, nterm->pszName);
-	if (pass_edge->eType == PATR_RULE_EDGE)
-		pDag2 = findOrAddPATRAttribute( pass_edge->pFeature, psz0,
-						pData->pPATR);
-	else
-		pDag2 = pass_edge->pFeature;
-
-	if (pDag2 == NULL)
-		pUniDag = NULL;
-	else if (pDag1 == NULL)
-		pUniDag = copyPATRFeature( pDag2, pData->pPATR );
-	else
-		pUniDag = unifyPATRFeatures(pDag1, pDag2, TRUE, pData->pPATR);
-
-	if (pUniDag == NULL)
-		{
-		ok = FALSE;
-		if (    !pData->pPATR->bUnification &&
-			pData->pPATR->bFailure &&
-			(pDag1 != NULL) &&
-			(pDag2 != NULL) )
-		{
-		int bFound;
-		pPath1 = NULL;
-		pPath2 = NULL;
-		pFeat1 = NULL;
-		pFeat2 = NULL;
-		bFound = findPATRUnifyFailure(pDag1, pDag2,
-						  &pPath1, &pFeat1,
-						  &pPath2, &pFeat2,
-						  pData->pPATR);
-		if (bFound)
-			{
-
-			/*
-			 *  must copy to avoid destroying act_edge
-			 */
-			pDag  = copyPATRFeature(act_edge->pFeature, pData->pPATR);
-			unifyPATRFeatures(findOrAddPATRAttribute(pDag,
-								 nterm->pszLhsName,
-								 pData->pPATR),
-					  findOrAddPATRAttribute(pDag, psz0,
-								 pData->pPATR),
-					  FALSE,
-					  pData->pPATR);
-			/*
-			 *  find the bad feature in the copied structure
-			 */
-			pDag1 = findPATRAttribute( pDag, nterm->pszName);
-			for ( pPath = pPath1 ; pPath ; pPath = pPath->pNext )
-			pDag1 = findPATRAttribute( pDag1, pPath->pszString);
-			if (pDag1 != NULL)
-			{
-			switch (pFeat1->eType)
-				{
-				case PATR_ATOM:
-				psz1 = pFeat1->u.pszAtom;
-				break;
-				case PATR_COMPLEX:
-				psz1 = "[...]";
-				break;
-				case PATR_FORWARD:
-				psz1 = "*-->";
-				break;
-				case PATR_NULLFS:
-				psz1 = "[]";
-				break;
-				case PATR_FAILFS:
-				psz1 = "FAIL";
-				break;
-				case PATR_DEFATOM:
-				psz1 = pFeat1->u.pszAtom;
-				break;
-				default:
-				psz1 = "????";
-				break;
-				}
-			switch (pFeat2->eType)
-				{
-				case PATR_ATOM:
-				psz2 = pFeat2->u.pszAtom;
-				break;
-				case PATR_COMPLEX:
-				psz2 = "[...]";
-				break;
-				case PATR_FORWARD:
-				psz2 = "*-->";
-				break;
-				case PATR_NULLFS:
-				psz2 = "[]";
-				break;
-				case PATR_FAILFS:
-				psz2 = "FAIL";
-				break;
-				case PATR_DEFATOM:
-				psz2 = pFeat2->u.pszAtom;
-				break;
-				default:
-				psz2 = "????";
-				break;
-				}
-			pDag1->u.pszAtom = allocPATRStringBuffer((int)
-						 (strlen(psz1) + strlen(psz2) + 6),
-						 pData->pPATR);
-			sprintf(pDag1->u.pszAtom, "%s%s / %s%s",
-				 (pFeat1->eType == PATR_DEFATOM) ? "!" : "", psz1,
-				 (pFeat2->eType == PATR_DEFATOM) ? "!" : "", psz2);
-			pDag1->eType = PATR_FAILFS;
-			}
-			/*
-			 *  clean up the memory used for the failure paths
-			 */
-			for ( pPath = pPath2 ; pPath ; pPath = pNextPath )
-			{
-			pNextPath = pPath->pNext;
-			deallocatePATRFeaturePath( pPath, pData->pPATR );
-			}
-			for ( pPath = pPath1 ; pPath ; pPath = pNextPath )
-			{
-			pNextPath = pPath->pNext;
-			deallocatePATRFeaturePath( pPath, pData->pPATR );
-			}
-			}
-		else
-			{
-			pDag = NULL;
-			}
-		}
-		else
-		{
-		pDag = NULL;
-		}
-		}
-	else
-		{
-		/*
-		 *  must copy to avoid destroying act_edge
-		 */
-		pDag  = copyPATRFeature( act_edge->pFeature, pData->pPATR );
-		/*
-		 *  must unify, instead of assign, in order to handle shared
-		 *  nodes in the graph  (we know this always succeeds, since it
-		 *  already has unified!)
-		 */
-		unifyPATRFeatures(findOrAddPATRAttribute(pDag, nterm->pszName,
-							 pData->pPATR),
-				  pUniDag,
-				  FALSE,
-				  pData->pPATR);
-		/*
-		 *  unify lhs features corresponding to nterm with 0 path
-		 */
-		if (unifyPATRFeatures(findOrAddPATRAttribute(pDag,
-				  nterm->pszLhsName,
-				  pData->pPATR),
-				  findOrAddPATRAttribute(pDag, psz0, pData->pPATR),
-				  FALSE, pData->pPATR) == NULL)
-		ok = FALSE;
-		else
-		ok = TRUE;
-		if (  ok &&
-		  (act_edge->eType == PATR_RULE_EDGE) &&
-		  (act_edge->u.r.pRule->iNontermCount == act_edge->u.r.iNext) )
-		{
-		PATRPriorityUnion * pUnion;
-		PATRConstraint *    pConstraint;
-		/*
-		 *  apply each priority union in turn
-		 */
-		for (	pUnion = act_edge->u.r.pRule->pPriorityUnions ;
-			ok && pUnion ;
-			pUnion = pUnion->pNext )
-			{
-			applyPATRPriorityUnion(pDag, pUnion, pData->pPATR);
-			ok = verifyAcyclicPATRFeature(pDag);
-			}
-		/*
-		 *  if any constraint fails, ok = FALSE
-		 */
-		for (   pConstraint = act_edge->u.r.pRule->pConstraints ;
-			ok && pConstraint ;
-			pConstraint = pConstraint->pNext )
-			{
-			ok = applyPATRConstraint(pDag, pConstraint, pData->pPATR);
-			}
-		}
-		}
-	/*
-	 *  allow the caller to kill us asynchronously, and to see our progress
-	 */
-	if (bCancelPATROperation_g || PumpMessages())
-		{
-		collectPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
-		longjmp( sCancelPoint_m, 1 );
-		}
-	++pData->uiProgressCount;
-	if ((pData->uiProgressCount % 10) == 0)
-		{
-		reportProgress( pData->uiProgressCount );
-		}
-	if (!ok && pData->pPATR->bUnification)
-		{
-		collectPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
 		return;
-		}
-	unmarkPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
 	}
 	/*
 	 *  eliminate edges whereby a single empty category becomes the
@@ -1225,14 +1017,370 @@ if (! ok)
 /*
  *  Link the new edge into its parent
  */
-add_child(act_edge,edgep,pass_edge, pData);
+add_child(act_edge,edgep,pass_edge, nterm->pszName, pData);
 /*
  * Now add it either as an active or passive edge, depending on the need index
  */
 if ( complete_edge_p(edgep) )
+{
 	lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
+}
 else
+{
+	skip_optional_non_terminals(edgep, act_edge, pass_edge, nterm->pszName, pDag, label, iEnd_in, ok, pData);
 	lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
+}
+}
+
+/*****************************************************************************
+ * NAME
+ *    unify_edges
+ * ARGUMENTS
+ *    act_edge - active edge (if NULL, uses act_dag)
+ *    pass_edge - passive edge
+ *    nterm - non-terminal
+ *    ok_out - return value for ok
+ *	  abort_out - return value for abort
+ *    pData - parse data
+ *
+ * DESCRIPTION
+ *    Unify the features associated with act_edge and pass_edge.
+ * RETURN VALUE
+ *    PATRFeature*
+ */
+PATRFeature* unify_edges(act_edge, pass_edge, nterm, ok_out, abort_out, pData)
+PATREdge* act_edge;
+PATREdge* pass_edge;
+PATRNonterminal* nterm;
+int* ok_out;
+int* abort_out;
+PATRParseData* pData;
+{
+	PATRFeature* act_dag;
+	PATRFeature* pDag;
+	PATRFeature* pDag1;
+	PATRFeature* pDag2;
+	PATRFeature* pUniDag;
+	int			ok = TRUE;
+	char* psz0;
+	PATRFeature* pFeat1;
+	PATRFeature* pFeat2;
+	StringList* pPath1;
+	StringList* pPath2;
+	StringList* pPath;
+	StringList* pNextPath = NULL;
+	char* psz1;
+	char* psz2;
+	act_dag = act_edge->pFeature;
+	if (!pData->pPATR->bUnification && !pData->pPATR->bFailure)
+	{
+		*ok_out = ok;
+		*abort_out = FALSE;
+		return act_dag;
+	}
+	markPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
+	if (nterm->pFeature)
+	{
+		/* Add optional constraints. */
+		act_dag = unifyPATRFeatures(act_dag, nterm->pFeature, TRUE, pData->pPATR);
+	}
+	psz0 = storedPATRString("0", pData->pPATR);
+	pDag1 = findPATRAttribute(act_dag, nterm->pszName);
+	if (pass_edge->eType == PATR_RULE_EDGE)
+		pDag2 = findOrAddPATRAttribute(pass_edge->pFeature, psz0, pData->pPATR);
+	else
+		pDag2 = pass_edge->pFeature;
+
+	if (pDag2 == NULL)
+		pUniDag = NULL;
+	else if (pDag1 == NULL)
+		pUniDag = copyPATRFeature( pDag2, pData->pPATR );
+	else
+		pUniDag = unifyPATRFeatures(pDag1, pDag2, TRUE, pData->pPATR);
+
+	if (pUniDag == NULL)
+	{
+		ok = FALSE;
+		if (!pData->pPATR->bUnification &&
+			pData->pPATR->bFailure &&
+			(pDag1 != NULL) &&
+			(pDag2 != NULL))
+		{
+			int bFound;
+			pPath1 = NULL;
+			pPath2 = NULL;
+			pFeat1 = NULL;
+			pFeat2 = NULL;
+			bFound = findPATRUnifyFailure(pDag1, pDag2,
+				&pPath1, &pFeat1,
+				&pPath2, &pFeat2,
+				pData->pPATR);
+			if (bFound)
+			{
+
+				/*
+				 *  must copy to avoid destroying act_edge
+				 */
+				pDag = copyPATRFeature(act_dag, pData->pPATR);
+				unifyPATRFeatures(findOrAddPATRAttribute(pDag,
+					nterm->pszLhsName,
+					pData->pPATR),
+					findOrAddPATRAttribute(pDag, psz0,
+						pData->pPATR),
+					FALSE,
+					pData->pPATR);
+				/*
+				 *  find the bad feature in the copied structure
+				 */
+				pDag1 = findPATRAttribute(pDag, nterm->pszName);
+				for (pPath = pPath1; pPath; pPath = pPath->pNext)
+					pDag1 = findPATRAttribute(pDag1, pPath->pszString);
+				if (pDag1 != NULL)
+				{
+					switch (pFeat1->eType)
+					{
+					case PATR_ATOM:
+						psz1 = pFeat1->u.pszAtom;
+						break;
+					case PATR_COMPLEX:
+						psz1 = "[...]";
+						break;
+					case PATR_FORWARD:
+						psz1 = "*-->";
+						break;
+					case PATR_NULLFS:
+						psz1 = "[]";
+						break;
+					case PATR_FAILFS:
+						psz1 = "FAIL";
+						break;
+					case PATR_DEFATOM:
+						psz1 = pFeat1->u.pszAtom;
+						break;
+					default:
+						psz1 = "????";
+						break;
+					}
+					switch (pFeat2->eType)
+					{
+					case PATR_ATOM:
+						psz2 = pFeat2->u.pszAtom;
+						break;
+					case PATR_COMPLEX:
+						psz2 = "[...]";
+						break;
+					case PATR_FORWARD:
+						psz2 = "*-->";
+						break;
+					case PATR_NULLFS:
+						psz2 = "[]";
+						break;
+					case PATR_FAILFS:
+						psz2 = "FAIL";
+						break;
+					case PATR_DEFATOM:
+						psz2 = pFeat2->u.pszAtom;
+						break;
+					default:
+						psz2 = "????";
+						break;
+					}
+					pDag1->u.pszAtom = allocPATRStringBuffer((int)
+						(strlen(psz1) + strlen(psz2) + 6),
+						pData->pPATR);
+					sprintf(pDag1->u.pszAtom, "%s%s / %s%s",
+						(pFeat1->eType == PATR_DEFATOM) ? "!" : "", psz1,
+						(pFeat2->eType == PATR_DEFATOM) ? "!" : "", psz2);
+					pDag1->eType = PATR_FAILFS;
+				}
+				/*
+				 *  clean up the memory used for the failure paths
+				 */
+				for (pPath = pPath2; pPath; pPath = pNextPath)
+				{
+					pNextPath = pPath->pNext;
+					deallocatePATRFeaturePath(pPath, pData->pPATR);
+				}
+				for (pPath = pPath1; pPath; pPath = pNextPath)
+				{
+					pNextPath = pPath->pNext;
+					deallocatePATRFeaturePath(pPath, pData->pPATR);
+				}
+			}
+			else
+			{
+				pDag = NULL;
+			}
+		}
+		else
+		{
+			pDag = NULL;
+		}
+	}
+	else
+	{
+		/*
+		 *  must copy to avoid destroying act_edge
+		 */
+		pDag = copyPATRFeature(act_dag, pData->pPATR);
+		/*
+		 *  must unify, instead of assign, in order to handle shared
+		 *  nodes in the graph  (we know this always succeeds, since it
+		 *  already has unified!)
+		 */
+		pDag1 = findOrAddPATRAttribute(pDag, nterm->pszName, pData->pPATR);
+		unifyPATRFeatures(pDag1, pUniDag, FALSE, pData->pPATR);
+		/*
+		 *  unify lhs features with 0 path
+		 */
+		ok = TRUE;
+		if (unifyPATRFeatures(findOrAddPATRAttribute(pDag, nterm->pszLhsName, pData->pPATR),
+			findOrAddPATRAttribute(pDag, psz0, pData->pPATR),
+			FALSE, pData->pPATR) == NULL)
+		{
+			ok = FALSE;
+		}
+		if (ok &&
+			(act_edge->eType == PATR_RULE_EDGE) &&
+			(act_edge->u.r.pRule->iNontermCount == act_edge->u.r.iNext))
+		{
+			ok = complete_constraints(pDag, act_edge->u.r.pRule, pData->pPATR);
+		}
+	}
+	/*
+	 *  allow the caller to kill us asynchronously, and to see our progress
+	 */
+	if (bCancelPATROperation_g || PumpMessages())
+	{
+		collectPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
+		longjmp(sCancelPoint_m, 1);
+	}
+	++pData->uiProgressCount;
+	if ((pData->uiProgressCount % 10) == 0)
+	{
+		reportProgress(pData->uiProgressCount);
+	}
+	if (!ok && pData->pPATR->bUnification)
+	{
+		collectPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
+		*ok_out = ok;
+		*abort_out = TRUE;
+		return NULL;
+	}
+	unmarkPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
+	*ok_out = ok;
+	*abort_out = FALSE;
+	return pDag;
+}
+
+/*****************************************************************************
+ * NAME
+ *    skip_optional_non_terminals
+ * ARGUMENTS
+ *    edgep - the source of optional edges
+ *    act_edge - the active edge
+ *    pass_edge - the passive edge
+ *    pDag - the feature structure
+ *    label -
+ *    iEnd_in - the end point
+ *    ok - whether unification succeeded
+ *    skips - how many skips so far
+ *    pData - parse data
+ * DESCRIPTION
+ *    Skips optional non-terminals in edgep.
+ * RETURN VALUE
+ *    none
+ */
+static void skip_optional_non_terminals(edgep, act_edge, pass_edge, pass_name, pDag, label, iEnd_in, ok, pData)
+PATREdge* edgep;
+PATREdge* act_edge;
+PATREdge* pass_edge;
+char * pass_name;
+PATRFeature* pDag;
+char* label;
+int iEnd_in;
+int ok;
+PATRParseData* pData;
+{
+	PATRNonterminal* nonterm;
+	/*
+	 * Skip the next non-terminals if they are optional.
+	 */
+	nonterm = need_nonterm(edgep);
+	if (nonterm && nonterm->bOptional)
+	{
+		char* attr = need_nonterm(edgep)->pszName;
+		edgep = make_rule_edge(edgep->u.r.pRule,
+			label,
+			edgep->u.r.iNext + 1,
+			edgep->iStart,
+			iEnd_in,
+			pDag, pData);
+		if (!ok)
+			edgep->bFailed = TRUE;
+		add_child(act_edge, edgep, pass_edge, pass_name, pData);
+		/* Recurse first so that shortest rules are processed first. */
+		skip_optional_non_terminals(edgep, act_edge, pass_edge, pass_name, pDag, label, iEnd_in, ok, pData);
+		/* The following code is copied from extend_lc_edge. */
+		if (complete_edge_p(edgep))
+		{
+			ok = complete_constraints(pDag, edgep->u.r.pRule, pData->pPATR);
+			if (!ok)
+			{
+				if (pData->pPATR->bUnification)
+				{
+					// collectPATRGarbage(PATR_GARBAGE_UNIFY, pData->pPATR);
+					return;
+				}
+				edgep->bFailed = TRUE;
+			}
+			lc_vertex_add_passive_edge(edgep, pData->pPATR->pGrammar, pData);
+		}
+		else
+		{
+			lc_vertex_add_active_edge(edgep, pData->pPATR->pGrammar, pData);
+		}
+	}
+}
+
+/*****************************************************************************
+ * NAME
+ *    complete_constraints
+ * ARGUMENTS
+ *    edgep -
+ * DESCRIPTION
+ *    Apply priority unions and constraints from rule to complete constraints.
+ * RETURN VALUE
+ *    boolean
+ */
+static int complete_constraints(pDag, pRule, pPATR)
+PATRFeature *pDag;
+PATRRule *pRule;
+PATRData *pPATR;
+{
+PATRPriorityUnion * pUnion;
+PATRConstraint *    pConstraint;
+int ok = TRUE;
+/*
+ *  apply each priority union in turn
+ */
+for (	pUnion = pRule->pPriorityUnions ;
+	ok && pUnion ;
+	pUnion = pUnion->pNext )
+	{
+	applyPATRPriorityUnion(pDag, pUnion, pPATR);
+	ok = verifyAcyclicPATRFeature(pDag);
+	}
+/*
+ *  if any constraint fails, ok = FALSE
+ */
+for (   pConstraint = pRule->pConstraints ;
+	ok && pConstraint ;
+	pConstraint = pConstraint->pNext )
+	{
+	ok = applyPATRConstraint(pDag, pConstraint, pPATR);
+	}
+return ok;
 }
 
 /*****************************************************************************
@@ -2285,24 +2433,14 @@ void showPATREdge(edgep, pPATR_in)
 PATREdge *	edgep;
 PATRData *	pPATR_in;
 {
-int i;
-
 fprintf(stdout, "%d %d ", edgep->iStart, edgep->iEnd);
 if (edgep->eType == PATR_RULE_EDGE)
 	{
-	for ( i = 0 ; i <= edgep->u.r.pRule->iNontermCount ; i++ )
-	{
-	fprintf(stdout, "%s ", edgep->u.r.pRule->apszNonterms[i]);
-	if (i == 0)
-		fprintf(stdout, "-> ");
-	if (edgep->u.r.iNext == i+1)
-		fprintf(stdout, ". ");
-	}
+	showPATRRule(edgep->u.r.pRule);
 	}
 else
-	fprintf(stdout, "%s (%s) ", edgep->pszLabel, edgep->u.l.pszTerminal);
+	fprintf(stdout, "%s (%s) \n", edgep->pszLabel, edgep->u.l.pszTerminal);
 
-fprintf(stdout, "\n");
 if (pPATR_in->iDebugLevel >= 2)
 	{
 	FILE * fp = pPATR_in->pLogFP;

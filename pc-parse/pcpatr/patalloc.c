@@ -247,6 +247,8 @@ else
 	}
 f->node.eType     = 0;
 f->node.u.pszAtom = NULL;
+f->node.pFirstFeat = NULL;
+f->node.pSecondFeat = NULL;
 f->link                = pGarbage->pFeatureHead;
 pGarbage->pFeatureHead = f;
 if (pGarbage->pFeatureTail == NULL)
@@ -437,6 +439,8 @@ else
 f->node.pszName    = NULL;
 f->node.pszLhsName = NULL;
 f->node.pNext      = NULL;
+f->node.bOptional  = FALSE;
+f->node.pFeature   = NULL;
 f->link = pGarbage->pNontermHead;
 pGarbage->pNontermHead = f;
 if (pGarbage->pNontermTail == NULL)
@@ -627,6 +631,7 @@ else
 	}
 f->node.pNext = NULL;
 f->node.pEdge = NULL;
+f->node.pszName = NULL;
 f->link = pGarbage->pEdgeListHead;
 pGarbage->pEdgeListHead = f;
 if (pGarbage->pEdgeListTail == NULL)

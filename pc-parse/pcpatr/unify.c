@@ -192,6 +192,11 @@ if (bPreserve)
 	pThis->pMem->pFreeSavedDisjunct = pThis->pMem->pSavedDisjunct;
 	}
 	pThis->pMem->pSavedDisjunct = pOldSavedDisjunct;
+	/* Record the sources. */
+	if (pUnifiedFeat) {
+		pUnifiedFeat->pFirstFeat = pFirstFeat_in;
+		pUnifiedFeat->pSecondFeat = pSecondFeat_in;
+	}
 	}
 else
 	{

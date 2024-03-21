@@ -111,6 +111,8 @@ typedef struct patr_nonterminal
 	char *			pszName;	/* element name with index */
 	char *			pszLhsName;	/* left hand side name with
 						   index */
+	int             bOptional;   /* is this non-terminal optional? */
+	PATRFeature*	pFeature;    /* constraints for optional non-terminal */
 	struct patr_nonterminal *	pNext;		/* link to next element */
 	} PATRNonterminal;
 
@@ -375,6 +377,8 @@ struct patr_feature
 	PATRFeatureDisjunction * pDisjunction;	/* PATR_DISJUNCT */
 	PATRFeature *		 pForward;	/* PATR_FORWARD */
 	}	u;
+	PATRFeature * pFirstFeat;  /* first argument to unification */
+	PATRFeature * pSecondFeat; /* second argument to unification */
 	};
 
 /*****************************************************************************
@@ -499,6 +503,8 @@ typedef struct patr_parse_data
 extern PATRFeature * parsePATRFeaturePath P((char *        pszFeaturePath_in,
 						 PATRGrammar * pGrammar_in,
 						 PATRData *    pPATR_in));
+extern void showPATRRule P((PATRRule * rulep));
+
 /*
  *  lcparse.c
  */

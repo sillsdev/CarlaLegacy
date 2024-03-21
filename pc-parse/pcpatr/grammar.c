@@ -295,13 +295,30 @@ static int		loadLexicalRule P((GrammarData * pData));
 static int		loadRule P((GrammarData * pData));
 static SimplePSR *	form_to_psrs P((ComplexPSR *, GrammarData * pData));
 static void		show_psrs P((SimplePSR *psrs));
-static void		showPATRRule P((PATRRule * rulep));
 static void		install_rule P((char *, char *,
-					PATRNonterminal *,
+					SimplePSR *,
 					PATRFeature *,
 					PATRPriorityUnion * pPriorityUnions_in,
 					PATRConstraint *    pConstraints_in,
 					GrammarData * pData));
+static void expand_optional_non_terminal P((
+	PATRNonterminal * nterm,
+	char * id,
+	char * lhs,
+	SimplePSR * psr,
+	PATRFeature * dag,
+	PATRPriorityUnion * pPriorityUnions_in,
+	PATRConstraint * pConstraints_in,
+	GrammarData * pData));
+static PATRFeature* skip_optional_attr P((
+	PATRFeature* pDag,
+	char* attr,
+	int exclude,
+	PATRData* pPATR));
+static int has_double_optional_constraint P((
+	PATRFeature* pDag,
+	char* pszName,
+	PATRNonterminal* pNonterminals));
 static void		install_category P((PATRRule *, int, char *,
 						GrammarData * pData));
 static void		free_symlist P((GrammarData * pData));
@@ -1777,7 +1794,7 @@ for ( psr = psrs ; psr ; psr = psr->pNext )
 	{
 	for ( pDisj = psr->pFeatures[0] ; pDisj ; pDisj = pNextDisj )
 	{
-	install_rule(szRuleID, firstelm->pszName, psr->pHead, pDisj->pFeature,
+	install_rule(szRuleID, firstelm->pszName, psr, pDisj->pFeature,
 			 pPriorityUnions, pConstraints,
 			 pData);
 	pNextDisj = pDisj->pNext;
@@ -1864,7 +1881,11 @@ for ( psr = psrs; psr; psr = psr->pNext )
 	/*
 	 *  For each nonterm, output cat name */
 	 for ( nterm = psr->pHead ; nterm ; nterm = nterm->pNext )
-	 fprintf(stdout,  "%s/%s ", nterm->pszName, nterm->pszLhsName );
+	 if (nterm->bOptional) {
+		 fprintf(stdout,  "(%s/%s) ", nterm->pszName, nterm->pszLhsName );
+	 } else {
+		 fprintf(stdout,  "%s/%s ", nterm->pszName, nterm->pszLhsName );
+	 }
 	}
 fprintf(stdout,  "\n" );
 }
@@ -1877,16 +1898,21 @@ fprintf(stdout,  "\n" );
  * RETURN VALUE
  *    none
  */
-static void showPATRRule(rulep)
+void showPATRRule(rulep)
 PATRRule *	rulep;
 {
 int i;
+PATRNonterminal *non_terminal = rulep->pRHS;
 
-for ( i = 0 ; i <= rulep->iNontermCount ; i++ )
+fprintf(stdout, "%s -> ", rulep->apszNonterms[0]);
+for ( i = 1 ; i <= rulep->iNontermCount ; i++ )
 	{
-	fprintf(stdout, "%s ", rulep->apszNonterms[i]);
-	if (i == 0)
-	fprintf(stdout, "-> ");
+	if (non_terminal->bOptional) {
+		fprintf(stdout, "(%s) ", rulep->apszNonterms[i]);
+	} else {
+		fprintf(stdout, "%s ", rulep->apszNonterms[i]);
+	}
+	non_terminal = non_terminal->pNext;
 	}
 fprintf(stdout, "\n");
 }
@@ -1905,20 +1931,66 @@ fprintf(stdout, "\n");
  * RETURN VALUE
  *    none
  */
-static void install_rule(id, lhs, rhs, dag,
+static void install_rule(id, lhs, psr, dag,
 			 pPriorityUnions_in, pConstraints_in, pData)
 char *			id;
 char *			lhs;
-PATRNonterminal *	rhs;
+SimplePSR *         psr;
 PATRFeature *		dag;
 PATRPriorityUnion *	pPriorityUnions_in;
 PATRConstraint *	pConstraints_in;
 GrammarData *		pData;
 {
+PATRNonterminal *	rhs;
 PATRRule *		rulep;
 PATRRuleList *		listp;
 PATRNonterminal *	nterm;
 int			nonterm_count;
+
+/*
+ * We try to preserve optional non-terminals in the rule
+ * to avoid exponential explosions when a rule has a lot of them.
+ * For instance, rule cat -> head (nt1) (nt2) ... (ntN).
+ * would expand to 2^N rules if we eliminated optional non-terminals
+ * by creating rules with the non-terminal and rules without it.
+ * The parser optionally skips optional non-terminals in the rules.
+ */
+rhs = psr->pHead;
+/*
+ * Expand optional non-terminals at beginning of rule
+ * so that the parser can index the first non-terminal.
+ * This still avoids an exponential explosion since
+ * rule cat -> (nt1) (nt2) (nt3) (nt4) head. becomes
+ * rule cat -> nt1 (nt2) (nt3) (nt4) head.
+ * rule cat -> nt2 (nt3) (nt4) head.
+ * rule cat -> nt3 (nt4) head.
+ * rule cat -> nt4 head.
+ * rule cat -> head.
+ */
+if (rhs && rhs->bOptional) {
+	expand_optional_non_terminal(rhs, id, lhs, psr, dag,
+			pPriorityUnions_in, pConstraints_in, pData);
+	return;
+}
+/* Process optional non-terminals. */
+for (nterm = rhs; nterm; nterm = nterm->pNext) {
+	if (nterm->bOptional) {
+		if (has_double_optional_constraint(dag, nterm->pszName, nterm->pNext))
+		{
+			/*
+			 * There is a constraint like <cat1 ...> = <cat2 ...>
+			 * where cat1 and cat2 are both optional.
+			 * We need to expand the constraints to get this case right.
+			 */
+			expand_optional_non_terminal(nterm, id, lhs, psr, dag,
+				pPriorityUnions_in, pConstraints_in, pData);
+			return;
+		}
+		/* Move the optional constraints to the non-terminal. */
+		nterm->pFeature = skip_optional_attr(dag, nterm->pszName, FALSE, pData->pPATR);
+		dag = skip_optional_attr(dag, nterm->pszName, TRUE, pData->pPATR);
+	}
+}
 
 /* Make space for the rule */
 rulep = allocPATRRule(pData->pPATR);
@@ -1943,13 +2015,31 @@ rulep->iNontermCount = nonterm_count;
 /*
  *  BK: check and report if A-over-A rule
  */
-if ((nonterm_count == 1) && (strcmp( lhs, rulep->apszNonterms[1] ) == 0))
+if (nonterm_count > 0)
 	{
-	displayNumberedMessage(&sSameLeftRightCategories_m,
-			   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
-			   pData->pszGrammarFilename, pData->uiLineNumber,
-			   lhs);
-	++pData->iGrammarErrorCount;
+	int i = 0;
+	char* singleton_cat = NULL;
+	PATRNonterminal *nonterm;
+	/* Look for an obligatory singleton non-terminal. */
+	for (nonterm = rhs; nonterm; nonterm = nonterm->pNext)
+	{
+		i++;
+		if (nonterm->bOptional) continue;
+		if (singleton_cat)
+		{
+			/* There is more than one obligatory non-terminal. */
+			singleton_cat = NULL;
+			break;
+		}
+		singleton_cat = rulep->apszNonterms[i];
+	}
+	if (singleton_cat && strcmp(singleton_cat, lhs) == 0) {
+		displayNumberedMessage(&sSameLeftRightCategories_m,
+				   pData->bSilent, pData->bShowWarnings, pData->pLogFP,
+				   pData->pszGrammarFilename, pData->uiLineNumber,
+				   lhs);
+		++pData->iGrammarErrorCount;
+	}
 	}
 
 /* Compute left corner indices */
@@ -1971,6 +2061,181 @@ listp             = allocPATRRuleList(pData->pPATR);
 listp->pRule      = rulep;
 listp->pNext      = pData->pGrammar->pRuleTable;
 pData->pGrammar->pRuleTable = listp;
+}
+
+/*****************************************************************************
+ * NAME
+ *    has_double_optional_constraint
+ * ARGUMENTS
+ *    pDag    - rule constriants
+ *    pszName - name of optional non-terminal
+ * DESCRIPTION
+ *    Does pDag have a constraint with pszName that mentions another optional
+ *    non-terminal?
+ * RETURN VALUE
+ *    int
+ */
+static int has_double_optional_constraint(pDag, pszName, pNonterminals)
+PATRFeature* pDag;
+char* pszName;
+PATRNonterminal* pNonterminals;
+{
+PATRComplexFeature* flist;
+PATRComplexFeature* flist2;
+PATRNonterminal* nterm;
+if (pDag == NULL)
+{
+	return FALSE;
+}
+if (pDag->pFirstFeat || pDag->pSecondFeat)
+{
+	return has_double_optional_constraint(pDag->pFirstFeat,
+			pszName, pNonterminals) ||
+		has_double_optional_constraint(pDag->pSecondFeat,
+			pszName, pNonterminals);
+}
+for (flist = pDag->u.pComplex; flist; flist = flist->pNext)
+{
+if (flist->pszLabel == pszName)
+{
+	for (flist2 = pDag->u.pComplex; flist2; flist2 = flist2->pNext)
+	{
+	if (flist2 != flist)
+	{
+		for (nterm = pNonterminals; nterm; nterm = nterm->pNext)
+		{
+		if (nterm->pszName == flist2->pszLabel && nterm->bOptional)
+		{
+			/* flist2 is optional. */
+			return TRUE;
+		}
+		}
+	}
+	}
+}
+}
+return FALSE;
+}
+/*****************************************************************************
+ * NAME
+ *    expand_optional_non_terminal
+ * ARGUMENTS
+ *    nterm   - non-terminal to expand
+ *    id      - unique identifying string
+ *    lhs     - LHS nonterminal
+ *    rhs     - List of RHS nonterminals from expanded formula
+ *    dag     - feature structure representing constraints on rule
+ *    pPriorityUnions_in
+ *    pConstraints_in
+ *    pData   - grammar data
+ * DESCRIPTION
+ *    Install two rules, one with nterm and one without.
+ * RETURN VALUE
+ *    void
+ */
+static void expand_optional_non_terminal(nterm, id, lhs, psr, dag,
+	pPriorityUnions_in, pConstraints_in, pData)
+PATRNonterminal * nterm;
+char *			id;
+char *			lhs;
+SimplePSR *         psr;
+PATRFeature *		dag;
+PATRPriorityUnion *	pPriorityUnions_in;
+PATRConstraint *	pConstraints_in;
+GrammarData *		pData;
+{
+SimplePSR *psr2;
+PATRFeature * dag2;
+PATRNonterminal * nterm2;
+/* Make a rule without nterm. */
+psr2 = copy_psr(psr, pData);
+if (psr2->pHead->pszName == nterm->pszName) {
+	/* Remove the non-terminal at the beginning. */
+	psr2->pHead = psr2->pHead->pNext;
+	if (psr->pHead == psr->pTail) {
+		/* Update end of list pointer. */
+		psr2->pTail = NULL;
+	}
+} else {
+	/* Remove an embedded non-terminal. */
+	for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
+	if (nterm2->pNext->pszName == nterm->pszName) {
+		nterm2->pNext = nterm2->pNext->pNext;
+		break;
+	}
+	}
+}
+dag2 = skip_optional_attr(dag, nterm->pszName, TRUE, pData->pPATR);
+install_rule(id, lhs, psr2, dag2, pPriorityUnions_in, pConstraints_in, pData);
+/* Make a rule with nterm obligatory. */
+psr2 = copy_psr(psr, pData);
+for( nterm2 = psr2->pHead ; nterm2 ; nterm2 = nterm2->pNext ) {
+if (nterm2->pszName == nterm->pszName) {
+	nterm2->bOptional = FALSE;
+	break;
+}
+}
+install_rule(id, lhs, psr2, dag, pPriorityUnions_in, pConstraints_in, pData);
+}
+
+/*****************************************************************************
+ * NAME
+ *    skip_optional_attr
+ * ARGUMENTS
+ *    pDag - feature structure
+ *    attr - attribute
+ *    exclude - whether to exclude or include optional constraints
+ *    pPATR - PATR data
+ * DESCRIPTION
+ *    Reunify pDag from constraints skipping constraints that mention attr.
+ * RETURN VALUE
+ *    PATRFeature *
+ */
+PATRFeature *skip_optional_attr(pDag, attr, exclude, pPATR)
+PATRFeature *	pDag;
+char * attr;
+int exclude;
+PATRData * pPATR;
+{
+/*
+ * We can retroactively skip constraints that mention attr
+ * because the unifier preserved the sources of each unification.
+ * This is too complicated for the parser to do since its DAG
+ * is created by unifying active and passive edges on top
+ * of the rule constraints.
+ */
+PATRFeature *pFirstFeat;
+PATRFeature *pSecondFeat;
+PATRFeature *pDag2;
+/* See if pDag has attr. */
+int has_attr = FALSE;
+PATRComplexFeature *flist;
+if (pDag->pFirstFeat || pDag->pSecondFeat) {
+	/* Unify pDag again. */
+	pFirstFeat = skip_optional_attr(pDag->pFirstFeat, attr, exclude, pPATR);
+	pSecondFeat = skip_optional_attr(pDag->pSecondFeat, attr, exclude, pPATR);
+	if (!pFirstFeat) {
+		return pSecondFeat;
+	}
+	if (!pSecondFeat) {
+		return pFirstFeat;
+	}
+	pDag2 = unifyPATRFeatures(pFirstFeat, pSecondFeat, TRUE, pPATR);
+	return pDag2;
+}
+if (pDag->eType == PATR_COMPLEX) {
+	for (flist = pDag->u.pComplex; flist; flist = flist->pNext) {
+		if (strcmp(flist->pszLabel, attr) == 0) {
+			has_attr = TRUE;
+			break;
+		}
+	}
+}
+if (has_attr == exclude)
+{
+	return NULL;
+}
+return pDag;
 }
 
 /*****************************************************************************
@@ -2340,6 +2605,7 @@ GrammarData * pData;
 {
 SimplePSR *psrs, *psr;
 PATRNonterminal *nttemp;
+int preserve_optional_non_terminals = TRUE;
 
 if (!delim)
 	{
@@ -2365,6 +2631,17 @@ for ( net = net->pNext ; net ; net = net->pNext )
 			 * psrs = optional elements are not used;
 			 * append_psrs(psrs,net->psrs) = optional elements are used;
 			 */
+			if (preserve_optional_non_terminals &&
+					!net->pPsrs->pNext && net->pPsrs->pHead == net->pPsrs->pTail)
+			{
+			/* A single optional element is treated as a special case
+			 * to avoid exponential explosions when rules have a lot of them.
+			 */
+			SimplePSR *optional_psr = copy_psr(net->pPsrs, pData);
+			optional_psr->pHead->bOptional = TRUE;
+			psrs = append_psrs(psrs, optional_psr, pData);
+			break;
+			}
 			psrs = union_psrs( psrs, append_psrs(psrs, net->pPsrs, pData) );
 			break;
 		case '{':                           /* For open brace */
@@ -2660,6 +2937,8 @@ PATRNonterminal *copy;
 
 copy = new_nonterm( nonterm->pszName, pData);
 copy->pszLhsName = nonterm->pszLhsName;
+copy->bOptional = nonterm->bOptional;
+copy->pFeature = nonterm->pFeature;
 copy->pNext      = NULL;
 return( copy );
 }
@@ -4778,7 +5057,6 @@ PATRData *	pPATR_in;
 PATRRuleList *	pRuleList;
 PATRRule *		pRule;
 PATRNonterminal *	pNonterm;
-int i;
 PATRPriorityUnion *	pPri;
 PATRConstraint *	pCon;
 
@@ -4791,12 +5069,14 @@ for (	pRuleList = pGrammar_in->pRuleTable ;
 	fprintf(stdout, "Rule {%s} (line %d) has %d nonterms\n",
 	   pRule->pszID ? pRule->pszID : "",
 	   pRule->iLineNumber, pRule->iNontermCount);
-	for ( i = 0 ; i <= pRule->iNontermCount ; ++i )
-	fprintf(stdout, "  %s", pRule->apszNonterms[i]);
-	fprintf(stdout, "\n");
+	showPATRRule(pRule);
 	fprintf(stdout, "%s ->", pRule->pszLHS);
 	for ( pNonterm = pRule->pRHS ; pNonterm ; pNonterm = pNonterm->pNext )
-	fprintf(stdout, "  %s(%s)", pNonterm->pszName, pNonterm->pszLhsName);
+	if (pNonterm->bOptional) {
+		fprintf(stdout, "  (%s(%s))", pNonterm->pszName, pNonterm->pszLhsName);
+	} else {
+		fprintf(stdout, "  %s(%s)", pNonterm->pszName, pNonterm->pszLhsName);
+	}
 	fprintf(stdout, "\nUnifications feature:   (%p)\n", (void *)pRule->pUniFeature);
 	writePATRFeatureToLog(pRule->pUniFeature, 0, FALSE, pPATR_in);
 	fprintf(stdout, "\n");
@@ -4844,7 +5124,11 @@ for ( i = 0 ; i < PATR_HASH_SIZE ; ++i )
 		fprintf(stdout, "\n\t\t\tRule {%s} (line %d):  %s  ->",
 			   pR->pszID ? pR->pszID:"", pR->iLineNumber, pR->pszLHS);
 		for ( pN = pR->pRHS ; pN ; pN = pN->pNext )
-			fprintf(stdout, "  %s", pN->pszName);
+			if (pN->bOptional) {
+				fprintf(stdout, "  (%s)", pN->pszName);
+			} else {
+				fprintf(stdout, "  %s", pN->pszName);
+			}
 		}
 		fprintf(stdout, "\n");
 		}

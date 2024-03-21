@@ -1634,8 +1634,6 @@ PATRComplexFeature * pComp;
 PATRComplexFeature * pPrev;
 char * psz0;
 char * pszLHS;
-int i;
-PATRNonterminal * pnt;
 PATREdgeList * pel;
 
 if (pEdge_in->pFeature)
@@ -1719,21 +1717,11 @@ if (pEdge_in->pFeature)
 					"DEBUG: change label from \"%s\" to ",
 					pComp->pszLabel );
 			}
-			for ( pnt = pEdge_in->u.r.pRule->pRHS, i = 1, pel = NULL ;
-			  pnt ;
-			  pnt = pnt->pNext, ++i )
+			/* Find the child edge corrresponding to pComp. */
+			for (pel = pEdge_in->u.r.pChildren; pel; pel = pel->pNext)
 			{
-			if (pComp->pszLabel == pnt->pszName)
-				{
-				int iRev = pEdge_in->u.r.pRule->iNontermCount - i;
-				for ( pel = pEdge_in->u.r.pChildren ;
-				  pel && iRev ;
-				  pel = pel->pNext, --iRev )
-				{
-				/* step to desired child */
-				}
+			if (pel->pszName == pComp->pszLabel)
 				break;
-				}
 			}
 			if ((pel != NULL) && (pel->pEdge != NULL))
 			{
